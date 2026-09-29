@@ -19,8 +19,8 @@ Plan: see `doc/saigon/PLAN.md`.
 | S0.3b cata_test | todo | - | tests/cata_test | S0.3a | `make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 tests` |
 | S0.3c SDL3 tiles build | todo | - | cataclysm-tiles | - | needed only for V1 screenshots. Needs SDL3>=3.4 frameworks (libsdl-org dmg → ~/Library/Frameworks, FRAMEWORK=1) + glslang; build with BUILD_SHADER_FORMATS=spv and run with CATA_DISABLE_SPRITE_SHADERS=1 to avoid building shadercross. Ask the user before downloading |
 | S0.4 ledger + plan | done | - | doc/saigon/ | - | |
-| A4.1 modding analyst draft | todo | - | analysis/d4_r1.md | S0.1 | |
-| A4.2 modding critic r1 | todo | - | analysis/critic_d4_r1.md | A4.1 | |
+| A4.1 modding analyst draft | done | (this) | analysis/d4_r1.md | S0.1 | Key: ITEM+subtypes; vehicle_group append-only → C1; --check-mods exit-code bug → C2; region feature_flag whitelist |
+| A4.2 modding critic r1 | in-progress | - | analysis/critic_d4_r1.md | A4.1 | |
 | A4.3 modding rev + critic r2 | todo | - | d4_r2 / critic_d4_r2 | A4.2 | |
 | A4.4 modding rev + critic r3 | todo | - | d4_r3 / critic_d4_r3 | A4.3 | skip if r2 PASS |
 | A2.1 mapgen analyst draft | todo | - | analysis/d2_r1.md | S0.1 | |
@@ -40,6 +40,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | A6.2 TDD domain chapters | todo | - | TDD.md | A6.1 | |
 | A6.3 TDD roadmap + risks | todo | - | TDD.md | A6.2 | |
 | A6.4 citation check | todo | - | tools script | A6.3 | zero misses |
+| B0 content bible | done | - | CONTENT_BIBLE.md | - | |
 | B1 mod skeleton | todo | - | data/mods/saigon_2000s | A4, A2 | |
 | B2a scenario + start locations | todo | - | | B1 | |
 | B2b backstory/intro EOC + snippets | todo | - | | B2a | |
