@@ -14,8 +14,10 @@ Plan: see `doc/saigon/PLAN.md`.
 | ID | Status | Commit | Output | Depends | Next action / notes |
 |---|---|---|---|---|---|
 | S0.1 clone + branch | done | - | repo | - | |
-| S0.2 brew deps | in-progress | - | - | - | sdl2 libs, pkg-config, gettext, cmake, ninja |
-| S0.3 baseline build | todo | - | build/ | S0.2 | CMake Ninja RelWithDebInfo, TILES, tests; watch disk (15 GB free) |
+| S0.2 deps | done | - | - | - | Upstream is SDL3-only since 2026-08-11 (doc/c++/COMPILING.md). Homebrew on macOS 13 builds from source (hours), so it was aborted; nothing installed. Curses build needs no deps. |
+| S0.3a curses build (RelWithDebInfo equiv.) | in-progress | - | ./cataclysm | S0.2 | `make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 cataclysm`, log in ~/code/cdda-saigon-logs/. Used for --check-mods on every unit |
+| S0.3b cata_test | todo | - | tests/cata_test | S0.3a | `make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 tests` |
+| S0.3c SDL3 tiles build | todo | - | cataclysm-tiles | - | needed only for V1 screenshots. Needs SDL3>=3.4 frameworks (libsdl-org dmg → ~/Library/Frameworks, FRAMEWORK=1) + glslang; build with BUILD_SHADER_FORMATS=spv and run with CATA_DISABLE_SPRITE_SHADERS=1 to avoid building shadercross. Ask the user before downloading |
 | S0.4 ledger + plan | done | - | doc/saigon/ | - | |
 | A4.1 modding analyst draft | todo | - | analysis/d4_r1.md | S0.1 | |
 | A4.2 modding critic r1 | todo | - | analysis/critic_d4_r1.md | A4.1 | |
