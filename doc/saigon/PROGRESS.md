@@ -24,8 +24,8 @@ Plan: see `doc/saigon/PLAN.md`.
 | A4.3 modding rev + critic r2 | todo | - | d4_r2 / critic_d4_r2 | A4.2 | |
 | A4.4 modding rev + critic r3 | todo | - | d4_r3 / critic_d4_r3 | A4.3 | skip if r2 PASS |
 | A2.1 mapgen analyst draft | done | (this) | analysis/d2_r1.md | S0.1 | Key: city streets hardcoded in overmap_city.cpp; 6x6 GLOBALLY_UNIQUE district special for pass 1; nhà ống via omt_stack+check_z; canals only in specials; bugs: regional_settings.cpp:809, overmap_city.cpp:268-277 infinite loop |
-| A2.2 mapgen critic r1 | in-progress | - | critic_d2_r1.md | A2.1 | |
-| A2.3 mapgen rev + critic r2 | todo | - | | A2.2 | |
+| A2.2 mapgen critic r1 | done | - | critic_d2_r1.md | A2.1 | |
+| A2.3 mapgen rev + critic r2 | in-progress | - | d2_r2 / critic_d2_r2 | A2.2 | r1 REJECT: 0 blocker/2 major/14 minor, cite fail 3.2%; majors: bike parking destroys shutters, roof connectivity |
 | A2.4 mapgen rev + critic r3 | todo | - | | A2.3 | skip if r2 PASS |
 | A3.1 climate/vehicle analyst draft | todo | - | analysis/d3_r1.md | S0.1 | |
 | A3.2 critic r1 | todo | - | | A3.1 | |
