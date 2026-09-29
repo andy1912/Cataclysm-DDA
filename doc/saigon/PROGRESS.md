@@ -21,12 +21,12 @@ Plan: see `doc/saigon/PLAN.md`.
 | S0.4 ledger + plan | done | - | doc/saigon/ | - | |
 | A4.1 modding analyst draft | done | (this) | analysis/d4_r1.md | S0.1 | Key: ITEM+subtypes; vehicle_group append-only → C1; --check-mods exit-code bug → C2; region feature_flag whitelist |
 | A4.2 modding critic r1 | done | - | analysis/critic_d4_r1.md | A4.1 | |
-| A4.3 modding rev + critic r2 | in-progress | - | d4_r2 / critic_d4_r2 | A4.2 | r1 REJECT: 0/3 major/10 minor, cite fail 0.7%; majors: C1 has JSON routes, add item MIGRATION, missing schemas vehicle_part/placement/nested_mapgen/ter/furn |
+| A4.3 modding rev + critic r2 | in-progress (critic r2 running) | - | d4_r2 / critic_d4_r2 | A4.2 | r1 REJECT: 0/3 major/10 minor, cite fail 0.7%; majors: C1 has JSON routes, add item MIGRATION, missing schemas vehicle_part/placement/nested_mapgen/ter/furn |
 | A4.4 modding rev + critic r3 | todo | - | d4_r3 / critic_d4_r3 | A4.3 | skip if r2 PASS |
 | A2.1 mapgen analyst draft | done | (this) | analysis/d2_r1.md | S0.1 | Key: city streets hardcoded in overmap_city.cpp; 6x6 GLOBALLY_UNIQUE district special for pass 1; nhà ống via omt_stack+check_z; canals only in specials; bugs: regional_settings.cpp:809, overmap_city.cpp:268-277 infinite loop |
 | A2.2 mapgen critic r1 | done | - | critic_d2_r1.md | A2.1 | |
-| A2.3 mapgen rev + critic r2 | in-progress | - | d2_r2 / critic_d2_r2 | A2.2 | r1 REJECT: 0 blocker/2 major/14 minor, cite fail 3.2%; majors: bike parking destroys shutters, roof connectivity |
-| A2.4 mapgen rev + critic r3 | todo | - | | A2.3 | skip if r2 PASS |
+| A2.3 mapgen rev + critic r2 | done | - | d2_r2 / critic_d2_r2 | A2.2 | r1 REJECT: 0 blocker/2 major/14 minor, cite fail 3.2%; majors: bike parking destroys shutters, roof connectivity |
+| A2.4 mapgen rev + critic r3 | in-progress | - | d2_r3 / critic_d2_r3 | A2.3 | r2 REJECT 0/1 major/9 minor, cite fail 0.5%; major: roof-walk corner continuity (PREFIX ignores rotation) |
 | A3.1 climate/vehicle analyst draft | todo | - | analysis/d3_r1.md | S0.1 | |
 | A3.2 critic r1 | todo | - | | A3.1 | |
 | A3.3 rev + critic r2 | todo | - | | A3.2 | |
@@ -41,6 +41,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | A6.3 TDD roadmap + risks | todo | - | TDD.md | A6.2 | |
 | A6.4 citation check | todo | - | tools script | A6.3 | zero misses |
 | B0 content bible | done | - | CONTENT_BIBLE.md | - | |
+| C6 test-mode term-size hang fix | in-progress | - | src/game.cpp init_ui | - | curses --check-mods looped forever in ensure_term_size (stdscr uninitialized in test_mode) |
 | B1 mod skeleton | todo | - | data/mods/saigon_2000s | A4, A2 | |
 | B2a scenario + start locations | todo | - | | B1 | |
 | B2b backstory/intro EOC + snippets | todo | - | | B2a | |
