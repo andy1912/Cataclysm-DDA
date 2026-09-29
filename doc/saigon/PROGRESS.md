@@ -8,20 +8,20 @@ Plan: see `doc/saigon/PLAN.md`.
 1. Read this file, then run `git log --oneline -10` and `git status`.
 2. If a unit is marked `in-progress`, check `git diff`. Either finish that unit or revert its partial changes.
 3. Pick the first `todo` unit whose dependencies are `done`. Mark it `in-progress`, do the work, mark it `done` with the commit SHA, and commit with the message `saigon: <ID> <summary>`.
-4. Build: `cmake --build build -j4 --target cataclysm-tiles` (incremental). Validate the mod: `./cataclysm-tiles --check-mods saigon_2000s`.
+4. Build (incremental): `CXXFLAGS=-D_XOPEN_SOURCE_EXTENDED make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 SOUND=0 NCURSES_PREFIX=ncurses cataclysm`. Validate the mod: `./cataclysm --check-mods saigon_2000s 2>&1 | grep -E 'Error loading data|DEBUG'` (exit code is unreliable until C2 lands).
 
 ## Units
 | ID | Status | Commit | Output | Depends | Next action / notes |
 |---|---|---|---|---|---|
 | S0.1 clone + branch | done | - | repo | - | |
 | S0.2 deps | done | - | - | - | Upstream is SDL3-only since 2026-08-11 (doc/c++/COMPILING.md). Homebrew on macOS 13 builds from source (hours), so it was aborted; nothing installed. Curses build needs no deps. |
-| S0.3a curses build (RelWithDebInfo equiv.) | in-progress | - | ./cataclysm | S0.2 | `make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 cataclysm`, log in ~/code/cdda-saigon-logs/. Used for --check-mods on every unit |
+| S0.3a curses build (RelWithDebInfo equiv.) | done | - | ./cataclysm | S0.2 | `CXXFLAGS=-D_XOPEN_SOURCE_EXTENDED make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 SOUND=0 NCURSES_PREFIX=ncurses cataclysm` (macOS: wide-char define only set when LOCALIZE=1, and there is no libncursesw → upstream Makefile bug, candidate fork fix), log in ~/code/cdda-saigon-logs/. Used for --check-mods on every unit |
 | S0.3b cata_test | todo | - | tests/cata_test | S0.3a | `make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 tests` |
 | S0.3c SDL3 tiles build | todo | - | cataclysm-tiles | - | needed only for V1 screenshots. Needs SDL3>=3.4 frameworks (libsdl-org dmg → ~/Library/Frameworks, FRAMEWORK=1) + glslang; build with BUILD_SHADER_FORMATS=spv and run with CATA_DISABLE_SPRITE_SHADERS=1 to avoid building shadercross. Ask the user before downloading |
 | S0.4 ledger + plan | done | - | doc/saigon/ | - | |
 | A4.1 modding analyst draft | done | (this) | analysis/d4_r1.md | S0.1 | Key: ITEM+subtypes; vehicle_group append-only → C1; --check-mods exit-code bug → C2; region feature_flag whitelist |
-| A4.2 modding critic r1 | in-progress | - | analysis/critic_d4_r1.md | A4.1 | |
-| A4.3 modding rev + critic r2 | todo | - | d4_r2 / critic_d4_r2 | A4.2 | |
+| A4.2 modding critic r1 | done | - | analysis/critic_d4_r1.md | A4.1 | |
+| A4.3 modding rev + critic r2 | in-progress | - | d4_r2 / critic_d4_r2 | A4.2 | r1 REJECT: 0/3 major/10 minor, cite fail 0.7%; majors: C1 has JSON routes, add item MIGRATION, missing schemas vehicle_part/placement/nested_mapgen/ter/furn |
 | A4.4 modding rev + critic r3 | todo | - | d4_r3 / critic_d4_r3 | A4.3 | skip if r2 PASS |
 | A2.1 mapgen analyst draft | done | (this) | analysis/d2_r1.md | S0.1 | Key: city streets hardcoded in overmap_city.cpp; 6x6 GLOBALLY_UNIQUE district special for pass 1; nhà ống via omt_stack+check_z; canals only in specials; bugs: regional_settings.cpp:809, overmap_city.cpp:268-277 infinite loop |
 | A2.2 mapgen critic r1 | done | - | critic_d2_r1.md | A2.1 | |
