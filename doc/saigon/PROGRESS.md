@@ -16,7 +16,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | S0.1 clone + branch | done | - | repo | - | |
 | S0.2 deps | done | - | - | - | Upstream is SDL3-only since 2026-08-11 (doc/c++/COMPILING.md). Homebrew on macOS 13 builds from source (hours), so it was aborted; nothing installed. Curses build needs no deps. |
 | S0.3a curses build (RelWithDebInfo equiv.) | done | - | ./cataclysm | S0.2 | `CXXFLAGS=-D_XOPEN_SOURCE_EXTENDED make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 SOUND=0 NCURSES_PREFIX=ncurses cataclysm` (macOS: wide-char define only set when LOCALIZE=1, and there is no libncursesw → upstream Makefile bug, candidate fork fix), log in ~/code/cdda-saigon-logs/. Used for --check-mods on every unit |
-| S0.3b cata_test | in-progress | - | tests/cata_test | S0.3a | `make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 tests` |
+| S0.3b cata_test | done | - | tests/cata_test | S0.3a | `make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 tests` |
 | S0.3c SDL3 tiles build | todo | - | cataclysm-tiles | - | needed only for V1 screenshots. Needs SDL3>=3.4 frameworks (libsdl-org dmg → ~/Library/Frameworks, FRAMEWORK=1) + glslang; build with BUILD_SHADER_FORMATS=spv and run with CATA_DISABLE_SPRITE_SHADERS=1 to avoid building shadercross. Ask the user before downloading |
 | S0.4 ledger + plan | done | - | doc/saigon/ | - | |
 | A4.1 modding analyst draft | done | (this) | analysis/d4_r1.md | S0.1 | Key: ITEM+subtypes; vehicle_group append-only → C1; --check-mods exit-code bug → C2; region feature_flag whitelist |
@@ -54,7 +54,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B4c heat-index C++ + test | todo | - | | A3 | only if A3 says needed |
 | B4.R review | todo | - | | B4a | |
 | B5a street food | done | 17739cf864 | items/food/street_food.json | B1 | 12 items. TODO B5d: whole durian + whole bánh chưng via recipes/disassembly; B8f: rau muống harvestable near canals; B5e/B10: patch dda mango description ('imported') |
-| B5b drinks + condiments | todo | - | | B5a | |
+| B5b drinks + condiments | done | edb5a24615 | items/food/drinks_condiments.json | B5a | 7 items; ice (đá) as a resource deferred: needs FROZEN-water handling (pass 2 / A3) |
 | B5c gear/clothing/tools | todo | - | | B1 | |
 | B5d recipes | todo | - | | B5a–c | |
 | B5e loot item_groups | todo | - | | B5a–c | |
