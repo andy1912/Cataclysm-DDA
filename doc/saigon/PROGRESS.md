@@ -64,8 +64,8 @@ Plan: see `doc/saigon/PLAN.md`.
 | B6c riverboats | done | 44b4673f75 | vehicles/*.json | B1 | sgn_veh_xuong (oars), sgn_veh_ghe (long-tail). TODO: boat_navigates_shallow_canal test before boats are placed in canals (B8f) |
 | B6d vehicle_groups/placement | todo | - | | B6a–c | |
 | B6.R review | todo | - | | B6d | |
-| B7a skill books | todo | - | | B1 | |
-| B7b fiction/sutras/newspapers + book_learn | todo | - | | B7a, B5d | |
+| B7a skill books | done | c56f35800e | items/books/skill_books.json | B1 | 7 books |
+| B7b fiction/sutras/newspapers + book_learn | done (book_learn moves to B5d) | dc907d64fb | items/books/fiction_media.json | B7a | snippet carriers sgn_newspaper/sgn_ward_notice/sgn_note_handwritten need spawning via B5e item_groups |
 | B7.R review | todo | - | | B7b | |
 | B8a shared palettes | todo | - | | B1 | |
 | B8b nhà ống | todo | - | | B8a | |
