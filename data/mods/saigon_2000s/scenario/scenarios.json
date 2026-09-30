@@ -10,6 +10,20 @@
     "flags": [ "CITY_START", "LONE_START" ],
     "start_of_cataclysm": { "hour": 22, "day": 1, "season": "winter", "year": 1 },
     "start_of_game": { "hour": 6, "day": 6, "season": "winter", "year": 1 },
-    "eoc": [ "SGN_EOC_intro" ]
+    "eoc": [ "SGN_EOC_intro" ],
+    "professions": [
+      "sgn_survivor",
+      "sgn_xe_om",
+      "sgn_street_vendor",
+      "sgn_market_trader",
+      "sgn_student",
+      "sgn_cong_an",
+      "sgn_nurse",
+      "sgn_construction",
+      "sgn_fisherman",
+      "sgn_mechanic",
+      "sgn_monk",
+      "sgn_veteran"
+    ]
   }
 ]

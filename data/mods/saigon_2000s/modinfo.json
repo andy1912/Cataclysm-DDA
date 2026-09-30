@@ -38,5 +38,17 @@
     "name": "LONGITUDE",
     "stype": "float",
     "value": 106.63
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "GENERIC_SCENARIO_ID",
+    "stype": "string_input",
+    "value": "sgn_saigon_2004"
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "GENERIC_PROFESSION_ID",
+    "stype": "string_input",
+    "value": "sgn_survivor"
   }
 ]
