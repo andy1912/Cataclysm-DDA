@@ -1,0 +1,118 @@
+[
+  {
+    "type": "weather_generator",
+    "id": "sgn_weather",
+    "copy-from": "default",
+    "//": "Saigon: ~27.5 C mean.  Winter/summer mods cancel the hardcoded +-12 K annual sinusoid; spring/autumn still ramp ~8 K until B4b (documented pass-1 defect).",
+    "base_temperature": 27.5,
+    "base_humidity": 72.0,
+    "base_pressure": 1009.0,
+    "base_wind": 4.5,
+    "base_wind_distrib_peaks": 30,
+    "base_wind_season_variation": 0,
+    "winter_temp_manual_mod": 11,
+    "summer_temp_manual_mod": -11,
+    "spring_temp_manual_mod": 0,
+    "autumn_temp_manual_mod": 0,
+    "winter_humidity_manual_mod": -5,
+    "spring_humidity_manual_mod": 0,
+    "summer_humidity_manual_mod": 8,
+    "autumn_humidity_manual_mod": 10,
+    "weather_black_list": [ "flurries", "snowing", "snowstorm" ]
+  },
+  {
+    "type": "jmath_function",
+    "id": "sgn_doy",
+    "num_args": 0,
+    "//": "Day of year; turn 0 is the spring equinox (~Mar 21).  Assumes the default SEASON_LENGTH of 91 days, which the mod must not change.",
+    "return": "time('now', 'unit':'days') % 364"
+  },
+  {
+    "type": "jmath_function",
+    "id": "sgn_wet",
+    "num_args": 0,
+    "//": "1 during the wet season, May 1 (doy 41) to Nov 30 (doy 254).",
+    "return": "(sgn_doy() >= 41) * (sgn_doy() <= 254)"
+  },
+  {
+    "type": "jmath_function",
+    "id": "sgn_afternoon",
+    "num_args": 0,
+    "return": "(time_since('midnight', 'unit':'hours') >= 13) * (time_since('midnight', 'unit':'hours') < 19)"
+  },
+  {
+    "id": "light_drizzle",
+    "type": "weather_type",
+    "copy-from": "light_drizzle",
+    "//": "Root of the rain chain: dry season almost never rains; wet-season afternoons do.",
+    "condition": {
+      "or": [
+        {
+          "and": [
+            { "math": [ "sgn_wet() == 1" ] },
+            { "math": [ "sgn_afternoon() == 1" ] },
+            { "math": [ "weather('humidity') >= 78" ] }
+          ]
+        },
+        { "and": [ { "math": [ "sgn_wet() == 1" ] }, { "math": [ "weather('humidity') >= 96" ] } ] },
+        { "and": [ { "math": [ "sgn_wet() == 0" ] }, { "math": [ "weather('humidity') >= 99" ] } ] }
+      ]
+    }
+  },
+  {
+    "id": "drizzle",
+    "type": "weather_type",
+    "copy-from": "drizzle",
+    "condition": {
+      "or": [
+        {
+          "and": [
+            { "math": [ "sgn_wet() == 1" ] },
+            { "math": [ "sgn_afternoon() == 1" ] },
+            { "math": [ "weather('humidity') >= 82" ] }
+          ]
+        },
+        { "math": [ "weather('humidity') >= 97" ] },
+        { "math": [ "weather('pressure') < 1000" ] }
+      ]
+    }
+  },
+  {
+    "id": "rain",
+    "type": "weather_type",
+    "copy-from": "rain",
+    "condition": {
+      "or": [
+        {
+          "and": [
+            { "math": [ "sgn_wet() == 1" ] },
+            { "math": [ "sgn_afternoon() == 1" ] },
+            { "math": [ "weather('humidity') >= 85" ] }
+          ]
+        },
+        { "math": [ "weather('humidity') >= 98" ] },
+        { "math": [ "weather('pressure') < 993" ] }
+      ]
+    }
+  },
+  {
+    "id": "thunder",
+    "type": "weather_type",
+    "copy-from": "thunder",
+    "//": "Monsoon afternoon thunderstorms; once chosen they last a while.",
+    "duration_min": "40 m",
+    "duration_max": "2 h",
+    "condition": {
+      "or": [
+        {
+          "and": [
+            { "math": [ "sgn_wet() == 1" ] },
+            { "math": [ "sgn_afternoon() == 1" ] },
+            { "math": [ "weather('humidity') >= 88" ] }
+          ]
+        },
+        { "math": [ "weather('pressure') < 996" ] }
+      ]
+    }
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "id": "sgn_saigon",
+    "copy-from": "default",
+    "type": "region_settings",
+    "weather": "sgn_weather",
+    "//": "B4a: climate only.  City pools and the SAIGON feature-flag whitelist arrive in B8g."
+  }
+]

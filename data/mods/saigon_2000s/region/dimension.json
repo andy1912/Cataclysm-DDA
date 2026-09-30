@@ -1,0 +1,13 @@
+[
+  {
+    "id": "default",
+    "type": "dimension",
+    "region_layout": "sgn_layout"
+  },
+  {
+    "id": "sgn_layout",
+    "type": "dimension_region_layout",
+    "generation_mode": "UNIFORM",
+    "uniform_region": "sgn_saigon"
+  }
+]
