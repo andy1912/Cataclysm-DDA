@@ -16,19 +16,19 @@ Plan: see `doc/saigon/PLAN.md`.
 | S0.1 clone + branch | done | - | repo | - | |
 | S0.2 deps | done | - | - | - | Upstream is SDL3-only since 2026-08-11 (doc/c++/COMPILING.md). Homebrew on macOS 13 builds from source (hours), so it was aborted; nothing installed. Curses build needs no deps. |
 | S0.3a curses build (RelWithDebInfo equiv.) | done | - | ./cataclysm | S0.2 | `CXXFLAGS=-D_XOPEN_SOURCE_EXTENDED make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 SOUND=0 NCURSES_PREFIX=ncurses cataclysm` (macOS: wide-char define only set when LOCALIZE=1, and there is no libncursesw → upstream Makefile bug, candidate fork fix), log in ~/code/cdda-saigon-logs/. Used for --check-mods on every unit |
-| S0.3b cata_test | done | - | tests/cata_test | S0.3a | `make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 tests` |
+| S0.3b cata_test | done | - | tests/cata_test | S0.3a | `CXXFLAGS=-D_XOPEN_SOURCE_EXTENDED make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 SOUND=0 NCURSES_PREFIX=ncurses tests`. Smoke: `./tests/cata_test --user-dir=<dir>/ --mods=dda,saigon_2000s "[force_load_game]"` → 1/1 passed; mod pack load 18 ms vs dda 20.9 s |
 | S0.3c SDL3 tiles build | todo | - | cataclysm-tiles | - | needed only for V1 screenshots. Needs SDL3>=3.4 frameworks (libsdl-org dmg → ~/Library/Frameworks, FRAMEWORK=1) + glslang; build with BUILD_SHADER_FORMATS=spv and run with CATA_DISABLE_SPRITE_SHADERS=1 to avoid building shadercross. Ask the user before downloading |
 | S0.4 ledger + plan | done | - | doc/saigon/ | - | |
 | A4.1 modding analyst draft | done | (this) | analysis/d4_r1.md | S0.1 | Key: ITEM+subtypes; vehicle_group append-only → C1; --check-mods exit-code bug → C2; region feature_flag whitelist |
 | A4.2 modding critic r1 | done | - | analysis/critic_d4_r1.md | A4.1 | |
 | A4.3 modding rev + critic r2 | done | - | d4_r2 / critic_d4_r2 | A4.2 | r1 REJECT: 0/3 major/10 minor, cite fail 0.7%; majors: C1 has JSON routes, add item MIGRATION, missing schemas vehicle_part/placement/nested_mapgen/ter/furn |
-| A4.4 modding rev + critic r3 | in-progress (d4_r3 written; critic r3 running) | - | d4_r3 / critic_d4_r3 | A4.3 | r2 REJECT 0/1 major/5 minor, cite fail 0%; major: C6 missed double options init (already fixed in 2efb03fe98); C2 is really rc 134 abort, not exit 0 |
+| A4.4 modding rev + critic r3 | done — PASS (0/0/4 minor, 0/627 cite fail); risk entries RR-D4-1..11 in critic_d4_r3.md | - | d4_r3 / critic_d4_r3 | A4.3 | r2 REJECT 0/1 major/5 minor, cite fail 0%; major: C6 missed double options init (already fixed in 2efb03fe98); C2 is really rc 134 abort, not exit 0 |
 | A2.1 mapgen analyst draft | done | (this) | analysis/d2_r1.md | S0.1 | Key: city streets hardcoded in overmap_city.cpp; 6x6 GLOBALLY_UNIQUE district special for pass 1; nhà ống via omt_stack+check_z; canals only in specials; bugs: regional_settings.cpp:809, overmap_city.cpp:268-277 infinite loop |
 | A2.2 mapgen critic r1 | done | - | critic_d2_r1.md | A2.1 | |
 | A2.3 mapgen rev + critic r2 | done | - | d2_r2 / critic_d2_r2 | A2.2 | r1 REJECT: 0 blocker/2 major/14 minor, cite fail 3.2%; majors: bike parking destroys shutters, roof connectivity |
 | A2.4 mapgen rev + critic r3 | done — PASS (0/0/9 minor, 0/633 cite fail) | - | d2_r3 / critic_d2_r3 | A2.3 | r2 REJECT 0/1 major/9 minor, cite fail 0.5%; major: roof-walk corner continuity (PREFIX ignores rotation) |
-| A3.1 climate/vehicle analyst draft | in-progress | - | analysis/d3_r1.md | S0.1 | |
-| A3.2 critic r1 | todo | - | | A3.1 | |
+| A3.1 climate/vehicle analyst draft | done | (this) | analysis/d3_r1.md | S0.1 | JSON can't hit Saigon temps (±12 K annual swing hardcoded weather_gen.cpp:38,42) → B4b GO; monsoon timing via weather_type time conditions OK in JSON; B4c GO (humidity-limited sweat); vehicles designed + load-tested |
+| A3.2 critic r1 | in-progress | - | | A3.1 | |
 | A3.3 rev + critic r2 | todo | - | | A3.2 | |
 | A3.4 rev + critic r3 | todo | - | | A3.3 | skip if r2 PASS |
 | A1.1 rendering analyst draft | todo | - | analysis/d1_r1.md | S0.1 | |
@@ -55,7 +55,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B4.R review | todo | - | | B4a | |
 | B5a street food | done | 17739cf864 | items/food/street_food.json | B1 | 12 items. TODO B5d: whole durian + whole bánh chưng via recipes/disassembly; B8f: rau muống harvestable near canals; B5e/B10: patch dda mango description ('imported') |
 | B5b drinks + condiments | done | edb5a24615 | items/food/drinks_condiments.json | B5a | 7 items; ice (đá) as a resource deferred: needs FROZEN-water handling (pass 2 / A3) |
-| B5c gear/clothing/tools | todo | - | | B1 | |
+| B5c gear/clothing/tools | done | 1cca7bcdcb | items/gear/gear.json | B1 | 9 items. Engine note: any worn RAINPROOF item blocks ~98% rain wetting (src/weather.cpp:395-396) → nón lá is SUN_GLASSES+WATER_FRIENDLY only; per-part rain cover = pass-2 (A3) |
 | B5d recipes | todo | - | | B5a–c | |
 | B5e loot item_groups | todo | - | | B5a–c | |
 | B5.R review | todo | - | | B5e | |
