@@ -54,7 +54,7 @@
             { "math": [ "weather('humidity') >= 78" ] }
           ]
         },
-        { "and": [ { "math": [ "sgn_wet() == 1" ] }, { "math": [ "weather('humidity') >= 96" ] } ] },
+        { "and": [ { "math": [ "sgn_wet() == 1" ] }, { "math": [ "weather('humidity') >= 98" ] } ] },
         { "and": [ { "math": [ "sgn_wet() == 0" ] }, { "math": [ "weather('humidity') >= 99" ] } ] }
       ]
     }
