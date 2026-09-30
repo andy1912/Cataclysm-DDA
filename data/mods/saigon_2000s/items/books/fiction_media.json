@@ -1,0 +1,86 @@
+[
+  {
+    "type": "ITEM",
+    "id": "sgn_newspaper",
+    "copy-from": "newest_newspaper",
+    "name": { "str": "Tin Nhanh Sài Gòn page" },
+    "description": "A page of the city's daily paper, printed in the last weeks before the presses stopped.  The headlines grow shorter and more frantic with every issue.",
+    "snippet_category": "sgn_newspaper"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ward_notice",
+    "copy-from": "newest_newspaper",
+    "name": { "str": "ward notice" },
+    "description": "A mimeographed notice from the ward People's Committee, the kind pasted on lamp posts and read aloud over the loa phường.",
+    "snippet_category": "sgn_loa_phuong"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_note_handwritten",
+    "copy-from": "newest_newspaper",
+    "name": { "str": "handwritten note" },
+    "description": "A note on a scrap of paper, the ink blurred by humidity.",
+    "snippet_category": "sgn_note"
+  },
+  {
+    "id": "sgn_book_wuxia",
+    "type": "ITEM",
+    "subtypes": [ "BOOK" ],
+    "copy-from": "book_fict_soft_pulp_tpl",
+    "name": { "str": "wuxia novel" },
+    "looks_like": "novel_pulp",
+    "color": "red",
+    "description": "A dog-eared volume of a serialized martial-arts epic, translated from Chinese and rented by the day from the book stall at the end of the hẻm.  Heroes, sects, poisoned needles and secret manuals.",
+    "time": "40 m",
+    "read_fun": 6,
+    "snippet_category": [
+      {
+        "id": "sgn_wuxia_1",
+        "text": "This is volume 7 of \"The Sword of the Nine Rivers\".  The hero has just learned that his master was the villain all along, again."
+      },
+      {
+        "id": "sgn_wuxia_2",
+        "text": "This is volume 2 of \"Legend of the Jade Phoenix Sect\".  Someone has underlined every description of a secret technique."
+      },
+      {
+        "id": "sgn_wuxia_3",
+        "text": "This is volume 11 of \"The Beggar King of the Southern Marshes\".  The rental stamp inside says it was due back three weeks ago."
+      }
+    ]
+  },
+  {
+    "id": "sgn_book_sutra",
+    "type": "ITEM",
+    "subtypes": [ "BOOK" ],
+    "copy-from": "holybook_abstract",
+    "name": { "str": "sutra booklet" },
+    "weight": "120 g",
+    "volume": "250 ml",
+    "description": "A small booklet of Buddhist sutras and daily chants, printed by a pagoda and given away free to worshippers.  The pages are soft from handling and smell of incense."
+  },
+  {
+    "id": "sgn_book_almanac",
+    "type": "ITEM",
+    "subtypes": [ "BOOK" ],
+    "copy-from": "book_nonf_soft_tpl",
+    "name": { "str": "lunar almanac" },
+    "color": "yellow",
+    "description": "Lịch vạn niên: a perpetual lunar calendar with lucky and unlucky days, auspicious hours for weddings and funerals, zodiac readings and the dates of every festival.  Your grandmother never made a decision without it.",
+    "time": "10 m",
+    "read_fun": 2,
+    "intelligence": 4
+  },
+  {
+    "id": "sgn_karaoke_songbook",
+    "type": "ITEM",
+    "subtypes": [ "BOOK" ],
+    "copy-from": "book_nonf_soft_tpl",
+    "name": { "str": "karaoke songbook" },
+    "color": "pink",
+    "description": "A thick laminated binder listing thousands of song numbers for a karaoke machine: bolero ballads, revolutionary songs, Hong Kong pop and a few English hits.  Flicking through it brings back loud, happy nights.",
+    "time": "10 m",
+    "read_fun": 3,
+    "intelligence": 0
+  }
+]
