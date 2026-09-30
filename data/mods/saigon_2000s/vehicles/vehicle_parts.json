@@ -51,5 +51,22 @@
     "size": "15 L",
     "extend": { "flags": [ "CARGO" ] },
     "description": "A long padded pillion; the rear half doubles as a parcel rack.  Whole families ride on it."
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_oars",
+    "copy-from": "hand_paddles",
+    "name": { "str": "oars" },
+    "power": "900 W",
+    "muscle_power_factor": 45,
+    "description": "A pair of long wooden oars worked standing up, facing forward, in the southern style."
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_longtail",
+    "copy-from": "engine_1cyl_large",
+    "name": { "str": "long-tail engine" },
+    "extend": { "flags": [ "PROTRUSION" ] },
+    "description": "A car or pump engine bolted to a pivot on the stern, driving a propeller on the end of a long shaft.  Loud, crude and able to push a loaded boat through a weed-choked canal."
   }
 ]
