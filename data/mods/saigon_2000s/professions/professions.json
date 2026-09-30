@@ -1,0 +1,146 @@
+[
+  {
+    "type": "profession",
+    "id": "sgn_xe_om",
+    "name": "Xe ôm driver",
+    "description": "For ten years you waited on the same street corner with your motorbike, a spare helmet, and a folded newspaper, carrying anyone anywhere for a few thousand đồng.  You know every hẻm in the district and which ones dead-end.  Your bike is parked outside, if nobody has taken it.",
+    "//": "Kit uses dda placeholders until B5c/B6a: flip_flops -> dép tổ ong, helmet_motor -> nón bảo hiểm, scooter -> sgn underbone.",
+    "npc_background": "BG_survival_story_WORKER_SELFEMP",
+    "points": 2,
+    "skills": [ { "name": "driving", "level": 3 }, { "name": "survival", "level": 1 } ],
+    "proficiencies": [ "prof_driver" ],
+    "vehicle": "scooter",
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "tshirt" },
+          { "item": "pants_cargo" },
+          { "item": "flip_flops" },
+          { "item": "helmet_motor" },
+          { "item": "poncho", "custom-flags": [ "no_auto_equip" ] },
+          { "item": "newest_newspaper" },
+          { "group": "charged_cell_phone" },
+          { "group": "starter_wallet_full" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sgn_street_vendor",
+    "name": "Street-food vendor",
+    "description": "Every morning at four you pushed your cart to the same patch of sidewalk and fed half the ward before they went to work.  You can cook anything over a single burner, and you know how long food keeps in this heat, which is not long.",
+    "//": "portable_stove/pot are dda; swap to sgn gas stove and phin/soup gear in B5c.",
+    "npc_background": "BG_survival_story_WORKER_SELFEMP",
+    "points": 2,
+    "skills": [ { "name": "cooking", "level": 3 }, { "name": "speech", "level": 1 } ],
+    "proficiencies": [ "prof_food_prep", "prof_knife_skills" ],
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "tshirt" },
+          { "item": "pants_cargo" },
+          { "item": "flip_flops" },
+          { "item": "straw_hat" },
+          { "item": "apron_cotton", "variant": "generic_apron_cotton" },
+          { "item": "portable_stove" },
+          { "item": "pot" },
+          { "item": "chopsticks" },
+          { "item": "bowl_plastic", "count": 2 },
+          { "item": "knife_cleaver" },
+          { "item": "rice_cooked", "count": 2 },
+          { "group": "starter_wallet_full" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sgn_market_trader",
+    "name": "Market trader",
+    "description": "You held the same stall in the chợ for twenty years, and your mother held it before you.  You can haggle over the price of a single chili, spot a counterfeit bill across the aisle, and remember who owes you money.  Now nobody is buying, but everybody still needs something.",
+    "npc_background": "BG_survival_story_WORKER_COMMERCIAL",
+    "points": 2,
+    "skills": [ { "name": "speech", "level": 3 } ],
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "longshirt" },
+          { "item": "pants_cargo" },
+          { "item": "flip_flops" },
+          { "item": "straw_hat" },
+          { "item": "backpack" },
+          { "item": "jerrycan" },
+          { "item": "wristwatch" },
+          { "group": "charged_cell_phone" },
+          { "group": "starter_wallet_full" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sgn_student",
+    "name": "University student",
+    "description": "You came up from the provinces to study in the city, renting a bed in a crowded room at the end of a hẻm and cycling to lectures.  You spent more nights in the internet café than in the library.  Your family is three hundred kilometers away, and the phone lines are dead.",
+    "npc_background": "BG_survival_story_TEENAGER",
+    "points": 0,
+    "skills": [ { "name": "computer", "level": 2 }, { "name": "firstaid", "level": 1 } ],
+    "vehicle": "bicycle",
+    "age_lower": 18,
+    "age_upper": 24,
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "tshirt" },
+          { "item": "jeans" },
+          { "item": "flip_flops" },
+          { "item": "backpack" },
+          { "item": "textbook_speech" },
+          { "item": "howto_computer" },
+          { "item": "story_book" },
+          { "group": "charged_cell_phone" },
+          { "group": "starter_wallet_full" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sgn_cong_an",
+    "name": "Ward police officer",
+    "description": "As a công an phường you spent your days settling neighbors' disputes, checking household registrations, and directing traffic around funerals.  When the fever came you enforced the quarantine door to door.  You never fired your service weapon; you are not even sure it was issued with enough ammunition.",
+    "//": "Ward police in 2004 carried batons and radios; firearms are rare and poorly supplied, so no pistol at start.",
+    "npc_background": "BG_survival_story_POLICE",
+    "points": 3,
+    "skills": [ { "name": "melee", "level": 2 }, { "name": "bashing", "level": 2 }, { "name": "speech", "level": 1 } ],
+    "proficiencies": [ "prof_batons_familiar" ],
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "longshirt" },
+          { "item": "pants_cargo" },
+          { "item": "socks" },
+          { "item": "boots" },
+          { "item": "police_belt" },
+          { "item": "baton" },
+          { "item": "whistle" },
+          { "item": "wristwatch" },
+          { "item": "helmet_motor" },
+          { "group": "charged_two_way_radio" },
+          { "group": "starter_wallet_full" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  }
+]
