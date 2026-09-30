@@ -16,7 +16,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | S0.1 clone + branch | done | - | repo | - | |
 | S0.2 deps | done | - | - | - | Upstream is SDL3-only since 2026-08-11 (doc/c++/COMPILING.md). Homebrew on macOS 13 builds from source (hours), so it was aborted; nothing installed. Curses build needs no deps. |
 | S0.3a curses build (RelWithDebInfo equiv.) | done | - | ./cataclysm | S0.2 | `CXXFLAGS=-D_XOPEN_SOURCE_EXTENDED make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 SOUND=0 NCURSES_PREFIX=ncurses cataclysm` (macOS: wide-char define only set when LOCALIZE=1, and there is no libncursesw → upstream Makefile bug, candidate fork fix), log in ~/code/cdda-saigon-logs/. Used for --check-mods on every unit |
-| S0.3b cata_test | todo | - | tests/cata_test | S0.3a | `make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 tests` |
+| S0.3b cata_test | in-progress | - | tests/cata_test | S0.3a | `make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 tests` |
 | S0.3c SDL3 tiles build | todo | - | cataclysm-tiles | - | needed only for V1 screenshots. Needs SDL3>=3.4 frameworks (libsdl-org dmg → ~/Library/Frameworks, FRAMEWORK=1) + glslang; build with BUILD_SHADER_FORMATS=spv and run with CATA_DISABLE_SPRITE_SHADERS=1 to avoid building shadercross. Ask the user before downloading |
 | S0.4 ledger + plan | done | - | doc/saigon/ | - | |
 | A4.1 modding analyst draft | done | (this) | analysis/d4_r1.md | S0.1 | Key: ITEM+subtypes; vehicle_group append-only → C1; --check-mods exit-code bug → C2; region feature_flag whitelist |
@@ -26,7 +26,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | A2.1 mapgen analyst draft | done | (this) | analysis/d2_r1.md | S0.1 | Key: city streets hardcoded in overmap_city.cpp; 6x6 GLOBALLY_UNIQUE district special for pass 1; nhà ống via omt_stack+check_z; canals only in specials; bugs: regional_settings.cpp:809, overmap_city.cpp:268-277 infinite loop |
 | A2.2 mapgen critic r1 | done | - | critic_d2_r1.md | A2.1 | |
 | A2.3 mapgen rev + critic r2 | done | - | d2_r2 / critic_d2_r2 | A2.2 | r1 REJECT: 0 blocker/2 major/14 minor, cite fail 3.2%; majors: bike parking destroys shutters, roof connectivity |
-| A2.4 mapgen rev + critic r3 | in-progress | - | d2_r3 / critic_d2_r3 | A2.3 | r2 REJECT 0/1 major/9 minor, cite fail 0.5%; major: roof-walk corner continuity (PREFIX ignores rotation) |
+| A2.4 mapgen rev + critic r3 | in-progress (d2_r3 written; critic r3 running) | - | d2_r3 / critic_d2_r3 | A2.3 | r2 REJECT 0/1 major/9 minor, cite fail 0.5%; major: roof-walk corner continuity (PREFIX ignores rotation) |
 | A3.1 climate/vehicle analyst draft | todo | - | analysis/d3_r1.md | S0.1 | |
 | A3.2 critic r1 | todo | - | | A3.1 | |
 | A3.3 rev + critic r2 | todo | - | | A3.2 | |
@@ -42,7 +42,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | A6.4 citation check | todo | - | tools script | A6.3 | zero misses |
 | B0 content bible | done | - | CONTENT_BIBLE.md | - | |
 | C6 curses test-mode fixes | done | (this) | src/game.cpp, src/main.cpp, tools/saigon/check_mod.sh | - | (a) init_ui looped forever in ensure_term_size (stdscr uninitialized in test_mode); (b) non-TILES --check-mods ran options init() twice → ~106k option errors, exit 1. Baseline `check_mod.sh dda` = OK in ~60 s |
-| B1 mod skeleton | todo | - | data/mods/saigon_2000s | A4, A2 | |
+| B1 mod skeleton | done | 20f1e7d394 | data/mods/saigon_2000s/modinfo.json | A4, A2 | check_mod.sh OK; negative control (typo'd key) correctly FAILs. GENERIC_*_ID options deferred to B2/B3 |
 | B2a scenario + start locations | todo | - | | B1 | |
 | B2b backstory/intro EOC + snippets | todo | - | | B2a | |
 | B2.R review | todo | - | review/B2.md | B2b | |
@@ -80,3 +80,6 @@ Plan: see `doc/saigon/PLAN.md`.
 | B9.R review | todo | - | | B9b | |
 | B10 de-Americanize blacklists | todo | - | | B8g | |
 | V1 playtest + screenshots | todo | - | | all B | |
+
+## Naming note
+The domain reports each number their own C++ seams. Modding (d4) uses C1 = vehicle_group override, C2 = check-mods exit code, C6 = curses test mode. Mapgen (d2_r3) proposes its own "C1" rotation-aware neighbour check, tracked here as **M-C1** to avoid a clash.
