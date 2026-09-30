@@ -43,7 +43,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B0 content bible | done | - | CONTENT_BIBLE.md | - | |
 | C6 curses test-mode fixes | done | (this) | src/game.cpp, src/main.cpp, tools/saigon/check_mod.sh | - | (a) init_ui looped forever in ensure_term_size (stdscr uninitialized in test_mode); (b) non-TILES --check-mods ran options init() twice → ~106k option errors, exit 1. Baseline `check_mod.sh dda` = OK in ~60 s |
 | B1 mod skeleton | done | 20f1e7d394 | data/mods/saigon_2000s/modinfo.json | A4, A2 | check_mod.sh OK; negative control (typo'd key) correctly FAILs. GENERIC_*_ID options deferred to B2/B3 |
-| B2a scenario + start locations | todo | - | | B1 | |
+| B2a scenario + start locations | done | dc99fe7e0c | scenario/*.json | B1 | Start locs are PLACEHOLDERS (copy-from sloc_house / sloc_grocery_store): retarget in B8b/B8d. Starts in CDDA 'winter' (= Dec dry season), so B4a must route the Saigon region + weather or the player starts in snow |
 | B2b backstory/intro EOC + snippets | todo | - | | B2a | |
 | B2.R review | todo | - | review/B2.md | B2b | |
 | B3a professions 1–5 | todo | - | | B1 | |
