@@ -53,7 +53,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B4b monsoon C++ + test | todo | - | | A3, B4a | only if A3 says JSON is insufficient |
 | B4c heat-index C++ + test | todo | - | | A3 | only if A3 says needed |
 | B4.R review | todo | - | | B4a | |
-| B5a street food | todo | - | | B1 | |
+| B5a street food | done | 17739cf864 | items/food/street_food.json | B1 | 12 items. TODO B5d: whole durian + whole bánh chưng via recipes/disassembly; B8f: rau muống harvestable near canals; B5e/B10: patch dda mango description ('imported') |
 | B5b drinks + condiments | todo | - | | B5a | |
 | B5c gear/clothing/tools | todo | - | | B1 | |
 | B5d recipes | todo | - | | B5a–c | |
