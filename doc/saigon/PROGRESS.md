@@ -49,7 +49,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B3a professions 1–5 | done | c690cd630b | professions/professions.json | B1 | sgn_xe_om, sgn_street_vendor, sgn_market_trader, sgn_student, sgn_cong_an. PLACEHOLDER dda items (flip_flops, helmet_motor, portable_stove, straw_hat) and vehicles (scooter, bicycle); swap after B5c/B6a |
 | B3b professions 6–11 | done | ff710000cd | professions/professions.json, modinfo GENERIC_*_ID | B3a | + sgn_survivor generic; scenario profession whitelist |
 | B3.R review | todo | - | | B3b | |
-| B4a weather JSON | todo | - | | B1 | lat 10.82 / lon 106.63 via EXTERNAL_OPTION |
+| B4a weather JSON | done | b811a25b42 | region/*.json | B1 | dimension default→sgn_saigon; sgn_weather; monsoon gates on rain chain. Test tests/saigon_weather_test.cpp [saigon] pending run. Pass-1 defect: ±8 K spring/autumn ramps until B4b |
 | B4b monsoon C++ + test | todo | - | | A3, B4a | only if A3 says JSON is insufficient |
 | B4c heat-index C++ + test | todo | - | | A3 | only if A3 says needed |
 | B4.R review | todo | - | | B4a | |
@@ -59,7 +59,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B5d recipes | todo | - | | B5a–c | |
 | B5e loot item_groups | todo | - | | B5a–c | |
 | B5.R review | todo | - | | B5e | |
-| B6a motorbike + scooter | todo | - | | B1 | |
+| B6a motorbike + scooter | done | 27be0aaa7d | vehicles/*.json | B1 | sgn_veh_underbone (3 tiles), sgn_veh_xe_tay_ga; professions switched to sgn gear. TODO: drag/efficiency tuning test (d3 §5.b step 2) |
 | B6b ba gác + xích lô + bicycle | todo | - | | B6a | |
 | B6c riverboats | todo | - | | B1 | |
 | B6d vehicle_groups/placement | todo | - | | B6a–c | |
