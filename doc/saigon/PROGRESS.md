@@ -8,7 +8,7 @@ Plan: see `doc/saigon/PLAN.md`.
 1. Read this file, then run `git log --oneline -10` and `git status`.
 2. If a unit is marked `in-progress`, check `git diff`. Either finish that unit or revert its partial changes.
 3. Pick the first `todo` unit whose dependencies are `done`. Mark it `in-progress`, do the work, mark it `done` with the commit SHA, and commit with the message `saigon: <ID> <summary>`.
-4. Build (incremental): `CXXFLAGS=-D_XOPEN_SOURCE_EXTENDED make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 SOUND=0 NCURSES_PREFIX=ncurses cataclysm`. Validate the mod: `./cataclysm --check-mods saigon_2000s 2>&1 | grep -E 'Error loading data|DEBUG'` (exit code is unreliable until C2 lands).
+4. Build (incremental): `CXXFLAGS=-D_XOPEN_SOURCE_EXTENDED make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 SOUND=0 NCURSES_PREFIX=ncurses cataclysm`. Validate the mod: `tools/saigon/check_mod.sh saigon_2000s` (checks exit code, 'Error loading data', and debug.log ERROR/WARNING lines).
 
 ## Units
 | ID | Status | Commit | Output | Depends | Next action / notes |
@@ -41,7 +41,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | A6.3 TDD roadmap + risks | todo | - | TDD.md | A6.2 | |
 | A6.4 citation check | todo | - | tools script | A6.3 | zero misses |
 | B0 content bible | done | - | CONTENT_BIBLE.md | - | |
-| C6 test-mode term-size hang fix | in-progress | - | src/game.cpp init_ui | - | curses --check-mods looped forever in ensure_term_size (stdscr uninitialized in test_mode) |
+| C6 curses test-mode fixes | done | (this) | src/game.cpp, src/main.cpp, tools/saigon/check_mod.sh | - | (a) init_ui looped forever in ensure_term_size (stdscr uninitialized in test_mode); (b) non-TILES --check-mods ran options init() twice → ~106k option errors, exit 1. Baseline `check_mod.sh dda` = OK in ~60 s |
 | B1 mod skeleton | todo | - | data/mods/saigon_2000s | A4, A2 | |
 | B2a scenario + start locations | todo | - | | B1 | |
 | B2b backstory/intro EOC + snippets | todo | - | | B2a | |
