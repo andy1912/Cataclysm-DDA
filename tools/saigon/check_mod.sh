@@ -8,7 +8,7 @@ cd "$(dirname "$0")/../.."
 mods=("$@")
 [ ${#mods[@]} -eq 0 ] && mods=(saigon_2000s)
 ud="${SAIGON_USERDIR:-$HOME/code/cdda-saigon-logs/userdir}"
-mkdir -p "$ud/config"
+mkdir -p "$ud/config" "$ud/save"
 rm -f "$ud/config/debug.log"
 out=$(./cataclysm --userdir "$ud/" --check-mods "${mods[@]}" < /dev/null 2>&1)
 rc=$?
