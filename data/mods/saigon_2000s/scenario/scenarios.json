@@ -1,0 +1,14 @@
+[
+  {
+    "type": "scenario",
+    "id": "sgn_saigon_2004",
+    "name": "Sài Gòn, 2004",
+    "points": 0,
+    "description": "The dry season was supposed to be quiet.  Since October the loa phường have been repeating the same notice about the \"sốt lạ\", the strange fever that the evening news keeps calling a new bird flu.  Wards were sealed, markets were hosed down with chlorine, and the airport stopped taking flights.  Five days ago the fever's dead stopped staying dead.  Now the hẻm outside are silent except for dripping air conditioners and the dragging of sandals, and the broadcasts have stopped.  You are alone, the heat is rising, and the city of eight million people has become a maze.",
+    "start_name": "Nhà ống",
+    "allowed_locs": [ "sgn_sloc_nha_ong", "sgn_sloc_nha_ong_shuttered", "sgn_sloc_cho" ],
+    "flags": [ "CITY_START", "LONE_START" ],
+    "start_of_cataclysm": { "hour": 22, "day": 1, "season": "winter", "year": 1 },
+    "start_of_game": { "hour": 6, "day": 6, "season": "winter", "year": 1 }
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "type": "start_location",
+    "id": "sgn_sloc_nha_ong",
+    "//": "B2a placeholder terrain (dda houses); retargeted to sgn nhà ống upper floors in B8b.",
+    "copy-from": "sloc_house",
+    "name": "Nhà ống (shophouse home)"
+  },
+  {
+    "type": "start_location",
+    "id": "sgn_sloc_nha_ong_shuttered",
+    "//": "B2a placeholder terrain; retargeted in B8b.  The iron gate (cửa sắt kéo) is pulled shut.",
+    "copy-from": "sloc_house",
+    "name": "Nhà ống, iron gate pulled shut",
+    "extend": { "flags": [ "BOARDED" ] }
+  },
+  {
+    "type": "start_location",
+    "id": "sgn_sloc_cho",
+    "//": "B2a placeholder terrain (dda grocery); retargeted to the chợ wet market in B8d.",
+    "copy-from": "sloc_grocery_store",
+    "name": "Chợ (wet market stall)"
+  }
+]
