@@ -28,8 +28,8 @@ Plan: see `doc/saigon/PLAN.md`.
 | A2.3 mapgen rev + critic r2 | done | - | d2_r2 / critic_d2_r2 | A2.2 | r1 REJECT: 0 blocker/2 major/14 minor, cite fail 3.2%; majors: bike parking destroys shutters, roof connectivity |
 | A2.4 mapgen rev + critic r3 | done — PASS (0/0/9 minor, 0/633 cite fail) | - | d2_r3 / critic_d2_r3 | A2.3 | r2 REJECT 0/1 major/9 minor, cite fail 0.5%; major: roof-walk corner continuity (PREFIX ignores rotation) |
 | A3.1 climate/vehicle analyst draft | done | (this) | analysis/d3_r1.md | S0.1 | JSON can't hit Saigon temps (±12 K annual swing hardcoded weather_gen.cpp:38,42) → B4b GO; monsoon timing via weather_type time conditions OK in JSON; B4c GO (humidity-limited sweat); vehicles designed + load-tested |
-| A3.2 critic r1 | in-progress | - | | A3.1 | |
-| A3.3 rev + critic r2 | todo | - | | A3.2 | |
+| A3.2 critic r1 | done | - | | A3.1 | |
+| A3.3 rev + critic r2 | in-progress | - | d3_r2 / critic_d3_r2 | A3.2 | r1 REJECT 0/9 major/13 minor, cite fail 0%; B4b must precede B4c; flood EOC never deactivates; water temp hardcoded; funnel int truncation; horde mostly awake; ghe/xích lô are reskins (label + tie to P2) |
 | A3.4 rev + critic r3 | todo | - | | A3.3 | skip if r2 PASS |
 | A1.1 rendering analyst draft | todo | - | analysis/d1_r1.md | S0.1 | |
 | A1.2 critic r1 | todo | - | | A1.1 | |
@@ -56,7 +56,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B5a street food | done | 17739cf864 | items/food/street_food.json | B1 | 12 items. TODO B5d: whole durian + whole bánh chưng via recipes/disassembly; B8f: rau muống harvestable near canals; B5e/B10: patch dda mango description ('imported') |
 | B5b drinks + condiments | done | edb5a24615 | items/food/drinks_condiments.json | B5a | 7 items; ice (đá) as a resource deferred: needs FROZEN-water handling (pass 2 / A3) |
 | B5c gear/clothing/tools | done | 1cca7bcdcb | items/gear/gear.json | B1 | 9 items. Engine note: any worn RAINPROOF item blocks ~98% rain wetting (src/weather.cpp:395-396) → nón lá is SUN_GLASSES+WATER_FRIENDLY only; per-part rain cover = pass-2 (A3) |
-| B5d recipes | todo | - | | B5a–c | |
+| B5d recipes | done | 729fd8a7a0 | recipes/*.json | B5a–c | 6 food + 2 vehicle-part recipes with book_learn. TODO: whole durian/bánh chưng disassembly; nước mắm fermentation |
 | B5e loot item_groups | todo | - | | B5a–c | |
 | B5.R review | todo | - | | B5e | |
 | B6a motorbike + scooter | done | 27be0aaa7d | vehicles/*.json | B1 | sgn_veh_underbone (3 tiles), sgn_veh_xe_tay_ga; professions switched to sgn gear. TODO: drag/efficiency tuning test (d3 §5.b step 2) |
