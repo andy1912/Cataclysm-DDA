@@ -1,0 +1,240 @@
+[
+  {
+    "type": "item_group",
+    "id": "default_zombie_clothes",
+    "subtype": "collection",
+    "//": "Saigon replacement (same id, hardcoded in src/map.cpp): tropical clothes, sandals, helmets and bird-flu masks instead of New England coats.",
+    "entries": [
+      {
+        "distribution": [
+          {
+            "collection": [
+              { "group": "male_underwear", "prob": 100, "damage": [ 1, 4 ] },
+              {
+                "distribution": [
+                  { "item": "tshirt", "prob": 40, "damage": [ 1, 4 ] },
+                  { "item": "longshirt", "prob": 30, "damage": [ 1, 4 ] },
+                  { "item": "sgn_ao_ba_ba", "prob": 20, "damage": [ 1, 4 ] },
+                  { "item": "tank_top", "prob": 10, "damage": [ 1, 4 ] }
+                ]
+              },
+              {
+                "distribution": [
+                  { "item": "pants_cargo", "prob": 40, "damage": [ 1, 4 ] },
+                  { "item": "jeans", "prob": 30, "damage": [ 1, 4 ] },
+                  { "item": "shorts", "prob": 30, "damage": [ 1, 4 ] }
+                ]
+              }
+            ],
+            "prob": 50
+          },
+          {
+            "collection": [
+              { "group": "female_underwear", "prob": 100, "damage": [ 1, 4 ] },
+              {
+                "distribution": [
+                  { "item": "tshirt", "prob": 30, "damage": [ 1, 4 ] },
+                  { "item": "longshirt", "prob": 30, "damage": [ 1, 4 ] },
+                  { "item": "sgn_ao_ba_ba", "prob": 40, "damage": [ 1, 4 ] }
+                ]
+              },
+              {
+                "distribution": [
+                  { "item": "pants_cargo", "prob": 40, "damage": [ 1, 4 ] },
+                  { "item": "jeans", "prob": 40, "damage": [ 1, 4 ] },
+                  { "item": "shorts", "prob": 20, "damage": [ 1, 4 ] }
+                ]
+              }
+            ],
+            "prob": 50
+          }
+        ]
+      },
+      {
+        "distribution": [
+          { "item": "sgn_dep_to_ong", "prob": 45, "damage": [ 1, 4 ] },
+          { "item": "flip_flops", "prob": 25, "damage": [ 1, 4 ] },
+          { "item": "sneakers", "prob": 25, "damage": [ 1, 4 ] },
+          { "item": "boots", "prob": 5, "damage": [ 1, 4 ] }
+        ]
+      },
+      { "item": "sgn_non_bao_hiem", "prob": 35, "damage": [ 1, 4 ] },
+      { "item": "sgn_non_la", "prob": 8, "damage": [ 1, 4 ] },
+      { "item": "mask_dust", "prob": 30, "damage": [ 1, 4 ] },
+      { "item": "sgn_ong_tay_chong_nang", "prob": 12, "damage": [ 1, 4 ] },
+      { "item": "sgn_ao_mua_canh_doi", "prob": 8, "damage": [ 1, 4 ] },
+      { "item": "ring_wedding", "prob": 25, "damage": [ 1, 4 ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_shophouse_kitchen",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "dry_rice", "prob": 40 },
+      { "item": "sgn_nuoc_mam", "prob": 40 },
+      { "item": "sgn_mi_goi", "prob": 50 },
+      { "item": "sgn_banh_pho", "prob": 20 },
+      { "item": "sugar", "prob": 20 },
+      { "item": "salt", "prob": 20 },
+      { "item": "tea_raw", "prob": 20 },
+      { "item": "coffee_raw", "prob": 20 },
+      { "item": "con_milk", "prob": 15 },
+      { "item": "sgn_tuong_ot", "prob": 20 },
+      { "item": "egg_chicken", "prob": 10 },
+      { "item": "chopsticks", "prob": 30 },
+      { "item": "bowl_plastic", "prob": 30 },
+      { "item": "pot", "prob": 15 },
+      { "item": "sgn_bep_ga_mini", "prob": 8, "ammo-item": "butane", "charges": [ 20, 150 ] },
+      { "item": "butane_can", "prob": 15 },
+      { "item": "sgn_ruou_de", "prob": 8 },
+      { "item": "sgn_banh_chung", "prob": 5 }
+    ],
+    "//": "Kitchen and pantry of a nhà ống home."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_shophouse_living",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_book_almanac", "prob": 10 },
+      { "item": "sgn_karaoke_songbook", "prob": 6 },
+      { "item": "sgn_book_wuxia", "prob": 15 },
+      { "item": "sgn_newspaper", "prob": 25 },
+      { "item": "sgn_ward_notice", "prob": 15 },
+      { "item": "sgn_note_handwritten", "prob": 12 },
+      { "item": "incense", "prob": 20 },
+      { "item": "candle", "prob": 15 },
+      { "item": "matches", "prob": 15 },
+      { "item": "lighter", "prob": 15 },
+      { "item": "sgn_non_la", "prob": 8 },
+      { "item": "sgn_non_bao_hiem", "prob": 15 },
+      { "item": "sgn_ao_mua_canh_doi", "prob": 15 },
+      { "item": "sgn_dep_to_ong", "prob": 20 },
+      { "item": "sgn_ao_ba_ba", "prob": 10 },
+      { "item": "mask_dust", "prob": 15 },
+      { "item": "sgn_book_southern_cooking", "prob": 4 },
+      { "item": "sgn_book_tailoring", "prob": 3 },
+      { "item": "sgn_book_tv_repair", "prob": 2 },
+      { "item": "cash_card", "prob": 5 }
+    ],
+    "//": "Living room, altar and bedrooms of a nhà ống home."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_cho_stall_produce",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_rau_muong", "prob": 40 },
+      { "item": "mango", "prob": 25 },
+      { "item": "papaya", "prob": 20 },
+      { "item": "banana", "prob": 25 },
+      { "item": "coconut", "prob": 15 },
+      { "item": "sgn_durian", "prob": 8 },
+      { "item": "sgn_mit", "prob": 10 },
+      { "item": "sgn_thanh_long", "prob": 15 },
+      { "item": "dry_rice", "prob": 25 },
+      { "item": "egg_chicken", "prob": 15 },
+      { "item": "sgn_nuoc_mam", "prob": 15 },
+      { "item": "sgn_thung_xop", "prob": 10 }
+    ],
+    "//": "Wet-market produce stall."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_cho_stall_meat_fish",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "fish", "prob": 50 },
+      { "item": "meat", "prob": 40 },
+      { "item": "sgn_thung_xop", "prob": 20 },
+      { "item": "sgn_dao_rua", "prob": 8 },
+      { "item": "knife_cleaver", "prob": 12 },
+      { "item": "salt", "prob": 15 }
+    ],
+    "//": "Wet-market fish and meat stall; the heat spoils everything fast."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_street_cart",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_banh_mi_bread", "prob": 30 },
+      { "item": "sgn_banh_mi_thit", "prob": 15 },
+      { "item": "sgn_banh_pho", "prob": 15 },
+      { "item": "sgn_bep_ga_mini", "prob": 15, "ammo-item": "butane", "charges": [ 20, 150 ] },
+      { "item": "butane_can", "prob": 15 },
+      { "item": "pot", "prob": 15 },
+      { "item": "bowl_plastic", "prob": 25 },
+      { "item": "chopsticks", "prob": 25 },
+      { "item": "sgn_nuoc_mam", "prob": 15 },
+      { "item": "sgn_tuong_ot", "prob": 20 },
+      { "item": "sgn_che", "prob": 8 }
+    ],
+    "//": "Street-food cart or sidewalk stall."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_cafe",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "coffee_raw", "prob": 30 },
+      { "item": "con_milk", "prob": 25 },
+      { "item": "tea_raw", "prob": 20 },
+      { "item": "sugar", "prob": 15 },
+      { "item": "sgn_newspaper", "prob": 20 },
+      { "item": "sgn_ca_phe_sua_da", "prob": 8 },
+      { "item": "sgn_tra_da", "prob": 10 },
+      { "item": "sgn_bia_hoi", "prob": 10 },
+      { "item": "sgn_karaoke_songbook", "prob": 3 }
+    ],
+    "//": "Sidewalk café (cà phê vỉa hè)."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_moto_shop",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "wrench", "prob": 20 },
+      { "item": "screwdriver", "prob": 20 },
+      { "item": "pliers", "prob": 15 },
+      { "item": "sgn_engine_110cc_item", "prob": 4 },
+      { "item": "sgn_moto_tank_4l", "prob": 6 },
+      { "item": "sgn_book_moto_repair", "prob": 8 },
+      { "item": "jerrycan", "prob": 15 },
+      { "item": "gasoline", "prob": 10, "container-item": "jerrycan", "charges": [ 1000, 10000 ] },
+      { "item": "sgn_non_bao_hiem", "prob": 15 },
+      { "item": "sgn_ao_mua_canh_doi", "prob": 10 }
+    ],
+    "//": "Sidewalk motorbike repair shop."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_pharmacy",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "aspirin", "prob": 30 },
+      { "item": "adhesive_bandages", "prob": 30 },
+      { "item": "disinfectant", "prob": 20 },
+      { "item": "mask_dust", "prob": 30 },
+      { "item": "sgn_book_nursing", "prob": 4 },
+      { "item": "gloves_medical", "prob": 10 }
+    ],
+    "//": "Nhà thuốc (pharmacy) shelves."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_pagoda",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "incense", "prob": 40 },
+      { "item": "sgn_book_sutra", "prob": 25 },
+      { "item": "bead_necklace", "prob": 10 },
+      { "item": "candle", "prob": 20 },
+      { "item": "dry_rice", "prob": 15 },
+      { "item": "sgn_banh_chung", "prob": 5 },
+      { "item": "robe", "prob": 8 }
+    ],
+    "//": "Pagoda altars and kitchen."
+  }
+]
