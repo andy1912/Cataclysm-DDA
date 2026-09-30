@@ -21,8 +21,8 @@ Plan: see `doc/saigon/PLAN.md`.
 | S0.4 ledger + plan | done | - | doc/saigon/ | - | |
 | A4.1 modding analyst draft | done | (this) | analysis/d4_r1.md | S0.1 | Key: ITEM+subtypes; vehicle_group append-only → C1; --check-mods exit-code bug → C2; region feature_flag whitelist |
 | A4.2 modding critic r1 | done | - | analysis/critic_d4_r1.md | A4.1 | |
-| A4.3 modding rev + critic r2 | in-progress (critic r2 running) | - | d4_r2 / critic_d4_r2 | A4.2 | r1 REJECT: 0/3 major/10 minor, cite fail 0.7%; majors: C1 has JSON routes, add item MIGRATION, missing schemas vehicle_part/placement/nested_mapgen/ter/furn |
-| A4.4 modding rev + critic r3 | todo | - | d4_r3 / critic_d4_r3 | A4.3 | skip if r2 PASS |
+| A4.3 modding rev + critic r2 | done | - | d4_r2 / critic_d4_r2 | A4.2 | r1 REJECT: 0/3 major/10 minor, cite fail 0.7%; majors: C1 has JSON routes, add item MIGRATION, missing schemas vehicle_part/placement/nested_mapgen/ter/furn |
+| A4.4 modding rev + critic r3 | in-progress | - | d4_r3 / critic_d4_r3 | A4.3 | r2 REJECT 0/1 major/5 minor, cite fail 0%; major: C6 missed double options init (already fixed in 2efb03fe98); C2 is really rc 134 abort, not exit 0 |
 | A2.1 mapgen analyst draft | done | (this) | analysis/d2_r1.md | S0.1 | Key: city streets hardcoded in overmap_city.cpp; 6x6 GLOBALLY_UNIQUE district special for pass 1; nhà ống via omt_stack+check_z; canals only in specials; bugs: regional_settings.cpp:809, overmap_city.cpp:268-277 infinite loop |
 | A2.2 mapgen critic r1 | done | - | critic_d2_r1.md | A2.1 | |
 | A2.3 mapgen rev + critic r2 | done | - | d2_r2 / critic_d2_r2 | A2.2 | r1 REJECT: 0 blocker/2 major/14 minor, cite fail 3.2%; majors: bike parking destroys shutters, roof connectivity |
@@ -46,7 +46,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B2a scenario + start locations | done | dc99fe7e0c | scenario/*.json | B1 | Start locs are PLACEHOLDERS (copy-from sloc_house / sloc_grocery_store): retarget in B8b/B8d. Starts in CDDA 'winter' (= Dec dry season), so B4a must route the Saigon region + weather or the player starts in snow |
 | B2b backstory/intro EOC + snippets | done | f3c5b2adde | scenario/eoc_intro.json, snippets/ | B2a | Snippet categories sgn_loa_phuong/sgn_radio/sgn_newspaper/sgn_note need carrier items (B7b) and speaker/radio sources (B8) to surface in play |
 | B2.R review | todo | - | review/B2.md | B2b | |
-| B3a professions 1–5 | todo | - | | B1 | |
+| B3a professions 1–5 | done | c690cd630b | professions/professions.json | B1 | sgn_xe_om, sgn_street_vendor, sgn_market_trader, sgn_student, sgn_cong_an. PLACEHOLDER dda items (flip_flops, helmet_motor, portable_stove, straw_hat) and vehicles (scooter, bicycle); swap after B5c/B6a |
 | B3b professions 6–11 | todo | - | | B3a | |
 | B3.R review | todo | - | | B3b | |
 | B4a weather JSON | todo | - | | B1 | lat 10.82 / lon 106.63 via EXTERNAL_OPTION |

@@ -548,7 +548,7 @@ void game_ui::init_ui()
 #else
     if( test_mode ) {
         // No curses screen is initialized in test mode (e.g. --check-mods), so
-        // getmaxy/getmaxx return -1 and ensure_term_size would wait forever.
+        // getmaxy/getmaxx report 0 and ensure_term_size would wait forever.
         TERMY = EVEN_MINIMUM_TERM_HEIGHT;
         TERMX = EVEN_MINIMUM_TERM_WIDTH;
     } else {

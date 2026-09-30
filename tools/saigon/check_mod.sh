@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Validate one or more mods with the curses build's --check-mods.
-# Fails if the process exits non-zero, prints "Error loading data", or logs any ERROR,
-# because upstream --check-mods can exit 0 on a caught JSON exception.
+# Fails if the process exits non-zero, prints "Error loading data", or logs any ERROR
+# or WARNING. The exit code alone is not trustworthy: a caught JSON exception skips
+# finalize, and the process may then abort (rc 134) or exit with a misleading code.
 # Usage: tools/saigon/check_mod.sh [mod_id ...]   (default: saigon_2000s)
 set -u
 cd "$(dirname "$0")/../.."
