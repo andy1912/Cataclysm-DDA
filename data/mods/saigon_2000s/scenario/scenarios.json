@@ -9,6 +9,7 @@
     "allowed_locs": [ "sgn_sloc_nha_ong", "sgn_sloc_nha_ong_shuttered", "sgn_sloc_cho" ],
     "flags": [ "CITY_START", "LONE_START" ],
     "start_of_cataclysm": { "hour": 22, "day": 1, "season": "winter", "year": 1 },
-    "start_of_game": { "hour": 6, "day": 6, "season": "winter", "year": 1 }
+    "start_of_game": { "hour": 6, "day": 6, "season": "winter", "year": 1 },
+    "eoc": [ "SGN_EOC_intro" ]
   }
 ]

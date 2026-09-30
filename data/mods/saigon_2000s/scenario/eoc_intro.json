@@ -1,0 +1,8 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_intro",
+    "//": "Queued once at game start through scenario sgn_saigon_2004 \"eoc\".",
+    "effect": [ { "u_message": "sgn_intro", "snippet": true, "popup": true, "type": "info" } ]
+  }
+]
