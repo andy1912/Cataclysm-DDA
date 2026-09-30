@@ -1,0 +1,36 @@
+[
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_underbone",
+    "name": "Underbone motorbike (110cc)",
+    "blueprint": [ "o#o" ],
+    "parts": [
+      {
+        "x": 1,
+        "y": 0,
+        "parts": [ "xlframe#vertical", "wheel_mount_light_steerable", "wheel_motorbike", "motorcycle_headlight", "basketsm" ]
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "parts": [ "frame#vertical_2", "saddle#motor", "controls", "controls_electronic", "horn_car", "motorcycle_kickstand" ]
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "parts": [ "sgn_engine_110cc", "alternator_motorbike", "battery_motorbike_small", { "part": "sgn_tank_4l", "fuel": "gasoline" } ]
+      },
+      {
+        "x": -1,
+        "y": 0,
+        "parts": [ "xlframe#vertical", "wheel_mount_light", "wheel_motorbike#rear", "muffler", "sgn_pillion" ]
+      }
+    ]
+  },
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_xe_tay_ga",
+    "copy-from": "scooter",
+    "name": "Automatic scooter (xe tay ga)"
+  }
+]
