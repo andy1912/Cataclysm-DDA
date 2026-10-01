@@ -29,11 +29,11 @@ Plan: see `doc/saigon/PLAN.md`.
 | A2.4 mapgen rev + critic r3 | done — PASS (0/0/9 minor, 0/633 cite fail) | - | d2_r3 / critic_d2_r3 | A2.3 | r2 REJECT 0/1 major/9 minor, cite fail 0.5%; major: roof-walk corner continuity (PREFIX ignores rotation) |
 | A3.1 climate/vehicle analyst draft | done | (this) | analysis/d3_r1.md | S0.1 | JSON can't hit Saigon temps (±12 K annual swing hardcoded weather_gen.cpp:38,42) → B4b GO; monsoon timing via weather_type time conditions OK in JSON; B4c GO (humidity-limited sweat); vehicles designed + load-tested |
 | A3.2 critic r1 | done | - | | A3.1 | |
-| A3.3 rev + critic r2 | in-progress | - | d3_r2 / critic_d3_r2 | A3.2 | r1 REJECT 0/9 major/13 minor, cite fail 0%; B4b must precede B4c; flood EOC never deactivates; water temp hardcoded; funnel int truncation; horde mostly awake; ghe/xích lô are reskins (label + tie to P2) |
+| A3.3 rev + critic r2 | in-progress (d3_r2 written; critic r2 running) | - | d3_r2 / critic_d3_r2 | A3.2 | r1 REJECT 0/9 major/13 minor, cite fail 0%; B4b must precede B4c; flood EOC never deactivates; water temp hardcoded; funnel int truncation; horde mostly awake; ghe/xích lô are reskins (label + tie to P2) |
 | A3.4 rev + critic r3 | todo | - | | A3.3 | skip if r2 PASS |
 | A1.1 rendering analyst draft | done | - | analysis/d1_r1.md | S0.1 | |
 | A1.2 critic r1 | done | - | | A1.1 | |
-| A1.3 rev + critic r2 | in-progress | - | d1_r2 / critic_d1_r2 | A1.2 | r1 REJECT 0/10 major/9 minor, cite fail 1.6%; present unthrottled on map path; camera z not viewer z; lightmap rebuilt every turn; cast_zlight bench synthetic; iso spans 15+ fns; golden test misses GPU path |
+| A1.3 rev + critic r2 | in-progress (d1_r2 written; critic r2 running) | - | d1_r2 / critic_d1_r2 | A1.2 | r1 REJECT 0/10 major/9 minor, cite fail 1.6%; present unthrottled on map path; camera z not viewer z; lightmap rebuilt every turn; cast_zlight bench synthetic; iso spans 15+ fns; golden test misses GPU path |
 | A1.4 rev + critic r3 | todo | - | | A1.3 | skip if r2 PASS |
 | A5 integration critic | todo | - | analysis/integration.md | A1–A4 | |
 | A6.1 TDD ch 1–2 | todo | - | TDD.md | A5 | |
