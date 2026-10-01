@@ -1,0 +1,10 @@
+[
+  {
+    "type": "furniture",
+    "id": "f_sgn_ban_tho",
+    "copy-from": "f_table",
+    "name": "ancestor altar",
+    "description": "A bàn thờ: a tall lacquered altar table with framed photographs of the family's dead, a brass incense bowl, fruit offerings and flickering electric candles.  Every home and shop in the city keeps one, high up and facing the door.",
+    "color": "red"
+  }
+]
