@@ -33,8 +33,8 @@ Plan: see `doc/saigon/PLAN.md`.
 | A3.4 rev + critic r3 | todo | - | | A3.3 | skip if r2 PASS |
 | A1.1 rendering analyst draft | done | - | analysis/d1_r1.md | S0.1 | |
 | A1.2 critic r1 | done | - | | A1.1 | |
-| A1.3 rev + critic r2 | in-progress (d1_r2 written; critic r2 running) | - | d1_r2 / critic_d1_r2 | A1.2 | r1 REJECT 0/10 major/9 minor, cite fail 1.6%; present unthrottled on map path; camera z not viewer z; lightmap rebuilt every turn; cast_zlight bench synthetic; iso spans 15+ fns; golden test misses GPU path |
-| A1.4 rev + critic r3 | todo | - | | A1.3 | skip if r2 PASS |
+| A1.3 rev + critic r2 | done (r2 REJECT 0/4 major/8 minor, 0.8%: vsync blocks present; NPC light colour stale; emitter rule wrong bubble size; R3/R4 merge footprint) | - | d1_r2 / critic_d1_r2 | A1.2 | r1 REJECT 0/10 major/9 minor, cite fail 1.6%; present unthrottled on map path; camera z not viewer z; lightmap rebuilt every turn; cast_zlight bench synthetic; iso spans 15+ fns; golden test misses GPU path |
+| A1.4 rev + critic r3 | in-progress | - | d1_r3 / critic_d1_r3 | A1.3 | final round |
 | A5 integration critic | todo | - | analysis/integration.md | A1–A4 | |
 | A6.1 TDD ch 1–2 | todo | - | TDD.md | A5 | |
 | A6.2 TDD domain chapters | todo | - | TDD.md | A6.1 | |
