@@ -31,8 +31,8 @@
     "type": "jmath_function",
     "id": "sgn_wet",
     "num_args": 0,
-    "//": "1 during the wet season, May 1 (doy 41) to Nov 30 (doy 254).",
-    "return": "(sgn_doy() >= 41) * (sgn_doy() <= 254)"
+    "//": "1 during the wet season, May 1 (doy 41) to Nov 30 (doy 252).",
+    "return": "(sgn_doy() >= 41) * (sgn_doy() < 253)"
   },
   {
     "type": "jmath_function",

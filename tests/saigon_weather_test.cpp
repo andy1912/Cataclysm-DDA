@@ -37,7 +37,7 @@ struct saigon_year {
 // Day-of-year window used by the mod's sgn_wet() jmath function (turn 0 = spring equinox).
 static bool saigon_is_wet_season( int doy )
 {
-    return doy >= 41 && doy <= 254;
+    return doy >= 41 && doy <= 252;
 }
 
 static saigon_year collect_saigon_year( unsigned seed )
