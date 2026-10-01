@@ -32,8 +32,8 @@ Plan: see `doc/saigon/PLAN.md`.
 | A3.3 rev + critic r2 | in-progress | - | d3_r2 / critic_d3_r2 | A3.2 | r1 REJECT 0/9 major/13 minor, cite fail 0%; B4b must precede B4c; flood EOC never deactivates; water temp hardcoded; funnel int truncation; horde mostly awake; ghe/xích lô are reskins (label + tie to P2) |
 | A3.4 rev + critic r3 | todo | - | | A3.3 | skip if r2 PASS |
 | A1.1 rendering analyst draft | done | - | analysis/d1_r1.md | S0.1 | |
-| A1.2 critic r1 | in-progress | - | | A1.1 | |
-| A1.3 rev + critic r2 | todo | - | | A1.2 | |
+| A1.2 critic r1 | done | - | | A1.1 | |
+| A1.3 rev + critic r2 | in-progress | - | d1_r2 / critic_d1_r2 | A1.2 | r1 REJECT 0/10 major/9 minor, cite fail 1.6%; present unthrottled on map path; camera z not viewer z; lightmap rebuilt every turn; cast_zlight bench synthetic; iso spans 15+ fns; golden test misses GPU path |
 | A1.4 rev + critic r3 | todo | - | | A1.3 | skip if r2 PASS |
 | A5 integration critic | todo | - | analysis/integration.md | A1–A4 | |
 | A6.1 TDD ch 1–2 | todo | - | TDD.md | A5 | |
