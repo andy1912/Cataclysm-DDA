@@ -418,3 +418,68 @@ TEST_CASE( "saigon_traffic_is_mostly_two_wheelers", "[vehicle][saigon]" )
         CHECK( saigon >= samples * 95 / 100 );
     }
 }
+
+static const ter_str_id ter_t_thconc_floor( "t_thconc_floor" );
+
+// Every indoor floor tile at level z has something other than open air above it.
+static int uncovered_indoor_tiles( map &m, int z )
+{
+    int n = 0;
+    for( int x = 0; x < SEEX * 2; x++ ) {
+        for( int y = 0; y < SEEY * 2; y++ ) {
+            if( m.ter( tripoint_bub_ms( x, y, z ) ) == ter_t_thconc_floor.id() &&
+                m.ter( tripoint_bub_ms( x, y, z + 1 ) ) == ter_t_open_air.id() ) {
+                n++;
+            }
+        }
+    }
+    return n;
+}
+
+TEST_CASE( "saigon_buildings_have_roofs", "[mapgen][saigon]" )
+{
+    if( !oter_str_id( "sgn_hem_block_roof_north" ).is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    sgn_clear_map_and_reset_player();
+    struct stack_def {
+        std::string name;
+        std::vector<std::string> levels;
+    };
+    const std::vector<stack_def> stacks = {
+        { "hem", { "sgn_hem_block_north", "sgn_hem_block_roof_north" } },
+        { "cho", { "sgn_cho_nw_north", "sgn_cho_roof_nw_north" } },
+        { "chua", { "sgn_chua_north", "sgn_chua_roof_north" } },
+        {
+            "nha_ong", { "sgn_nh_solo_z0_north", "sgn_nh_solo_z1_north", "sgn_nh_solo_z2_north",
+                         "sgn_nh_solo_z3_north", "sgn_nh_solo_z4_north", "sgn_nh_solo_z5_north"
+                       }
+        },
+        {
+            "chungcu", { "sgn_chungcu_z0_north", "sgn_chungcu_z1_north", "sgn_chungcu_z2_north",
+                         "sgn_chungcu_z3_north", "sgn_chungcu_z4_north", "sgn_chungcu_z5_north"
+                       }
+        },
+    };
+    int column = 0;
+    for( const stack_def &st : stacks ) {
+        const tripoint_abs_omt pos( 100 + 3 * column++, 100, 0 );
+        for( size_t z = 0; z < st.levels.size(); z++ ) {
+            overmap_buffer.ter_set( pos + tripoint( 0, 0, z ), oter_str_id( st.levels[z] ).id() );
+        }
+        for( unsigned seed = 1; seed <= 5; seed++ ) {
+            CAPTURE( st.name, seed );
+            rng_set_engine_seed( seed );
+            MAPBUFFER.clear_outside_reality_bubble();
+            smallmap tm;
+            tm.generate( pos, calendar::turn, false, true );
+            map &m = *tm.cast_to_map();
+            for( size_t z = 0; z + 1 < st.levels.size(); z++ ) {
+                CAPTURE( z );
+                CHECK( uncovered_indoor_tiles( m, z ) == 0 );
+            }
+            tm.delete_unmerged_submaps();
+        }
+    }
+}

@@ -86,17 +86,31 @@ def mapgen():
              'object': { 'fill_ter': 't_thconc_floor', 'rows': build_rows(), 'palettes': [ 'sgn_cho' ] } }
 
 
+def roof_mapgen():
+    rows = [ '_' * N ] * N
+    return { 'type': 'mapgen',
+             'om_terrain': [ [ 'sgn_cho_roof_nw', 'sgn_cho_roof_ne' ], [ 'sgn_cho_roof_sw', 'sgn_cho_roof_se' ] ],
+             'object': { 'fill_ter': 't_open_air', 'rows': rows, 'terrain': { '_': 't_metal_flat_roof' } } }
+
+
 def overmap():
     out = []
     for part in ( 'nw', 'ne', 'sw', 'se' ):
         out.append( { 'type': 'overmap_terrain', 'id': 'sgn_cho_' + part, 'copy-from': 'generic_city_building',
                       'name': 'chợ', 'sym': 'M', 'color': 'yellow', 'looks_like': 'grocery' } )
+        out.append( { 'type': 'overmap_terrain', 'id': 'sgn_cho_roof_' + part,
+                      'copy-from': 'generic_city_building_roof', 'name': 'chợ roof', 'sym': 'M',
+                      'color': 'yellow', 'looks_like': 'grocery' } )
     out.append( { 'type': 'city_building', 'id': 'sgn_cho_1', 'locations': [ 'land' ], 'flags': [ 'SAIGON' ],
                   'overmaps': [
                       { 'point': [ 0, 0, 0 ], 'overmap': 'sgn_cho_nw_north' },
                       { 'point': [ 1, 0, 0 ], 'overmap': 'sgn_cho_ne_north' },
                       { 'point': [ 0, 1, 0 ], 'overmap': 'sgn_cho_sw_north' },
-                      { 'point': [ 1, 1, 0 ], 'overmap': 'sgn_cho_se_north' } ] } )
+                      { 'point': [ 1, 1, 0 ], 'overmap': 'sgn_cho_se_north' },
+                      { 'point': [ 0, 0, 1 ], 'overmap': 'sgn_cho_roof_nw_north' },
+                      { 'point': [ 1, 0, 1 ], 'overmap': 'sgn_cho_roof_ne_north' },
+                      { 'point': [ 0, 1, 1 ], 'overmap': 'sgn_cho_roof_sw_north' },
+                      { 'point': [ 1, 1, 1 ], 'overmap': 'sgn_cho_roof_se_north' } ] } )
     return out
 
 
@@ -106,7 +120,7 @@ def main():
     mg = os.path.join( ROOT, 'mapgen', 'cho' )
     os.makedirs( mg, exist_ok=True )
     with open( os.path.join( mg, 'cho.json' ), 'w' ) as f:
-        json.dump( [ palette(), mapgen() ], f, ensure_ascii=False, indent=2 )
+        json.dump( [ palette(), mapgen(), roof_mapgen() ], f, ensure_ascii=False, indent=2 )
     with open( os.path.join( ROOT, 'overmap', 'cho.json' ), 'w' ) as f:
         json.dump( overmap(), f, ensure_ascii=False, indent=2 )
 

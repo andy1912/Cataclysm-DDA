@@ -83,7 +83,7 @@ def palette():
     return {
         'type': 'palette', 'id': 'sgn_hem',
         'terrain': {
-            '#': 't_brick_wall', '.': 't_thconc_floor', 'a': 't_concrete', '+': 't_door_c',
+            '_': 't_concrete_roof', '#': 't_brick_wall', '.': 't_thconc_floor', 'a': 't_concrete', '+': 't_door_c',
             ',': 't_concrete', 'b': 't_thconc_floor', 'k': 't_thconc_floor', 'A': 't_thconc_floor',
             't': 't_thconc_floor', 'T': 't_concrete', 'C': 't_concrete', 'S': 't_thconc_floor' },
         'furniture': {
@@ -108,6 +108,37 @@ OPEN_NEIGHBOURS = [ { 'om_terrain': 'sgn_hem', 'om_terrain_match_type': 'PREFIX'
                     { 'om_terrain': 'road', 'om_terrain_match_type': 'TYPE' } ]
 
 
+OUTDOOR = set( 'a,TC ' )
+
+
+def roof_of( rows ):
+    return [ ''.join( ' ' if c in OUTDOOR else '_' for c in r ) for r in rows ]
+
+
+def stack( nid, layout, roof ):
+    """z0 layout and the matching z1 roof, chosen together once per OMT column."""
+    return { 'type': 'mapgen', 'nested_mapgen_id': nid,
+             'object': { 'mapgensize': [ 11, 11 ], 'flags': CLEARING, 'place_nested': [
+                 { 'chunks': [ layout ], 'x': 0, 'y': 0, 'check_z': [ 0 ] },
+                 { 'chunks': [ roof ], 'x': 0, 'y': 0, 'check_z': [ 1 ] } ] } }
+
+
+def params():
+    return { 'type': 'palette', 'id': 'sgn_hem_params', 'parameters': {
+        'q_' + q: { 'type': 'nested_mapgen_id', 'scope': 'omt_stack',
+                    'default': { 'distribution': [ [ 'sgn_hem_stack_%s_homes' % q, 3 ],
+                                                   [ 'sgn_hem_stack_%s_cafe_shrine' % q, 1 ] ] } }
+        for q in QUADRANTS } }
+
+
+def roof_mapgen():
+    nests = [ { 'chunks': [ { 'param': 'q_' + q, 'fallback': 'sgn_hem_stack_%s_homes' % q } ], 'x': x, 'y': y }
+              for q, ( x, y, _ ) in QUADRANTS.items() ]
+    return { 'type': 'mapgen', 'om_terrain': [ 'sgn_hem_block_roof' ],
+             'object': { 'fill_ter': 't_open_air', 'palettes': [ 'sgn_hem', 'sgn_hem_params' ],
+                         'place_nested': nests } }
+
+
 def block_mapgen():
     rows = []
     for y in range( 24 ):
@@ -117,14 +148,13 @@ def block_mapgen():
             rows.append( ' ' * 11 + 'aa' + ' ' * 11 )
     nests = []
     for q, ( x, y, _ ) in QUADRANTS.items():
-        nests.append( { 'chunks': [ [ 'sgn_hem_q_%s_%s' % ( q, v ), w ]
-                                    for v, w in ( ( 'homes', 3 ), ( 'cafe_shrine', 1 ) ) ],
+        nests.append( { 'chunks': [ { 'param': 'q_' + q, 'fallback': 'sgn_hem_stack_%s_homes' % q } ],
                         'x': x, 'y': y } )
     for d, ( x, y, _ ) in PORTS.items():
         nests.append( { 'chunks': [ 'null' ], 'else_chunks': [ 'sgn_hem_cap_' + d ], 'x': x, 'y': y,
                         'neighbors': { d: OPEN_NEIGHBOURS } } )
     return { 'type': 'mapgen', 'om_terrain': [ 'sgn_hem_block' ],
-             'object': { 'fill_ter': 't_concrete', 'rows': rows, 'palettes': [ 'sgn_hem' ],
+             'object': { 'fill_ter': 't_concrete', 'rows': rows, 'palettes': [ 'sgn_hem', 'sgn_hem_params' ],
                          'place_nested': nests } }
 
 
@@ -132,19 +162,26 @@ def overmap():
     return [
         { 'type': 'overmap_terrain', 'id': 'sgn_hem_block', 'copy-from': 'generic_city_building',
           'name': 'hẻm', 'sym': '%', 'color': 'brown', 'looks_like': 'house' },
+        { 'type': 'overmap_terrain', 'id': 'sgn_hem_block_roof', 'copy-from': 'generic_city_building_roof',
+          'name': 'hẻm rooftops', 'sym': '%', 'color': 'brown', 'looks_like': 'house' },
         { 'type': 'city_building', 'id': 'sgn_hem_block_1', 'locations': [ 'land' ], 'flags': [ 'SAIGON' ],
-          'overmaps': [ { 'point': [ 0, 0, 0 ], 'overmap': 'sgn_hem_block_north' } ] } ]
+          'overmaps': [ { 'point': [ 0, 0, 0 ], 'overmap': 'sgn_hem_block_north' },
+                        { 'point': [ 0, 0, 1 ], 'overmap': 'sgn_hem_block_roof_north' } ] } ]
 
 
 def main():
-    out = [ palette() ]
+    out = [ palette(), params() ]
     for q, ( _, _, fn ) in QUADRANTS.items():
         for v, rows in NW.items():
             assert all( len( r ) == 11 for r in rows ) and len( rows ) == 11, v
-            out.append( nested( 'sgn_hem_q_%s_%s' % ( q, v ), fn( rows ), 11 ) )
+            layout = 'sgn_hem_q_%s_%s' % ( q, v )
+            out.append( nested( layout, fn( rows ), 11 ) )
+            out.append( nested( layout + '_roof', roof_of( fn( rows ) ), 11 ) )
+            out.append( stack( 'sgn_hem_stack_%s_%s' % ( q, v ), layout, layout + '_roof' ) )
     for d, ( _, _, rows ) in PORTS.items():
         out.append( nested( 'sgn_hem_cap_' + d, rows, 2 ) )
     out.append( block_mapgen() )
+    out.append( roof_mapgen() )
     mg = os.path.join( ROOT, 'mapgen', 'hem' )
     os.makedirs( mg, exist_ok=True )
     with open( os.path.join( mg, 'hem_block.json' ), 'w' ) as f:

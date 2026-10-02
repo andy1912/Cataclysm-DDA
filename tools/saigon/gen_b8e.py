@@ -105,6 +105,13 @@ def pagoda_palette():
             'b': { 'item': 'sgn_shophouse_living', 'chance': 15 } } }
 
 
+PAGODA_OUTDOOR = set( ',TsgBWP' )
+
+
+def pagoda_roof_rows():
+    return [ ''.join( ' ' if c in PAGODA_OUTDOOR else '_' for c in r ) for r in pagoda_rows() ]
+
+
 # -------------------------------------------------------------- chung cư -----
 TOP = 4                    # floors z0..z4, roof at z5
 UNITS = ( 2, 6, 14, 18 )   # unit x origins (4 wide); stair core x 10-13
@@ -218,15 +225,21 @@ def chungcu_palette():
 def main():
     data = [ pagoda_palette(), chungcu_palette(),
              { 'type': 'mapgen', 'om_terrain': [ 'sgn_chua' ],
-               'object': { 'fill_ter': 't_concrete', 'rows': pagoda_rows(), 'palettes': [ 'sgn_chua' ] } } ]
+               'object': { 'fill_ter': 't_concrete', 'rows': pagoda_rows(), 'palettes': [ 'sgn_chua' ] } },
+             { 'type': 'mapgen', 'om_terrain': [ 'sgn_chua_roof' ],
+               'object': { 'fill_ter': 't_open_air', 'rows': pagoda_roof_rows(),
+                           'terrain': { '_': 't_tile_flat_roof' } } } ]
     for z in range( TOP + 2 ):
         data.append( { 'type': 'mapgen', 'om_terrain': [ 'sgn_chungcu_z%d' % z ],
                        'object': { 'fill_ter': 't_concrete' if z == 0 else 't_open_air',
                                    'rows': chungcu_rows( z ), 'palettes': [ 'sgn_chungcu' ] } } )
     om = [ { 'type': 'overmap_terrain', 'id': 'sgn_chua', 'copy-from': 'generic_city_building',
              'name': 'chùa', 'sym': 'P', 'color': 'yellow', 'looks_like': 'church' },
+           { 'type': 'overmap_terrain', 'id': 'sgn_chua_roof', 'copy-from': 'generic_city_building_roof',
+             'name': 'chùa roof', 'sym': 'P', 'color': 'yellow', 'looks_like': 'church' },
            { 'type': 'city_building', 'id': 'sgn_chua_1', 'locations': [ 'land' ], 'flags': [ 'SAIGON' ],
-             'overmaps': [ { 'point': [ 0, 0, 0 ], 'overmap': 'sgn_chua_north' } ] } ]
+             'overmaps': [ { 'point': [ 0, 0, 0 ], 'overmap': 'sgn_chua_north' },
+                           { 'point': [ 0, 0, 1 ], 'overmap': 'sgn_chua_roof_north' } ] } ]
     for z in range( TOP + 2 ):
         om.append( { 'type': 'overmap_terrain', 'id': 'sgn_chungcu_z%d' % z,
                      'copy-from': 'generic_city_building' if z == 0 else 'generic_city_building_roof',

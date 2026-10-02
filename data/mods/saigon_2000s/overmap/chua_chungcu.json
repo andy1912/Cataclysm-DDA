@@ -9,11 +9,20 @@
     "looks_like": "church"
   },
   {
+    "type": "overmap_terrain",
+    "id": "sgn_chua_roof",
+    "copy-from": "generic_city_building_roof",
+    "name": "chùa roof",
+    "sym": "P",
+    "color": "yellow",
+    "looks_like": "church"
+  },
+  {
     "type": "city_building",
     "id": "sgn_chua_1",
     "locations": [ "land" ],
     "flags": [ "SAIGON" ],
-    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "sgn_chua_north" } ]
+    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "sgn_chua_north" }, { "point": [ 0, 0, 1 ], "overmap": "sgn_chua_roof_north" } ]
   },
   {
     "type": "overmap_terrain",

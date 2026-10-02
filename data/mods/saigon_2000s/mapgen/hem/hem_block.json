@@ -3,6 +3,7 @@
     "type": "palette",
     "id": "sgn_hem",
     "terrain": {
+      "_": "t_concrete_roof",
       "#": "t_brick_wall",
       ".": "t_thconc_floor",
       "a": "t_concrete",
@@ -34,6 +35,32 @@
     }
   },
   {
+    "type": "palette",
+    "id": "sgn_hem_params",
+    "parameters": {
+      "q_nw": {
+        "type": "nested_mapgen_id",
+        "scope": "omt_stack",
+        "default": { "distribution": [ [ "sgn_hem_stack_nw_homes", 3 ], [ "sgn_hem_stack_nw_cafe_shrine", 1 ] ] }
+      },
+      "q_ne": {
+        "type": "nested_mapgen_id",
+        "scope": "omt_stack",
+        "default": { "distribution": [ [ "sgn_hem_stack_ne_homes", 3 ], [ "sgn_hem_stack_ne_cafe_shrine", 1 ] ] }
+      },
+      "q_sw": {
+        "type": "nested_mapgen_id",
+        "scope": "omt_stack",
+        "default": { "distribution": [ [ "sgn_hem_stack_sw_homes", 3 ], [ "sgn_hem_stack_sw_cafe_shrine", 1 ] ] }
+      },
+      "q_se": {
+        "type": "nested_mapgen_id",
+        "scope": "omt_stack",
+        "default": { "distribution": [ [ "sgn_hem_stack_se_homes", 3 ], [ "sgn_hem_stack_se_cafe_shrine", 1 ] ] }
+      }
+    }
+  },
+  {
     "type": "mapgen",
     "nested_mapgen_id": "sgn_hem_q_nw_homes",
     "object": {
@@ -53,6 +80,40 @@
         "#####a#####"
       ],
       "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_nw_homes_roof",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "___________",
+        "___________",
+        "___________",
+        "___________",
+        "___________",
+        "_          ",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_stack_nw_homes",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_nested": [
+        { "chunks": [ "sgn_hem_q_nw_homes" ], "x": 0, "y": 0, "check_z": [ 0 ] },
+        { "chunks": [ "sgn_hem_q_nw_homes_roof" ], "x": 0, "y": 0, "check_z": [ 1 ] }
+      ]
     }
   },
   {
@@ -79,6 +140,40 @@
   },
   {
     "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_nw_cafe_shrine_roof",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "___________",
+        "_____     _",
+        "_____     _",
+        "_____     _",
+        "_____     _",
+        "_          ",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_stack_nw_cafe_shrine",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_nested": [
+        { "chunks": [ "sgn_hem_q_nw_cafe_shrine" ], "x": 0, "y": 0, "check_z": [ 0 ] },
+        { "chunks": [ "sgn_hem_q_nw_cafe_shrine_roof" ], "x": 0, "y": 0, "check_z": [ 1 ] }
+      ]
+    }
+  },
+  {
+    "type": "mapgen",
     "nested_mapgen_id": "sgn_hem_q_ne_homes",
     "object": {
       "mapgensize": [ 11, 11 ],
@@ -97,6 +192,40 @@
         "#####a#####"
       ],
       "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_ne_homes_roof",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "___________",
+        "___________",
+        "___________",
+        "___________",
+        "___________",
+        "          _",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_stack_ne_homes",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_nested": [
+        { "chunks": [ "sgn_hem_q_ne_homes" ], "x": 0, "y": 0, "check_z": [ 0 ] },
+        { "chunks": [ "sgn_hem_q_ne_homes_roof" ], "x": 0, "y": 0, "check_z": [ 1 ] }
+      ]
     }
   },
   {
@@ -123,6 +252,40 @@
   },
   {
     "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_ne_cafe_shrine_roof",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "___________",
+        "_     _____",
+        "_     _____",
+        "_     _____",
+        "_     _____",
+        "          _",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_stack_ne_cafe_shrine",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_nested": [
+        { "chunks": [ "sgn_hem_q_ne_cafe_shrine" ], "x": 0, "y": 0, "check_z": [ 0 ] },
+        { "chunks": [ "sgn_hem_q_ne_cafe_shrine_roof" ], "x": 0, "y": 0, "check_z": [ 1 ] }
+      ]
+    }
+  },
+  {
+    "type": "mapgen",
     "nested_mapgen_id": "sgn_hem_q_sw_homes",
     "object": {
       "mapgensize": [ 11, 11 ],
@@ -141,6 +304,40 @@
         "###########"
       ],
       "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_sw_homes_roof",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_          ",
+        "___________",
+        "___________",
+        "___________",
+        "___________",
+        "___________"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_stack_sw_homes",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_nested": [
+        { "chunks": [ "sgn_hem_q_sw_homes" ], "x": 0, "y": 0, "check_z": [ 0 ] },
+        { "chunks": [ "sgn_hem_q_sw_homes_roof" ], "x": 0, "y": 0, "check_z": [ 1 ] }
+      ]
     }
   },
   {
@@ -167,6 +364,40 @@
   },
   {
     "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_sw_cafe_shrine_roof",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_          ",
+        "_____     _",
+        "_____     _",
+        "_____     _",
+        "_____     _",
+        "___________"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_stack_sw_cafe_shrine",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_nested": [
+        { "chunks": [ "sgn_hem_q_sw_cafe_shrine" ], "x": 0, "y": 0, "check_z": [ 0 ] },
+        { "chunks": [ "sgn_hem_q_sw_cafe_shrine_roof" ], "x": 0, "y": 0, "check_z": [ 1 ] }
+      ]
+    }
+  },
+  {
+    "type": "mapgen",
     "nested_mapgen_id": "sgn_hem_q_se_homes",
     "object": {
       "mapgensize": [ 11, 11 ],
@@ -189,6 +420,40 @@
   },
   {
     "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_se_homes_roof",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "          _",
+        "___________",
+        "___________",
+        "___________",
+        "___________",
+        "___________"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_stack_se_homes",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_nested": [
+        { "chunks": [ "sgn_hem_q_se_homes" ], "x": 0, "y": 0, "check_z": [ 0 ] },
+        { "chunks": [ "sgn_hem_q_se_homes_roof" ], "x": 0, "y": 0, "check_z": [ 1 ] }
+      ]
+    }
+  },
+  {
+    "type": "mapgen",
     "nested_mapgen_id": "sgn_hem_q_se_cafe_shrine",
     "object": {
       "mapgensize": [ 11, 11 ],
@@ -207,6 +472,40 @@
         "###########"
       ],
       "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_se_cafe_shrine_roof",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "_____ _____",
+        "          _",
+        "_     _____",
+        "_     _____",
+        "_     _____",
+        "_     _____",
+        "___________"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_stack_se_cafe_shrine",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_nested": [
+        { "chunks": [ "sgn_hem_q_se_cafe_shrine" ], "x": 0, "y": 0, "check_z": [ 0 ] },
+        { "chunks": [ "sgn_hem_q_se_cafe_shrine_roof" ], "x": 0, "y": 0, "check_z": [ 1 ] }
+      ]
     }
   },
   {
@@ -292,12 +591,12 @@
         "           aa           ",
         "           aa           "
       ],
-      "palettes": [ "sgn_hem" ],
+      "palettes": [ "sgn_hem", "sgn_hem_params" ],
       "place_nested": [
-        { "chunks": [ [ "sgn_hem_q_nw_homes", 3 ], [ "sgn_hem_q_nw_cafe_shrine", 1 ] ], "x": 0, "y": 0 },
-        { "chunks": [ [ "sgn_hem_q_ne_homes", 3 ], [ "sgn_hem_q_ne_cafe_shrine", 1 ] ], "x": 13, "y": 0 },
-        { "chunks": [ [ "sgn_hem_q_sw_homes", 3 ], [ "sgn_hem_q_sw_cafe_shrine", 1 ] ], "x": 0, "y": 13 },
-        { "chunks": [ [ "sgn_hem_q_se_homes", 3 ], [ "sgn_hem_q_se_cafe_shrine", 1 ] ], "x": 13, "y": 13 },
+        { "chunks": [ { "param": "q_nw", "fallback": "sgn_hem_stack_nw_homes" } ], "x": 0, "y": 0 },
+        { "chunks": [ { "param": "q_ne", "fallback": "sgn_hem_stack_ne_homes" } ], "x": 13, "y": 0 },
+        { "chunks": [ { "param": "q_sw", "fallback": "sgn_hem_stack_sw_homes" } ], "x": 0, "y": 13 },
+        { "chunks": [ { "param": "q_se", "fallback": "sgn_hem_stack_se_homes" } ], "x": 13, "y": 13 },
         {
           "chunks": [ "null" ],
           "else_chunks": [ "sgn_hem_cap_north" ],
@@ -346,6 +645,20 @@
             ]
           }
         }
+      ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ "sgn_hem_block_roof" ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "palettes": [ "sgn_hem", "sgn_hem_params" ],
+      "place_nested": [
+        { "chunks": [ { "param": "q_nw", "fallback": "sgn_hem_stack_nw_homes" } ], "x": 0, "y": 0 },
+        { "chunks": [ { "param": "q_ne", "fallback": "sgn_hem_stack_ne_homes" } ], "x": 13, "y": 0 },
+        { "chunks": [ { "param": "q_sw", "fallback": "sgn_hem_stack_sw_homes" } ], "x": 0, "y": 13 },
+        { "chunks": [ { "param": "q_se", "fallback": "sgn_hem_stack_se_homes" } ], "x": 13, "y": 13 }
       ]
     }
   }
