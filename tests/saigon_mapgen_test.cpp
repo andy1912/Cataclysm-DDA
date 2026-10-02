@@ -20,6 +20,7 @@
 #include "point.h"
 #include "rng.h"
 #include "type_id.h"
+#include "vehicle_group.h"
 
 // Saigon 2000s mod: structural checks for the nhà ống shophouse row
 // (tools/saigon/gen_nha_ong.py, design doc/saigon/analysis/d2_r3.md §4.a).
@@ -393,5 +394,27 @@ TEST_CASE( "saigon_chungcu_and_chua_structure", "[mapgen][saigon]" )
         // The main hall is reachable from the gate through its double doors.
         CHECK( inside.count( point( 11, 12 ) ) == 1 );
         tm.delete_unmerged_submaps();
+    }
+}
+
+TEST_CASE( "saigon_traffic_is_mostly_two_wheelers", "[vehicle][saigon]" )
+{
+    if( !vproto_id( "sgn_veh_underbone" ).is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    rng_set_engine_seed( 3 );
+    for( const std::string gid : {
+             "city_vehicles", "city_pileup", "police_pileup", "highway", "parkinglot"
+         } ) {
+        CAPTURE( gid );
+        int saigon = 0;
+        const int samples = 2000;
+        for( int i = 0; i < samples; i++ ) {
+            saigon += vgroup_id( gid )->pick().str().rfind( "sgn_veh_", 0 ) == 0;
+        }
+        CAPTURE( saigon );
+        // Dilution at 100x the dda total weight leaves ~1% dda vehicles.
+        CHECK( saigon >= samples * 95 / 100 );
     }
 }

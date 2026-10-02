@@ -1,0 +1,62 @@
+[
+  {
+    "type": "vehicle_group",
+    "id": "city_pileup",
+    "//": "Dilution (d4_r3 §2.2 route d): dda total weight 20490; Saigon entries sum to 2049000 (≈99% Saigon). Groups append, so dda entries remain at ≈1%.",
+    "vehicles": [
+      [ "sgn_veh_underbone", 1229400 ],
+      [ "sgn_veh_xe_tay_ga", 409800 ],
+      [ "sgn_veh_xe_dap", 184410 ],
+      [ "sgn_veh_ba_gac_may", 143430 ],
+      [ "sgn_veh_xich_lo", 81960 ]
+    ]
+  },
+  {
+    "type": "vehicle_group",
+    "id": "city_vehicles",
+    "//": "Dilution (d4_r3 §2.2 route d): dda total weight 26219; Saigon entries sum to 2621900 (≈99% Saigon). Groups append, so dda entries remain at ≈1%.",
+    "vehicles": [
+      [ "sgn_veh_underbone", 1573140 ],
+      [ "sgn_veh_xe_tay_ga", 524380 ],
+      [ "sgn_veh_xe_dap", 235971 ],
+      [ "sgn_veh_ba_gac_may", 183533 ],
+      [ "sgn_veh_xich_lo", 104876 ]
+    ]
+  },
+  {
+    "type": "vehicle_group",
+    "id": "highway",
+    "//": "Dilution (d4_r3 §2.2 route d): dda total weight 20479; Saigon entries sum to 2047900 (≈99% Saigon). Groups append, so dda entries remain at ≈1%.",
+    "vehicles": [
+      [ "sgn_veh_underbone", 1228740 ],
+      [ "sgn_veh_xe_tay_ga", 409580 ],
+      [ "sgn_veh_xe_dap", 184311 ],
+      [ "sgn_veh_ba_gac_may", 143353 ],
+      [ "sgn_veh_xich_lo", 81916 ]
+    ]
+  },
+  {
+    "type": "vehicle_group",
+    "id": "parkinglot",
+    "//": "Dilution (d4_r3 §2.2 route d): dda total weight 19232; Saigon entries sum to 1923200 (≈99% Saigon). Groups append, so dda entries remain at ≈1%.",
+    "vehicles": [
+      [ "sgn_veh_underbone", 1153920 ],
+      [ "sgn_veh_xe_tay_ga", 384640 ],
+      [ "sgn_veh_xe_dap", 173088 ],
+      [ "sgn_veh_ba_gac_may", 134624 ],
+      [ "sgn_veh_xich_lo", 76928 ]
+    ]
+  },
+  {
+    "type": "vehicle_group",
+    "id": "police_pileup",
+    "//": "Dilution (d4_r3 §2.2 route d): dda total weight 806; Saigon entries sum to 80600 (≈99% Saigon). Groups append, so dda entries remain at ≈1%.",
+    "vehicles": [ [ "sgn_veh_underbone", 56420 ], [ "sgn_veh_xe_tay_ga", 24180 ] ]
+  },
+  {
+    "type": "vehicle_group",
+    "id": "sgn_vg_parked_twowheelers",
+    "//": "Curb parking on shophouse frontage rows (d2_r3 §4.f): only 3-tile two-wheelers fit the slot.",
+    "vehicles": [ [ "sgn_veh_underbone", 70 ], [ "sgn_veh_xe_tay_ga", 20 ], [ "sgn_veh_xe_dap", 10 ] ]
+  }
+]
