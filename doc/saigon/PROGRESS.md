@@ -30,12 +30,12 @@ Plan: see `doc/saigon/PLAN.md`.
 | A3.1 climate/vehicle analyst draft | done | (this) | analysis/d3_r1.md | S0.1 | JSON can't hit Saigon temps (±12 K annual swing hardcoded weather_gen.cpp:38,42) → B4b GO; monsoon timing via weather_type time conditions OK in JSON; B4c GO (humidity-limited sweat); vehicles designed + load-tested |
 | A3.2 critic r1 | done | - | | A3.1 | |
 | A3.3 rev + critic r2 | done (r2 REJECT 0/2 major/11 minor ~1%: flood drain tied to avatar; B4b acceptance doesn't protect monsoon) | - | d3_r2 / critic_d3_r2 | A3.2 | r1 REJECT 0/9 major/13 minor, cite fail 0%; B4b must precede B4c; flood EOC never deactivates; water temp hardcoded; funnel int truncation; horde mostly awake; ghe/xích lô are reskins (label + tie to P2) |
-| A3.4 rev + critic r3 | in-progress (d3_r3 written; critic r3 running) | - | d3_r3 / critic_d3_r3 | A3.3 | final round |
+| A3.4 rev + critic r3 | done — ACCEPT WITH 11 CONDITIONS (r3 0/1 major/9 minor, 0.9%; major: humid_sweat_efficiency test cannot fail → B4c not done until fixed test passes on/off; register K1–K14, RR1–RR10 in critic_d3_r3.md) | - | d3_r3 / critic_d3_r3 | A3.3 | final round |
 | A1.1 rendering analyst draft | done | - | analysis/d1_r1.md | S0.1 | |
 | A1.2 critic r1 | done | - | | A1.1 | |
 | A1.3 rev + critic r2 | done (r2 REJECT 0/4 major/8 minor, 0.8%: vsync blocks present; NPC light colour stale; emitter rule wrong bubble size; R3/R4 merge footprint) | - | d1_r2 / critic_d1_r2 | A1.2 | r1 REJECT 0/10 major/9 minor, cite fail 1.6%; present unthrottled on map path; camera z not viewer z; lightmap rebuilt every turn; cast_zlight bench synthetic; iso spans 15+ fns; golden test misses GPU path |
 | A1.4 rev + critic r3 | done — ACCEPT WITH CONDITIONS (r3 0/2 major/9 minor, 0.2% cite fail; majors become TDD entry gates TDD-RR-D1-01/02; 12 register entries in critic_d1_r3.md) | - | d1_r3 / critic_d1_r3 | A1.3 | final round |
-| A5 integration critic | todo | - | analysis/integration.md | A1–A4 | |
+| A5 integration critic | in-progress | - | analysis/integration.md | A1–A4 | |
 | A6.1 TDD ch 1–2 | todo | - | TDD.md | A5 | |
 | A6.2 TDD domain chapters | todo | - | TDD.md | A6.1 | |
 | A6.3 TDD roadmap + risks | todo | - | TDD.md | A6.2 | |
