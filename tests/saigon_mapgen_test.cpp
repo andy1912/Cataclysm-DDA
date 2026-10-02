@@ -157,9 +157,11 @@ TEST_CASE( "saigon_cities_use_shophouses", "[overmap][saigon]" )
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
+    rng_set_engine_seed( 4242 );
     overmap_buffer.clear();
     overmap &om = overmap_buffer.get( point_abs_om() );
     int shophouses = 0;
+    int hem_blocks = 0;
     int dda_houses = 0;
     std::string dda_house_ids;
     for( int x = 0; x < OMAPX; x++ ) {
@@ -167,17 +169,22 @@ TEST_CASE( "saigon_cities_use_shophouses", "[overmap][saigon]" )
             const std::string id = om.ter( tripoint_om_omt( x, y, 0 ) ).id().str();
             if( id.rfind( "sgn_nh_solo_z0", 0 ) == 0 ) {
                 shophouses++;
+            } else if( id.rfind( "sgn_hem_block", 0 ) == 0 ) {
+                hem_blocks++;
             } else if( id.rfind( "house", 0 ) == 0 || id.rfind( "2story", 0 ) == 0 ) {
                 dda_houses++;
                 dda_house_ids += id + " ";
             }
         }
     }
-    CAPTURE( shophouses, dda_houses, dda_house_ids );
-    // The Saigon region routes every city house slot to nhà ống rows (~540-600 per
-    // overmap).  The few remaining dda houses come from dda overmap specials (farms
-    // etc.), which the SAIGON feature-flag whitelist removes in B10; tighten to 0 then.
-    CHECK( shophouses >= 300 );
+    CAPTURE( shophouses, hem_blocks, dda_houses, dda_house_ids );
+    // The Saigon region routes every city house slot to nhà ống rows or hẻm blocks
+    // (pool weights 100:40; ~540-600 slots per overmap).  The few remaining dda houses
+    // come from dda overmap specials (farms etc.), which the SAIGON feature-flag
+    // whitelist removes in B10; tighten to 0 then.
+    CHECK( shophouses + hem_blocks >= 300 );
+    CHECK( shophouses > hem_blocks );
+    CHECK( hem_blocks > 0 );
     CHECK( dda_houses <= 5 );
 }
 
