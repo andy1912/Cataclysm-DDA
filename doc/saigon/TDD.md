@@ -1476,13 +1476,17 @@ Base SHA unless marked HEAD. The most important seams and facts, symbol → loca
 | Style guide | `doc/saigon/art/STYLE_GUIDE.md` | Done: projections, palette, period and brand rules, readability cues, licence |
 | Pipeline | `doc/saigon/art/PIPELINE.md` | Done |
 | Render script | `tools/saigon/art/render_sprites.py` (Blender `bpy`) | Written, **untested**: Blender is not installed |
-| Mod-tileset build | `tools/saigon/art/build_mod_tileset.py` (wraps `tools/gfx_tools/compose.py`) | Written, **untested**: needs `pyvips` |
+| Sprite packer | `tools/saigon/art/build_sprites.py` + `pngio.py` (no dependencies) | **Works**: 3 placeholder sprites in `data/mods/saigon_2000s/gfx/`, loaded by `--check-mods`; how-to in `doc/saigon/art/UPDATING_SPRITES.md` |
 | In-game verification | SDL3 tiles build (S0.3c), `CATA_DISABLE_SPRITE_SHADERS=1` | Build in progress |
 
 **Engine facts the art plan relies on:**
 - `mod_tileset` (`doc/JSON/JSON_INFO.md:4380-4416`) applies only when the base tileset's id is listed in `compatibility`, and uses the same `tiles-new` schema as `tile_config.json`.
 - The iso flag is per tileset (`doc/TILESET.md:686`), so isometric art needs a full iso tileset, not a mod tileset on a top-down base.
 - `looks_like` chains are the fallback for every new id, which is why the coverage baseline has 0 missing T1 ids.
+- Mod tilesets load after the base and `create_tile_type` overwrites existing ids (`src/cata_tiles.cpp:366-368`), so the mod can restyle dda sprites (`t_sidewalk`, `f_fridge`, …) as well as add new ones.
+- Season variants win over plain ids (`src/cata_tiles.cpp:378-396`). The scenario starts in CDDA winter, so base `_season_winter` vegetation must be overridden.
+- Vehicle-part sprites are `vp_<id>` (`src/cata_tiles.cpp:2096`).
+- Overmap icons come from a separate overmap tileset (`src/options.cpp:2580`).
 
 **Risks (add to §8):**
 - **ART-1: art volume.** 193 T1 ids × 2 projections. Mitigation: tier order; the 3D source turns iso into a re-render; T3 reuses base art.

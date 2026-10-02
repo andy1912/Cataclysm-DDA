@@ -44,7 +44,9 @@ def main():
     todo = []
     with open( os.path.join( ROOT, 'doc', 'saigon', 'art', 'manifest.csv' ) ) as fh:
         for row in csv.DictReader( fh ):
-            if row['id'] in have:
+            # vehicle parts are drawn from "vp_<id>" tiles (src/cata_tiles.cpp:2096)
+            sprite_id = 'vp_' + row['id'] if row['category'] == 'vehicle_part' else row['id']
+            if sprite_id in have:
                 state = 'sprite'
             elif row['fallback'] or row['source'] == 'dda':
                 # dda ids are drawn by the base tileset; mod ids need a looks_like chain

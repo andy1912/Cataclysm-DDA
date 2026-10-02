@@ -20,7 +20,7 @@ flowchart LR
    blender -b assets/sgn_non_la.blend -P tools/saigon/art/render_sprites.py -- --id sgn_non_la --out art_build
    ```
    It writes `art_build/topdown/<id>.png`, plus `art_build/iso/<id>_f{0..3}.png` with `_normal`, `_height` and `_emissive` passes.
-4. **Compose.** `tools/saigon/art/build_mod_tileset.py` lays the top-down renders out as a compositing tileset (`tile_info.json` plus a `pngs_saigon_32x32/` folder with one JSON per id). It runs the upstream `tools/gfx_tools/compose.py`, then wraps the resulting `tiles-new` into a `mod_tileset` at `data/mods/saigon_2000s/gfx/`. Its `compatibility` field lists the base tilesets the sprites match.
+4. **Pack.** `python3 tools/saigon/art/build_sprites.py` packs every PNG under `art/saigon/tiles32/` and `art/saigon/overmap16/` into sheets plus `data/mods/saigon_2000s/gfx/mod_tileset.json`, with `compatibility` set to `UltimateCataclysm` / `Larwick Overmap` (ids verified). It needs no dependencies: the PNG reader and writer are pure Python (`pngio.py`). The upstream `compose.py` route (`build_mod_tileset.py`, needs `pyvips`) is only kept for a future full Saigon tileset. Hands-on guide: [`UPDATING_SPRITES.md`](UPDATING_SPRITES.md).
 5. **Verify.**
    - `python3 tools/saigon/art_coverage.py` lists T1 and T2 ids that have neither a sprite nor a deliberate fallback. CI target: 0 T1 misses.
    - In the SDL3 tiles build: `CATA_DISABLE_SPRITE_SHADERS=1 ./cataclysm-tiles`, start the Saigon scenario, and screenshot the district.
@@ -32,12 +32,13 @@ flowchart LR
 | `tools/saigon/art_manifest.py` | Works | Step 1 |
 | `tools/saigon/art_coverage.py` | Works; gives the current baseline | Step 5 |
 | `tools/saigon/art/render_sprites.py` | Written, **untested**: Blender is not installed | Step 3 |
-| `tools/saigon/art/build_mod_tileset.py` | Written, **untested**: needs `pyvips` for upstream `compose.py` | Step 4 |
+| `tools/saigon/art/build_sprites.py` + `pngio.py` | **Works**: 3 placeholder sprites packed and loaded by `--check-mods` | Step 4 |
+| `tools/saigon/art/build_mod_tileset.py` | Written, untested; only for a future full tileset (needs `pyvips`) | Full tileset |
 | Blender 4.x | Not installed (~300 MB download; needs approval) | Step 3 |
-| `pyvips` + libvips | Not installed (Homebrew `vips` is a large source build on macOS 13) | Step 4 |
+| `pyvips` + libvips | Not needed for the mod tileset | Full tileset only |
 | SDL3 tiles build | In progress (S0.3c) | Step 5 screenshots |
 
 ## Base tileset
 - A mod tileset only draws on top of a base tileset whose id appears in `compatibility`.
-- Pass 1 targets one 32×32 top-down community tileset. The working assumption is UltimateCataclysm, whose id is **UNVERIFIED** until the tileset is installed.
+- Pass 1 targets `UltimateCataclysm` (32×32 top-down) and `Larwick Overmap`. Both ids are verified from their `tileset.txt` in I-am-Erk/CDDA-Tilesets. `Ultica_iso` is the matching isometric set for R3.
 - Sprites must match that tileset's tile size and perspective.

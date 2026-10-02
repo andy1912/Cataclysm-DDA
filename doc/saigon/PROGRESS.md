@@ -114,4 +114,5 @@ The domain reports each number their own C++ seams. Modding (d4) uses C1 = vehic
 | G1 art manifest | done | 010cdbe314 | T1 193 / T2 60 / T3 2365 |
 | G2 style guide + pipeline + coverage gate + TDD §10 | done | 299e7d5971 | render/build scripts untested (need Blender, pyvips) |
 | G3 SDL3 tiles build | in-progress | - | SDL3 3.4.16 + image 3.4.6 + ttf 3.2.2 frameworks in ~/Library/Frameworks; glslang 16.6.0 in ~/code/cdda-saigon-logs/tools; needed brew pkgconf+freetype |
-| G4 first end-to-end sprite (sgn_non_la) | todo | - | needs Blender + pyvips installs (ask user) |
+| G4 sprite workflow without dependencies | done (in-game view pending G3 + base tileset install) | (this) | build_sprites.py + pngio.py; 3 placeholders packed and loaded; UPDATING_SPRITES.md |
+| G5 tropical vegetation: region terrain_furniture (palms, banana) + winter-variant overrides | todo | - | content + art; t_region_tree resolves to New England species |
