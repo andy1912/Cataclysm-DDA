@@ -2,6 +2,8 @@
 #ifndef CATA_SRC_WEATHER_GEN_H
 #define CATA_SRC_WEATHER_GEN_H
 
+#include <array>
+#include <optional>
 #include <string>
 #include <string_view>
 #include <vector>
@@ -51,6 +53,19 @@ class weather_generator
         int winter_humidity_manual_mod = 0;
         //How much the wind follows seasonal variation ( lower means more change )
         int base_wind_season_variation = 0;
+        // Optional monthly climate curves (January..December means), interpolated between
+        // month midpoints.  When a curve is set, that quantity uses the curve plus flat
+        // noise instead of the seasonal sinusoid and *_manual_mod values; when none is set,
+        // behaviour is unchanged.
+        std::optional<std::array<double, 12>> monthly_temperature; // Celsius
+        std::optional<std::array<double, 12>> monthly_humidity; // percent
+        std::optional<std::array<double, 12>> monthly_pressure; // hPa
+        std::optional<std::array<double, 12>> monthly_water_temperature; // Celsius
+        // Magnitudes used together with the curves above.
+        double noise_magnitude = 6.0; // kelvins
+        double daily_magnitude = 5.0; // kelvins
+        double humidity_noise = 20.0; // percent
+        double pressure_noise = 15.0; // hPa
         static int current_winddir;
         // TODO: Use std::vector<weather_type_id> and finalise in region settings instead?
         std::vector<std::string> weather_black_list;

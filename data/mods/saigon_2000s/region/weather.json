@@ -3,22 +3,20 @@
     "type": "weather_generator",
     "id": "sgn_weather",
     "copy-from": "default",
-    "//": "Saigon: ~27.5 C mean.  Winter/summer mods cancel the hardcoded +-12 K annual sinusoid; spring/autumn still ramp ~8 K until B4b (documented pass-1 defect).",
+    "//": "Saigon (B4b): monthly climate curves replace the hardcoded New England seasonal sinusoid.  Approximate HCMC normals (UNVERIFIED against a station record): April-peak ~29 C, December low ~26 C, wet-season humidity 79-85%, canal water 27-30 C.  Pressure keeps the dda formula around base_pressure 1009 so the cloudy (P < 1010) coupling of B4a is unchanged.  B4b step 8 re-tune (peer review F1): wet any-hour 87, dry 80, rain afternoon 84, thunder afternoon 85 with humidity_noise 8.",
     "base_temperature": 27.5,
     "base_humidity": 72.0,
     "base_pressure": 1009.0,
     "base_wind": 4.5,
     "base_wind_distrib_peaks": 30,
     "base_wind_season_variation": 0,
-    "winter_temp_manual_mod": 11,
-    "summer_temp_manual_mod": -11,
-    "spring_temp_manual_mod": 0,
-    "autumn_temp_manual_mod": 0,
-    "winter_humidity_manual_mod": -5,
-    "spring_humidity_manual_mod": 0,
-    "summer_humidity_manual_mod": 8,
-    "autumn_humidity_manual_mod": 10,
-    "weather_black_list": [ "flurries", "snowing", "snowstorm" ]
+    "weather_black_list": [ "flurries", "snowing", "snowstorm" ],
+    "monthly_temperature": [ 26.0, 26.8, 28.0, 29.2, 28.8, 27.8, 27.4, 27.4, 27.2, 27.0, 26.6, 25.9 ],
+    "monthly_humidity": [ 72, 70, 70, 72, 79, 82, 83, 83, 85, 84, 80, 76 ],
+    "monthly_water_temperature": [ 27.0, 27.0, 28.0, 29.5, 30.0, 29.5, 29.0, 29.0, 29.0, 28.5, 28.0, 27.5 ],
+    "daily_magnitude": 4.5,
+    "noise_magnitude": 1.5,
+    "humidity_noise": 8.0
   },
   {
     "type": "jmath_function",
@@ -54,8 +52,8 @@
             { "math": [ "weather('humidity') >= 78" ] }
           ]
         },
-        { "and": [ { "math": [ "sgn_wet() == 1" ] }, { "math": [ "weather('humidity') >= 98" ] } ] },
-        { "and": [ { "math": [ "sgn_wet() == 0" ] }, { "math": [ "weather('humidity') >= 99" ] } ] }
+        { "and": [ { "math": [ "sgn_wet() == 1" ] }, { "math": [ "weather('humidity') >= 87" ] } ] },
+        { "and": [ { "math": [ "sgn_wet() == 0" ] }, { "math": [ "weather('humidity') >= 80" ] } ] }
       ]
     }
   },
@@ -87,7 +85,7 @@
           "and": [
             { "math": [ "sgn_wet() == 1" ] },
             { "math": [ "sgn_afternoon() == 1" ] },
-            { "math": [ "weather('humidity') >= 85" ] }
+            { "math": [ "weather('humidity') >= 84" ] }
           ]
         },
         { "math": [ "weather('humidity') >= 98" ] },
@@ -108,7 +106,7 @@
           "and": [
             { "math": [ "sgn_wet() == 1" ] },
             { "math": [ "sgn_afternoon() == 1" ] },
-            { "math": [ "weather('humidity') >= 88" ] }
+            { "math": [ "weather('humidity') >= 85" ] }
           ]
         },
         { "math": [ "weather('pressure') < 996" ] }
