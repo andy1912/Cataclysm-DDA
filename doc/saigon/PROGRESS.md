@@ -50,7 +50,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B3b professions 6–11 | done | ff710000cd | professions/professions.json, modinfo GENERIC_*_ID | B3a | + sgn_survivor generic; scenario profession whitelist |
 | B3.R review | todo | - | | B3b | |
 | B4a weather JSON | done | b811a25b42, 531563aa68 | region/*.json, tests/saigon_weather_test.cpp | B1 | Test [saigon] PASSES (3 seeds): mean 27.4 C, wet-season rain hours 22% vs dry 1.4%, storms afternoon-clustered. Extremes 5–46 C = B4a defect → B4b must tighten test to min≥18, max≤40 |
-| B4b monsoon C++ + test | todo | - | | A3, B4a | only if A3 says JSON is insufficient |
+| B4b monsoon C++ + test | done | f6bf096c3d | src/weather_gen.*, region/weather.json, tests | A3, B4a | monthly curves; dda [weather] unchanged (152 pass); Saigon bands 18–40 C, two-sided rain, storms, warm water. Peer-reviewed |
 | B4c heat-index C++ + test | todo | - | | A3 | only if A3 says needed |
 | B4.R review | todo | - | | B4a | |
 | B5a street food | done | 17739cf864 | items/food/street_food.json | B1 | 12 items. TODO B5d: whole durian + whole bánh chưng via recipes/disassembly; B8f: rau muống harvestable near canals; B5e/B10: patch dda mango description ('imported') |
@@ -77,7 +77,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B8g-2 SAIGON whitelist + specials | done (whitelist; Saigon specials/map extras still to author) | 7ee5662561 | region/region_settings.json | B8d–f | test: 0 dda buildings |
 | B8.R review | todo | - | | B8g | |
 | B9a monsters + monstergroups | done (see I-B9a) | - | | B1 | |
-| B9b NPCs + talk_topic + mission | todo | - | | B2 | |
+| B9b NPCs + talk_topic + mission | done | 2a97bed55c | npcs/npcs.json | B2 | Cô Ba + Chú Tư (unique_id), Medicine for Bà Năm; nhà thuốc lot variant. Peer-reviewed |
 | B9.R review | todo | - | | B9b | |
 | B10 de-Americanize blacklists | todo | - | | B8g | |
 | V1 playtest + screenshots | todo | - | | all B | |
@@ -101,7 +101,7 @@ The domain reports each number their own C++ seams. Modding (d4) uses C1 = vehic
 | I-B8g2 SAIGON whitelist, highways/trails null, map extras, name snippet | done | 7ee5662561 | §10.20 | |
 | I-B5f rain collectors next to tanks | todo | - | §10.12 | |
 | I-B5b2 ice block | todo | - | §10.11 | |
-| I-B4b / B4d / B4c / M-C1 / C2 C++ seams | todo | - | §10.15–17, 22–23 | order per integration §9.3 |
+| I-B4b / B4d / B4c / M-C1 / C2 C++ seams | B4b done (f6bf096c3d); B4c, B4d, M-C1, C2 todo | - | §10.15–17, 22–23 | order per integration §9.3 |
 | I-B5perf + R0 perf harness | todo | - | §10.24–25 | tier a: p50 ≤ 40 ms with ≤100 awake |
 | A6 TDD (absorbs §10.27) | done | 5aa2f795fa | §10.27 | |
 
