@@ -62,7 +62,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B6a motorbike + scooter | done | 27be0aaa7d | vehicles/*.json | B1 | sgn_veh_underbone (3 tiles), sgn_veh_xe_tay_ga; professions switched to sgn gear. TODO: drag/efficiency tuning test (d3 §5.b step 2) |
 | B6b ba gác + xích lô + bicycle | done | 44b4673f75 | vehicles/vehicles.json | B6a | sgn_veh_ba_gac_may is 3 wide → street-only (not hẻm) placement rule for B8/B6d |
 | B6c riverboats | done | 44b4673f75 | vehicles/*.json | B1 | sgn_veh_xuong (oars), sgn_veh_ghe (long-tail). TODO: boat_navigates_shallow_canal test before boats are placed in canals (B8f) |
-| B6d vehicle_groups/placement | todo | - | | B6a–c | |
+| B6d vehicle_groups/placement | done (groups) | e530016fa1 | vehicles/vehicle_groups.json | B6a–c | dilution ≥95% Saigon (test). TODO B8b-2: place sgn_vg_parked_twowheelers on shophouse frontage row 0 per d2_r3 §4.f |
 | B6.R review | todo | - | | B6d | |
 | B7a skill books | done | c56f35800e | items/books/skill_books.json | B1 | 7 books |
 | B7b fiction/sutras/newspapers + book_learn | done (book_learn moves to B5d) | dc907d64fb | items/books/fiction_media.json | B7a | snippet carriers sgn_newspaper/sgn_ward_notice/sgn_note_handwritten need spawning via B5e item_groups |
