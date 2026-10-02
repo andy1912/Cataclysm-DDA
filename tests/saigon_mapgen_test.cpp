@@ -201,23 +201,31 @@ TEST_CASE( "saigon_cities_use_shophouses", "[overmap][saigon]" )
                 hem_blocks++;
             } else if( id.rfind( "sgn_cho_", 0 ) == 0 ) {
                 cho_cells++;
-            } else if( id.rfind( "house", 0 ) == 0 || id.rfind( "2story", 0 ) == 0 ) {
-                dda_houses++;
-                dda_house_ids += id + " ";
+            } else {
+                // dda city buildings and US specials that the Saigon region must not place
+                for( const char *prefix : {
+                         "house", "2story", "s_", "hw_", "police", "bank", "church", "mansion",
+                         "mil_", "lab_", "evac", "school", "fire_station", "hospital"
+                     } ) {
+                    if( id.rfind( prefix, 0 ) == 0 ) {
+                        dda_houses++;
+                        dda_house_ids += id + " ";
+                        break;
+                    }
+                }
             }
         }
     }
     CAPTURE( shophouses, hem_blocks, cho_cells, dda_houses, dda_house_ids );
     // The 2x2 chợ only fits 2-deep blocks, so it is reported rather than required.
     WARN( "chợ cells on this overmap: " << cho_cells );
-    // The Saigon region routes every city house slot to nhà ống rows or hẻm blocks
-    // (pool weights 100:40; ~540-600 slots per overmap).  The few remaining dda houses
-    // come from dda overmap specials (farms etc.), which the SAIGON feature-flag
-    // whitelist removes in B10; tighten to 0 then.
+    // The Saigon region routes every city slot to Saigon buildings, and its SAIGON
+    // feature-flag whitelist (B8g-2) removes every dda overmap special, highway and
+    // US store, so no dda building may appear at all.
     CHECK( shophouses + hem_blocks >= 300 );
     CHECK( shophouses > hem_blocks );
     CHECK( hem_blocks > 0 );
-    CHECK( dda_houses <= 5 );
+    CHECK( dda_houses == 0 );
 }
 
 static const ter_str_id ter_t_door_c( "t_door_c" );

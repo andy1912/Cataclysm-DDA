@@ -1,0 +1,39 @@
+[
+  {
+    "type": "snippet",
+    "category": "<sgn_city_name>",
+    "//": "Historic Saigon districts and wards, used as city names.",
+    "text": [
+      "Chợ Lớn",
+      "Gia Định",
+      "Bình Thạnh",
+      "Phú Nhuận",
+      "Tân Bình",
+      "Gò Vấp",
+      "Thủ Đức",
+      "Bình Tân",
+      "Tân Phú",
+      "Bình Chánh",
+      "Nhà Bè",
+      "Hóc Môn",
+      "Thủ Thiêm",
+      "Đa Kao",
+      "Bến Nghé",
+      "Bến Thành",
+      "Cầu Kho",
+      "Cầu Ông Lãnh",
+      "Tân Định",
+      "Vườn Lài",
+      "Phú Lâm",
+      "Bà Chiểu",
+      "Thị Nghè",
+      "Chánh Hưng",
+      "Phú Thọ",
+      "Hòa Hưng",
+      "Bàn Cờ",
+      "Xóm Chiếu",
+      "Khánh Hội",
+      "An Lạc"
+    ]
+  }
+]
