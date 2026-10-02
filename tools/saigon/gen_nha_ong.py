@@ -112,8 +112,25 @@ def lot_chunks():
     return out
 
 
+# Monsters per lot (d3_r3 §6.2 shophouse tier: <= 4 awake and <= 20 dormant per OMT).
+GROUND_MONSTERS = [ { 'group': 'sgn_GROUP_SAIGON_AWAKE', 'x': [ 1, 3 ], 'y': [ 3, 18 ], 'chance': 15 },
+                    { 'group': 'sgn_GROUP_ZOMBIE_DORMANT', 'x': [ 1, 3 ], 'y': [ 3, 18 ], 'chance': 50,
+                      'repeat': [ 1, 3 ] } ]
+FLOOR_MONSTERS = [ { 'group': 'sgn_GROUP_SAIGON_AWAKE', 'x': [ 1, 3 ], 'y': [ 3, 18 ], 'chance': 8 } ]
+
+
 def nested( nid, rows ):
-    return { 'type': 'mapgen', 'nested_mapgen_id': nid,
+    monsters = GROUND_MONSTERS if nid.startswith( 'sgn_lot_z0_' ) else (
+        FLOOR_MONSTERS if nid.startswith( ( 'sgn_lot_z1_', 'sgn_lot_z2_' ) ) else None )
+    obj = nested_object( rows )
+    if monsters:
+        obj['object']['place_monster'] = monsters
+    obj['nested_mapgen_id'] = nid
+    return obj
+
+
+def nested_object( rows ):
+    return { 'type': 'mapgen',
              'object': { 'mapgensize': [ 24, 24 ], 'palettes': [ 'sgn_nhaong' ], 'rows': chunk( rows ),
                          # Lot chunks are z-exclusive (check_z) and replace whatever is below them.
                          'flags': CLEARING } }

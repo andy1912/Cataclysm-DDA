@@ -92,7 +92,17 @@
         "#..............................................#",
         "######################,,,,######################"
       ],
-      "palettes": [ "sgn_cho" ]
+      "palettes": [ "sgn_cho" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 2, 21 ], "y": [ 7, 22 ], "repeat": [ 1, 4 ] },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 2, 21 ], "y": [ 7, 22 ], "repeat": [ 5, 10 ] },
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 2, 21 ], "y": [ 26, 45 ], "repeat": [ 1, 4 ] },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 2, 21 ], "y": [ 26, 45 ], "repeat": [ 5, 10 ] },
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 26, 45 ], "y": [ 7, 22 ], "repeat": [ 1, 4 ] },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 26, 45 ], "y": [ 7, 22 ], "repeat": [ 5, 10 ] },
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 26, 45 ], "y": [ 26, 45 ], "repeat": [ 1, 4 ] },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 26, 45 ], "y": [ 26, 45 ], "repeat": [ 5, 10 ] }
+      ]
     }
   },
   {

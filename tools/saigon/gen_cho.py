@@ -83,7 +83,13 @@ def palette():
 def mapgen():
     return { 'type': 'mapgen',
              'om_terrain': [ [ 'sgn_cho_nw', 'sgn_cho_ne' ], [ 'sgn_cho_sw', 'sgn_cho_se' ] ],
-             'object': { 'fill_ter': 't_thconc_floor', 'rows': build_rows(), 'palettes': [ 'sgn_cho' ] } }
+             'object': { 'fill_ter': 't_thconc_floor', 'rows': build_rows(), 'palettes': [ 'sgn_cho' ],
+                         # d3_r3 §6.2 chợ hot-spot tier, per 4-OMT hall: ~10 awake, ~30 dormant
+                         # (ranges may not cross OMT boundaries, so one entry per quarter)
+                         'place_monster': [ m for xr in ( [ 2, 21 ], [ 26, 45 ] ) for yr in ( [ 7, 22 ], [ 26, 45 ] )
+                                            for m in (
+                             { 'group': 'sgn_GROUP_SAIGON_AWAKE', 'x': xr, 'y': yr, 'repeat': [ 1, 4 ] },
+                             { 'group': 'sgn_GROUP_ZOMBIE_DORMANT', 'x': xr, 'y': yr, 'repeat': [ 5, 10 ] } ) ] } }
 
 
 def roof_mapgen():

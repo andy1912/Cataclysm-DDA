@@ -155,7 +155,13 @@ def block_mapgen():
                         'neighbors': { d: OPEN_NEIGHBOURS } } )
     return { 'type': 'mapgen', 'om_terrain': [ 'sgn_hem_block' ],
              'object': { 'fill_ter': 't_concrete', 'rows': rows, 'palettes': [ 'sgn_hem', 'sgn_hem_params' ],
-                         'place_nested': nests } }
+                         'place_nested': nests,
+                         # d3_r3 §6.2 shophouse-like tier: a few awake, more dormant on the spine
+                         'place_monster': [
+                             { 'group': 'sgn_GROUP_SAIGON_AWAKE', 'x': [ 11, 12 ], 'y': [ 0, 23 ], 'chance': 60,
+                               'repeat': [ 1, 2 ] },
+                             { 'group': 'sgn_GROUP_ZOMBIE_DORMANT', 'x': [ 0, 23 ], 'y': [ 11, 12 ], 'chance': 80,
+                               'repeat': [ 2, 5 ] } ] } }
 
 
 def overmap():

@@ -19,6 +19,7 @@
 #include "player_helpers.h"
 #include "point.h"
 #include "rng.h"
+#include "submap.h"
 #include "type_id.h"
 #include "vehicle_group.h"
 
@@ -481,5 +482,81 @@ TEST_CASE( "saigon_buildings_have_roofs", "[mapgen][saigon]" )
             }
             tm.delete_unmerged_submaps();
         }
+    }
+}
+
+// Counts mapgen spawn points in one generated OMT column (all z), split into
+// dormant (pseudo-dormant corpses) and awake monsters.  Generated submaps are stored
+// in MAPBUFFER, so they are read from there.
+static std::pair<int, int> count_spawns( const tripoint_abs_omt &pos, int top_z )
+{
+    int awake = 0;
+    int dormant = 0;
+    const tripoint_abs_sm origin = project_to<coords::sm>( pos );
+    for( int z = 0; z <= top_z; z++ ) {
+        for( const point &d : { point( 0, 0 ), point( 1, 0 ), point( 0, 1 ), point( 1, 1 ) } ) {
+            submap *sub = MAPBUFFER.lookup_submap( origin + tripoint( d, z ) );
+            if( sub == nullptr ) {
+                continue;
+            }
+            for( const spawn_point &sp : sub->spawns ) {
+                const bool is_dormant = sp.type.str().find( "pseudo_dormant" ) != std::string::npos;
+                ( is_dormant ? dormant : awake ) += sp.count;
+            }
+        }
+    }
+    return { awake, dormant };
+}
+
+TEST_CASE( "saigon_monster_budget_per_omt", "[mapgen][monster][saigon]" )
+{
+    if( !mtype_id( "sgn_mon_zombie_xe_om" ).is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    sgn_clear_map_and_reset_player();
+    // d3_r3 §6.2 tiers per OMT: rows/hẻm <= 4 awake and <= 20 dormant; chợ <= 20 / <= 60.
+    struct tier {
+        std::vector<std::string> levels;
+        double max_awake;
+        double max_dormant;
+    };
+    const std::vector<tier> tiers = {
+        {
+            {
+                "sgn_nh_solo_z0_north", "sgn_nh_solo_z1_north", "sgn_nh_solo_z2_north",
+                "sgn_nh_solo_z3_north", "sgn_nh_solo_z4_north", "sgn_nh_solo_z5_north"
+            }, 4, 20
+        },
+        { { "sgn_hem_block_north", "sgn_hem_block_roof_north" }, 4, 20 },
+        { { "sgn_cho_nw_north", "sgn_cho_roof_nw_north" }, 20, 60 },
+    };
+    int column = 0;
+    for( const tier &t : tiers ) {
+        CAPTURE( t.levels[0] );
+        const tripoint_abs_omt pos( 120 + 3 * column++, 120, 0 );
+        for( size_t z = 0; z < t.levels.size(); z++ ) {
+            overmap_buffer.ter_set( pos + tripoint( 0, 0, z ), oter_str_id( t.levels[z] ).id() );
+        }
+        const int seeds = 10;
+        double awake = 0;
+        double dormant = 0;
+        for( int seed = 1; seed <= seeds; seed++ ) {
+            rng_set_engine_seed( seed );
+            MAPBUFFER.clear_outside_reality_bubble();
+            smallmap tm;
+            // save_results = true so the submaps, and their spawn points, land in MAPBUFFER
+            tm.generate( pos, calendar::turn, true, true );
+            const std::pair<int, int> c = count_spawns( pos, t.levels.size() - 1 );
+            awake += c.first;
+            dormant += c.second;
+        }
+        awake /= seeds;
+        dormant /= seeds;
+        CAPTURE( awake, dormant );
+        CHECK( awake > 0 );
+        CHECK( dormant > 0 );
+        CHECK( awake <= t.max_awake );
+        CHECK( dormant <= t.max_dormant );
     }
 }
