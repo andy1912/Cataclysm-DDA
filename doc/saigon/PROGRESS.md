@@ -88,7 +88,7 @@ The domain reports each number their own C++ seams. Modding (d4) uses C1 = vehic
 ## Integration resolution units (from analysis/integration.md §10)
 | ID | Status | Commit | Source | Notes |
 |---|---|---|---|---|
-| I-R2 roofs for hẻm/chợ/chùa + indoor-has-ceiling test | todo | - | §10.2 (I7-1) | |
+| I-R2 roofs for hẻm/chợ/chùa + indoor-has-ceiling test | done | 591b86e29b | §10.2 (I7-1) | |
 | I-B3R canon kit fixes (sgn_newspaper, student bike, nurse book) | todo | - | §10.9 | |
 | I-B5e/B10b VND wallet (sgn_dong notes, vàng chỉ, sgn_wallet group) | todo | - | §10.10 | |
 | I-B10a scenario/profession whitelists | todo | - | §10.19 | |
