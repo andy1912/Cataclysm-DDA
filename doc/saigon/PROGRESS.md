@@ -89,9 +89,9 @@ The domain reports each number their own C++ seams. Modding (d4) uses C1 = vehic
 | ID | Status | Commit | Source | Notes |
 |---|---|---|---|---|
 | I-R2 roofs for hẻm/chợ/chùa + indoor-has-ceiling test | done | 591b86e29b | §10.2 (I7-1) | |
-| I-B3R canon kit fixes (sgn_newspaper, student bike, nurse book) | todo | - | §10.9 | |
-| I-B5e/B10b VND wallet (sgn_dong notes, vàng chỉ, sgn_wallet group) | todo | - | §10.10 | |
-| I-B10a scenario/profession whitelists | todo | - | §10.19 | |
+| I-B3R canon kit fixes (sgn_newspaper, student bike, nurse book) | done | b7785eb88a | §10.9 | |
+| I-B5e/B10b VND wallet (sgn_dong notes, vàng chỉ, sgn_wallet group) | done | b7785eb88a | §10.10 | |
+| I-B10a scenario/profession whitelists | done | b7785eb88a | §10.19 | |
 | I-B9a place_monsters in Saigon mapgen + reflavoured zombies + dormant group | todo | - | §10.18 | |
 | I-B8d chợ door fix + garments group | todo | - | §10.4 | |
 | I-B5d tank recipe welding; I-B5 looks_like on 16 items | todo | - | §10.13–14 | |
