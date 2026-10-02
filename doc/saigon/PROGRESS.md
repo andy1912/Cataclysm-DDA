@@ -69,7 +69,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B7.R review | todo | - | | B7b | |
 | B8a shared palettes | todo | - | | B1 | |
 | B8a shared palettes + B8b-1 nhà ống solo row | done | 3fa02ce99d | mapgen/nha_ong/, overmap/nha_ong.json, furniture/ | B8a | sgn_nhaong_row_1 city_building (6 z). Test saigon_nha_ong_row_structure PASSES (10 seeds). Remaining B8b-2: endw/mid/ende/pair roles, frontage parking, start-location retarget |
-| B8c hẻm block | todo | - | | B8a | |
+| B8c hẻm block | done | f7343a2dcb | mapgen/hem/, overmap/hem.json | B8a | saigon_hem_connectivity PASSES (1200 assertions). Deferred: closed_arm dead-end param, multi-OMT mutable hẻm labyrinth |
 | B8d chợ | todo | - | | B8a | |
 | B8e pagoda + café + chung cư | todo | - | | B8a | |
 | B8f canal | todo | - | | B8a | |
