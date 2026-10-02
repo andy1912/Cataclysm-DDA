@@ -325,3 +325,73 @@ TEST_CASE( "saigon_cho_market_structure", "[mapgen][saigon]" )
     CHECK( counters >= 40 );
     CHECK( coolers >= 1 );
 }
+
+static const furn_str_id furn_f_statue( "f_statue" );
+
+TEST_CASE( "saigon_chungcu_and_chua_structure", "[mapgen][saigon]" )
+{
+    const oter_str_id chua( "sgn_chua_north" );
+    if( !chua.is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    sgn_clear_map_and_reset_player();
+    const tripoint_abs_omt pos( 90, 90, 0 );
+    for( int z = 0; z <= 5; z++ ) {
+        overmap_buffer.ter_set( pos + tripoint( 0, 0, z ),
+                                oter_str_id( "sgn_chungcu_z" + std::to_string( z ) + "_north" ).id() );
+    }
+    overmap_buffer.ter_set( pos + tripoint( 2, 0, 0 ), chua.id() );
+    rng_set_engine_seed( 11 );
+    {
+        MAPBUFFER.clear_outside_reality_bubble();
+        smallmap tm;
+        tm.generate( pos, calendar::turn, false, true );
+        map &m = *tm.cast_to_map();
+        int tanks = 0;
+        int filled = 0;
+        for( int z = 0; z <= 5; z++ ) {
+            CAPTURE( z );
+            if( z < 5 ) {
+                CHECK( count_ter( m, ter_t_stairs_up, z ) == 1 );
+            }
+            if( z > 0 ) {
+                CHECK( count_ter( m, ter_t_stairs_down, z ) == 1 );
+            }
+            for( int x = 0; x < SEEX * 2; x++ ) {
+                for( int y = 0; y < SEEY * 2; y++ ) {
+                    const tripoint_bub_ms p( x, y, z );
+                    if( z < 5 && m.ter( p ) == ter_t_stairs_up.id() ) {
+                        CHECK( m.ter( tripoint_bub_ms( x, y, z + 1 ) ) == ter_t_stairs_down.id() );
+                    }
+                    if( m.furn( p ) == furn_f_standing_tank.id() ) {
+                        tanks++;
+                        filled += !m.i_at( p ).empty();
+                    }
+                }
+            }
+        }
+        CHECK( tanks == 2 );
+        CHECK( filled == tanks );
+        tm.delete_unmerged_submaps();
+    }
+    {
+        MAPBUFFER.clear_outside_reality_bubble();
+        smallmap tm;
+        tm.generate( pos + tripoint( 2, 0, 0 ), calendar::turn, false, true );
+        map &m = *tm.cast_to_map();
+        int statues = 0;
+        for( int x = 0; x < SEEX * 2; x++ ) {
+            for( int y = 0; y < SEEY * 2; y++ ) {
+                statues += m.furn( tripoint_bub_ms( x, y, 0 ) ) == furn_f_statue.id();
+            }
+        }
+        CHECK( statues == 1 );
+        // The tam quan gate is open to the street.
+        CHECK( m.move_cost( tripoint_bub_ms( 11, 0, 0 ) ) > 0 );
+        const std::set<point> inside = reachable_through_doors( m, point( 11, 0 ), 0 );
+        // The main hall is reachable from the gate through its double doors.
+        CHECK( inside.count( point( 11, 12 ) ) == 1 );
+        tm.delete_unmerged_submaps();
+    }
+}
