@@ -71,7 +71,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B8a shared palettes + B8b-1 nhà ống solo row | done | 3fa02ce99d | mapgen/nha_ong/, overmap/nha_ong.json, furniture/ | B8a | sgn_nhaong_row_1 city_building (6 z). Test saigon_nha_ong_row_structure PASSES (10 seeds). Remaining B8b-2: endw/mid/ende/pair roles, frontage parking, start-location retarget |
 | B8c hẻm block | done | f7343a2dcb | mapgen/hem/, overmap/hem.json | B8a | saigon_hem_connectivity PASSES (1200 assertions). Deferred: closed_arm dead-end param, multi-OMT mutable hẻm labyrinth |
 | B8d chợ | done | 12ef4728e5 | mapgen/cho/, overmap/cho.json | B8a | 2x2 market, ~9/overmap; shops pool now Saigon-only; start loc sgn_sloc_cho retargeted. Test saigon_cho_market_structure PASSES |
-| B8e pagoda + café + chung cư | todo | - | | B8a | |
+| B8e pagoda + café + chung cư | done | 461916d7aa | mapgen/b8e/, overmap/chua_chungcu.json | B8a | café lives inside hẻm blocks (B8c) + phở ground floors; standalone café deferred. City pools are now 100% Saigon (houses/shops/parks) |
 | B8f canal | todo | - | | B8a | |
 | B8g-1 region city pools → nhà ống | done | (this) | region/region_settings.json, scenario/start_locations.json | B8b | sgn_city: city_size 12, spacing 3, houses = sgn_nhaong_row_1. Test saigon_cities_use_shophouses: 542–599 shophouse OMTs per overmap. Start locs now spawn in nhà ống (z0). Shops/parks still dda until B8d/e |
 | B8g-2 SAIGON whitelist + specials | todo | - | | B8d–f | tighten dda_houses check to 0 |
