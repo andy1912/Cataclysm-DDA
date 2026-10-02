@@ -8,6 +8,7 @@
 #include "calendar.h"
 #include "cata_catch.h"
 #include "coordinates.h"
+#include "item.h"
 #include "map.h"
 #include "map_helpers.h"
 #include "map_scale_constants.h"
@@ -162,6 +163,7 @@ TEST_CASE( "saigon_cities_use_shophouses", "[overmap][saigon]" )
     overmap &om = overmap_buffer.get( point_abs_om() );
     int shophouses = 0;
     int hem_blocks = 0;
+    int cho_cells = 0;
     int dda_houses = 0;
     std::string dda_house_ids;
     for( int x = 0; x < OMAPX; x++ ) {
@@ -171,13 +173,17 @@ TEST_CASE( "saigon_cities_use_shophouses", "[overmap][saigon]" )
                 shophouses++;
             } else if( id.rfind( "sgn_hem_block", 0 ) == 0 ) {
                 hem_blocks++;
+            } else if( id.rfind( "sgn_cho_", 0 ) == 0 ) {
+                cho_cells++;
             } else if( id.rfind( "house", 0 ) == 0 || id.rfind( "2story", 0 ) == 0 ) {
                 dda_houses++;
                 dda_house_ids += id + " ";
             }
         }
     }
-    CAPTURE( shophouses, hem_blocks, dda_houses, dda_house_ids );
+    CAPTURE( shophouses, hem_blocks, cho_cells, dda_houses, dda_house_ids );
+    // The 2x2 chợ only fits 2-deep blocks, so it is reported rather than required.
+    WARN( "chợ cells on this overmap: " << cho_cells );
     // The Saigon region routes every city house slot to nhà ống rows or hẻm blocks
     // (pool weights 100:40; ~540-600 slots per overmap).  The few remaining dda houses
     // come from dda overmap specials (farms etc.), which the SAIGON feature-flag
@@ -269,4 +275,53 @@ TEST_CASE( "saigon_hem_connectivity", "[mapgen][saigon]" )
             }
         }
     }
+}
+
+static const furn_str_id furn_f_counter( "f_counter" );
+static const itype_id itype_sgn_thung_xop( "sgn_thung_xop" );
+
+TEST_CASE( "saigon_cho_market_structure", "[mapgen][saigon]" )
+{
+    const oter_str_id cho_nw( "sgn_cho_nw_north" );
+    if( !cho_nw.is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    sgn_clear_map_and_reset_player();
+    const tripoint_abs_omt pos( 80, 80, 0 );
+    const std::vector<std::pair<point, std::string>> parts = {
+        { { 0, 0 }, "nw" }, { { 1, 0 }, "ne" }, { { 0, 1 }, "sw" }, { { 1, 1 }, "se" }
+    };
+    for( const std::pair<point, std::string> &part : parts ) {
+        overmap_buffer.ter_set( pos + tripoint( part.first, 0 ),
+                                oter_str_id( "sgn_cho_" + part.second + "_north" ).id() );
+    }
+    int counters = 0;
+    int coolers = 0;
+    rng_set_engine_seed( 7 );
+    for( const std::pair<point, std::string> &part : parts ) {
+        CAPTURE( part.second );
+        MAPBUFFER.clear_outside_reality_bubble();
+        smallmap tm;
+        tm.generate( pos + tripoint( part.first, 0 ), calendar::turn, false, true );
+        map &m = *tm.cast_to_map();
+        for( int x = 0; x < SEEX * 2; x++ ) {
+            for( int y = 0; y < SEEY * 2; y++ ) {
+                const tripoint_bub_ms p( x, y, 0 );
+                counters += m.furn( p ) == furn_f_counter.id();
+                for( const item &it : m.i_at( p ) ) {
+                    coolers += it.typeId() == itype_sgn_thung_xop;
+                }
+            }
+        }
+        // Every quarter of the hall has a 2-tile half of a 4-wide entrance on its outer
+        // north or south wall (x 22-25 of the 48-wide hall).
+        const int entrance_y = part.first.y == 0 ? 0 : SEEY * 2 - 1;
+        const int entrance_x = part.first.x == 0 ? 22 : 0;
+        CHECK( m.move_cost( tripoint_bub_ms( entrance_x, entrance_y, 0 ) ) > 0 );
+        CHECK( m.move_cost( tripoint_bub_ms( entrance_x + 1, entrance_y, 0 ) ) > 0 );
+        tm.delete_unmerged_submaps();
+    }
+    CHECK( counters >= 40 );
+    CHECK( coolers >= 1 );
 }

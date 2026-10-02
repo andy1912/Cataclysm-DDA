@@ -15,8 +15,10 @@
   {
     "type": "start_location",
     "id": "sgn_sloc_cho",
-    "//": "B2a placeholder terrain (dda grocery); retargeted to the chợ wet market in B8d.",
-    "copy-from": "sloc_grocery_store",
-    "name": "Chợ (wet market stall)"
+    "name": "Chợ (wet market stall)",
+    "terrain": [
+      { "om_terrain": "sgn_cho_nw", "om_terrain_match_type": "TYPE" },
+      { "om_terrain": "sgn_cho_se", "om_terrain_match_type": "TYPE" }
+    ]
   }
 ]
