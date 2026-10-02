@@ -18,7 +18,8 @@
     "flags": [ "EATEN_HOT", "USE_EAT_VERB" ],
     "price": "2 USD",
     "price_postapoc": "4 USD",
-    "vitamins": [ [ "vitC", 6 ], [ "calcium", 4 ], [ "iron", 20 ], [ "meat_allergen", 1 ] ]
+    "vitamins": [ [ "vitC", 6 ], [ "calcium", 4 ], [ "iron", 20 ], [ "meat_allergen", 1 ] ],
+    "looks_like": "soup_meat"
   },
   {
     "type": "ITEM",
@@ -44,7 +45,8 @@
       [ "meat_allergen", 1 ],
       [ "wheat_allergen", 1 ],
       [ "veggy_allergen", 1 ]
-    ]
+    ],
+    "looks_like": "sandwich_t"
   },
   {
     "type": "ITEM",
@@ -63,7 +65,8 @@
     "material": [ "wheat" ],
     "price": "30 cent",
     "price_postapoc": "1 USD",
-    "vitamins": [ [ "iron", 10 ], [ "wheat_allergen", 1 ] ]
+    "vitamins": [ [ "iron", 10 ], [ "wheat_allergen", 1 ] ],
+    "looks_like": "bread"
   },
   {
     "type": "ITEM",
@@ -84,7 +87,8 @@
     "flags": [ "EATEN_HOT" ],
     "price": "1 USD",
     "price_postapoc": "4 USD",
-    "vitamins": [ [ "calcium", 5 ], [ "iron", 30 ], [ "meat_allergen", 1 ], [ "egg_allergen", 1 ] ]
+    "vitamins": [ [ "calcium", 5 ], [ "iron", 30 ], [ "meat_allergen", 1 ], [ "egg_allergen", 1 ] ],
+    "looks_like": "rice_cooked"
   },
   {
     "type": "ITEM",
@@ -103,7 +107,8 @@
     "material": [ "veggy", "flesh" ],
     "price": "5 USD",
     "price_postapoc": "12 USD",
-    "vitamins": [ [ "calcium", 3 ], [ "iron", 15 ], [ "meat_allergen", 1 ], [ "veggy_allergen", 1 ] ]
+    "vitamins": [ [ "calcium", 3 ], [ "iron", 15 ], [ "meat_allergen", 1 ], [ "veggy_allergen", 1 ] ],
+    "looks_like": "rice_cooked"
   },
   {
     "type": "ITEM",
@@ -124,7 +129,8 @@
     "flags": [ "EDIBLE_FROZEN" ],
     "price": "15 cent",
     "price_postapoc": "1 USD",
-    "vitamins": [ [ "iron", 15 ], [ "wheat_allergen", 1 ] ]
+    "vitamins": [ [ "iron", 15 ], [ "wheat_allergen", 1 ] ],
+    "looks_like": "noodles_fast"
   },
   {
     "type": "ITEM",
@@ -146,7 +152,8 @@
     "material": [ "veggy" ],
     "price": "40 cent",
     "price_postapoc": "2 USD",
-    "vitamins": [ [ "calcium", 4 ], [ "iron", 6 ], [ "veggy_allergen", 1 ] ]
+    "vitamins": [ [ "calcium", 4 ], [ "iron", 6 ], [ "veggy_allergen", 1 ] ],
+    "looks_like": "soup_veggy"
   },
   {
     "type": "ITEM",
@@ -165,7 +172,8 @@
     "material": [ "veggy" ],
     "price": "30 cent",
     "price_postapoc": "75 cent",
-    "vitamins": [ [ "iron", 4 ] ]
+    "vitamins": [ [ "iron", 4 ] ],
+    "looks_like": "noodles_fast"
   },
   {
     "type": "ITEM",
@@ -185,7 +193,8 @@
     "material": [ "veggy" ],
     "price": "20 cent",
     "price_postapoc": "50 cent",
-    "vitamins": [ [ "vitC", 30 ], [ "calcium", 8 ], [ "iron", 15 ], [ "veggy_allergen", 1 ] ]
+    "vitamins": [ [ "vitC", 30 ], [ "calcium", 8 ], [ "iron", 15 ], [ "veggy_allergen", 1 ] ],
+    "looks_like": "spinach"
   },
   {
     "type": "ITEM",
@@ -205,7 +214,8 @@
     "material": [ "fruit" ],
     "price": "3 USD",
     "price_postapoc": "3 USD",
-    "vitamins": [ [ "vitC", 20 ], [ "iron", 3 ], [ "fruit_allergen", 1 ] ]
+    "vitamins": [ [ "vitC", 20 ], [ "iron", 3 ], [ "fruit_allergen", 1 ] ],
+    "looks_like": "mango"
   },
   {
     "type": "ITEM",
@@ -225,7 +235,8 @@
     "material": [ "fruit" ],
     "price": "50 cent",
     "price_postapoc": "1 USD",
-    "vitamins": [ [ "vitC", 15 ], [ "calcium", 2 ], [ "fruit_allergen", 1 ] ]
+    "vitamins": [ [ "vitC", 15 ], [ "calcium", 2 ], [ "fruit_allergen", 1 ] ],
+    "looks_like": "mango"
   },
   {
     "type": "ITEM",
@@ -245,6 +256,7 @@
     "material": [ "fruit" ],
     "price": "60 cent",
     "price_postapoc": "1 USD",
-    "vitamins": [ [ "vitC", 10 ], [ "iron", 4 ], [ "fruit_allergen", 1 ] ]
+    "vitamins": [ [ "vitC", 10 ], [ "iron", 4 ], [ "fruit_allergen", 1 ] ],
+    "looks_like": "mango"
   }
 ]

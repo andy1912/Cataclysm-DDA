@@ -32,6 +32,8 @@ def build_rows():
         for x0 in range( 3, N - 6, 6 ):
             if 20 <= x0 <= 25:
                 continue  # keep the central north-south aisle clear
+            if y0 == 7 and x0 in ( 3, 39 ):
+                continue  # keep the office and ice-store doorways (x 5 and 41, row 6) clear
             for dy in range( 2 ):
                 for dx in range( 4 ):
                     g[y0 + dy][x0 + dx] = sym

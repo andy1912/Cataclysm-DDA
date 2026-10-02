@@ -31,6 +31,8 @@ static const furn_str_id furn_f_standing_tank( "f_standing_tank" );
 
 static const oter_str_id oter_field( "field" );
 
+static const ter_str_id ter_t_brick_wall( "t_brick_wall" );
+static const ter_str_id ter_t_concrete_roof( "t_concrete_roof" );
 static const ter_str_id ter_t_open_air( "t_open_air" );
 static const ter_str_id ter_t_stairs_down( "t_stairs_down" );
 static const ter_str_id ter_t_stairs_up( "t_stairs_up" );
@@ -52,32 +54,6 @@ static int count_ter( map &m, const ter_str_id &ter, int z )
         }
     }
     return n;
-}
-
-// Walkable z-level BFS inside the OMT; returns the set of reached points.
-static std::set<point> reachable( map &m, const point &start, int z )
-{
-    std::set<point> seen;
-    std::queue<point> todo;
-    todo.push( start );
-    seen.insert( start );
-    while( !todo.empty() ) {
-        const point p = todo.front();
-        todo.pop();
-        for( const point &d : four_adjacent_offsets ) {
-            const point q = p + d;
-            if( q.x < 0 || q.y < 0 || q.x >= SEEX * 2 || q.y >= SEEY * 2 || seen.count( q ) ) {
-                continue;
-            }
-            const tripoint_bub_ms tq( q.x, q.y, z );
-            if( m.move_cost( tq ) <= 0 || m.ter( tq ) == ter_t_open_air.id() ) {
-                continue;
-            }
-            seen.insert( q );
-            todo.push( q );
-        }
-    }
-    return seen;
 }
 
 static void sgn_clear_map_and_reset_player()
@@ -131,9 +107,57 @@ TEST_CASE( "saigon_nha_ong_row_structure", "[mapgen][saigon]" )
                 }
             }
         }
-        // The z3 roof walk (rows 16-19) runs the full width between the end caps.
-        const std::set<point> walk = reachable( m, point( 1, 17 ), 3 );
+        // Every down-stair lands on an up-stair directly below.
+        for( int z = 1; z <= sgn_top_z; z++ ) {
+            for( int x = 0; x < SEEX * 2; x++ ) {
+                for( int y = 0; y < SEEY * 2; y++ ) {
+                    if( m.ter( tripoint_bub_ms( x, y, z ) ) == ter_t_stairs_down.id() ) {
+                        CAPTURE( x, y, z );
+                        CHECK( m.ter( tripoint_bub_ms( x, y, z - 1 ) ) == ter_t_stairs_up.id() );
+                    }
+                }
+            }
+        }
+        // No loot buried in walls (integration I7-2: lot 5 vs the east end cap).
+        for( int z = 0; z <= 2; z++ ) {
+            for( int x = 0; x < SEEX * 2; x++ ) {
+                for( int y = 0; y < SEEY * 2; y++ ) {
+                    const tripoint_bub_ms p( x, y, z );
+                    if( m.ter( p ) == ter_t_brick_wall.id() ) {
+                        CAPTURE( x, y, z );
+                        CHECK( m.i_at( p ).empty() );
+                    }
+                }
+            }
+        }
+        // The z3 roof walk (rows 16-19) runs the full width between the end caps over
+        // bare roof only; railings are dividers, not walkway (critic_d2 D6a).
+        std::set<point> walk;
+        std::queue<point> todo;
+        todo.push( point( 1, 17 ) );
+        walk.insert( point( 1, 17 ) );
+        while( !todo.empty() ) {
+            const point p = todo.front();
+            todo.pop();
+            for( const point &d : four_adjacent_offsets ) {
+                const point q = p + d;
+                if( q.x < 0 || q.y < 16 || q.x >= SEEX * 2 || q.y > 19 || walk.count( q ) ) {
+                    continue;
+                }
+                if( m.ter( tripoint_bub_ms( q.x, q.y, 3 ) ) != ter_t_concrete_roof.id() ||
+                    m.furn( tripoint_bub_ms( q.x, q.y, 3 ) ) != furn_str_id::NULL_ID() ) {
+                    continue;
+                }
+                walk.insert( q );
+                todo.push( q );
+            }
+        }
         CHECK( walk.count( point( 22, 17 ) ) == 1 );
+        // The end caps really are walls at both ends of the walk.
+        for( int y = 16; y <= 19; y++ ) {
+            CHECK( m.ter( tripoint_bub_ms( 0, y, 3 ) ) == ter_t_brick_wall.id() );
+            CHECK( m.ter( tripoint_bub_ms( 23, y, 3 ) ) == ter_t_brick_wall.id() );
+        }
         // One rooftop tank per lot, and it holds water.
         int tanks = 0;
         int filled = 0;

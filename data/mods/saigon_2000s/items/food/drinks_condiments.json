@@ -20,7 +20,8 @@
     "flags": [ "NO_AUTO_CONSUME", "INEDIBLE" ],
     "price": "1 USD",
     "price_postapoc": "3 USD",
-    "vitamins": [ [ "iron", 1 ], [ "fish_allergen", 1 ] ]
+    "vitamins": [ [ "iron", 1 ], [ "fish_allergen", 1 ] ],
+    "looks_like": "soysauce"
   },
   {
     "type": "ITEM",
@@ -43,7 +44,8 @@
     "flags": [ "NO_AUTO_CONSUME", "INEDIBLE" ],
     "price": "80 cent",
     "price_postapoc": "1 USD",
-    "vitamins": [ [ "vitC", 4 ], [ "veggy_allergen", 1 ] ]
+    "vitamins": [ [ "vitC", 4 ], [ "veggy_allergen", 1 ] ],
+    "looks_like": "hot_sauce"
   },
   {
     "type": "ITEM",
@@ -97,7 +99,8 @@
     "flags": [ "EATEN_COLD" ],
     "price": "20 cent",
     "price_postapoc": "1 USD",
-    "vitamins": [ [ "iron", 2 ] ]
+    "vitamins": [ [ "iron", 2 ] ],
+    "looks_like": "juice"
   },
   {
     "type": "ITEM",
