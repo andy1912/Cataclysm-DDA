@@ -96,7 +96,7 @@ The domain reports each number their own C++ seams. Modding (d4) uses C1 = vehic
 | I-B8d chợ door fix + garments group | done (doors; garments group deferred) | 344ade721f | §10.4 | |
 | I-B5d tank recipe welding; I-B5 looks_like on 16 items | done | 344ade721f | §10.13–14 | |
 | I-B8b2 shophouse roles, frontage parking, last-lot fixtures, gutter funnels | todo | - | §10.5 | with B5f |
-| I-B6d2 route (c) road nested vehicle chunks | todo | - | §10.7 | |
+| I-B6d2 route (c) road nested vehicle chunks | done | 18ab858a66 | §10.7 | |
 | I-B8a shared palette sgn_common + low-ground flood ids + emitter rule lint | todo | - | §10.1, 10.3 | |
 | I-B8g2 SAIGON whitelist, highways/trails null, map extras, name snippet | done | 7ee5662561 | §10.20 | |
 | I-B5f rain collectors next to tanks | todo | - | §10.12 | |
