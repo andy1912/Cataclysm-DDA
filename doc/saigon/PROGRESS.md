@@ -35,7 +35,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | A1.2 critic r1 | done | - | | A1.1 | |
 | A1.3 rev + critic r2 | done (r2 REJECT 0/4 major/8 minor, 0.8%: vsync blocks present; NPC light colour stale; emitter rule wrong bubble size; R3/R4 merge footprint) | - | d1_r2 / critic_d1_r2 | A1.2 | r1 REJECT 0/10 major/9 minor, cite fail 1.6%; present unthrottled on map path; camera z not viewer z; lightmap rebuilt every turn; cast_zlight bench synthetic; iso spans 15+ fns; golden test misses GPU path |
 | A1.4 rev + critic r3 | done — ACCEPT WITH CONDITIONS (r3 0/2 major/9 minor, 0.2% cite fail; majors become TDD entry gates TDD-RR-D1-01/02; 12 register entries in critic_d1_r3.md) | - | d1_r3 / critic_d1_r3 | A1.3 | final round |
-| A5 integration critic | in-progress | - | analysis/integration.md | A1–A4 | |
+| A5 integration critic | done | - | analysis/integration.md | A1–A4 | |
 | A6.1 TDD ch 1–2 | todo | - | TDD.md | A5 | |
 | A6.2 TDD domain chapters | todo | - | TDD.md | A6.1 | |
 | A6.3 TDD roadmap + risks | todo | - | TDD.md | A6.2 | |
@@ -84,3 +84,23 @@ Plan: see `doc/saigon/PLAN.md`.
 
 ## Naming note
 The domain reports each number their own C++ seams. Modding (d4) uses C1 = vehicle_group override, C2 = check-mods exit code, C6 = curses test mode. Mapgen (d2_r3) proposes its own "C1" rotation-aware neighbour check, tracked here as **M-C1** to avoid a clash.
+
+## Integration resolution units (from analysis/integration.md §10)
+| ID | Status | Commit | Source | Notes |
+|---|---|---|---|---|
+| I-R2 roofs for hẻm/chợ/chùa + indoor-has-ceiling test | todo | - | §10.2 (I7-1) | |
+| I-B3R canon kit fixes (sgn_newspaper, student bike, nurse book) | todo | - | §10.9 | |
+| I-B5e/B10b VND wallet (sgn_dong notes, vàng chỉ, sgn_wallet group) | todo | - | §10.10 | |
+| I-B10a scenario/profession whitelists | todo | - | §10.19 | |
+| I-B9a place_monsters in Saigon mapgen + reflavoured zombies + dormant group | todo | - | §10.18 | |
+| I-B8d chợ door fix + garments group | todo | - | §10.4 | |
+| I-B5d tank recipe welding; I-B5 looks_like on 16 items | todo | - | §10.13–14 | |
+| I-B8b2 shophouse roles, frontage parking, last-lot fixtures, gutter funnels | todo | - | §10.5 | with B5f |
+| I-B6d2 route (c) road nested vehicle chunks | todo | - | §10.7 | |
+| I-B8a shared palette sgn_common + low-ground flood ids + emitter rule lint | todo | - | §10.1, 10.3 | |
+| I-B8g2 SAIGON whitelist, highways/trails null, map extras, name snippet | todo | - | §10.20 | |
+| I-B5f rain collectors next to tanks | todo | - | §10.12 | |
+| I-B5b2 ice block | todo | - | §10.11 | |
+| I-B4b / B4d / B4c / M-C1 / C2 C++ seams | todo | - | §10.15–17, 22–23 | order per integration §9.3 |
+| I-B5perf + R0 perf harness | todo | - | §10.24–25 | tier a: p50 ≤ 40 ms with ≤100 awake |
+| A6 TDD (absorbs §10.27) | todo | - | §10.27 | |
