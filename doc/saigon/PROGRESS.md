@@ -93,8 +93,8 @@ The domain reports each number their own C++ seams. Modding (d4) uses C1 = vehic
 | I-B5e/B10b VND wallet (sgn_dong notes, vàng chỉ, sgn_wallet group) | done | b7785eb88a | §10.10 | |
 | I-B10a scenario/profession whitelists | done | b7785eb88a | §10.19 | |
 | I-B9a place_monsters in Saigon mapgen + reflavoured zombies + dormant group | done | 425d4b23c0 | §10.18 | |
-| I-B8d chợ door fix + garments group | todo | - | §10.4 | |
-| I-B5d tank recipe welding; I-B5 looks_like on 16 items | todo | - | §10.13–14 | |
+| I-B8d chợ door fix + garments group | done (doors; garments group deferred) | 344ade721f | §10.4 | |
+| I-B5d tank recipe welding; I-B5 looks_like on 16 items | done | 344ade721f | §10.13–14 | |
 | I-B8b2 shophouse roles, frontage parking, last-lot fixtures, gutter funnels | todo | - | §10.5 | with B5f |
 | I-B6d2 route (c) road nested vehicle chunks | todo | - | §10.7 | |
 | I-B8a shared palette sgn_common + low-ground flood ids + emitter rule lint | todo | - | §10.1, 10.3 | |
@@ -104,3 +104,6 @@ The domain reports each number their own C++ seams. Modding (d4) uses C1 = vehic
 | I-B4b / B4d / B4c / M-C1 / C2 C++ seams | todo | - | §10.15–17, 22–23 | order per integration §9.3 |
 | I-B5perf + R0 perf harness | todo | - | §10.24–25 | tier a: p50 ≤ 40 ms with ≤100 awake |
 | A6 TDD (absorbs §10.27) | todo | - | §10.27 | |
+
+### Decisions
+- Chợ (I7-4): ~9 non-unique markets per overmap (weight 8), not CITY_UNIQUE as in d2 §4.c — Saigon has a market per ward. The default start (first allowed_loc) is the nhà ống, so a missing chợ cannot block a new game.
