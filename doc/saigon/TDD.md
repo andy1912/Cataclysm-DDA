@@ -1461,3 +1461,31 @@ Base SHA unless marked HEAD. The most important seams and facts, symbol → loca
 | Ma | ghost(s): what survivors call the risen | story |
 | Người bệnh | "the sick": the official term for the risen | story |
 | Tết | Lunar New Year | bánh chưng |
+
+## 10. Graphics and art pipeline
+
+**Decision AD-ART-1 (user, 2026-10-02):**
+- Every asset is modelled once in 3D and rendered by script into top-down 32×32 sprites for today's renderer, plus isometric 4-facing sprites with normal, height and emissive passes for renderer phases R3 and R4.
+- Delivery is a **mod tileset first**: Saigon sprites ship in `data/mods/saigon_2000s/gfx/` on top of a compatible 32×32 base tileset. That grows into a full Saigon tileset by priority tier.
+- Rationale: changing perspective later becomes a re-render instead of a redraw, and R4's per-pixel lighting needs exactly the passes a 3D render produces anyway (§3.1).
+
+| Artifact | Path | Status |
+|---|---|---|
+| Art manifest (what to draw, by tier) | `tools/saigon/art_manifest.py` writes `doc/saigon/art/manifest.csv` | Done. 2,618 reachable ids: **T1 193** (in every district), T2 60, T3 2,365 |
+| Coverage gate | `tools/saigon/art_coverage.py` | Done. Baseline: 0 Saigon sprites; every T1/T2 id draws via base art or a `looks_like` fallback; CI fails on any T1 "missing" |
+| Style guide | `doc/saigon/art/STYLE_GUIDE.md` | Done: projections, palette, period and brand rules, readability cues, licence |
+| Pipeline | `doc/saigon/art/PIPELINE.md` | Done |
+| Render script | `tools/saigon/art/render_sprites.py` (Blender `bpy`) | Written, **untested**: Blender is not installed |
+| Mod-tileset build | `tools/saigon/art/build_mod_tileset.py` (wraps `tools/gfx_tools/compose.py`) | Written, **untested**: needs `pyvips` |
+| In-game verification | SDL3 tiles build (S0.3c), `CATA_DISABLE_SPRITE_SHADERS=1` | Build in progress |
+
+**Engine facts the art plan relies on:**
+- `mod_tileset` (`doc/JSON/JSON_INFO.md:4380-4416`) applies only when the base tileset's id is listed in `compatibility`, and uses the same `tiles-new` schema as `tile_config.json`.
+- The iso flag is per tileset (`doc/TILESET.md:686`), so isometric art needs a full iso tileset, not a mod tileset on a top-down base.
+- `looks_like` chains are the fallback for every new id, which is why the coverage baseline has 0 missing T1 ids.
+
+**Risks (add to §8):**
+- **ART-1: art volume.** 193 T1 ids × 2 projections. Mitigation: tier order; the 3D source turns iso into a re-render; T3 reuses base art.
+- **ART-2: base-tileset id and style drift.** Mitigation: `compatibility` lists the verified ids; style guide §1–2.
+- **ART-3: AI or unclear-licence art.** Mitigation: per-sprite `SOURCES` provenance (style guide §7).
+- **ART-4: pipeline tools untested.** Mitigation: Blender and `pyvips` installs need approval; first end-to-end run on one T1 id (`sgn_non_la`) before scaling up.

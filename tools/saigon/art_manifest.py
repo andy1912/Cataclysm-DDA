@@ -269,7 +269,11 @@ class Walker:
 
 def fallback_of( objs, category, sid ):
     typ = { 'terrain': 'terrain', 'furniture': 'furniture', 'item': 'ITEM', 'monster': 'MONSTER',
-            'vehicle_part': 'vehicle_part' }.get( category )
+            'vehicle_part': 'vehicle_part', 'overmap_terrain': 'overmap_terrain' }.get( category )
+    if category == 'monster' and sid.startswith( ( 'pseudo_dormant_', 'mon_pseudo_dormant_' ) ):
+        # generated at runtime from the dda monster (MonsterGenerator::generate_fake_pseudo_dormant_monster)
+        base = sid.replace( 'mon_pseudo_dormant_', 'mon_' ).replace( 'pseudo_dormant_', '' )
+        return base
     chain = []
     cur = sid
     for _ in range( 8 ):
@@ -342,7 +346,7 @@ def main():
                        'fallback': fallback_of( objs, cat, sid ), 'refs': '; '.join( e['refs'] ) } )
     os.makedirs( OUT, exist_ok=True )
     with open( os.path.join( OUT, 'manifest.csv' ), 'w', newline='', encoding='utf-8' ) as fh:
-        wr = csv.DictWriter( fh, fieldnames=list( rows[0].keys() ) )
+        wr = csv.DictWriter( fh, fieldnames=list( rows[0].keys() ), lineterminator='\n' )
         wr.writeheader()
         wr.writerows( rows )
     counts = collections.Counter( ( r['tier'], r['category'], r['source'] ) for r in rows )
