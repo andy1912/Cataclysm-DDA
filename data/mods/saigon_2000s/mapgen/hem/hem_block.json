@@ -1,0 +1,352 @@
+[
+  {
+    "type": "palette",
+    "id": "sgn_hem",
+    "terrain": {
+      "#": "t_brick_wall",
+      ".": "t_thconc_floor",
+      "a": "t_concrete",
+      "+": "t_door_c",
+      ",": "t_concrete",
+      "b": "t_thconc_floor",
+      "k": "t_thconc_floor",
+      "A": "t_thconc_floor",
+      "t": "t_thconc_floor",
+      "T": "t_concrete",
+      "C": "t_concrete",
+      "S": "t_thconc_floor"
+    },
+    "furniture": {
+      "b": "f_bed",
+      "k": "f_counter",
+      "A": "f_sgn_ban_tho",
+      "t": "f_table",
+      "T": "f_table",
+      "C": "f_stool",
+      "S": "f_sgn_ban_tho"
+    },
+    "items": {
+      "k": { "item": "sgn_shophouse_kitchen", "chance": 50 },
+      "b": { "item": "sgn_shophouse_living", "chance": 35 },
+      "A": { "item": "sgn_pagoda", "chance": 25 },
+      "T": { "item": "sgn_cafe", "chance": 40 },
+      "S": { "item": "sgn_pagoda", "chance": 70, "repeat": [ 1, 3 ] }
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_nw_homes",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "###########",
+        "#bkA###b.A#",
+        "#...###...#",
+        "#t..###.kt#",
+        "##+#####+##",
+        "#aaaaaaaaaa",
+        "##+##a##+##",
+        "#...#a#...#",
+        "#bA.#a#tA.#",
+        "#kt.#a#.bk#",
+        "#####a#####"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_nw_cafe_shrine",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "###########",
+        "#bkA#TC,TC#",
+        "#...#,,,,,#",
+        "#t..#TC,TC#",
+        "##+##,,,,,#",
+        "#aaaaaaaaaa",
+        "##+##a#####",
+        "#...#a#.S.#",
+        "#bA.#a+...#",
+        "#kt.#a#...#",
+        "#####a#####"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_ne_homes",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "###########",
+        "#A.b###Akb#",
+        "#...###...#",
+        "#tk.###..t#",
+        "##+#####+##",
+        "aaaaaaaaaa#",
+        "##+##a##+##",
+        "#...#a#...#",
+        "#.At#a#.Ab#",
+        "#kb.#a#.tk#",
+        "#####a#####"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_ne_cafe_shrine",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "###########",
+        "#CT,CT#Akb#",
+        "#,,,,,#...#",
+        "#CT,CT#..t#",
+        "#,,,,,##+##",
+        "aaaaaaaaaa#",
+        "#####a##+##",
+        "#.S.#a#...#",
+        "#...+a#.Ab#",
+        "#...#a#.tk#",
+        "#####a#####"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_sw_homes",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "#####a#####",
+        "#kt.#a#.bk#",
+        "#bA.#a#tA.#",
+        "#...#a#...#",
+        "##+##a##+##",
+        "#aaaaaaaaaa",
+        "##+#####+##",
+        "#t..###.kt#",
+        "#...###...#",
+        "#bkA###b.A#",
+        "###########"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_sw_cafe_shrine",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "#####a#####",
+        "#kt.#a#...#",
+        "#bA.#a+...#",
+        "#...#a#.S.#",
+        "##+##a#####",
+        "#aaaaaaaaaa",
+        "##+##,,,,,#",
+        "#t..#TC,TC#",
+        "#...#,,,,,#",
+        "#bkA#TC,TC#",
+        "###########"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_se_homes",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "#####a#####",
+        "#kb.#a#.tk#",
+        "#.At#a#.Ab#",
+        "#...#a#...#",
+        "##+##a##+##",
+        "aaaaaaaaaa#",
+        "##+#####+##",
+        "#tk.###..t#",
+        "#...###...#",
+        "#A.b###Akb#",
+        "###########"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_q_se_cafe_shrine",
+    "object": {
+      "mapgensize": [ 11, 11 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "#####a#####",
+        "#...#a#.tk#",
+        "#...+a#.Ab#",
+        "#.S.#a#...#",
+        "#####a##+##",
+        "aaaaaaaaaa#",
+        "#,,,,,##+##",
+        "#CT,CT#..t#",
+        "#,,,,,#...#",
+        "#CT,CT#Akb#",
+        "###########"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_cap_north",
+    "object": {
+      "mapgensize": [ 2, 2 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "##",
+        "  "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_cap_south",
+    "object": {
+      "mapgensize": [ 2, 2 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "  ",
+        "##"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_cap_west",
+    "object": {
+      "mapgensize": [ 2, 2 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        "# ",
+        "# "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_hem_cap_east",
+    "object": {
+      "mapgensize": [ 2, 2 ],
+      "palettes": [ "sgn_hem" ],
+      "rows": [
+        " #",
+        " #"
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ "sgn_hem_block" ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "aaaaaaaaaaaaaaaaaaaaaaaa",
+        "aaaaaaaaaaaaaaaaaaaaaaaa",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           ",
+        "           aa           "
+      ],
+      "palettes": [ "sgn_hem" ],
+      "place_nested": [
+        { "chunks": [ [ "sgn_hem_q_nw_homes", 3 ], [ "sgn_hem_q_nw_cafe_shrine", 1 ] ], "x": 0, "y": 0 },
+        { "chunks": [ [ "sgn_hem_q_ne_homes", 3 ], [ "sgn_hem_q_ne_cafe_shrine", 1 ] ], "x": 13, "y": 0 },
+        { "chunks": [ [ "sgn_hem_q_sw_homes", 3 ], [ "sgn_hem_q_sw_cafe_shrine", 1 ] ], "x": 0, "y": 13 },
+        { "chunks": [ [ "sgn_hem_q_se_homes", 3 ], [ "sgn_hem_q_se_cafe_shrine", 1 ] ], "x": 13, "y": 13 },
+        {
+          "chunks": [ "null" ],
+          "else_chunks": [ "sgn_hem_cap_north" ],
+          "x": 11,
+          "y": 0,
+          "neighbors": {
+            "north": [
+              { "om_terrain": "sgn_hem", "om_terrain_match_type": "PREFIX" },
+              { "om_terrain": "road", "om_terrain_match_type": "TYPE" }
+            ]
+          }
+        },
+        {
+          "chunks": [ "null" ],
+          "else_chunks": [ "sgn_hem_cap_south" ],
+          "x": 11,
+          "y": 22,
+          "neighbors": {
+            "south": [
+              { "om_terrain": "sgn_hem", "om_terrain_match_type": "PREFIX" },
+              { "om_terrain": "road", "om_terrain_match_type": "TYPE" }
+            ]
+          }
+        },
+        {
+          "chunks": [ "null" ],
+          "else_chunks": [ "sgn_hem_cap_west" ],
+          "x": 0,
+          "y": 11,
+          "neighbors": {
+            "west": [
+              { "om_terrain": "sgn_hem", "om_terrain_match_type": "PREFIX" },
+              { "om_terrain": "road", "om_terrain_match_type": "TYPE" }
+            ]
+          }
+        },
+        {
+          "chunks": [ "null" ],
+          "else_chunks": [ "sgn_hem_cap_east" ],
+          "x": 22,
+          "y": 11,
+          "neighbors": {
+            "east": [
+              { "om_terrain": "sgn_hem", "om_terrain_match_type": "PREFIX" },
+              { "om_terrain": "road", "om_terrain_match_type": "TYPE" }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

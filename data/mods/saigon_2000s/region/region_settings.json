@@ -14,6 +14,6 @@
     "//": "Dense, tightly spaced cities of nhà ống rows.  Shops and parks stay dda until chợ, pagoda, café and chung cư buildings land (B8d/B8e).",
     "city_size": 12,
     "city_spacing": 3,
-    "houses": [ [ "sgn_nhaong_row_1", 100 ] ]
+    "houses": [ [ "sgn_nhaong_row_1", 100 ], [ "sgn_hem_block_1", 40 ] ]
   }
 ]
