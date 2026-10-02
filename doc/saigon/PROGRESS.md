@@ -36,10 +36,10 @@ Plan: see `doc/saigon/PLAN.md`.
 | A1.3 rev + critic r2 | done (r2 REJECT 0/4 major/8 minor, 0.8%: vsync blocks present; NPC light colour stale; emitter rule wrong bubble size; R3/R4 merge footprint) | - | d1_r2 / critic_d1_r2 | A1.2 | r1 REJECT 0/10 major/9 minor, cite fail 1.6%; present unthrottled on map path; camera z not viewer z; lightmap rebuilt every turn; cast_zlight bench synthetic; iso spans 15+ fns; golden test misses GPU path |
 | A1.4 rev + critic r3 | done — ACCEPT WITH CONDITIONS (r3 0/2 major/9 minor, 0.2% cite fail; majors become TDD entry gates TDD-RR-D1-01/02; 12 register entries in critic_d1_r3.md) | - | d1_r3 / critic_d1_r3 | A1.3 | final round |
 | A5 integration critic | done | - | analysis/integration.md | A1–A4 | |
-| A6.1 TDD ch 1–2 | todo | - | TDD.md | A5 | |
-| A6.2 TDD domain chapters | todo | - | TDD.md | A6.1 | |
-| A6.3 TDD roadmap + risks | todo | - | TDD.md | A6.2 | |
-| A6.4 citation check | todo | - | tools script | A6.3 | zero misses |
+| A6.1 TDD ch 1–2 | done | 5aa2f795fa | TDD.md | A5 | |
+| A6.2 TDD domain chapters | done | 5aa2f795fa | TDD.md | A6.1 | |
+| A6.3 TDD roadmap + risks | done | 5aa2f795fa | TDD.md | A6.2 | |
+| A6.4 citation check | done | 903904e75b | tools/saigon/check_citations.py | A6.3 | TDD 359 / reports 2048 citations, 0 misses |
 | B0 content bible | done | - | CONTENT_BIBLE.md | - | |
 | C6 curses test-mode fixes | done | (this) | src/game.cpp, src/main.cpp, tools/saigon/check_mod.sh | - | (a) init_ui looped forever in ensure_term_size (stdscr uninitialized in test_mode); (b) non-TILES --check-mods ran options init() twice → ~106k option errors, exit 1. Baseline `check_mod.sh dda` = OK in ~60 s |
 | B1 mod skeleton | done | 20f1e7d394 | data/mods/saigon_2000s/modinfo.json | A4, A2 | check_mod.sh OK; negative control (typo'd key) correctly FAILs. GENERIC_*_ID options deferred to B2/B3 |
@@ -103,7 +103,7 @@ The domain reports each number their own C++ seams. Modding (d4) uses C1 = vehic
 | I-B5b2 ice block | todo | - | §10.11 | |
 | I-B4b / B4d / B4c / M-C1 / C2 C++ seams | todo | - | §10.15–17, 22–23 | order per integration §9.3 |
 | I-B5perf + R0 perf harness | todo | - | §10.24–25 | tier a: p50 ≤ 40 ms with ≤100 awake |
-| A6 TDD (absorbs §10.27) | todo | - | §10.27 | |
+| A6 TDD (absorbs §10.27) | done | 5aa2f795fa | §10.27 | |
 
 ### Decisions
 - Chợ (I7-4): ~9 non-unique markets per overmap (weight 8), not CITY_UNIQUE as in d2 §4.c — Saigon has a market per ward. The default start (first allowed_loc) is the nhà ống, so a missing chợ cannot block a new game.
