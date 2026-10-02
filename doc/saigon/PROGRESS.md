@@ -74,7 +74,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B8e pagoda + café + chung cư | done | 461916d7aa | mapgen/b8e/, overmap/chua_chungcu.json | B8a | café lives inside hẻm blocks (B8c) + phở ground floors; standalone café deferred. City pools are now 100% Saigon (houses/shops/parks) |
 | B8f canal | todo | - | | B8a | |
 | B8g-1 region city pools → nhà ống | done | (this) | region/region_settings.json, scenario/start_locations.json | B8b | sgn_city: city_size 12, spacing 3, houses = sgn_nhaong_row_1. Test saigon_cities_use_shophouses: 542–599 shophouse OMTs per overmap. Start locs now spawn in nhà ống (z0). Shops/parks still dda until B8d/e |
-| B8g-2 SAIGON whitelist + specials | todo | - | | B8d–f | tighten dda_houses check to 0 |
+| B8g-2 SAIGON whitelist + specials | done (whitelist; Saigon specials/map extras still to author) | 7ee5662561 | region/region_settings.json | B8d–f | test: 0 dda buildings |
 | B8.R review | todo | - | | B8g | |
 | B9a monsters + monstergroups | done (see I-B9a) | - | | B1 | |
 | B9b NPCs + talk_topic + mission | todo | - | | B2 | |
@@ -98,7 +98,7 @@ The domain reports each number their own C++ seams. Modding (d4) uses C1 = vehic
 | I-B8b2 shophouse roles, frontage parking, last-lot fixtures, gutter funnels | todo | - | §10.5 | with B5f |
 | I-B6d2 route (c) road nested vehicle chunks | todo | - | §10.7 | |
 | I-B8a shared palette sgn_common + low-ground flood ids + emitter rule lint | todo | - | §10.1, 10.3 | |
-| I-B8g2 SAIGON whitelist, highways/trails null, map extras, name snippet | todo | - | §10.20 | |
+| I-B8g2 SAIGON whitelist, highways/trails null, map extras, name snippet | done | 7ee5662561 | §10.20 | |
 | I-B5f rain collectors next to tanks | todo | - | §10.12 | |
 | I-B5b2 ice block | todo | - | §10.11 | |
 | I-B4b / B4d / B4c / M-C1 / C2 C++ seams | todo | - | §10.15–17, 22–23 | order per integration §9.3 |
