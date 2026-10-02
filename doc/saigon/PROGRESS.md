@@ -76,7 +76,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B8g-1 region city pools → nhà ống | done | (this) | region/region_settings.json, scenario/start_locations.json | B8b | sgn_city: city_size 12, spacing 3, houses = sgn_nhaong_row_1. Test saigon_cities_use_shophouses: 542–599 shophouse OMTs per overmap. Start locs now spawn in nhà ống (z0). Shops/parks still dda until B8d/e |
 | B8g-2 SAIGON whitelist + specials | todo | - | | B8d–f | tighten dda_houses check to 0 |
 | B8.R review | todo | - | | B8g | |
-| B9a monsters + monstergroups | todo | - | | B1 | |
+| B9a monsters + monstergroups | done (see I-B9a) | - | | B1 | |
 | B9b NPCs + talk_topic + mission | todo | - | | B2 | |
 | B9.R review | todo | - | | B9b | |
 | B10 de-Americanize blacklists | todo | - | | B8g | |
@@ -92,7 +92,7 @@ The domain reports each number their own C++ seams. Modding (d4) uses C1 = vehic
 | I-B3R canon kit fixes (sgn_newspaper, student bike, nurse book) | done | b7785eb88a | §10.9 | |
 | I-B5e/B10b VND wallet (sgn_dong notes, vàng chỉ, sgn_wallet group) | done | b7785eb88a | §10.10 | |
 | I-B10a scenario/profession whitelists | done | b7785eb88a | §10.19 | |
-| I-B9a place_monsters in Saigon mapgen + reflavoured zombies + dormant group | todo | - | §10.18 | |
+| I-B9a place_monsters in Saigon mapgen + reflavoured zombies + dormant group | done | 425d4b23c0 | §10.18 | |
 | I-B8d chợ door fix + garments group | todo | - | §10.4 | |
 | I-B5d tank recipe welding; I-B5 looks_like on 16 items | todo | - | §10.13–14 | |
 | I-B8b2 shophouse roles, frontage parking, last-lot fixtures, gutter funnels | todo | - | §10.5 | with B5f |
