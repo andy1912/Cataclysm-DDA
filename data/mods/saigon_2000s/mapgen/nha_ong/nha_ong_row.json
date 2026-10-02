@@ -24,6 +24,7 @@
       "k": "t_thconc_floor",
       "d": "t_thconc_floor",
       "s": "t_thconc_floor",
+      "p": "t_thconc_floor",
       "<": "t_stairs_up",
       ">": "t_stairs_down",
       "_": "t_concrete_roof",
@@ -44,7 +45,8 @@
       "m": "f_rack",
       "k": "f_counter",
       "d": "f_dresser",
-      "s": "f_sofa"
+      "s": "f_sofa",
+      "p": "f_rack"
     },
     "liquids": { "K": { "liquid": "water", "amount": [ 120, 720 ] } },
     "items": {
@@ -55,6 +57,7 @@
       "r": { "item": "sgn_shophouse_kitchen", "chance": 45, "repeat": [ 1, 3 ] },
       "m": { "item": "sgn_moto_shop", "chance": 50, "repeat": [ 1, 2 ] },
       "k": { "item": "sgn_moto_shop", "chance": 40 },
+      "p": { "item": "sgn_pharmacy", "chance": 60, "repeat": [ 1, 3 ] },
       "d": { "item": "sgn_shophouse_living", "chance": 50, "repeat": [ 1, 2 ] },
       "b": { "item": "sgn_shophouse_living", "chance": 20 },
       "s": { "item": "sgn_shophouse_living", "chance": 30 }
@@ -173,6 +176,45 @@
       ]
     },
     "nested_mapgen_id": "sgn_lot_z0_taphoa"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W...                    ",
+        "Wpp.                    ",
+        "W...                    ",
+        "Wpp.                    ",
+        "W...                    ",
+        "Wpp.                    ",
+        "WCC.                    ",
+        "W...                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W...                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 3 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_nhathuoc"
   },
   {
     "type": "mapgen",
@@ -539,7 +581,7 @@
       "mapgensize": [ 24, 24 ],
       "place_nested": [
         {
-          "chunks": [ [ "sgn_lot_z0_pho", 3 ], [ "sgn_lot_z0_taphoa", 4 ], [ "sgn_lot_z0_moto", 2 ] ],
+          "chunks": [ [ "sgn_lot_z0_pho", 3 ], [ "sgn_lot_z0_taphoa", 4 ], [ "sgn_lot_z0_moto", 2 ], [ "sgn_lot_z0_nhathuoc", 1 ] ],
           "x": 0,
           "y": 0,
           "check_z": [ 0 ]
@@ -558,7 +600,7 @@
       "mapgensize": [ 24, 24 ],
       "place_nested": [
         {
-          "chunks": [ [ "sgn_lot_z0_pho", 3 ], [ "sgn_lot_z0_taphoa", 4 ], [ "sgn_lot_z0_moto", 2 ] ],
+          "chunks": [ [ "sgn_lot_z0_pho", 3 ], [ "sgn_lot_z0_taphoa", 4 ], [ "sgn_lot_z0_moto", 2 ], [ "sgn_lot_z0_nhathuoc", 1 ] ],
           "x": 0,
           "y": 0,
           "check_z": [ 0 ]
@@ -578,7 +620,7 @@
       "mapgensize": [ 24, 24 ],
       "place_nested": [
         {
-          "chunks": [ [ "sgn_lot_z0_pho", 3 ], [ "sgn_lot_z0_taphoa", 4 ], [ "sgn_lot_z0_moto", 2 ] ],
+          "chunks": [ [ "sgn_lot_z0_pho", 3 ], [ "sgn_lot_z0_taphoa", 4 ], [ "sgn_lot_z0_moto", 2 ], [ "sgn_lot_z0_nhathuoc", 1 ] ],
           "x": 0,
           "y": 0,
           "check_z": [ 0 ]

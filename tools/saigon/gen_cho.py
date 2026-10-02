@@ -91,7 +91,10 @@ def mapgen():
                          'place_monster': [ m for xr in ( [ 2, 21 ], [ 26, 45 ] ) for yr in ( [ 7, 22 ], [ 26, 45 ] )
                                             for m in (
                              { 'group': 'sgn_GROUP_SAIGON_AWAKE', 'x': xr, 'y': yr, 'repeat': [ 1, 4 ] },
-                             { 'group': 'sgn_GROUP_ZOMBIE_DORMANT', 'x': xr, 'y': yr, 'repeat': [ 5, 10 ] } ) ] } }
+                             { 'group': 'sgn_GROUP_ZOMBIE_DORMANT', 'x': xr, 'y': yr, 'repeat': [ 5, 10 ] } ) ],
+                         # B9b: Cô Ba and Chú Tư hold out in the office of roughly one chợ in nine
+                         # (true uniqueness needs a global flag: follow-up).
+                         'place_nested': [ { 'chunks': [ [ 'sgn_cho_npcs', 1 ], [ 'null', 8 ] ], 'x': 1, 'y': 1 } ] } }
 
 
 def roof_mapgen():

@@ -59,6 +59,9 @@ GROUND = {
     'taphoa': [
         'WRRR', 'W...', 'Wrr.', 'W...', 'Wrr.', 'W...', 'Wrr.', 'WCC.', 'W...',
         'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W...', 'WW+W' ],
+    'nhathuoc': [
+        'WRRR', 'W...', 'Wpp.', 'W...', 'Wpp.', 'W...', 'Wpp.', 'WCC.', 'W...',
+        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W...', 'WW+W' ],
     'moto': [
         'WRRR', 'W...', 'W.m.', 'W.m.', 'W...', 'Wkk.', 'W...', 'WCC.', 'W...',
         'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W...', 'WW+W' ],
@@ -137,7 +140,8 @@ def nested_object( rows ):
 
 
 def lot_height( nid, top ):
-    ground = { 'chunks': [ [ 'sgn_lot_z0_pho', 3 ], [ 'sgn_lot_z0_taphoa', 4 ], [ 'sgn_lot_z0_moto', 2 ] ],
+    ground = { 'chunks': [ [ 'sgn_lot_z0_pho', 3 ], [ 'sgn_lot_z0_taphoa', 4 ], [ 'sgn_lot_z0_moto', 2 ],
+                           [ 'sgn_lot_z0_nhathuoc', 1 ] ],
                'x': 0, 'y': 0, 'check_z': [ 0 ] }
     floors = [ { 'chunks': [ [ 'sgn_lot_z%d_family' % z, 3 ], [ 'sgn_lot_z%d_rental' % z, 1 ] ],
                  'x': 0, 'y': 0, 'check_z': [ z ] } for z in ( 1, 2 ) ]
@@ -169,13 +173,13 @@ def palette():
             'C': 't_thconc_floor', 'S': 't_thconc_floor', 'O': 't_thconc_floor', 'K': 't_concrete_roof',
             'A': 't_thconc_floor', 'F': 't_thconc_floor', 'T': 't_thconc_floor', 'b': 't_thconc_floor',
             'r': 't_thconc_floor', 'm': 't_thconc_floor', 'k': 't_thconc_floor', 'd': 't_thconc_floor',
-            's': 't_thconc_floor',
+            's': 't_thconc_floor', 'p': 't_thconc_floor',
             '<': 't_stairs_up', '>': 't_stairs_down', '_': 't_concrete_roof', '=': 't_railing' },
         'furniture': {
             't': 'f_table', 'c': 'f_stool', 'C': 'f_counter', 'S': 'f_sink', 'O': 'f_oven',
             'K': 'f_standing_tank', 'A': 'f_sgn_ban_tho', 'F': 'f_fridge', 'T': 'f_toilet',
             'b': 'f_bed', 'r': 'f_rack', 'm': 'f_rack', 'k': 'f_counter', 'd': 'f_dresser',
-            's': 'f_sofa' },
+            's': 'f_sofa', 'p': 'f_rack' },
         'liquids': { 'K': { 'liquid': 'water', 'amount': [ 120, 720 ] } },
         'items': {
             'C': { 'item': 'sgn_street_cart', 'chance': 35 },
@@ -185,6 +189,7 @@ def palette():
             'r': { 'item': 'sgn_shophouse_kitchen', 'chance': 45, 'repeat': [ 1, 3 ] },
             'm': { 'item': 'sgn_moto_shop', 'chance': 50, 'repeat': [ 1, 2 ] },
             'k': { 'item': 'sgn_moto_shop', 'chance': 40 },
+            'p': { 'item': 'sgn_pharmacy', 'chance': 60, 'repeat': [ 1, 3 ] },
             'd': { 'item': 'sgn_shophouse_living', 'chance': 50, 'repeat': [ 1, 2 ] },
             'b': { 'item': 'sgn_shophouse_living', 'chance': 20 },
             's': { 'item': 'sgn_shophouse_living', 'chance': 30 } } }

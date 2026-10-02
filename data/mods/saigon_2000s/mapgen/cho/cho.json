@@ -102,7 +102,8 @@
         { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 26, 45 ], "y": [ 7, 22 ], "repeat": [ 5, 10 ] },
         { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 26, 45 ], "y": [ 26, 45 ], "repeat": [ 1, 4 ] },
         { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 26, 45 ], "y": [ 26, 45 ], "repeat": [ 5, 10 ] }
-      ]
+      ],
+      "place_nested": [ { "chunks": [ [ "sgn_cho_npcs", 1 ], [ "null", 8 ] ], "x": 1, "y": 1 } ]
     }
   },
   {
