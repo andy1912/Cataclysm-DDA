@@ -17,7 +17,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | S0.2 deps | done | - | - | - | Upstream is SDL3-only since 2026-08-11 (doc/c++/COMPILING.md). Homebrew on macOS 13 builds from source (hours), so it was aborted; nothing installed. Curses build needs no deps. |
 | S0.3a curses build (RelWithDebInfo equiv.) | done | - | ./cataclysm | S0.2 | `CXXFLAGS=-D_XOPEN_SOURCE_EXTENDED make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 SOUND=0 NCURSES_PREFIX=ncurses cataclysm` (macOS: wide-char define only set when LOCALIZE=1, and there is no libncursesw → upstream Makefile bug, candidate fork fix), log in ~/code/cdda-saigon-logs/. Used for --check-mods on every unit |
 | S0.3b cata_test | done | - | tests/cata_test | S0.3a | `CXXFLAGS=-D_XOPEN_SOURCE_EXTENDED make -j4 RELEASE=1 DEBUG_SYMBOLS=1 LOCALIZE=0 TILES=0 SOUND=0 NCURSES_PREFIX=ncurses tests`. Smoke: `./tests/cata_test --user-dir=<dir>/ --mods=dda,saigon_2000s "[force_load_game]"` → 1/1 passed; mod pack load 18 ms vs dda 20.9 s |
-| S0.3c SDL3 tiles build | todo | - | cataclysm-tiles | - | needed only for V1 screenshots. Needs SDL3>=3.4 frameworks (libsdl-org dmg → ~/Library/Frameworks, FRAMEWORK=1) + glslang; build with BUILD_SHADER_FORMATS=spv and run with CATA_DISABLE_SPRITE_SHADERS=1 to avoid building shadercross. Ask the user before downloading |
+| S0.3c SDL3 tiles build | done | - | cataclysm-tiles | - | needed only for V1 screenshots. Needs SDL3>=3.4 frameworks (libsdl-org dmg → ~/Library/Frameworks, FRAMEWORK=1) + glslang; build with BUILD_SHADER_FORMATS=spv and run with CATA_DISABLE_SPRITE_SHADERS=1 to avoid building shadercross. Ask the user before downloading |
 | S0.4 ledger + plan | done | - | doc/saigon/ | - | |
 | A4.1 modding analyst draft | done | (this) | analysis/d4_r1.md | S0.1 | Key: ITEM+subtypes; vehicle_group append-only → C1; --check-mods exit-code bug → C2; region feature_flag whitelist |
 | A4.2 modding critic r1 | done | - | analysis/critic_d4_r1.md | A4.1 | |
@@ -113,9 +113,12 @@ The domain reports each number their own C++ seams. Modding (d4) uses C1 = vehic
 |---|---|---|---|
 | G1 art manifest | done | 010cdbe314 | T1 193 / T2 60 / T3 2365 |
 | G2 style guide + pipeline + coverage gate + TDD §10 | done | 299e7d5971 | render/build scripts untested (need Blender, pyvips) |
-| G3 SDL3 tiles build | in-progress | - | SDL3 3.4.16 + image 3.4.6 + ttf 3.2.2 frameworks in ~/Library/Frameworks; glslang 16.6.0 in ~/code/cdda-saigon-logs/tools; needed brew pkgconf+freetype |
+| G3 SDL3 tiles build | done | - | SDL3 3.4.16 + image 3.4.6 + ttf 3.2.2 frameworks in ~/Library/Frameworks; glslang 16.6.0 in ~/code/cdda-saigon-logs/tools; needed brew pkgconf+freetype |
 | G4 sprite workflow without dependencies | done | 0873e6e2b1 | build_sprites.py + pngio.py; 3 placeholders packed and loaded; UPDATING_SPRITES.md |
 | G5 tropical vegetation: region terrain_furniture (palms, banana) + winter-variant overrides | todo | - | content + art; t_region_tree resolves to New England species |
 
 ### Decision (user, 2026-10-02): graphics from the start with the ORIGINAL tileset
 UltimateCataclysm (32x32) + Larwick Overmap are installed in gfx/ (UltimateCataclysm untracked via .git/info/exclude; downloaded from I-am-Erk/CDDA-Tilesets 2026-09-27). The three code-generated placeholder sprites were moved to art/examples/ so everything draws with original art; Saigon ids use their looks_like fallbacks. `./play_saigon.sh` preselects dda + saigon_2000s for new worlds and launches cataclysm-tiles.
+
+### G3 verification (2026-10-02)
+`cataclysm-tiles` links SDL3 3.4.16 / image 3.4.6 / ttf 3.2.2 via rpath ~/Library/Frameworks; SPIR-V shaders built with glslang 16.6.0. `--check-mods saigon_2000s` with the tiles binary: 0 errors. Real launch: Metal GPU renderer, "Loaded tileset: UltimateCataclysm" (12,184 ids) and "Loaded tileset: Larwick Overmap". Metal has no .msl shaders, so the game bakes all 6 atlas variants (519 MB, ~2 min on this 8 GB machine under swap). Log-only error from the repo's Test_Portrait_Pack (no 'unknown' tile, src/tileset_loader.cpp:483-485), no popup. Build: `GLSLANG=<glslang> make -j2 TILES=1 FRAMEWORK=1 RELEASE=1 LOCALIZE=0 SOUND=0 BUILD_SHADER_FORMATS=spv cataclysm-tiles` (use -j2 on 8 GB RAM).
