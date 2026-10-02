@@ -21,6 +21,7 @@
 #include "rng.h"
 #include "submap.h"
 #include "type_id.h"
+#include "vehicle.h"
 #include "vehicle_group.h"
 
 // Saigon 2000s mod: structural checks for the nhà ống shophouse row
@@ -591,4 +592,52 @@ TEST_CASE( "saigon_monster_budget_per_omt", "[mapgen][monster][saigon]" )
         CHECK( awake <= t.max_awake );
         CHECK( dormant <= t.max_dormant );
     }
+}
+
+TEST_CASE( "saigon_road_traffic_is_saigon", "[mapgen][vehicle][saigon]" )
+{
+    if( !vproto_id( "sgn_veh_underbone" ).is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    sgn_clear_map_and_reset_player();
+    int saigon = 0;
+    int other = 0;
+    std::string other_ids;
+    int column = 0;
+    for( const std::string road : {
+             "road_nesw", "road_ns", "road_ew"
+         } ) {
+        const tripoint_abs_omt pos( 140 + 3 * column++, 140, 0 );
+        overmap_buffer.ter_set( pos, oter_str_id( road ).id() );
+        // City neighbours carry SIDEWALK, which selects the city traffic chunks.
+        for( const tripoint &d : eight_horizontal_neighbors ) {
+            overmap_buffer.ter_set( pos + d, sgn_nh_solo( 0 ).id() );
+        }
+        for( int seed = 1; seed <= 40; seed++ ) {
+            rng_set_engine_seed( seed );
+            MAPBUFFER.clear_outside_reality_bubble();
+            smallmap tm;
+            tm.generate( pos, calendar::turn, true, true );
+            const tripoint_abs_sm origin = project_to<coords::sm>( pos );
+            for( const point &d : { point( 0, 0 ), point( 1, 0 ), point( 0, 1 ), point( 1, 1 ) } ) {
+                submap *sub = MAPBUFFER.lookup_submap( origin + tripoint( d, 0 ) );
+                if( sub == nullptr ) {
+                    continue;
+                }
+                for( const std::unique_ptr<vehicle> &veh : sub->vehicles ) {
+                    if( veh->type.str().rfind( "sgn_veh_", 0 ) == 0 ) {
+                        saigon++;
+                    } else {
+                        other++;
+                        other_ids += veh->type.str() + " ";
+                    }
+                }
+            }
+        }
+    }
+    CAPTURE( saigon, other, other_ids );
+    CHECK( saigon > 20 );
+    // dda chunks keep weight 1000 against 1,000,000 (0.1%), plus 1% group residue.
+    CHECK( other <= saigon / 20 );
 }
