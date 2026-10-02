@@ -4,6 +4,16 @@
     "copy-from": "default",
     "type": "region_settings",
     "weather": "sgn_weather",
-    "//": "B4a: climate only.  City pools and the SAIGON feature-flag whitelist arrive in B8g."
+    "//": "Saigon climate (B4a) and dense shophouse cities (B8g-1).  The SAIGON feature-flag whitelist arrives once Saigon specials replace the dda ones.",
+    "cities": "sgn_city"
+  },
+  {
+    "type": "region_settings_city",
+    "id": "sgn_city",
+    "copy-from": "default",
+    "//": "Dense, tightly spaced cities of nhà ống rows.  Shops and parks stay dda until chợ, pagoda, café and chung cư buildings land (B8d/B8e).",
+    "city_size": 12,
+    "city_spacing": 3,
+    "houses": [ [ "sgn_nhaong_row_1", 100 ] ]
   }
 ]
