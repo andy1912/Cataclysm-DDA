@@ -39,7 +39,7 @@ Tone rule: no Vietnam War or wartime setting. Veterans may exist as older charac
 | street_vendor | Street-food vendor | cooking 3 | Portable gas stove, pot, bowls, fish sauce, bánh mì stock |
 | market_trader | Market trader | speech 3 | Scale, cash bag, bags of rice |
 | student | University student | computers 2, first aid 1 | Backpack, textbooks, bicycle |
-| cong_an | Ward police officer (công an phường) | melee 2, pistol 2 | Uniform, baton, pistol and limited ammo, radio |
+| cong_an | Ward police officer (công an phường) | melee 2, bashing 2 | Uniform, baton, whistle, radio. No pistol: ward police in 2004 rarely carried one (decision recorded in B3.R) |
 | nurse | Hospital nurse | first aid 4 | Scrubs, medical kit, face masks (bird-flu era) |
 | construction | Construction worker | fabrication 2, strength-focused | Hard hat, hammer, rebar, bamboo scaffolding pole |
 | fisherman | Cần Giờ fisherman | swimming 3, survival 3 | Cast net, fishing rod, dao, conical hat |

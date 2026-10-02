@@ -13,7 +13,7 @@
           { "item": "pants_cargo" },
           { "item": "sgn_dep_to_ong" },
           { "group": "charged_cell_phone" },
-          { "group": "starter_wallet_full" }
+          { "group": "sgn_wallet" }
         ]
       },
       "male": { "entries": [ { "item": "boxer_shorts" } ] },
@@ -38,9 +38,9 @@
           { "item": "sgn_dep_to_ong" },
           { "item": "sgn_non_bao_hiem" },
           { "item": "sgn_ao_mua_canh_doi", "custom-flags": [ "no_auto_equip" ] },
-          { "item": "newest_newspaper" },
+          { "item": "sgn_newspaper" },
           { "group": "charged_cell_phone" },
-          { "group": "starter_wallet_full" }
+          { "group": "sgn_wallet" }
         ]
       },
       "male": { "entries": [ { "item": "boxer_shorts" } ] },
@@ -70,7 +70,7 @@
           { "item": "bowl_plastic", "count": 2 },
           { "item": "knife_cleaver" },
           { "item": "rice_cooked", "count": 2 },
-          { "group": "starter_wallet_full" }
+          { "group": "sgn_wallet" }
         ]
       },
       "male": { "entries": [ { "item": "boxer_shorts" } ] },
@@ -96,7 +96,8 @@
           { "item": "jerrycan" },
           { "item": "wristwatch" },
           { "group": "charged_cell_phone" },
-          { "group": "starter_wallet_full" }
+          { "group": "sgn_wallet" },
+          { "item": "sgn_vang_chi", "count": 3 }
         ]
       },
       "male": { "entries": [ { "item": "boxer_shorts" } ] },
@@ -111,7 +112,7 @@
     "npc_background": "BG_survival_story_TEENAGER",
     "points": 0,
     "skills": [ { "name": "computer", "level": 2 }, { "name": "firstaid", "level": 1 } ],
-    "vehicle": "bicycle",
+    "vehicle": "sgn_veh_xe_dap",
     "age_lower": 18,
     "age_upper": 24,
     "items": {
@@ -125,7 +126,7 @@
           { "item": "howto_computer" },
           { "item": "story_book" },
           { "group": "charged_cell_phone" },
-          { "group": "starter_wallet_full" }
+          { "group": "sgn_wallet" }
         ]
       },
       "male": { "entries": [ { "item": "boxer_shorts" } ] },
@@ -154,7 +155,7 @@
           { "item": "wristwatch" },
           { "item": "sgn_non_bao_hiem" },
           { "group": "charged_two_way_radio" },
-          { "group": "starter_wallet_full" }
+          { "group": "sgn_wallet" }
         ]
       },
       "male": { "entries": [ { "item": "boxer_shorts" } ] },
@@ -182,10 +183,10 @@
           { "item": "adhesive_bandages", "count": 6 },
           { "item": "disinfectant" },
           { "item": "aspirin", "count": 10 },
-          { "item": "manual_first_aid" },
+          { "item": "sgn_book_nursing" },
           { "item": "wristwatch" },
           { "group": "charged_cell_phone" },
-          { "group": "starter_wallet_full" }
+          { "group": "sgn_wallet" }
         ]
       },
       "male": { "entries": [ { "item": "boxer_shorts" } ] },
@@ -214,7 +215,7 @@
           { "item": "rebar", "count": 2 },
           { "item": "tape_measure" },
           { "item": "tool_belt" },
-          { "group": "starter_wallet_full" }
+          { "group": "sgn_wallet" }
         ]
       },
       "male": { "entries": [ { "item": "boxer_shorts" } ] },
@@ -241,7 +242,7 @@
           { "item": "fishing_rod_basic" },
           { "item": "knife_folding" },
           { "item": "lighter", "charges": 100 },
-          { "group": "starter_wallet_full" }
+          { "group": "sgn_wallet" }
         ]
       },
       "male": { "entries": [ { "item": "boxer_shorts" } ] },
@@ -269,7 +270,7 @@
           { "item": "pliers" },
           { "item": "jumper_cable" },
           { "item": "tool_belt" },
-          { "group": "starter_wallet_full" }
+          { "group": "sgn_wallet" }
         ]
       },
       "male": { "entries": [ { "item": "boxer_shorts" } ] },
@@ -293,7 +294,7 @@
           { "item": "bead_necklace" },
           { "item": "incense", "count": 5 },
           { "item": "matches" },
-          { "group": "starter_wallet_full" }
+          { "group": "sgn_wallet" }
         ]
       },
       "male": { "entries": [ { "item": "boxer_shorts" } ] },
@@ -325,7 +326,7 @@
           { "item": "sgn_non_la" },
           { "item": "glasses_eye" },
           { "item": "cane" },
-          { "group": "starter_wallet_full" }
+          { "group": "sgn_wallet" }
         ]
       },
       "male": { "entries": [ { "item": "boxer_shorts" } ] },
