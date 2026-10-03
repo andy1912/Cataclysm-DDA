@@ -91,11 +91,15 @@
     "skill_used": "cooking",
     "difficulty": 0,
     "time": "10 m",
-    "components": [ [ [ "coffee_raw", 1 ] ], [ [ "con_milk", 1 ] ], [ [ "water", 1 ], [ "water_clean", 1 ] ] ],
+    "components": [
+      [ [ "sgn_ca_phe_bot", 1 ], [ "coffee_raw", 1 ] ],
+      [ [ "sgn_sua_dac", 1 ], [ "con_milk", 1 ] ],
+      [ [ "water", 1 ], [ "water_clean", 1 ] ]
+    ],
     "qualities": [ { "id": "BOIL", "level": 1 } ],
-    "tools": [ [ [ "water_boiling_heat", 1, "LIST" ] ] ],
+    "tools": [ [ [ "water_boiling_heat", 1, "LIST" ] ], [ [ "sgn_phin", -1 ], [ "pot", -1 ] ] ],
     "autolearn": true,
-    "//": "Slow phin drip; served over ice when there is any."
+    "//": "Slow phin drip onto condensed milk; a pot will do if there is no phin.  Served over ice when there is any."
   },
   {
     "type": "recipe",

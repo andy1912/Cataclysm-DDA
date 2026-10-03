@@ -72,7 +72,7 @@
     "subtype": "distribution",
     "entries": [
       { "item": "dry_rice", "prob": 40 },
-      { "item": "sgn_nuoc_mam", "prob": 40 },
+      { "item": "sgn_nuoc_mam", "prob": 40, "container-item": "sgn_chai_nuoc_mam" },
       { "item": "sgn_mi_goi", "prob": 50 },
       { "item": "sgn_banh_pho", "prob": 20 },
       { "item": "sugar", "prob": 20 },
@@ -88,7 +88,15 @@
       { "item": "sgn_bep_ga_mini", "prob": 8, "ammo-item": "butane", "charges": [ 20, 150 ] },
       { "item": "butane_can", "prob": 15 },
       { "item": "sgn_ruou_de", "prob": 8 },
-      { "item": "sgn_banh_chung", "prob": 5 }
+      { "item": "sgn_banh_chung", "prob": 5 },
+      { "item": "sgn_noi_com_dien", "prob": 25 },
+      { "item": "sgn_bep_than_to_ong", "prob": 8 },
+      { "item": "sgn_than_to_ong", "prob": 15, "count": [ 2, 8 ] },
+      { "item": "sgn_phin", "prob": 25 },
+      { "item": "sgn_ca_phe_bot", "prob": 20 },
+      { "item": "sgn_sua_dac", "prob": 20 },
+      { "item": "sgn_binh_gas", "prob": 10 },
+      { "item": "sgn_can_nhua", "prob": 10 }
     ],
     "//": "Kitchen and pantry of a nhà ống home."
   },
@@ -168,9 +176,13 @@
       { "item": "pot", "prob": 15 },
       { "item": "bowl_plastic", "prob": 25 },
       { "item": "chopsticks", "prob": 25 },
-      { "item": "sgn_nuoc_mam", "prob": 15 },
+      { "item": "sgn_nuoc_mam", "prob": 15, "container-item": "sgn_chai_nuoc_mam" },
       { "item": "sgn_tuong_ot", "prob": 20 },
-      { "item": "sgn_che", "prob": 8 }
+      { "item": "sgn_che", "prob": 8 },
+      { "item": "sgn_bich_nylon", "prob": 30 },
+      { "item": "sgn_ly_nhua", "prob": 20 },
+      { "item": "sgn_bep_than_to_ong", "prob": 10 },
+      { "item": "sgn_than_to_ong", "prob": 15, "count": [ 1, 4 ] }
     ],
     "//": "Street-food cart or sidewalk stall."
   },
@@ -187,7 +199,12 @@
       { "item": "sgn_ca_phe_sua_da", "prob": 8 },
       { "item": "sgn_tra_da", "prob": 10 },
       { "item": "sgn_bia_hoi", "prob": 10 },
-      { "item": "sgn_karaoke_songbook", "prob": 3 }
+      { "item": "sgn_karaoke_songbook", "prob": 3 },
+      { "item": "sgn_phin", "prob": 30 },
+      { "item": "sgn_ca_phe_bot", "prob": 25 },
+      { "item": "sgn_sua_dac", "prob": 20 },
+      { "item": "sgn_ly_nhua", "prob": 30 },
+      { "item": "sgn_bich_nylon", "prob": 25 }
     ],
     "//": "Sidewalk café (cà phê vỉa hè)."
   },

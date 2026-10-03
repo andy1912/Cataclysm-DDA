@@ -1,0 +1,137 @@
+[
+  {
+    "type": "ITEM",
+    "id": "sgn_noi_com_dien",
+    "copy-from": "hotplate",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "electric rice cooker" },
+    "description": "Nồi cơm điện: a white rice cooker with a flowery lid and a cracked steam vent, the one appliance every Saigon kitchen owns.  Plug it into a live socket and it will heat whatever you put in a pot on it.",
+    "weight": "1800 g",
+    "volume": "5 L",
+    "longest_side": "30 cm",
+    "color": "white",
+    "symbol": ";"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_bep_than_to_ong",
+    "copy-from": "brazier",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "honeycomb briquette stove" },
+    "description": "Bếp than tổ ong: a squat clay-lined bucket stove built to burn one honeycomb coal briquette at a time.  Poor households, street vendors and every phở cart cook on one.  Set it down to light a contained fire.",
+    "weight": "5200 g",
+    "volume": "12 L",
+    "longest_side": "35 cm",
+    "color": "light_gray"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_than_to_ong",
+    "copy-from": "charcoal",
+    "subtypes": [ "AMMO" ],
+    "name": { "str": "honeycomb coal briquette" },
+    "description": "Than tổ ong: a cylinder of pressed coal dust punched through with nineteen holes, so it burns slowly and evenly for a couple of hours.  It leaves your hands black.",
+    "weight": "650 g",
+    "volume": "750 ml",
+    "count": 1,
+    "stack_size": 1,
+    "color": "dark_gray"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_phin",
+    "name": { "str": "phin coffee filter" },
+    "description": "A dented aluminium phin: a cup-sized drip filter with a perforated press and a lid.  It turns a spoon of robusta into a slow, strong coffee.",
+    "weight": "60 g",
+    "volume": "200 ml",
+    "material": [ "aluminum" ],
+    "symbol": "u",
+    "color": "light_gray",
+    "category": "tools"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ca_phe_bot",
+    "copy-from": "coffee_raw",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str_sp": "ground robusta" },
+    "description": "A paper packet of dark, oily ground robusta from the Central Highlands, roasted with butter and a little fish sauce the way the cafés like it.",
+    "color": "brown"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_sua_dac",
+    "copy-from": "con_milk",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str_sp": "sweetened condensed milk" },
+    "description": "Thick, sickly-sweet condensed milk from a tin with a picture of a bird on it.  A finger of it at the bottom of the glass is what makes cà phê sữa.",
+    "color": "white"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_bich_nylon",
+    "copy-from": "bottle_plastic",
+    "name": { "str": "plastic drink bag" },
+    "description": "A small plastic bag with a straw, tied off with a rubber band: how street vendors sell iced coffee and sugarcane juice to go.  It holds liquid as long as you don't squeeze it.",
+    "weight": "3 g",
+    "volume": "20 ml",
+    "color": "white",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "watertight": true,
+        "rigid": false,
+        "transparent": true,
+        "max_contains_volume": "500 ml",
+        "max_contains_weight": "1 kg",
+        "moves": 300
+      }
+    ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ly_nhua",
+    "copy-from": "cup_plastic",
+    "name": { "str": "plastic cup with straw", "str_pl": "plastic cups with straws" },
+    "description": "A ribbed plastic cup with a striped straw stuck through a sealed film lid, from a drinks stall.",
+    "color": "light_blue"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_chai_nuoc_mam",
+    "copy-from": "bottle_glass",
+    "name": { "str": "fish sauce bottle" },
+    "description": "A tall glass bottle with a red cap and a fading label showing an anchovy and a fishing boat.",
+    "color": "light_red"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_binh_gas",
+    "copy-from": "medium_propane_tank",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "12 kg gas cylinder" },
+    "description": "A dented household LPG cylinder, painted red and stencilled with a distributor's phone number.  Every kitchen has one under the counter, chained to a two-burner stove.",
+    "color": "red"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_can_nhua",
+    "copy-from": "jerrycan",
+    "name": { "str": "plastic water can" },
+    "description": "A blue 20-litre plastic can with a screw cap, used for drinking water, fish sauce, petrol or anything else that needs carrying home on a motorbike.",
+    "color": "blue",
+    "volume": "21 L",
+    "weight": "1100 g",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "rigid": true,
+        "watertight": true,
+        "transparent": false,
+        "max_contains_volume": "20 L",
+        "max_item_volume": "32 ml",
+        "max_contains_weight": "30 kg"
+      }
+    ]
+  }
+]
