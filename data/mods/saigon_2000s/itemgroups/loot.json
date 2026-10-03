@@ -132,7 +132,10 @@
       { "item": "sgn_radio_cassette", "prob": 10 },
       { "item": "sgn_mung", "prob": 25 },
       { "item": "sgn_khau_trang", "prob": 20 },
-      { "item": "sgn_dau_gio", "prob": 20 }
+      { "item": "sgn_dau_gio", "prob": 20 },
+      { "item": "sgn_ve_so", "prob": 15, "count": [ 1, 4 ] },
+      { "item": "sgn_thuoc_la", "prob": 20, "count": [ 1, 10 ] },
+      { "item": "sgn_vang_luong", "prob": 2 }
     ],
     "//": "Living room, altar and bedrooms of a nhà ống home."
   },
@@ -152,7 +155,11 @@
       { "item": "dry_rice", "prob": 25 },
       { "item": "egg_chicken", "prob": 15 },
       { "item": "sgn_nuoc_mam", "prob": 15 },
-      { "item": "sgn_thung_xop", "prob": 10 }
+      { "item": "sgn_thung_xop", "prob": 10 },
+      { "item": "sgn_banh_trang", "prob": 30, "count": [ 2, 10 ] },
+      { "item": "sgn_ro_nhua", "prob": 30 },
+      { "item": "sgn_thau_nhua", "prob": 20 },
+      { "item": "sgn_quang_ganh", "prob": 10 }
     ],
     "//": "Wet-market produce stall."
   },
@@ -166,7 +173,11 @@
       { "item": "sgn_thung_xop", "prob": 20 },
       { "item": "sgn_dao_rua", "prob": 8 },
       { "item": "knife_cleaver", "prob": 12 },
-      { "item": "salt", "prob": 15 }
+      { "item": "salt", "prob": 15 },
+      { "item": "sgn_kho_muc", "prob": 30 },
+      { "item": "sgn_tom_kho", "prob": 30 },
+      { "item": "sgn_thau_nhua", "prob": 30 },
+      { "item": "sgn_luoi_chai", "prob": 8 }
     ],
     "//": "Wet-market fish and meat stall; the heat spoils everything fast."
   },
@@ -189,7 +200,13 @@
       { "item": "sgn_bich_nylon", "prob": 30 },
       { "item": "sgn_ly_nhua", "prob": 20 },
       { "item": "sgn_bep_than_to_ong", "prob": 10 },
-      { "item": "sgn_than_to_ong", "prob": 15, "count": [ 1, 4 ] }
+      { "item": "sgn_than_to_ong", "prob": 15, "count": [ 1, 4 ] },
+      { "item": "sgn_hu_tieu", "prob": 12 },
+      { "item": "sgn_banh_xeo", "prob": 10 },
+      { "item": "sgn_goi_cuon", "prob": 10 },
+      { "item": "sgn_xoi", "prob": 15 },
+      { "item": "sgn_banh_bao", "prob": 12 },
+      { "item": "sgn_ve_so", "prob": 20, "count": [ 1, 6 ] }
     ],
     "//": "Street-food cart or sidewalk stall."
   },
@@ -211,7 +228,9 @@
       { "item": "sgn_ca_phe_bot", "prob": 25 },
       { "item": "sgn_sua_dac", "prob": 20 },
       { "item": "sgn_ly_nhua", "prob": 30 },
-      { "item": "sgn_bich_nylon", "prob": 25 }
+      { "item": "sgn_bich_nylon", "prob": 25 },
+      { "item": "sgn_thuoc_la", "prob": 20, "count": [ 1, 6 ] },
+      { "item": "sgn_kho_muc", "prob": 15 }
     ],
     "//": "Sidewalk café (cà phê vỉa hè)."
   },
@@ -229,7 +248,8 @@
       { "item": "jerrycan", "prob": 15 },
       { "item": "gasoline", "prob": 10, "container-item": "jerrycan", "charges": [ 1000, 10000 ] },
       { "item": "sgn_non_bao_hiem", "prob": 15 },
-      { "item": "sgn_ao_mua_canh_doi", "prob": 10 }
+      { "item": "sgn_ao_mua_canh_doi", "prob": 10 },
+      { "item": "sgn_xa_beng", "prob": 20 }
     ],
     "//": "Sidewalk motorbike repair shop."
   },
