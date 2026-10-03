@@ -1,0 +1,260 @@
+[
+  {
+    "type": "vehicle_group",
+    "id": "sgn_vg_sidewalk_parked",
+    "//": "Two-wheelers parked across the sidewalk (G20 street life); no ba gác or xích lô, they don't fit a 3x3 sidewalk spot.",
+    "vehicles": [ [ "sgn_veh_underbone", 70 ], [ "sgn_veh_xe_tay_ga", 25 ], [ "sgn_veh_xe_dap", 5 ] ]
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_sidewalk_life_w",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "rows": [
+        " s ",
+        "sts",
+        "   "
+      ],
+      "furniture": { "t": "f_sgn_ban_inox", "s": "f_stool" }
+    },
+    "//": "Street-food corner: a stainless table and red stools.",
+    "weight": 100
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_sidewalk_life_w",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "rows": [
+        "s  ",
+        "B  ",
+        "   "
+      ],
+      "furniture": { "s": "f_stool", "B": "f_sgn_xe_banh_mi" },
+      "item": { "B": { "item": "sgn_banh_mi_bread", "chance": 70, "repeat": [ 1, 4 ] } }
+    },
+    "//": "Bánh mì cart with the vendor's stool.",
+    "weight": 100
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_sidewalk_life_w",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "rows": [
+        "U s",
+        " t ",
+        " s "
+      ],
+      "furniture": { "t": "f_sgn_ban_inox", "s": "f_stool", "U": "f_sgn_du" }
+    },
+    "//": "Café table under an umbrella.",
+    "weight": 100
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_sidewalk_life_w",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "rows": [
+        "  H",
+        "   ",
+        "   "
+      ],
+      "furniture": { "H": "f_sgn_bang_hieu" }
+    },
+    "//": "A-frame shop sign at the curb.",
+    "weight": 100
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_sidewalk_life_w",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "rows": [
+        "   ",
+        "   ",
+        "   "
+      ],
+      "furniture": {  },
+      "place_vehicles": [
+        { "vehicle": "sgn_vg_sidewalk_parked", "x": 1, "y": 0, "rotation": 0, "chance": 100, "status": 0 },
+        { "vehicle": "sgn_vg_sidewalk_parked", "x": 1, "y": 2, "rotation": 0, "chance": 60, "status": 0 }
+      ]
+    },
+    "//": "Motorbikes parked across the sidewalk, as everywhere.",
+    "weight": 100
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_sidewalk_life_e",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "rows": [
+        " s ",
+        "sts",
+        "   "
+      ],
+      "furniture": { "t": "f_sgn_ban_inox", "s": "f_stool" }
+    },
+    "//": "Street-food corner: a stainless table and red stools.",
+    "weight": 100
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_sidewalk_life_e",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "rows": [
+        "  s",
+        "  B",
+        "   "
+      ],
+      "furniture": { "s": "f_stool", "B": "f_sgn_xe_banh_mi" },
+      "item": { "B": { "item": "sgn_banh_mi_bread", "chance": 70, "repeat": [ 1, 4 ] } }
+    },
+    "//": "Bánh mì cart with the vendor's stool.",
+    "weight": 100
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_sidewalk_life_e",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "rows": [
+        "s U",
+        " t ",
+        " s "
+      ],
+      "furniture": { "t": "f_sgn_ban_inox", "s": "f_stool", "U": "f_sgn_du" }
+    },
+    "//": "Café table under an umbrella.",
+    "weight": 100
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_sidewalk_life_e",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "rows": [
+        "H  ",
+        "   ",
+        "   "
+      ],
+      "furniture": { "H": "f_sgn_bang_hieu" }
+    },
+    "//": "A-frame shop sign at the curb.",
+    "weight": 100
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_sidewalk_life_e",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "rows": [
+        "   ",
+        "   ",
+        "   "
+      ],
+      "furniture": {  },
+      "place_vehicles": [
+        { "vehicle": "sgn_vg_sidewalk_parked", "x": 1, "y": 0, "rotation": 180, "chance": 100, "status": 0 },
+        { "vehicle": "sgn_vg_sidewalk_parked", "x": 1, "y": 2, "rotation": 180, "chance": 60, "status": 0 }
+      ]
+    },
+    "//": "Motorbikes parked across the sidewalk, as everywhere.",
+    "weight": 100
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "24x24_street_lights_straight",
+    "weight": 1000000,
+    "//": "Saigon straight-road sidewalks (G20): dda's four pole spots (now power poles, loudspeakers or lamps via 1x1_street_light), plus sidewalk life between them. Overrides dda's chunk at 1000/1,001,000.",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [
+        {
+          "chunks": [ "1x1_street_light", "null" ],
+          "x": 3,
+          "y": [ 5, 6 ],
+          "flags_any": { "west": [ "SIDEWALK" ], "north_west": [ "SIDEWALK" ] }
+        },
+        {
+          "chunks": [ "1x1_street_light", "null" ],
+          "x": 3,
+          "y": [ 17, 18 ],
+          "flags_any": { "south_west": [ "SIDEWALK" ], "west": [ "SIDEWALK" ] }
+        },
+        {
+          "chunks": [ "1x1_street_light", "null" ],
+          "x": 20,
+          "y": [ 5, 6 ],
+          "flags_any": { "north_east": [ "SIDEWALK" ], "east": [ "SIDEWALK" ] }
+        },
+        {
+          "chunks": [ "1x1_street_light", "null" ],
+          "x": 20,
+          "y": [ 17, 18 ],
+          "flags_any": { "east": [ "SIDEWALK" ], "south_east": [ "SIDEWALK" ] }
+        },
+        {
+          "chunks": [ [ "sgn_sidewalk_life_w", 2 ], [ "null", 1 ] ],
+          "x": 0,
+          "y": [ 0, 1 ],
+          "flags_any": { "west": [ "SIDEWALK" ], "north_west": [ "SIDEWALK" ] }
+        },
+        {
+          "chunks": [ [ "sgn_sidewalk_life_w", 2 ], [ "null", 1 ] ],
+          "x": 0,
+          "y": [ 9, 11 ],
+          "flags_any": { "west": [ "SIDEWALK" ], "north_west": [ "SIDEWALK" ] }
+        },
+        {
+          "chunks": [ [ "sgn_sidewalk_life_w", 2 ], [ "null", 1 ] ],
+          "x": 0,
+          "y": [ 20, 21 ],
+          "flags_any": { "south_west": [ "SIDEWALK" ], "west": [ "SIDEWALK" ] }
+        },
+        {
+          "chunks": [ [ "sgn_sidewalk_life_e", 2 ], [ "null", 1 ] ],
+          "x": 21,
+          "y": [ 0, 1 ],
+          "flags_any": { "north_east": [ "SIDEWALK" ], "east": [ "SIDEWALK" ] }
+        },
+        {
+          "chunks": [ [ "sgn_sidewalk_life_e", 2 ], [ "null", 1 ] ],
+          "x": 21,
+          "y": [ 9, 11 ],
+          "flags_any": { "north_east": [ "SIDEWALK" ], "east": [ "SIDEWALK" ] }
+        },
+        {
+          "chunks": [ [ "sgn_sidewalk_life_e", 2 ], [ "null", 1 ] ],
+          "x": 21,
+          "y": [ 20, 21 ],
+          "flags_any": { "east": [ "SIDEWALK" ], "south_east": [ "SIDEWALK" ] }
+        }
+      ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "1x1_street_light",
+    "weight": 600000,
+    "//": "Concrete power pole with its cable tangle. Saigon pool for dda's 1x1_street_light (dda's own entry keeps weight 1000).",
+    "object": { "mapgensize": [ 1, 1 ], "rows": [ "Y" ], "furniture": { "Y": "f_sgn_cot_dien" } }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "1x1_street_light",
+    "weight": 100000,
+    "//": "Ward loudspeaker pole. Saigon pool for dda's 1x1_street_light (dda's own entry keeps weight 1000).",
+    "object": { "mapgensize": [ 1, 1 ], "rows": [ "Y" ], "furniture": { "Y": "f_sgn_loa_phuong" } }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "1x1_street_light",
+    "weight": 300000,
+    "//": "A plain street lamp. Saigon pool for dda's 1x1_street_light (dda's own entry keeps weight 1000).",
+    "object": { "mapgensize": [ 1, 1 ], "rows": [ "Y" ], "furniture": { "Y": "f_street_light" } }
+  }
+]

@@ -206,69 +206,94 @@
       "fg": 48
      },
      {
-      "id": "f_sgn_dua_can",
+      "id": "f_sgn_ban_inox",
       "fg": 49
      },
      {
+      "id": "f_sgn_bang_hieu",
+      "fg": [
+       {
+        "weight": 1,
+        "sprite": 50
+       },
+       {
+        "weight": 1,
+        "sprite": 51
+       },
+       {
+        "weight": 1,
+        "sprite": 52
+       }
+      ]
+     },
+     {
+      "id": "f_sgn_dua_can",
+      "fg": 53
+     },
+     {
       "id": "f_sgn_van_tho",
-      "fg": 50
+      "fg": 54
      },
      {
       "id": "f_sgn_xau_ho",
-      "fg": 51
+      "fg": 55
+     },
+     {
+      "id": "f_sgn_xe_banh_mi",
+      "fg": 56
      },
      {
       "id": "f_toilet",
-      "fg": 52
+      "fg": 57
      },
      {
       "id": "t_sgn_shrub_hoa_giay",
-      "fg": 54,
-      "bg": 53
+      "fg": 59,
+      "bg": 58
      },
      {
       "id": "t_sgn_shrub_khoai_mi",
-      "fg": 55,
-      "bg": 53
+      "fg": 60,
+      "bg": 58
      },
      {
       "id": "t_sgn_shrub_ngu_sac",
-      "fg": 56,
-      "bg": 53
+      "fg": 61,
+      "bg": 58
      },
      {
       "id": "vp_sgn_ba_gac_bed",
-      "fg": 57,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_engine_110cc",
-      "fg": 58,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_longtail",
-      "fg": 59,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_oars",
-      "fg": 60,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_pillion",
-      "fg": 61,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_tank_4l",
       "fg": 62,
       "rotates": true
      },
      {
-      "id": "vp_sgn_xich_lo_seat",
+      "id": "vp_sgn_engine_110cc",
       "fg": 63,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_longtail",
+      "fg": 64,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_oars",
+      "fg": 65,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_pillion",
+      "fg": 66,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_tank_4l",
+      "fg": 67,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_xich_lo_seat",
+      "fg": 68,
       "rotates": true
      }
     ]
@@ -282,11 +307,32 @@
     "tiles": [
      {
       "id": "overlay_female_worn_sgn_non_la",
-      "fg": 64
+      "fg": 80
      },
      {
       "id": "overlay_male_worn_sgn_non_la",
-      "fg": 65
+      "fg": 81
+     }
+    ]
+   },
+   {
+    "file": "gfx/saigon_32x64.png",
+    "sprite_width": 32,
+    "sprite_height": 64,
+    "sprite_offset_x": 0,
+    "sprite_offset_y": -32,
+    "tiles": [
+     {
+      "id": "f_sgn_cot_dien",
+      "fg": 96
+     },
+     {
+      "id": "f_sgn_du",
+      "fg": 97
+     },
+     {
+      "id": "f_sgn_loa_phuong",
+      "fg": 98
      }
     ]
    },
@@ -299,23 +345,23 @@
     "tiles": [
      {
       "id": "t_sgn_tree_chuoi",
-      "fg": 81,
-      "bg": 80
+      "fg": 113,
+      "bg": 112
      },
      {
       "id": "t_sgn_tree_chuoi_harvested",
-      "fg": 82,
-      "bg": 80
+      "fg": 114,
+      "bg": 112
      },
      {
       "id": "t_sgn_tree_du_du",
-      "fg": 83,
-      "bg": 80
+      "fg": 115,
+      "bg": 112
      },
      {
       "id": "t_sgn_tree_du_du_harvested",
-      "fg": 84,
-      "bg": 80
+      "fg": 116,
+      "bg": 112
      }
     ]
    },
@@ -328,43 +374,43 @@
     "tiles": [
      {
       "id": "t_sgn_tree_bang",
-      "fg": 97,
-      "bg": 96
+      "fg": 129,
+      "bg": 128
      },
      {
       "id": "t_sgn_tree_bo_de",
-      "fg": 98,
-      "bg": 96
+      "fg": 130,
+      "bg": 128
      },
      {
       "id": "t_sgn_tree_dua",
-      "fg": 99,
-      "bg": 96
+      "fg": 131,
+      "bg": 128
      },
      {
       "id": "t_sgn_tree_dua_harvested",
-      "fg": 100,
-      "bg": 96
+      "fg": 132,
+      "bg": 128
      },
      {
       "id": "t_sgn_tree_me",
-      "fg": 101,
-      "bg": 96
+      "fg": 133,
+      "bg": 128
      },
      {
       "id": "t_sgn_tree_sao",
-      "fg": 102,
-      "bg": 96
+      "fg": 134,
+      "bg": 128
      },
      {
       "id": "t_sgn_tree_xoai",
-      "fg": 103,
-      "bg": 96
+      "fg": 135,
+      "bg": 128
      },
      {
       "id": "t_sgn_tree_xoai_harvested",
-      "fg": 104,
-      "bg": 96
+      "fg": 136,
+      "bg": 128
      }
     ]
    }

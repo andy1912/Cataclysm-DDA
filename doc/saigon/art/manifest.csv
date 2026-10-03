@@ -8,16 +8,22 @@ T1,furniture,f_fridge,dda,1,1-4,,palette sgn_nhaong
 T1,furniture,f_oven,dda,1,1-4,,palette sgn_nhaong
 T1,furniture,f_rack,dda,1,1-4,,palette sgn_nhaong
 T1,furniture,f_region_flower_decorative,dda,1,1-4,f_region_pseudo,palette road_palette
+T1,furniture,f_sgn_ban_inox,mod,1,1-4,f_table,data/mods/saigon_2000s/furniture/furniture.json
 T1,furniture,f_sgn_ban_tho,mod,1,1-4,f_table,data/mods/saigon_2000s/furniture/furniture.json; palette sgn_nhaong; palette sgn_hem
+T1,furniture,f_sgn_bang_hieu,mod,1,1-4,f_sign,data/mods/saigon_2000s/furniture/furniture.json
+T1,furniture,f_sgn_cot_dien,mod,1,1-4,f_utility_pole,data/mods/saigon_2000s/furniture/furniture.json
+T1,furniture,f_sgn_du,mod,1,1-4,f_sign,data/mods/saigon_2000s/furniture/furniture.json
 T1,furniture,f_sgn_dua_can,mod,1,1-4,f_dandelion,data/mods/saigon_2000s/region/flora.json
+T1,furniture,f_sgn_loa_phuong,mod,1,1-4,f_utility_pole,data/mods/saigon_2000s/furniture/furniture.json
 T1,furniture,f_sgn_van_tho,mod,1,1-4,f_dandelion,data/mods/saigon_2000s/region/flora.json
 T1,furniture,f_sgn_xau_ho,mod,1,1-4,f_dandelion,data/mods/saigon_2000s/region/flora.json
+T1,furniture,f_sgn_xe_banh_mi,mod,1,1-4,f_display_rack,data/mods/saigon_2000s/furniture/furniture.json
 T1,furniture,f_sign_stop,dda,1,1-4,,palette road_palette
 T1,furniture,f_sink,dda,1,1-4,,palette sgn_nhaong
 T1,furniture,f_sofa,dda,1,1-4,,palette sgn_nhaong
 T1,furniture,f_standing_tank,dda,1,1-4,,palette sgn_nhaong
 T1,furniture,f_stool,dda,1,1-4,f_chair,palette sgn_nhaong; palette sgn_hem
-T1,furniture,f_street_light,dda,1,1-4,f_utility_pole,palette road_palette
+T1,furniture,f_street_light,dda,1,1-4,f_utility_pole,nested 1x1_street_light; palette road_palette
 T1,furniture,f_table,dda,1,1-4,,palette sgn_nhaong; palette sgn_hem; nested 24x24_road_curved_layby
 T1,furniture,f_toilet,dda,1,1-4,,palette sgn_nhaong
 T1,furniture,f_traffic_light,dda,1,1-4,f_utility_pole,palette road_palette
