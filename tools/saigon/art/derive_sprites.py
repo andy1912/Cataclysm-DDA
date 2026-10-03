@@ -25,28 +25,42 @@ always wins.  Output: data/mods/saigon_2000s/gfx/derived_*.png + derived_tileset
 (a mod_tileset compatible with UltimateCataclysm), art/saigon/SOURCES_DERIVED.md and
 doc/saigon/art/derived_preview.png (before/after contact sheet).
 
-Run from the repo root:  python3 tools/saigon/art/derive_sprites.py
+Run from the repo root:  python3 tools/saigon/art/derive_sprites.py [tiles] [overmap]
+(no argument: both sets; "overmap" derives Larwick Overmap icons with
+art/saigon/derive_overmap_recipes.json)
 """
 import colorsys
 import copy
 import json
 import os
+import re
 import sys
 
 sys.path.insert( 0, os.path.dirname( __file__ ) )
 import pngio  # noqa: E402
 
 ROOT = os.path.join( os.path.dirname( __file__ ), '..', '..', '..' )
-BASE = os.path.join( ROOT, 'gfx', 'UltimateCataclysm' )
-RECIPES = os.path.join( ROOT, 'art', 'saigon', 'derive_recipes.json' )
-HAND = os.path.join( ROOT, 'art', 'saigon', 'tiles32' )
 GFX = os.path.join( ROOT, 'data', 'mods', 'saigon_2000s', 'gfx' )
 ACROSS = 16
+# One derivation set per base tileset; a mod tileset only applies over its base.
+SETS = {
+    'tiles': { 'base': 'gfx/UltimateCataclysm', 'compat': [ 'UltimateCataclysm' ],
+               'recipes': 'art/saigon/derive_recipes.json', 'hand': 'art/saigon/tiles32',
+               'prefix': 'derived', 'json': 'derived_tileset.json',
+               'preview': 'doc/saigon/art/derived_preview.png', 'provenance': 'art/saigon/SOURCES_DERIVED.md',
+               'source_name': 'UltimateCataclysm' },
+    'overmap': { 'base': 'gfx/Larwick_Overmap', 'compat': [ 'Larwick Overmap' ],
+                 'recipes': 'art/saigon/derive_overmap_recipes.json', 'hand': 'art/saigon/overmap16',
+                 'prefix': 'derived_om', 'json': 'derived_overmap_tileset.json',
+                 'preview': 'doc/saigon/art/derived_overmap_preview.png',
+                 'provenance': 'art/saigon/SOURCES_DERIVED_OVERMAP.md', 'source_name': 'Larwick Overmap' },
+}
 
 
 class BaseTileset:
-    def __init__( self ):
-        with open( os.path.join( BASE, 'tile_config.json' ) ) as f:
+    def __init__( self, base ):
+        self.base = base
+        with open( os.path.join( base, 'tile_config.json' ) ) as f:
             self.config = json.load( f )
         info = self.config['tile_info'][0]
         self.sheets = []
@@ -54,7 +68,7 @@ class BaseTileset:
         for sheet in self.config['tiles-new']:
             w = sheet.get( 'sprite_width', info['width'] )
             h = sheet.get( 'sprite_height', info['height'] )
-            width, height = self._dims( os.path.join( BASE, sheet['file'] ) )
+            width, height = self._dims( os.path.join( base, sheet['file'] ) )
             cols = width // w
             count = cols * ( height // h )  # full grid capacity (src/tileset_loader.cpp:319)
             self.sheets.append( { 'file': sheet['file'], 'w': w, 'h': h,
@@ -77,7 +91,7 @@ class BaseTileset:
         for s in self.sheets:
             if s['start'] <= index < s['start'] + s['count']:
                 if s['img'] is None:
-                    s['img'] = pngio.read( os.path.join( BASE, s['file'] ) )
+                    s['img'] = pngio.read( os.path.join( self.base, s['file'] ) )
                 local = index - s['start']
                 x0 = ( local % s['cols'] ) * s['w']
                 y0 = ( local // s['cols'] ) * s['h']
@@ -142,7 +156,8 @@ def apply_ops( img, ops ):
 class Output:
     """Collects derived sprites grouped by sheet geometry and assigns mod indices."""
 
-    def __init__( self ):
+    def __init__( self, prefix ):
+        self.prefix = prefix
         self.groups = {}  # geometry -> list of images
         self.order = []
 
@@ -166,7 +181,7 @@ class Output:
             for i, img in enumerate( imgs ):
                 sheet.paste( img, ( i % ACROSS ) * w, ( i // ACROSS ) * h )
                 index[( geometry, i )] = offset + i
-            name = 'derived_%d_%dx%d.png' % ( n, w, h )
+            name = '%s_%d_%dx%d.png' % ( self.prefix, n, w, h )
             pngio.write( os.path.join( GFX, name ), sheet )
             sheets.append( { 'file': name, 'sprite_width': w, 'sprite_height': h,
                              'sprite_offset_x': ox, 'sprite_offset_y': oy, 'tiles': [] } )
@@ -213,21 +228,22 @@ def resolve( value, index ):
     return value
 
 
-def hand_drawn_ids():
+def hand_drawn_ids( hand ):
     ids = set()
-    for dirpath, _, files in os.walk( HAND ):
+    for dirpath, _, files in os.walk( hand ):
         ids.update( f[:-4] for f in files if f.endswith( '.png' ) )
     return ids
 
 
-def main():
-    if not os.path.isdir( BASE ):
-        sys.exit( 'UltimateCataclysm is not installed in gfx/; see doc/saigon/art/UPDATING_SPRITES.md' )
-    base = BaseTileset()
-    with open( RECIPES ) as f:
+def derive( cfg ):
+    base_dir = os.path.join( ROOT, cfg['base'] )
+    if not os.path.isdir( base_dir ):
+        sys.exit( '%s is not installed; see doc/saigon/art/UPDATING_SPRITES.md' % cfg['base'] )
+    base = BaseTileset( base_dir )
+    with open( os.path.join( ROOT, cfg['recipes'] ) ) as f:
         recipes = json.load( f )
-    skip = hand_drawn_ids()
-    out = Output()
+    skip = hand_drawn_ids( os.path.join( ROOT, cfg['hand'] ) )
+    out = Output( cfg['prefix'] )
     cache = {}
     entries = []      # ( target id, remapped entry )
     provenance = []
@@ -252,7 +268,7 @@ def main():
         if target in skip:
             continue
         if source not in base.tiles:
-            print( 'warning: source %s not in UltimateCataclysm, skipping %s' % ( source, target ) )
+            print( 'warning: source %s not in %s, skipping %s' % ( source, cfg['source_name'], target ) )
             continue
         new, _ = remap_entry( base.tiles[source], base, out, ops, cache )
         new['id'] = target
@@ -268,21 +284,22 @@ def main():
             previews.append( ( img, apply_ops( img, ops ) ) )
 
     os.makedirs( GFX, exist_ok=True )
+    own = re.compile( r'^%s_\d+_\d+x\d+\.png$' % re.escape( cfg['prefix'] ) )
     for name in os.listdir( GFX ):
-        if name.startswith( 'derived_' ):
+        if own.match( name ):
             os.remove( os.path.join( GFX, name ) )
     index, sheets = out.finalize()
     # every entry goes in the first sheet's "tiles"; indices are mod-global
     sheets[0]['tiles'] = [ resolve( e, index ) for e in entries ]
-    obj = [ { 'type': 'mod_tileset', 'compatibility': [ 'UltimateCataclysm' ], 'tiles-new': sheets } ]
-    with open( os.path.join( GFX, 'derived_tileset.json' ), 'w', encoding='utf-8' ) as f:
+    obj = [ { 'type': 'mod_tileset', 'compatibility': cfg['compat'], 'tiles-new': sheets } ]
+    with open( os.path.join( GFX, cfg['json'] ), 'w', encoding='utf-8' ) as f:
         json.dump( obj, f, ensure_ascii=False, indent=1 )
 
-    with open( os.path.join( ROOT, 'art', 'saigon', 'SOURCES_DERIVED.md' ), 'w', encoding='utf-8' ) as f:
-        f.write( '# Derived sprite provenance\n\nGenerated by `tools/saigon/art/derive_sprites.py`. Every sprite '
-                 'below is a modified copy of UltimateCataclysm art (I-am-Erk/CDDA-Tilesets, CC-BY-SA 3.0, '
-                 'UltimateCataclysm contributors) and is distributed under CC-BY-SA 3.0.\n\n'
-                 '| Saigon tile id | UltimateCataclysm source | Edit |\n|---|---|---|\n' )
+    with open( os.path.join( ROOT, cfg['provenance'] ), 'w', encoding='utf-8' ) as f:
+        f.write( '# Derived sprite provenance (%s)\n\nGenerated by `tools/saigon/art/derive_sprites.py`. Every '
+                 'sprite below is a modified copy of %s art (CC-BY-SA 3.0, its contributors) and is '
+                 'distributed under CC-BY-SA 3.0.\n\n| Saigon tile id | %s source | Edit |\n|---|---|---|\n' %
+                 ( cfg['source_name'], cfg['source_name'], cfg['source_name'] ) )
         for target, source, edit in provenance:
             f.write( '| `%s` | `%s` | %s |\n' % ( target, source, edit.replace( '|', '\\|' ) ) )
 
@@ -294,9 +311,15 @@ def main():
                 ox = col * cell + ( cell - img.width ) // 2
                 oy = row * cell + ( cell - img.height ) // 2
                 sheet.paste( img, ox, oy )
-        pngio.write( os.path.join( ROOT, 'doc', 'saigon', 'art', 'derived_preview.png' ), sheet )
-    print( 'derived %d tile entries from %d sprites in %d sheets' %
-           ( len( entries ), sum( len( v ) for v in out.groups.values() ), len( sheets ) ) )
+        pngio.write( os.path.join( ROOT, cfg['preview'] ), sheet )
+    print( '%s: derived %d tile entries from %d sprites in %d sheets' %
+           ( cfg['source_name'], len( entries ), sum( len( v ) for v in out.groups.values() ), len( sheets ) ) )
+
+
+def main():
+    names = sys.argv[1:] or list( SETS )
+    for name in names:
+        derive( SETS[name] )
 
 
 if __name__ == '__main__':

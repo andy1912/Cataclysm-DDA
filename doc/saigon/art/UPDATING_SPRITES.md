@@ -22,7 +22,7 @@ For every thing on screen, the tiles renderer looks up a **tile id** in the load
 - **Pastel stucco walls**, **teal rolling shutters**, a **red-lacquer ancestor altar**, **red plastic stools** and a **stainless rooftop tank**.
 - **Zombies:** a khaki ward-police zombie, the fevered dead in a pale gown, a market zombie with an orange apron, and a helmeted xe ôm zombie.
 
-Hand-drawn PNGs always win over derived ones. Validate both with `python3 tools/saigon/art/validate_tileset.py`, which applies the loader's index and capacity rules (mod tilesets only load with a world, so a main-menu launch can't test them).
+The `overmap` set (`derive_sprites.py overmap`, recipes in `art/saigon/derive_overmap_recipes.json`) gives each Saigon building type a distinct map colour: pastel nhà ống, terracotta hẻm, orange chợ, red chùa and white chung cư, plus their roofs. Hand-drawn PNGs always win over derived ones. Validate both with `python3 tools/saigon/art/validate_tileset.py`, which applies the loader's index and capacity rules (mod tilesets only load with a world, so a main-menu launch can't test them).
 
 **What a Saigon world looked like before G6 in tiles mode**
 - **No base tileset installed:** ASCII-style tiles.
