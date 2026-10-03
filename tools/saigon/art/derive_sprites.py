@@ -14,11 +14,14 @@ UltimateCataclysm sprite (CC-BY-SA 3.0) and applies recorded, re-runnable edits
       foliage in Saigon (src/cata_tiles.cpp:378-396 picks season variants first)
 
 Ops (applied in order to opaque pixels; hues in degrees):
-  {"op": "recolor", "hue": [h0, h1], "min_sat": s, "max_val": v, "to_hue": h | null,
+  {"op": "recolor", "hue": [h0, h1], "min_sat": s, "max_sat": s, "max_val": v, "to_hue": h | null,
    "sat_mul": m | "sat_set": s, "val_mul": m, "val_add": a}
   {"op": "tint", "rgb": [r, g, b], "strength": 0..1}
   {"op": "desaturate", "sat_mul": m, "val_mul": m}
   {"op": "cap", "rows": n, "rgb": [r, g, b]}     colour the top n opaque rows (helmets)
+  {"op": "flatten", "k": 0.3, "min_val": v}      pull brightness towards the sprite's median
+      (pixels darker than min_val, i.e. outlines and shadows, keep theirs): turns brick
+      courses into a smooth rendered wall while keeping the tile's shading and edges
 
 Sprites that have a hand-drawn PNG (art/saigon/tiles) or a code-drawn one
 (art/saigon/generated, from draw_sprites.py) are skipped, so drawn art always wins.  Output: data/mods/saigon_2000s/gfx/derived_*.png + derived_tileset.json
@@ -119,6 +122,23 @@ def apply_ops( img, ops ):
                     out.set( x, y, tuple( op['rgb'] ) + ( 255, ) )
                 rows_done += 1
             continue
+        if kind == 'flatten':
+            lo = op.get( 'min_val', 0.0 )
+            vals = sorted( max( out.get( x, y )[:3] ) / 255 for y in range( out.height ) for x in range( out.width )
+                           if out.get( x, y )[3] > 0 and max( out.get( x, y )[:3] ) / 255 >= lo )
+            if not vals:
+                continue
+            median = vals[len( vals ) // 2]
+            for y in range( out.height ):
+                for x in range( out.width ):
+                    r, g, b, a = out.get( x, y )
+                    h, s, v = colorsys.rgb_to_hsv( r / 255, g / 255, b / 255 )
+                    if a == 0 or v < lo:
+                        continue
+                    v = median + ( v - median ) * op['k']
+                    nr, ng, nb = colorsys.hsv_to_rgb( h, s, v )
+                    out.set( x, y, ( int( nr * 255 ), int( ng * 255 ), int( nb * 255 ), a ) )
+            continue
         for y in range( out.height ):
             for x in range( out.width ):
                 r, g, b, a = out.get( x, y )
@@ -129,7 +149,7 @@ def apply_ops( img, ops ):
                     h0, h1 = op['hue']
                     deg = h * 360
                     inside = h0 <= deg <= h1 if h0 <= h1 else ( deg >= h0 or deg <= h1 )
-                    if not inside or s < op.get( 'min_sat', 0.0 ) or v > op.get( 'max_val', 1.0 ):
+                    if not inside or s < op.get( 'min_sat', 0.0 ) or s > op.get( 'max_sat', 1.0 ) or v > op.get( 'max_val', 1.0 ):
                         continue
                     if op.get( 'to_hue' ) is not None:
                         h = ( op['to_hue'] % 360 ) / 360

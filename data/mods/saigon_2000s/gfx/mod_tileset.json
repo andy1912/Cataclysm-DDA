@@ -13,6 +13,14 @@
     "sprite_offset_y": 0,
     "tiles": [
      {
+      "id": "f_oven",
+      "fg": 48
+     },
+     {
+      "id": "f_toilet",
+      "fg": 49
+     },
+     {
       "id": "sgn_ao_ba_ba",
       "fg": 0
      },
@@ -165,6 +173,14 @@
       "fg": 37
      }
     ]
+   },
+   {
+    "file": "saigon_32x32.png",
+    "sprite_width": 32,
+    "sprite_height": 32,
+    "sprite_offset_x": 0,
+    "sprite_offset_y": 0,
+    "tiles": []
    }
   ]
  }
