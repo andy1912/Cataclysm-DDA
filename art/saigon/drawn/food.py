@@ -232,3 +232,16 @@ def vang_chi( c ):
     c.px( 11, 13, rgb( '#b88a18' ) )
     c.ring( 10, 11.5, 1.6, 1.6, rgb( '#b88a18' ) )  # shop stamp
     finish( c )
+
+
+@sprite( 'dry_rice', 20, 20 )
+def dry_rice( c ):
+    # a woven polypropylene rice sack, folded open at the top to show the grain
+    c.polygon( [ ( 4, 7 ), ( 16, 7 ), ( 17, 17 ), ( 3, 17 ) ], rgb( '#eceae0' ) )
+    for y in range( 8, 17, 2 ):
+        c.line( 4, y, 16, y, rgb( '#d8d4c4' ) )                     # weave
+    c.rect( 6, 11, 14, 14, rgb( '#2f8a4a' ) )                       # printed label
+    c.rect( 8, 12, 12, 12, rgb( '#f2c232' ) )
+    c.ellipse( 10, 6.5, 6, 2, rgb( '#f8f6ee' ) )                    # open top: rice
+    c.noise( 5, 5, 15, 8, [ rgb( '#e4e0d0' ), rgb( '#ffffff' ) ], 0.4 )
+    finish( c )

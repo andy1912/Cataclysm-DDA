@@ -141,3 +141,42 @@ def moto_tank( c ):
     c.ellipse( 11, 6, 1.6, 1, STEEL )
     c.line( 4, 15, 6, 16, STEEL_DARK )                       # fuel tap
     finish( c )
+
+
+# --- dda items UltimateCataclysm has no sprite for, seen on every Saigon altar and stall --------
+
+@sprite( 'incense', 20, 20 )
+def incense( c ):
+    # a bundle of nhang: thin sticks with red-dyed handles and brown incense tips, tied in paper
+    tips = [ ( 8, 1 ), ( 12, 1 ), ( 15, 3 ), ( 18, 6 ), ( 19, 10 ) ]
+    for tx, ty in tips:                                                            # fanned sticks
+        c.line( 5, 17, tx, ty, rgb( '#7a5232' ) )                                  # incense coat
+        c.line( 5, 17, 5 + ( tx - 5 ) * 0.3, 17 + ( ty - 17 ) * 0.3, rgb( '#d02a2a' ) )   # red handles
+    c.rect( 6, 14, 8, 15, rgb( '#f2c232' ) )                                       # gold paper band
+    c.px( 15, 3, rgb( '#f2a050' ) )                                                # one lit tip
+    c.px( 15, 1, rgb( '#c8c8c8' ) )                                                # smoke
+    c.px( 16, 0, rgb( '#e0e0e0' ) )
+    c.drop_shadow( 1, 1, 90 )   # no outline: it would fill the gaps between the thin sticks
+
+
+@sprite( 'knife_cleaver', 20, 20 )
+def cleaver( c ):
+    # dao phay: a broad rectangular kitchen cleaver with a wooden handle
+    c.capsule( 3, 17, 7, 13, 1.1, rgb( '#6e4a2a' ) )
+    c.polygon( [ ( 7, 13 ), ( 6, 8 ), ( 12, 2 ), ( 17, 7 ), ( 10, 14 ) ], STEEL )
+    c.line( 10, 14, 17, 7, rgb( '#eef2f4' ) )                                      # edge
+    c.line( 6, 8, 12, 2, STEEL_DARK )                                              # spine
+    c.px( 9, 6, STEEL_DARK )                                                       # hanging hole
+    finish( c )
+
+
+@sprite( 'tape_measure', 20, 20 )
+def tape_measure( c ):
+    # yellow case, a tongue of steel tape pulled out
+    c.ellipse( 9, 11, 5, 5, rgb( '#f2c232' ), light=rgb( '#fbe27a' ), dark=rgb( '#c8961a' ) )
+    c.ellipse( 9, 11, 2, 2, rgb( '#3a3a3a' ) )
+    c.rect( 13, 14, 18, 15, rgb( '#d8d0a0' ) )
+    for x in range( 14, 19, 2 ):
+        c.px( x, 14, rgb( '#3a3a3a' ) )
+    c.rect( 18, 13, 18, 15, rgb( '#6e767e' ) )                                     # hook
+    finish( c )

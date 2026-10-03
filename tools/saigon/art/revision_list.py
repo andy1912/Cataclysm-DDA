@@ -7,6 +7,10 @@ Status is one of
   Saigon art (derived)   recipe-derived sprite in derived_tileset.json / derived_overmap_tileset.json
   keep original          dda (or engine-generated) id whose UltimateCataclysm art is universal (art/saigon/art_triage.json)
   to do                  needs Saigon art (a mod id without a sprite, or a dda id listed as todo)
+  to do (no sprite)      nothing in the base tileset along its fallback chain: the game
+                         draws an ASCII glyph, so it needs a sprite whatever its origin
+  base tileset gap       the same for deep (T3) dda loot: UltimateCataclysm itself has no
+                         sprite, the vanilla game shows the glyph too
 Size and image count come from the sprite that draws today (Saigon sprite, else the base
 tileset entry of the id or of its fallback).  Run from the repo root after build/derive:
   python3 tools/saigon/art/revision_list.py
@@ -69,8 +73,59 @@ class ModSets:
                                 self.tiles.setdefault( i, ( kind, size, len( set( idx ) ) ) )
 
 
+def looks_like_table():
+    """id -> looks_like for every JSON object in dda and the Saigon mod, with copy-from
+    inheritance, so a fallback chain can be followed as far as the game follows it."""
+    own, parent = {}, {}
+    for top in ( os.path.join( ROOT, 'data', 'json' ), os.path.join( ROOT, 'data', 'mods', 'saigon_2000s' ) ):
+        for dirpath, _, files in os.walk( top ):
+            for name in files:
+                if not name.endswith( '.json' ) or '/gfx' in dirpath:
+                    continue
+                try:
+                    with open( os.path.join( dirpath, name ), encoding='utf-8' ) as f:
+                        data = json.load( f )
+                except ( ValueError, UnicodeDecodeError ):
+                    continue
+                for obj in data if isinstance( data, list ) else [ data ]:
+                    if not isinstance( obj, dict ):
+                        continue
+                    ids = obj.get( 'id' ) or obj.get( 'abstract' )
+                    for i in ids if isinstance( ids, list ) else [ ids ]:
+                        if not isinstance( i, str ):
+                            continue
+                        if 'looks_like' in obj:
+                            own[i] = obj['looks_like']
+                        if 'copy-from' in obj and obj['copy-from'] != i:
+                            parent[i] = obj['copy-from']
+
+    def resolve( i, depth=0 ):
+        if i in own or depth > 10:
+            return own.get( i, '' )
+        return resolve( parent[i], depth + 1 ) if i in parent else ''
+    return resolve
+
+
 def main():
     base = BaseTileset( os.path.join( ROOT, 'gfx', 'UltimateCataclysm' ) )
+    looks_like = looks_like_table()
+    variant_prefixes = { t.rsplit( '_', 1 )[0] for t in base.tiles if t.startswith( 'vp_' ) }
+
+    def has_sprite( sid, category ):
+        """Does the game find any base sprite for sid along its looks_like chain?"""
+        cur, seen = sid, set()
+        while cur and cur not in seen and len( seen ) < 10:
+            seen.add( cur )
+            if cur in base.tiles:
+                return True
+            if category == 'vehicle_part':
+                vp = cur if cur.startswith( 'vp_' ) else 'vp_' + cur
+                if vp in base.tiles or any( p.startswith( vp ) for p in variant_prefixes if p == vp or
+                                            p.startswith( vp + '_' ) ):
+                    return True
+            nxt = looks_like( cur[3:] if cur.startswith( 'vp_' ) else cur )
+            cur = nxt
+        return False
     mod = ModSets()
     with open( os.path.join( ROOT, 'art', 'saigon', 'art_triage.json' ) ) as f:
         todo_dda = json.load( f )['todo']
@@ -91,11 +146,21 @@ def main():
                 kind, size, images = mod.tiles[sid]
                 status = 'Saigon art (%s)' % kind
             else:
-                info = base_info( sid ) or ( row['fallback'] and base_info( row['fallback'] ) ) or ( '?', 1 )
-                size, images = info
+                info = base_info( sid ) or ( row['fallback'] and base_info( row['fallback'] ) )
+                size, images = info or ( '20x20' if row['category'] == 'item' else '32x32', 1 )
                 if row['category'] == 'overmap_terrain':
                     size = '16x16'
-                if row['source'] != 'mod' and sid not in todo_dda and row['id'] not in todo_dda:
+                pseudo = row['id'].startswith( ( 't_region_', 'f_region_' ) )
+                # vehicle parts are checked by the scene render instead: most parts without a
+                # sprite (alternators, horns, mounts) sit under the part the tile displays
+                drawable = row['category'] in ( 'vehicle_part', 'overmap_terrain' ) or pseudo or \
+                    has_sprite( sid, row['category'] ) or ( row['fallback'] and has_sprite( row['fallback'], row['category'] ) )
+                if not drawable and row['tier'] == 'T3':
+                    status = 'base tileset gap'
+                elif not drawable:
+                    # nothing in the base tileset along the fallback: the game draws an ASCII glyph
+                    status = 'to do (no sprite)'
+                elif row['source'] != 'mod' and sid not in todo_dda and row['id'] not in todo_dda:
                     status = 'keep original'
                 else:
                     status = 'to do'
