@@ -125,7 +125,14 @@
       { "item": "sgn_book_tailoring", "prob": 3 },
       { "item": "sgn_book_tv_repair", "prob": 2 },
       { "item": "cash_card", "prob": 5 },
-      { "item": "aspirin", "prob": 10 }
+      { "item": "aspirin", "prob": 10 },
+      { "item": "sgn_quat_may", "prob": 30 },
+      { "item": "sgn_den_dau", "prob": 15 },
+      { "item": "sgn_dien_thoai", "prob": 15 },
+      { "item": "sgn_radio_cassette", "prob": 10 },
+      { "item": "sgn_mung", "prob": 25 },
+      { "item": "sgn_khau_trang", "prob": 20 },
+      { "item": "sgn_dau_gio", "prob": 20 }
     ],
     "//": "Living room, altar and bedrooms of a nhà ống home."
   },
@@ -236,7 +243,10 @@
       { "item": "disinfectant", "prob": 20 },
       { "item": "mask_dust", "prob": 30 },
       { "item": "sgn_book_nursing", "prob": 4 },
-      { "item": "gloves_medical", "prob": 10 }
+      { "item": "gloves_medical", "prob": 10 },
+      { "item": "sgn_dau_gio", "prob": 50, "count": [ 1, 3 ] },
+      { "item": "sgn_oresol", "prob": 50, "count": [ 2, 10 ] },
+      { "item": "sgn_khau_trang", "prob": 40, "count": [ 1, 5 ] }
     ],
     "//": "Nhà thuốc (pharmacy) shelves."
   },
@@ -251,7 +261,8 @@
       { "item": "candle", "prob": 20 },
       { "item": "dry_rice", "prob": 15 },
       { "item": "sgn_banh_chung", "prob": 5 },
-      { "item": "robe", "prob": 8 }
+      { "item": "robe", "prob": 8 },
+      { "item": "sgn_nen", "prob": 40, "count": [ 1, 4 ] }
     ],
     "//": "Pagoda altars and kitchen."
   }

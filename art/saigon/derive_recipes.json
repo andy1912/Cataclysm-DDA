@@ -882,5 +882,41 @@
       }
     ],
     "//": "Condensed milk (a liquid): thick cream-white."
+  },
+  {
+    "target": "overlay_male_worn_sgn_khau_trang",
+    "source": "overlay_male_worn_mask_dust",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 335,
+        "sat_set": 0.35,
+        "val_mul": 1.15
+      }
+    ],
+    "//": "Cloth face mask: pink flowery cotton."
+  },
+  {
+    "target": "overlay_female_worn_sgn_khau_trang",
+    "source": "overlay_female_worn_mask_dust",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 335,
+        "sat_set": 0.35,
+        "val_mul": 1.15
+      }
+    ],
+    "//": "Cloth face mask: pink flowery cotton."
   }
 ]

@@ -9188,6 +9188,14 @@
      {
       "id": "overlay_female_worn_sgn_ong_tay_chong_nang",
       "fg": 1161
+     },
+     {
+      "id": "overlay_male_worn_sgn_khau_trang",
+      "fg": 1162
+     },
+     {
+      "id": "overlay_female_worn_sgn_khau_trang",
+      "fg": 1163
      }
     ]
    }

@@ -114,5 +114,21 @@
     "qualities": [ { "id": "BOIL", "level": 1 } ],
     "tools": [ [ [ "water_boiling_heat", 1, "LIST" ] ] ],
     "autolearn": true
+  },
+  {
+    "type": "recipe",
+    "activity_level": "NO_EXERCISE",
+    "result": "rehydration_drink",
+    "id_suffix": "sgn_oresol",
+    "category": "CC_FOOD",
+    "subcategory": "CSC_FOOD_DRINKS",
+    "skill_used": "cooking",
+    "difficulty": 0,
+    "time": "2 m",
+    "charges": 4,
+    "qualities": [ { "id": "CONTAIN", "level": 1 } ],
+    "components": [ [ [ "sgn_oresol", 1 ] ], [ [ "water_clean", 4 ] ] ],
+    "autolearn": true,
+    "//": "Oresol sachet dissolved in clean water."
   }
 ]
