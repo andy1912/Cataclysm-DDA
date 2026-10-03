@@ -125,3 +125,13 @@ UltimateCataclysm (32x32) + Larwick Overmap are installed in gfx/ (UltimateCatac
 | G6 derived Saigon sprites from UltimateCataclysm | done | (this) | 272 entries / 1003 sprites; tropical seasons, stucco walls, teal shutters, altar, red stools, tank, 4 zombies; validate_tileset.py 0 problems; in-world view needs a manual game load |
 | G7 Saigon overmap icons derived from Larwick Overmap | done | (this) | 24 entries: pastel nhà ống, terracotta hẻm, orange chợ, red chùa, white chung cư (+ roofs); derive_sprites.py now has named sets (tiles, overmap) |
 | G8 street, interiors and Saigon outfit derived sprites | done | (this) | sidewalk tiles, cream floor tiles, green doors and grilles; nón lá / nón bảo hiểm / bat-wing poncho / dép tổ ong icons + male/female worn overlays. Shapes still from originals (nón lá uses the fedora/straw-hat shape) until hand art |
+
+### Tileset revamp (user, 2026-10-03: "continue the work" after SPRITE_REVISION_SUMMARY.md)
+Triage from contact sheets (`tools/saigon/art/contact_sheet.py`): most "to revise" T1 sprites are universal and keep the original art. Examples: dirt, grass, water, ramps, stairs, pavement, fridge, counter, tools, wheels and generic vehicle parts. Vietnam's "Dừng lại" sign is also the red STOP octagon. Real Saigon work, in order:
+| ID | Status | Commit | Notes |
+|---|---|---|---|
+| G9 any-size packer + code-drawn sprites (draw.py, draw_sprites.py, art/saigon/drawn) + contact sheets; food/fruit/money icons | done | (this) | 15 x 20x20: phở, bánh mì ×2, cơm tấm, bánh chưng, mì gói, bánh phở, rau muống, durian, mít, thanh long, 3 đồng notes, vàng chỉ. art/saigon/tiles32 → tiles (any size). validate 0 problems |
+| G10 drinks (recoloured liquid puddles), books/papers, Saigon gear icons | todo | - | nước mắm, cà phê sữa đá, trà đá, nước mía, rượu đế, bia hơi, chè, tương ớt; 10 books; newspaper/notice/note; nón lá cone, dép tổ ong, áo bà ba, ống tay, dao rựa, bếp ga mini, thùng xốp, 110cc engine, 4 L tank |
+| G11 furniture and walls | todo | - | stucco wall (flatten brick), gas stove for f_oven, squat toilet, wooden salon sofa, chiếu bed, green public bin, grey street light; áo bà ba / ống tay worn overlays |
+| G12 tropical vegetation (content + art) | todo | - | absorbs G5: coconut palm, banana, tamarind, bougainvillea terrain/furniture + region terrain_furniture mapping |
+| G13 T2 loot icons | todo | - | remaining T2 ids after G10 |

@@ -20,8 +20,8 @@ Ops (applied in order to opaque pixels; hues in degrees):
   {"op": "desaturate", "sat_mul": m, "val_mul": m}
   {"op": "cap", "rows": n, "rgb": [r, g, b]}     colour the top n opaque rows (helmets)
 
-Sprites that have a hand-drawn PNG under art/saigon/tiles32 are skipped, so real art
-always wins.  Output: data/mods/saigon_2000s/gfx/derived_*.png + derived_tileset.json
+Sprites that have a hand-drawn PNG (art/saigon/tiles) or a code-drawn one
+(art/saigon/generated, from draw_sprites.py) are skipped, so drawn art always wins.  Output: data/mods/saigon_2000s/gfx/derived_*.png + derived_tileset.json
 (a mod_tileset compatible with UltimateCataclysm), art/saigon/SOURCES_DERIVED.md and
 doc/saigon/art/derived_preview.png (before/after contact sheet).
 
@@ -45,12 +45,12 @@ ACROSS = 16
 # One derivation set per base tileset; a mod tileset only applies over its base.
 SETS = {
     'tiles': { 'base': 'gfx/UltimateCataclysm', 'compat': [ 'UltimateCataclysm' ],
-               'recipes': 'art/saigon/derive_recipes.json', 'hand': 'art/saigon/tiles32',
+               'recipes': 'art/saigon/derive_recipes.json', 'hand': [ 'art/saigon/tiles', 'art/saigon/generated' ],
                'prefix': 'derived', 'json': 'derived_tileset.json',
                'preview': 'doc/saigon/art/derived_preview.png', 'provenance': 'art/saigon/SOURCES_DERIVED.md',
                'source_name': 'UltimateCataclysm' },
     'overmap': { 'base': 'gfx/Larwick_Overmap', 'compat': [ 'Larwick Overmap' ],
-                 'recipes': 'art/saigon/derive_overmap_recipes.json', 'hand': 'art/saigon/overmap16',
+                 'recipes': 'art/saigon/derive_overmap_recipes.json', 'hand': [ 'art/saigon/overmap16' ],
                  'prefix': 'derived_om', 'json': 'derived_overmap_tileset.json',
                  'preview': 'doc/saigon/art/derived_overmap_preview.png',
                  'provenance': 'art/saigon/SOURCES_DERIVED_OVERMAP.md', 'source_name': 'Larwick Overmap' },
@@ -228,10 +228,11 @@ def resolve( value, index ):
     return value
 
 
-def hand_drawn_ids( hand ):
+def hand_drawn_ids( roots ):
     ids = set()
-    for dirpath, _, files in os.walk( hand ):
-        ids.update( f[:-4] for f in files if f.endswith( '.png' ) )
+    for root in roots:
+        for dirpath, _, files in os.walk( os.path.join( ROOT, root ) ):
+            ids.update( f[:-4] for f in files if f.endswith( '.png' ) )
     return ids
 
 
@@ -242,7 +243,7 @@ def derive( cfg ):
     base = BaseTileset( base_dir )
     with open( os.path.join( ROOT, cfg['recipes'] ) ) as f:
         recipes = json.load( f )
-    skip = hand_drawn_ids( os.path.join( ROOT, cfg['hand'] ) )
+    skip = hand_drawn_ids( cfg['hand'] )
     out = Output( cfg['prefix'] )
     cache = {}
     entries = []      # ( target id, remapped entry )
