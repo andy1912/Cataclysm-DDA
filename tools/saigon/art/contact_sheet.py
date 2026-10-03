@@ -15,7 +15,7 @@ import sys
 
 sys.path.insert( 0, os.path.dirname( __file__ ) )
 import pngio  # noqa: E402
-from derive_sprites import BaseTileset, ROOT, GFX  # noqa: E402
+from derive_sprites import BaseTileset, ROOT, GFX, sheet_path  # noqa: E402
 
 SCALE = int( os.environ.get( "SCALE", 3 ) )
 CELL_W = int( os.environ.get( "CELL", 2 * 32 ) ) * SCALE + 12
@@ -97,7 +97,7 @@ class ModTileset:
                 sheets = []
                 for sheet in obj['tiles-new']:
                     w, h = sheet.get( 'sprite_width', 32 ), sheet.get( 'sprite_height', 32 )
-                    path = os.path.join( GFX, sheet['file'] )
+                    path = sheet_path( sheet )
                     pw, ph = BaseTileset._dims( path )
                     count = ( pw // w ) * ( ph // h )
                     sheets.append( ( start, count, path, w, h, pw // w ) )

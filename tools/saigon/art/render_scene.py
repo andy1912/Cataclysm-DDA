@@ -22,7 +22,7 @@ import zlib
 
 sys.path.insert( 0, os.path.dirname( __file__ ) )
 import pngio  # noqa: E402
-from derive_sprites import BaseTileset, ROOT, GFX  # noqa: E402
+from derive_sprites import BaseTileset, ROOT, GFX, sheet_path  # noqa: E402
 
 TILE = 32
 SUBTILES = [ 'center', 'corner', 'edge', 't_connection', 'end_piece', 'unconnected', 'open', 'broken' ]
@@ -80,7 +80,7 @@ def load_tilesets():
                 start = 0
                 for sheet in obj['tiles-new']:
                     w, h = sheet.get( 'sprite_width', TILE ), sheet.get( 'sprite_height', TILE )
-                    p = os.path.join( GFX, sheet['file'] )
+                    p = sheet_path( sheet )
                     pw, ph = BaseTileset._dims( p )
                     count = ( pw // w ) * ( ph // h )
                     sheets.append( ( start, count, p, w, h, sheet.get( 'sprite_offset_x', 0 ),

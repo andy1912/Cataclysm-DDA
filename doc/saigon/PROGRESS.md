@@ -156,3 +156,4 @@ Triage from contact sheets (`tools/saigon/art/contact_sheet.py`): most "to revis
 | G28 animals | todo | - | |
 | G29 map icons for new landmarks | todo | - | |
 | H1 hand-art pass (artist) | todo | - | zombies, NPC outfits, áo dài, polish |
+| G17b QA: worlds failed to load (user report) | done | (this) | Blocker R0: mod tileset "file" paths must be relative to the MOD ROOT (tileset_root = mod base path); since G6 every world load aborted on "Could not load image". Packers write gfx/<sheet>; tools resolve via sheet_path(); validator resolves like the engine; check_mod.sh runs it. Real cataclysm-tiles load of a copied Saigon world: tilesets load, character drawn. New test saigon_new_game_start_locations (3 start locations). [saigon] 13/13 pass |

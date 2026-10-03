@@ -90,7 +90,9 @@ def pack( roots, prefix, geometry, compat ):
         name = '%s_%dx%d.png' % ( prefix, w, h )
         pngio.write( os.path.join( GFX, name ), sheet )
         ox, oy = geometry[size]
-        sheets.append( { 'file': name, 'sprite_width': w, 'sprite_height': h,
+        # relative to the MOD ROOT, not to this JSON file: the loader opens
+        # <mod base path>/<file> (tileset_loader.cpp: tileset_root = mts.get_base_path())
+        sheets.append( { 'file': 'gfx/' + name, 'sprite_width': w, 'sprite_height': h,
                          'sprite_offset_x': ox, 'sprite_offset_y': oy, 'tiles': [] } )
         offset += ACROSS * rows  # full grid capacity, like the engine (src/tileset_loader.cpp:319)
 

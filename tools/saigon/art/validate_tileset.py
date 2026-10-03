@@ -9,6 +9,8 @@ launch cannot test them.  This mirrors src/tileset_loader.cpp instead:
   - every fg/bg index (plain, rotation list, weighted variants, multitile
     additional_tiles) must fall inside that total capacity
   - "compatibility" must name an installed base tileset                 (:425)
+  - "file" is opened relative to the MOD ROOT (tileset_root = mod base path), not to the
+    JSON file: a missing image aborts loading the world
   - a tile is drawn with the sprite size and offset of the sheet it is declared under
     (parse_atlases), so every sprite it uses must come from a sheet of that same
     geometry, or it lands misplaced
@@ -21,7 +23,8 @@ import os
 import sys
 
 ROOT = os.path.join( os.path.dirname( __file__ ), '..', '..', '..' )
-GFX = os.path.join( ROOT, 'data', 'mods', 'saigon_2000s', 'gfx' )
+MOD = os.path.join( ROOT, 'data', 'mods', 'saigon_2000s' )
+GFX = os.path.join( MOD, 'gfx' )
 
 
 def png_dims( path ):
@@ -68,9 +71,12 @@ def main():
             capacity = 0
             ranges = []
             for sheet in obj['tiles-new']:
-                png = os.path.join( GFX, sheet['file'] )
+                # the engine opens <mod root>/<file> (tileset_loader.cpp: tileset_root is the
+                # mod's base path), whatever folder the JSON file sits in
+                png = os.path.join( MOD, sheet['file'] )
                 if not os.path.exists( png ):
-                    problems.append( '%s: missing sheet %s' % ( where, sheet['file'] ) )
+                    problems.append( '%s: sheet %s not found at <mod root>/%s; the game aborts loading the '
+                                     'world ("Could not load image")' % ( where, sheet['file'], sheet['file'] ) )
                     continue
                 w, h = png_dims( png )
                 sw = sheet.get( 'sprite_width', 32 )

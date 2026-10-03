@@ -45,7 +45,13 @@ sys.path.insert( 0, os.path.dirname( __file__ ) )
 import pngio  # noqa: E402
 
 ROOT = os.path.join( os.path.dirname( __file__ ), '..', '..', '..' )
-GFX = os.path.join( ROOT, 'data', 'mods', 'saigon_2000s', 'gfx' )
+MOD = os.path.join( ROOT, 'data', 'mods', 'saigon_2000s' )
+GFX = os.path.join( MOD, 'gfx' )
+
+
+def sheet_path( sheet ):
+    """Where the engine opens a mod tileset sheet: <mod root>/<file>."""
+    return os.path.join( MOD, sheet['file'] )
 ACROSS = 16
 # One derivation set per base tileset; a mod tileset only applies over its base.
 SETS = {
@@ -206,7 +212,8 @@ class Output:
                 index[( geometry, i )] = offset + i
             name = '%s_%d_%dx%d.png' % ( self.prefix, n, w, h )
             pngio.write( os.path.join( GFX, name ), sheet )
-            sheets.append( { 'file': name, 'sprite_width': w, 'sprite_height': h,
+            # relative to the MOD ROOT (tileset_loader.cpp: tileset_root = mts.get_base_path())
+            sheets.append( { 'file': 'gfx/' + name, 'sprite_width': w, 'sprite_height': h,
                              'sprite_offset_x': ox, 'sprite_offset_y': oy, 'tiles': [] } )
             offset += ACROSS * rows  # full grid capacity, like the engine
         return index, sheets

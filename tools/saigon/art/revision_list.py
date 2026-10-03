@@ -22,7 +22,7 @@ import os
 import sys
 
 sys.path.insert( 0, os.path.dirname( __file__ ) )
-from derive_sprites import BaseTileset, ROOT, GFX  # noqa: E402
+from derive_sprites import BaseTileset, ROOT, GFX, sheet_path  # noqa: E402
 
 ART = os.path.join( ROOT, 'doc', 'saigon', 'art' )
 
@@ -61,7 +61,7 @@ class ModSets:
                     start = 0
                     for sheet in obj['tiles-new']:
                         w, h = sheet.get( 'sprite_width', 32 ), sheet.get( 'sprite_height', 32 )
-                        pw, ph = BaseTileset._dims( os.path.join( GFX, sheet['file'] ) )
+                        pw, ph = BaseTileset._dims( sheet_path( sheet ) )
                         count = ( pw // w ) * ( ph // h )
                         ranges.append( ( start, start + count, '%dx%d' % ( w, h ) ) )
                         start += count

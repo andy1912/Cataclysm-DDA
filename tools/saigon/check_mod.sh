@@ -43,5 +43,15 @@ if [ -n "$errors" ]; then
     echo "$errors" | head -40
     fail=1
 fi
+# --check-mods never loads tilesets, so check the mod tilesets the way the tiles build will
+# (sheet paths relative to the mod root, indices, declaring-sheet geometry).  A broken
+# mod tileset aborts every world load in cataclysm-tiles.
+if [[ " ${mods[*]} " == *" saigon_2000s "* ]]; then
+    if ! python3 tools/saigon/art/validate_tileset.py > "$ud/validate_tileset.txt" 2>&1; then
+        echo "FAIL: mod tileset (tools/saigon/art/validate_tileset.py):"
+        head -20 "$ud/validate_tileset.txt"
+        fail=1
+    fi
+fi
 [ $fail -eq 0 ] && echo "OK: ${mods[*]}"
 exit $fail

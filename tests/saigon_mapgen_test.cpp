@@ -1,6 +1,7 @@
 #include <queue>
 #include <set>
 #include <string>
+#include <unordered_map>
 #include <utility>
 #include <vector>
 
@@ -19,6 +20,7 @@
 #include "player_helpers.h"
 #include "point.h"
 #include "rng.h"
+#include "start_location.h"
 #include "submap.h"
 #include "type_id.h"
 #include "vehicle.h"
@@ -656,4 +658,39 @@ TEST_CASE( "saigon_road_traffic_is_saigon", "[mapgen][vehicle][saigon]" )
     CHECK( saigon > 20 );
     // dda chunks keep weight 1000 against 1,000,000 (0.1%), plus 1% group residue.
     CHECK( other <= saigon / 20 );
+}
+
+// The new-game path of game::start_game for every Saigon start location: find a site on a
+// fresh overmap, prepare the map, load the reality bubble, place the player.  A player who
+// can't stand where they are placed, or a site that can't be found, breaks "New character".
+TEST_CASE( "saigon_new_game_start_locations", "[saigon][start_location]" )
+{
+    if( !start_location_id( "sgn_sloc_nha_ong" ).is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    for( const std::string sloc : {
+             "sgn_sloc_nha_ong", "sgn_sloc_nha_ong_shuttered", "sgn_sloc_cho"
+         } ) {
+        CAPTURE( sloc );
+        sgn_clear_map_and_reset_player();
+        rng_set_engine_seed( 4 );
+        const start_location &start = start_location_id( sloc ).obj();
+        const std::pair<tripoint_abs_omt, std::unordered_map<std::string, std::string>> found =
+                    start.find_player_initial_location( point_abs_om() );
+        const tripoint_abs_omt omtstart = found.first;
+        REQUIRE_FALSE( omtstart.is_invalid() );
+        start.set_parameters( omtstart, found.second );
+        start.prepare_map( omtstart );
+        tripoint_abs_sm lev = project_to<coords::sm>( omtstart );
+        lev -= point( HALF_MAPSIZE, HALF_MAPSIZE );
+        map &here = get_map();
+        here.load( lev, false );
+        avatar &u = get_avatar();
+        start.place_player( u, omtstart );
+        CHECK( u.pos_abs_omt() == omtstart );
+        CHECK( here.passable( u.pos_bub() ) );
+        CHECK( here.ter( u.pos_bub() ).obj().roof.str() != "" );
+        CHECK( overmap_buffer.ter( omtstart ).id().str().rfind( "sgn_", 0 ) == 0 );
+    }
 }
