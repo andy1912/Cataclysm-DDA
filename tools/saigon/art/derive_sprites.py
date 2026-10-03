@@ -19,6 +19,8 @@ Ops (applied in order to opaque pixels; hues in degrees):
   {"op": "tint", "rgb": [r, g, b], "strength": 0..1}
   {"op": "desaturate", "sat_mul": m, "val_mul": m}
   {"op": "cap", "rows": n, "rgb": [r, g, b]}     colour the top n opaque rows (helmets)
+  Per-pixel ops (recolor, tint, desaturate) accept "rows": [y0, y1] to touch only those
+  rows of the sprite, e.g. the hair on a 32x48 monster.
   {"op": "flatten", "k": 0.3, "min_val": v}      pull brightness towards the sprite's median
       (pixels darker than min_val, i.e. outlines and shadows, keep theirs): turns brick
       courses into a smooth rendered wall while keeping the tile's shading and edges
@@ -139,7 +141,8 @@ def apply_ops( img, ops ):
                     nr, ng, nb = colorsys.hsv_to_rgb( h, s, v )
                     out.set( x, y, ( int( nr * 255 ), int( ng * 255 ), int( nb * 255 ), a ) )
             continue
-        for y in range( out.height ):
+        y0, y1 = op.get( 'rows', [ 0, out.height - 1 ] )
+        for y in range( max( 0, y0 ), min( out.height - 1, y1 ) + 1 ):
             for x in range( out.width ):
                 r, g, b, a = out.get( x, y )
                 if a == 0:

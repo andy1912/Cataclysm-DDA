@@ -29,6 +29,14 @@
       "fg": 51
      },
      {
+      "id": "overlay_female_worn_sgn_non_la",
+      "fg": 64
+     },
+     {
+      "id": "overlay_male_worn_sgn_non_la",
+      "fg": 65
+     },
+     {
       "id": "sgn_ao_ba_ba",
       "fg": 0
      },
@@ -186,63 +194,63 @@
      },
      {
       "id": "t_sgn_tree_bang",
+      "fg": 97,
+      "bg": 96
+     },
+     {
+      "id": "t_sgn_tree_bo_de",
+      "fg": 98,
+      "bg": 96
+     },
+     {
+      "id": "t_sgn_tree_chuoi",
       "fg": 81,
       "bg": 80
      },
      {
-      "id": "t_sgn_tree_bo_de",
+      "id": "t_sgn_tree_chuoi_harvested",
       "fg": 82,
       "bg": 80
      },
      {
-      "id": "t_sgn_tree_chuoi",
-      "fg": 65,
-      "bg": 64
-     },
-     {
-      "id": "t_sgn_tree_chuoi_harvested",
-      "fg": 66,
-      "bg": 64
-     },
-     {
       "id": "t_sgn_tree_du_du",
-      "fg": 67,
-      "bg": 64
-     },
-     {
-      "id": "t_sgn_tree_du_du_harvested",
-      "fg": 68,
-      "bg": 64
-     },
-     {
-      "id": "t_sgn_tree_dua",
       "fg": 83,
       "bg": 80
      },
      {
-      "id": "t_sgn_tree_dua_harvested",
+      "id": "t_sgn_tree_du_du_harvested",
       "fg": 84,
       "bg": 80
      },
      {
+      "id": "t_sgn_tree_dua",
+      "fg": 99,
+      "bg": 96
+     },
+     {
+      "id": "t_sgn_tree_dua_harvested",
+      "fg": 100,
+      "bg": 96
+     },
+     {
       "id": "t_sgn_tree_me",
-      "fg": 85,
-      "bg": 80
+      "fg": 101,
+      "bg": 96
      },
      {
       "id": "t_sgn_tree_sao",
-      "fg": 86,
-      "bg": 80
+      "fg": 102,
+      "bg": 96
      },
      {
       "id": "t_sgn_tree_xoai",
-      "fg": 87,
-      "bg": 80
+      "fg": 103,
+      "bg": 96
      },
      {
       "id": "t_sgn_tree_xoai_harvested",
-      "fg": 88,
-      "bg": 80
+      "fg": 104,
+      "bg": 96
      },
      {
       "id": "vp_sgn_engine_110cc",
@@ -272,6 +280,14 @@
     "sprite_height": 32,
     "sprite_offset_x": 0,
     "sprite_offset_y": 0,
+    "tiles": []
+   },
+   {
+    "file": "saigon_32x36.png",
+    "sprite_width": 32,
+    "sprite_height": 36,
+    "sprite_offset_x": 0,
+    "sprite_offset_y": -8,
     "tiles": []
    },
    {
