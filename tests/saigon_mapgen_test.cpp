@@ -35,6 +35,7 @@ static const oter_str_id oter_field( "field" );
 static const ter_str_id ter_t_brick_wall( "t_brick_wall" );
 static const ter_str_id ter_t_concrete_roof( "t_concrete_roof" );
 static const ter_str_id ter_t_open_air( "t_open_air" );
+static const ter_str_id ter_t_sgn_tree_bo_de( "t_sgn_tree_bo_de" );
 static const ter_str_id ter_t_stairs_down( "t_stairs_down" );
 static const ter_str_id ter_t_stairs_up( "t_stairs_up" );
 
@@ -427,6 +428,21 @@ TEST_CASE( "saigon_chungcu_and_chua_structure", "[mapgen][saigon]" )
         const std::set<point> inside = reachable_through_doors( m, point( 11, 0 ), 0 );
         // The main hall is reachable from the gate through its double doors.
         CHECK( inside.count( point( 11, 12 ) ) == 1 );
+        // Saigon flora (G12): the courtyard's two trees are bồ đề, and the decorative
+        // shrubs resolve through the Saigon region's mapping, never to New England trees.
+        CHECK( count_ter( m, ter_t_sgn_tree_bo_de, 0 ) == 2 );
+        int shrubs = 0;
+        int dda_trees = 0;
+        for( int x = 0; x < SEEX * 2; x++ ) {
+            for( int y = 0; y < SEEY * 2; y++ ) {
+                const std::string id = m.ter( tripoint_bub_ms( x, y, 0 ) ).id().str();
+                dda_trees += id.rfind( "t_tree", 0 ) == 0;
+                shrubs += id == "t_sgn_shrub_hoa_giay" || id == "t_shrub" || id == "t_bamboo_long" ||
+                          id == "t_fern";
+            }
+        }
+        CHECK( dda_trees == 0 );
+        CHECK( shrubs == 4 );
         tm.delete_unmerged_submaps();
     }
 }

@@ -91,8 +91,8 @@ def pagoda_palette():
         'type': 'palette', 'id': 'sgn_chua',
         'terrain': {
             'W': 't_brick_wall', 'P': 't_brick_wall', ',': 't_concrete', '#': 't_brick_wall',
-            '.': 't_thconc_floor', '+': 't_door_c', 'w': 't_window_domestic', 'T': 't_tree',
-            's': 't_shrub', 'g': 't_dirt', 'B': 't_concrete', 'A': 't_thconc_floor',
+            '.': 't_thconc_floor', '+': 't_door_c', 'w': 't_window_domestic', 'T': 't_sgn_tree_bo_de',
+            's': 't_region_shrub_decorative', 'g': 't_dirt', 'B': 't_concrete', 'A': 't_thconc_floor',
             'S': 't_thconc_floor', 'm': 't_thconc_floor', 'k': 't_thconc_floor',
             'O': 't_thconc_floor', 'b': 't_thconc_floor', 'd': 't_thconc_floor' },
         'furniture': {

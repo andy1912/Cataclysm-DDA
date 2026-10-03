@@ -181,3 +181,56 @@ class Canvas( pngio.Image ):
             for x in range( self.width ):
                 out.set( self.width - 1 - x, y, self.get( x, y ) )
         self.pixels = out.pixels
+
+
+_BASE = {}
+
+
+def base_sprite( tile_id, key='fg', tileset='gfx/UltimateCataclysm' ):
+    """First `key` sprite of a base-tileset tile, as a Canvas (e.g. a grass ground tile to put
+    under a code-drawn tree).  The copy is original tileset art: name it in the program's
+    docstring so provenance stays visible."""
+    import os
+    from derive_sprites import BaseTileset, ROOT
+    if tileset not in _BASE:
+        _BASE[tileset] = BaseTileset( os.path.join( ROOT, tileset ) )
+    base = _BASE[tileset]
+    value = base.tiles[tile_id][key]
+    while isinstance( value, list ):
+        value = value[0]
+    if isinstance( value, dict ):
+        value = value['sprite']
+        while isinstance( value, list ):
+            value = value[0]
+    img, _ = base.sprite( value )
+    out = Canvas( img.width, img.height )
+    out.pixels = bytearray( img.pixels )
+    return out
+
+
+def foliage( c, clumps, dark, mid, light, radius=( 3, 5 ), light_from=( -1, -1 ) ):
+    """Leafy canopy in the UltimateCataclysm manner: every clump gets a dark underside,
+    a mid body and a highlight towards the light, drawn back to front."""
+    lx, ly = light_from
+    rng = c.rand
+    sized = [ ( x, y, rng.uniform( *radius ) ) for x, y in clumps ]
+    sized.sort( key=lambda t: t[1] )
+    for x, y, r in sized:
+        c.ellipse( x + 1, y + 1, r + 0.6, r * 0.85 + 0.6, dark )
+    for x, y, r in sized:
+        c.ellipse( x, y, r, r * 0.85, mid )
+        c.ellipse( x + lx * r * 0.35, y + ly * r * 0.35, r * 0.45, r * 0.4, light )
+        # a few dark leaf gaps keep it from looking like blobs
+        for _ in range( 2 ):
+            gx, gy = x + rng.uniform( -r, r ) * 0.7, y + rng.uniform( -r, r ) * 0.6
+            if c.opaque( int( gx ), int( gy ) ):
+                c.px( gx, gy, dark )
+
+
+def cast_shadow( c, dx, dy, alpha=60 ):
+    """Long soft shadow of the whole sprite (trees throw theirs to the upper right)."""
+    mask = [ ( x, y ) for y in range( c.height ) for x in range( c.width ) if c.opaque( x, y ) ]
+    for x, y in mask:
+        sx, sy = x + dx, y + dy
+        if c.inside( sx, sy ) and not c.opaque( sx, sy ):
+            c.set( sx, sy, ( 0, 0, 0, alpha ) )

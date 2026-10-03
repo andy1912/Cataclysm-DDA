@@ -17,8 +17,16 @@
       "fg": 48
      },
      {
-      "id": "f_toilet",
+      "id": "f_sgn_dua_can",
       "fg": 49
+     },
+     {
+      "id": "f_sgn_van_tho",
+      "fg": 50
+     },
+     {
+      "id": "f_toilet",
+      "fg": 51
      },
      {
       "id": "sgn_ao_ba_ba",
@@ -171,6 +179,90 @@
      {
       "id": "sgn_ward_notice",
       "fg": 37
+     },
+     {
+      "id": "t_sgn_shrub_hoa_giay",
+      "fg": 52
+     },
+     {
+      "id": "t_sgn_tree_bang",
+      "fg": 81,
+      "bg": 80
+     },
+     {
+      "id": "t_sgn_tree_bo_de",
+      "fg": 82,
+      "bg": 80
+     },
+     {
+      "id": "t_sgn_tree_chuoi",
+      "fg": 65,
+      "bg": 64
+     },
+     {
+      "id": "t_sgn_tree_chuoi_harvested",
+      "fg": 66,
+      "bg": 64
+     },
+     {
+      "id": "t_sgn_tree_du_du",
+      "fg": 67,
+      "bg": 64
+     },
+     {
+      "id": "t_sgn_tree_du_du_harvested",
+      "fg": 68,
+      "bg": 64
+     },
+     {
+      "id": "t_sgn_tree_dua",
+      "fg": 83,
+      "bg": 80
+     },
+     {
+      "id": "t_sgn_tree_dua_harvested",
+      "fg": 84,
+      "bg": 80
+     },
+     {
+      "id": "t_sgn_tree_me",
+      "fg": 85,
+      "bg": 80
+     },
+     {
+      "id": "t_sgn_tree_sao",
+      "fg": 86,
+      "bg": 80
+     },
+     {
+      "id": "t_sgn_tree_xoai",
+      "fg": 87,
+      "bg": 80
+     },
+     {
+      "id": "t_sgn_tree_xoai_harvested",
+      "fg": 88,
+      "bg": 80
+     },
+     {
+      "id": "vp_sgn_engine_110cc",
+      "fg": 53
+     },
+     {
+      "id": "vp_sgn_longtail",
+      "fg": 54
+     },
+     {
+      "id": "vp_sgn_oars",
+      "fg": 55
+     },
+     {
+      "id": "vp_sgn_pillion",
+      "fg": 56
+     },
+     {
+      "id": "vp_sgn_tank_4l",
+      "fg": 57
      }
     ]
    },
@@ -180,6 +272,22 @@
     "sprite_height": 32,
     "sprite_offset_x": 0,
     "sprite_offset_y": 0,
+    "tiles": []
+   },
+   {
+    "file": "saigon_64x64.png",
+    "sprite_width": 64,
+    "sprite_height": 64,
+    "sprite_offset_x": -16,
+    "sprite_offset_y": -32,
+    "tiles": []
+   },
+   {
+    "file": "saigon_96x96.png",
+    "sprite_width": 96,
+    "sprite_height": 96,
+    "sprite_offset_x": -32,
+    "sprite_offset_y": -64,
     "tiles": []
    }
   ]

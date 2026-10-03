@@ -10,7 +10,8 @@
     "forest_trails": null,
     "map_extras": "no_map_extras",
     "place_railroads": false,
-    "feature_flag_settings": { "blacklist": [  ], "whitelist": [ "SAIGON" ] }
+    "feature_flag_settings": { "blacklist": [  ], "whitelist": [ "SAIGON" ] },
+    "terrain_furniture": "sgn_terrain_furniture"
   },
   {
     "type": "region_settings_city",
