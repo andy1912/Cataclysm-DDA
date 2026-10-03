@@ -50,7 +50,7 @@ Status as of 2026-10-03, after units G9–G13 (see `doc/saigon/PROGRESS.md`). Th
 | Derived (recolour, flatten) | 300+ entries | `art/saigon/derive_recipes.json` and `derive_overmap_recipes.json`. Covers stucco walls, shutters, doors, floors, altar, stools, tank, sofa, bed, bin, street light, 4 zombies, 8 drinks, 12 worn overlays, 24 map icons and 263 tropical seasons. |
 | Hand-drawn | 0 | `art/saigon/tiles/` holds any PNG you add, and it wins over both routes above |
 
-Previews: [`derived_preview.png`](derived_preview.png), [`derived_overmap_preview.png`](derived_overmap_preview.png). To compare any set of ids, run `python3 tools/saigon/art/contact_sheet.py OUT.png <id> ...`.
+Previews: [`drawn_preview_small.png`](drawn_preview_small.png) and [`drawn_preview_trees.png`](drawn_preview_trees.png) (code-drawn), [`derived_preview.png`](derived_preview.png) and [`derived_overmap_preview.png`](derived_overmap_preview.png) (derived). To compare any set of ids, run `python3 tools/saigon/art/contact_sheet.py OUT.png <id> ...`.
 
 ## Format rules
 
