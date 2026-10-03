@@ -139,3 +139,20 @@ Triage from contact sheets (`tools/saigon/art/contact_sheet.py`): most "to revis
 | G15 xích lô passenger seat and ba gác cargo bed | done | (this) | new vehicle parts sgn_xich_lo_seat (copy-from seat) and sgn_ba_gac_bed (copy-from cargo_space) used by sgn_veh_xich_lo / sgn_veh_ba_gac_may; drawn vp_ sprites; draw.py erase(); check_mod OK, [saigon] tests pass |
 | G16 scene render + sprite gaps | done | (this) | hidden test saigon_scene_dump ([saigon_scene]) dumps a mapgen'd block + vehicle showroom; render_scene.py draws it with the real tilesets (season, looks_like, mod overrides, connections, rotations). Found items with no sprite anywhere: drew incense, knife_cleaver, tape_measure, dry_rice. revision_list.py follows full looks_like chains; 350 T3 items are a base tileset gap. Previews doc/saigon/art/scene_preview*.png |
 | G17 peer review of the graphics track + fixes | done | (this) | review/G_art_review.md. Critical R1: every mod tile entry was declared under the first sheet, so it took that sheet's offset (427 misplaced since G6: season trees, tall furniture, zombies, items, overlays, G12 trees); packers now declare per geometry, validator checks it, renderer follows parse_atlases. R2 vp_ sprites now rotate; R3 bougainvillea grass bg; docs fixed. Open: R5 icon scale (G18), R6/R7 flora (G19), R9 in-game check |
+
+### Sprite plan (doc/saigon/art/SPRITE_PLAN.md, 2026-10-03): about 100 new ids, about 260 sprites
+| ID | Status | Commit | Notes |
+|---|---|---|---|
+| G18 icon rescale to UltimateCataclysm budget + 4 gap items + size gate + validator in check_mod.sh | todo | - | review R5, R8, R12 |
+| G19 flora content fixes + forest-edge species | todo | - | review R6, R7 |
+| G20 street kit (cột điện, bàn inox + ghế, xe bánh mì, dù, bảng hiệu, loa phường, máy lạnh) | todo | - | |
+| G21 shophouse interior (gạch bông, gạch men, Thần Tài, lu nước, võng, CRT TV, chậu kiểng) | todo | - | |
+| G22 gates and hẻm (cửa sắt kéo, cửa cuốn open, hẻm paving, tường bông gió, dây phơi) | todo | - | |
+| G23 kitchen and drink items | todo | - | |
+| G24 household and medicine items | todo | - | |
+| G25 work gear, trade, street dishes | todo | - | |
+| G26 clothing + worn overlays | todo | - | |
+| G27 canal (with B8f) | todo | - | |
+| G28 animals | todo | - | |
+| G29 map icons for new landmarks | todo | - | |
+| H1 hand-art pass (artist) | todo | - | zombies, NPC outfits, áo dài, polish |

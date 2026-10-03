@@ -80,6 +80,8 @@ The packer (`tools/saigon/art/build_sprites.py`) accepts every UltimateCataclysm
 
 | Document | What it covers |
 |---|---|
+| [`SPRITE_PLAN.md`](SPRITE_PLAN.md) | **What to make next:** new usable items, environment, creatures, vehicles, effects, map icons, scheduled as G18–G29 + H1 |
+| [`../review/G_art_review.md`](../review/G_art_review.md) | Peer review of the graphics track (G17) and its fixes |
 | [`sprite_revision_list.csv`](sprite_revision_list.csv) | **Every id** from the table above, with tier, category, size, image count, status and current fallback |
 | [`../../../art/saigon/README.md`](../../../art/saigon/README.md) | The three art routes (hand-drawn, code-drawn, derived) and their folders |
 | [`UPDATING_SPRITES.md`](UPDATING_SPRITES.md) | How the game picks sprites, and a step-by-step guide to adding or replacing one |
