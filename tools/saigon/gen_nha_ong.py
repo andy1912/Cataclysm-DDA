@@ -54,24 +54,24 @@ def with_stairs( rows, z, top ):
 # --- lot templates (4 columns; column 0 is this lot's west party wall) ---------
 GROUND = {
     'pho': [
-        'WRRR', 'W...', 'Wtc.', 'Wtc.', 'W...', 'Wtc.', 'W...', 'WCC.', 'WSO.',
-        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W...', 'WW+W' ],
+        'WRRR', 'W..G', 'Wtc.', 'Wtc.', 'W...', 'Wtc.', 'W...', 'WCC.', 'WSO.',
+        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
     'taphoa': [
-        'WRRR', 'W...', 'Wrr.', 'W...', 'Wrr.', 'W...', 'Wrr.', 'WCC.', 'W...',
-        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W...', 'WW+W' ],
+        'WRRR', 'W..G', 'Wrr.', 'W...', 'Wrr.', 'W...', 'Wrr.', 'WCC.', 'W...',
+        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
     'nhathuoc': [
-        'WRRR', 'W...', 'Wpp.', 'W...', 'Wpp.', 'W...', 'Wpp.', 'WCC.', 'W...',
-        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W...', 'WW+W' ],
+        'WRRR', 'W..G', 'Wpp.', 'W...', 'Wpp.', 'W...', 'Wpp.', 'WCC.', 'W...',
+        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
     'moto': [
-        'WRRR', 'W...', 'W.m.', 'W.m.', 'W...', 'Wkk.', 'W...', 'WCC.', 'W...',
-        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W...', 'WW+W' ],
+        'WRRR', 'W..G', 'W.m.', 'W.m.', 'W...', 'Wkk.', 'W...', 'WCC.', 'W...',
+        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
 }
 FLOOR = {
     'family': [
-        'W#w#', 'Wb..', 'Wd..', 'W...', 'W+WW', 'Wb..', 'Wd..', 'W...', 'W...',
-        'W...', 'W.s.', 'W...', 'W...', 'W+WW', 'WbT.', 'W...', 'W.d.', 'W#w#' ],
+        'W#w#', 'Wb..', 'Wd..', 'W.v.', 'W+WW', 'Wb..', 'Wd..', 'W...', 'W...',
+        'WV..', 'W.s.', 'W...', 'W...', 'W+WW', 'WbT.', 'W...', 'W.d.', 'W#w#' ],
     'rental': [
-        'W#w#', 'Wbb.', 'W...', 'Wbb.', 'W...', 'W+WW', 'Wb..', 'W...', 'W...',
+        'W#w#', 'Wbb.', 'W.v.', 'Wbb.', 'W...', 'W+WW', 'Wb..', 'W...', 'W...',
         'W...', 'W...', 'W...', 'W...', 'W+WW', 'WbT.', 'W...', 'Wb..', 'W#w#' ],
 }
 # z3 roof walk (rows 16-19) shared by every lot; railing dividers on column 0.
@@ -98,6 +98,8 @@ def lot_chunks():
     r = rows_from( DECK_FULL, 2 )
     r.update( rows_from( WALK, 16 ) )
     r[18] = r[18][:2] + 'K' + r[18][3:]  # rooftop water tank; column 3 is the end-cap column on lot 5
+    r[6] = '=_P_'                        # G21: potted kumquat, and the AC units everyone bolts to the roof
+    r[10] = '=M__'
     out.append( ( 'sgn_lot_z3_deck', with_stairs( r, 3, 3 ) ) )
     # h4/h5: setback room at z3 (+walk)
     r = rows_from( SETBACK_ROOM, 2 )
@@ -106,11 +108,15 @@ def lot_chunks():
     # h4 top: deck at z4 over rows 2-15
     r = rows_from( SETBACK_DECK, 2 )
     r[3] = r[3][:2] + 'K' + r[3][3:]
+    r[7] = '=P_='
+    r[11] = '=M_='
     out.append( ( 'sgn_lot_z4_deck', with_stairs( r, 4, 4 ) ) )
     # h5: setback room at z4, deck at z5
     out.append( ( 'sgn_lot_z4_room', with_stairs( rows_from( SETBACK_ROOM, 2 ), 4, 5 ) ) )
     r = rows_from( SETBACK_DECK, 2 )
     r[3] = r[3][:2] + 'K' + r[3][3:]
+    r[7] = '=P_='
+    r[11] = '=M_='
     out.append( ( 'sgn_lot_z5_deck', with_stairs( r, 5, 5 ) ) )
     return out
 
@@ -164,26 +170,41 @@ def end_caps():
     return out
 
 
+FLOOR_PARAM = { 'param': 'floor', 'fallback': 't_thconc_floor' }
+FLOORS = { 'type': 'ter_str_id', 'scope': 'nest', 'default': { 'distribution': [
+    # G21: one floor per house and storey (scope nest = per lot chunk)
+    [ 't_sgn_gach_bong_1', 2 ], [ 't_sgn_gach_bong_2', 2 ], [ 't_sgn_gach_bong_3', 2 ], [ 't_sgn_gach_bong_4', 2 ],
+    [ 't_sgn_gach_men', 3 ], [ 't_thconc_floor', 2 ] ] } }
+
+
 def palette():
     return {
         'type': 'palette', 'id': 'sgn_nhaong',
+        'parameters': { 'floor': FLOORS },
         'terrain': {
             'W': 't_brick_wall', '#': 't_brick_wall', 'w': 't_window_bars',
             # G22: shopfronts close with a roller shutter or a folding iron gate
             'R': [ [ 't_rdoor_c', 3 ], [ 't_sgn_cua_sat_keo_c', 2 ] ],
-            '+': 't_door_c', '.': 't_thconc_floor', 't': 't_thconc_floor', 'c': 't_thconc_floor',
-            'C': 't_thconc_floor', 'S': 't_thconc_floor', 'O': 't_thconc_floor', 'K': 't_concrete_roof',
-            'A': 't_thconc_floor', 'F': 't_thconc_floor', 'T': 't_thconc_floor', 'b': 't_thconc_floor',
-            'r': 't_thconc_floor', 'm': 't_thconc_floor', 'k': 't_thconc_floor', 'd': 't_thconc_floor',
-            's': 't_thconc_floor', 'p': 't_thconc_floor',
+            '+': 't_door_c', '.': FLOOR_PARAM, 't': FLOOR_PARAM, 'c': FLOOR_PARAM,
+            'C': FLOOR_PARAM, 'S': FLOOR_PARAM, 'O': FLOOR_PARAM, 'K': 't_concrete_roof',
+            'A': FLOOR_PARAM, 'F': FLOOR_PARAM, 'T': FLOOR_PARAM, 'b': FLOOR_PARAM,
+            'r': FLOOR_PARAM, 'm': FLOOR_PARAM, 'k': FLOOR_PARAM, 'd': FLOOR_PARAM,
+            's': FLOOR_PARAM, 'p': FLOOR_PARAM,
+            'G': FLOOR_PARAM, 'L': FLOOR_PARAM, 'V': FLOOR_PARAM, 'v': FLOOR_PARAM,
+            'P': 't_concrete_roof', 'M': 't_concrete_roof',
             '<': 't_stairs_up', '>': 't_stairs_down', '_': 't_concrete_roof', '=': 't_railing' },
         'furniture': {
             't': 'f_table', 'c': 'f_stool', 'C': 'f_counter', 'S': 'f_sink', 'O': 'f_oven',
             'K': 'f_standing_tank', 'A': 'f_sgn_ban_tho', 'F': 'f_fridge', 'T': 'f_toilet',
             'b': 'f_bed', 'r': 'f_rack', 'm': 'f_rack', 'k': 'f_counter', 'd': 'f_dresser',
-            's': 'f_sofa', 'p': 'f_rack' },
-        'liquids': { 'K': { 'liquid': 'water', 'amount': [ 120, 720 ] } },
+            's': 'f_sofa', 'p': 'f_rack',
+            # G21 shophouse interior
+            'G': 'f_sgn_ban_tho_than_tai', 'L': 'f_sgn_lu_nuoc', 'V': 'f_sgn_tivi_crt', 'v': 'f_sgn_vong',
+            'P': 'f_sgn_chau_kieng', 'M': 'f_air_conditioner' },
+        'liquids': { 'K': { 'liquid': 'water', 'amount': [ 120, 720 ] },
+                     'L': { 'liquid': 'water', 'amount': [ 40, 240 ] } },
         'items': {
+            'G': { 'item': 'sgn_pagoda', 'chance': 60 },
             'C': { 'item': 'sgn_street_cart', 'chance': 35 },
             'O': { 'item': 'sgn_shophouse_kitchen', 'chance': 50 },
             'F': { 'item': 'sgn_shophouse_kitchen', 'chance': 40 },

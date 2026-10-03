@@ -39,5 +39,50 @@
     "description": "Tường bông gió: a wall of cast concrete blocks pierced with flower and diamond patterns, built to let the breeze and the light through.  You can see through the holes, though nothing larger than a cat could squeeze through them.",
     "color": "white",
     "extend": { "flags": [ "TRANSPARENT" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_gach_bong_1",
+    "copy-from": "t_thconc_floor",
+    "looks_like": "t_thconc_floor",
+    "name": "patterned cement tiles",
+    "description": "Gạch bông: hand-pressed cement tiles, each printed with a red-and-ochre four-petal flower, laid edge to edge so the pattern runs across the whole room.  Old Saigon houses are floored with them; they stay cool underfoot in the heat.",
+    "color": "light_red"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_gach_bong_2",
+    "copy-from": "t_thconc_floor",
+    "looks_like": "t_thconc_floor",
+    "name": "patterned cement tiles",
+    "description": "Gạch bông: hand-pressed cement tiles, each printed with an eight-pointed star in blue and cream, laid edge to edge so the pattern runs across the whole room.  Old Saigon houses are floored with them; they stay cool underfoot in the heat.",
+    "color": "light_red"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_gach_bong_3",
+    "copy-from": "t_thconc_floor",
+    "looks_like": "t_thconc_floor",
+    "name": "patterned cement tiles",
+    "description": "Gạch bông: hand-pressed cement tiles, each printed with a green trellis of interlocking circles, laid edge to edge so the pattern runs across the whole room.  Old Saigon houses are floored with them; they stay cool underfoot in the heat.",
+    "color": "light_red"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_gach_bong_4",
+    "copy-from": "t_thconc_floor",
+    "looks_like": "t_thconc_floor",
+    "name": "patterned cement tiles",
+    "description": "Gạch bông: hand-pressed cement tiles, each printed with grey waves around a yellow medallion, laid edge to edge so the pattern runs across the whole room.  Old Saigon houses are floored with them; they stay cool underfoot in the heat.",
+    "color": "light_red"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_gach_men",
+    "copy-from": "t_thconc_floor",
+    "looks_like": "t_thconc_floor",
+    "name": "glazed floor tiles",
+    "description": "Shiny 40 cm glazed ceramic tiles in beige marble print, the floor every family laid when they rebuilt in the nineties.  Slippery when wet.",
+    "color": "white"
   }
 ]

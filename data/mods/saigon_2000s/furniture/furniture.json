@@ -116,5 +116,67 @@
         { "item": "clothes_hanger", "count": [ 1, 4 ] }
       ]
     }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_ban_tho_than_tai",
+    "copy-from": "f_sgn_ban_tho",
+    "looks_like": "f_sgn_ban_tho",
+    "name": "Thần Tài shrine",
+    "description": "A small red floor shrine just inside the shop entrance, for Thần Tài the god of wealth and Ông Địa the earth god: a jolly clay figure, a cup of incense, a can of beer, a few bananas and a bundle of fake money.",
+    "color": "red"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_lu_nuoc",
+    "copy-from": "f_standing_tank",
+    "looks_like": "f_standing_tank",
+    "name": "water jar",
+    "description": "Lu nước: a big glazed brown earthenware jar with a dragon moulded around its belly, kept full of water for washing and for when the city supply cuts out.  A plastic dipper floats on top.",
+    "color": "brown",
+    "keg_capacity": "60 L"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_vong",
+    "copy-from": "f_hammock",
+    "looks_like": "f_hammock",
+    "name": "hammock",
+    "description": "A võng of knotted nylon cord slung between two hooks: the coolest place to nap through the afternoon heat.",
+    "color": "light_green"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_tivi_crt",
+    "name": "CRT television",
+    "symbol": "0",
+    "color": "dark_gray",
+    "looks_like": "f_dresser",
+    "description": "A bulky colour television on a lace-covered cabinet, its rabbit-ear antenna tilted towards the window.  The whole family watched the evening news and Korean dramas on it.",
+    "move_cost_mod": -1,
+    "coverage": 40,
+    "required_str": 8,
+    "flags": [ "TRANSPARENT", "PLACE_ITEM", "BLOCKSDOOR" ],
+    "bash": {
+      "str_min": 8,
+      "str_max": 30,
+      "sound": "crunch!",
+      "sound_fail": "whump.",
+      "items": [
+        { "item": "e_scrap", "count": [ 1, 3 ] },
+        { "item": "glass_shard", "count": [ 2, 5 ] },
+        { "item": "plastic_chunk", "count": [ 2, 4 ] }
+      ]
+    },
+    "deconstruct": { "items": [ { "item": "television", "count": 1 } ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_chau_kieng",
+    "copy-from": "f_indoor_plant",
+    "looks_like": "f_indoor_plant",
+    "name": "potted plant",
+    "description": "Chậu kiểng: a glazed pot with a twisted bonsai or a kumquat bush, lovingly watered every evening on the roof terrace.",
+    "color": "green"
   }
 ]

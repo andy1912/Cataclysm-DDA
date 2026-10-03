@@ -2,20 +2,29 @@
   {
     "type": "palette",
     "id": "sgn_hem",
+    "parameters": {
+      "floor": {
+        "type": "ter_str_id",
+        "scope": "nest",
+        "default": {
+          "distribution": [ [ "t_sgn_gach_bong_1", 1 ], [ "t_sgn_gach_bong_3", 1 ], [ "t_sgn_gach_men", 2 ], [ "t_thconc_floor", 3 ] ]
+        }
+      }
+    },
     "terrain": {
       "_": "t_concrete_roof",
       "#": "t_brick_wall",
-      ".": "t_thconc_floor",
+      ".": { "param": "floor", "fallback": "t_thconc_floor" },
       "a": "t_sgn_hem_xi_mang",
       "+": [ [ "t_sgn_cua_sat_keo_c", 2 ], [ "t_door_c", 1 ] ],
       ",": "t_concrete",
-      "b": "t_thconc_floor",
-      "k": "t_thconc_floor",
-      "A": "t_thconc_floor",
-      "t": "t_thconc_floor",
+      "b": { "param": "floor", "fallback": "t_thconc_floor" },
+      "k": { "param": "floor", "fallback": "t_thconc_floor" },
+      "A": { "param": "floor", "fallback": "t_thconc_floor" },
+      "t": { "param": "floor", "fallback": "t_thconc_floor" },
       "T": "t_concrete",
       "C": "t_concrete",
-      "S": "t_thconc_floor",
+      "S": { "param": "floor", "fallback": "t_thconc_floor" },
       "o": "t_sgn_tuong_bong_gio",
       "l": "t_sgn_hem_xi_mang"
     },

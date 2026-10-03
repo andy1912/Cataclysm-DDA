@@ -80,15 +80,21 @@ def nested( nid, rows, size ):
                          'rows': pad( rows, size ), 'flags': CLEARING } }
 
 
+FLOOR_PARAM = { 'param': 'floor', 'fallback': 't_thconc_floor' }
+
+
 def palette():
     return {
         'type': 'palette', 'id': 'sgn_hem',
+        # G21: one floor per quadrant chunk (scope nest)
+        'parameters': { 'floor': { 'type': 'ter_str_id', 'scope': 'nest', 'default': { 'distribution': [
+            [ 't_sgn_gach_bong_1', 1 ], [ 't_sgn_gach_bong_3', 1 ], [ 't_sgn_gach_men', 2 ], [ 't_thconc_floor', 3 ] ] } } },
         'terrain': {
-            '_': 't_concrete_roof', '#': 't_brick_wall', '.': 't_thconc_floor', 'a': 't_sgn_hem_xi_mang',
+            '_': 't_concrete_roof', '#': 't_brick_wall', '.': FLOOR_PARAM, 'a': 't_sgn_hem_xi_mang',
             # G22: most hẻm homes close their doorway with a folding iron gate
             '+': [ [ 't_sgn_cua_sat_keo_c', 2 ], [ 't_door_c', 1 ] ],
-            ',': 't_concrete', 'b': 't_thconc_floor', 'k': 't_thconc_floor', 'A': 't_thconc_floor',
-            't': 't_thconc_floor', 'T': 't_concrete', 'C': 't_concrete', 'S': 't_thconc_floor',
+            ',': 't_concrete', 'b': FLOOR_PARAM, 'k': FLOOR_PARAM, 'A': FLOOR_PARAM,
+            't': FLOOR_PARAM, 'T': 't_concrete', 'C': 't_concrete', 'S': FLOOR_PARAM,
             'o': 't_sgn_tuong_bong_gio', 'l': 't_sgn_hem_xi_mang' },
         'furniture': {
             'b': 'f_bed', 'k': 'f_counter', 'A': 'f_sgn_ban_tho', 't': 'f_table', 'T': 'f_sgn_ban_inox',
