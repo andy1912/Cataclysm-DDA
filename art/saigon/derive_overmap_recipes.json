@@ -375,5 +375,41 @@
         "val_mul": 1.1
       }
     ]
+  },
+  {
+    "target": "sgn_kenh",
+    "source": "river_center",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          150,
+          260
+        ],
+        "min_sat": 0.0,
+        "to_hue": 78,
+        "sat_set": 0.4,
+        "val_mul": 0.85
+      }
+    ],
+    "//": "Kênh: murky green canal (B8f)."
+  },
+  {
+    "target": "sgn_kenh_roof",
+    "source": "river_center",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          150,
+          260
+        ],
+        "min_sat": 0.0,
+        "to_hue": 78,
+        "sat_set": 0.4,
+        "val_mul": 0.85
+      }
+    ],
+    "//": "Kênh: murky green canal (B8f)."
   }
 ]

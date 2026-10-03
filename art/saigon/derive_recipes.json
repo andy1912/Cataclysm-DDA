@@ -1445,5 +1445,23 @@
       }
     ],
     "//": "Gà ta: copper body, red comb and wattle."
+  },
+  {
+    "target": "t_water_murky",
+    "source": "t_water_sh",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          150,
+          260
+        ],
+        "min_sat": 0.0,
+        "to_hue": 78,
+        "sat_set": 0.35,
+        "val_mul": 0.8
+      }
+    ],
+    "//": "Canal water (t_water_murky, B8f): murky olive-green instead of clear blue; banks keep their art."
   }
 ]

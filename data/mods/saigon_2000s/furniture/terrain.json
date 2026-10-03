@@ -84,5 +84,24 @@
     "name": "glazed floor tiles",
     "description": "Shiny 40 cm glazed ceramic tiles in beige marble print, the floor every family laid when they rebuilt in the nineties.  Slippery when wet.",
     "color": "white"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_bo_ke",
+    "copy-from": "t_concrete",
+    "looks_like": "t_concrete",
+    "name": "canal embankment",
+    "description": "Bờ kè: the stone-faced edge of the canal, slick with green slime where the tide reaches it.  Steps lead down into the murky water.",
+    "color": "light_gray",
+    "move_cost": 3
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_mai_ton",
+    "copy-from": "t_metal_roof",
+    "looks_like": "t_metal_roof",
+    "name": "corrugated metal roof",
+    "description": "Mái tôn: corrugated iron sheets nailed over a shack, rusted at the seams and weighted down with old tyres against the monsoon wind.  Rain on it is deafening.",
+    "color": "light_blue"
   }
 ]

@@ -1,0 +1,40 @@
+[
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_kenh",
+    "copy-from": "generic_city_building",
+    "name": "kênh",
+    "sym": "~",
+    "color": "light_green",
+    "looks_like": "river_center"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_kenh_roof",
+    "copy-from": "generic_city_building_roof",
+    "name": "kênh shacks, rooftops",
+    "sym": "~",
+    "color": "green",
+    "looks_like": "river_center"
+  },
+  {
+    "type": "vehicle_group",
+    "id": "sgn_vg_canal_moored",
+    "//": "Small boats moored on a city canal (static, d2_r3 §4.d).",
+    "vehicles": [ [ "sgn_veh_xuong", 80 ], [ "sgn_veh_ghe", 20 ] ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_kenh_row_1",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_kenh_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_kenh_roof_north" },
+      { "point": [ 1, 0, 0 ], "overmap": "sgn_kenh_north" },
+      { "point": [ 1, 0, 1 ], "overmap": "sgn_kenh_roof_north" },
+      { "point": [ 2, 0, 0 ], "overmap": "sgn_kenh_north" },
+      { "point": [ 2, 0, 1 ], "overmap": "sgn_kenh_roof_north" }
+    ]
+  }
+]

@@ -617,7 +617,8 @@
           "neighbors": {
             "north": [
               { "om_terrain": "sgn_hem", "om_terrain_match_type": "PREFIX" },
-              { "om_terrain": "road", "om_terrain_match_type": "TYPE" }
+              { "om_terrain": "road", "om_terrain_match_type": "TYPE" },
+              { "om_terrain": "sgn_kenh", "om_terrain_match_type": "TYPE" }
             ]
           }
         },
@@ -629,7 +630,8 @@
           "neighbors": {
             "south": [
               { "om_terrain": "sgn_hem", "om_terrain_match_type": "PREFIX" },
-              { "om_terrain": "road", "om_terrain_match_type": "TYPE" }
+              { "om_terrain": "road", "om_terrain_match_type": "TYPE" },
+              { "om_terrain": "sgn_kenh", "om_terrain_match_type": "TYPE" }
             ]
           }
         },
@@ -641,7 +643,8 @@
           "neighbors": {
             "west": [
               { "om_terrain": "sgn_hem", "om_terrain_match_type": "PREFIX" },
-              { "om_terrain": "road", "om_terrain_match_type": "TYPE" }
+              { "om_terrain": "road", "om_terrain_match_type": "TYPE" },
+              { "om_terrain": "sgn_kenh", "om_terrain_match_type": "TYPE" }
             ]
           }
         },
@@ -653,7 +656,8 @@
           "neighbors": {
             "east": [
               { "om_terrain": "sgn_hem", "om_terrain_match_type": "PREFIX" },
-              { "om_terrain": "road", "om_terrain_match_type": "TYPE" }
+              { "om_terrain": "road", "om_terrain_match_type": "TYPE" },
+              { "om_terrain": "sgn_kenh", "om_terrain_match_type": "TYPE" }
             ]
           }
         }

@@ -699,3 +699,51 @@ TEST_CASE( "saigon_new_game_start_locations", "[saigon][start_location]" )
         CHECK( overmap_buffer.ter( omtstart ).id().str().rfind( "sgn_", 0 ) == 0 );
     }
 }
+
+// B8f canal (tools/saigon/gen_kenh.py, d2_r3 §4.d): an 8-row channel of wadeable murky water
+// between two walkable embankments, shacks with tin roofs at z1.
+TEST_CASE( "saigon_kenh_structure", "[mapgen][saigon]" )
+{
+    const oter_str_id kenh( "sgn_kenh_north" );
+    if( !kenh.is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    const ter_str_id water( "t_water_murky" );
+    const ter_str_id tin_roof( "t_sgn_mai_ton" );
+    const ter_str_id wood_wall( "t_wall_wood" );
+    sgn_clear_map_and_reset_player();
+    const tripoint_abs_omt pos( 110, 110, 0 );
+    overmap_buffer.ter_set( pos, kenh.id() );
+    overmap_buffer.ter_set( pos + tripoint::above, oter_str_id( "sgn_kenh_roof_north" ).id() );
+    for( unsigned seed = 1; seed <= 5; seed++ ) {
+        CAPTURE( seed );
+        rng_set_engine_seed( seed );
+        MAPBUFFER.clear_outside_reality_bubble();
+        smallmap tm;
+        tm.generate( pos, calendar::turn, false, true );
+        map &m = *tm.cast_to_map();
+        int channel = 0;
+        int water_elsewhere = 0;
+        int walls = 0;
+        int roofed_walls = 0;
+        for( int x = 0; x < SEEX * 2; x++ ) {
+            for( int y = 0; y < SEEY * 2; y++ ) {
+                const bool is_water = m.ter( tripoint_bub_ms( x, y, 0 ) ) == water.id();
+                ( y >= 8 && y <= 15 ? channel : water_elsewhere ) += is_water;
+                if( m.ter( tripoint_bub_ms( x, y, 0 ) ) == wood_wall.id() ) {
+                    walls++;
+                    roofed_walls += m.ter( tripoint_bub_ms( x, y, 1 ) ) == tin_roof.id();
+                }
+            }
+            // both embankment walks are walkable along their whole length
+            CHECK( m.passable( tripoint_bub_ms( x, 0, 0 ) ) );
+            CHECK( m.passable( tripoint_bub_ms( x, 23, 0 ) ) );
+        }
+        CHECK( channel == 24 * 8 );
+        CHECK( water_elsewhere == 0 );
+        CHECK( walls > 0 );
+        CHECK( roofed_walls == walls );
+        tm.delete_unmerged_submaps();
+    }
+}

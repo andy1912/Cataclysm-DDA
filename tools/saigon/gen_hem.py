@@ -115,7 +115,9 @@ PORTS = {
     'east': ( 22, 11, [ ' #', ' #' ] ),
 }
 OPEN_NEIGHBOURS = [ { 'om_terrain': 'sgn_hem', 'om_terrain_match_type': 'PREFIX' },
-                    { 'om_terrain': 'road', 'om_terrain_match_type': 'TYPE' } ]
+                    { 'om_terrain': 'road', 'om_terrain_match_type': 'TYPE' },
+                    # B8f: a canal cell presents its embankment walk (d2_r3 §4.b, D8)
+                    { 'om_terrain': 'sgn_kenh', 'om_terrain_match_type': 'TYPE' } ]
 
 
 OUTDOOR = set( 'a,TCl ' )

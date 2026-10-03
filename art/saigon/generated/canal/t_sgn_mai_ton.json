@@ -1,0 +1,16 @@
+{
+ "fg": [
+  {
+   "weight": 3,
+   "sprite": "@t_sgn_mai_ton"
+  },
+  {
+   "weight": 2,
+   "sprite": "@t_sgn_mai_ton__rust"
+  },
+  {
+   "weight": 2,
+   "sprite": "@t_sgn_mai_ton__grey"
+  }
+ ]
+}
