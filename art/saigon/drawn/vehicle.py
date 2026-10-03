@@ -72,3 +72,34 @@ def oars( c ):
         c.ellipse( x, 25, 2.2, 4.5, shade( wood, 0.85 ), light=shade( wood, 1.15 ) )   # blade
         c.rect( x - 1, 3, x + 1, 5, rgb( '#5a3a22' ) )                                # grip
     finish( c )
+
+
+@sprite( 'vp_sgn_xich_lo_seat', 32, 32 )
+def xich_lo_seat( c ):
+    # the cyclo's front bucket seat in red vinyl, the folded black canopy behind it and
+    # the steel bumper arc in front
+    c.ring( 16, 10, 11, 7, CHROME, 1.3 )                               # bumper arc
+    c.erase( 0, 10, 31, 31 )                                           # keep its front half
+    c.rect( 7, 9, 24, 20, rgb( '#b8282a' ) )                           # seat
+    c.rect( 8, 10, 23, 11, rgb( '#e05050' ) )
+    for x in range( 10, 23, 4 ):
+        c.line( x, 12, x, 19, rgb( '#8a1a1c' ) )                       # tufting
+    c.rect( 6, 21, 25, 27, rgb( '#26262a' ) )                          # folded canopy
+    for x in range( 8, 25, 4 ):
+        c.line( x, 21, x, 27, rgb( '#4a4a50' ) )                       # canopy ribs
+    c.line( 6, 21, 25, 21, rgb( '#5a5a62' ) )
+    c.outline( OUTLINE )
+
+
+@sprite( 'vp_sgn_ba_gac_bed', 32, 32 )
+def ba_gac_bed( c ):
+    # rough plank deck running fore and aft; tiles seamlessly across the 3x3 bed
+    planks = [ rgb( '#9a7048' ), rgb( '#8a6240' ), rgb( '#a47a50' ), rgb( '#946a44' ) ]
+    for i, x0 in enumerate( range( 0, 32, 8 ) ):
+        c.rect( x0, 0, x0 + 6, 31, planks[i % 4] )
+        c.line( x0 + 7, 0, x0 + 7, 31, rgb( '#4a3424' ) )              # gaps
+        c.noise( x0, 0, x0 + 6, 31, [ shade( planks[i % 4], 0.85 ), shade( planks[i % 4], 1.12 ) ], 0.18 )
+        for y in ( 3, 28 ):
+            c.px( x0 + 3, y, rgb( '#3a3a3a' ) )                        # bolts
+    c.line( 0, 15, 31, 15, rgb( '#2f5aa8' ) )                          # painted cross member
+    c.line( 0, 16, 31, 16, rgb( '#244a8a' ) )

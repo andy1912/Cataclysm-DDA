@@ -175,7 +175,7 @@ T1,vehicle_part,basketsm,dda,1 (rotates),4,basketsm,vehicle sgn_veh_underbone; v
 T1,vehicle_part,battery_motorbike,dda,1 (rotates),4,battery_car,vehicle sgn_veh_xe_tay_ga; vehicle sgn_veh_ba_gac_may
 T1,vehicle_part,battery_motorbike_small,dda,1 (rotates),4,battery_car,vehicle sgn_veh_underbone
 T1,vehicle_part,boat_board,dda,1 (rotates),4,t_wall_log,vehicle sgn_veh_xuong; vehicle sgn_veh_ghe
-T1,vehicle_part,cargo_space,dda,1 (rotates),4,f_crate_o,vehicle sgn_veh_ba_gac_may; vehicle sgn_veh_ghe
+T1,vehicle_part,cargo_space,dda,1 (rotates),4,f_crate_o,vehicle sgn_veh_ghe
 T1,vehicle_part,controls,dda,1 (rotates),4,,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may; vehicle sgn_veh_ghe
 T1,vehicle_part,controls_electronic,dda,1 (rotates),4,,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may
 T1,vehicle_part,engine_1cyl,dda,1 (rotates),4,engine_combustion,vehicle sgn_veh_xe_tay_ga
@@ -191,13 +191,14 @@ T1,vehicle_part,motorcycle_kickstand,dda,1 (rotates),4,,vehicle sgn_veh_underbon
 T1,vehicle_part,muffler,dda,1 (rotates),4,,vehicle sgn_veh_underbone; vehicle sgn_veh_xe_tay_ga; vehicle sgn_veh_ba_gac_may
 T1,vehicle_part,roof_wood,dda,1 (rotates),4,,vehicle sgn_veh_ghe
 T1,vehicle_part,saddle,dda,1 (rotates),4,reclining_seat,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may; vehicle sgn_veh_xich_lo
-T1,vehicle_part,seat,dda,1 (rotates),4,seat,vehicle sgn_veh_xich_lo
 T1,vehicle_part,seat_wood,dda,1 (rotates),4,reclining_seat,vehicle sgn_veh_xuong; vehicle sgn_veh_ghe
+T1,vehicle_part,sgn_ba_gac_bed,mod,1 (rotates),4,f_crate_o,vehicle sgn_veh_ba_gac_may
 T1,vehicle_part,sgn_engine_110cc,mod,1 (rotates),4,engine_combustion,vehicle sgn_veh_underbone
 T1,vehicle_part,sgn_longtail,mod,1 (rotates),4,engine_combustion,vehicle sgn_veh_ghe
 T1,vehicle_part,sgn_oars,mod,1 (rotates),4,engine_manual,vehicle sgn_veh_xuong
 T1,vehicle_part,sgn_pillion,mod,1 (rotates),4,seat,vehicle sgn_veh_underbone
 T1,vehicle_part,sgn_tank_4l,mod,1 (rotates),4,tank_little,vehicle sgn_veh_underbone
+T1,vehicle_part,sgn_xich_lo_seat,mod,1 (rotates),4,reclining_seat,vehicle sgn_veh_xich_lo
 T1,vehicle_part,tank_small,dda,1 (rotates),4,,vehicle sgn_veh_xe_tay_ga; vehicle sgn_veh_ba_gac_may; vehicle sgn_veh_ghe
 T1,vehicle_part,wheel,dda,1 (rotates),4,,vehicle sgn_veh_ba_gac_may
 T1,vehicle_part,wheel_bicycle,dda,1 (rotates),4,,vehicle sgn_veh_xe_dap; vehicle sgn_veh_xich_lo

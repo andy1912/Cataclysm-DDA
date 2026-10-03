@@ -59,12 +59,12 @@
           "muffler"
         ]
       },
-      { "x": 0, "y": 0, "parts": [ "frame#cross", "cargo_space" ] },
-      { "x": 0, "y": -1, "parts": [ "frame#cross", "cargo_space" ] },
-      { "x": 0, "y": 1, "parts": [ "frame#cross", "cargo_space" ] },
-      { "x": -1, "y": 0, "parts": [ "frame#cross", "cargo_space" ] },
-      { "x": -1, "y": -1, "parts": [ "frame#cross", "cargo_space", "wheel_mount_medium", "wheel" ] },
-      { "x": -1, "y": 1, "parts": [ "frame#cross", "cargo_space", "wheel_mount_medium", "wheel" ] }
+      { "x": 0, "y": 0, "parts": [ "frame#cross", "sgn_ba_gac_bed" ] },
+      { "x": 0, "y": -1, "parts": [ "frame#cross", "sgn_ba_gac_bed" ] },
+      { "x": 0, "y": 1, "parts": [ "frame#cross", "sgn_ba_gac_bed" ] },
+      { "x": -1, "y": 0, "parts": [ "frame#cross", "sgn_ba_gac_bed" ] },
+      { "x": -1, "y": -1, "parts": [ "frame#cross", "sgn_ba_gac_bed", "wheel_mount_medium", "wheel" ] },
+      { "x": -1, "y": 1, "parts": [ "frame#cross", "sgn_ba_gac_bed", "wheel_mount_medium", "wheel" ] }
     ]
   },
   {
@@ -72,7 +72,7 @@
     "id": "sgn_veh_xich_lo",
     "name": "Xích lô (pedal cyclo)",
     "parts": [
-      { "x": 1, "y": 0, "parts": [ "xlframe#vertical", "wheel_mount_light_steerable", "wheel_bicycle", "seat" ] },
+      { "x": 1, "y": 0, "parts": [ "xlframe#vertical", "wheel_mount_light_steerable", "wheel_bicycle", "sgn_xich_lo_seat" ] },
       { "x": 0, "y": 0, "parts": [ "xlframe#vertical" ] },
       {
         "x": -1,

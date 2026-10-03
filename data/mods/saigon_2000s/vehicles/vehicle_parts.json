@@ -68,5 +68,19 @@
     "name": { "str": "long-tail engine" },
     "extend": { "flags": [ "PROTRUSION" ] },
     "description": "A car or pump engine bolted to a pivot on the stern, driving a propeller on the end of a long shaft.  Loud, crude and able to push a loaded boat through a weed-choked canal."
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_xich_lo_seat",
+    "copy-from": "seat",
+    "name": { "str": "xích lô passenger seat" },
+    "description": "The cyclo's front bucket seat: cracked red vinyl over springs, wide enough for one passenger and a market basket, under a folding black canopy that keeps off the sun and the afternoon rain."
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_ba_gac_bed",
+    "copy-from": "cargo_space",
+    "name": { "str": "ba gác cargo bed" },
+    "description": "A deck of rough planks bolted to a steel frame and fenced with low painted rails.  Ba gác carry anything that fits and much that doesn't: refrigerators, scrap, whole households on moving day."
   }
 ]

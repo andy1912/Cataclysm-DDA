@@ -191,13 +191,14 @@ T1,vehicle_part,motorcycle_kickstand,dda,?,1,keep original,
 T1,vehicle_part,muffler,dda,32x32,2,keep original,
 T1,vehicle_part,roof_wood,dda,?,1,keep original,
 T1,vehicle_part,saddle,dda,32x32,5,keep original,reclining_seat
-T1,vehicle_part,seat,dda,32x32,1,keep original,seat
 T1,vehicle_part,seat_wood,dda,32x32,5,keep original,reclining_seat
+T1,vehicle_part,sgn_ba_gac_bed,mod,32x32,1,Saigon art (drawn),f_crate_o
 T1,vehicle_part,sgn_engine_110cc,mod,32x32,1,Saigon art (drawn),engine_combustion
 T1,vehicle_part,sgn_longtail,mod,32x32,1,Saigon art (drawn),engine_combustion
 T1,vehicle_part,sgn_oars,mod,32x32,1,Saigon art (drawn),engine_manual
 T1,vehicle_part,sgn_pillion,mod,32x32,1,Saigon art (drawn),seat
 T1,vehicle_part,sgn_tank_4l,mod,32x32,1,Saigon art (drawn),tank_little
+T1,vehicle_part,sgn_xich_lo_seat,mod,32x32,1,Saigon art (drawn),reclining_seat
 T1,vehicle_part,tank_small,dda,?,1,keep original,
 T1,vehicle_part,wheel,dda,32x32,2,keep original,
 T1,vehicle_part,wheel_bicycle,dda,?,1,keep original,

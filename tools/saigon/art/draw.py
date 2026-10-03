@@ -72,6 +72,12 @@ class Canvas( pngio.Image ):
             for x in range( x0, x1 + 1 ):
                 self.px( x, y, colour )
 
+    def erase( self, x0, y0, x1, y1 ):
+        """Make a rectangle transparent again, inclusive corners."""
+        for y in range( max( 0, y0 ), min( self.height - 1, y1 ) + 1 ):
+            for x in range( max( 0, x0 ), min( self.width - 1, x1 ) + 1 ):
+                self.set( x, y, ( 0, 0, 0, 0 ) )
+
     def frame( self, x0, y0, x1, y1, colour ):
         self.line( x0, y0, x1, y0, colour )
         self.line( x0, y1, x1, y1, colour )

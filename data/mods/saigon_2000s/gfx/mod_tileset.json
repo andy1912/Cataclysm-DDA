@@ -253,24 +253,32 @@
       "bg": 96
      },
      {
-      "id": "vp_sgn_engine_110cc",
+      "id": "vp_sgn_ba_gac_bed",
       "fg": 53
      },
      {
-      "id": "vp_sgn_longtail",
+      "id": "vp_sgn_engine_110cc",
       "fg": 54
      },
      {
-      "id": "vp_sgn_oars",
+      "id": "vp_sgn_longtail",
       "fg": 55
      },
      {
-      "id": "vp_sgn_pillion",
+      "id": "vp_sgn_oars",
       "fg": 56
      },
      {
-      "id": "vp_sgn_tank_4l",
+      "id": "vp_sgn_pillion",
       "fg": 57
+     },
+     {
+      "id": "vp_sgn_tank_4l",
+      "fg": 58
+     },
+     {
+      "id": "vp_sgn_xich_lo_seat",
+      "fg": 59
      }
     ]
    },
