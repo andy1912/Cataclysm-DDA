@@ -1,0 +1,43 @@
+[
+  {
+    "type": "terrain",
+    "id": "t_sgn_cua_sat_keo_c",
+    "copy-from": "t_door_metal_c",
+    "looks_like": "t_door_metal_c",
+    "name": "closed accordion gate",
+    "description": "Cửa sắt kéo: a folding iron gate of criss-crossed flat bars that slides across a shopfront or hẻm doorway and padlocks to the wall.  You can see straight through it, and anything on the other side can see you.  Dragging it open makes a screech the whole alley hears.",
+    "color": "light_gray",
+    "extend": { "flags": [ "TRANSPARENT" ] },
+    "delete": { "flags": [ "BLOCK_WIND" ] },
+    "open": "t_sgn_cua_sat_keo_o"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_cua_sat_keo_o",
+    "copy-from": "t_door_metal_o",
+    "looks_like": "t_door_metal_o",
+    "name": "open accordion gate",
+    "description": "Cửa sắt kéo: a folding iron gate, its criss-crossed bars bunched up against the side of the doorway.",
+    "color": "light_gray",
+    "close": "t_sgn_cua_sat_keo_c"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_hem_xi_mang",
+    "copy-from": "t_concrete",
+    "looks_like": "t_concrete",
+    "name": "alley concrete",
+    "description": "The poured concrete of a hẻm, cracked and patched a dozen times, stained by motorbike oil and the dirty water that runs down its middle when it rains.",
+    "color": "light_gray"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_tuong_bong_gio",
+    "copy-from": "t_concrete_wall",
+    "looks_like": "t_concrete_wall",
+    "name": "breeze-block wall",
+    "description": "Tường bông gió: a wall of cast concrete blocks pierced with flower and diamond patterns, built to let the breeze and the light through.  You can see through the holes, though nothing larger than a cat could squeeze through them.",
+    "color": "white",
+    "extend": { "flags": [ "TRANSPARENT" ] }
+  }
+]

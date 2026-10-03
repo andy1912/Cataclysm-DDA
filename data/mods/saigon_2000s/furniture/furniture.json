@@ -83,5 +83,38 @@
     "name": "sidewalk sign",
     "description": "A painted A-frame sign set out on the sidewalk to point customers into a shop: phở, motorbike repair, photocopies, phone cards.",
     "color": "yellow"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_day_phoi",
+    "name": "laundry line",
+    "symbol": "~",
+    "color": "light_blue",
+    "looks_like": "f_clothing_rail",
+    "description": "A plastic-coated wire strung across the alley at head height, hung with shirts, sarongs and children's clothes drying in the heat.  Each household's laundry has been out for days.",
+    "move_cost_mod": 0,
+    "coverage": 20,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "NOITEM", "ALLOW_ON_OPEN_AIR" ],
+    "bash": {
+      "str_min": 2,
+      "str_max": 8,
+      "sound": "swish.",
+      "sound_fail": "swish.",
+      "items": [
+        { "item": "string_36", "count": 1 },
+        { "item": "tshirt", "prob": 50 },
+        { "item": "pants", "prob": 30 },
+        { "item": "clothes_hanger", "count": [ 0, 3 ] }
+      ]
+    },
+    "deconstruct": {
+      "items": [
+        { "item": "string_36", "count": 1 },
+        { "item": "tshirt", "prob": 60 },
+        { "item": "pants", "prob": 40 },
+        { "item": "clothes_hanger", "count": [ 1, 4 ] }
+      ]
+    }
   }
 ]

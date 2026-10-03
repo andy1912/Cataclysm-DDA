@@ -227,73 +227,108 @@
       ]
      },
      {
-      "id": "f_sgn_dua_can",
+      "id": "f_sgn_day_phoi",
       "fg": 53
      },
      {
-      "id": "f_sgn_van_tho",
+      "id": "f_sgn_dua_can",
       "fg": 54
      },
      {
-      "id": "f_sgn_xau_ho",
+      "id": "f_sgn_van_tho",
       "fg": 55
      },
      {
-      "id": "f_sgn_xe_banh_mi",
+      "id": "f_sgn_xau_ho",
       "fg": 56
      },
      {
-      "id": "f_toilet",
+      "id": "f_sgn_xe_banh_mi",
       "fg": 57
      },
      {
+      "id": "f_toilet",
+      "fg": 58
+     },
+     {
+      "id": "t_sgn_cua_sat_keo_c",
+      "fg": 60,
+      "bg": 62
+     },
+     {
+      "id": "t_sgn_cua_sat_keo_o",
+      "fg": 61,
+      "bg": 62
+     },
+     {
+      "id": "t_sgn_hem_xi_mang",
+      "fg": [
+       {
+        "weight": 3,
+        "sprite": 62
+       },
+       {
+        "weight": 1,
+        "sprite": 64
+       },
+       {
+        "weight": 1,
+        "sprite": 63
+       }
+      ]
+     },
+     {
       "id": "t_sgn_shrub_hoa_giay",
-      "fg": 59,
-      "bg": 58
+      "fg": 65,
+      "bg": 59
      },
      {
       "id": "t_sgn_shrub_khoai_mi",
-      "fg": 60,
-      "bg": 58
+      "fg": 66,
+      "bg": 59
      },
      {
       "id": "t_sgn_shrub_ngu_sac",
-      "fg": 61,
-      "bg": 58
+      "fg": 67,
+      "bg": 59
+     },
+     {
+      "id": "t_sgn_tuong_bong_gio",
+      "fg": 68
      },
      {
       "id": "vp_sgn_ba_gac_bed",
-      "fg": 62,
+      "fg": 69,
       "rotates": true
      },
      {
       "id": "vp_sgn_engine_110cc",
-      "fg": 63,
+      "fg": 70,
       "rotates": true
      },
      {
       "id": "vp_sgn_longtail",
-      "fg": 64,
+      "fg": 71,
       "rotates": true
      },
      {
       "id": "vp_sgn_oars",
-      "fg": 65,
+      "fg": 72,
       "rotates": true
      },
      {
       "id": "vp_sgn_pillion",
-      "fg": 66,
+      "fg": 73,
       "rotates": true
      },
      {
       "id": "vp_sgn_tank_4l",
-      "fg": 67,
+      "fg": 74,
       "rotates": true
      },
      {
       "id": "vp_sgn_xich_lo_seat",
-      "fg": 68,
+      "fg": 75,
       "rotates": true
      }
     ]

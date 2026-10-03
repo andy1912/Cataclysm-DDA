@@ -6,7 +6,7 @@
       "W": "t_brick_wall",
       "#": "t_brick_wall",
       "w": "t_window_bars",
-      "R": "t_rdoor_c",
+      "R": [ [ "t_rdoor_c", 3 ], [ "t_sgn_cua_sat_keo_c", 2 ] ],
       "+": "t_door_c",
       ".": "t_thconc_floor",
       "t": "t_thconc_floor",

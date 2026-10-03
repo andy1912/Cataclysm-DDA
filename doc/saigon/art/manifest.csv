@@ -8,10 +8,11 @@ T1,furniture,f_fridge,dda,1,1-4,,palette sgn_nhaong
 T1,furniture,f_oven,dda,1,1-4,,palette sgn_nhaong
 T1,furniture,f_rack,dda,1,1-4,,palette sgn_nhaong
 T1,furniture,f_region_flower_decorative,dda,1,1-4,f_region_pseudo,palette road_palette
-T1,furniture,f_sgn_ban_inox,mod,1,1-4,f_table,data/mods/saigon_2000s/furniture/furniture.json
+T1,furniture,f_sgn_ban_inox,mod,1,1-4,f_table,data/mods/saigon_2000s/furniture/furniture.json; palette sgn_hem
 T1,furniture,f_sgn_ban_tho,mod,1,1-4,f_table,data/mods/saigon_2000s/furniture/furniture.json; palette sgn_nhaong; palette sgn_hem
 T1,furniture,f_sgn_bang_hieu,mod,1,1-4,f_sign,data/mods/saigon_2000s/furniture/furniture.json
 T1,furniture,f_sgn_cot_dien,mod,1,1-4,f_utility_pole,data/mods/saigon_2000s/furniture/furniture.json
+T1,furniture,f_sgn_day_phoi,mod,1,1-4,f_rack,data/mods/saigon_2000s/furniture/furniture.json; palette sgn_hem
 T1,furniture,f_sgn_du,mod,1,1-4,f_sign,data/mods/saigon_2000s/furniture/furniture.json
 T1,furniture,f_sgn_dua_can,mod,1,1-4,f_dandelion,data/mods/saigon_2000s/region/flora.json
 T1,furniture,f_sgn_loa_phuong,mod,1,1-4,f_utility_pole,data/mods/saigon_2000s/furniture/furniture.json
@@ -151,6 +152,9 @@ T1,terrain,t_region_groundcover_urban,dda,1-16 (connecting),1-6 (2 faces if wall
 T1,terrain,t_region_shrub_decorative,dda,1-16 (connecting),1-6 (2 faces if wall),t_region_pseudo,palette road_palette
 T1,terrain,t_region_tree,dda,1-16 (connecting),1-6 (2 faces if wall),t_region_pseudo,palette road_palette
 T1,terrain,t_sconc_wall_halfway,dda,1-16 (connecting),1-6 (2 faces if wall),t_abstract_wall,palette road_palette
+T1,terrain,t_sgn_cua_sat_keo_c,mod,1-16 (connecting),1-6 (2 faces if wall),t_door_c,data/mods/saigon_2000s/furniture/terrain.json; palette sgn_nhaong; palette sgn_hem
+T1,terrain,t_sgn_cua_sat_keo_o,mod,1-16 (connecting),1-6 (2 faces if wall),t_door_o,data/mods/saigon_2000s/furniture/terrain.json
+T1,terrain,t_sgn_hem_xi_mang,mod,1-16 (connecting),1-6 (2 faces if wall),t_pavement,data/mods/saigon_2000s/furniture/terrain.json; palette sgn_hem
 T1,terrain,t_sgn_shrub_hoa_giay,mod,1-16 (connecting),1-6 (2 faces if wall),t_shrub_abstract,data/mods/saigon_2000s/region/flora.json
 T1,terrain,t_sgn_shrub_khoai_mi,mod,1-16 (connecting),1-6 (2 faces if wall),t_shrub_abstract,data/mods/saigon_2000s/region/flora.json
 T1,terrain,t_sgn_shrub_ngu_sac,mod,1-16 (connecting),1-6 (2 faces if wall),t_shrub_abstract,data/mods/saigon_2000s/region/flora.json
@@ -166,6 +170,7 @@ T1,terrain,t_sgn_tree_me,mod,1-16 (connecting),1-6 (2 faces if wall),t_tree_abst
 T1,terrain,t_sgn_tree_sao,mod,1-16 (connecting),1-6 (2 faces if wall),t_tree_abstract,data/mods/saigon_2000s/region/flora.json
 T1,terrain,t_sgn_tree_xoai,mod,1-16 (connecting),1-6 (2 faces if wall),t_tree_abstract,data/mods/saigon_2000s/region/flora.json
 T1,terrain,t_sgn_tree_xoai_harvested,mod,1-16 (connecting),1-6 (2 faces if wall),t_tree,data/mods/saigon_2000s/region/flora.json
+T1,terrain,t_sgn_tuong_bong_gio,mod,1-16 (connecting),1-6 (2 faces if wall),t_abstract_wall,data/mods/saigon_2000s/furniture/terrain.json; palette sgn_hem
 T1,terrain,t_sidewalk,dda,1-16 (connecting),1-6 (2 faces if wall),t_pavement,palette road_palette; nested 24x24_road_curved_layby; palette bridge_ground_palette
 T1,terrain,t_sidewalk_hw_air,dda,1-16 (connecting),1-6 (2 faces if wall),t_pavement,palette bridge_road_palette
 T1,terrain,t_sidewalk_ramp_down_high,dda,1-16 (connecting),1-6 (2 faces if wall),,palette bridge_ground_palette; palette bridge_road_palette

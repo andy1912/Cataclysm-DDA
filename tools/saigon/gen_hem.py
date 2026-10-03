@@ -23,7 +23,8 @@ CLEARING = [ 'ERASE_FURNITURE_BEFORE_PLACING_TERRAIN', 'ERASE_TRAP_BEFORE_PLACIN
 # NW quadrant variants (x 0-10, y 0-10).  Exits: east via the y=5 sub-alley at x=10,
 # south via the x=5 sub-alley at y=10.  '#' wall, '.' floor, 'a' alley, '+' door,
 # ',' outdoor courtyard, b bed, k kitchen counter, A ancestor altar, t table,
-# T/C outdoor table/stool, S shrine altar.
+# T/C outdoor table/stool, S shrine altar, l laundry line over the alley,
+# o breeze-block wall (tường bông gió).
 NW = {
     'homes': [
         '###########',
@@ -31,17 +32,17 @@ NW = {
         '#...###...#',
         '#t..###.kt#',
         '##+#####+##',
-        '#aaaaaaaaaa',
+        '#aalaaaalaa',
         '##+##a##+##',
         '#...#a#...#',
-        '#bA.#a#tA.#',
+        '#bA.#l#tA.#',
         '#kt.#a#.bk#',
         '#####a#####' ],
     'cafe_shrine': [
         '###########',
-        '#bkA#TC,TC#',
-        '#...#,,,,,#',
-        '#t..#TC,TC#',
+        '#bkA#TC,TCo',
+        '#...#,,,,,o',
+        '#t..#TC,TCo',
         '##+##,,,,,#',
         '#aaaaaaaaaa',
         '##+##a#####',
@@ -83,12 +84,15 @@ def palette():
     return {
         'type': 'palette', 'id': 'sgn_hem',
         'terrain': {
-            '_': 't_concrete_roof', '#': 't_brick_wall', '.': 't_thconc_floor', 'a': 't_concrete', '+': 't_door_c',
+            '_': 't_concrete_roof', '#': 't_brick_wall', '.': 't_thconc_floor', 'a': 't_sgn_hem_xi_mang',
+            # G22: most hẻm homes close their doorway with a folding iron gate
+            '+': [ [ 't_sgn_cua_sat_keo_c', 2 ], [ 't_door_c', 1 ] ],
             ',': 't_concrete', 'b': 't_thconc_floor', 'k': 't_thconc_floor', 'A': 't_thconc_floor',
-            't': 't_thconc_floor', 'T': 't_concrete', 'C': 't_concrete', 'S': 't_thconc_floor' },
+            't': 't_thconc_floor', 'T': 't_concrete', 'C': 't_concrete', 'S': 't_thconc_floor',
+            'o': 't_sgn_tuong_bong_gio', 'l': 't_sgn_hem_xi_mang' },
         'furniture': {
-            'b': 'f_bed', 'k': 'f_counter', 'A': 'f_sgn_ban_tho', 't': 'f_table', 'T': 'f_table',
-            'C': 'f_stool', 'S': 'f_sgn_ban_tho' },
+            'b': 'f_bed', 'k': 'f_counter', 'A': 'f_sgn_ban_tho', 't': 'f_table', 'T': 'f_sgn_ban_inox',
+            'C': 'f_stool', 'S': 'f_sgn_ban_tho', 'l': 'f_sgn_day_phoi' },
         'items': {
             'k': { 'item': 'sgn_shophouse_kitchen', 'chance': 50 },
             'b': { 'item': 'sgn_shophouse_living', 'chance': 35 },
@@ -108,7 +112,7 @@ OPEN_NEIGHBOURS = [ { 'om_terrain': 'sgn_hem', 'om_terrain_match_type': 'PREFIX'
                     { 'om_terrain': 'road', 'om_terrain_match_type': 'TYPE' } ]
 
 
-OUTDOOR = set( 'a,TC ' )
+OUTDOOR = set( 'a,TCl ' )
 
 
 def roof_of( rows ):

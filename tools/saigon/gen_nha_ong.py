@@ -168,7 +168,9 @@ def palette():
     return {
         'type': 'palette', 'id': 'sgn_nhaong',
         'terrain': {
-            'W': 't_brick_wall', '#': 't_brick_wall', 'w': 't_window_bars', 'R': 't_rdoor_c',
+            'W': 't_brick_wall', '#': 't_brick_wall', 'w': 't_window_bars',
+            # G22: shopfronts close with a roller shutter or a folding iron gate
+            'R': [ [ 't_rdoor_c', 3 ], [ 't_sgn_cua_sat_keo_c', 2 ] ],
             '+': 't_door_c', '.': 't_thconc_floor', 't': 't_thconc_floor', 'c': 't_thconc_floor',
             'C': 't_thconc_floor', 'S': 't_thconc_floor', 'O': 't_thconc_floor', 'K': 't_concrete_roof',
             'A': 't_thconc_floor', 'F': 't_thconc_floor', 'T': 't_thconc_floor', 'b': 't_thconc_floor',

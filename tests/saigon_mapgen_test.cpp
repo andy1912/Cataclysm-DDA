@@ -232,7 +232,12 @@ TEST_CASE( "saigon_cities_use_shophouses", "[overmap][saigon]" )
     CHECK( dda_houses == 0 );
 }
 
-static const ter_str_id ter_t_door_c( "t_door_c" );
+
+// Any door: plain doors, the accordion iron gates of hẻm homes (G22), roller shutters.
+static bool is_door( map &m, const tripoint_bub_ms &p )
+{
+    return m.ter( p ).obj().has_flag( ter_furn_flag::TFLAG_DOOR );
+}
 
 // BFS over walkable tiles; closed doors count as traversable (they open).
 static std::set<point> reachable_through_doors( map &m, const point &start, int z )
@@ -250,7 +255,7 @@ static std::set<point> reachable_through_doors( map &m, const point &start, int 
                 continue;
             }
             const tripoint_bub_ms tq( q.x, q.y, z );
-            if( m.move_cost( tq ) <= 0 && m.ter( tq ) != ter_t_door_c.id() ) {
+            if( m.move_cost( tq ) <= 0 && !is_door( m, tq ) ) {
                 continue;
             }
             seen.insert( q );
@@ -297,7 +302,7 @@ TEST_CASE( "saigon_hem_connectivity", "[mapgen][saigon]" )
                 int doors_reached = 0;
                 for( int x = 0; x < SEEX * 2; x++ ) {
                     for( int y = 0; y < SEEY * 2; y++ ) {
-                        if( m.ter( tripoint_bub_ms( x, y, 0 ) ) == ter_t_door_c.id() ) {
+                        if( is_door( m, tripoint_bub_ms( x, y, 0 ) ) ) {
                             doors++;
                             doors_reached += reach.count( point( x, y ) );
                         }
