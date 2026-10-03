@@ -235,6 +235,8 @@ def row_mapgen( oters, z0 ):
         obj['fill_ter'] = 't_concrete'
         obj['rows'] = [ 'S' * 24, 'S' * 24 ] + [ ' ' * 24 ] * 18 + [ 'P' * 24 ] * 4
         obj['terrain'] = { 'S': 't_sidewalk', 'P': 't_concrete' }
+        # G28: strays in the back alley behind the row
+        obj['place_monster'] = [ { 'group': 'sgn_GROUP_SAIGON_ANIMALS', 'x': [ 0, 23 ], 'y': [ 20, 23 ], 'chance': 30 } ]
     else:
         obj['fill_ter'] = 't_open_air'
     return { 'type': 'mapgen', 'om_terrain': oters, 'object': obj }

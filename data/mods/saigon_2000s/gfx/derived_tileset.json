@@ -7985,6 +7985,25 @@
      {
       "id": "sgn_non_ket",
       "fg": 954
+     },
+     {
+      "id": "sgn_mon_cho_ta",
+      "fg": 955,
+      "bg": 956
+     },
+     {
+      "id": "sgn_mon_ga_ta",
+      "fg": [
+       {
+        "weight": 2,
+        "sprite": 957
+       },
+       {
+        "weight": 1,
+        "sprite": 958
+       }
+      ],
+      "bg": 959
      }
     ]
    },

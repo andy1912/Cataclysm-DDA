@@ -740,7 +740,8 @@
         "PPPPPPPPPPPPPPPPPPPPPPPP",
         "PPPPPPPPPPPPPPPPPPPPPPPP"
       ],
-      "terrain": { "S": "t_sidewalk", "P": "t_concrete" }
+      "terrain": { "S": "t_sidewalk", "P": "t_concrete" },
+      "place_monster": [ { "group": "sgn_GROUP_SAIGON_ANIMALS", "x": [ 0, 23 ], "y": [ 20, 23 ], "chance": 30 } ]
     }
   },
   {

@@ -1,0 +1,32 @@
+[
+  {
+    "type": "MONSTER",
+    "id": "sgn_mon_cho_ta",
+    "copy-from": "mon_dog",
+    "looks_like": "mon_dog",
+    "name": { "str": "street dog" },
+    "description": "A chó ta: a lean, short-coated yellow street dog with a curled tail and a torn ear.  It belonged to the whole alley, fed on everybody's scraps, and now it belongs to nobody.  Hungry and wary, it keeps its distance unless cornered.",
+    "color": "yellow"
+  },
+  {
+    "type": "MONSTER",
+    "id": "sgn_mon_ga_ta",
+    "copy-from": "mon_chicken",
+    "looks_like": "mon_chicken",
+    "name": { "str": "yard chicken" },
+    "description": "A gà ta: a scrawny free-range chicken with copper and black feathers, scratching through the rubbish where its owners kept it in a cage on the sidewalk.  The fever was blamed on its kind.",
+    "color": "light_red"
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_SAIGON_ANIMALS",
+    "default": "sgn_mon_cho_ta",
+    "//": "G28: animals of the hẻm and back alleys.  Kept sparse: the d3_r3 §6.2 per-OMT budget counts them with the zombies.",
+    "monsters": [
+      { "monster": "sgn_mon_cho_ta", "weight": 40 },
+      { "monster": "mon_cat", "weight": 30 },
+      { "monster": "sgn_mon_ga_ta", "weight": 20 },
+      { "monster": "mon_sewer_rat", "weight": 30 }
+    ]
+  }
+]

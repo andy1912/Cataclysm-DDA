@@ -1392,5 +1392,58 @@
       }
     ],
     "//": "G26 icon recoloured from the dda scarf"
+  },
+  {
+    "target": "sgn_mon_cho_ta",
+    "source": "mon_dog",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "max_val": 0.95,
+        "to_hue": 36,
+        "sat_set": 0.5,
+        "val_mul": 1.15
+      }
+    ],
+    "//": "Chó ta: short yellow-tan coat."
+  },
+  {
+    "target": "sgn_mon_ga_ta",
+    "source": "mon_chicken",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "max_val": 0.98,
+        "to_hue": 18,
+        "sat_set": 0.62,
+        "val_mul": 0.85
+      },
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "rows": [
+          0,
+          12
+        ],
+        "to_hue": 0,
+        "sat_set": 0.85,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "Gà ta: copper body, red comb and wattle."
   }
 ]

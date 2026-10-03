@@ -171,7 +171,9 @@ def block_mapgen():
                              { 'group': 'sgn_GROUP_SAIGON_AWAKE', 'x': [ 11, 12 ], 'y': [ 0, 23 ], 'chance': 60,
                                'repeat': [ 1, 2 ] },
                              { 'group': 'sgn_GROUP_ZOMBIE_DORMANT', 'x': [ 0, 23 ], 'y': [ 11, 12 ], 'chance': 80,
-                               'repeat': [ 2, 5 ] } ] } }
+                               'repeat': [ 2, 5 ] },
+                             # G28: a stray dog, cat, chicken or rat in the alley now and then
+                             { 'group': 'sgn_GROUP_SAIGON_ANIMALS', 'x': [ 0, 23 ], 'y': [ 11, 12 ], 'chance': 35 } ] } }
 
 
 def overmap():
