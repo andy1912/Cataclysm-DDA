@@ -4,7 +4,7 @@
 For every thing on screen, the tiles renderer looks up a **tile id** in the loaded tileset(s):
 
 1. **Season variant first.** If `<id>_season_<season>` exists it wins (`src/cata_tiles.cpp:378-396`). The Saigon scenario starts in CDDA **winter**, which is December, so any `_season_winter` art in the base tileset (bare or snowy trees, brown grass) shows unless we override it.
-2. **The id itself.** Terrain, furniture, items, monsters and fields use their game id. Vehicle parts use **`vp_<part id>`** (`src/cata_tiles.cpp:2096`). Clothing drawn on the character uses `overlay_worn_<item id>`, and held items use `overlay_wielded_<item id>`.
+2. **The id itself.** Terrain, furniture, items, monsters and fields use their game id. Vehicle parts use **`vp_<part id>`** (`src/cata_tiles.cpp:2096`). Clothing drawn on the character uses `overlay_male_worn_<item id>` / `overlay_female_worn_<item id>`, then the generic `overlay_worn_<item id>`; held items use `overlay_wielded_<item id>` the same way (`src/cata_tiles.cpp:2135-2175`).
 3. **`looks_like` chain.** If there's no sprite, the engine follows `looks_like` and copy-from (`find_tile_looks_like`, `src/cata_tiles.cpp:1975-2040`). Every Saigon id has one. For example, `sgn_non_la` draws as the dda straw hat, `sgn_banh_mi_thit` as a sandwich, and the shophouse overmap tile as a house.
 4. **`unknown`** sprite, then the ASCII symbol and colour from the JSON.
 
@@ -15,6 +15,8 @@ For every thing on screen, the tiles renderer looks up a **tile id** in the load
   - `Larwick Overmap`: overmap icons, 16×16.
 - **Mod tileset.** `data/mods/saigon_2000s/gfx/mod_tileset.json` and its sheets. Mod tilesets load **after** the base, and only when the base's id is in their `compatibility` list (`src/tileset_loader.cpp:419-427`).
 - **Same-id overrides.** `create_tile_type` overwrites existing ids (`src/cata_tiles.cpp:366-368`). So the mod can **restyle dda sprites too**, such as `t_sidewalk` or `f_fridge`, without forking the base tileset.
+- **Offsets come from the declaring sheet.** A tile is drawn with the sprite offset of the `tiles-new` sheet it is *declared under* (`tileset_loader.cpp` `parse_atlases`), while sprite indices are global. So an entry must sit under the sheet of its own sprite size. The packers do this, and `validate_tileset.py` fails on any mismatch. Until G17 they didn't, and 427 entries were drawn misplaced.
+- **Rotation:** a tile only turns with its vehicle, or with `rotates_to`, when it is `multitile` or says `"rotates": true`, because `rotates` defaults to `multitile`. Vehicle-part sprites must set it.
 - **Overmap icons** come from the separate overmap tileset option (`OVERMAP_TILES`, `src/options.cpp:2580`). That's why the packer writes a second mod tileset for `Larwick Overmap`.
 
 **Derived Saigon sprites (G6).** `tools/saigon/art/derive_sprites.py` makes Saigon sprites by applying recorded edits from `art/saigon/derive_recipes.json` to the original UltimateCataclysm art. That keeps the original style, and the licence is CC-BY-SA with per-sprite provenance in `art/saigon/SOURCES_DERIVED.md`. It writes `data/mods/saigon_2000s/gfx/derived_*.png` plus `derived_tileset.json`, and `doc/saigon/art/derived_preview.png` shows before and after. Current recipes:
@@ -26,10 +28,7 @@ For every thing on screen, the tiles renderer looks up a **tile id** in the load
 
 The `overmap` set (`derive_sprites.py overmap`, recipes in `art/saigon/derive_overmap_recipes.json`) gives each Saigon building type a distinct map colour: pastel nhà ống, terracotta hẻm, orange chợ, red chùa and white chung cư, plus their roofs. Hand-drawn PNGs always win over derived ones. Validate both with `python3 tools/saigon/art/validate_tileset.py`, which applies the loader's index and capacity rules (mod tilesets only load with a world, so a main-menu launch can't test them).
 
-**What a Saigon world looked like before G6 in tiles mode**
-- **No base tileset installed:** ASCII-style tiles.
-- **With UltimateCataclysm:** American-styled dda art for walls, furniture, cars and trees, `looks_like` stand-ins for Saigon ids, and winter tree variants in December.
-- **Saigon sprites so far:** three code-generated placeholders (nón lá, ancestor altar, shophouse overmap icon) that prove the pipeline.
+**What a Saigon world looked like before G6 in tiles mode:** American dda art for walls, furniture, cars and trees, `looks_like` stand-ins for Saigon ids, and winter tree variants in December. Current status is in [`SPRITE_REVISION_SUMMARY.md`](SPRITE_REVISION_SUMMARY.md).
 
 **Text in graphics.** Names and descriptions are translated through gettext, not drawn into sprites, so localization of text is separate from art. The tiles UI font chain is Terminus → Unifont (`data/fontdata.json`). Unifont covers Vietnamese diacritics, but mixed glyph styles are possible; check this in the tiles build.
 
@@ -55,12 +54,5 @@ The `overmap` set (`derive_sprites.py overmap`, recipes in `art/saigon/derive_ov
 
 **3D route.** When Blender is available, `tools/saigon/art/render_sprites.py` renders into the same `art/saigon/tiles/` folder, and step 5 onward is unchanged. The isometric set (R3) will get its own `tiles_iso/` folder and a `Ultica_iso` compatibility entry.
 
-## 3. What to restyle first: T1, in visual-impact order
-1. **Street and walls (terrain):** `t_sidewalk` (square tiles), `t_pavement`, `t_pavement_y`, `t_concrete`, `t_brick_wall` (pastel stucco), `t_rdoor_c` (rolling shutter), `t_window_bars`, `t_concrete_roof`, `t_railing`, `t_door_c`, `t_stairs_up/down`, `t_thconc_floor` (patterned tiles).
-2. **Vegetation:** `t_region_tree`, `t_region_grass`, `t_region_groundcover_urban`, `t_region_shrub_decorative` and their `_season_winter` variants. Also needs content: a tropical region `terrain_furniture` mapping (palms, banana, bougainvillea), owned by B8a.
-3. **Street furniture:** `f_street_light`, `f_traffic_light`, `f_sign_stop` (Vietnamese road signs), `f_trashcan`, `f_bench`, `f_bike_rack`.
-4. **Interiors:** `f_sgn_ban_tho`, `f_counter`, `f_table`, `f_stool` (red plastic), `f_bed`, `f_fridge`, `f_standing_tank` (stainless rooftop tank), `f_oven` (gas burner), `f_rack`, `f_sofa`, `f_toilet` (squat toilet), `f_sink`.
-5. **Monsters:** `sgn_mon_zombie_xe_om`, `sgn_mon_zombie_vendor`, `sgn_mon_zombie_cong_an`, `sgn_mon_zombie_sot`, `mon_zombie`, `mon_zombie_fat`.
-6. **Vehicles:** `vp_sgn_engine_110cc`, `vp_sgn_pillion`, `vp_wheel_motorbike`, `vp_basketsm`, `vp_xlframe`, … These are the 37 underbone, ba gác, xích lô and boat parts.
-7. **Starting kit and overlays:** `sgn_non_la`, `sgn_non_bao_hiem`, `sgn_ao_mua_canh_doi`, `sgn_dep_to_ong` and their `overlay_worn_*` versions.
-8. **Overmap (16×16):** the 24 `sgn_*` overmap terrains.
+## 3. What to make next
+See [`SPRITE_PLAN.md`](SPRITE_PLAN.md). The T1 restyle list that used to be here is done (G6–G16).

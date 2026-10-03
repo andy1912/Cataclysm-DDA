@@ -63,8 +63,11 @@ def load_tilesets():
     sheets = [ ( s['start'], s['count'], os.path.join( base.base, s['file'] ), s['w'], s['h'], s['ox'], s['oy'],
                  s['cols'] ) for s in base.sheets ]
     src = Source( sheets )
-    for i, entry in base.tiles.items():
-        tiles[i] = ( entry, src )
+    for sheet in base.config['tiles-new']:
+        offset = ( sheet.get( 'sprite_offset_x', 0 ), sheet.get( 'sprite_offset_y', 0 ) )
+        for t in sheet.get( 'tiles', [] ):
+            for i in t['id'] if isinstance( t['id'], list ) else [ t['id'] ]:
+                tiles[i] = ( t, src, offset )
     for name in ( 'derived_tileset.json', 'mod_tileset.json' ):  # drawn art wins over derived
         path = os.path.join( GFX, name )
         if not os.path.exists( path ):
@@ -85,9 +88,10 @@ def load_tilesets():
                     start += count
                 src = Source( sheets )
                 for sheet in obj['tiles-new']:
+                    offset = ( sheet.get( 'sprite_offset_x', 0 ), sheet.get( 'sprite_offset_y', 0 ) )
                     for t in sheet.get( 'tiles', [] ):
                         for i in t['id'] if isinstance( t['id'], list ) else [ t['id'] ]:
-                            tiles[i] = ( t, src )
+                            tiles[i] = ( t, src, offset )
     return tiles
 
 
@@ -221,7 +225,7 @@ class Renderer:
         found = self.find( tid, variant, seasonal )
         if not found:
             return
-        entry, src = found
+        entry, src, ( ox, oy ) = found
         rota = 0
         if entry.get( 'multitile' ) and vrota is None:
             rota, sub = rotation_and_subtile( conn, rot )
@@ -231,7 +235,8 @@ class Renderer:
                     break
         elif vrota is not None:
             rota = vrota
-        rotates = entry.get( 'rotates', vrota is not None )
+        # like tileset_loader: "rotates" defaults to "multitile"; subtiles always rotate
+        rotates = entry.get( 'rotates', bool( entry.get( 'multitile' ) ) )
         for key in ( 'bg', 'fg' ):
             sprites = pick( entry.get( key ), x, y )
             if not sprites:
@@ -243,7 +248,7 @@ class Renderer:
             got = src.sprite( index )
             if not got:
                 continue
-            img, ox, oy = got
+            img = got[0]   # the offset is the declaring sheet's (tileset_loader parse_atlases)
             blit( canvas, rotated( img, turn ), x * TILE + ox, y * TILE + oy )
 
 

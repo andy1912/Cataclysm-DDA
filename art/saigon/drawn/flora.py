@@ -3,7 +3,7 @@
 Sizes and anchoring follow UltimateCataclysm's trees: 96x96 (giant.png, offset -32,-64)
 with the trunk rooted in the bottom-centre 32x32 cell, 64x64 for small trees
 (large.png, offset -16,-32), 32x32 for shrubs and flowers.  Trees carry a ground tile
-as "bg"; that tile (sgn__ground96 / sgn__ground64) is a copy of UltimateCataclysm's
+as "bg"; that tile (sgn__ground96 / sgn__ground64, sgn__ground32 under shrubs) is a copy of UltimateCataclysm's
 summer grass under t_tree (CC-BY-SA 3.0, the UltimateCataclysm contributors).
 
 Species, by how common they are in a 2000s Saigon street or yard:
@@ -37,6 +37,12 @@ def ground96( c ):
 @sprite( 'sgn__ground64', 64, 64 )
 def ground64( c ):
     ground( c )
+
+
+@sprite( 'sgn__ground32', 32, 32 )
+def ground32( c ):
+    src = base_sprite( 't_shrub', 'bg' )   # the grass under UltimateCataclysm's shrubs
+    c.paste( src, 0, 0 )
 
 
 TREE = { 'bg': '@sgn__ground96' }
@@ -260,7 +266,7 @@ def du_du_harvested( c ):
 
 # --- shrubs and flowers (32x32) ---------------------------------------------------------------
 
-@sprite( 't_sgn_shrub_hoa_giay', 32, 32 )
+@sprite( 't_sgn_shrub_hoa_giay', 32, 32, bg='@sgn__ground32' )
 def hoa_giay( c ):
     # bougainvillea: a sprawling thorny mass smothered in magenta bracts
     pts = canopy_points( c, 16, 18, 11, 9, 16 )

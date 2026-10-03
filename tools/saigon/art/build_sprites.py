@@ -105,19 +105,39 @@ def pack( roots, prefix, geometry, compat ):
             return { k: resolve( v, where ) for k, v in value.items() }
         return value
 
-    tiles = []
+    def refs( value ):
+        if isinstance( value, str ) and value.startswith( '@' ):
+            yield value[1:]
+        elif isinstance( value, list ):
+            for v in value:
+                yield from refs( v )
+        elif isinstance( value, dict ):
+            for v in value.values():
+                yield from refs( v )
+
+    # The engine gives a tile the sprite offset of the sheet it is declared under
+    # (tileset_loader parse_atlases), so each entry goes under the sheet of its size.
+    sheet_of = { size: n for n, size in enumerate( sorted( groups ) ) }
+    count = 0
     for sid in sorted( sprites ):
         if '__' in sid:
             continue
         entry = { 'id': sid, 'fg': index[sid] }
+        used = { sid }
         sidecar = sprites[sid][:-4] + '.json'
         if os.path.exists( sidecar ):
             with open( sidecar ) as f:
                 extra = json.load( f )
             extra.pop( 'id', None )
+            used |= set( refs( extra ) )
             entry.update( resolve( extra, sidecar ) )
-        tiles.append( entry )
-    sheets[0]['tiles'] = tiles
+        sizes = { ( images[u].width, images[u].height ) for u in used if u in images }
+        if len( sizes ) != 1:
+            sys.exit( '%s mixes sprite sizes %s; one tile entry can only use one sheet geometry' %
+                      ( sid, sorted( sizes ) ) )
+        sheets[sheet_of[sizes.pop()]]['tiles'].append( entry )
+        count += 1
+    tiles = range( count )
     obj = { 'type': 'mod_tileset', 'compatibility': compat, 'tiles-new': sheets }
     print( '%s: %d tiles, %d sprites in %d sheets (for %s)' % ( '+'.join( roots ), len( tiles ), len( sprites ),
                                                               len( sheets ), ', '.join( compat ) ) )

@@ -9,6 +9,9 @@ launch cannot test them.  This mirrors src/tileset_loader.cpp instead:
   - every fg/bg index (plain, rotation list, weighted variants, multitile
     additional_tiles) must fall inside that total capacity
   - "compatibility" must name an installed base tileset                 (:425)
+  - a tile is drawn with the sprite size and offset of the sheet it is declared under
+    (parse_atlases), so every sprite it uses must come from a sheet of that same
+    geometry, or it lands misplaced
 Exit 1 on any problem.  Run from the repo root:
   python3 tools/saigon/art/validate_tileset.py
 """
@@ -63,6 +66,7 @@ def main():
                 problems.append( '%s: compatibility %s matches no installed tileset %s' %
                                  ( where, compat, sorted( installed ) ) )
             capacity = 0
+            ranges = []
             for sheet in obj['tiles-new']:
                 png = os.path.join( GFX, sheet['file'] )
                 if not os.path.exists( png ):
@@ -73,9 +77,13 @@ def main():
                 sh = sheet.get( 'sprite_height', 32 )
                 if w % sw or h % sh:
                     problems.append( '%s: %s is %dx%d, not a multiple of %dx%d' % ( where, sheet['file'], w, h, sw, sh ) )
+                geometry = ( sw, sh, sheet.get( 'sprite_offset_x', 0 ), sheet.get( 'sprite_offset_y', 0 ) )
+                ranges.append( ( capacity, capacity + ( w // sw ) * ( h // sh ), geometry ) )
                 capacity += ( w // sw ) * ( h // sh )
             seen_ids = set()
             for sheet in obj['tiles-new']:
+                declared = ( sheet.get( 'sprite_width', 32 ), sheet.get( 'sprite_height', 32 ),
+                             sheet.get( 'sprite_offset_x', 0 ), sheet.get( 'sprite_offset_y', 0 ) )
                 for tile in sheet.get( 'tiles', [] ):
                     checked_tiles += 1
                     tid = tile.get( 'id' )
@@ -92,6 +100,12 @@ def main():
                                 if not 0 <= idx < capacity:
                                     problems.append( '%s: %s %s index %d outside 0..%d' %
                                                      ( where, tid, key, idx, capacity - 1 ) )
+                                    continue
+                                geometry = next( g for a, b, g in ranges if a <= idx < b )
+                                if geometry != declared:
+                                    problems.append( '%s: %s declared under a %dx%d%+d%+d sheet but sprite %d '
+                                                     'is %dx%d%+d%+d: drawn misplaced' %
+                                                     ( ( where, tid ) + declared + ( idx, ) + geometry ) )
     for p in problems[:40]:
         print( 'FAIL', p )
     print( 'checked %d tile entries in %s: %d problems' % ( checked_tiles, GFX, len( problems ) ) )

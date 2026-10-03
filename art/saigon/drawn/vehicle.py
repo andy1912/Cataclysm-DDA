@@ -1,7 +1,9 @@
 """Saigon vehicle parts: 32x32 top-down, like UltimateCataclysm's vp_* sprites.
 
 Vehicle parts are drawn from "vp_<part id>" tiles (src/cata_tiles.cpp:2096) and seen
-from straight above, front of the vehicle towards the top of the tile.
+from straight above, front of the vehicle towards the top of the tile.  Every part is
+"rotates": true: the engine only turns a tile with the vehicle when it is multitile or
+says so (tileset_loader: "rotates" defaults to "multitile"), otherwise it stays upright.
 """
 from draw import sprite, rgb, shade
 
@@ -15,7 +17,7 @@ def finish( c ):
     c.outline( OUTLINE )
 
 
-@sprite( 'vp_sgn_engine_110cc', 32, 32 )
+@sprite( 'vp_sgn_engine_110cc', 32, 32, rotates=True )
 def engine_110cc( c ):
     # air-cooled single seen from above: wide crankcase, square finned cylinder leaning
     # forward, exhaust pipe sweeping back on the right, chain sprocket on the left
@@ -31,7 +33,7 @@ def engine_110cc( c ):
     finish( c )
 
 
-@sprite( 'vp_sgn_pillion', 32, 32 )
+@sprite( 'vp_sgn_pillion', 32, 32, rotates=True )
 def pillion( c ):
     # long padded passenger seat with a chrome grab rail behind it
     c.ellipse( 16, 14, 5, 10, BLACK_VINYL, light=rgb( '#4a4a52' ) )
@@ -41,7 +43,7 @@ def pillion( c ):
     finish( c )
 
 
-@sprite( 'vp_sgn_tank_4l', 32, 32 )
+@sprite( 'vp_sgn_tank_4l', 32, 32, rotates=True )
 def tank_4l( c ):
     # small pressed-steel tank under the seat, red paint, chrome filler cap
     c.ellipse( 16, 16, 6, 8, rgb( '#b82a2a' ), light=rgb( '#e86060' ), dark=rgb( '#7e1a1a' ) )
@@ -50,7 +52,7 @@ def tank_4l( c ):
     finish( c )
 
 
-@sprite( 'vp_sgn_longtail', 32, 32 )
+@sprite( 'vp_sgn_longtail', 32, 32, rotates=True )
 def longtail( c ):
     # máy đuôi tôm: a small engine on a pivot with a long drive shaft and propeller trailing aft
     c.rect( 11, 3, 21, 13, rgb( '#c8a028' ) )                     # engine shroud
@@ -63,7 +65,7 @@ def longtail( c ):
     finish( c )
 
 
-@sprite( 'vp_sgn_oars', 32, 32 )
+@sprite( 'vp_sgn_oars', 32, 32, rotates=True )
 def oars( c ):
     # a pair of wooden oars shipped along the gunwale
     wood = rgb( '#a87a48' )
@@ -74,7 +76,7 @@ def oars( c ):
     finish( c )
 
 
-@sprite( 'vp_sgn_xich_lo_seat', 32, 32 )
+@sprite( 'vp_sgn_xich_lo_seat', 32, 32, rotates=True )
 def xich_lo_seat( c ):
     # the cyclo's front bucket seat in red vinyl, the folded black canopy behind it and
     # the steel bumper arc in front
@@ -91,7 +93,7 @@ def xich_lo_seat( c ):
     c.outline( OUTLINE )
 
 
-@sprite( 'vp_sgn_ba_gac_bed', 32, 32 )
+@sprite( 'vp_sgn_ba_gac_bed', 32, 32, rotates=True )
 def ba_gac_bed( c ):
     # rough plank deck running fore and aft; tiles seamlessly across the 3x3 bed
     planks = [ rgb( '#9a7048' ), rgb( '#8a6240' ), rgb( '#a47a50' ), rgb( '#946a44' ) ]

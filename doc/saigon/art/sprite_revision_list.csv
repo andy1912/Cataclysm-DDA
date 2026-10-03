@@ -144,7 +144,7 @@ T1,terrain,t_region_groundcover_urban,dda,32x32,1,keep original,t_region_pseudo
 T1,terrain,t_region_shrub_decorative,dda,32x32,1,keep original,t_region_pseudo
 T1,terrain,t_region_tree,dda,32x32,1,keep original,t_region_pseudo
 T1,terrain,t_sconc_wall_halfway,dda,32x32,16,keep original,t_abstract_wall
-T1,terrain,t_sgn_shrub_hoa_giay,mod,32x32,1,Saigon art (drawn),t_shrub_abstract
+T1,terrain,t_sgn_shrub_hoa_giay,mod,32x32,2,Saigon art (drawn),t_shrub_abstract
 T1,terrain,t_sgn_tree_bang,mod,96x96,2,Saigon art (drawn),t_tree_abstract
 T1,terrain,t_sgn_tree_bo_de,mod,96x96,2,Saigon art (drawn),t_tree_abstract
 T1,terrain,t_sgn_tree_chuoi,mod,64x64,2,Saigon art (drawn),t_tree_abstract

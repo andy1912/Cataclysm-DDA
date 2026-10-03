@@ -1477,7 +1477,7 @@ Base SHA unless marked HEAD. The most important seams and facts, symbol → loca
 | Pipeline | `doc/saigon/art/PIPELINE.md` | Done |
 | Render script | `tools/saigon/art/render_sprites.py` (Blender `bpy`) | Written, **untested**: Blender is not installed |
 | Derived sprites (G6) | `tools/saigon/art/derive_sprites.py` + `art/saigon/derive_recipes.json` | **Done**: 272 tile entries (263 tropical-season overrides plus walls, shutters, altar, stool, tank and 4 zombies) from 1,003 original sprites; `validate_tileset.py` reports 0 problems; provenance in `art/saigon/SOURCES_DERIVED.md` |
-| Sprite packer | `tools/saigon/art/build_sprites.py` + `pngio.py` (no dependencies) | **Works**: 3 placeholder sprites in `data/mods/saigon_2000s/gfx/`, loaded by `--check-mods`; how-to in `doc/saigon/art/UPDATING_SPRITES.md` |
+| Sprite packer | `tools/saigon/art/build_sprites.py` + `pngio.py` (no dependencies) | **Works**: hand-drawn and code-drawn sprites of every size, plus derived recipes (`derive_sprites.py`) and a scene renderer; status in `doc/saigon/art/SPRITE_REVISION_SUMMARY.md` |
 | In-game verification | SDL3 tiles build (S0.3c), `CATA_DISABLE_SPRITE_SHADERS=1` | Build in progress |
 
 **Engine facts the art plan relies on:**

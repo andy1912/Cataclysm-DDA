@@ -17,36 +17,12 @@
       "fg": 0
      },
      {
-      "id": "f_oven",
-      "fg": 48
-     },
-     {
-      "id": "f_sgn_dua_can",
-      "fg": 49
-     },
-     {
-      "id": "f_sgn_van_tho",
-      "fg": 50
-     },
-     {
-      "id": "f_toilet",
-      "fg": 51
-     },
-     {
       "id": "incense",
       "fg": 1
      },
      {
       "id": "knife_cleaver",
       "fg": 2
-     },
-     {
-      "id": "overlay_female_worn_sgn_non_la",
-      "fg": 64
-     },
-     {
-      "id": "overlay_male_worn_sgn_non_la",
-      "fg": 65
      },
      {
       "id": "sgn_ao_ba_ba",
@@ -201,19 +177,100 @@
       "fg": 40
      },
      {
+      "id": "tape_measure",
+      "fg": 41
+     }
+    ]
+   },
+   {
+    "file": "saigon_32x32.png",
+    "sprite_width": 32,
+    "sprite_height": 32,
+    "sprite_offset_x": 0,
+    "sprite_offset_y": 0,
+    "tiles": [
+     {
+      "id": "f_oven",
+      "fg": 48
+     },
+     {
+      "id": "f_sgn_dua_can",
+      "fg": 49
+     },
+     {
+      "id": "f_sgn_van_tho",
+      "fg": 50
+     },
+     {
+      "id": "f_toilet",
+      "fg": 51
+     },
+     {
       "id": "t_sgn_shrub_hoa_giay",
-      "fg": 52
+      "fg": 53,
+      "bg": 52
      },
      {
-      "id": "t_sgn_tree_bang",
-      "fg": 97,
-      "bg": 96
+      "id": "vp_sgn_ba_gac_bed",
+      "fg": 54,
+      "rotates": true
      },
      {
-      "id": "t_sgn_tree_bo_de",
-      "fg": 98,
-      "bg": 96
+      "id": "vp_sgn_engine_110cc",
+      "fg": 55,
+      "rotates": true
      },
+     {
+      "id": "vp_sgn_longtail",
+      "fg": 56,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_oars",
+      "fg": 57,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_pillion",
+      "fg": 58,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_tank_4l",
+      "fg": 59,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_xich_lo_seat",
+      "fg": 60,
+      "rotates": true
+     }
+    ]
+   },
+   {
+    "file": "saigon_32x36.png",
+    "sprite_width": 32,
+    "sprite_height": 36,
+    "sprite_offset_x": 0,
+    "sprite_offset_y": -8,
+    "tiles": [
+     {
+      "id": "overlay_female_worn_sgn_non_la",
+      "fg": 64
+     },
+     {
+      "id": "overlay_male_worn_sgn_non_la",
+      "fg": 65
+     }
+    ]
+   },
+   {
+    "file": "saigon_64x64.png",
+    "sprite_width": 64,
+    "sprite_height": 64,
+    "sprite_offset_x": -16,
+    "sprite_offset_y": -32,
+    "tiles": [
      {
       "id": "t_sgn_tree_chuoi",
       "fg": 81,
@@ -233,6 +290,25 @@
       "id": "t_sgn_tree_du_du_harvested",
       "fg": 84,
       "bg": 80
+     }
+    ]
+   },
+   {
+    "file": "saigon_96x96.png",
+    "sprite_width": 96,
+    "sprite_height": 96,
+    "sprite_offset_x": -32,
+    "sprite_offset_y": -64,
+    "tiles": [
+     {
+      "id": "t_sgn_tree_bang",
+      "fg": 97,
+      "bg": 96
+     },
+     {
+      "id": "t_sgn_tree_bo_de",
+      "fg": 98,
+      "bg": 96
      },
      {
       "id": "t_sgn_tree_dua",
@@ -263,72 +339,8 @@
       "id": "t_sgn_tree_xoai_harvested",
       "fg": 104,
       "bg": 96
-     },
-     {
-      "id": "tape_measure",
-      "fg": 41
-     },
-     {
-      "id": "vp_sgn_ba_gac_bed",
-      "fg": 53
-     },
-     {
-      "id": "vp_sgn_engine_110cc",
-      "fg": 54
-     },
-     {
-      "id": "vp_sgn_longtail",
-      "fg": 55
-     },
-     {
-      "id": "vp_sgn_oars",
-      "fg": 56
-     },
-     {
-      "id": "vp_sgn_pillion",
-      "fg": 57
-     },
-     {
-      "id": "vp_sgn_tank_4l",
-      "fg": 58
-     },
-     {
-      "id": "vp_sgn_xich_lo_seat",
-      "fg": 59
      }
     ]
-   },
-   {
-    "file": "saigon_32x32.png",
-    "sprite_width": 32,
-    "sprite_height": 32,
-    "sprite_offset_x": 0,
-    "sprite_offset_y": 0,
-    "tiles": []
-   },
-   {
-    "file": "saigon_32x36.png",
-    "sprite_width": 32,
-    "sprite_height": 36,
-    "sprite_offset_x": 0,
-    "sprite_offset_y": -8,
-    "tiles": []
-   },
-   {
-    "file": "saigon_64x64.png",
-    "sprite_width": 64,
-    "sprite_height": 64,
-    "sprite_offset_x": -16,
-    "sprite_offset_y": -32,
-    "tiles": []
-   },
-   {
-    "file": "saigon_96x96.png",
-    "sprite_width": 96,
-    "sprite_height": 96,
-    "sprite_offset_x": -32,
-    "sprite_offset_y": -64,
-    "tiles": []
    }
   ]
  }

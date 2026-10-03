@@ -241,6 +241,18 @@ def remap_entry( entry, base, out, ops, cache ):
     return new, geometry_of_entry
 
 
+def geometries_of( value ):
+    """Geometries of every ( geometry, local ) sprite key inside an unresolved entry."""
+    if isinstance( value, tuple ):
+        yield value[0]
+    elif isinstance( value, list ):
+        for v in value:
+            yield from geometries_of( v )
+    elif isinstance( value, dict ):
+        for v in value.values():
+            yield from geometries_of( v )
+
+
 def resolve( value, index ):
     if isinstance( value, tuple ):
         return index[value]
@@ -313,8 +325,15 @@ def derive( cfg ):
         if own.match( name ):
             os.remove( os.path.join( GFX, name ) )
     index, sheets = out.finalize()
-    # every entry goes in the first sheet's "tiles"; indices are mod-global
-    sheets[0]['tiles'] = [ resolve( e, index ) for e in entries ]
+    # Indices are mod-global, but the engine gives a tile the sprite offset of the sheet it
+    # is declared under (tileset_loader parse_atlases): declare each entry under the sheet
+    # of its sprites' geometry.
+    sheet_of = { geometry: n for n, geometry in enumerate( out.order ) }
+    for e in entries:
+        geometries = set( geometries_of( e ) )
+        if len( geometries ) != 1:
+            sys.exit( '%s mixes sprite geometries %s' % ( e.get( 'id' ), sorted( geometries ) ) )
+        sheets[sheet_of[geometries.pop()]]['tiles'].append( resolve( e, index ) )
     obj = [ { 'type': 'mod_tileset', 'compatibility': cfg['compat'], 'tiles-new': sheets } ]
     with open( os.path.join( GFX, cfg['json'] ), 'w', encoding='utf-8' ) as f:
         json.dump( obj, f, ensure_ascii=False, indent=1 )

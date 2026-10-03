@@ -32,7 +32,11 @@ flowchart LR
 | `tools/saigon/art_manifest.py` | Works | Step 1 |
 | `tools/saigon/art_coverage.py` | Works; gives the current baseline | Step 5 |
 | `tools/saigon/art/render_sprites.py` | Written, **untested**: Blender is not installed | Step 3 |
-| `tools/saigon/art/build_sprites.py` + `pngio.py` | **Works**: 3 placeholder sprites packed and loaded by `--check-mods` | Step 4 |
+| `tools/saigon/art/build_sprites.py` + `pngio.py` | **Works**: packs hand-drawn and code-drawn sprites of every size (71 sprites as of G17) | Step 4 |
+| `tools/saigon/art/draw.py` + `draw_sprites.py` | **Works**: code-drawn sprites from `art/saigon/drawn/` | Step 3 (no Blender) |
+| `tools/saigon/art/derive_sprites.py` | **Works**: recolour and flatten recipes on original art | Step 3 (no Blender) |
+| `tools/saigon/art/validate_tileset.py` | **Works**: index, capacity, compatibility and declaring-sheet geometry checks | Step 5 |
+| `tools/saigon/art/render_scene.py` + `tests/saigon_scene_dump_test.cpp` | **Works**: renders a generated Saigon block with the engine's lookup rules | Step 5 |
 | `tools/saigon/art/build_mod_tileset.py` | Written, untested; only for a future full tileset (needs `pyvips`) | Full tileset |
 | Blender 4.x | Not installed (~300 MB download; needs approval) | Step 3 |
 | `pyvips` + libvips | Not needed for the mod tileset | Full tileset only |

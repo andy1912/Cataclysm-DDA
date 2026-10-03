@@ -8,4 +8,4 @@ Three ways to make a Saigon sprite. In priority order, the first one that exists
 
 Then run `python3 tools/saigon/art/build_sprites.py` to pack 1 and 2, and `python3 tools/saigon/art/validate_tileset.py` to check the result. `python3 tools/saigon/art/contact_sheet.py OUT.png <id> ...` shows the original next to the Saigon version.
 
-`../examples/` holds the first code-generated placeholders. See `doc/saigon/art/UPDATING_SPRITES.md` for the full workflow.
+`../examples/` holds the first code-generated placeholders. Licence: code-drawn and derived sprites are distributed under CC-BY-SA 3.0, like the UltimateCataclysm art they sit beside. Original art copied into a code-drawn sprite (the grass under trees and shrubs) is named in that program's docstring. See `doc/saigon/art/UPDATING_SPRITES.md` for the full workflow.
