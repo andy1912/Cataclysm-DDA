@@ -214,47 +214,61 @@
       "fg": 50
      },
      {
-      "id": "f_toilet",
+      "id": "f_sgn_xau_ho",
       "fg": 51
      },
      {
+      "id": "f_toilet",
+      "fg": 52
+     },
+     {
       "id": "t_sgn_shrub_hoa_giay",
-      "fg": 53,
-      "bg": 52
+      "fg": 54,
+      "bg": 53
+     },
+     {
+      "id": "t_sgn_shrub_khoai_mi",
+      "fg": 55,
+      "bg": 53
+     },
+     {
+      "id": "t_sgn_shrub_ngu_sac",
+      "fg": 56,
+      "bg": 53
      },
      {
       "id": "vp_sgn_ba_gac_bed",
-      "fg": 54,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_engine_110cc",
-      "fg": 55,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_longtail",
-      "fg": 56,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_oars",
       "fg": 57,
       "rotates": true
      },
      {
-      "id": "vp_sgn_pillion",
+      "id": "vp_sgn_engine_110cc",
       "fg": 58,
       "rotates": true
      },
      {
-      "id": "vp_sgn_tank_4l",
+      "id": "vp_sgn_longtail",
       "fg": 59,
       "rotates": true
      },
      {
-      "id": "vp_sgn_xich_lo_seat",
+      "id": "vp_sgn_oars",
       "fg": 60,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_pillion",
+      "fg": 61,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_tank_4l",
+      "fg": 62,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_xich_lo_seat",
+      "fg": 63,
       "rotates": true
      }
     ]

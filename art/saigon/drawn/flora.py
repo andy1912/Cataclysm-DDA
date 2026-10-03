@@ -299,3 +299,50 @@ def van_tho( c ):
 def dua_can( c ):
     # Madagascar periwinkle, the hardy pink-and-white flower of cracked pavements
     flowers( c, rgb( '#f07aa8' ), rgb( '#a81a4a' ) )
+
+
+# --- wild plants of vacant lots, canal banks and field edges (G19) ----------------------------
+
+@sprite( 't_sgn_shrub_ngu_sac', 32, 32, bg='@sgn__ground32' )
+def ngu_sac( c ):
+    # lantana: a rough green mound dotted with little flower domes, yellow to orange to pink
+    pts = canopy_points( c, 16, 18, 11, 8, 14 )
+    foliage( c, pts, rgb( '#2a4a1e' ), rgb( '#4a7a2e' ), rgb( '#7aa44a' ), radius=( 2.5, 3.5 ) )
+    for colour in ( rgb( '#f2c232' ), rgb( '#f08a2c' ), rgb( '#e8508e' ) ) * 4:
+        x, y = 16 + c.rand.uniform( -10, 10 ), 18 + c.rand.uniform( -7, 6 )
+        if c.opaque( int( x ), int( y ) ):
+            c.ellipse( x, y, 1.2, 1.0, colour )
+    finish( c, shadow=( 3, -1 ) )
+
+
+@sprite( 't_sgn_shrub_khoai_mi', 32, 32, bg='@sgn__ground32' )
+def khoai_mi( c ):
+    # cassava: knobbly red-brown stems topped with hand-shaped leaves
+    for x0, lean in ( ( 12, -2 ), ( 16, 0 ), ( 20, 3 ) ):
+        c.line( x0, 28, x0 + lean, 10, rgb( '#8a4a3a' ) )
+        for y in range( 14, 27, 4 ):
+            c.px( x0 + lean * ( 28 - y ) / 18, y, rgb( '#5a2a20' ) )   # leaf scars
+    for cx, cy in ( ( 10, 10 ), ( 16, 7 ), ( 23, 10 ), ( 13, 14 ), ( 20, 15 ) ):
+        for k in range( 5 ):                                          # palmate leaflets
+            a = -2.6 + k * 0.55
+            c.capsule( cx, cy, cx + 5 * math.cos( a ), cy + 4 * math.sin( a ), 0.9, rgb( '#3f7a2a' ), 0.4 )
+        c.px( cx, cy, rgb( '#a85a4a' ) )
+    finish( c, shadow=( 3, -1 ) )
+
+
+@sprite( 'f_sgn_xau_ho', 32, 32 )
+def xau_ho( c ):
+    # sensitive plant: a low creeper of feathery leaves with pink pompom flowers
+    for _ in range( 9 ):
+        x, y = 16 + c.rand.uniform( -10, 10 ), 19 + c.rand.uniform( -6, 6 )
+        a = c.rand.uniform( 0, math.pi )
+        dx, dy = 4 * math.cos( a ), 2 * math.sin( a )
+        c.line( x - dx, y - dy, x + dx, y + dy, rgb( '#3f6a2a' ) )
+        for t in ( -0.6, -0.2, 0.2, 0.6 ):                            # leaflet pairs
+            c.px( x + dx * t, y + dy * t - 1, rgb( '#6a9a3a' ) )
+            c.px( x + dx * t, y + dy * t + 1, rgb( '#6a9a3a' ) )
+    for _ in range( 4 ):
+        x, y = 16 + c.rand.uniform( -8, 8 ), 18 + c.rand.uniform( -5, 5 )
+        c.ellipse( x, y, 1.6, 1.6, rgb( '#f07ab8' ) )
+        c.px( x, y, rgb( '#ffb8d8' ) )
+    finish( c, shadow=( 2, -1 ) )

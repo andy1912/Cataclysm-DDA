@@ -88,24 +88,25 @@
   {
     "type": "terrain",
     "id": "t_sgn_tree_chuoi",
-    "copy-from": "t_tree_abstract",
-    "looks_like": "t_tree",
     "name": "banana plant",
     "description": "A clump of cây chuối, their huge paddle leaves split into ribbons by the wind.  A bunch of bananas and a purple flower bud hang from the tallest one.",
-    "color": [ "light_green", "light_green", "light_green", "light_green" ],
-    "transforms_into": "t_sgn_tree_chuoi_harvested",
-    "examine_action": "harvest_ter",
-    "harvest_by_season": [ { "seasons": [ "spring", "summer", "autumn", "winter" ], "id": "sgn_banana_harv" } ],
     "symbol": "1",
-    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "NOITEM", "TREE", "REDUCE_SCENT" ],
+    "color": [ "light_green", "light_green", "light_green", "light_green" ],
+    "looks_like": "t_tree_young",
+    "//": "Herbaceous: no TREE flag (it would chop into logs) and no treetop roof.",
+    "move_cost": 0,
     "coverage": 50,
+    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "NOITEM", "REDUCE_SCENT" ],
+    "examine_action": "harvest_ter",
+    "transforms_into": "t_sgn_tree_chuoi_harvested",
+    "harvest_by_season": [ { "seasons": [ "spring", "summer", "autumn", "winter" ], "id": "sgn_banana_harv" } ],
     "bash": {
       "str_min": 6,
       "str_max": 40,
       "sound": "crunch!",
       "sound_fail": "whack!",
       "ter_set": "t_dirt",
-      "items": [ { "item": "leaves", "count": [ 10, 30 ] }, { "item": "stick", "count": [ 0, 2 ] } ]
+      "items": [ { "item": "leaves", "count": [ 10, 30 ] }, { "item": "plant_fibre", "count": [ 2, 8 ] } ]
     }
   },
   {
@@ -122,24 +123,25 @@
   {
     "type": "terrain",
     "id": "t_sgn_tree_du_du",
-    "copy-from": "t_tree_abstract",
-    "looks_like": "t_tree",
     "name": "papaya tree",
     "description": "A slender cây đu đủ with an umbrella of deeply lobed leaves.  Papayas cluster around the trunk under the leaves.",
-    "color": [ "green", "yellow_green", "green", "green" ],
-    "transforms_into": "t_sgn_tree_du_du_harvested",
-    "examine_action": "harvest_ter",
-    "harvest_by_season": [ { "seasons": [ "spring", "summer", "autumn", "winter" ], "id": "sgn_papaya_harv" } ],
     "symbol": "1",
-    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "NOITEM", "TREE", "REDUCE_SCENT" ],
+    "color": [ "green", "yellow_green", "green", "green" ],
+    "looks_like": "t_tree_young",
+    "//": "Herbaceous: no TREE flag (it would chop into logs) and no treetop roof.",
+    "move_cost": 0,
     "coverage": 50,
+    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "NOITEM", "REDUCE_SCENT" ],
+    "examine_action": "harvest_ter",
+    "transforms_into": "t_sgn_tree_du_du_harvested",
+    "harvest_by_season": [ { "seasons": [ "spring", "summer", "autumn", "winter" ], "id": "sgn_papaya_harv" } ],
     "bash": {
       "str_min": 6,
       "str_max": 40,
       "sound": "crunch!",
       "sound_fail": "whack!",
       "ter_set": "t_dirt",
-      "items": [ { "item": "leaves", "count": [ 10, 30 ] }, { "item": "stick", "count": [ 0, 2 ] } ]
+      "items": [ { "item": "leaves", "count": [ 10, 30 ] }, { "item": "plant_fibre", "count": [ 2, 8 ] } ]
     }
   },
   {
@@ -179,6 +181,33 @@
     "looks_like": "f_lily",
     "name": "periwinkle",
     "description": "Dừa cạn: a hardy little flower with five pink petals and a dark eye, growing in cracked pavement and forgotten pots.",
+    "color": "pink"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_shrub_ngu_sac",
+    "copy-from": "t_shrub_abstract",
+    "looks_like": "t_shrub",
+    "name": "lantana bush",
+    "description": "Hoa ngũ sắc: a scrambling lantana bush with rough leaves and little domes of flowers that turn from yellow to orange to pink.  It grows wild on every vacant lot and canal bank, and its berries are poisonous.",
+    "color": "light_red_green"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_shrub_khoai_mi",
+    "copy-from": "t_shrub_abstract",
+    "looks_like": "t_shrub",
+    "name": "cassava plant",
+    "description": "Khoai mì: knobbly red-brown stems topped with hand-shaped leaves, planted along field edges and gone feral.  The roots are starchy but need peeling and long boiling before they are safe.",
+    "color": "green"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_xau_ho",
+    "copy-from": "f_lily",
+    "looks_like": "f_lily",
+    "name": "sensitive plant",
+    "description": "Cây xấu hổ: a low, prickly creeper whose feathery leaves fold shut when touched, dotted with fluffy pink pompom flowers.  Children poke it to watch it 'get shy'.",
     "color": "pink"
   },
   {
@@ -300,9 +329,88 @@
     "replace_with_furniture": [ [ "f_sgn_van_tho", 4 ], [ "f_sgn_dua_can", 4 ] ]
   },
   {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_shrub_forest_dense",
+    "ter_id": "t_region_shrub_forest_dense",
+    "replace_with_terrain": [
+      [ "t_underbrush", 450 ],
+      [ "t_shrub", 150 ],
+      [ "t_fern", 75 ],
+      [ "t_sgn_shrub_ngu_sac", 30 ],
+      [ "t_bamboo_long", 20 ],
+      [ "t_sgn_shrub_khoai_mi", 10 ]
+    ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_shrub_forest",
+    "ter_id": "t_region_shrub_forest",
+    "replace_with_terrain": [ [ "t_region_shrub_forest_dense", 350 ], [ "t_sgn_shrub_ngu_sac", 10 ], [ "t_sgn_shrub_hoa_giay", 5 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_shrub_plains",
+    "ter_id": "t_region_shrub_plains",
+    "replace_with_terrain": [ [ "t_shrub", 50 ], [ "t_sgn_shrub_ngu_sac", 6 ], [ "t_sgn_shrub_khoai_mi", 4 ], [ "t_bamboo_long", 2 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_shrub_swamp",
+    "ter_id": "t_region_shrub_swamp",
+    "replace_with_terrain": [ [ "t_fern", 4 ], [ "t_underbrush", 2 ], [ "t_sgn_shrub_ngu_sac", 1 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_shrub_fruit",
+    "ter_id": "t_region_shrub_fruit",
+    "replace_with_terrain": [ [ "t_shrub_peanut", 6 ], [ "t_sgn_shrub_khoai_mi", 3 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_f_region_flower",
+    "furn_id": "f_region_flower",
+    "replace_with_furniture": [ [ "f_sgn_dua_can", 100 ], [ "f_sgn_xau_ho", 100 ], [ "f_sgn_van_tho", 60 ], [ "f_dandelion", 50 ], [ "f_lily", 30 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_f_region_weed",
+    "furn_id": "f_region_weed",
+    "replace_with_furniture": [ [ "f_sgn_xau_ho", 400 ], [ "f_dandelion", 300 ], [ "f_sgn_dua_can", 200 ], [ "f_datura", 200 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_f_region_plain",
+    "furn_id": "f_region_plain",
+    "replace_with_furniture": [
+      [ "f_sgn_xau_ho", 500 ],
+      [ "f_dandelion", 300 ],
+      [ "f_datura", 200 ],
+      [ "f_sgn_dua_can", 200 ],
+      [ "f_sgn_van_tho", 50 ]
+    ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_f_region_forest",
+    "furn_id": "f_region_forest",
+    "replace_with_furniture": [ [ "f_sgn_xau_ho", 600 ], [ "f_datura", 200 ], [ "f_lily", 100 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_f_region_forest_dense",
+    "furn_id": "f_region_forest_dense",
+    "replace_with_furniture": [ [ "f_sgn_xau_ho", 300 ], [ "f_lily", 100 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_f_region_forest_water",
+    "furn_id": "f_region_forest_water",
+    "replace_with_furniture": [ [ "f_lily", 2 ], [ "f_sgn_xau_ho", 1 ] ]
+  },
+  {
     "type": "region_settings_terrain_furniture",
     "id": "sgn_terrain_furniture",
-    "//": "Saigon street and yard flora (G12): tropical almond, tamarind, sao, coconut, mango, banana, papaya, bougainvillea, marigold, periwinkle instead of New England species.",
+    "//": "Saigon street and yard flora (G12): tropical almond, tamarind, sao, coconut, mango, banana, papaya, bougainvillea, marigold, periwinkle instead of New England species; G19: forest edges, plains and swamps (lantana, cassava, sensitive plant, datura, bamboo).",
     "ter_furn": [
       "default_t_region_groundcover",
       "sgn_t_region_groundcover_urban",
@@ -311,11 +419,11 @@
       "default_t_region_groundcover_barren",
       "default_t_region_grass",
       "default_t_region_soil",
-      "default_t_region_shrub_forest_dense",
-      "default_t_region_shrub_forest",
-      "default_t_region_shrub_plains",
-      "default_t_region_shrub_swamp",
-      "default_t_region_shrub_fruit",
+      "sgn_t_region_shrub_forest_dense",
+      "sgn_t_region_shrub_forest",
+      "sgn_t_region_shrub_plains",
+      "sgn_t_region_shrub_swamp",
+      "sgn_t_region_shrub_fruit",
       "sgn_t_region_shrub_decorative",
       "default_t_region_shrub",
       "sgn_t_region_tree_forest_dense",
@@ -328,13 +436,13 @@
       "default_t_region_tree_dead",
       "default_t_region_tree_nut",
       "default_t_region_tree_evergreen",
-      "default_f_region_flower",
+      "sgn_f_region_flower",
       "sgn_f_region_flower_decorative",
-      "default_f_region_weed",
-      "default_f_region_plain",
-      "default_f_region_forest",
-      "default_f_region_forest_dense",
-      "default_f_region_forest_water",
+      "sgn_f_region_weed",
+      "sgn_f_region_plain",
+      "sgn_f_region_forest",
+      "sgn_f_region_forest_dense",
+      "sgn_f_region_forest_water",
       "default_f_region_water_plant",
       "default_f_region_lake_bed",
       "default_f_region_ocean_bed"
