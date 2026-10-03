@@ -34,22 +34,26 @@ The `overmap` set (`derive_sprites.py overmap`, recipes in `art/saigon/derive_ov
 **Text in graphics.** Names and descriptions are translated through gettext, not drawn into sprites, so localization of text is separate from art. The tiles UI font chain is Terminus → Unifont (`data/fontdata.json`). Unifont covers Vietnamese diacritics, but mixed glyph styles are possible; check this in the tiles build.
 
 ## 2. How to update a sprite (works today, no extra installs)
-1. **Pick what to draw.** Run `python3 tools/saigon/art_coverage.py --list T1` to list every on-screen id without Saigon art. Do T1 first: about 193 ids.
-2. **Draw a 32×32 PNG** following `STYLE_GUIDE.md`. Any pixel editor works, such as Aseprite, LibreSprite or Piskel. Use a transparent background and save non-interlaced.
-3. **Name it after the tile id** and put it anywhere under `art/saigon/tiles32/`:
-   - Saigon ids: `sgn_non_la.png`, `f_sgn_ban_tho.png`, …
-   - Restyled dda ids: `t_sidewalk.png`, `f_counter.png`, `mon_zombie.png`, …
-   - Vehicle parts: `vp_sgn_engine_110cc.png`, `vp_wheel_motorbike.png`, …
-   - Seasonal override: `t_region_tree_season_winter.png`.
-   - Worn on the character: `overlay_worn_sgn_non_la.png`.
-   - Overmap icons: 16×16 PNGs under `art/saigon/overmap16/`, named after the oter id (`sgn_cho_nw.png`, …).
-4. **Optional sidecar** `<same name>.json` holds extra tile keys copied into the tile entry, for example `{"rotates": true}`, `{"bg": "<id>"}`, or the multitile keys for connecting walls (see `doc/TILESET.md`).
-5. **Build:** `python3 tools/saigon/art/build_sprites.py` for hand-drawn art, and `python3 tools/saigon/art/derive_sprites.py` for derived art. Add a rule to `derive_recipes.json` to restyle an original sprite by recolouring it. It packs everything into `data/mods/saigon_2000s/gfx/` (sheets plus `mod_tileset.json`). There are no dependencies: it uses a pure-Python PNG reader and writer, `tools/saigon/art/pngio.py`.
-6. **Validate:** `tools/saigon/check_mod.sh` and `python3 tools/saigon/art_coverage.py`.
-7. **See it in game.** Use the SDL3 tiles build (`cataclysm-tiles`, unit S0.3c) with `CATA_DISABLE_SPRITE_SHADERS=1`. Choose tileset **UltimateCataclysm** and overmap tileset **Larwick Overmap** in Options → Graphics, then start the Saigon scenario.
-8. **Commit** the source PNGs and the generated sheet, with a provenance line per sprite (`STYLE_GUIDE.md` §7).
+1. **Pick what to draw.** [`SPRITE_REVISION_SUMMARY.md`](SPRITE_REVISION_SUMMARY.md) lists what still needs Saigon art and what deliberately keeps the original art. `python3 tools/saigon/art_coverage.py --list T1` lists on-screen ids without Saigon art.
+2. **Choose a route.** The first route that exists for an id wins:
+   - **Hand-drawn PNG** under `art/saigon/tiles/`, at the size of the original sprite: 20×20 items, 32×32 terrain and furniture, 32×64 tall furniture, 32×36 worn overlays, 32×48 monsters, 64×64 or 96×96 trees. Any pixel editor works, such as Aseprite, LibreSprite or Piskel. Use a transparent background and save non-interlaced.
+   - **Code-drawn:** a Python program in `art/saigon/drawn/` that uses `tools/saigon/art/draw.py` (shapes, soft outlines, foliage, shadows). `python3 tools/saigon/art/draw_sprites.py` writes the PNGs to `art/saigon/generated/`. Examples: `food.py` (phở, bánh mì…), `flora.py` (palms, bàng, bồ đề…), `home.py` (gas stove, squat toilet).
+   - **Derived:** a recipe in `art/saigon/derive_recipes.json` that recolours or flattens original art (stucco walls, drinks, the salon sofa…). Run `python3 tools/saigon/art/derive_sprites.py`.
+3. **Name it after the tile id**, for example `sgn_non_la.png`, `f_oven.png` or `t_sgn_tree_dua.png`:
+   - Vehicle parts use `vp_<part id>`.
+   - Seasonal art uses `<id>_season_winter`.
+   - Worn clothing uses `overlay_male_worn_<id>` and `overlay_female_worn_<id>`.
+   - Overmap icons are 16×16 PNGs under `art/saigon/overmap16/`, named after the oter id.
+4. **Optional sidecar** `<same name>.json` holds extra tile keys. In code-drawn programs, pass them as keywords to `@sprite(...)`. `"@name"` refers to another sprite in the same source root, and a file name containing `__` marks a helper sprite with no tile entry of its own. Examples:
+   - trees use `{"bg": "@sgn__ground96"}`;
+   - a rotating sprite uses `{"rotates": true, "fg": ["@f_x", "@f_x__e", "@f_x__s", "@f_x__w"]}`;
+   - connecting walls need the multitile keys from `doc/TILESET.md`.
+5. **Build:** `python3 tools/saigon/art/build_sprites.py` packs hand-drawn and code-drawn art into `data/mods/saigon_2000s/gfx/` (`saigon_<w>x<h>.png` + `mod_tileset.json`). The tool is pure Python, with no Pillow needed.
+6. **Review and validate:** `python3 tools/saigon/art/contact_sheet.py OUT.png <id> ...` shows the original next to the Saigon version, or use `--files a.png b.png`. Then run `python3 tools/saigon/art/validate_tileset.py` and `tools/saigon/check_mod.sh`.
+7. **See it in game:** run `./play_saigon.sh` and create a **new world**, because mod tilesets load with a world.
+8. **Commit** the program or PNG, the generated PNGs and the packed sheets. Original art copied into a sprite, such as the grass under trees, is named in the program's docstring (`STYLE_GUIDE.md` §7).
 
-**3D route.** When Blender is available, `tools/saigon/art/render_sprites.py` renders into the same `art/saigon/tiles32/` folders, and step 5 onward is unchanged. The isometric set (R3) will get its own `tiles_iso/` folder and a `Ultica_iso` compatibility entry.
+**3D route.** When Blender is available, `tools/saigon/art/render_sprites.py` renders into the same `art/saigon/tiles/` folder, and step 5 onward is unchanged. The isometric set (R3) will get its own `tiles_iso/` folder and a `Ultica_iso` compatibility entry.
 
 ## 3. What to restyle first: T1, in visual-impact order
 1. **Street and walls (terrain):** `t_sidewalk` (square tiles), `t_pavement`, `t_pavement_y`, `t_concrete`, `t_brick_wall` (pastel stucco), `t_rdoor_c` (rolling shutter), `t_window_bars`, `t_concrete_roof`, `t_railing`, `t_door_c`, `t_stairs_up/down`, `t_thconc_floor` (patterned tiles).
