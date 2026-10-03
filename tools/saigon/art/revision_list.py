@@ -102,7 +102,7 @@ def main():
             rows.append( [ row['tier'], row['category'], row['id'], row['source'], size, images, status,
                            row['fallback'] ] )
     with open( os.path.join( ART, 'sprite_revision_list.csv' ), 'w', newline='' ) as fh:
-        out = csv.writer( fh )
+        out = csv.writer( fh, lineterminator='\n' )
         out.writerow( [ 'tier', 'category', 'id', 'source', 'size', 'images', 'status', 'fallback' ] )
         out.writerows( rows )
     stats = collections.Counter( ( r[0], r[6] ) for r in rows )
