@@ -1,0 +1,101 @@
+[
+  {
+    "type": "ITEM",
+    "id": "sgn_ao_dai_trang",
+    "copy-from": "dress",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "white áo dài" },
+    "description": "The white silk áo dài of a high-school girl: a long fitted tunic split to the waist over loose white trousers.  Every morning the streets filled with them, flowing behind bicycles.",
+    "color": "white"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ao_dai_mau",
+    "copy-from": "dress",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "red áo dài" },
+    "description": "A festive red silk áo dài embroidered with gold phoenixes, worn for Tết and weddings over white trousers.",
+    "color": "red"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ao_thun",
+    "copy-from": "tshirt",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "cotton t-shirt" },
+    "description": "A thin, faded cotton t-shirt from a market stall, printed with a cartoon and a slogan in broken English.",
+    "color": "yellow"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_quan_tay",
+    "copy-from": "pants",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str_sp": "slacks" },
+    "description": "Dark polyester office slacks with a sharp crease, worn by clerks, teachers and every man going somewhere respectable.",
+    "color": "dark_gray"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ao_khoac_chong_nang",
+    "copy-from": "jacket_windbreaker",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "sun jacket" },
+    "description": "Áo khoác chống nắng: a thin, hooded pastel jacket with long sleeves and thumb loops, worn by women on motorbikes to keep their skin pale.  It covers everything except the eyes.",
+    "color": "pink"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_non_ket",
+    "copy-from": "hat_ball",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "cap" },
+    "description": "Nón kết: a cheap baseball cap with a crooked peak and a fake brand logo stitched on the front.",
+    "color": "red"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_dep_lao",
+    "copy-from": "flip_flops",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str_sp": "dép lào" },
+    "description": "Dép lào: thick rubber sandals with a strap over the toes and another around the heel, nearly indestructible.  Soldiers, farmers and xe ôm drivers have walked a long way in them.",
+    "color": "brown"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ao_cong_an",
+    "copy-from": "dress_shirt",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "công an uniform shirt" },
+    "description": "The khaki-yellow shirt of a ward police officer, with red collar tabs and shoulder boards.  The badge has been torn off.",
+    "color": "yellow"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_quan_cong_an",
+    "copy-from": "pants_army",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str_sp": "olive uniform trousers" },
+    "description": "Olive-green uniform trousers from a ward police or militia uniform.",
+    "color": "green"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ao_trang_hoc_sinh",
+    "copy-from": "dress_shirt",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "white school shirt" },
+    "description": "A short-sleeved white school shirt with the school's name embroidered in blue over the pocket.",
+    "color": "white"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_khan_quang_do",
+    "copy-from": "scarf",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "red scarf" },
+    "description": "Khăn quàng đỏ: the red triangular neckerchief of the Young Pioneers, knotted at the throat of every primary-school child.",
+    "color": "red"
+  }
+]

@@ -63,7 +63,12 @@
       { "item": "mask_dust", "prob": 30, "damage": [ 1, 4 ] },
       { "item": "sgn_ong_tay_chong_nang", "prob": 12, "damage": [ 1, 4 ] },
       { "item": "sgn_ao_mua_canh_doi", "prob": 8, "damage": [ 1, 4 ] },
-      { "item": "ring_wedding", "prob": 25, "damage": [ 1, 4 ] }
+      { "item": "ring_wedding", "prob": 25, "damage": [ 1, 4 ] },
+      { "item": "sgn_ao_thun", "prob": 30 },
+      { "item": "sgn_quan_tay", "prob": 20 },
+      { "item": "sgn_ao_khoac_chong_nang", "prob": 10 },
+      { "item": "sgn_dep_lao", "prob": 15 },
+      { "item": "sgn_non_ket", "prob": 8 }
     ]
   },
   {
@@ -135,7 +140,16 @@
       { "item": "sgn_dau_gio", "prob": 20 },
       { "item": "sgn_ve_so", "prob": 15, "count": [ 1, 4 ] },
       { "item": "sgn_thuoc_la", "prob": 20, "count": [ 1, 10 ] },
-      { "item": "sgn_vang_luong", "prob": 2 }
+      { "item": "sgn_vang_luong", "prob": 2 },
+      { "item": "sgn_ao_dai_trang", "prob": 8 },
+      { "item": "sgn_ao_dai_mau", "prob": 5 },
+      { "item": "sgn_ao_thun", "prob": 25 },
+      { "item": "sgn_quan_tay", "prob": 15 },
+      { "item": "sgn_ao_khoac_chong_nang", "prob": 15 },
+      { "item": "sgn_non_ket", "prob": 12 },
+      { "item": "sgn_dep_lao", "prob": 12 },
+      { "item": "sgn_ao_trang_hoc_sinh", "prob": 8 },
+      { "item": "sgn_khan_quang_do", "prob": 6 }
     ],
     "//": "Living room, altar and bedrooms of a nhà ống home."
   },

@@ -918,5 +918,479 @@
       }
     ],
     "//": "Cloth face mask: pink flowery cotton."
+  },
+  {
+    "target": "overlay_male_worn_sgn_ao_dai_trang",
+    "source": "overlay_male_worn_dress",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 45,
+        "sat_set": 0.05,
+        "val_mul": 1.2,
+        "val_add": 0.35
+      }
+    ],
+    "//": "G26 worn sgn_ao_dai_trang from the dda dress"
+  },
+  {
+    "target": "overlay_female_worn_sgn_ao_dai_trang",
+    "source": "overlay_female_worn_dress",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 45,
+        "sat_set": 0.05,
+        "val_mul": 1.2,
+        "val_add": 0.35
+      }
+    ],
+    "//": "G26 worn sgn_ao_dai_trang from the dda dress"
+  },
+  {
+    "target": "overlay_male_worn_sgn_ao_dai_mau",
+    "source": "overlay_male_worn_dress",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 355,
+        "sat_set": 0.8,
+        "val_mul": 1.05
+      }
+    ],
+    "//": "G26 worn sgn_ao_dai_mau from the dda dress"
+  },
+  {
+    "target": "overlay_female_worn_sgn_ao_dai_mau",
+    "source": "overlay_female_worn_dress",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 355,
+        "sat_set": 0.8,
+        "val_mul": 1.05
+      }
+    ],
+    "//": "G26 worn sgn_ao_dai_mau from the dda dress"
+  },
+  {
+    "target": "overlay_male_worn_sgn_ao_thun",
+    "source": "overlay_male_worn_tshirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.6,
+        "val_mul": 1.1
+      }
+    ],
+    "//": "G26 worn sgn_ao_thun from the dda tshirt"
+  },
+  {
+    "target": "overlay_female_worn_sgn_ao_thun",
+    "source": "overlay_female_worn_tshirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.6,
+        "val_mul": 1.1
+      }
+    ],
+    "//": "G26 worn sgn_ao_thun from the dda tshirt"
+  },
+  {
+    "target": "overlay_male_worn_sgn_quan_tay",
+    "source": "overlay_male_worn_pants",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 220,
+        "sat_set": 0.12,
+        "val_mul": 0.6
+      }
+    ],
+    "//": "G26 worn sgn_quan_tay from the dda pants"
+  },
+  {
+    "target": "overlay_female_worn_sgn_quan_tay",
+    "source": "overlay_female_worn_pants",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 220,
+        "sat_set": 0.12,
+        "val_mul": 0.6
+      }
+    ],
+    "//": "G26 worn sgn_quan_tay from the dda pants"
+  },
+  {
+    "target": "overlay_male_worn_sgn_ao_khoac_chong_nang",
+    "source": "overlay_male_worn_jacket_windbreaker",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 335,
+        "sat_set": 0.32,
+        "val_mul": 1.25,
+        "val_add": 0.1
+      }
+    ],
+    "//": "G26 worn sgn_ao_khoac_chong_nang from the dda jacket_windbreaker"
+  },
+  {
+    "target": "overlay_female_worn_sgn_ao_khoac_chong_nang",
+    "source": "overlay_female_worn_jacket_windbreaker",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 335,
+        "sat_set": 0.32,
+        "val_mul": 1.25,
+        "val_add": 0.1
+      }
+    ],
+    "//": "G26 worn sgn_ao_khoac_chong_nang from the dda jacket_windbreaker"
+  },
+  {
+    "target": "overlay_male_worn_sgn_non_ket",
+    "source": "overlay_male_worn_hat_ball",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 2,
+        "sat_set": 0.75,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 worn sgn_non_ket from the dda hat_ball"
+  },
+  {
+    "target": "overlay_female_worn_sgn_non_ket",
+    "source": "overlay_female_worn_hat_ball",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 2,
+        "sat_set": 0.75,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 worn sgn_non_ket from the dda hat_ball"
+  },
+  {
+    "target": "overlay_male_worn_sgn_dep_lao",
+    "source": "overlay_male_worn_flip_flops",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 28,
+        "sat_set": 0.45,
+        "val_mul": 0.75
+      }
+    ],
+    "//": "G26 worn sgn_dep_lao from the dda flip_flops"
+  },
+  {
+    "target": "overlay_female_worn_sgn_dep_lao",
+    "source": "overlay_female_worn_flip_flops",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 28,
+        "sat_set": 0.45,
+        "val_mul": 0.75
+      }
+    ],
+    "//": "G26 worn sgn_dep_lao from the dda flip_flops"
+  },
+  {
+    "target": "overlay_male_worn_sgn_ao_cong_an",
+    "source": "overlay_male_worn_dress_shirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.55,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 worn sgn_ao_cong_an from the dda dress_shirt"
+  },
+  {
+    "target": "overlay_female_worn_sgn_ao_cong_an",
+    "source": "overlay_female_worn_dress_shirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.55,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 worn sgn_ao_cong_an from the dda dress_shirt"
+  },
+  {
+    "target": "overlay_male_worn_sgn_quan_cong_an",
+    "source": "overlay_male_worn_pants_army",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 90,
+        "sat_set": 0.4,
+        "val_mul": 0.75
+      }
+    ],
+    "//": "G26 worn sgn_quan_cong_an from the dda pants_army"
+  },
+  {
+    "target": "overlay_female_worn_sgn_quan_cong_an",
+    "source": "overlay_female_worn_pants_army",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 90,
+        "sat_set": 0.4,
+        "val_mul": 0.75
+      }
+    ],
+    "//": "G26 worn sgn_quan_cong_an from the dda pants_army"
+  },
+  {
+    "target": "overlay_male_worn_sgn_ao_trang_hoc_sinh",
+    "source": "overlay_male_worn_dress_shirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 210,
+        "sat_set": 0.03,
+        "val_mul": 1.2,
+        "val_add": 0.3
+      }
+    ],
+    "//": "G26 worn sgn_ao_trang_hoc_sinh from the dda dress_shirt"
+  },
+  {
+    "target": "overlay_female_worn_sgn_ao_trang_hoc_sinh",
+    "source": "overlay_female_worn_dress_shirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 210,
+        "sat_set": 0.03,
+        "val_mul": 1.2,
+        "val_add": 0.3
+      }
+    ],
+    "//": "G26 worn sgn_ao_trang_hoc_sinh from the dda dress_shirt"
+  },
+  {
+    "target": "overlay_male_worn_sgn_khan_quang_do",
+    "source": "overlay_male_worn_scarf",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 358,
+        "sat_set": 0.85,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 worn sgn_khan_quang_do from the dda scarf"
+  },
+  {
+    "target": "overlay_female_worn_sgn_khan_quang_do",
+    "source": "overlay_female_worn_scarf",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 358,
+        "sat_set": 0.85,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 worn sgn_khan_quang_do from the dda scarf"
+  },
+  {
+    "target": "sgn_ao_thun",
+    "source": "tshirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.6,
+        "val_mul": 1.1
+      }
+    ],
+    "//": "G26 icon recoloured from the dda tshirt"
+  },
+  {
+    "target": "sgn_quan_tay",
+    "source": "pants",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 220,
+        "sat_set": 0.12,
+        "val_mul": 0.6
+      }
+    ],
+    "//": "G26 icon recoloured from the dda pants"
+  },
+  {
+    "target": "sgn_non_ket",
+    "source": "hat_ball",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 2,
+        "sat_set": 0.75,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 icon recoloured from the dda hat_ball"
+  },
+  {
+    "target": "sgn_khan_quang_do",
+    "source": "scarf",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 358,
+        "sat_set": 0.85,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 icon recoloured from the dda scarf"
   }
 ]
