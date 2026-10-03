@@ -846,5 +846,23 @@
       }
     ],
     "//": "Lime-washed cream concrete (chung cư blocks, ward offices) instead of bare grey."
+  },
+  {
+    "target": "hot_sauce",
+    "source": "soup_meat",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 2,
+        "sat_set": 0.85,
+        "val_mul": 1.55
+      }
+    ],
+    "//": "Hot sauce has no UltimateCataclysm sprite (review R8): a red liquid puddle like tương ớt."
   }
 ]

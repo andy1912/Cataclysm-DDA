@@ -245,3 +245,26 @@ def dry_rice( c ):
     c.ellipse( 10, 6.5, 6, 2, rgb( '#f8f6ee' ) )                    # open top: rice
     c.noise( 5, 5, 15, 8, [ rgb( '#e4e0d0' ), rgb( '#ffffff' ) ], 0.4 )
     finish( c )
+
+
+# --- dda items the Saigon content uses that UltimateCataclysm has no sprite for (review R8) ---
+
+@sprite( 'noodles_fast', 20, 20 )
+def noodles_fast( c ):
+    # a dry brick of instant noodles, wavy strands on top
+    c.rect( 4, 8, 15, 15, rgb( '#e8b85a' ) )
+    c.rect( 4, 8, 15, 9, rgb( '#f4d48a' ) )
+    for y in range( 10, 15, 2 ):
+        for x in range( 4, 16, 3 ):
+            c.line( x, y, x + 1, y + 1, rgb( '#c8903a' ) )
+    finish( c )
+
+
+@sprite( 'pickle', 20, 20 )
+def pickle( c ):
+    # a small pickled gherkin, bumpy skin
+    c.capsule( 5, 13, 14, 8, 2.6, rgb( '#6a8a2a' ) )
+    c.capsule( 5, 12, 13, 8, 1.2, rgb( '#9ab84a' ) )
+    for x, y in ( ( 7, 13 ), ( 10, 11 ), ( 12, 10 ), ( 8, 10 ) ):
+        c.px( x, y, rgb( '#4a6a1a' ) )
+    finish( c )

@@ -1463,7 +1463,7 @@ T3,item,hose_garden,dda,32x32,1,keep original,hose
 T3,item,hot_pants,dda,20x20,1,keep original,shorts
 T3,item,hot_pants_fur,dda,32x32,1,keep original,boxer_shorts
 T3,item,hot_pants_leather,dda,32x32,1,keep original,boxer_briefs
-T3,item,hot_sauce,dda,20x20,1,base tileset gap,
+T3,item,hot_sauce,dda,32x32,1,Saigon art (derived),
 T3,item,hotdogs_cooked,dda,20x20,1,keep original,
 T3,item,hotdogs_frozen,dda,20x20,1,keep original,
 T3,item,hotdogs_newyork,dda,20x20,1,keep original,hotdogs_cooked
@@ -1772,7 +1772,7 @@ T3,item,nic_gum,dda,20x20,1,keep original,
 T3,item,nic_pouch,dda,20x20,1,base tileset gap,
 T3,item,nic_pouch_can,dda,20x20,1,keep original,box_small
 T3,item,nicotine_liquid,dda,32x32,1,keep original,
-T3,item,noodles_fast,dda,20x20,1,base tileset gap,
+T3,item,noodles_fast,dda,20x20,1,Saigon art (drawn),
 T3,item,novel_coa,dda,20x20,1,keep original,
 T3,item,novel_coa2,dda,20x20,1,keep original,radio_book
 T3,item,novel_crime_midnight,dda,20x20,1,keep original,radio_book
@@ -1936,7 +1936,7 @@ T3,item,permanent_marker,dda,20x20,1,keep original,
 T3,item,petpack,dda,32x32,1,keep original,ragpouch
 T3,item,petrified_eye,dda,20x20,1,keep original,
 T3,item,pickaxe,dda,32x32,1,keep original,
-T3,item,pickle,dda,20x20,1,base tileset gap,gherkin
+T3,item,pickle,dda,20x20,1,Saigon art (drawn),gherkin
 T3,item,pictionary,dda,32x32,1,keep original,
 T3,item,pie,dda,20x20,1,keep original,
 T3,item,pie_maple,dda,20x20,1,keep original,
@@ -2100,7 +2100,7 @@ T3,item,rifle_scope,dda,20x20,1,base tileset gap,
 T3,item,ring_engagement,dda,20x20,1,keep original,
 T3,item,ring_purity,dda,20x20,1,base tileset gap,
 T3,item,ring_signet,dda,20x20,1,base tileset gap,
-T3,item,ring_wedding,dda,20x20,1,base tileset gap,
+T3,item,ring_wedding,dda,20x20,1,Saigon art (drawn),
 T3,item,rio_bravo,dda,20x20,1,keep original,gun_base_rifle_semi
 T3,item,roadmap,dda,20x20,1,keep original,abstractmap
 T3,item,robe_wizard,dda,20x20,1,keep original,coat_winter

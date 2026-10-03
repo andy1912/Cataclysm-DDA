@@ -35,10 +35,10 @@ def non_la( c ):
     finish( c )
 
 
-@sprite( 'sgn_dep_to_ong', 20, 20 )
+@sprite( 'sgn_dep_to_ong', 20, 20, fit=( 15, 12 ) )
 def dep_to_ong( c ):
     # a pair of foam honeycomb sandals, seen from above: one blue, one white
-    for ox, oy, sole in ( ( 3, 4, rgb( '#5a8ed8' ) ), ( 10, 6, rgb( '#eef2f6' ) ) ):
+    for ox, oy, sole in ( ( 2, 4, rgb( '#5a8ed8' ) ), ( 12, 6, rgb( '#eef2f6' ) ) ):
         c.ellipse( ox + 3, oy + 3, 3, 3.2, sole )          # toe end
         c.ellipse( ox + 3, oy + 8, 2.6, 3.6, sole )        # heel end
         c.rect( ox + 1, oy + 3, ox + 5, oy + 8, sole )
@@ -179,4 +179,14 @@ def tape_measure( c ):
     for x in range( 14, 19, 2 ):
         c.px( x, 14, rgb( '#3a3a3a' ) )
     c.rect( 18, 13, 18, 15, rgb( '#6e767e' ) )                                     # hook
+    finish( c )
+
+
+@sprite( 'ring_wedding', 20, 20 )
+def ring_wedding( c ):
+    # gold band seen at an angle, a small diamond on top
+    c.ring( 10, 12, 4.5, 3, rgb( '#e8b830' ), 1.6 )
+    c.ring( 10, 12, 4.5, 3, rgb( '#fbe27a' ), 0.6 )
+    c.polygon( [ ( 8.5, 9 ), ( 11.5, 9 ), ( 10, 6.5 ) ], rgb( '#e8f4fa' ) )
+    c.px( 9, 8, rgb( '#ffffff' ) )
     finish( c )

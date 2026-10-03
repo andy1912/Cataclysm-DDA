@@ -143,7 +143,7 @@ Triage from contact sheets (`tools/saigon/art/contact_sheet.py`): most "to revis
 ### Sprite plan (doc/saigon/art/SPRITE_PLAN.md, 2026-10-03): about 100 new ids, about 260 sprites
 | ID | Status | Commit | Notes |
 |---|---|---|---|
-| G18 icon rescale to UltimateCataclysm budget + 4 gap items + size gate + validator in check_mod.sh | todo | - | review R5, R8, R12 |
+| G18 icon rescale to UltimateCataclysm budget + 4 gap items + size gate + validator in check_mod.sh | done | (this) | Canvas transform + auto-fit (draw_sprites FIT_BOX 13x11): icon median 17x16/200 px → 12x11/103 px; noodles_fast, pickle, ring_wedding drawn, hot_sauce derived; validator warns over 150 px; check_mod.sh runs it (G17b). New tools/saigon/qa_game_load.sh: real cataclysm-tiles load OK |
 | G19 flora content fixes + forest-edge species | todo | - | review R6, R7 |
 | G20 street kit (cột điện, bàn inox + ghế, xe bánh mì, dù, bảng hiệu, loa phường, máy lạnh) | todo | - | |
 | G21 shophouse interior (gạch bông, gạch men, Thần Tài, lu nước, võng, CRT TV, chậu kiểng) | todo | - | |

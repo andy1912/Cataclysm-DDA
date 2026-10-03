@@ -14,6 +14,8 @@ launch cannot test them.  This mirrors src/tileset_loader.cpp instead:
   - a tile is drawn with the sprite size and offset of the sheet it is declared under
     (parse_atlases), so every sprite it uses must come from a sheet of that same
     geometry, or it lands misplaced
+Also warns (without failing) when a 20x20 item icon covers more than ICON_MAX_PX opaque
+pixels: UltimateCataclysm's median icon covers about 60 (review R5).
 Exit 1 on any problem.  Run from the repo root:
   python3 tools/saigon/art/validate_tileset.py
 """
@@ -25,6 +27,9 @@ import sys
 ROOT = os.path.join( os.path.dirname( __file__ ), '..', '..', '..' )
 MOD = os.path.join( ROOT, 'data', 'mods', 'saigon_2000s' )
 GFX = os.path.join( MOD, 'gfx' )
+
+
+ICON_MAX_PX = 150
 
 
 def png_dims( path ):
@@ -112,6 +117,20 @@ def main():
                                     problems.append( '%s: %s declared under a %dx%d%+d%+d sheet but sprite %d '
                                                      'is %dx%d%+d%+d: drawn misplaced' %
                                                      ( ( where, tid ) + declared + ( idx, ) + geometry ) )
+    warnings = []
+    for path in sorted( glob.glob( os.path.join( GFX, '*20x20.png' ) ) ):
+        sys.path.insert( 0, os.path.dirname( __file__ ) )
+        import pngio
+        sheet = pngio.read( path )
+        for row in range( sheet.height // 20 ):
+            for col in range( sheet.width // 20 ):
+                n = sum( 1 for y in range( row * 20, row * 20 + 20 ) for x in range( col * 20, col * 20 + 20 )
+                         if sheet.get( x, y )[3] > 0 )
+                if n > ICON_MAX_PX:
+                    warnings.append( '%s sprite %d covers %d px (> %d): oversized next to dda icons' %
+                                     ( os.path.basename( path ), row * ( sheet.width // 20 ) + col, n, ICON_MAX_PX ) )
+    for w in warnings[:20]:
+        print( 'WARN', w )
     for p in problems[:40]:
         print( 'FAIL', p )
     print( 'checked %d tile entries in %s: %d problems' % ( checked_tiles, GFX, len( problems ) ) )
