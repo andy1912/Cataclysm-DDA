@@ -22,12 +22,12 @@
      },
      {
       "id": "f_cattails_season_autumn",
-      "fg": 896,
+      "fg": 912,
       "rotates": false
      },
      {
       "id": "f_cattails_season_winter",
-      "fg": 896,
+      "fg": 912,
       "rotates": false
      },
      {
@@ -58,41 +58,41 @@
      },
      {
       "id": "f_sunflower_season_autumn",
-      "fg": 897
+      "fg": 913
      },
      {
       "id": "f_sunflower_season_winter",
-      "fg": 897
+      "fg": 913
      },
      {
       "id": "t_apiary_empty_season_autumn",
-      "fg": 976,
-      "bg": 977
+      "fg": 992,
+      "bg": 993
      },
      {
       "id": "t_apiary_empty_season_winter",
-      "fg": 976,
-      "bg": 977
+      "fg": 992,
+      "bg": 993
      },
      {
       "id": "t_apiary_season_autumn",
-      "fg": 978,
-      "bg": 977
+      "fg": 994,
+      "bg": 993
      },
      {
       "id": "t_apiary_season_winter",
-      "fg": 978,
-      "bg": 977
+      "fg": 994,
+      "bg": 993
      },
      {
       "id": "t_bamboo_dead_season_autumn",
-      "fg": 898,
-      "bg": 899
+      "fg": 914,
+      "bg": 915
      },
      {
       "id": "t_bamboo_dead_season_winter",
-      "fg": 898,
-      "bg": 899
+      "fg": 914,
+      "bg": 915
      },
      {
       "id": "t_bamboo_long_season_autumn",
@@ -116,13 +116,13 @@
      },
      {
       "id": "t_bamboo_tall_season_autumn",
-      "fg": 900,
-      "bg": 899
+      "fg": 916,
+      "bg": 915
      },
      {
       "id": "t_bamboo_tall_season_winter",
-      "fg": 900,
-      "bg": 899
+      "fg": 916,
+      "bg": 915
      },
      {
       "id": "t_chainfence_posts_season_winter",
@@ -518,13 +518,13 @@
      },
      {
       "id": "t_crossbuck_metal_season_winter",
-      "fg": 901,
-      "bg": 902
+      "fg": 917,
+      "bg": 918
      },
      {
       "id": "t_crossbuck_wood_season_winter",
-      "fg": 903,
-      "bg": 902
+      "fg": 919,
+      "bg": 918
      },
      {
       "id": "t_deck_coating_no_roof_r_season_winter",
@@ -2739,13 +2739,13 @@
      },
      {
       "id": "t_grass_alien_season_autumn",
-      "fg": 904,
-      "bg": 899
+      "fg": 920,
+      "bg": 915
      },
      {
       "id": "t_grass_alien_season_winter",
-      "fg": 904,
-      "bg": 899
+      "fg": 920,
+      "bg": 915
      },
      {
       "id": "t_grass_dead_season_autumn",
@@ -2870,76 +2870,20 @@
      {
       "id": "t_grass_long_season_autumn",
       "multitile": true,
-      "fg": 905,
-      "bg": 899,
+      "fg": 921,
+      "bg": 915,
       "additional_tiles": [
        {
         "id": "center",
-        "bg": 899,
+        "bg": 915,
         "fg": [
          {
           "weight": 100,
-          "sprite": 906
+          "sprite": 922
          },
          {
           "weight": 100,
-          "sprite": 907
-         },
-         {
-          "weight": 100,
-          "sprite": 908
-         },
-         {
-          "weight": 100,
-          "sprite": 909
-         }
-        ]
-       },
-       {
-        "id": "corner",
-        "bg": 899,
-        "fg": [
-         910,
-         911,
-         912,
-         913
-        ]
-       },
-       {
-        "id": "t_connection",
-        "bg": 899,
-        "fg": [
-         914,
-         915,
-         916,
-         917
-        ]
-       },
-       {
-        "id": "edge",
-        "bg": 899,
-        "fg": [
-         918,
-         919
-        ]
-       },
-       {
-        "id": "end_piece",
-        "bg": 899,
-        "fg": [
-         920,
-         921,
-         922,
-         923
-        ]
-       },
-       {
-        "id": "unconnected",
-        "bg": 899,
-        "fg": [
-         {
-          "weight": 100,
-          "sprite": 905
+          "sprite": 923
          },
          {
           "weight": 100,
@@ -2948,10 +2892,66 @@
          {
           "weight": 100,
           "sprite": 925
+         }
+        ]
+       },
+       {
+        "id": "corner",
+        "bg": 915,
+        "fg": [
+         926,
+         927,
+         928,
+         929
+        ]
+       },
+       {
+        "id": "t_connection",
+        "bg": 915,
+        "fg": [
+         930,
+         931,
+         932,
+         933
+        ]
+       },
+       {
+        "id": "edge",
+        "bg": 915,
+        "fg": [
+         934,
+         935
+        ]
+       },
+       {
+        "id": "end_piece",
+        "bg": 915,
+        "fg": [
+         936,
+         937,
+         938,
+         939
+        ]
+       },
+       {
+        "id": "unconnected",
+        "bg": 915,
+        "fg": [
+         {
+          "weight": 100,
+          "sprite": 921
          },
          {
           "weight": 100,
-          "sprite": 926
+          "sprite": 940
+         },
+         {
+          "weight": 100,
+          "sprite": 941
+         },
+         {
+          "weight": 100,
+          "sprite": 942
          }
         ]
        }
@@ -2960,76 +2960,20 @@
      {
       "id": "t_grass_long_season_winter",
       "multitile": true,
-      "fg": 905,
-      "bg": 899,
+      "fg": 921,
+      "bg": 915,
       "additional_tiles": [
        {
         "id": "center",
-        "bg": 899,
+        "bg": 915,
         "fg": [
          {
           "weight": 100,
-          "sprite": 906
+          "sprite": 922
          },
          {
           "weight": 100,
-          "sprite": 907
-         },
-         {
-          "weight": 100,
-          "sprite": 908
-         },
-         {
-          "weight": 100,
-          "sprite": 909
-         }
-        ]
-       },
-       {
-        "id": "corner",
-        "bg": 899,
-        "fg": [
-         910,
-         911,
-         912,
-         913
-        ]
-       },
-       {
-        "id": "t_connection",
-        "bg": 899,
-        "fg": [
-         914,
-         915,
-         916,
-         917
-        ]
-       },
-       {
-        "id": "edge",
-        "bg": 899,
-        "fg": [
-         918,
-         919
-        ]
-       },
-       {
-        "id": "end_piece",
-        "bg": 899,
-        "fg": [
-         920,
-         921,
-         922,
-         923
-        ]
-       },
-       {
-        "id": "unconnected",
-        "bg": 899,
-        "fg": [
-         {
-          "weight": 100,
-          "sprite": 905
+          "sprite": 923
          },
          {
           "weight": 100,
@@ -3038,10 +2982,66 @@
          {
           "weight": 100,
           "sprite": 925
+         }
+        ]
+       },
+       {
+        "id": "corner",
+        "bg": 915,
+        "fg": [
+         926,
+         927,
+         928,
+         929
+        ]
+       },
+       {
+        "id": "t_connection",
+        "bg": 915,
+        "fg": [
+         930,
+         931,
+         932,
+         933
+        ]
+       },
+       {
+        "id": "edge",
+        "bg": 915,
+        "fg": [
+         934,
+         935
+        ]
+       },
+       {
+        "id": "end_piece",
+        "bg": 915,
+        "fg": [
+         936,
+         937,
+         938,
+         939
+        ]
+       },
+       {
+        "id": "unconnected",
+        "bg": 915,
+        "fg": [
+         {
+          "weight": 100,
+          "sprite": 921
          },
          {
           "weight": 100,
-          "sprite": 926
+          "sprite": 940
+         },
+         {
+          "weight": 100,
+          "sprite": 941
+         },
+         {
+          "weight": 100,
+          "sprite": 942
          }
         ]
        }
@@ -3092,76 +3092,20 @@
      {
       "id": "t_grass_tall_season_autumn",
       "multitile": true,
-      "fg": 927,
-      "bg": 899,
+      "fg": 943,
+      "bg": 915,
       "additional_tiles": [
        {
         "id": "center",
-        "bg": 899,
+        "bg": 915,
         "fg": [
          {
           "weight": 100,
-          "sprite": 928
+          "sprite": 944
          },
          {
           "weight": 100,
-          "sprite": 929
-         },
-         {
-          "weight": 100,
-          "sprite": 930
-         },
-         {
-          "weight": 100,
-          "sprite": 931
-         }
-        ]
-       },
-       {
-        "id": "corner",
-        "bg": 899,
-        "fg": [
-         932,
-         933,
-         934,
-         935
-        ]
-       },
-       {
-        "id": "t_connection",
-        "bg": 899,
-        "fg": [
-         936,
-         937,
-         938,
-         939
-        ]
-       },
-       {
-        "id": "edge",
-        "bg": 899,
-        "fg": [
-         940,
-         941
-        ]
-       },
-       {
-        "id": "end_piece",
-        "bg": 899,
-        "fg": [
-         942,
-         943,
-         944,
-         945
-        ]
-       },
-       {
-        "id": "unconnected",
-        "bg": 899,
-        "fg": [
-         {
-          "weight": 100,
-          "sprite": 927
+          "sprite": 945
          },
          {
           "weight": 100,
@@ -3170,10 +3114,66 @@
          {
           "weight": 100,
           "sprite": 947
+         }
+        ]
+       },
+       {
+        "id": "corner",
+        "bg": 915,
+        "fg": [
+         948,
+         949,
+         950,
+         951
+        ]
+       },
+       {
+        "id": "t_connection",
+        "bg": 915,
+        "fg": [
+         952,
+         953,
+         954,
+         955
+        ]
+       },
+       {
+        "id": "edge",
+        "bg": 915,
+        "fg": [
+         956,
+         957
+        ]
+       },
+       {
+        "id": "end_piece",
+        "bg": 915,
+        "fg": [
+         958,
+         959,
+         960,
+         961
+        ]
+       },
+       {
+        "id": "unconnected",
+        "bg": 915,
+        "fg": [
+         {
+          "weight": 100,
+          "sprite": 943
          },
          {
           "weight": 100,
-          "sprite": 948
+          "sprite": 962
+         },
+         {
+          "weight": 100,
+          "sprite": 963
+         },
+         {
+          "weight": 100,
+          "sprite": 964
          }
         ]
        }
@@ -3182,76 +3182,20 @@
      {
       "id": "t_grass_tall_season_winter",
       "multitile": true,
-      "fg": 927,
-      "bg": 899,
+      "fg": 943,
+      "bg": 915,
       "additional_tiles": [
        {
         "id": "center",
-        "bg": 899,
+        "bg": 915,
         "fg": [
          {
           "weight": 100,
-          "sprite": 928
+          "sprite": 944
          },
          {
           "weight": 100,
-          "sprite": 929
-         },
-         {
-          "weight": 100,
-          "sprite": 930
-         },
-         {
-          "weight": 100,
-          "sprite": 931
-         }
-        ]
-       },
-       {
-        "id": "corner",
-        "bg": 899,
-        "fg": [
-         932,
-         933,
-         934,
-         935
-        ]
-       },
-       {
-        "id": "t_connection",
-        "bg": 899,
-        "fg": [
-         936,
-         937,
-         938,
-         939
-        ]
-       },
-       {
-        "id": "edge",
-        "bg": 899,
-        "fg": [
-         940,
-         941
-        ]
-       },
-       {
-        "id": "end_piece",
-        "bg": 899,
-        "fg": [
-         942,
-         943,
-         944,
-         945
-        ]
-       },
-       {
-        "id": "unconnected",
-        "bg": 899,
-        "fg": [
-         {
-          "weight": 100,
-          "sprite": 927
+          "sprite": 945
          },
          {
           "weight": 100,
@@ -3260,10 +3204,66 @@
          {
           "weight": 100,
           "sprite": 947
+         }
+        ]
+       },
+       {
+        "id": "corner",
+        "bg": 915,
+        "fg": [
+         948,
+         949,
+         950,
+         951
+        ]
+       },
+       {
+        "id": "t_connection",
+        "bg": 915,
+        "fg": [
+         952,
+         953,
+         954,
+         955
+        ]
+       },
+       {
+        "id": "edge",
+        "bg": 915,
+        "fg": [
+         956,
+         957
+        ]
+       },
+       {
+        "id": "end_piece",
+        "bg": 915,
+        "fg": [
+         958,
+         959,
+         960,
+         961
+        ]
+       },
+       {
+        "id": "unconnected",
+        "bg": 915,
+        "fg": [
+         {
+          "weight": 100,
+          "sprite": 943
          },
          {
           "weight": 100,
-          "sprite": 948
+          "sprite": 962
+         },
+         {
+          "weight": 100,
+          "sprite": 963
+         },
+         {
+          "weight": 100,
+          "sprite": 964
          }
         ]
        }
@@ -3275,13 +3275,13 @@
      },
      {
       "id": "t_gutter_downspout_season_autumn",
-      "fg": 949,
-      "bg": 899
+      "fg": 965,
+      "bg": 915
      },
      {
       "id": "t_gutter_downspout_season_winter",
-      "fg": 949,
-      "bg": 899
+      "fg": 965,
+      "bg": 915
      },
      {
       "id": "t_marloss_season_winter",
@@ -3289,123 +3289,123 @@
      },
      {
       "id": "t_marloss_tree_season_autumn",
-      "bg": 1009,
-      "fg": 1008
+      "bg": 1025,
+      "fg": 1024
      },
      {
       "id": "t_marloss_tree_season_winter",
-      "bg": 1009,
-      "fg": 1008
+      "bg": 1025,
+      "fg": 1024
      },
      {
       "id": "t_monkey_bars_season_autumn",
-      "fg": 950,
-      "bg": 899,
+      "fg": 966,
+      "bg": 915,
       "multitile": true,
       "additional_tiles": [
        {
         "id": "center",
-        "fg": 951,
-        "bg": 899
+        "fg": 967,
+        "bg": 915
        },
        {
         "id": "corner",
         "fg": [
-         952,
-         953,
-         954,
-         955
+         968,
+         969,
+         970,
+         971
         ],
-        "bg": 899
+        "bg": 915
        },
        {
         "id": "t_connection",
         "fg": [
-         956,
-         957,
-         958,
-         959
+         972,
+         973,
+         974,
+         975
         ],
-        "bg": 899
+        "bg": 915
        },
        {
         "id": "edge",
         "fg": [
-         960,
-         961
+         976,
+         977
         ],
-        "bg": 899
+        "bg": 915
        },
        {
         "id": "end_piece",
         "fg": [
-         962,
-         963,
-         964,
-         965
+         978,
+         979,
+         980,
+         981
         ],
-        "bg": 899
+        "bg": 915
        },
        {
         "id": "unconnected",
-        "fg": 950,
-        "bg": 899
+        "fg": 966,
+        "bg": 915
        }
       ]
      },
      {
       "id": "t_monkey_bars_season_winter",
-      "fg": 950,
-      "bg": 899,
+      "fg": 966,
+      "bg": 915,
       "multitile": true,
       "additional_tiles": [
        {
         "id": "center",
-        "fg": 951,
-        "bg": 899
+        "fg": 967,
+        "bg": 915
        },
        {
         "id": "corner",
         "fg": [
-         952,
-         953,
-         954,
-         955
+         968,
+         969,
+         970,
+         971
         ],
-        "bg": 899
+        "bg": 915
        },
        {
         "id": "t_connection",
         "fg": [
-         956,
-         957,
-         958,
-         959
+         972,
+         973,
+         974,
+         975
         ],
-        "bg": 899
+        "bg": 915
        },
        {
         "id": "edge",
         "fg": [
-         960,
-         961
+         976,
+         977
         ],
-        "bg": 899
+        "bg": 915
        },
        {
         "id": "end_piece",
         "fg": [
-         962,
-         963,
-         964,
-         965
+         978,
+         979,
+         980,
+         981
         ],
-        "bg": 899
+        "bg": 915
        },
        {
         "id": "unconnected",
-        "fg": 950,
-        "bg": 899
+        "fg": 966,
+        "bg": 915
        }
       ]
      },
@@ -3653,13 +3653,13 @@
      },
      {
       "id": "t_palisade_gate_o_season_autumn",
-      "fg": 966,
-      "bg": 899
+      "fg": 982,
+      "bg": 915
      },
      {
       "id": "t_palisade_gate_o_season_winter",
-      "fg": 966,
-      "bg": 899
+      "fg": 982,
+      "bg": 915
      },
      {
       "id": "t_palisade_gate_season_autumn",
@@ -5958,13 +5958,13 @@
      },
      {
       "id": "t_privacy_fencegate_o_season_autumn",
-      "fg": 967,
-      "bg": 899
+      "fg": 983,
+      "bg": 915
      },
      {
       "id": "t_privacy_fencegate_o_season_winter",
-      "fg": 967,
-      "bg": 899
+      "fg": 983,
+      "bg": 915
      },
      {
       "id": "t_puddle_season_autumn",
@@ -5978,8 +5978,8 @@
      },
      {
       "id": "t_railroad_crossing_signal_season_winter",
-      "fg": 968,
-      "bg": 902
+      "fg": 984,
+      "bg": 918
      },
      {
       "id": "t_railroad_rubble_season_autumn",
@@ -7226,379 +7226,379 @@
      },
      {
       "id": "t_tarptent_season_autumn",
-      "fg": 1056,
-      "bg": 1057
+      "fg": 1072,
+      "bg": 1073
      },
      {
       "id": "t_tarptent_season_winter",
-      "fg": 1056,
-      "bg": 1057
+      "fg": 1072,
+      "bg": 1073
      },
      {
       "id": "t_tree_apple_season_autumn",
-      "fg": 1010,
-      "bg": 1011
+      "fg": 1026,
+      "bg": 1027
      },
      {
       "id": "t_tree_apple_season_winter",
-      "fg": 1010,
-      "bg": 1011
+      "fg": 1026,
+      "bg": 1027
      },
      {
       "id": "t_tree_apricot_season_autumn",
-      "fg": 1012,
-      "bg": 1011
+      "fg": 1028,
+      "bg": 1027
      },
      {
       "id": "t_tree_apricot_season_winter",
-      "fg": 1012,
-      "bg": 1011
+      "fg": 1028,
+      "bg": 1027
      },
      {
       "id": "t_tree_beech_season_autumn",
-      "fg": 1013,
-      "bg": 1011
+      "fg": 1029,
+      "bg": 1027
      },
      {
       "id": "t_tree_beech_season_winter",
-      "fg": 1013,
-      "bg": 1011
+      "fg": 1029,
+      "bg": 1027
      },
      {
       "id": "t_tree_birch_harvested_season_autumn",
-      "fg": 1014,
-      "bg": 1011
+      "fg": 1030,
+      "bg": 1027
      },
      {
       "id": "t_tree_birch_harvested_season_winter",
-      "fg": 1014,
-      "bg": 1011
+      "fg": 1030,
+      "bg": 1027
      },
      {
       "id": "t_tree_birch_season_autumn",
-      "fg": 1015,
-      "bg": 1011
+      "fg": 1031,
+      "bg": 1027
      },
      {
       "id": "t_tree_birch_season_winter",
-      "fg": 1015,
-      "bg": 1011
+      "fg": 1031,
+      "bg": 1027
      },
      {
       "id": "t_tree_burnt_season_autumn",
-      "fg": 1016,
-      "bg": 1011
+      "fg": 1032,
+      "bg": 1027
      },
      {
       "id": "t_tree_burnt_season_winter",
-      "fg": 1016,
-      "bg": 1011
+      "fg": 1032,
+      "bg": 1027
      },
      {
       "id": "t_tree_cherry_season_autumn",
-      "fg": 1017,
-      "bg": 1011
+      "fg": 1033,
+      "bg": 1027
      },
      {
       "id": "t_tree_cherry_season_winter",
-      "fg": 1017,
-      "bg": 1011
+      "fg": 1033,
+      "bg": 1027
      },
      {
       "id": "t_tree_chestnut_season_autumn",
-      "fg": 1018,
-      "bg": 1011
+      "fg": 1034,
+      "bg": 1027
      },
      {
       "id": "t_tree_chestnut_season_winter",
-      "fg": 1018,
-      "bg": 1011
+      "fg": 1034,
+      "bg": 1027
      },
      {
       "id": "t_tree_coffee_season_autumn",
-      "fg": 1019,
-      "bg": 1011
+      "fg": 1035,
+      "bg": 1027
      },
      {
       "id": "t_tree_coffee_season_winter",
-      "fg": 1019,
-      "bg": 1011
+      "fg": 1035,
+      "bg": 1027
      },
      {
       "id": "t_tree_cottonwood_harvested_season_autumn",
-      "fg": 1020,
-      "bg": 1011
+      "fg": 1036,
+      "bg": 1027
      },
      {
       "id": "t_tree_cottonwood_season_autumn",
-      "fg": 1021,
-      "bg": 1011
+      "fg": 1037,
+      "bg": 1027
      },
      {
       "id": "t_tree_cottonwood_season_winter",
-      "fg": 1021,
-      "bg": 1011
+      "fg": 1037,
+      "bg": 1027
      },
      {
       "id": "t_tree_dead_season_autumn",
       "fg": [
        {
         "weight": 100,
-        "sprite": 1022
+        "sprite": 1038
        },
        {
         "weight": 100,
-        "sprite": 1018
+        "sprite": 1034
        }
       ],
-      "bg": 1011
+      "bg": 1027
      },
      {
       "id": "t_tree_dead_season_winter",
       "fg": [
        {
         "weight": 100,
-        "sprite": 1022
+        "sprite": 1038
        },
        {
         "weight": 100,
-        "sprite": 1018
+        "sprite": 1034
        }
       ],
-      "bg": 1011
+      "bg": 1027
      },
      {
       "id": "t_tree_deadpine_season_autumn",
-      "fg": 1023,
-      "bg": 1011
+      "fg": 1039,
+      "bg": 1027
      },
      {
       "id": "t_tree_deadpine_season_winter",
-      "fg": 1023,
-      "bg": 1011
+      "fg": 1039,
+      "bg": 1027
      },
      {
       "id": "t_tree_elm_season_autumn",
-      "fg": 1024,
-      "bg": 1011
+      "fg": 1040,
+      "bg": 1027
      },
      {
       "id": "t_tree_elm_season_winter",
-      "fg": 1024,
-      "bg": 1011
+      "fg": 1040,
+      "bg": 1027
      },
      {
       "id": "t_tree_fungal_season_autumn",
-      "bg": 1009,
+      "bg": 1025,
       "fg": [
        {
         "weight": 1,
-        "sprite": 1025
+        "sprite": 1041
        },
        {
         "weight": 1,
-        "sprite": 1026
+        "sprite": 1042
        },
        {
         "weight": 1,
-        "sprite": 1027
+        "sprite": 1043
        },
        {
         "weight": 1,
-        "sprite": 1028
+        "sprite": 1044
        },
        {
         "weight": 1,
-        "sprite": 1029
+        "sprite": 1045
        },
        {
         "weight": 1,
-        "sprite": 1030
+        "sprite": 1046
        },
        {
         "weight": 1,
-        "sprite": 1031
+        "sprite": 1047
        },
        {
         "weight": 1,
-        "sprite": 1032
+        "sprite": 1048
        },
        {
         "weight": 1,
-        "sprite": 1033
+        "sprite": 1049
        },
        {
         "weight": 1,
-        "sprite": 1034
+        "sprite": 1050
        },
        {
         "weight": 1,
-        "sprite": 1035
+        "sprite": 1051
        }
       ]
      },
      {
       "id": "t_tree_fungal_season_winter",
-      "bg": 1009,
+      "bg": 1025,
       "fg": [
        {
         "weight": 1,
-        "sprite": 1025
+        "sprite": 1041
        },
        {
         "weight": 1,
-        "sprite": 1026
+        "sprite": 1042
        },
        {
         "weight": 1,
-        "sprite": 1027
+        "sprite": 1043
        },
        {
         "weight": 1,
-        "sprite": 1028
+        "sprite": 1044
        },
        {
         "weight": 1,
-        "sprite": 1029
+        "sprite": 1045
        },
        {
         "weight": 1,
-        "sprite": 1030
+        "sprite": 1046
        },
        {
         "weight": 1,
-        "sprite": 1031
+        "sprite": 1047
        },
        {
         "weight": 1,
-        "sprite": 1032
+        "sprite": 1048
        },
        {
         "weight": 1,
-        "sprite": 1033
+        "sprite": 1049
        },
        {
         "weight": 1,
-        "sprite": 1034
+        "sprite": 1050
        },
        {
         "weight": 1,
-        "sprite": 1035
+        "sprite": 1051
        }
       ]
      },
      {
       "id": "t_tree_fungal_young_season_autumn",
-      "fg": 1058,
-      "bg": 1059,
+      "fg": 1074,
+      "bg": 1075,
       "rotates": false
      },
      {
       "id": "t_tree_fungal_young_season_winter",
-      "fg": 1058,
-      "bg": 1059,
+      "fg": 1074,
+      "bg": 1075,
       "rotates": false
      },
      {
       "id": "t_tree_hickory_dead_season_autumn",
-      "fg": 1036,
-      "bg": 1011
+      "fg": 1052,
+      "bg": 1027
      },
      {
       "id": "t_tree_hickory_dead_season_winter",
-      "fg": 1036,
-      "bg": 1011
+      "fg": 1052,
+      "bg": 1027
      },
      {
       "id": "t_tree_hickory_season_autumn",
-      "fg": 1037,
-      "bg": 1011
+      "fg": 1053,
+      "bg": 1027
      },
      {
       "id": "t_tree_hickory_season_winter",
-      "fg": 1037,
-      "bg": 1011
+      "fg": 1053,
+      "bg": 1027
      },
      {
       "id": "t_tree_maple_season_autumn",
-      "fg": 1038,
-      "bg": 1011
+      "fg": 1054,
+      "bg": 1027
      },
      {
       "id": "t_tree_maple_season_winter",
-      "fg": 1038,
-      "bg": 1011
+      "fg": 1054,
+      "bg": 1027
      },
      {
       "id": "t_tree_mulberry_season_autumn",
-      "fg": 1039,
-      "bg": 1011
+      "fg": 1055,
+      "bg": 1027
      },
      {
       "id": "t_tree_mulberry_season_winter",
-      "fg": 1039,
-      "bg": 1011
+      "fg": 1055,
+      "bg": 1027
      },
      {
       "id": "t_tree_peach_season_autumn",
-      "fg": 1040,
-      "bg": 1011
+      "fg": 1056,
+      "bg": 1027
      },
      {
       "id": "t_tree_peach_season_winter",
-      "fg": 1040,
-      "bg": 1011
+      "fg": 1056,
+      "bg": 1027
      },
      {
       "id": "t_tree_pear_season_autumn",
-      "fg": 1041,
-      "bg": 1011
+      "fg": 1057,
+      "bg": 1027
      },
      {
       "id": "t_tree_pear_season_winter",
-      "fg": 1041,
-      "bg": 1011
+      "fg": 1057,
+      "bg": 1027
      },
      {
       "id": "t_tree_pine_season_autumn",
-      "fg": 1042,
-      "bg": 1011
+      "fg": 1058,
+      "bg": 1027
      },
      {
       "id": "t_tree_pine_season_winter",
-      "fg": 1042,
-      "bg": 1011
+      "fg": 1058,
+      "bg": 1027
      },
      {
       "id": "t_tree_plum_season_autumn",
-      "fg": 1043,
-      "bg": 1011
+      "fg": 1059,
+      "bg": 1027
      },
      {
       "id": "t_tree_plum_season_winter",
-      "fg": 1043,
-      "bg": 1011
+      "fg": 1059,
+      "bg": 1027
      },
      {
       "id": "t_tree_season_autumn",
-      "fg": 1044,
-      "bg": 1011
+      "fg": 1060,
+      "bg": 1027
      },
      {
       "id": "t_tree_season_winter",
-      "fg": 1044,
-      "bg": 1011
+      "fg": 1060,
+      "bg": 1027
      },
      {
       "id": "t_tree_young_season_autumn",
-      "fg": 1060,
-      "bg": 1057,
+      "fg": 1076,
+      "bg": 1073,
       "rotates": false
      },
      {
       "id": "t_tree_young_season_winter",
-      "fg": 1060,
-      "bg": 1057,
+      "fg": 1076,
+      "bg": 1073,
       "rotates": false
      },
      {
@@ -8543,13 +8543,13 @@
      },
      {
       "id": "t_webbed_corpse_season_autumn",
-      "fg": 1061,
-      "bg": 1057
+      "fg": 1077,
+      "bg": 1073
      },
      {
       "id": "t_webbed_corpse_season_winter",
-      "fg": 1061,
-      "bg": 1057
+      "fg": 1077,
+      "bg": 1073
      },
      {
       "id": "t_woodchips_season_winter",
@@ -8557,13 +8557,13 @@
      },
      {
       "id": "t_wooden_well_season_autumn",
-      "fg": 1062,
-      "bg": 1057
+      "fg": 1078,
+      "bg": 1073
      },
      {
       "id": "t_wooden_well_season_winter",
-      "fg": 1062,
-      "bg": 1057
+      "fg": 1078,
+      "bg": 1073
      },
      {
       "id": "t_zebra_season_winter",
@@ -8681,66 +8681,66 @@
      },
      {
       "id": "f_standing_tank",
-      "fg": 969
+      "fg": 985
      },
      {
       "id": "sgn_mon_zombie_cong_an",
-      "fg": 979,
-      "bg": 980
+      "fg": 995,
+      "bg": 996
      },
      {
       "id": "sgn_mon_zombie_sot",
       "fg": [
        {
         "weight": 100,
-        "sprite": 981
+        "sprite": 997
        },
        {
         "weight": 80,
-        "sprite": 982
+        "sprite": 998
        }
       ],
-      "bg": 983
+      "bg": 999
      },
      {
       "id": "sgn_mon_zombie_vendor",
       "fg": [
        {
         "weight": 1,
-        "sprite": 984
+        "sprite": 1000
        },
        {
         "weight": 1,
-        "sprite": 985
+        "sprite": 1001
        }
       ],
-      "bg": 986
+      "bg": 1002
      },
      {
       "id": "sgn_mon_zombie_xe_om",
       "fg": [
        {
         "weight": 100,
-        "sprite": 987
+        "sprite": 1003
        },
        {
         "weight": 150,
-        "sprite": 988
+        "sprite": 1004
        },
        {
         "weight": 100,
-        "sprite": 989
+        "sprite": 1005
        },
        {
         "weight": 100,
-        "sprite": 990
+        "sprite": 1006
        },
        {
         "weight": 150,
-        "sprite": 991
+        "sprite": 1007
        }
       ],
-      "bg": 992
+      "bg": 1008
      },
      {
       "id": "t_sidewalk",
@@ -8830,10 +8830,6 @@
       "fg": 892
      },
      {
-      "id": "sgn_non_la",
-      "fg": 1072
-     },
-     {
       "id": "overlay_male_worn_sgn_non_la",
       "fg": 1088
      },
@@ -8843,7 +8839,7 @@
      },
      {
       "id": "sgn_non_bao_hiem",
-      "fg": 1073
+      "fg": 1104
      },
      {
       "id": "overlay_male_worn_sgn_non_bao_hiem",
@@ -8872,6 +8868,38 @@
      {
       "id": "overlay_female_worn_sgn_dep_to_ong",
       "fg": 1095
+     },
+     {
+      "id": "sgn_nuoc_mam",
+      "fg": 894
+     },
+     {
+      "id": "sgn_ca_phe_sua_da",
+      "fg": 895
+     },
+     {
+      "id": "sgn_tra_da",
+      "fg": 896
+     },
+     {
+      "id": "sgn_nuoc_mia",
+      "fg": 897
+     },
+     {
+      "id": "sgn_bia_hoi",
+      "fg": 898
+     },
+     {
+      "id": "sgn_che",
+      "fg": 899
+     },
+     {
+      "id": "sgn_tuong_ot",
+      "fg": 900
+     },
+     {
+      "id": "sgn_ruou_de",
+      "fg": 901
      }
     ]
    },
@@ -8908,19 +8936,19 @@
     "tiles": []
    },
    {
-    "file": "derived_5_20x20.png",
-    "sprite_width": 20,
-    "sprite_height": 20,
-    "sprite_offset_x": 6,
-    "sprite_offset_y": 0,
-    "tiles": []
-   },
-   {
-    "file": "derived_6_32x36.png",
+    "file": "derived_5_32x36.png",
     "sprite_width": 32,
     "sprite_height": 36,
     "sprite_offset_x": 0,
     "sprite_offset_y": -8,
+    "tiles": []
+   },
+   {
+    "file": "derived_6_20x20.png",
+    "sprite_width": 20,
+    "sprite_height": 20,
+    "sprite_offset_x": 6,
+    "sprite_offset_y": 0,
     "tiles": []
    }
   ]

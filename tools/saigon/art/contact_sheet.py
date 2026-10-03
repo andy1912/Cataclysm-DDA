@@ -18,7 +18,7 @@ import pngio  # noqa: E402
 from derive_sprites import BaseTileset, ROOT, GFX  # noqa: E402
 
 SCALE = int( os.environ.get( "SCALE", 3 ) )
-CELL_W = 2 * 32 * SCALE + 12
+CELL_W = int( os.environ.get( "CELL", 2 * 32 ) ) * SCALE + 12
 # 3x5 font: each glyph is 5 rows of 3 bits
 FONT = {
     'a': '010101111101101', 'b': '110101110101110', 'c': '011100100100011', 'd': '110101101101110',
@@ -147,7 +147,7 @@ def main():
                 imgs.append( override )
             cells.append( ( sid, imgs ) )
     cols = 6
-    cell_h = 64 * SCALE + 14
+    cell_h = int( os.environ.get( "CELLH", 64 ) ) * SCALE + 14
     rows = ( len( cells ) + cols - 1 ) // cols
     sheet = pngio.Image( cols * CELL_W, max( 1, rows ) * cell_h )
     for i in range( sheet.width * sheet.height ):
