@@ -17,7 +17,14 @@ For every thing on screen, the tiles renderer looks up a **tile id** in the load
 - **Same-id overrides.** `create_tile_type` overwrites existing ids (`src/cata_tiles.cpp:366-368`). So the mod can **restyle dda sprites too**, such as `t_sidewalk` or `f_fridge`, without forking the base tileset.
 - **Overmap icons** come from the separate overmap tileset option (`OVERMAP_TILES`, `src/options.cpp:2580`). That's why the packer writes a second mod tileset for `Larwick Overmap`.
 
-**What a Saigon world looks like right now in tiles mode**
+**Derived Saigon sprites (G6).** `tools/saigon/art/derive_sprites.py` makes Saigon sprites by applying recorded edits from `art/saigon/derive_recipes.json` to the original UltimateCataclysm art. That keeps the original style, and the licence is CC-BY-SA with per-sprite provenance in `art/saigon/SOURCES_DERIVED.md`. It writes `data/mods/saigon_2000s/gfx/derived_*.png` plus `derived_tileset.json`, and `doc/saigon/art/derived_preview.png` shows before and after. Current recipes:
+- **Tropical seasons:** all 263 winter and autumn variants use summer art, so there's no snow or bare trees in December.
+- **Pastel stucco walls**, **teal rolling shutters**, a **red-lacquer ancestor altar**, **red plastic stools** and a **stainless rooftop tank**.
+- **Zombies:** a khaki ward-police zombie, the fevered dead in a pale gown, a market zombie with an orange apron, and a helmeted xe ôm zombie.
+
+Hand-drawn PNGs always win over derived ones. Validate both with `python3 tools/saigon/art/validate_tileset.py`, which applies the loader's index and capacity rules (mod tilesets only load with a world, so a main-menu launch can't test them).
+
+**What a Saigon world looked like before G6 in tiles mode**
 - **No base tileset installed:** ASCII-style tiles.
 - **With UltimateCataclysm:** American-styled dda art for walls, furniture, cars and trees, `looks_like` stand-ins for Saigon ids, and winter tree variants in December.
 - **Saigon sprites so far:** three code-generated placeholders (nón lá, ancestor altar, shophouse overmap icon) that prove the pipeline.
@@ -35,7 +42,7 @@ For every thing on screen, the tiles renderer looks up a **tile id** in the load
    - Worn on the character: `overlay_worn_sgn_non_la.png`.
    - Overmap icons: 16×16 PNGs under `art/saigon/overmap16/`, named after the oter id (`sgn_cho_nw.png`, …).
 4. **Optional sidecar** `<same name>.json` holds extra tile keys copied into the tile entry, for example `{"rotates": true}`, `{"bg": "<id>"}`, or the multitile keys for connecting walls (see `doc/TILESET.md`).
-5. **Build:** `python3 tools/saigon/art/build_sprites.py`. It packs everything into `data/mods/saigon_2000s/gfx/` (sheets plus `mod_tileset.json`). There are no dependencies: it uses a pure-Python PNG reader and writer, `tools/saigon/art/pngio.py`.
+5. **Build:** `python3 tools/saigon/art/build_sprites.py` for hand-drawn art, and `python3 tools/saigon/art/derive_sprites.py` for derived art. Add a rule to `derive_recipes.json` to restyle an original sprite by recolouring it. It packs everything into `data/mods/saigon_2000s/gfx/` (sheets plus `mod_tileset.json`). There are no dependencies: it uses a pure-Python PNG reader and writer, `tools/saigon/art/pngio.py`.
 6. **Validate:** `tools/saigon/check_mod.sh` and `python3 tools/saigon/art_coverage.py`.
 7. **See it in game.** Use the SDL3 tiles build (`cataclysm-tiles`, unit S0.3c) with `CATA_DISABLE_SPRITE_SHADERS=1`. Choose tileset **UltimateCataclysm** and overmap tileset **Larwick Overmap** in Options → Graphics, then start the Saigon scenario.
 8. **Commit** the source PNGs and the generated sheet, with a provenance line per sprite (`STYLE_GUIDE.md` §7).

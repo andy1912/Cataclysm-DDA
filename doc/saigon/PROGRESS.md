@@ -115,10 +115,11 @@ The domain reports each number their own C++ seams. Modding (d4) uses C1 = vehic
 | G2 style guide + pipeline + coverage gate + TDD §10 | done | 299e7d5971 | render/build scripts untested (need Blender, pyvips) |
 | G3 SDL3 tiles build | done | - | SDL3 3.4.16 + image 3.4.6 + ttf 3.2.2 frameworks in ~/Library/Frameworks; glslang 16.6.0 in ~/code/cdda-saigon-logs/tools; needed brew pkgconf+freetype |
 | G4 sprite workflow without dependencies | done | 0873e6e2b1 | build_sprites.py + pngio.py; 3 placeholders packed and loaded; UPDATING_SPRITES.md |
-| G5 tropical vegetation: region terrain_furniture (palms, banana) + winter-variant overrides | todo | - | content + art; t_region_tree resolves to New England species |
+| G5 tropical vegetation: region terrain_furniture (palms, banana) + winter-variant overrides | partial: winter/autumn overrides done in G6; tropical species (region terrain_furniture) todo | - | content + art; t_region_tree resolves to New England species |
 
 ### Decision (user, 2026-10-02): graphics from the start with the ORIGINAL tileset
 UltimateCataclysm (32x32) + Larwick Overmap are installed in gfx/ (UltimateCataclysm untracked via .git/info/exclude; downloaded from I-am-Erk/CDDA-Tilesets 2026-09-27). The three code-generated placeholder sprites were moved to art/examples/ so everything draws with original art; Saigon ids use their looks_like fallbacks. `./play_saigon.sh` preselects dda + saigon_2000s for new worlds and launches cataclysm-tiles.
 
 ### G3 verification (2026-10-02)
 `cataclysm-tiles` links SDL3 3.4.16 / image 3.4.6 / ttf 3.2.2 via rpath ~/Library/Frameworks; SPIR-V shaders built with glslang 16.6.0. `--check-mods saigon_2000s` with the tiles binary: 0 errors. Real launch: Metal GPU renderer, "Loaded tileset: UltimateCataclysm" (12,184 ids) and "Loaded tileset: Larwick Overmap". Metal has no .msl shaders, so the game bakes all 6 atlas variants (519 MB, ~2 min on this 8 GB machine under swap). Log-only error from the repo's Test_Portrait_Pack (no 'unknown' tile, src/tileset_loader.cpp:483-485), no popup. Build: `GLSLANG=<glslang> make -j2 TILES=1 FRAMEWORK=1 RELEASE=1 LOCALIZE=0 SOUND=0 BUILD_SHADER_FORMATS=spv cataclysm-tiles` (use -j2 on 8 GB RAM).
+| G6 derived Saigon sprites from UltimateCataclysm | done | (this) | 272 entries / 1003 sprites; tropical seasons, stucco walls, teal shutters, altar, red stools, tank, 4 zombies; validate_tileset.py 0 problems; in-world view needs a manual game load |
