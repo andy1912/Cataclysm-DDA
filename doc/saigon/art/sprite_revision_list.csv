@@ -9,11 +9,13 @@ T1,furniture,f_fridge,dda,32x64,4,keep original,
 T1,furniture,f_oven,dda,32x32,1,Saigon art (drawn),
 T1,furniture,f_rack,dda,32x32,1,keep original,
 T1,furniture,f_region_flower_decorative,dda,32x32,1,keep original,f_region_pseudo
+T1,furniture,f_sgn_ban_da,mod,32x32,1,Saigon art (drawn),f_table
 T1,furniture,f_sgn_ban_inox,mod,32x32,1,Saigon art (drawn),f_table
 T1,furniture,f_sgn_ban_tho,mod,32x32,16,Saigon art (derived),f_table
 T1,furniture,f_sgn_ban_tho_lon,mod,32x32,1,Saigon art (drawn),f_table
 T1,furniture,f_sgn_ban_tho_than_tai,mod,32x32,1,Saigon art (drawn),f_table
 T1,furniture,f_sgn_bang_den,mod,32x32,1,Saigon art (drawn),f_desk
+T1,furniture,f_sgn_bang_gio_tau,mod,32x64,1,Saigon art (drawn),f_desk
 T1,furniture,f_sgn_bang_hieu,mod,32x32,3,Saigon art (drawn),f_sign
 T1,furniture,f_sgn_bao_gao,mod,32x64,1,Saigon art (drawn),f_crate_c
 T1,furniture,f_sgn_buong_dien_thoai,mod,32x32,1,Saigon art (drawn),f_rack
@@ -26,12 +28,15 @@ T1,furniture,f_sgn_du,mod,32x64,1,Saigon art (drawn),f_sign
 T1,furniture,f_sgn_dua_can,mod,32x32,1,Saigon art (drawn),f_dandelion
 T1,furniture,f_sgn_ho_rong,mod,32x32,1,Saigon art (drawn),f_statue
 T1,furniture,f_sgn_loa_phuong,mod,32x64,1,Saigon art (drawn),f_utility_pole
+T1,furniture,f_sgn_long_chim,mod,32x64,1,Saigon art (drawn),f_rack
 T1,furniture,f_sgn_lu_huong,mod,32x32,1,Saigon art (drawn),f_brazier
 T1,furniture,f_sgn_lu_nuoc,mod,32x32,1,Saigon art (drawn),f_standing_tank
 T1,furniture,f_sgn_may_net,mod,32x32,1,Saigon art (drawn),f_desk
 T1,furniture,f_sgn_nhang_vong,mod,32x32,1,Saigon art (drawn),f_rack
 T1,furniture,f_sgn_quay_vang,mod,32x32,1,Saigon art (drawn),f_display_rack
+T1,furniture,f_sgn_quay_ve,mod,32x32,1,Saigon art (drawn),f_counter
 T1,furniture,f_sgn_su_tu_da,mod,32x64,1,Saigon art (drawn),f_statue
+T1,furniture,f_sgn_thap_rua,mod,32x64,1,Saigon art (drawn),f_statue
 T1,furniture,f_sgn_tivi_crt,mod,32x32,1,Saigon art (drawn),f_dresser
 T1,furniture,f_sgn_tuong_than,mod,32x64,1,Saigon art (drawn),f_statue
 T1,furniture,f_sgn_van_tho,mod,32x32,1,Saigon art (drawn),f_dandelion
@@ -403,6 +408,7 @@ T1,terrain,t_sgn_gach_men,mod,32x32,1,Saigon art (drawn),t_thconc_floor
 T1,terrain,t_sgn_gach_tau,mod,32x32,1,Saigon art (drawn),t_pavement
 T1,terrain,t_sgn_gach_tau_trong,mod,32x32,20,to do,t_pavement
 T1,terrain,t_sgn_hem_xi_mang,mod,32x32,3,Saigon art (drawn),t_pavement
+T1,terrain,t_sgn_kinh_xanh,mod,32x32,16,Saigon art (derived),t_window
 T1,terrain,t_sgn_mai_ngoi,mod,32x32,2,Saigon art (drawn),t_pavement
 T1,terrain,t_sgn_mai_ton,mod,32x32,3,Saigon art (drawn),t_scrap_floor
 T1,terrain,t_sgn_ngap_duong,mod,32x32,3,Saigon art (drawn),t_water_sh
@@ -412,6 +418,8 @@ T1,terrain,t_sgn_ngoi_men_xanh,mod,32x32,1,Saigon art (drawn),t_pavement
 T1,terrain,t_sgn_shrub_hoa_giay,mod,32x32,2,Saigon art (drawn),t_shrub_abstract
 T1,terrain,t_sgn_shrub_khoai_mi,mod,32x32,2,Saigon art (drawn),t_shrub_abstract
 T1,terrain,t_sgn_shrub_ngu_sac,mod,32x32,2,Saigon art (drawn),t_shrub_abstract
+T1,terrain,t_sgn_thang_cuon_len,mod,32x32,1,Saigon art (drawn),t_stairs_up
+T1,terrain,t_sgn_thang_cuon_xuong,mod,32x32,1,Saigon art (drawn),t_stairs_down
 T1,terrain,t_sgn_tree_bang,mod,96x96,2,Saigon art (drawn),t_tree_abstract
 T1,terrain,t_sgn_tree_bo_de,mod,96x96,2,Saigon art (drawn),t_tree_abstract
 T1,terrain,t_sgn_tree_chuoi,mod,64x64,2,Saigon art (drawn),t_tree
@@ -439,28 +447,60 @@ T1,terrain,t_water_moving_sh,dda,32x32,20,keep original,t_water_sh
 T1,terrain,t_water_sh,dda,32x32,20,keep original,
 T1,terrain,t_window_bars,dda,32x32,1,Saigon art (derived),t_bars
 T1,terrain,t_zebra,dda,32x32,1,keep original,
+T1,vehicle_part,aisle,dda,32x32,16,keep original,t_metal_floor
+T1,vehicle_part,aisle_lights,dda,32x32,1,keep original,
 T1,vehicle_part,alternator_motorbike,dda,32x32,1,keep original,vehicle_alternator
+T1,vehicle_part,alternator_truck,dda,32x32,1,keep original,vehicle_alternator
 T1,vehicle_part,basketsm,dda,32x32,3,keep original,basketsm
+T1,vehicle_part,battery_car,dda,32x32,1,keep original,
 T1,vehicle_part,battery_motorbike,dda,32x32,2,keep original,battery_car
 T1,vehicle_part,battery_motorbike_small,dda,20x20,1,keep original,battery_car
+T1,vehicle_part,beeper,dda,32x32,1,keep original,
+T1,vehicle_part,board,dda,32x48,4,keep original,base_board_abstract
 T1,vehicle_part,boat_board,dda,32x32,17,keep original,t_wall_log
+T1,vehicle_part,box,dda,32x32,3,keep original,f_crate_o
+T1,vehicle_part,cam_control,dda,32x32,1,keep original,
 T1,vehicle_part,cargo_space,dda,32x32,2,keep original,f_crate_o
 T1,vehicle_part,controls,dda,32x32,2,keep original,
 T1,vehicle_part,controls_electronic,dda,32x32,1,keep original,
+T1,vehicle_part,dashboard,dda,32x32,1,keep original,
+T1,vehicle_part,diesel_engine_v12,dda,32x32,1,keep original,engine_combustion
+T1,vehicle_part,diesel_engine_v6,dda,32x32,1,keep original,engine_combustion
+T1,vehicle_part,door,dda,32x64,9,keep original,t_door_metal_c
+T1,vehicle_part,door_opaque,dda,32x64,9,keep original,t_door_metal_c
+T1,vehicle_part,door_sliding,dda,32x32,1,keep original,t_door_metal_c
 T1,vehicle_part,engine_1cyl,dda,32x32,2,keep original,engine_combustion
 T1,vehicle_part,engine_1cyl_large,dda,32x32,1,keep original,engine_combustion
 T1,vehicle_part,foot_pedals,dda,32x32,2,keep original,engine_manual
 T1,vehicle_part,frame,dda,32x32,1,keep original,frame_abstract
 T1,vehicle_part,frame_wood,dda,32x32,2,keep original,frame_abstract
+T1,vehicle_part,halfboard,dda,32x32,1,keep original,base_board_abstract
 T1,vehicle_part,hand_paddles,dda,32x32,1,keep original,engine_manual
+T1,vehicle_part,hdboard,dda,32x32,1,keep original,base_board_abstract
+T1,vehicle_part,hddoor,dda,32x32,1,keep original,t_door_metal_c
+T1,vehicle_part,hdframe,dda,32x32,1,keep original,frame_abstract
+T1,vehicle_part,headlight,dda,32x32,1,keep original,
 T1,vehicle_part,horn_bicycle,dda,32x32,1,keep original,
 T1,vehicle_part,horn_car,dda,32x32,1,keep original,
+T1,vehicle_part,inboard_mirror,dda,32x32,1,keep original,
+T1,vehicle_part,integrated_cooler,dda,32x32,1,keep original,mountable_cooler
+T1,vehicle_part,medium_storage_battery,dda,32x32,1,keep original,storage_battery
 T1,vehicle_part,motorcycle_headlight,dda,32x32,1,keep original,
 T1,vehicle_part,motorcycle_kickstand,dda,32x32,1,keep original,
+T1,vehicle_part,mountable_heater,dda,32x32,3,keep original,
 T1,vehicle_part,muffler,dda,32x32,2,keep original,
+T1,vehicle_part,omnicam,dda,32x48,3,keep original,
+T1,vehicle_part,plating_steel,dda,32x32,2,keep original,
+T1,vehicle_part,rail_wheel,dda,32x32,1,keep original,
+T1,vehicle_part,rail_wheel_steerable,dda,32x32,1,keep original,rail_wheel
+T1,vehicle_part,reinforced_windshield,dda,32x32,5,keep original,t_wall_glass
+T1,vehicle_part,roof,dda,32x32,2,keep original,
 T1,vehicle_part,roof_wood,dda,32x32,1,keep original,
 T1,vehicle_part,saddle,dda,32x32,5,keep original,reclining_seat
+T1,vehicle_part,seat,dda,32x32,1,keep original,seat
+T1,vehicle_part,seat_back,dda,32x32,1,keep original,reclining_seat
 T1,vehicle_part,seat_wood,dda,32x32,5,keep original,reclining_seat
+T1,vehicle_part,seatbelt,dda,32x32,2,keep original,
 T1,vehicle_part,sgn_ba_gac_bed,mod,32x32,1,Saigon art (drawn),f_crate_o
 T1,vehicle_part,sgn_engine_110cc,mod,32x32,1,Saigon art (drawn),engine_combustion
 T1,vehicle_part,sgn_longtail,mod,32x32,1,Saigon art (drawn),engine_combustion
@@ -468,20 +508,33 @@ T1,vehicle_part,sgn_oars,mod,32x32,1,Saigon art (drawn),engine_manual
 T1,vehicle_part,sgn_pillion,mod,32x32,1,Saigon art (drawn),seat
 T1,vehicle_part,sgn_tank_4l,mod,32x32,1,Saigon art (drawn),tank_little
 T1,vehicle_part,sgn_xich_lo_seat,mod,32x32,1,Saigon art (drawn),reclining_seat
+T1,vehicle_part,spring_plate,dda,32x32,1,keep original,
+T1,vehicle_part,stowboard,dda,32x32,1,keep original,base_board_abstract
+T1,vehicle_part,tank,dda,32x32,1,keep original,
+T1,vehicle_part,tank_55gal_drum,dda,32x32,3,keep original,tank_30gal_drum
 T1,vehicle_part,tank_small,dda,32x32,1,keep original,
+T1,vehicle_part,trunk_floor,dda,32x32,2,keep original,t_carpet_red
+T1,vehicle_part,vehicle_alarm,dda,32x32,1,keep original,
 T1,vehicle_part,wheel,dda,32x32,2,keep original,
 T1,vehicle_part,wheel_bicycle,dda,32x32,1,keep original,
 T1,vehicle_part,wheel_motorbike,dda,20x20,1,keep original,wheel
 T1,vehicle_part,wheel_mount_light,dda,32x32,1,keep original,
 T1,vehicle_part,wheel_mount_light_steerable,dda,32x32,1,keep original,wheel_mount_light
 T1,vehicle_part,wheel_mount_medium,dda,32x32,1,keep original,
+T1,vehicle_part,wheel_mount_medium_steerable,dda,32x32,1,keep original,wheel_mount_medium
+T1,vehicle_part,wheel_wide,dda,32x48,3,keep original,wheel
+T1,vehicle_part,windshield,dda,32x48,5,keep original,t_wall_glass
+T1,vehicle_part,wing_mirror,dda,64x64,4,keep original,
 T1,vehicle_part,wood box,dda,32x32,3,keep original,f_crate_o
 T1,vehicle_part,xlframe,dda,32x32,1,keep original,frame_abstract
+T2,item,backpack_hiking,dda,32x32,1,keep original,ragpouch
 T2,item,banana,dda,20x20,1,keep original,
 T2,item,beer,dda,32x32,1,keep original,water_clean
 T2,item,binoculars,dda,20x20,1,to do (no sprite),
+T2,item,blanket,dda,32x32,1,keep original,towel
 T2,item,butane,dda,32x32,1,keep original,
 T2,item,butane_can,dda,32x32,1,keep original,spray_can
+T2,item,camera,dda,20x20,1,keep original,abstract_camera
 T2,item,candle,dda,20x20,1,keep original,
 T2,item,cash_card,dda,20x20,1,keep original,card_plastic_abstract
 T2,item,coconut,dda,20x20,1,keep original,
@@ -491,6 +544,7 @@ T2,item,cooking_oil,dda,32x32,1,keep original,
 T2,item,cotton_patchwork,dda,20x20,1,keep original,
 T2,item,diamond_ring,dda,20x20,1,keep original,ring_engagement
 T2,item,dry_rice,dda,20x20,1,Saigon art (drawn),
+T2,item,duffelbag,dda,32x32,1,keep original,ragpouch
 T2,item,e_scrap,dda,20x20,1,keep original,
 T2,item,egg_chicken,dda,20x20,1,keep original,
 T2,item,envelope,dda,20x20,1,keep original,paper
@@ -499,6 +553,7 @@ T2,item,flashlight,dda,20x20,1,keep original,
 T2,item,gasoline,dda,32x32,1,keep original,
 T2,item,gold_ring,dda,20x20,1,keep original,
 T2,item,gold_watch,dda,20x20,1,keep original,
+T2,item,guidebook,dda,20x20,1,keep original,radio_book
 T2,item,helmet_army,dda,20x20,1,keep original,hat_ball
 T2,item,holy_symbol,dda,32x32,1,keep original,
 T2,item,holybook_bible1,dda,20x20,1,keep original,radio_book
@@ -506,6 +561,8 @@ T2,item,holybook_catechism,dda,20x20,1,Saigon art (drawn),radio_book
 T2,item,laptop,dda,20x20,1,keep original,abstract_laptop
 T2,item,mango,dda,32x32,1,keep original,
 T2,item,meat,dda,20x20,1,keep original,flesh
+T2,item,money_hundred,dda,20x20,1,keep original,money_one
+T2,item,money_twenty,dda,20x20,1,keep original,money_one
 T2,item,mre_beef,dda,20x20,1,to do (no sprite),mre_beef
 T2,item,mre_veggy,dda,20x20,1,to do (no sprite),mre_beef
 T2,item,noodles_fast,dda,20x20,1,Saigon art (drawn),
@@ -562,6 +619,7 @@ T2,item,sgn_dong_50k,mod,20x20,1,Saigon art (drawn),money_one
 T2,item,sgn_durian,mod,20x20,1,Saigon art (drawn),mango
 T2,item,sgn_engine_110cc_item,mod,20x20,1,Saigon art (drawn),engine_combustion
 T2,item,sgn_goi_cuon,mod,20x20,1,Saigon art (drawn),dry_rice
+T2,item,sgn_ho_chieu,mod,20x20,1,Saigon art (drawn),
 T2,item,sgn_hu_tieu,mod,20x20,1,Saigon art (drawn),water_clean
 T2,item,sgn_karaoke_songbook,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_khan_quang_do,mod,20x20,1,Saigon art (derived),scarf
@@ -609,10 +667,14 @@ T2,item,sgn_xoi,mod,20x20,1,Saigon art (drawn),dry_rice
 T2,item,sheet_cotton,dda,20x20,1,keep original,
 T2,item,silver_necklace,dda,20x20,1,keep original,
 T2,item,sugar,dda,32x32,1,keep original,
+T2,item,sunglasses,dda,20x20,1,keep original,sunglasses
+T2,item,sunscreen,dda,20x20,1,to do (no sprite),
 T2,item,tea_raw,dda,20x20,1,keep original,
 T2,item,textbook_firstaid,dda,20x20,1,keep original,
 T2,item,two_way_radio,dda,20x20,1,keep original,
 T2,item,wallet,dda,32x32,1,keep original,bag_canvas
+T2,item,wallet_travel,dda,20x20,1,to do (no sprite),
+T2,item,water_clean,dda,32x32,1,keep original,
 T3,item,10gal_hat,dda,32x32,1,keep original,hat_ball
 T3,item,10mm_ammo_box_20,dda,20x20,1,keep original,box_small
 T3,item,10mm_ammo_box_50,dda,20x20,1,keep original,box_small
@@ -917,7 +979,6 @@ T3,item,b_shorts,dda,32x32,1,keep original,boxer_shorts
 T3,item,back_holster,dda,20x20,1,keep original,sheath
 T3,item,backgammon,dda,20x20,1,base tileset gap,
 T3,item,backpack_denim,dda,32x32,1,keep original,ragpouch
-T3,item,backpack_hiking,dda,32x32,1,keep original,ragpouch
 T3,item,backpack_hunting,dda,32x32,1,keep original,ragpouch
 T3,item,backpack_leather,dda,32x32,1,keep original,ragpouch
 T3,item,backpack_small,dda,32x32,1,keep original,ragpouch
@@ -1216,7 +1277,6 @@ T3,item,caff_gum,dda,20x20,1,keep original,
 T3,item,caffeine,dda,20x20,1,keep original,
 T3,item,calcium_tablet,dda,20x20,1,keep original,
 T3,item,camelbak,dda,32x32,1,keep original,ragpouch
-T3,item,camera,dda,20x20,1,keep original,abstract_camera
 T3,item,camera_bag,dda,32x32,1,keep original,ragpouch
 T3,item,camera_pro,dda,32x32,1,keep original,abstract_camera
 T3,item,camisole,dda,20x20,1,keep original,tshirt
@@ -1469,7 +1529,6 @@ T3,item,dry_beans,dda,20x20,1,keep original,
 T3,item,dry_duffelbag,dda,32x32,1,keep original,ragpouch
 T3,item,dry_lentils,dda,20x20,1,keep original,
 T3,item,duct_tape,dda,32x32,1,keep original,
-T3,item,duffelbag,dda,32x32,1,keep original,ragpouch
 T3,item,duffelbag_gym_l,dda,32x32,1,keep original,ragpouch
 T3,item,duffelbag_gym_m,dda,32x32,1,keep original,ragpouch
 T3,item,duffelbag_gym_s,dda,32x32,1,keep original,ragpouch
@@ -2045,10 +2104,8 @@ T3,item,molle_medium_rucksack,dda,32x32,1,keep original,ragpouch
 T3,item,molle_pack,dda,32x32,1,keep original,ragpouch
 T3,item,money_fifty,dda,20x20,1,keep original,money_one
 T3,item,money_five,dda,20x20,1,keep original,money_one
-T3,item,money_hundred,dda,20x20,1,keep original,money_one
 T3,item,money_one,dda,20x20,1,keep original,
 T3,item,money_ten,dda,20x20,1,keep original,money_one
-T3,item,money_twenty,dda,20x20,1,keep original,money_one
 T3,item,money_two,dda,20x20,1,keep original,money_one
 T3,item,monopoly,dda,32x32,1,keep original,
 T3,item,months_old_newspaper,dda,32x32,1,keep original,
@@ -2715,7 +2772,6 @@ T3,item,subwaymap,dda,20x20,1,keep original,abstractmap
 T3,item,subwaystationmap,dda,20x20,1,keep original,abstractmap
 T3,item,suit,dda,20x20,1,keep original,jumpsuit_pocketless
 T3,item,sundress,dda,32x32,1,keep original,coat_rain
-T3,item,sunglasses,dda,20x20,1,keep original,sunglasses
 T3,item,sunglasses_bifocal,dda,20x20,1,keep original,sunglasses
 T3,item,sunglasses_eye,dda,20x20,1,keep original,glasses_eye
 T3,item,sunglasses_reading,dda,20x20,1,keep original,glasses_eye
@@ -2895,7 +2951,6 @@ T3,item,walther_p38,dda,20x20,1,keep original,gun_base_handgun_semi
 T3,item,walther_ppk,dda,20x20,1,keep original,gun_base_handgun_semi
 T3,item,walther_ppq_45,dda,20x20,1,keep original,gun_base_handgun_semi
 T3,item,walther_ppq_9mm,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,water_clean,dda,32x32,1,keep original,
 T3,item,water_faucet,dda,20x20,1,keep original,
 T3,item,water_mineral,dda,32x32,1,keep original,water_clean
 T3,item,water_purifier,dda,20x20,1,keep original,

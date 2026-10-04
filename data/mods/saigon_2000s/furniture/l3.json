@@ -1,0 +1,113 @@
+[
+  {
+    "type": "terrain",
+    "id": "t_sgn_kinh_xanh",
+    "copy-from": "t_wall_glass",
+    "looks_like": "t_wall_glass",
+    "name": "blue-green curtain wall",
+    "description": "Floor-to-ceiling panes of tinted blue-green glass in aluminium frames, the skin of the new towers that rose over District 1 in the late nineties.",
+    "color": "cyan"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_thang_cuon_len",
+    "copy-from": "t_stairs_up",
+    "looks_like": "t_stairs_up",
+    "name": "escalator (up)",
+    "description": "A stopped escalator, its grooved steel steps now just a steep, slightly uneven staircase.  The handrail rubber has begun to peel.",
+    "color": "light_gray"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_thang_cuon_xuong",
+    "copy-from": "t_stairs_down",
+    "looks_like": "t_stairs_down",
+    "name": "escalator (down)",
+    "description": "A stopped escalator leading down, the comb plate at the top clogged with dust and dropped receipts.",
+    "color": "light_gray"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_bang_gio_tau",
+    "name": "departure board",
+    "description": "A tall board of flip-number slats over the ticket hall: Thống Nhất express SE1 to Hà Nội, the overnight to Nha Trang, the local to Phan Thiết.  Every line reads the same date, the day the trains stopped.",
+    "symbol": "#",
+    "color": "yellow",
+    "looks_like": "f_sgn_bang_den",
+    "move_cost_mod": -1,
+    "coverage": 40,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "NOITEM", "BLOCKSDOOR" ],
+    "bash": {
+      "str_min": 10,
+      "str_max": 40,
+      "sound": "clatter!",
+      "sound_fail": "clang.",
+      "items": [ { "item": "scrap", "count": [ 2, 5 ] }, { "item": "plastic_chunk", "count": [ 3, 10 ] }, { "item": "cable", "count": [ 2, 8 ] } ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_quay_ve",
+    "copy-from": "f_counter",
+    "looks_like": "f_counter",
+    "name": "ticket window",
+    "description": "A counter behind a pane of scratched glass with a speaking hole and a slot for money.  Handwritten signs taped to the glass list fares and departure times; one just says HẾT VÉ, sold out.",
+    "color": "light_blue"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_long_chim",
+    "name": "bird cages",
+    "description": "A rack of bamboo bird cages, the kind old men brought to the park every morning to hang beside their coffee so their songbirds could compete.  Most of the cages are open and empty now.",
+    "symbol": "&",
+    "color": "brown",
+    "looks_like": "f_rack",
+    "move_cost_mod": -1,
+    "coverage": 30,
+    "required_str": 6,
+    "flags": [ "TRANSPARENT", "PLACE_ITEM", "FLAMMABLE_ASH" ],
+    "bash": {
+      "str_min": 2,
+      "str_max": 8,
+      "sound": "crack!",
+      "sound_fail": "creak.",
+      "items": [ { "item": "splinter", "count": [ 2, 6 ] }, { "item": "string_36", "count": [ 1, 3 ] } ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_ban_da",
+    "copy-from": "f_table",
+    "looks_like": "f_table",
+    "name": "stone park table",
+    "description": "A round granite table set into the ground under the trees, a Chinese chessboard carved into the top, worn smooth by decades of games.",
+    "color": "light_gray",
+    "bash": {
+      "str_min": 40,
+      "str_max": 100,
+      "sound": "crack!",
+      "sound_fail": "thud.",
+      "items": [ { "item": "rock", "count": [ 2, 6 ] } ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_thap_rua",
+    "copy-from": "f_statue",
+    "looks_like": "f_statue",
+    "name": "Turtle Lake monument",
+    "description": "The concrete tower in the middle of Hồ Con Rùa: a spire rising out of open lotus petals over the round pool, where students met after class and couples sat on the rim at night.",
+    "color": "white"
+  },
+  {
+    "type": "vehicle_group",
+    "id": "sgn_vg_train",
+    "vehicles": [ [ "train_car_passenger", 70 ], [ "train_diesel_locomotive", 30 ] ]
+  },
+  {
+    "type": "vehicle_group",
+    "id": "sgn_vg_coach",
+    "vehicles": [ [ "bus", 100 ] ]
+  }
+]

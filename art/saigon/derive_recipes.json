@@ -1517,5 +1517,20 @@
     "source": "t_brick_wall",
     "ops": [],
     "//": "L1 cathedral: the original red brick, which the mod restyles to stucco under t_brick_wall."
+  },
+  {
+    "target": "t_sgn_kinh_xanh",
+    "source": "t_wall_glass",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [ 170, 250 ],
+        "min_sat": 0.08,
+        "to_hue": 176,
+        "sat_mul": 1.9,
+        "val_mul": 0.95
+      }
+    ],
+    "//": "L3: the blue-green tinted curtain wall of the late-nineties towers (Saigon Trade Center, Diamond Plaza)."
   }
 ]

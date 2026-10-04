@@ -217,168 +217,172 @@
       "fg": 50
      },
      {
-      "id": "sgn_hu_tieu",
+      "id": "sgn_ho_chieu",
       "fg": 51
      },
      {
-      "id": "sgn_karaoke_songbook",
+      "id": "sgn_hu_tieu",
       "fg": 52
      },
      {
-      "id": "sgn_khau_trang",
+      "id": "sgn_karaoke_songbook",
       "fg": 53
      },
      {
-      "id": "sgn_kho_muc",
+      "id": "sgn_khau_trang",
       "fg": 54
      },
      {
-      "id": "sgn_luoi_chai",
+      "id": "sgn_kho_muc",
       "fg": 55
      },
      {
-      "id": "sgn_ly_nhua",
+      "id": "sgn_luoi_chai",
       "fg": 56
      },
      {
-      "id": "sgn_mi_goi",
+      "id": "sgn_ly_nhua",
       "fg": 57
      },
      {
-      "id": "sgn_mit",
+      "id": "sgn_mi_goi",
       "fg": 58
      },
      {
-      "id": "sgn_moto_tank_4l",
+      "id": "sgn_mit",
       "fg": 59
      },
      {
-      "id": "sgn_mung",
+      "id": "sgn_moto_tank_4l",
       "fg": 60
      },
      {
-      "id": "sgn_nen",
+      "id": "sgn_mung",
       "fg": 61
      },
      {
-      "id": "sgn_newspaper",
+      "id": "sgn_nen",
       "fg": 62
      },
      {
-      "id": "sgn_noi_com_dien",
+      "id": "sgn_newspaper",
       "fg": 63
      },
      {
-      "id": "sgn_non_la",
+      "id": "sgn_noi_com_dien",
       "fg": 64
      },
      {
-      "id": "sgn_note_handwritten",
+      "id": "sgn_non_la",
       "fg": 65
      },
      {
-      "id": "sgn_ong_tay_chong_nang",
+      "id": "sgn_note_handwritten",
       "fg": 66
      },
      {
-      "id": "sgn_oresol",
+      "id": "sgn_ong_tay_chong_nang",
       "fg": 67
      },
      {
-      "id": "sgn_phin",
+      "id": "sgn_oresol",
       "fg": 68
      },
      {
-      "id": "sgn_pho_bo",
+      "id": "sgn_phin",
       "fg": 69
      },
      {
-      "id": "sgn_quan_cong_an",
+      "id": "sgn_pho_bo",
       "fg": 70
      },
      {
-      "id": "sgn_quang_ganh",
+      "id": "sgn_quan_cong_an",
       "fg": 71
      },
      {
-      "id": "sgn_quat_may",
+      "id": "sgn_quang_ganh",
       "fg": 72
      },
      {
-      "id": "sgn_radio_cassette",
+      "id": "sgn_quat_may",
       "fg": 73
      },
      {
-      "id": "sgn_rau_muong",
+      "id": "sgn_radio_cassette",
       "fg": 74
      },
      {
-      "id": "sgn_ro_nhua",
+      "id": "sgn_rau_muong",
       "fg": 75
      },
      {
-      "id": "sgn_than_to_ong",
+      "id": "sgn_ro_nhua",
       "fg": 76
      },
      {
-      "id": "sgn_thanh_long",
+      "id": "sgn_than_to_ong",
       "fg": 77
      },
      {
-      "id": "sgn_thau_nhua",
+      "id": "sgn_thanh_long",
       "fg": 78
      },
      {
-      "id": "sgn_thung_xop",
+      "id": "sgn_thau_nhua",
       "fg": 79
      },
      {
-      "id": "sgn_thuoc_la",
+      "id": "sgn_thung_xop",
       "fg": 80
      },
      {
-      "id": "sgn_tom_kho",
+      "id": "sgn_thuoc_la",
       "fg": 81
      },
      {
-      "id": "sgn_ung_cao_su",
+      "id": "sgn_tom_kho",
       "fg": 82
      },
      {
-      "id": "sgn_vang_chi",
+      "id": "sgn_ung_cao_su",
       "fg": 83
      },
      {
-      "id": "sgn_vang_luong",
+      "id": "sgn_vang_chi",
       "fg": 84
      },
      {
-      "id": "sgn_ve_so",
+      "id": "sgn_vang_luong",
       "fg": 85
      },
      {
-      "id": "sgn_ward_notice",
+      "id": "sgn_ve_so",
       "fg": 86
      },
      {
-      "id": "sgn_xa_beng",
+      "id": "sgn_ward_notice",
       "fg": 87
      },
      {
-      "id": "sgn_xoi",
+      "id": "sgn_xa_beng",
       "fg": 88
      },
      {
-      "id": "tape_measure",
+      "id": "sgn_xoi",
       "fg": 89
      },
      {
-      "id": "wood_block",
+      "id": "tape_measure",
       "fg": 90
      },
      {
-      "id": "wooden_post_short",
+      "id": "wood_block",
       "fg": 91
+     },
+     {
+      "id": "wooden_post_short",
+      "fg": 92
      }
     ]
    },
@@ -394,28 +398,28 @@
       "fg": 96
      },
      {
-      "id": "f_sgn_ban_inox",
+      "id": "f_sgn_ban_da",
       "fg": 97
      },
      {
-      "id": "f_sgn_ban_tho_lon",
+      "id": "f_sgn_ban_inox",
       "fg": 98
      },
      {
-      "id": "f_sgn_ban_tho_than_tai",
+      "id": "f_sgn_ban_tho_lon",
       "fg": 99
      },
      {
-      "id": "f_sgn_bang_den",
+      "id": "f_sgn_ban_tho_than_tai",
       "fg": 100
+     },
+     {
+      "id": "f_sgn_bang_den",
+      "fg": 101
      },
      {
       "id": "f_sgn_bang_hieu",
       "fg": [
-       {
-        "weight": 1,
-        "sprite": 101
-       },
        {
         "weight": 1,
         "sprite": 102
@@ -423,133 +427,141 @@
        {
         "weight": 1,
         "sprite": 103
+       },
+       {
+        "weight": 1,
+        "sprite": 104
        }
       ]
      },
      {
       "id": "f_sgn_buong_dien_thoai",
-      "fg": 104
-     },
-     {
-      "id": "f_sgn_chau_kieng",
       "fg": 105
      },
      {
-      "id": "f_sgn_dan_karaoke",
+      "id": "f_sgn_chau_kieng",
       "fg": 106
      },
      {
-      "id": "f_sgn_day_phoi",
+      "id": "f_sgn_dan_karaoke",
       "fg": 107
      },
      {
-      "id": "f_sgn_dong_ho",
+      "id": "f_sgn_day_phoi",
       "fg": 108
      },
      {
-      "id": "f_sgn_dua_can",
+      "id": "f_sgn_dong_ho",
       "fg": 109
      },
      {
-      "id": "f_sgn_ho_rong",
+      "id": "f_sgn_dua_can",
       "fg": 110
      },
      {
-      "id": "f_sgn_lu_huong",
+      "id": "f_sgn_ho_rong",
       "fg": 111
      },
      {
-      "id": "f_sgn_lu_nuoc",
+      "id": "f_sgn_lu_huong",
       "fg": 112
      },
      {
-      "id": "f_sgn_may_net",
+      "id": "f_sgn_lu_nuoc",
       "fg": 113
      },
      {
-      "id": "f_sgn_nhang_vong",
+      "id": "f_sgn_may_net",
       "fg": 114
      },
      {
-      "id": "f_sgn_quay_vang",
+      "id": "f_sgn_nhang_vong",
       "fg": 115
      },
      {
-      "id": "f_sgn_tivi_crt",
+      "id": "f_sgn_quay_vang",
       "fg": 116
      },
      {
-      "id": "f_sgn_van_tho",
+      "id": "f_sgn_quay_ve",
       "fg": 117
      },
      {
-      "id": "f_sgn_vong",
+      "id": "f_sgn_tivi_crt",
       "fg": 118
      },
      {
-      "id": "f_sgn_xau_ho",
+      "id": "f_sgn_van_tho",
       "fg": 119
      },
      {
-      "id": "f_sgn_xe_banh_mi",
+      "id": "f_sgn_vong",
       "fg": 120
      },
      {
-      "id": "f_toilet",
+      "id": "f_sgn_xau_ho",
       "fg": 121
      },
      {
-      "id": "t_sgn_bo_ke",
+      "id": "f_sgn_xe_banh_mi",
+      "fg": 122
+     },
+     {
+      "id": "f_toilet",
       "fg": 123
      },
      {
+      "id": "t_sgn_bo_ke",
+      "fg": 125
+     },
+     {
       "id": "t_sgn_cua_sat_keo_c",
-      "fg": 124,
-      "bg": 132
+      "fg": 126,
+      "bg": 134
      },
      {
       "id": "t_sgn_cua_sat_keo_o",
-      "fg": 125,
-      "bg": 132
+      "fg": 127,
+      "bg": 134
      },
      {
       "id": "t_sgn_gach_bong_1",
-      "fg": 126
-     },
-     {
-      "id": "t_sgn_gach_bong_2",
-      "fg": 127
-     },
-     {
-      "id": "t_sgn_gach_bong_3",
       "fg": 128
      },
      {
-      "id": "t_sgn_gach_bong_4",
+      "id": "t_sgn_gach_bong_2",
       "fg": 129
      },
      {
-      "id": "t_sgn_gach_men",
+      "id": "t_sgn_gach_bong_3",
       "fg": 130
      },
      {
-      "id": "t_sgn_gach_tau",
+      "id": "t_sgn_gach_bong_4",
       "fg": 131
+     },
+     {
+      "id": "t_sgn_gach_men",
+      "fg": 132
+     },
+     {
+      "id": "t_sgn_gach_tau",
+      "fg": 133
      },
      {
       "id": "t_sgn_hem_xi_mang",
       "fg": [
        {
         "weight": 3,
-        "sprite": 132
-       },
-       {
-        "weight": 1,
         "sprite": 134
        },
        {
         "weight": 1,
-        "sprite": 133
+        "sprite": 136
+       },
+       {
+        "weight": 1,
+        "sprite": 135
        }
       ]
      },
@@ -558,11 +570,11 @@
       "fg": [
        {
         "weight": 3,
-        "sprite": 135
+        "sprite": 137
        },
        {
         "weight": 1,
-        "sprite": 136
+        "sprite": 138
        }
       ]
      },
@@ -571,15 +583,15 @@
       "fg": [
        {
         "weight": 3,
-        "sprite": 137
-       },
-       {
-        "weight": 2,
         "sprite": 139
        },
        {
         "weight": 2,
-        "sprite": 138
+        "sprite": 141
+       },
+       {
+        "weight": 2,
+        "sprite": 140
        }
       ]
      },
@@ -588,15 +600,15 @@
       "fg": [
        {
         "weight": 3,
-        "sprite": 140
+        "sprite": 142
        },
        {
         "weight": 3,
-        "sprite": 141
+        "sprite": 143
        },
        {
         "weight": 1,
-        "sprite": 142
+        "sprite": 144
        }
       ]
      },
@@ -605,15 +617,15 @@
       "fg": [
        {
         "weight": 3,
-        "sprite": 143
+        "sprite": 145
        },
        {
         "weight": 3,
-        "sprite": 144
+        "sprite": 146
        },
        {
         "weight": 1,
-        "sprite": 145
+        "sprite": 147
        }
       ]
      },
@@ -622,74 +634,82 @@
       "fg": [
        {
         "weight": 3,
-        "sprite": 146
+        "sprite": 148
        },
        {
         "weight": 3,
-        "sprite": 147
+        "sprite": 149
        },
        {
         "weight": 1,
-        "sprite": 148
+        "sprite": 150
        }
       ]
      },
      {
       "id": "t_sgn_ngoi_men_xanh",
-      "fg": 149
+      "fg": 151
      },
      {
       "id": "t_sgn_shrub_hoa_giay",
-      "fg": 150,
-      "bg": 122
+      "fg": 152,
+      "bg": 124
      },
      {
       "id": "t_sgn_shrub_khoai_mi",
-      "fg": 151,
-      "bg": 122
+      "fg": 153,
+      "bg": 124
      },
      {
       "id": "t_sgn_shrub_ngu_sac",
-      "fg": 152,
-      "bg": 122
+      "fg": 154,
+      "bg": 124
+     },
+     {
+      "id": "t_sgn_thang_cuon_len",
+      "fg": 155
+     },
+     {
+      "id": "t_sgn_thang_cuon_xuong",
+      "fg": 156
      },
      {
       "id": "t_sgn_tuong_bong_gio",
-      "fg": 153
+      "fg": 157
      },
      {
       "id": "vp_sgn_ba_gac_bed",
-      "fg": 154,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_engine_110cc",
-      "fg": 155,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_longtail",
-      "fg": 156,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_oars",
-      "fg": 157,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_pillion",
       "fg": 158,
       "rotates": true
      },
      {
-      "id": "vp_sgn_tank_4l",
+      "id": "vp_sgn_engine_110cc",
       "fg": 159,
       "rotates": true
      },
      {
-      "id": "vp_sgn_xich_lo_seat",
+      "id": "vp_sgn_longtail",
       "fg": 160,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_oars",
+      "fg": 161,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_pillion",
+      "fg": 162,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_tank_4l",
+      "fg": 163,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_xich_lo_seat",
+      "fg": 164,
       "rotates": true
      }
     ]
@@ -727,32 +747,44 @@
     "sprite_offset_y": -32,
     "tiles": [
      {
-      "id": "f_sgn_bao_gao",
+      "id": "f_sgn_bang_gio_tau",
       "fg": 192
      },
      {
-      "id": "f_sgn_cot_dien",
+      "id": "f_sgn_bao_gao",
       "fg": 193
      },
      {
-      "id": "f_sgn_du",
+      "id": "f_sgn_cot_dien",
       "fg": 194
      },
      {
-      "id": "f_sgn_loa_phuong",
+      "id": "f_sgn_du",
       "fg": 195
      },
      {
-      "id": "f_sgn_su_tu_da",
+      "id": "f_sgn_loa_phuong",
       "fg": 196
      },
      {
-      "id": "f_sgn_tuong_than",
+      "id": "f_sgn_long_chim",
       "fg": 197
      },
      {
-      "id": "t_sgn_cot_son",
+      "id": "f_sgn_su_tu_da",
       "fg": 198
+     },
+     {
+      "id": "f_sgn_thap_rua",
+      "fg": 199
+     },
+     {
+      "id": "f_sgn_tuong_than",
+      "fg": 200
+     },
+     {
+      "id": "t_sgn_cot_son",
+      "fg": 201
      }
     ]
    },

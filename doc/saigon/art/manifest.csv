@@ -9,11 +9,13 @@ T1,furniture,f_fridge,dda,1,1-4,,palette sgn_nhaong
 T1,furniture,f_oven,dda,1,1-4,,palette sgn_nhaong
 T1,furniture,f_rack,dda,1,1-4,,palette sgn_nhaong
 T1,furniture,f_region_flower_decorative,dda,1,1-4,f_region_pseudo,palette road_palette
+T1,furniture,f_sgn_ban_da,mod,1,1-4,f_table,data/mods/saigon_2000s/furniture/l3.json
 T1,furniture,f_sgn_ban_inox,mod,1,1-4,f_table,data/mods/saigon_2000s/furniture/furniture.json; palette sgn_hem
 T1,furniture,f_sgn_ban_tho,mod,1,1-4,f_table,data/mods/saigon_2000s/furniture/furniture.json; palette sgn_nhaong; palette sgn_hem
 T1,furniture,f_sgn_ban_tho_lon,mod,1,1-4,f_table,data/mods/saigon_2000s/furniture/cholon.json
 T1,furniture,f_sgn_ban_tho_than_tai,mod,1,1-4,f_table,data/mods/saigon_2000s/furniture/furniture.json; palette sgn_nhaong
 T1,furniture,f_sgn_bang_den,mod,1,1-4,f_desk,data/mods/saigon_2000s/furniture/furniture.json
+T1,furniture,f_sgn_bang_gio_tau,mod,1,1-4,f_desk,data/mods/saigon_2000s/furniture/l3.json
 T1,furniture,f_sgn_bang_hieu,mod,1,1-4,f_sign,data/mods/saigon_2000s/furniture/furniture.json
 T1,furniture,f_sgn_bao_gao,mod,1,1-4,f_crate_c,data/mods/saigon_2000s/furniture/cholon.json
 T1,furniture,f_sgn_buong_dien_thoai,mod,1,1-4,f_rack,data/mods/saigon_2000s/furniture/furniture.json
@@ -26,12 +28,15 @@ T1,furniture,f_sgn_du,mod,1,1-4,f_sign,data/mods/saigon_2000s/furniture/furnitur
 T1,furniture,f_sgn_dua_can,mod,1,1-4,f_dandelion,data/mods/saigon_2000s/region/flora.json
 T1,furniture,f_sgn_ho_rong,mod,1,1-4,f_statue,data/mods/saigon_2000s/furniture/cholon.json
 T1,furniture,f_sgn_loa_phuong,mod,1,1-4,f_utility_pole,data/mods/saigon_2000s/furniture/furniture.json
+T1,furniture,f_sgn_long_chim,mod,1,1-4,f_rack,data/mods/saigon_2000s/furniture/l3.json
 T1,furniture,f_sgn_lu_huong,mod,1,1-4,f_brazier,data/mods/saigon_2000s/furniture/cholon.json
 T1,furniture,f_sgn_lu_nuoc,mod,1,1-4,f_standing_tank,data/mods/saigon_2000s/furniture/furniture.json; palette sgn_nhaong
 T1,furniture,f_sgn_may_net,mod,1,1-4,f_desk,data/mods/saigon_2000s/furniture/furniture.json; palette sgn_nhaong
 T1,furniture,f_sgn_nhang_vong,mod,1,1-4,f_rack,data/mods/saigon_2000s/furniture/cholon.json
 T1,furniture,f_sgn_quay_vang,mod,1,1-4,f_display_rack,data/mods/saigon_2000s/furniture/furniture.json; palette sgn_nhaong
+T1,furniture,f_sgn_quay_ve,mod,1,1-4,f_counter,data/mods/saigon_2000s/furniture/l3.json
 T1,furniture,f_sgn_su_tu_da,mod,1,1-4,f_statue,data/mods/saigon_2000s/furniture/cholon.json
+T1,furniture,f_sgn_thap_rua,mod,1,1-4,f_statue,data/mods/saigon_2000s/furniture/l3.json
 T1,furniture,f_sgn_tivi_crt,mod,1,1-4,f_dresser,data/mods/saigon_2000s/furniture/furniture.json; palette sgn_nhaong
 T1,furniture,f_sgn_tuong_than,mod,1,1-4,f_statue,data/mods/saigon_2000s/furniture/cholon.json
 T1,furniture,f_sgn_van_tho,mod,1,1-4,f_dandelion,data/mods/saigon_2000s/region/flora.json
@@ -403,6 +408,7 @@ T1,terrain,t_sgn_gach_men,mod,1-16 (connecting),1-6 (2 faces if wall),t_thconc_f
 T1,terrain,t_sgn_gach_tau,mod,1-16 (connecting),1-6 (2 faces if wall),t_pavement,data/mods/saigon_2000s/furniture/cholon.json
 T1,terrain,t_sgn_gach_tau_trong,mod,1-16 (connecting),1-6 (2 faces if wall),t_pavement,data/mods/saigon_2000s/furniture/cholon.json
 T1,terrain,t_sgn_hem_xi_mang,mod,1-16 (connecting),1-6 (2 faces if wall),t_pavement,data/mods/saigon_2000s/furniture/terrain.json; palette sgn_hem
+T1,terrain,t_sgn_kinh_xanh,mod,1-16 (connecting),1-6 (2 faces if wall),t_window,data/mods/saigon_2000s/furniture/l3.json
 T1,terrain,t_sgn_mai_ngoi,mod,1-16 (connecting),1-6 (2 faces if wall),t_pavement,data/mods/saigon_2000s/furniture/terrain.json
 T1,terrain,t_sgn_mai_ton,mod,1-16 (connecting),1-6 (2 faces if wall),t_scrap_floor,data/mods/saigon_2000s/furniture/terrain.json
 T1,terrain,t_sgn_ngap_duong,mod,1-16 (connecting),1-6 (2 faces if wall),t_water_sh,data/mods/saigon_2000s/region/flood.json
@@ -412,6 +418,8 @@ T1,terrain,t_sgn_ngoi_men_xanh,mod,1-16 (connecting),1-6 (2 faces if wall),t_pav
 T1,terrain,t_sgn_shrub_hoa_giay,mod,1-16 (connecting),1-6 (2 faces if wall),t_shrub_abstract,data/mods/saigon_2000s/region/flora.json
 T1,terrain,t_sgn_shrub_khoai_mi,mod,1-16 (connecting),1-6 (2 faces if wall),t_shrub_abstract,data/mods/saigon_2000s/region/flora.json
 T1,terrain,t_sgn_shrub_ngu_sac,mod,1-16 (connecting),1-6 (2 faces if wall),t_shrub_abstract,data/mods/saigon_2000s/region/flora.json
+T1,terrain,t_sgn_thang_cuon_len,mod,1-16 (connecting),1-6 (2 faces if wall),t_stairs_up,data/mods/saigon_2000s/furniture/l3.json
+T1,terrain,t_sgn_thang_cuon_xuong,mod,1-16 (connecting),1-6 (2 faces if wall),t_stairs_down,data/mods/saigon_2000s/furniture/l3.json
 T1,terrain,t_sgn_tree_bang,mod,1-16 (connecting),1-6 (2 faces if wall),t_tree_abstract,data/mods/saigon_2000s/region/flora.json
 T1,terrain,t_sgn_tree_bo_de,mod,1-16 (connecting),1-6 (2 faces if wall),t_tree_abstract,data/mods/saigon_2000s/region/flora.json
 T1,terrain,t_sgn_tree_chuoi,mod,1-16 (connecting),1-6 (2 faces if wall),t_tree,data/mods/saigon_2000s/region/flora.json
@@ -439,28 +447,60 @@ T1,terrain,t_water_moving_sh,dda,1-16 (connecting),1-6 (2 faces if wall),t_water
 T1,terrain,t_water_sh,dda,1-16 (connecting),1-6 (2 faces if wall),,palette road_palette
 T1,terrain,t_window_bars,dda,1-16 (connecting),1-6 (2 faces if wall),t_bars,palette sgn_nhaong
 T1,terrain,t_zebra,dda,1-16 (connecting),1-6 (2 faces if wall),,palette road_palette
+T1,vehicle_part,aisle,dda,1 (rotates),4,t_metal_floor,vehicle train_car_passenger; vehicle train_diesel_locomotive; vehicle bus
+T1,vehicle_part,aisle_lights,dda,1 (rotates),4,,vehicle train_car_passenger; vehicle bus
 T1,vehicle_part,alternator_motorbike,dda,1 (rotates),4,vehicle_alternator,vehicle sgn_veh_underbone; vehicle sgn_veh_xe_tay_ga; vehicle sgn_veh_ba_gac_may
+T1,vehicle_part,alternator_truck,dda,1 (rotates),4,vehicle_alternator,vehicle train_diesel_locomotive; vehicle bus
 T1,vehicle_part,basketsm,dda,1 (rotates),4,basketsm,vehicle sgn_veh_underbone; vehicle sgn_veh_xe_dap
+T1,vehicle_part,battery_car,dda,1 (rotates),4,,vehicle bus
 T1,vehicle_part,battery_motorbike,dda,1 (rotates),4,battery_car,vehicle sgn_veh_xe_tay_ga; vehicle sgn_veh_ba_gac_may
 T1,vehicle_part,battery_motorbike_small,dda,1 (rotates),4,battery_car,vehicle sgn_veh_underbone
+T1,vehicle_part,beeper,dda,1 (rotates),4,,vehicle bus
+T1,vehicle_part,board,dda,1 (rotates),4,base_board_abstract,vehicle train_car_passenger; vehicle train_diesel_locomotive; vehicle bus
 T1,vehicle_part,boat_board,dda,1 (rotates),4,t_wall_log,vehicle sgn_veh_xuong; vehicle sgn_veh_ghe
+T1,vehicle_part,box,dda,1 (rotates),4,f_crate_o,vehicle train_diesel_locomotive
+T1,vehicle_part,cam_control,dda,1 (rotates),4,,vehicle train_diesel_locomotive
 T1,vehicle_part,cargo_space,dda,1 (rotates),4,f_crate_o,vehicle sgn_veh_ghe
 T1,vehicle_part,controls,dda,1 (rotates),4,,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may; vehicle sgn_veh_ghe
-T1,vehicle_part,controls_electronic,dda,1 (rotates),4,,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may
+T1,vehicle_part,controls_electronic,dda,1 (rotates),4,,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may; vehicle train_diesel_locomotive
+T1,vehicle_part,dashboard,dda,1 (rotates),4,,vehicle train_diesel_locomotive; vehicle bus
+T1,vehicle_part,diesel_engine_v12,dda,1 (rotates),4,engine_combustion,vehicle train_diesel_locomotive
+T1,vehicle_part,diesel_engine_v6,dda,1 (rotates),4,engine_combustion,vehicle bus
+T1,vehicle_part,door,dda,1 (rotates),4,t_door_metal_c,vehicle bus
+T1,vehicle_part,door_opaque,dda,1 (rotates),4,t_door_metal_c,vehicle train_diesel_locomotive
+T1,vehicle_part,door_sliding,dda,1 (rotates),4,t_door_metal_c,vehicle train_car_passenger
 T1,vehicle_part,engine_1cyl,dda,1 (rotates),4,engine_combustion,vehicle sgn_veh_xe_tay_ga
 T1,vehicle_part,engine_1cyl_large,dda,1 (rotates),4,engine_combustion,vehicle sgn_veh_ba_gac_may
 T1,vehicle_part,foot_pedals,dda,1 (rotates),4,engine_manual,vehicle sgn_veh_xich_lo
-T1,vehicle_part,frame,dda,1 (rotates),4,frame_abstract,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may
+T1,vehicle_part,frame,dda,1 (rotates),4,frame_abstract,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may; vehicle train_car_passenger
 T1,vehicle_part,frame_wood,dda,1 (rotates),4,frame_abstract,vehicle sgn_veh_xuong; vehicle sgn_veh_ghe
+T1,vehicle_part,halfboard,dda,1 (rotates),4,base_board_abstract,vehicle bus
 T1,vehicle_part,hand_paddles,dda,1 (rotates),4,engine_manual,vehicle sgn_veh_xuong
+T1,vehicle_part,hdboard,dda,1 (rotates),4,base_board_abstract,vehicle train_diesel_locomotive
+T1,vehicle_part,hddoor,dda,1 (rotates),4,t_door_metal_c,vehicle train_diesel_locomotive
+T1,vehicle_part,hdframe,dda,1 (rotates),4,frame_abstract,vehicle train_diesel_locomotive; vehicle bus
+T1,vehicle_part,headlight,dda,1 (rotates),4,,vehicle bus
 T1,vehicle_part,horn_bicycle,dda,1 (rotates),4,,vehicle sgn_veh_xich_lo
-T1,vehicle_part,horn_car,dda,1 (rotates),4,,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may
+T1,vehicle_part,horn_car,dda,1 (rotates),4,,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may; vehicle bus
+T1,vehicle_part,inboard_mirror,dda,1 (rotates),4,,vehicle train_diesel_locomotive
+T1,vehicle_part,integrated_cooler,dda,1 (rotates),4,mountable_cooler,vehicle bus
+T1,vehicle_part,medium_storage_battery,dda,1 (rotates),4,storage_battery,vehicle train_diesel_locomotive
 T1,vehicle_part,motorcycle_headlight,dda,1 (rotates),4,,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may
 T1,vehicle_part,motorcycle_kickstand,dda,1 (rotates),4,,vehicle sgn_veh_underbone
+T1,vehicle_part,mountable_heater,dda,1 (rotates),4,,vehicle train_car_passenger; vehicle bus
 T1,vehicle_part,muffler,dda,1 (rotates),4,,vehicle sgn_veh_underbone; vehicle sgn_veh_xe_tay_ga; vehicle sgn_veh_ba_gac_may
+T1,vehicle_part,omnicam,dda,1 (rotates),4,,vehicle train_diesel_locomotive
+T1,vehicle_part,plating_steel,dda,1 (rotates),4,,vehicle train_diesel_locomotive
+T1,vehicle_part,rail_wheel,dda,1 (rotates),4,,vehicle train_car_passenger; vehicle train_diesel_locomotive
+T1,vehicle_part,rail_wheel_steerable,dda,1 (rotates),4,rail_wheel,vehicle train_diesel_locomotive
+T1,vehicle_part,reinforced_windshield,dda,1 (rotates),4,t_wall_glass,vehicle train_diesel_locomotive
+T1,vehicle_part,roof,dda,1 (rotates),4,,vehicle train_car_passenger; vehicle train_diesel_locomotive; vehicle bus
 T1,vehicle_part,roof_wood,dda,1 (rotates),4,,vehicle sgn_veh_ghe
 T1,vehicle_part,saddle,dda,1 (rotates),4,reclining_seat,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may; vehicle sgn_veh_xich_lo
+T1,vehicle_part,seat,dda,1 (rotates),4,seat,vehicle train_car_passenger; vehicle bus
+T1,vehicle_part,seat_back,dda,1 (rotates),4,reclining_seat,vehicle train_diesel_locomotive; vehicle bus
 T1,vehicle_part,seat_wood,dda,1 (rotates),4,reclining_seat,vehicle sgn_veh_xuong; vehicle sgn_veh_ghe
+T1,vehicle_part,seatbelt,dda,1 (rotates),4,,vehicle bus
 T1,vehicle_part,sgn_ba_gac_bed,mod,1 (rotates),4,f_crate_o,vehicle sgn_veh_ba_gac_may
 T1,vehicle_part,sgn_engine_110cc,mod,1 (rotates),4,engine_combustion,vehicle sgn_veh_underbone
 T1,vehicle_part,sgn_longtail,mod,1 (rotates),4,engine_combustion,vehicle sgn_veh_ghe
@@ -468,20 +508,33 @@ T1,vehicle_part,sgn_oars,mod,1 (rotates),4,engine_manual,vehicle sgn_veh_xuong
 T1,vehicle_part,sgn_pillion,mod,1 (rotates),4,seat,vehicle sgn_veh_underbone
 T1,vehicle_part,sgn_tank_4l,mod,1 (rotates),4,tank_little,vehicle sgn_veh_underbone
 T1,vehicle_part,sgn_xich_lo_seat,mod,1 (rotates),4,reclining_seat,vehicle sgn_veh_xich_lo
+T1,vehicle_part,spring_plate,dda,1 (rotates),4,,vehicle train_diesel_locomotive
+T1,vehicle_part,stowboard,dda,1 (rotates),4,base_board_abstract,vehicle train_diesel_locomotive
+T1,vehicle_part,tank,dda,1 (rotates),4,,vehicle bus
+T1,vehicle_part,tank_55gal_drum,dda,1 (rotates),4,tank_30gal_drum,vehicle train_diesel_locomotive
 T1,vehicle_part,tank_small,dda,1 (rotates),4,,vehicle sgn_veh_xe_tay_ga; vehicle sgn_veh_ba_gac_may; vehicle sgn_veh_ghe
+T1,vehicle_part,trunk_floor,dda,1 (rotates),4,t_carpet_red,vehicle train_car_passenger; vehicle bus
+T1,vehicle_part,vehicle_alarm,dda,1 (rotates),4,,vehicle bus
 T1,vehicle_part,wheel,dda,1 (rotates),4,,vehicle sgn_veh_ba_gac_may
 T1,vehicle_part,wheel_bicycle,dda,1 (rotates),4,,vehicle sgn_veh_xe_dap; vehicle sgn_veh_xich_lo
 T1,vehicle_part,wheel_motorbike,dda,1 (rotates),4,wheel,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may
 T1,vehicle_part,wheel_mount_light,dda,1 (rotates),4,,vehicle sgn_veh_underbone; vehicle sgn_veh_xich_lo
 T1,vehicle_part,wheel_mount_light_steerable,dda,1 (rotates),4,wheel_mount_light,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may; vehicle sgn_veh_xich_lo
-T1,vehicle_part,wheel_mount_medium,dda,1 (rotates),4,,vehicle sgn_veh_ba_gac_may
+T1,vehicle_part,wheel_mount_medium,dda,1 (rotates),4,,vehicle sgn_veh_ba_gac_may; vehicle bus
+T1,vehicle_part,wheel_mount_medium_steerable,dda,1 (rotates),4,wheel_mount_medium,vehicle bus
+T1,vehicle_part,wheel_wide,dda,1 (rotates),4,wheel,vehicle bus
+T1,vehicle_part,windshield,dda,1 (rotates),4,t_wall_glass,vehicle train_car_passenger; vehicle bus
+T1,vehicle_part,wing_mirror,dda,1 (rotates),4,,vehicle bus
 T1,vehicle_part,wood box,dda,1 (rotates),4,f_crate_o,vehicle sgn_veh_xuong; vehicle sgn_veh_ghe
 T1,vehicle_part,xlframe,dda,1 (rotates),4,frame_abstract,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may; vehicle sgn_veh_xich_lo
+T2,item,backpack_hiking,dda,1,1,ragpouch,item_group large_bags; item_group medium_bugout; item_group sgn_tourist
 T2,item,banana,dda,1,1,,item_group sgn_cho_stall_produce; item_group sgn_temple; item_group lunchbox_fruit
-T2,item,beer,dda,1,1,water_clean,item_group sgn_karaoke
+T2,item,beer,dda,1,1,water_clean,item_group sgn_karaoke; item_group sgn_tourist
 T2,item,binoculars,dda,1,1,,item_group tools_survival; item_group hiking; item_group sgn_palace_bunker
+T2,item,blanket,dda,1,1,towel,item_group sgn_train_station
 T2,item,butane,dda,1,1,,item_group sgn_shophouse_kitchen; item_group sgn_street_cart
 T2,item,butane_can,dda,1,1,spray_can,item_group tools_survival; item_group default_zombie_items_pockets; item_group sgn_shophouse_kitchen
+T2,item,camera,dda,1,1,abstract_camera,item_group sgn_tourist; item_group everyday_gear
 T2,item,candle,dda,1,1,,item_group tools_lighting; item_group sgn_shophouse_living; item_group sgn_pagoda
 T2,item,cash_card,dda,1,1,card_plastic_abstract,item_group sgn_shophouse_living
 T2,item,coconut,dda,1,1,,item_group sgn_cho_stall_produce
@@ -491,6 +544,7 @@ T2,item,cooking_oil,dda,1,1,,item_group sgn_cho_wholesale
 T2,item,cotton_patchwork,dda,1,1,,item_group sgn_cho_cloth; item_group SUS_trash_floor_light; item_group SUS_trash_floor_heavy
 T2,item,diamond_ring,dda,1,1,ring_engagement,item_group rings_gold; item_group jewelry_front; item_group sgn_gold_shop
 T2,item,dry_rice,dda,1,1,,item_group dollar_food; item_group dry_rice_bag_plastic_full; item_group sgn_shophouse_kitchen
+T2,item,duffelbag,dda,1,1,ragpouch,item_group large_bags; item_group sgn_train_station
 T2,item,e_scrap,dda,1,1,,item_group sgn_net_cafe; item_group SUS_trash_electrical
 T2,item,egg_chicken,dda,1,1,,item_group sgn_shophouse_kitchen; item_group sgn_cho_stall_produce
 T2,item,envelope,dda,1,1,paper,item_group postman_carried; item_group sgn_post_office
@@ -499,6 +553,7 @@ T2,item,flashlight,dda,1,1,,item_group tools_lighting; item_group hiking; item_g
 T2,item,gasoline,dda,1,1,,item_group sgn_moto_shop
 T2,item,gold_ring,dda,1,1,,item_group bugout_memento; item_group rings_gold; item_group jewelry_front
 T2,item,gold_watch,dda,1,1,,item_group bugout_memento; item_group jewelry_front; item_group sgn_gold_shop
+T2,item,guidebook,dda,1,1,radio_book,item_group sgn_tourist
 T2,item,helmet_army,dda,1,1,hat_ball,item_group sgn_palace_bunker
 T2,item,holy_symbol,dda,1,1,,item_group bugout_memento; item_group jewelry_front; item_group sgn_church
 T2,item,holybook_bible1,dda,1,1,radio_book,item_group SUS_book_nonf_hard_spirit; item_group sgn_church
@@ -506,6 +561,8 @@ T2,item,holybook_catechism,dda,1,1,radio_book,item_group sgn_church
 T2,item,laptop,dda,1,1,abstract_laptop,item_group sgn_net_cafe; item_group civilian_laptops
 T2,item,mango,dda,1,1,,item_group sgn_cho_stall_produce; item_group sgn_temple
 T2,item,meat,dda,1,1,flesh,item_group sgn_cho_stall_meat_fish
+T2,item,money_hundred,dda,1,1,money_one,item_group wallet_stylish_full; item_group sgn_tourist
+T2,item,money_twenty,dda,1,1,money_one,item_group banknotes; item_group sgn_tourist
 T2,item,mre_beef,dda,1,1,mre_beef,item_group sgn_palace_bunker
 T2,item,mre_veggy,dda,1,1,mre_beef,item_group sgn_palace_bunker
 T2,item,noodles_fast,dda,1,1,,item_group groce_pasta; item_group sgn_cho_wholesale; item_group fast_food
@@ -528,12 +585,12 @@ T2,item,sgn_ao_trang_hoc_sinh,mod,1,1,buttonshirt,item_group sgn_shophouse_livin
 T2,item,sgn_banh_bao,mod,1,1,flatbread,item_group sgn_street_cart; data/mods/saigon_2000s/items/food/street_food_2.json
 T2,item,sgn_banh_chung,mod,1,1,dry_rice,item_group sgn_shophouse_kitchen; item_group sgn_pagoda; item_group sgn_temple
 T2,item,sgn_banh_mi_bread,mod,1,1,bread,item_group sgn_street_cart; data/mods/saigon_2000s/items/food/street_food.json
-T2,item,sgn_banh_mi_thit,mod,1,1,sandwich_t,item_group sgn_street_cart; data/mods/saigon_2000s/items/food/street_food.json
+T2,item,sgn_banh_mi_thit,mod,1,1,sandwich_t,item_group sgn_street_cart; item_group sgn_train_station; data/mods/saigon_2000s/items/food/street_food.json
 T2,item,sgn_banh_pho,mod,1,1,noodles_fast,item_group sgn_shophouse_kitchen; item_group sgn_street_cart; data/mods/saigon_2000s/items/food/street_food.json
 T2,item,sgn_banh_trang,mod,1,1,tortilla_corn,item_group sgn_cho_stall_produce; data/mods/saigon_2000s/items/food/street_food_2.json
 T2,item,sgn_banh_xeo,mod,1,1,pancakes,item_group sgn_street_cart; data/mods/saigon_2000s/items/food/street_food_2.json
 T2,item,sgn_bep_than_to_ong,mod,1,1,brazier,item_group sgn_shophouse_kitchen; item_group sgn_street_cart; data/mods/saigon_2000s/items/gear/kitchen.json
-T2,item,sgn_bia_hoi,mod,1,1,water_clean,item_group sgn_cafe; data/mods/saigon_2000s/items/food/drinks_condiments.json
+T2,item,sgn_bia_hoi,mod,1,1,water_clean,item_group sgn_cafe; item_group sgn_tourist; data/mods/saigon_2000s/items/food/drinks_condiments.json
 T2,item,sgn_bich_nylon,mod,1,1,bottle_plastic,item_group sgn_street_cart; item_group sgn_cafe; data/mods/saigon_2000s/items/gear/kitchen.json
 T2,item,sgn_binh_gas,mod,1,1,medium_propane_tank,item_group sgn_shophouse_kitchen; data/mods/saigon_2000s/items/gear/kitchen.json
 T2,item,sgn_book_almanac,mod,1,1,radio_book,item_group sgn_shophouse_living; data/mods/saigon_2000s/items/books/fiction_media.json
@@ -562,6 +619,7 @@ T2,item,sgn_dong_50k,mod,1,1,money_one,item_group sgn_dong_notes; data/mods/saig
 T2,item,sgn_durian,mod,1,1,mango,item_group sgn_cho_stall_produce; data/mods/saigon_2000s/items/food/street_food.json
 T2,item,sgn_engine_110cc_item,mod,1,1,engine_combustion,item_group sgn_moto_shop; data/mods/saigon_2000s/vehicles/vehicle_parts.json
 T2,item,sgn_goi_cuon,mod,1,1,dry_rice,item_group sgn_street_cart; data/mods/saigon_2000s/items/food/street_food_2.json
+T2,item,sgn_ho_chieu,mod,1,1,,data/mods/saigon_2000s/items/gear/travel.json; item_group sgn_tourist
 T2,item,sgn_hu_tieu,mod,1,1,water_clean,item_group sgn_street_cart; data/mods/saigon_2000s/items/food/street_food_2.json
 T2,item,sgn_karaoke_songbook,mod,1,1,radio_book,item_group sgn_shophouse_living; item_group sgn_cafe; item_group sgn_karaoke
 T2,item,sgn_khan_quang_do,mod,1,1,scarf,item_group sgn_shophouse_living; item_group sgn_school; data/mods/saigon_2000s/items/gear/clothing.json
@@ -609,10 +667,14 @@ T2,item,sgn_xoi,mod,1,1,dry_rice,item_group sgn_street_cart; item_group sgn_scho
 T2,item,sheet_cotton,dda,1,1,,item_group sgn_cho_cloth; item_group SUS_trash_sewing
 T2,item,silver_necklace,dda,1,1,,item_group pendant_necklaces_silver; item_group jewelry_front; item_group sgn_gold_shop
 T2,item,sugar,dda,1,1,,item_group sgn_shophouse_kitchen; item_group sgn_cafe; item_group sgn_cho_wholesale
+T2,item,sunglasses,dda,1,1,sunglasses,item_group sgn_tourist; item_group clothing_glasses
+T2,item,sunscreen,dda,1,1,,item_group sgn_tourist
 T2,item,tea_raw,dda,1,1,,item_group tea_raw_bag_plastic_33; item_group sgn_shophouse_kitchen; item_group sgn_cafe
 T2,item,textbook_firstaid,dda,1,1,,item_group sgn_school
 T2,item,two_way_radio,dda,1,1,,item_group sgn_drops_cong_an; item_group sgn_palace_bunker; item_group charged_two_way_radio
 T2,item,wallet,dda,1,1,bag_canvas,item_group wallet_full; item_group wallet_industrial_full; item_group sgn_wallet
+T2,item,wallet_travel,dda,1,1,,item_group sgn_tourist
+T2,item,water_clean,dda,1,1,,item_group bugout_water; item_group sgn_train_station; item_group fast_food
 T3,item,10gal_hat,dda,1,1,hat_ball,item_group hiking; item_group hatstore_hats
 T3,item,10mm_ammo_box_20,dda,1,1,box_small,item_group boxed_10mm_20_used; item_group boxed_10mm_20
 T3,item,10mm_ammo_box_50,dda,1,1,box_small,item_group boxed_10mm_50_used; item_group boxed_10mm_50
@@ -917,7 +979,6 @@ T3,item,b_shorts,dda,1,1,boxer_shorts,item_group pants_male; item_group pants
 T3,item,back_holster,dda,1,1,sheath,item_group accessory_weaponcarry
 T3,item,backgammon,dda,1,1,,item_group games
 T3,item,backpack_denim,dda,1,1,ragpouch,item_group small_bags; item_group small_bugout_bag_4
-T3,item,backpack_hiking,dda,1,1,ragpouch,item_group large_bags; item_group medium_bugout
 T3,item,backpack_hunting,dda,1,1,ragpouch,item_group large_bags
 T3,item,backpack_leather,dda,1,1,ragpouch,item_group small_bags; item_group small_bugout_bag_3
 T3,item,backpack_small,dda,1,1,ragpouch,item_group small_bags
@@ -1216,7 +1277,6 @@ T3,item,caff_gum,dda,1,1,,item_group chewing_gum_used_nic; item_group chewing_gu
 T3,item,caffeine,dda,1,1,,item_group caffeine_bottle_plastic_pill_supplement_1_10
 T3,item,calcium_tablet,dda,1,1,,item_group SUS_bathroom_medicine; item_group bugout_meds_prepper; item_group pillbox_contents
 T3,item,camelbak,dda,1,1,ragpouch,item_group bugout_tools
-T3,item,camera,dda,1,1,abstract_camera,item_group everyday_gear
 T3,item,camera_bag,dda,1,1,ragpouch,item_group everyday_gear
 T3,item,camera_pro,dda,1,1,abstract_camera,item_group everyday_gear
 T3,item,camisole,dda,1,1,tshirt,item_group female_underwear_top_child
@@ -1469,7 +1529,6 @@ T3,item,dry_beans,dda,1,1,,item_group dollar_food
 T3,item,dry_duffelbag,dda,1,1,ragpouch,item_group hiking
 T3,item,dry_lentils,dda,1,1,,item_group dollar_food; item_group dry_lentils_bag_plastic_full
 T3,item,duct_tape,dda,1,1,,item_group duct_tape_roll; item_group duct_tape_roll_part; item_group SUS_trash_floor_light
-T3,item,duffelbag,dda,1,1,ragpouch,item_group large_bags
 T3,item,duffelbag_gym_l,dda,1,1,ragpouch,item_group large_gym_bags
 T3,item,duffelbag_gym_m,dda,1,1,ragpouch,item_group small_gym_bags
 T3,item,duffelbag_gym_s,dda,1,1,ragpouch,item_group small_gym_bags
@@ -2045,10 +2104,8 @@ T3,item,molle_medium_rucksack,dda,1,1,ragpouch,item_group molle_backpacks_and_ac
 T3,item,molle_pack,dda,1,1,ragpouch,item_group molle_backpacks_and_accessories
 T3,item,money_fifty,dda,1,1,money_one,item_group banknotes
 T3,item,money_five,dda,1,1,money_one,item_group banknotes
-T3,item,money_hundred,dda,1,1,money_one,item_group wallet_stylish_full
 T3,item,money_one,dda,1,1,,item_group banknotes
 T3,item,money_ten,dda,1,1,money_one,item_group banknotes
-T3,item,money_twenty,dda,1,1,money_one,item_group banknotes
 T3,item,money_two,dda,1,1,money_one,item_group banknotes
 T3,item,monopoly,dda,1,1,,item_group games
 T3,item,months_old_newspaper,dda,1,1,,item_group newspaper_recent
@@ -2715,7 +2772,6 @@ T3,item,subwaymap,dda,1,1,abstractmap,item_group prepper_maps
 T3,item,subwaystationmap,dda,1,1,abstractmap,item_group prepper_maps
 T3,item,suit,dda,1,1,jumpsuit_pocketless,item_group everyday_corpse_male
 T3,item,sundress,dda,1,1,coat_rain,item_group everyday_corpse_female; item_group pants
-T3,item,sunglasses,dda,1,1,sunglasses,item_group clothing_glasses
 T3,item,sunglasses_bifocal,dda,1,1,sunglasses,item_group clothing_glasses
 T3,item,sunglasses_eye,dda,1,1,glasses_eye,item_group clothing_glasses
 T3,item,sunglasses_reading,dda,1,1,glasses_eye,item_group clothing_glasses
@@ -2895,7 +2951,6 @@ T3,item,walther_p38,dda,1,1,gun_base_handgun_semi,item_group nested_walther_p38;
 T3,item,walther_ppk,dda,1,1,gun_base_handgun_semi,item_group nested_walther_ppk; item_group guns_pistol_common_everyday_carry_32
 T3,item,walther_ppq_45,dda,1,1,gun_base_handgun_semi,item_group nested_walther_ppq_45; item_group guns_pistol_common_everyday_carry_45
 T3,item,walther_ppq_9mm,dda,1,1,gun_base_handgun_semi,item_group nested_walther_ppq_9mm; item_group guns_pistol_common_everyday_carry_9mm
-T3,item,water_clean,dda,1,1,,item_group bugout_water; item_group fast_food
 T3,item,water_faucet,dda,1,1,,item_group supplies_plumbing
 T3,item,water_mineral,dda,1,1,water_clean,item_group bugout_water
 T3,item,water_purifier,dda,1,1,,item_group hiking
