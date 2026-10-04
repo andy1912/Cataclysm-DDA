@@ -178,5 +178,56 @@
     "name": "potted plant",
     "description": "Chậu kiểng: a glazed pot with a twisted bonsai or a kumquat bush, lovingly watered every evening on the roof terrace.",
     "color": "green"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_quay_vang",
+    "copy-from": "f_glass_cabinet",
+    "looks_like": "f_glass_cabinet",
+    "name": "gold shop counter",
+    "description": "A glass display counter lined with red velvet, built to show off chains, bangles and the stamped gold leaves that families save their money in.  The glass is smashed.",
+    "color": "yellow"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_may_net",
+    "copy-from": "f_desk",
+    "looks_like": "f_desk",
+    "name": "internet café PC",
+    "description": "A cheap beige computer on a plywood desk with a sticky keyboard and a headset, one of a row where boys played LAN games all night.  A handwritten sign sets the price per hour.",
+    "color": "light_gray",
+    "deconstruct": {
+      "items": [
+        { "item": "processor", "prob": 40 },
+        { "item": "e_scrap", "count": [ 2, 4 ] },
+        { "item": "2x4", "count": 2 },
+        { "item": "nail", "charges": [ 4, 8 ] }
+      ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_dan_karaoke",
+    "name": "karaoke set",
+    "symbol": "&",
+    "color": "magenta",
+    "looks_like": "f_speaker_cabinet",
+    "description": "A big television between two speaker towers, a disc player stacked with VCDs and a pair of microphones on coiled cords.  The neighbours hated it.",
+    "move_cost_mod": -1,
+    "coverage": 50,
+    "required_str": 10,
+    "flags": [ "TRANSPARENT", "PLACE_ITEM", "BLOCKSDOOR" ],
+    "bash": {
+      "str_min": 10,
+      "str_max": 35,
+      "sound": "crunch!",
+      "sound_fail": "whump.",
+      "items": [
+        { "item": "e_scrap", "count": [ 2, 5 ] },
+        { "item": "glass_shard", "count": [ 2, 6 ] },
+        { "item": "plastic_chunk", "count": [ 2, 6 ] }
+      ]
+    },
+    "deconstruct": { "items": [ { "item": "television", "count": 1 }, { "item": "e_scrap", "count": [ 1, 3 ] } ] }
   }
 ]

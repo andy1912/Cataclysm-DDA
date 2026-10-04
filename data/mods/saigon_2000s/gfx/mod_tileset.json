@@ -403,89 +403,101 @@
       "fg": 102
      },
      {
-      "id": "f_sgn_day_phoi",
+      "id": "f_sgn_dan_karaoke",
       "fg": 103
      },
      {
-      "id": "f_sgn_dua_can",
+      "id": "f_sgn_day_phoi",
       "fg": 104
      },
      {
-      "id": "f_sgn_lu_nuoc",
+      "id": "f_sgn_dua_can",
       "fg": 105
      },
      {
-      "id": "f_sgn_tivi_crt",
+      "id": "f_sgn_lu_nuoc",
       "fg": 106
      },
      {
-      "id": "f_sgn_van_tho",
+      "id": "f_sgn_may_net",
       "fg": 107
      },
      {
-      "id": "f_sgn_vong",
+      "id": "f_sgn_quay_vang",
       "fg": 108
      },
      {
-      "id": "f_sgn_xau_ho",
+      "id": "f_sgn_tivi_crt",
       "fg": 109
      },
      {
-      "id": "f_sgn_xe_banh_mi",
+      "id": "f_sgn_van_tho",
       "fg": 110
      },
      {
-      "id": "f_toilet",
+      "id": "f_sgn_vong",
       "fg": 111
      },
      {
-      "id": "t_sgn_bo_ke",
+      "id": "f_sgn_xau_ho",
+      "fg": 112
+     },
+     {
+      "id": "f_sgn_xe_banh_mi",
       "fg": 113
      },
      {
-      "id": "t_sgn_cua_sat_keo_c",
-      "fg": 114,
-      "bg": 121
+      "id": "f_toilet",
+      "fg": 114
      },
      {
-      "id": "t_sgn_cua_sat_keo_o",
-      "fg": 115,
-      "bg": 121
-     },
-     {
-      "id": "t_sgn_gach_bong_1",
+      "id": "t_sgn_bo_ke",
       "fg": 116
      },
      {
-      "id": "t_sgn_gach_bong_2",
-      "fg": 117
+      "id": "t_sgn_cua_sat_keo_c",
+      "fg": 117,
+      "bg": 124
      },
      {
-      "id": "t_sgn_gach_bong_3",
-      "fg": 118
+      "id": "t_sgn_cua_sat_keo_o",
+      "fg": 118,
+      "bg": 124
      },
      {
-      "id": "t_sgn_gach_bong_4",
+      "id": "t_sgn_gach_bong_1",
       "fg": 119
      },
      {
-      "id": "t_sgn_gach_men",
+      "id": "t_sgn_gach_bong_2",
       "fg": 120
+     },
+     {
+      "id": "t_sgn_gach_bong_3",
+      "fg": 121
+     },
+     {
+      "id": "t_sgn_gach_bong_4",
+      "fg": 122
+     },
+     {
+      "id": "t_sgn_gach_men",
+      "fg": 123
      },
      {
       "id": "t_sgn_hem_xi_mang",
       "fg": [
        {
         "weight": 3,
-        "sprite": 121
+        "sprite": 124
        },
        {
         "weight": 1,
-        "sprite": 123
+        "sprite": 126
        },
        {
         "weight": 1,
-        "sprite": 122
+        "sprite": 125
        }
       ]
      },
@@ -494,70 +506,70 @@
       "fg": [
        {
         "weight": 3,
-        "sprite": 124
+        "sprite": 127
        },
        {
         "weight": 2,
-        "sprite": 126
+        "sprite": 129
        },
        {
         "weight": 2,
-        "sprite": 125
+        "sprite": 128
        }
       ]
      },
      {
       "id": "t_sgn_shrub_hoa_giay",
-      "fg": 127,
-      "bg": 112
+      "fg": 130,
+      "bg": 115
      },
      {
       "id": "t_sgn_shrub_khoai_mi",
-      "fg": 128,
-      "bg": 112
+      "fg": 131,
+      "bg": 115
      },
      {
       "id": "t_sgn_shrub_ngu_sac",
-      "fg": 129,
-      "bg": 112
+      "fg": 132,
+      "bg": 115
      },
      {
       "id": "t_sgn_tuong_bong_gio",
-      "fg": 130
+      "fg": 133
      },
      {
       "id": "vp_sgn_ba_gac_bed",
-      "fg": 131,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_engine_110cc",
-      "fg": 132,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_longtail",
-      "fg": 133,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_oars",
       "fg": 134,
       "rotates": true
      },
      {
-      "id": "vp_sgn_pillion",
+      "id": "vp_sgn_engine_110cc",
       "fg": 135,
       "rotates": true
      },
      {
-      "id": "vp_sgn_tank_4l",
+      "id": "vp_sgn_longtail",
       "fg": 136,
       "rotates": true
      },
      {
-      "id": "vp_sgn_xich_lo_seat",
+      "id": "vp_sgn_oars",
       "fg": 137,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_pillion",
+      "fg": 138,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_tank_4l",
+      "fg": 139,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_xich_lo_seat",
+      "fg": 140,
       "rotates": true
      }
     ]

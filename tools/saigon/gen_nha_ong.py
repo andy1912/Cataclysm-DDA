@@ -65,6 +65,16 @@ GROUND = {
     'moto': [
         'WRRR', 'W..G', 'W.m.', 'W.m.', 'W...', 'Wkk.', 'W...', 'WCC.', 'W...',
         'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
+    # B8h shophouse businesses: gold shop, internet café, karaoke rooms
+    'tiemvang': [
+        'WRRR', 'W..G', 'Wgg.', 'W...', 'Wgg.', 'W...', 'W...', 'WCC.', 'W...',
+        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
+    'net': [
+        'WRRR', 'W..G', 'Wnc.', 'Wnc.', 'Wnc.', 'Wnc.', 'Wnc.', 'WCC.', 'W...',
+        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
+    'karaoke': [
+        'WRRR', 'W..G', 'W...', 'WCC.', 'W...', 'WQs.', 'W.s.', 'W+WW', 'WQs.',
+        'W.s.', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
 }
 FLOOR = {
     'family': [
@@ -147,7 +157,8 @@ def nested_object( rows ):
 
 def lot_height( nid, top ):
     ground = { 'chunks': [ [ 'sgn_lot_z0_pho', 3 ], [ 'sgn_lot_z0_taphoa', 4 ], [ 'sgn_lot_z0_moto', 2 ],
-                           [ 'sgn_lot_z0_nhathuoc', 1 ] ],
+                           [ 'sgn_lot_z0_nhathuoc', 1 ], [ 'sgn_lot_z0_tiemvang', 1 ], [ 'sgn_lot_z0_net', 1 ],
+                           [ 'sgn_lot_z0_karaoke', 1 ] ],
                'x': 0, 'y': 0, 'check_z': [ 0 ] }
     floors = [ { 'chunks': [ [ 'sgn_lot_z%d_family' % z, 3 ], [ 'sgn_lot_z%d_rental' % z, 1 ] ],
                  'x': 0, 'y': 0, 'check_z': [ z ] } for z in ( 1, 2 ) ]
@@ -191,6 +202,7 @@ def palette():
             'r': FLOOR_PARAM, 'm': FLOOR_PARAM, 'k': FLOOR_PARAM, 'd': FLOOR_PARAM,
             's': FLOOR_PARAM, 'p': FLOOR_PARAM,
             'G': FLOOR_PARAM, 'L': FLOOR_PARAM, 'V': FLOOR_PARAM, 'v': FLOOR_PARAM,
+            'g': FLOOR_PARAM, 'n': FLOOR_PARAM, 'Q': FLOOR_PARAM,
             'P': 't_concrete_roof', 'M': 't_concrete_roof',
             '<': 't_stairs_up', '>': 't_stairs_down', '_': 't_concrete_roof', '=': 't_railing' },
         'furniture': {
@@ -200,11 +212,16 @@ def palette():
             's': 'f_sofa', 'p': 'f_rack',
             # G21 shophouse interior
             'G': 'f_sgn_ban_tho_than_tai', 'L': 'f_sgn_lu_nuoc', 'V': 'f_sgn_tivi_crt', 'v': 'f_sgn_vong',
-            'P': 'f_sgn_chau_kieng', 'M': 'f_air_conditioner' },
+            'P': 'f_sgn_chau_kieng', 'M': 'f_air_conditioner',
+            # B8h businesses
+            'g': 'f_sgn_quay_vang', 'n': 'f_sgn_may_net', 'Q': 'f_sgn_dan_karaoke' },
         'liquids': { 'K': { 'liquid': 'water', 'amount': [ 120, 720 ] },
                      'L': { 'liquid': 'water', 'amount': [ 40, 240 ] } },
         'items': {
             'G': { 'item': 'sgn_pagoda', 'chance': 60 },
+            'g': { 'item': 'sgn_gold_shop', 'chance': 70, 'repeat': [ 1, 3 ] },
+            'n': { 'item': 'sgn_net_cafe', 'chance': 35 },
+            'Q': { 'item': 'sgn_karaoke', 'chance': 60, 'repeat': [ 1, 2 ] },
             'C': { 'item': 'sgn_street_cart', 'chance': 35 },
             'O': { 'item': 'sgn_shophouse_kitchen', 'chance': 50 },
             'F': { 'item': 'sgn_shophouse_kitchen', 'chance': 40 },

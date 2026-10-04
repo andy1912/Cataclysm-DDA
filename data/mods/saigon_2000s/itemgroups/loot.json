@@ -299,5 +299,49 @@
       { "item": "sgn_nen", "prob": 40, "count": [ 1, 4 ] }
     ],
     "//": "Pagoda altars and kitchen."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_gold_shop",
+    "subtype": "distribution",
+    "//": "B8h tiệm vàng counters.",
+    "items": [
+      { "item": "sgn_vang_chi", "prob": 60, "count": [ 1, 5 ] },
+      { "item": "sgn_vang_luong", "prob": 15 },
+      { "item": "gold_ring", "prob": 30 },
+      { "item": "ring_wedding", "prob": 20 },
+      { "item": "diamond_ring", "prob": 10 },
+      { "item": "ring_engagement", "prob": 10 },
+      { "item": "silver_necklace", "prob": 25 },
+      { "item": "gold_watch", "prob": 10 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_net_cafe",
+    "subtype": "distribution",
+    "//": "B8h quán net desks.",
+    "items": [
+      { "item": "processor", "prob": 10 },
+      { "item": "laptop", "prob": 3 },
+      { "item": "e_scrap", "prob": 30 },
+      { "item": "sgn_thuoc_la", "prob": 30, "count": [ 1, 6 ] },
+      { "item": "sgn_ly_nhua", "prob": 25 },
+      { "item": "sgn_mi_goi", "prob": 20 },
+      { "item": "sgn_dien_thoai", "prob": 8 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_karaoke",
+    "subtype": "distribution",
+    "//": "B8h karaoke rooms.",
+    "items": [
+      { "item": "sgn_karaoke_songbook", "prob": 40 },
+      { "item": "beer", "prob": 30, "count": [ 1, 4 ] },
+      { "item": "sgn_kho_muc", "prob": 20 },
+      { "item": "sgn_thuoc_la", "prob": 25, "count": [ 1, 8 ] },
+      { "item": "sgn_ly_nhua", "prob": 15 }
+    ]
   }
 ]
