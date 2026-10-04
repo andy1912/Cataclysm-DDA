@@ -495,90 +495,89 @@
       "fg": 117
      },
      {
-      "id": "f_sgn_tivi_crt",
+      "id": "f_sgn_thuyen_thien_nga",
       "fg": 118
      },
      {
-      "id": "f_sgn_van_tho",
+      "id": "f_sgn_tivi_crt",
       "fg": 119
      },
      {
-      "id": "f_sgn_vong",
+      "id": "f_sgn_van_tho",
       "fg": 120
      },
      {
-      "id": "f_sgn_xau_ho",
+      "id": "f_sgn_vong",
       "fg": 121
      },
      {
-      "id": "f_sgn_xe_banh_mi",
+      "id": "f_sgn_xau_ho",
       "fg": 122
      },
      {
-      "id": "f_toilet",
+      "id": "f_sgn_xe_banh_mi",
       "fg": 123
      },
      {
+      "id": "f_toilet",
+      "fg": 124
+     },
+     {
+      "id": "sgn_mon_khi",
+      "fg": 126
+     },
+     {
+      "id": "sgn_mon_tran",
+      "fg": 127
+     },
+     {
       "id": "t_sgn_bo_ke",
-      "fg": 125
-     },
-     {
-      "id": "t_sgn_cua_sat_keo_c",
-      "fg": 126,
-      "bg": 134
-     },
-     {
-      "id": "t_sgn_cua_sat_keo_o",
-      "fg": 127,
-      "bg": 134
-     },
-     {
-      "id": "t_sgn_gach_bong_1",
       "fg": 128
      },
      {
-      "id": "t_sgn_gach_bong_2",
-      "fg": 129
+      "id": "t_sgn_cua_sat_keo_c",
+      "fg": 129,
+      "bg": 137
      },
      {
-      "id": "t_sgn_gach_bong_3",
-      "fg": 130
+      "id": "t_sgn_cua_sat_keo_o",
+      "fg": 130,
+      "bg": 137
      },
      {
-      "id": "t_sgn_gach_bong_4",
+      "id": "t_sgn_gach_bong_1",
       "fg": 131
      },
      {
-      "id": "t_sgn_gach_men",
+      "id": "t_sgn_gach_bong_2",
       "fg": 132
      },
      {
-      "id": "t_sgn_gach_tau",
+      "id": "t_sgn_gach_bong_3",
       "fg": 133
+     },
+     {
+      "id": "t_sgn_gach_bong_4",
+      "fg": 134
+     },
+     {
+      "id": "t_sgn_gach_men",
+      "fg": 135
+     },
+     {
+      "id": "t_sgn_gach_tau",
+      "fg": 136
      },
      {
       "id": "t_sgn_hem_xi_mang",
       "fg": [
        {
         "weight": 3,
-        "sprite": 134
-       },
-       {
-        "weight": 1,
-        "sprite": 136
-       },
-       {
-        "weight": 1,
-        "sprite": 135
-       }
-      ]
-     },
-     {
-      "id": "t_sgn_mai_ngoi",
-      "fg": [
-       {
-        "weight": 3,
         "sprite": 137
+       },
+       {
+        "weight": 1,
+        "sprite": 139
        },
        {
         "weight": 1,
@@ -587,19 +586,36 @@
       ]
      },
      {
+      "id": "t_sgn_hoa_sen",
+      "fg": 140
+     },
+     {
+      "id": "t_sgn_mai_ngoi",
+      "fg": [
+       {
+        "weight": 3,
+        "sprite": 141
+       },
+       {
+        "weight": 1,
+        "sprite": 142
+       }
+      ]
+     },
+     {
       "id": "t_sgn_mai_ton",
       "fg": [
        {
         "weight": 3,
-        "sprite": 139
+        "sprite": 143
        },
        {
         "weight": 2,
-        "sprite": 141
+        "sprite": 145
        },
        {
         "weight": 2,
-        "sprite": 140
+        "sprite": 144
        }
       ]
      },
@@ -608,15 +624,15 @@
       "fg": [
        {
         "weight": 3,
-        "sprite": 142
+        "sprite": 146
        },
        {
         "weight": 3,
-        "sprite": 143
+        "sprite": 147
        },
        {
         "weight": 1,
-        "sprite": 144
+        "sprite": 148
        }
       ]
      },
@@ -625,15 +641,15 @@
       "fg": [
        {
         "weight": 3,
-        "sprite": 145
+        "sprite": 149
        },
        {
         "weight": 3,
-        "sprite": 146
+        "sprite": 150
        },
        {
         "weight": 1,
-        "sprite": 147
+        "sprite": 151
        }
       ]
      },
@@ -642,82 +658,82 @@
       "fg": [
        {
         "weight": 3,
-        "sprite": 148
+        "sprite": 152
        },
        {
         "weight": 3,
-        "sprite": 149
+        "sprite": 153
        },
        {
         "weight": 1,
-        "sprite": 150
+        "sprite": 154
        }
       ]
      },
      {
       "id": "t_sgn_ngoi_men_xanh",
-      "fg": 151
-     },
-     {
-      "id": "t_sgn_shrub_hoa_giay",
-      "fg": 152,
-      "bg": 124
-     },
-     {
-      "id": "t_sgn_shrub_khoai_mi",
-      "fg": 153,
-      "bg": 124
-     },
-     {
-      "id": "t_sgn_shrub_ngu_sac",
-      "fg": 154,
-      "bg": 124
-     },
-     {
-      "id": "t_sgn_thang_cuon_len",
       "fg": 155
      },
      {
+      "id": "t_sgn_shrub_hoa_giay",
+      "fg": 156,
+      "bg": 125
+     },
+     {
+      "id": "t_sgn_shrub_khoai_mi",
+      "fg": 157,
+      "bg": 125
+     },
+     {
+      "id": "t_sgn_shrub_ngu_sac",
+      "fg": 158,
+      "bg": 125
+     },
+     {
+      "id": "t_sgn_thang_cuon_len",
+      "fg": 159
+     },
+     {
       "id": "t_sgn_thang_cuon_xuong",
-      "fg": 156
+      "fg": 160
      },
      {
       "id": "t_sgn_tuong_bong_gio",
-      "fg": 157
+      "fg": 161
      },
      {
       "id": "vp_sgn_ba_gac_bed",
-      "fg": 158,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_engine_110cc",
-      "fg": 159,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_longtail",
-      "fg": 160,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_oars",
-      "fg": 161,
-      "rotates": true
-     },
-     {
-      "id": "vp_sgn_pillion",
       "fg": 162,
       "rotates": true
      },
      {
-      "id": "vp_sgn_tank_4l",
+      "id": "vp_sgn_engine_110cc",
       "fg": 163,
       "rotates": true
      },
      {
-      "id": "vp_sgn_xich_lo_seat",
+      "id": "vp_sgn_longtail",
       "fg": 164,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_oars",
+      "fg": 165,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_pillion",
+      "fg": 166,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_tank_4l",
+      "fg": 167,
+      "rotates": true
+     },
+     {
+      "id": "vp_sgn_xich_lo_seat",
+      "fg": 168,
       "rotates": true
      }
     ]
@@ -771,28 +787,32 @@
       "fg": 195
      },
      {
-      "id": "f_sgn_loa_phuong",
+      "id": "f_sgn_ky_lan",
       "fg": 196
      },
      {
-      "id": "f_sgn_long_chim",
+      "id": "f_sgn_loa_phuong",
       "fg": 197
      },
      {
-      "id": "f_sgn_su_tu_da",
+      "id": "f_sgn_long_chim",
       "fg": 198
      },
      {
-      "id": "f_sgn_thap_rua",
+      "id": "f_sgn_su_tu_da",
       "fg": 199
      },
      {
-      "id": "f_sgn_tuong_than",
+      "id": "f_sgn_thap_rua",
       "fg": 200
      },
      {
-      "id": "t_sgn_cot_son",
+      "id": "f_sgn_tuong_than",
       "fg": 201
+     },
+     {
+      "id": "t_sgn_cot_son",
+      "fg": 202
      }
     ]
    },
@@ -804,24 +824,49 @@
     "sprite_offset_y": -32,
     "tiles": [
      {
+      "id": "f_sgn_rong_lon",
+      "fg": 208
+     },
+     {
+      "id": "sgn_mon_ca_sau",
+      "fg": 210
+     },
+     {
+      "id": "sgn_mon_voi",
+      "fg": 211
+     },
+     {
       "id": "t_sgn_tree_chuoi",
-      "fg": 209,
-      "bg": 208
+      "fg": 212,
+      "bg": 209
      },
      {
       "id": "t_sgn_tree_chuoi_harvested",
-      "fg": 210,
-      "bg": 208
+      "fg": 213,
+      "bg": 209
      },
      {
       "id": "t_sgn_tree_du_du",
-      "fg": 211,
-      "bg": 208
+      "fg": 214,
+      "bg": 209
      },
      {
       "id": "t_sgn_tree_du_du_harvested",
-      "fg": 212,
-      "bg": 208
+      "fg": 215,
+      "bg": 209
+     }
+    ]
+   },
+   {
+    "file": "gfx/saigon_64x96.png",
+    "sprite_width": 64,
+    "sprite_height": 96,
+    "sprite_offset_x": -16,
+    "sprite_offset_y": -64,
+    "tiles": [
+     {
+      "id": "f_sgn_tuong_khong_lo",
+      "fg": 224
      }
     ]
    },
@@ -833,44 +878,48 @@
     "sprite_offset_y": -64,
     "tiles": [
      {
+      "id": "f_sgn_vong_quay",
+      "fg": 240
+     },
+     {
       "id": "t_sgn_tree_bang",
-      "fg": 225,
-      "bg": 224
+      "fg": 242,
+      "bg": 241
      },
      {
       "id": "t_sgn_tree_bo_de",
-      "fg": 226,
-      "bg": 224
+      "fg": 243,
+      "bg": 241
      },
      {
       "id": "t_sgn_tree_dua",
-      "fg": 227,
-      "bg": 224
+      "fg": 244,
+      "bg": 241
      },
      {
       "id": "t_sgn_tree_dua_harvested",
-      "fg": 228,
-      "bg": 224
+      "fg": 245,
+      "bg": 241
      },
      {
       "id": "t_sgn_tree_me",
-      "fg": 229,
-      "bg": 224
+      "fg": 246,
+      "bg": 241
      },
      {
       "id": "t_sgn_tree_sao",
-      "fg": 230,
-      "bg": 224
+      "fg": 247,
+      "bg": 241
      },
      {
       "id": "t_sgn_tree_xoai",
-      "fg": 231,
-      "bg": 224
+      "fg": 248,
+      "bg": 241
      },
      {
       "id": "t_sgn_tree_xoai_harvested",
-      "fg": 232,
-      "bg": 224
+      "fg": 249,
+      "bg": 241
      }
     ]
    }

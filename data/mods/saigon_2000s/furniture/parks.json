@@ -1,0 +1,66 @@
+[
+  {
+    "type": "terrain",
+    "id": "t_sgn_hoa_sen",
+    "copy-from": "t_water_sh",
+    "looks_like": "t_water_sh",
+    "name": "lotus pond",
+    "description": "Shallow green water crowded with round lotus leaves standing on their stalks, pink flowers and seed heads above them.  Đầm Sen means lotus pond.",
+    "color": "green"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_vong_quay",
+    "name": "Ferris wheel",
+    "description": "The big wheel: a white steel ring hung with coloured gondolas, turning slowly over the park every evening while the music played.  The motor is dead and a gondola near the top creaks in the wind.  The hub is a long climb up.",
+    "symbol": "O",
+    "color": "white",
+    "looks_like": "f_utility_pole",
+    "move_cost_mod": -1,
+    "coverage": 50,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "NOITEM", "BLOCKSDOOR" ],
+    "bash": { "str_min": 200, "str_max": 400, "sound": "CLANG!", "sound_fail": "clang.", "items": [ { "item": "scrap", "count": [ 20, 60 ] }, { "item": "pipe", "count": [ 4, 12 ] } ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_tuong_khong_lo",
+    "copy-from": "f_statue",
+    "looks_like": "f_statue",
+    "name": "giant legendary statue",
+    "description": "A painted concrete giant towering over the artificial beach: Lạc Long Quân, the dragon lord of the sea, father of the hundred eggs from which the Vietnamese were born.  A waterfall used to pour from the rocks at his feet.",
+    "color": "light_green"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_ky_lan",
+    "copy-from": "f_statue",
+    "looks_like": "f_statue",
+    "name": "kỳ lân statue",
+    "description": "A gaudy concrete kỳ lân, the scaled, horned guardian beast of the old legends, painted gold, green and red and baring its teeth at the park gate.",
+    "color": "yellow"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_rong_lon",
+    "copy-from": "f_statue",
+    "looks_like": "f_statue",
+    "name": "giant painted dragon",
+    "description": "A concrete dragon ten metres long, its coils rising and dipping through the garden, painted bright blue and orange.  Children used to climb its back for photographs.",
+    "color": "light_blue"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_thuyen_thien_nga",
+    "name": "swan pedal boat",
+    "description": "A fibreglass pedal boat shaped like a white swan, moored at the jetty.  Couples pedalled them round the lake on Sunday afternoons.  This one has a crack in the hull and a puddle in the seat well.",
+    "symbol": "&",
+    "color": "white",
+    "looks_like": "f_rack",
+    "move_cost_mod": -1,
+    "coverage": 40,
+    "required_str": 10,
+    "flags": [ "TRANSPARENT", "PLACE_ITEM", "BLOCKSDOOR" ],
+    "bash": { "str_min": 6, "str_max": 30, "sound": "crack!", "sound_fail": "thunk.", "items": [ { "item": "plastic_chunk", "count": [ 5, 15 ] } ] }
+  }
+]
