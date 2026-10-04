@@ -200,7 +200,7 @@ Ultica_iso equivalents of everything, once renderer phase R3 starts. Out of scop
 | G26 | **Clothing:** áo dài, áo thun, quần tây, áo khoác chống nắng, nón kết, dép lào, uniform, áo trắng (icons + 16 overlays) | 8 | 24 | D/R/H | done |
 | G27 | **Canal:** kênh water + embankment, ghe canopy, flood water (with B8f canal content) | 3–4 | ~20 | D | done with B8f (canal water, embankment, tin roofs, icons); ghe canopy and flood water left |
 | G28 | **Animals:** chó ta, mèo, gà, chuột cống (+ snake and lizard) | 4–6 | ~8 | R/D/H | done |
-| G29 | **Map icons** for new landmarks | 11 | 11 | R/D | waits for the landmark buildings |
+| G29 | **Map icons** for new landmarks | 11 | 11 | R/D | done for the church, ward office and school (B8h-2); gold shop, net café and karaoke are shophouse lots (B8h-1) |
 | H1 | **Hand-art pass (artist):** Saigon zombies ×5, NPC outfits, áo dài overlay, iconic street objects polish | – | ~40 | **H** | for an artist |
 
 **Total:** about 100 new game ids and about 260 new sprites. About 80% can be code-drawn or derived (G18–G29). The hand-art pass H1 is where a pixel artist adds the most.

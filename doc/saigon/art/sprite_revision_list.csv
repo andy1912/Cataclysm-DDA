@@ -12,14 +12,18 @@ T1,furniture,f_region_flower_decorative,dda,32x32,1,keep original,f_region_pseud
 T1,furniture,f_sgn_ban_inox,mod,32x32,1,Saigon art (drawn),f_table
 T1,furniture,f_sgn_ban_tho,mod,32x32,16,Saigon art (derived),f_table
 T1,furniture,f_sgn_ban_tho_than_tai,mod,32x32,1,Saigon art (drawn),f_table
+T1,furniture,f_sgn_bang_den,mod,32x32,1,Saigon art (drawn),f_desk
 T1,furniture,f_sgn_bang_hieu,mod,32x32,3,Saigon art (drawn),f_sign
 T1,furniture,f_sgn_chau_kieng,mod,32x32,1,Saigon art (drawn),f_indoor_plant
 T1,furniture,f_sgn_cot_dien,mod,32x64,1,Saigon art (drawn),f_utility_pole
+T1,furniture,f_sgn_dan_karaoke,mod,32x32,1,Saigon art (drawn),f_speaker_cabinet
 T1,furniture,f_sgn_day_phoi,mod,32x32,1,Saigon art (drawn),f_rack
 T1,furniture,f_sgn_du,mod,32x64,1,Saigon art (drawn),f_sign
 T1,furniture,f_sgn_dua_can,mod,32x32,1,Saigon art (drawn),f_dandelion
 T1,furniture,f_sgn_loa_phuong,mod,32x64,1,Saigon art (drawn),f_utility_pole
 T1,furniture,f_sgn_lu_nuoc,mod,32x32,1,Saigon art (drawn),f_standing_tank
+T1,furniture,f_sgn_may_net,mod,32x32,1,Saigon art (drawn),f_desk
+T1,furniture,f_sgn_quay_vang,mod,32x32,1,Saigon art (drawn),f_display_rack
 T1,furniture,f_sgn_tivi_crt,mod,32x32,1,Saigon art (drawn),f_dresser
 T1,furniture,f_sgn_van_tho,mod,32x32,1,Saigon art (drawn),f_dandelion
 T1,furniture,f_sgn_vong,mod,32x32,1,Saigon art (drawn),t_leanto
@@ -138,6 +142,12 @@ T1,overmap_terrain,sgn_nh_solo_z2,mod,16x16,1,Saigon art (derived),house
 T1,overmap_terrain,sgn_nh_solo_z3,mod,16x16,1,Saigon art (derived),house
 T1,overmap_terrain,sgn_nh_solo_z4,mod,16x16,1,Saigon art (derived),house
 T1,overmap_terrain,sgn_nh_solo_z5,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_nha_tho,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_nha_tho_roof,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_truong,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_truong_roof,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_ubnd,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_ubnd_roof,mod,16x16,1,Saigon art (derived),house
 T1,terrain,t_brick_wall,dda,32x32,16,Saigon art (derived),t_abstract_wall
 T1,terrain,t_concrete,dda,32x32,16,keep original,t_pavement
 T1,terrain,t_concrete_roof,dda,32x32,6,keep original,t_thconc_floor
@@ -173,6 +183,7 @@ T1,terrain,t_sgn_gach_bong_3,mod,32x32,1,Saigon art (drawn),t_thconc_floor
 T1,terrain,t_sgn_gach_bong_4,mod,32x32,1,Saigon art (drawn),t_thconc_floor
 T1,terrain,t_sgn_gach_men,mod,32x32,1,Saigon art (drawn),t_thconc_floor
 T1,terrain,t_sgn_hem_xi_mang,mod,32x32,3,Saigon art (drawn),t_pavement
+T1,terrain,t_sgn_mai_ngoi,mod,32x32,2,Saigon art (drawn),t_pavement
 T1,terrain,t_sgn_mai_ton,mod,32x32,3,Saigon art (drawn),t_scrap_floor
 T1,terrain,t_sgn_shrub_hoa_giay,mod,32x32,2,Saigon art (drawn),t_shrub_abstract
 T1,terrain,t_sgn_shrub_khoai_mi,mod,32x32,2,Saigon art (drawn),t_shrub_abstract
@@ -190,6 +201,7 @@ T1,terrain,t_sgn_tree_sao,mod,96x96,2,Saigon art (drawn),t_tree_abstract
 T1,terrain,t_sgn_tree_xoai,mod,96x96,2,Saigon art (drawn),t_tree_abstract
 T1,terrain,t_sgn_tree_xoai_harvested,mod,96x96,2,Saigon art (drawn),t_tree
 T1,terrain,t_sgn_tuong_bong_gio,mod,32x32,1,Saigon art (drawn),t_abstract_wall
+T1,terrain,t_sgn_tuong_hong,mod,32x32,16,Saigon art (derived),t_abstract_wall
 T1,terrain,t_sidewalk,dda,32x32,16,Saigon art (derived),t_pavement
 T1,terrain,t_sidewalk_hw_air,dda,32x32,20,keep original,t_pavement
 T1,terrain,t_sidewalk_ramp_down_high,dda,32x32,1,keep original,
@@ -242,6 +254,7 @@ T1,vehicle_part,wheel_mount_medium,dda,32x32,1,keep original,
 T1,vehicle_part,wood box,dda,32x32,3,keep original,f_crate_o
 T1,vehicle_part,xlframe,dda,32x32,1,keep original,frame_abstract
 T2,item,banana,dda,20x20,1,keep original,
+T2,item,beer,dda,32x32,1,keep original,water_clean
 T2,item,butane,dda,32x32,1,keep original,
 T2,item,butane_can,dda,32x32,1,keep original,spray_can
 T2,item,candle,dda,20x20,1,keep original,
@@ -249,13 +262,27 @@ T2,item,cash_card,dda,20x20,1,keep original,card_plastic_abstract
 T2,item,coconut,dda,20x20,1,keep original,
 T2,item,coffee_raw,dda,32x32,1,keep original,
 T2,item,con_milk,dda,32x32,1,keep original,
+T2,item,diamond_ring,dda,20x20,1,keep original,ring_engagement
 T2,item,dry_rice,dda,20x20,1,Saigon art (drawn),
+T2,item,e_scrap,dda,20x20,1,keep original,
 T2,item,egg_chicken,dda,20x20,1,keep original,
 T2,item,fish,dda,20x20,1,keep original,flesh
 T2,item,gasoline,dda,32x32,1,keep original,
+T2,item,gold_ring,dda,20x20,1,keep original,
+T2,item,gold_watch,dda,20x20,1,keep original,
+T2,item,holy_symbol,dda,32x32,1,keep original,
+T2,item,holybook_bible1,dda,20x20,1,keep original,radio_book
+T2,item,holybook_catechism,dda,20x20,1,Saigon art (drawn),radio_book
+T2,item,laptop,dda,20x20,1,keep original,abstract_laptop
 T2,item,mango,dda,32x32,1,keep original,
 T2,item,meat,dda,20x20,1,keep original,flesh
 T2,item,papaya,dda,32x32,1,keep original,
+T2,item,paper,dda,20x20,1,keep original,
+T2,item,pen,dda,20x20,1,keep original,
+T2,item,pencil,dda,20x20,1,keep original,survival_marker
+T2,item,processor,dda,20x20,1,Saigon art (drawn),
+T2,item,ring_engagement,dda,20x20,1,keep original,
+T2,item,ring_wedding,dda,20x20,1,Saigon art (drawn),
 T2,item,salt,dda,20x20,1,keep original,spice
 T2,item,sgn_ao_ba_ba,mod,20x20,1,Saigon art (drawn),dress_shirt
 T2,item,sgn_ao_cong_an,mod,20x20,1,Saigon art (drawn),buttonshirt
@@ -344,8 +371,10 @@ T2,item,sgn_ve_so,mod,20x20,1,Saigon art (drawn),
 T2,item,sgn_ward_notice,mod,20x20,1,Saigon art (drawn),newest_newspaper
 T2,item,sgn_xa_beng,mod,20x20,1,Saigon art (drawn),crowbar
 T2,item,sgn_xoi,mod,20x20,1,Saigon art (drawn),dry_rice
+T2,item,silver_necklace,dda,20x20,1,keep original,
 T2,item,sugar,dda,32x32,1,keep original,
 T2,item,tea_raw,dda,20x20,1,keep original,
+T2,item,textbook_firstaid,dda,20x20,1,keep original,
 T2,item,two_way_radio,dda,20x20,1,keep original,
 T2,item,wallet,dda,32x32,1,keep original,bag_canvas
 T3,item,10gal_hat,dda,32x32,1,keep original,hat_ball
@@ -1177,7 +1206,6 @@ T3,item,diamond_platinum_earring,dda,20x20,1,keep original,platinum_ear
 T3,item,diamond_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
 T3,item,diamond_platinum_ring,dda,20x20,1,keep original,platinum_ring
 T3,item,diamond_platinum_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,diamond_ring,dda,20x20,1,keep original,ring_engagement
 T3,item,diamond_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
 T3,item,diamond_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,diamond_silver_earring,dda,20x20,1,keep original,silver_ear
@@ -1221,7 +1249,6 @@ T3,item,duster_faux_fur,dda,32x32,1,keep original,coat_rain
 T3,item,duster_fur,dda,20x20,1,keep original,coat_winter
 T3,item,duster_leather,dda,32x32,1,keep original,coat_rain
 T3,item,dutch_oven,dda,20x20,1,base tileset gap,base_cookpot
-T3,item,e_scrap,dda,20x20,1,keep original,
 T3,item,e_tool,dda,20x20,1,keep original,
 T3,item,ear_plugs,dda,20x20,1,keep original,
 T3,item,eboshi,dda,32x32,1,keep original,hat_cotton
@@ -1439,10 +1466,8 @@ T3,item,gold_medal,dda,20x20,1,base tileset gap,
 T3,item,gold_necklace,dda,20x20,1,keep original,
 T3,item,gold_nose_ring_loop,dda,20x20,1,base tileset gap,
 T3,item,gold_nose_ring_stud,dda,20x20,1,base tileset gap,
-T3,item,gold_ring,dda,20x20,1,keep original,
 T3,item,gold_small,dda,20x20,1,keep original,
 T3,item,gold_toe_ring,dda,20x20,1,base tileset gap,
-T3,item,gold_watch,dda,20x20,1,keep original,
 T3,item,golf_shoes,dda,32x32,1,keep original,sneakers
 T3,item,granola,dda,20x20,1,base tileset gap,
 T3,item,graphite,dda,20x20,1,keep original,charcoal
@@ -1509,9 +1534,7 @@ T3,item,hk_usc45,dda,20x20,1,keep original,gun_base_rifle_semi
 T3,item,hnefatafl,dda,20x20,1,base tileset gap,
 T3,item,hoe,dda,20x20,1,keep original,
 T3,item,holster,dda,32x32,1,keep original,scabbard
-T3,item,holy_symbol,dda,32x32,1,keep original,
 T3,item,holy_symbol_wood,dda,32x32,1,keep original,
-T3,item,holybook_bible1,dda,20x20,1,keep original,radio_book
 T3,item,holybook_bible2,dda,20x20,1,keep original,radio_book
 T3,item,holybook_bible3,dda,20x20,1,keep original,radio_book
 T3,item,holybook_granth,dda,20x20,1,keep original,radio_book
@@ -1628,7 +1651,6 @@ T3,item,ksub2000,dda,32x32,1,keep original,gun_base_rifle_semi
 T3,item,kufi,dda,32x32,1,keep original,hat_ball
 T3,item,kukri,dda,20x20,1,base tileset gap,
 T3,item,lamp_oil,dda,32x32,1,keep original,
-T3,item,laptop,dda,20x20,1,keep original,abstract_laptop
 T3,item,large_propane_tank,dda,20x20,1,keep original,
 T3,item,lasagne_raw,dda,20x20,1,base tileset gap,
 T3,item,latrunculi,dda,20x20,1,base tileset gap,
@@ -1952,7 +1974,6 @@ T3,item,pants_hiking,dda,32x32,1,keep original,jeans
 T3,item,pants_leather,dda,32x32,1,keep original,jeans
 T3,item,pants_ski,dda,32x32,1,keep original,jeans
 T3,item,pants_tactical,dda,32x32,1,keep original,jeans
-T3,item,paper,dda,20x20,1,keep original,
 T3,item,paperback_romance_circuses,dda,20x20,1,keep original,radio_book
 T3,item,paperback_romance_cloven,dda,20x20,1,keep original,radio_book
 T3,item,paperback_romance_conq,dda,20x20,1,keep original,radio_book
@@ -1988,8 +2009,6 @@ T3,item,pearl_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
 T3,item,pearl_silver_ring,dda,20x20,1,keep original,silver_ring
 T3,item,pearl_silver_tiara,dda,32x32,1,keep original,hat_ball
 T3,item,pemmican,dda,20x20,1,base tileset gap,
-T3,item,pen,dda,20x20,1,keep original,
-T3,item,pencil,dda,20x20,1,keep original,survival_marker
 T3,item,pepper,dda,20x20,1,keep original,spice
 T3,item,pepto,dda,32x32,1,keep original,
 T3,item,peridot,dda,20x20,1,base tileset gap,garnet
@@ -2177,10 +2196,8 @@ T3,item,retool_mdrx_223rem,dda,20x20,1,base tileset gap,
 T3,item,retool_mdrx_223rem_medium,dda,20x20,1,base tileset gap,retool_mdrx_223rem
 T3,item,rfb_308,dda,20x20,1,keep original,gun_base_rifle_semi
 T3,item,rifle_scope,dda,20x20,1,base tileset gap,
-T3,item,ring_engagement,dda,20x20,1,keep original,
 T3,item,ring_purity,dda,20x20,1,base tileset gap,
 T3,item,ring_signet,dda,20x20,1,base tileset gap,
-T3,item,ring_wedding,dda,20x20,1,Saigon art (drawn),
 T3,item,rio_bravo,dda,20x20,1,keep original,gun_base_rifle_semi
 T3,item,roadmap,dda,20x20,1,keep original,abstractmap
 T3,item,robe_wizard,dda,20x20,1,keep original,coat_winter
@@ -2364,7 +2381,6 @@ T3,item,silver_lip_ring_loop,dda,20x20,1,base tileset gap,
 T3,item,silver_lip_ring_stud,dda,20x20,1,base tileset gap,
 T3,item,silver_locket,dda,20x20,1,keep original,
 T3,item,silver_medal,dda,20x20,1,base tileset gap,
-T3,item,silver_necklace,dda,20x20,1,keep original,
 T3,item,silver_nose_ring_loop,dda,20x20,1,base tileset gap,
 T3,item,silver_nose_ring_stud,dda,20x20,1,base tileset gap,
 T3,item,silver_ring,dda,20x20,1,keep original,
@@ -2690,7 +2706,7 @@ T3,item,winchester_94_3030,dda,20x20,1,keep original,gun_base_rifle_semi
 T3,item,witness_10,dda,20x20,1,keep original,gun_base_handgun_semi
 T3,item,witness_mag_10,dda,32x32,1,keep original,glock17_17
 T3,item,wizard_hat_costume,dda,20x20,1,base tileset gap,
-T3,item,wood_block,dda,20x20,1,base tileset gap,
+T3,item,wood_block,dda,20x20,1,Saigon art (drawn),
 T3,item,wooden_hair_beads,dda,32x32,1,keep original,hat_ball
 T3,item,wool_hoodie,dda,20x20,1,keep original,buttonshirt
 T3,item,world_nations,dda,20x20,1,base tileset gap,

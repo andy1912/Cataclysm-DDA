@@ -209,3 +209,17 @@ def wooden_post_short( c ):
     c.line( 5, 15, 15, 5, rgb( '#b07a48' ) )
     c.line( 14, 4, 16, 5, rgb( '#d8b07a' ) )                     # splintered end
     finish( c )
+
+
+@sprite( 'processor', 20, 20 )
+def processor( c ):
+    # a CPU: green package, silver heat spreader, gold pins (internet-café loot)
+    c.rect( 5, 6, 14, 15, rgb( '#2e7a4a' ) )
+    c.rect( 7, 8, 12, 13, rgb( '#c8ccd0' ) )
+    c.line( 7, 8, 12, 8, rgb( '#eef2f4' ) )
+    for k in range( 6, 14, 2 ):
+        c.px( k, 5, rgb( '#e8c040' ) )
+        c.px( k, 16, rgb( '#e8c040' ) )
+        c.px( 4, k + 1, rgb( '#e8c040' ) )
+        c.px( 15, k + 1, rgb( '#e8c040' ) )
+    finish( c )
