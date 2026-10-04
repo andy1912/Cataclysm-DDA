@@ -40,6 +40,10 @@ LANDMARK_NAMES = {
     'ben_thanh': 'Chợ Bến Thành', 'duc_ba': 'Nhà thờ Đức Bà', 'buu_dien': 'Bưu điện Thành phố',
     'nha_hat': 'Nhà hát Thành phố', 'ubnd_tp': 'UBND Thành phố', 'dinh_doc_lap': 'Dinh Độc Lập',
     'thien_hau': 'Chùa Bà Thiên Hậu', 'ngoc_hoang': 'Chùa Ngọc Hoàng', 'binh_tay': 'Chợ Bình Tây',
+    'ga_sai_gon': 'Ga Sài Gòn', 'ben_xe_md': 'Bến xe Miền Đông', 'tao_dan': 'Công viên Tao Đàn',
+    'ho_con_rua': 'Hồ Con Rùa', 'stc': 'Saigon Trade Center', 'diamond': 'Diamond Plaza',
+    'bui_vien': 'Phạm Ngũ Lão – Bùi Viện', 'thao_cam_vien': 'Thảo Cầm Viên', 'dam_sen': 'Công viên Đầm Sen',
+    'suoi_tien': 'Suối Tiên',
 }
 
 

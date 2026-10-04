@@ -66,7 +66,26 @@ static void sgn_clear_map_and_reset_player()
     get_avatar().move_to( tripoint_abs_ms::zero );
     get_avatar().in_vehicle = false;
     get_avatar().controlling_vehicle = false;
-    clear_overmaps();
+    // A Saigon overmap is slow to generate in megacity mode (about 100 s with the neighbours
+    // it pulls in), so it is generated once per run; later calls wipe overmap (0,0) back to
+    // plain field, open air and earth, which is all these tests assume around their buildings.
+    static bool generated = false;
+    if( !generated || !overmap_buffer.has( point_abs_om() ) ) {
+        clear_overmaps();
+        generated = true;
+    } else {
+        const oter_id field = oter_str_id( "field" ).id();
+        const oter_id air = oter_str_id( "open_air" ).id();
+        const oter_id earth = oter_str_id( "solid_earth" ).id();
+        for( int z = -2; z <= 10; z++ ) {
+            const oter_id &blank = z == 0 ? field : z > 0 ? air : earth;
+            for( int x = 0; x < OMAPX; x++ ) {
+                for( int y = 0; y < OMAPY; y++ ) {
+                    overmap_buffer.ter_set( tripoint_abs_omt( x, y, z ), blank );
+                }
+            }
+        }
+    }
     clear_map();
     clear_avatar();
 }

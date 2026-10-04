@@ -75,8 +75,8 @@ overmap, measured inside the test (`overmap generated in … ms`):
 | Option: megacity (`"is_megacity": true` in `sgn_city`) | 10 / 0 / 0 % | 22 / 33 / 34 % | 8–19 s |
 
 Megacity mode fills each overmap with five size-40 cities, which is closest to one continuous Saigon.
-The cost is an 8–19 s pause each time the player reaches a new overmap (about every 4 km), so it is
-not on by default. To try it, add `"is_megacity": true` to `sgn_city` in `region/region_settings.json`.
+**It is now on** (user decision, after L4): `"is_megacity": true` in `sgn_city`. To turn it off,
+delete that line in `region/region_settings.json`.
 All nine landmarks were placed on every overmap measured with each setting.
 
 ### After L3: sixteen landmarks
@@ -88,6 +88,26 @@ pagoda, Bến xe Miền Đông, Thiên Hậu, City Hall, Hồ Con Rùa, the Trad
 Ga Sài Gòn, Bùi Viện, Bình Tây and Đức Bà. Tao Đàn and the palace lie at the edge of the city.
 
 ![The landmark district](art/overmap_landmarks_l3.png)
+
+### Megacity mode (on)
+
+One overmap (−3,2) in megacity mode: one continuous city cut by the river, with the landmarks
+clustered in a downtown in the north-west:
+
+![Megacity overmap](art/overmap_megacity.png)
+
+| Overmap | Buildings | Roads | Landmarks placed | Generate |
+|---|---|---|---|---|
+| 0,0 | 22 % | 23 % | 19 / 19 | 4.6 s |
+| −3,2 | 37 % | 39 % | 19 / 19 | 17.2 s |
+| 2,3 | 35 % | 36 % | 19 / 19 | 13.9 s |
+
+The costs for the player:
+- **Starting a new game** spends about 50 s generating the world (measured by the start-location test).
+- **Walking onto a new overmap** (every ~4 km) pauses the game for roughly 5–17 s while it generates.
+- **Near an overmap corner**, up to four overmaps can be generated at once.
+
+Each overmap is generated only once per world.
 
 How to regenerate these pictures:
 

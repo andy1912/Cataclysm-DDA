@@ -18,9 +18,10 @@
     "type": "region_settings_city",
     "id": "sgn_city",
     "copy-from": "default",
-    "//": "Dense, tightly spaced cities of nhà ống rows, hẻm blocks and old chung cư.  Shops: the chợ plus 1-OMT Saigon fallbacks (shophouse ground floors are shops).  Parks: pagodas; B8f: canal rows (kênh) among the parks slot; B8h: schools and churches among the parks, a ward office among the shops; L1: the six District 1 landmarks (OVERMAP_UNIQUE, weight 200 in the central shops pool, see doc/saigon/LANDMARKS.md).",
+    "//": "Dense, tightly spaced cities of nhà ống rows, hẻm blocks and old chung cư.  Shops: the chợ plus 1-OMT Saigon fallbacks (shophouse ground floors are shops).  Parks: pagodas; B8f: canal rows (kênh) among the parks slot; B8h: schools and churches among the parks, a ward office among the shops; L1-L4: nineteen real landmarks (OVERMAP_UNIQUE, weights 200/150/120/100 in the shops pool, see doc/saigon/LANDMARKS.md).  A4: city_spacing 1; megacity mode on (one continuous city per overmap; slower overmap generation, see doc/saigon/MAP.md).",
     "city_size": 12,
     "city_spacing": 1,
+    "is_megacity": true,
     "houses": [ [ "sgn_nhaong_row_1", 100 ], [ "sgn_hem_block_1", 40 ], [ "sgn_chungcu_1", 12 ] ],
     "shops": [
       [ "sgn_cho_1", 8 ],

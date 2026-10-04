@@ -66,12 +66,16 @@ TEST_CASE( "saigon_district1_landmarks", "[mapgen][saigon]" )
     const ter_str_id open_air( "t_open_air" );
     const ter_str_id up( "t_stairs_up" );
     const ter_str_id down( "t_stairs_down" );
+    // One overmap for all landmarks: generating a Saigon overmap is slow in megacity mode,
+    // so each landmark gets its own spot on the same overmap instead of a fresh one.
+    clear_overmaps();
+    int slot = 0;
     for( const landmark &l : landmarks ) {
         CAPTURE( l.id );
-        clear_overmaps();
         clear_avatar();
         clear_map();
-        const tripoint_abs_omt base( 140, 140, 0 );
+        const tripoint_abs_omt base( 10 + 8 * ( slot % 20 ), 20 + 8 * ( slot / 20 ), 0 );
+        slot++;
         for( int z = l.zmin; z <= l.zmax; z++ ) {
             for( int x = 0; x < l.w; x++ ) {
                 for( int y = 0; y < l.h; y++ ) {
@@ -159,15 +163,16 @@ TEST_CASE( "saigon_zoo_animals", "[mapgen][saigon]" )
         { "sgn_lm_thao_cam_vien", { "sgn_mon_voi", "sgn_mon_ca_sau", "sgn_mon_khi", "sgn_mon_tran", "mon_tiger", "mon_bear", "mon_deer" } },
         { "sgn_lm_suoi_tien", { "sgn_mon_ca_sau" } },
     };
+    clear_overmaps();   // once: see saigon_district1_landmarks
+    int slot = 0;
     for( const auto &park : parks ) {
         CAPTURE( park.first );
         const landmark l{ park.first, 4, 4, 0, 1 };
         std::map<std::string, int> seen;
         for( int seed = 1; seed <= 3; seed++ ) {
-            clear_overmaps();
             clear_map();
             clear_avatar();
-            const tripoint_abs_omt base( 140, 140, 0 );
+            const tripoint_abs_omt base( 10 + 8 * slot++, 60, 0 );
             for( int z = l.zmin; z <= l.zmax; z++ ) {
                 for( int x = 0; x < l.w; x++ ) {
                     for( int y = 0; y < l.h; y++ ) {
