@@ -4,7 +4,7 @@
 Input is the dump written by the hidden test saigon_overmap_dump (tests/saigon_scene_dump_test.cpp):
   SAIGON_OVERMAP_OUT=om.json tests/cata_test --mods=dda,saigon_2000s "[saigon_overmap]"
   python3 tools/saigon/art/render_overmap.py om.json OUT.png [--scale 0.5] [--crop x0,y0,x1,y1]
-      [--landmarks LIST.md]
+      [--landmarks LIST.md] [--no-outline] [--zoom 3]
 
 Sprite lookup mirrors cata_tiles for OVERMAP_TERRAIN: the oter type id (with the season
 suffix first), then the type's looks_like list, recursively.  The Saigon mod's
@@ -169,6 +169,8 @@ def main():
     ap.add_argument( '--crop', help='OMT rectangle x0,y0,x1,y1 (inclusive)' )
     ap.add_argument( '--season', default='summer' )
     ap.add_argument( '--landmarks', help='write a markdown table of the outlined landmarks here' )
+    ap.add_argument( '--no-outline', action='store_true', help='do not outline the landmarks' )
+    ap.add_argument( '--zoom', type=int, default=1, help='enlarge N times, nearest neighbour' )
     args = ap.parse_args()
     with open( args.dump ) as f:
         dump = json.load( f )
@@ -187,12 +189,21 @@ def main():
     rows = []
     for n, ( name, ( lx0, ly0, lx1, ly1 ) ) in enumerate( sorted( landmarks( dump ).items() ) ):
         colour, rgb = LANDMARK_COLOURS[n % len( LANDMARK_COLOURS )]
-        outline( canvas, ( lx0 - x0 ) * TILE, ( ly0 - y0 ) * TILE, ( lx1 - x0 + 1 ) * TILE - 1,
-                 ( ly1 - y0 + 1 ) * TILE - 1, rgb, 3 )
+        if not args.no_outline:
+                outline( canvas, ( lx0 - x0 ) * TILE, ( ly0 - y0 ) * TILE, ( lx1 - x0 + 1 ) * TILE - 1,
+                     ( ly1 - y0 + 1 ) * TILE - 1, rgb, 3 )
         rows.append( '| %s | %s | %d,%d | %d×%d |' % ( colour, LANDMARK_NAMES.get( name, name ), lx0, ly0,
                                                      lx1 - lx0 + 1, ly1 - ly0 + 1 ) )
     if args.scale < 1:
         canvas = downscale( canvas, args.scale )
+    if args.zoom > 1:
+        k = args.zoom
+        big = pngio.Image( canvas.width * k, canvas.height * k )
+        for y in range( big.height ):
+            row = canvas.pixels[( y // k ) * canvas.width * 4:( y // k + 1 ) * canvas.width * 4]
+            big.pixels[y * big.width * 4:( y + 1 ) * big.width * 4] = bytes(
+                b for x in range( canvas.width ) for _ in range( k ) for b in row[x * 4:x * 4 + 4] )
+        canvas = big
     pngio.write( args.out, canvas )
     print( '%s (%dx%d)' % ( args.out, canvas.width, canvas.height ) )
     if r.missing:

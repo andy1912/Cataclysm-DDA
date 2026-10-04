@@ -139,30 +139,6 @@
      {
       "id": "sgn_truong_roof",
       "fg": 16
-     },
-     {
-      "id": "sgn_lm_ben_thanh_00",
-      "fg": 17
-     },
-     {
-      "id": "sgn_lm_duc_ba_00",
-      "fg": 18
-     },
-     {
-      "id": "sgn_lm_buu_dien_00",
-      "fg": 19
-     },
-     {
-      "id": "sgn_lm_nha_hat_00",
-      "fg": 20
-     },
-     {
-      "id": "sgn_lm_ubnd_tp_00",
-      "fg": 21
-     },
-     {
-      "id": "sgn_lm_dinh_doc_lap_00",
-      "fg": 22
      }
     ]
    }

@@ -46,8 +46,16 @@ The small town has the cathedral, the post office, the palace and City Hall:
    block. In this seed that put them in two different towns. In the real city they all stand within about 1 km
    of each other in District 1.
 3. **The cities are small and separate.** Saigon should read as one dense metropolis.
-4. **Big landmarks show as repeated icons.** A 3×3 landmark draws the same small icon 9 times. It should be
-   one large picture spread over its tiles. This is asset unit A1 below.
+4. ~~**Big landmarks show as repeated icons.**~~ Fixed in A1: each landmark is now one plan-view picture
+   spread over its tiles, and it turns with the building:
+
+![Landmarks on the overmap, small town](art/overmap_landmarks_town.png)
+
+![Landmarks on the overmap, east city](art/overmap_landmarks_east.png)
+
+   Đức Bà (towers and the Mary statue, facing south here), the post office (vaulted roof, clock, facing west), the palace
+   (oval lawn, fountain, fins, the roof helipad, facing east), City Hall (statue garden, courtyard, clock tower),
+   Bến Thành (skylit cross aisles, clock-tower gate, facing west) and the opera house (arched entrance, fly tower).
 
 How to regenerate these pictures:
 
@@ -58,7 +66,7 @@ SAIGON_OVERMAP_OUT=om.json SAIGON_OVERMAP_SEED=4242 tests/cata_test --mods=dda,s
 python3 tools/saigon/art/render_overmap.py om.json overmap.png --scale 0.5 --landmarks landmarks.md
 ```
 ```bash
-python3 tools/saigon/art/render_overmap.py om.json closeup.png --crop 116,108,164,148
+python3 tools/saigon/art/render_overmap.py om.json closeup.png --crop 116,108,164,148 --no-outline --zoom 3
 ```
 
 ## 2. How a landmark gets a position today
@@ -125,7 +133,7 @@ of section 3, with step 5 replaced by a slot in the district.
 
 | Unit | Assets | Status |
 |---|---|---|
-| A1 | Overmap pictures for the six L1 landmarks: one plan-view picture per landmark, sliced over its tiles (16 × 16 per piece), rotating with the building | in progress |
+| A1 | Overmap pictures for the six L1 landmarks: one plan-view picture per landmark, sliced over its tiles (16 × 16 per piece), rotating with the building. `art/saigon/drawn/landmark_map.py`, 40 pieces | done |
 | A2 | L2 sprites (Chợ Lớn). Thiên Hậu: hanging incense coils, the great bronze incense burner, the red-and-gold altar, the stone lion, red lacquer pillars, green glazed roof tiles, terracotta courtyard tiles. Ngọc Hoàng: the turtle pond, the dark carved statue altar. Bình Tây: rice-sack stacks, the courtyard fountain | next |
 | A3 | Overmap pictures for the L2 landmarks | after A2 |
 | A4 | District 1 special and the lake fix, from sections 1 and 4 (map design, not art) | proposed |
