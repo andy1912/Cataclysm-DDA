@@ -3,6 +3,7 @@
 #include <fstream>
 #include <map>
 #include <string>
+#include <vector>
 
 #include "calendar.h"
 #include "cata_catch.h"
@@ -14,6 +15,7 @@
 #include "map_helpers.h"
 #include "mapdata.h"
 #include "omdata.h"
+#include "overmap.h"
 #include "overmapbuffer.h"
 #include "player_helpers.h"
 #include "point.h"
@@ -219,4 +221,65 @@ TEST_CASE( "saigon_landmark_dump", "[.][saigon_landmark_scene]" )
     get_map().load( project_to<coords::sm>( base ), true );
     get_map().build_map_cache( 0 );
     dump_scene( out_path, w * 24, h * 24 );
+}
+
+// One whole generated overmap for tools/saigon/art/render_overmap.py: per OMT the tileset id
+// (the oter type, as cata_tiles::get_omt_id_rotation_and_subtile asks for it), plus either
+// its rotation or, for connected and water terrain, the S/E/W/N connection bits that the
+// renderer turns into a subtile.  Hidden test; run with:
+//   SAIGON_OVERMAP_OUT=om.json [SAIGON_OVERMAP_SEED=4242] tests/cata_test --mods=dda,saigon_2000s "[saigon_overmap]"
+TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
+{
+    const char *out_path = std::getenv( "SAIGON_OVERMAP_OUT" );
+    if( out_path == nullptr ) {
+        WARN( "set SAIGON_OVERMAP_OUT" );
+        return;
+    }
+    const char *seed = std::getenv( "SAIGON_OVERMAP_SEED" );
+    rng_set_engine_seed( seed ? std::atoi( seed ) : 4242 );
+    overmap_buffer.clear();
+    overmap &om = overmap_buffer.get( point_abs_om() );
+    std::map<std::string, std::vector<std::string>> looks_like;
+    std::ofstream out( out_path );
+    out << "{\"width\":" << OMAPX << ",\"height\":" << OMAPY << ",\"tiles\":[";
+    for( int y = 0; y < OMAPY; y++ ) {
+        for( int x = 0; x < OMAPX; x++ ) {
+            const oter_t &ot = *om.ter( tripoint_om_omt( x, y, 0 ) );
+            const oter_type_t &type = ot.get_type_id().obj();
+            const std::string id = ot.get_type_id().str();
+            looks_like.emplace( id, type.looks_like );
+            int rot = 0;
+            int conn = -1;
+            if( type.has_connections() || type.has_flag( oter_flags::water ) ) {
+                conn = 0;
+                // same order as get_omt_id_rotation_and_subtile: S, E, W, N -> bits 1, 2, 4, 8
+                for( int i = 0; i < 4; i++ ) {
+                    const tripoint_om_omt q( x + offsets[i].x, y + offsets[i].y, 0 );
+                    if( !overmap::inbounds( q ) ) {
+                        continue;
+                    }
+                    const oter_type_t &other = om.ter( q )->get_type_id().obj();
+                    if( type.has_connections() ? type.connects_to( other.id.id() ) : other.has_flag( oter_flags::water ) ) {
+                        conn += 1 << i;
+                    }
+                }
+            } else {
+                int subtile = 0;
+                ot.get_rotation_and_subtile( rot, subtile );
+            }
+            out << ( x || y ? "," : "" ) << "[" << quoted( id ) << "," << rot << "," << conn << "]";
+        }
+    }
+    out << "],\"looks_like\":{";
+    bool first = true;
+    for( const auto &ll : looks_like ) {
+        out << ( first ? "" : "," ) << quoted( ll.first ) << ":[";
+        for( size_t i = 0; i < ll.second.size(); i++ ) {
+            out << ( i ? "," : "" ) << quoted( ll.second[i] );
+        }
+        out << "]";
+        first = false;
+    }
+    out << "}}\n";
+    CHECK( out.good() );
 }
