@@ -18,19 +18,19 @@ Status as of 2026-10-04, after units G9–G29, the canal (B8f) and the landmarks
 
 | Priority | Category | Tile ids | Saigon art: drawn | Saigon art: derived | Keep original | **To do** |
 |---|---|---:|---:|---:|---:|---:|
-| **T1** on screen everywhere | Terrain (walls, floors, paving, gates, canal, trees, shrubs) | 65 | 26 | 7 | 32 | 0 |
-| **T1** | Furniture (street kit, shrines, jars, flowers…) | 36 | 17 | 7 | 12 | 0 |
+| **T1** on screen everywhere | Terrain (walls, floors, paving, gates, canal, roofs, trees, shrubs) | 67 | 27 | 8 | 32 | 0 |
+| **T1** | Furniture (street kit, shrines, jars, businesses, landmarks…) | 40 | 21 | 7 | 12 | 0 |
 | **T1** | Items (starting kit, common tools) | 60 | 9 | 2 | 49 | 0 |
 | **T1** | Monsters and animals | 17 | 0 | 7 | 10 | 0 |
 | **T1** | Vehicle parts | 38 | 7 | 0 | 31 | 0 |
-| **T1** | Map icons | 26 | 0 | 26 | 0 | 0 |
-| **T1 total** | | **242** | **59** | **49** | **134** | **0** |
-| **T2** | Saigon food, drinks, books, gear, kitchen, household, clothing | 107 | 75 | 13 | 19 | 0 |
-| T3 | Deep dda loot | 2,365 | 3 | 1 | 2,015 | 0 (346 are a base tileset gap, below) |
+| **T1** | Map icons | 32 | 0 | 32 | 0 | 0 |
+| **T1 total** | | **254** | **64** | **56** | **134** | **0** |
+| **T2** | Saigon food, drinks, books, gear, kitchen, household, clothing, business loot | 124 | 78 | 13 | 33 | 0 |
+| T3 | Deep dda loot | 2352 | 3 | 1 | 2003 | 0 (345 are a base tileset gap, below) |
 | Not in the manifest | Worn clothing on the character (20 Saigon garments and gear × male/female) | 40 | 6 | 34 | – | 0 |
 | Not in the manifest | Tropical seasons: winter/autumn variants use summer art | 263 | 0 | 263 | – | 0 |
 
-**Base tileset gap:** 346 deep-loot (T3) dda items have no sprite anywhere in UltimateCataclysm, not even along their `looks_like` chain, so the vanilla game shows their ASCII glyph too. G16 found the Saigon-visible ones this way (incense on every altar, the cleaver, a tape measure, rice) and drew them. The rest are listed in the CSV as `base tileset gap`.
+**Base tileset gap:** 345 deep-loot (T3) dda items have no sprite anywhere in UltimateCataclysm, not even along their `looks_like` chain, so the vanilla game shows their ASCII glyph too. G16 found the Saigon-visible ones this way (incense on every altar, the cleaver, a tape measure, rice) and drew them. The rest are listed in the CSV as `base tileset gap`.
 
 ### Scene preview (G16)
 The render below is a real generated Saigon block, not a mock-up. The hidden test `tests/saigon_scene_dump_test.cpp` runs the game's own mapgen for a road, nhà ống, a hẻm block, a chung cư, a pagoda, a chợ and green space, then parks every Saigon vehicle on the road. `tools/saigon/art/render_scene.py` then draws the result with the installed tilesets and the engine's lookup and connection rules:
