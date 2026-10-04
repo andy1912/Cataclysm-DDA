@@ -101,7 +101,9 @@ class Walker:
                 else:
                     yield from self.mapping_ids( v )
         elif isinstance( value, dict ):
-            for k in ( 'param', 'switch', 'fallback', 'distribution', 'cases', 'default' ):
+            # 'param' names a parameter, it is not an id: the ids come from the parameter's
+            # default (walked with the 'parameters' block) and from 'fallback'
+            for k in ( 'switch', 'fallback', 'distribution', 'cases', 'default' ):
                 if k in value:
                     yield from self.mapping_ids( value[k] if k != 'cases' else list( value[k].values() ) )
 
@@ -134,8 +136,16 @@ class Walker:
                     self.walk_mapgen_object( p[0], tier, 'palette ' + pid )
         params = obj.get( 'parameters' ) or {}
         for pv in params.values():
-            for nid in self.mapping_ids( pv.get( 'default' ) if isinstance( pv, dict ) else None ):
-                self.walk_nested( nid, tier, ref )
+            if not isinstance( pv, dict ):
+                continue
+            kind = pv.get( 'type' )
+            for nid in self.mapping_ids( pv.get( 'default' ) ):
+                if kind == 'ter_str_id':
+                    self.add( 'terrain', nid, tier, ref )
+                elif kind == 'furn_str_id':
+                    self.add( 'furniture', nid, tier, ref )
+                else:
+                    self.walk_nested( nid, tier, ref )
         for pn in obj.get( 'place_nested' ) or []:
             for k in ( 'chunks', 'else_chunks' ):
                 for nid in self.mapping_ids( pn.get( k ) ):

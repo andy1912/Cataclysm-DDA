@@ -1,4 +1,5 @@
 tier,category,id,source,size,images,status,fallback
+T1,furniture,f_air_conditioner,dda,32x32,1,keep original,t_machinery_light
 T1,furniture,f_bed,dda,32x32,16,Saigon art (derived),
 T1,furniture,f_bench,dda,32x32,16,keep original,
 T1,furniture,f_bike_rack,dda,32x32,17,keep original,t_metal_railing
@@ -8,9 +9,22 @@ T1,furniture,f_fridge,dda,32x64,4,keep original,
 T1,furniture,f_oven,dda,32x32,1,Saigon art (drawn),
 T1,furniture,f_rack,dda,32x32,1,keep original,
 T1,furniture,f_region_flower_decorative,dda,32x32,1,keep original,f_region_pseudo
+T1,furniture,f_sgn_ban_inox,mod,32x32,1,Saigon art (drawn),f_table
 T1,furniture,f_sgn_ban_tho,mod,32x32,16,Saigon art (derived),f_table
+T1,furniture,f_sgn_ban_tho_than_tai,mod,32x32,1,Saigon art (drawn),f_table
+T1,furniture,f_sgn_bang_hieu,mod,32x32,3,Saigon art (drawn),f_sign
+T1,furniture,f_sgn_chau_kieng,mod,32x32,1,Saigon art (drawn),f_indoor_plant
+T1,furniture,f_sgn_cot_dien,mod,32x64,1,Saigon art (drawn),f_utility_pole
+T1,furniture,f_sgn_day_phoi,mod,32x32,1,Saigon art (drawn),f_rack
+T1,furniture,f_sgn_du,mod,32x64,1,Saigon art (drawn),f_sign
 T1,furniture,f_sgn_dua_can,mod,32x32,1,Saigon art (drawn),f_dandelion
+T1,furniture,f_sgn_loa_phuong,mod,32x64,1,Saigon art (drawn),f_utility_pole
+T1,furniture,f_sgn_lu_nuoc,mod,32x32,1,Saigon art (drawn),f_standing_tank
+T1,furniture,f_sgn_tivi_crt,mod,32x32,1,Saigon art (drawn),f_dresser
 T1,furniture,f_sgn_van_tho,mod,32x32,1,Saigon art (drawn),f_dandelion
+T1,furniture,f_sgn_vong,mod,32x32,1,Saigon art (drawn),t_leanto
+T1,furniture,f_sgn_xau_ho,mod,32x32,1,Saigon art (drawn),f_dandelion
+T1,furniture,f_sgn_xe_banh_mi,mod,32x32,1,Saigon art (drawn),f_display_rack
 T1,furniture,f_sign_stop,dda,32x64,1,keep original,
 T1,furniture,f_sink,dda,32x32,16,keep original,
 T1,furniture,f_sofa,dda,32x32,16,Saigon art (derived),
@@ -81,7 +95,9 @@ T1,item,tshirt,dda,20x20,1,keep original,tank_top
 T1,item,whistle,dda,20x20,1,keep original,
 T1,item,wrench,dda,20x20,1,keep original,
 T1,item,wristwatch,dda,20x20,1,keep original,
+T1,monster,mon_cat,dda,32x32,5,keep original,
 T1,monster,mon_pseudo_dormant_zombie,dda,32x48,6,keep original,mon_zombie
+T1,monster,mon_sewer_rat,dda,32x32,2,keep original,
 T1,monster,mon_zombie,dda,32x48,6,Saigon art (derived),mon_zombie_base
 T1,monster,mon_zombie_fat,dda,32x48,3,keep original,mon_zombie_base
 T1,monster,pseudo_dormant_mon_zombie_brainless,unknown,32x48,3,keep original,mon_zombie_brainless
@@ -90,6 +106,8 @@ T1,monster,pseudo_dormant_mon_zombie_crawler,unknown,32x32,2,keep original,mon_z
 T1,monster,pseudo_dormant_mon_zombie_fat,unknown,32x48,3,keep original,mon_zombie_fat
 T1,monster,pseudo_dormant_mon_zombie_rot,unknown,32x32,2,keep original,mon_zombie_rot
 T1,monster,pseudo_dormant_mon_zombie_tough,unknown,32x48,3,keep original,mon_zombie_tough
+T1,monster,sgn_mon_cho_ta,mod,32x32,2,Saigon art (derived),mon_dog
+T1,monster,sgn_mon_ga_ta,mod,32x32,3,Saigon art (derived),mon_bird_flying_base
 T1,monster,sgn_mon_zombie_cong_an,mod,32x48,2,Saigon art (derived),mon_zombie_base
 T1,monster,sgn_mon_zombie_sot,mod,32x48,3,Saigon art (derived),mon_zombie_base
 T1,monster,sgn_mon_zombie_vendor,mod,32x48,3,Saigon art (derived),mon_zombie_base
@@ -112,6 +130,8 @@ T1,overmap_terrain,sgn_chungcu_z4,mod,16x16,1,Saigon art (derived),house
 T1,overmap_terrain,sgn_chungcu_z5,mod,16x16,1,Saigon art (derived),house
 T1,overmap_terrain,sgn_hem_block,mod,16x16,1,Saigon art (derived),house
 T1,overmap_terrain,sgn_hem_block_roof,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_kenh,mod,16x16,1,Saigon art (derived),generic_water
+T1,overmap_terrain,sgn_kenh_roof,mod,16x16,1,Saigon art (derived),generic_water
 T1,overmap_terrain,sgn_nh_solo_z0,mod,16x16,1,Saigon art (derived),house
 T1,overmap_terrain,sgn_nh_solo_z1,mod,16x16,1,Saigon art (derived),house
 T1,overmap_terrain,sgn_nh_solo_z2,mod,16x16,1,Saigon art (derived),house
@@ -144,19 +164,32 @@ T1,terrain,t_region_groundcover_urban,dda,32x32,1,keep original,t_region_pseudo
 T1,terrain,t_region_shrub_decorative,dda,32x32,1,keep original,t_region_pseudo
 T1,terrain,t_region_tree,dda,32x32,1,keep original,t_region_pseudo
 T1,terrain,t_sconc_wall_halfway,dda,32x32,16,keep original,t_abstract_wall
+T1,terrain,t_sgn_bo_ke,mod,32x32,1,Saigon art (drawn),t_pavement
+T1,terrain,t_sgn_cua_sat_keo_c,mod,32x32,2,Saigon art (drawn),t_door_c
+T1,terrain,t_sgn_cua_sat_keo_o,mod,32x32,2,Saigon art (drawn),t_door_o
+T1,terrain,t_sgn_gach_bong_1,mod,32x32,1,Saigon art (drawn),t_thconc_floor
+T1,terrain,t_sgn_gach_bong_2,mod,32x32,1,Saigon art (drawn),t_thconc_floor
+T1,terrain,t_sgn_gach_bong_3,mod,32x32,1,Saigon art (drawn),t_thconc_floor
+T1,terrain,t_sgn_gach_bong_4,mod,32x32,1,Saigon art (drawn),t_thconc_floor
+T1,terrain,t_sgn_gach_men,mod,32x32,1,Saigon art (drawn),t_thconc_floor
+T1,terrain,t_sgn_hem_xi_mang,mod,32x32,3,Saigon art (drawn),t_pavement
+T1,terrain,t_sgn_mai_ton,mod,32x32,3,Saigon art (drawn),t_scrap_floor
 T1,terrain,t_sgn_shrub_hoa_giay,mod,32x32,2,Saigon art (drawn),t_shrub_abstract
+T1,terrain,t_sgn_shrub_khoai_mi,mod,32x32,2,Saigon art (drawn),t_shrub_abstract
+T1,terrain,t_sgn_shrub_ngu_sac,mod,32x32,2,Saigon art (drawn),t_shrub_abstract
 T1,terrain,t_sgn_tree_bang,mod,96x96,2,Saigon art (drawn),t_tree_abstract
 T1,terrain,t_sgn_tree_bo_de,mod,96x96,2,Saigon art (drawn),t_tree_abstract
-T1,terrain,t_sgn_tree_chuoi,mod,64x64,2,Saigon art (drawn),t_tree_abstract
-T1,terrain,t_sgn_tree_chuoi_harvested,mod,64x64,2,Saigon art (drawn),t_tree
-T1,terrain,t_sgn_tree_du_du,mod,64x64,2,Saigon art (drawn),t_tree_abstract
-T1,terrain,t_sgn_tree_du_du_harvested,mod,64x64,2,Saigon art (drawn),t_tree
+T1,terrain,t_sgn_tree_chuoi,mod,64x64,2,Saigon art (drawn),t_tree
+T1,terrain,t_sgn_tree_chuoi_harvested,mod,64x64,2,Saigon art (drawn),t_tree_abstract
+T1,terrain,t_sgn_tree_du_du,mod,64x64,2,Saigon art (drawn),t_tree
+T1,terrain,t_sgn_tree_du_du_harvested,mod,64x64,2,Saigon art (drawn),t_tree_abstract
 T1,terrain,t_sgn_tree_dua,mod,96x96,2,Saigon art (drawn),t_tree_abstract
 T1,terrain,t_sgn_tree_dua_harvested,mod,96x96,2,Saigon art (drawn),t_tree
 T1,terrain,t_sgn_tree_me,mod,96x96,2,Saigon art (drawn),t_tree_abstract
 T1,terrain,t_sgn_tree_sao,mod,96x96,2,Saigon art (drawn),t_tree_abstract
 T1,terrain,t_sgn_tree_xoai,mod,96x96,2,Saigon art (drawn),t_tree_abstract
 T1,terrain,t_sgn_tree_xoai_harvested,mod,96x96,2,Saigon art (drawn),t_tree
+T1,terrain,t_sgn_tuong_bong_gio,mod,32x32,1,Saigon art (drawn),t_abstract_wall
 T1,terrain,t_sidewalk,dda,32x32,16,Saigon art (derived),t_pavement
 T1,terrain,t_sidewalk_hw_air,dda,32x32,20,keep original,t_pavement
 T1,terrain,t_sidewalk_ramp_down_high,dda,32x32,1,keep original,
@@ -225,11 +258,23 @@ T2,item,meat,dda,20x20,1,keep original,flesh
 T2,item,papaya,dda,32x32,1,keep original,
 T2,item,salt,dda,20x20,1,keep original,spice
 T2,item,sgn_ao_ba_ba,mod,20x20,1,Saigon art (drawn),dress_shirt
+T2,item,sgn_ao_cong_an,mod,20x20,1,Saigon art (drawn),buttonshirt
+T2,item,sgn_ao_dai_mau,mod,20x20,1,Saigon art (drawn),coat_rain
+T2,item,sgn_ao_dai_trang,mod,20x20,1,Saigon art (drawn),coat_rain
+T2,item,sgn_ao_khoac_chong_nang,mod,20x20,1,Saigon art (drawn),jacket_light
+T2,item,sgn_ao_thun,mod,20x20,1,Saigon art (derived),camisole
+T2,item,sgn_ao_trang_hoc_sinh,mod,20x20,1,Saigon art (drawn),buttonshirt
+T2,item,sgn_banh_bao,mod,20x20,1,Saigon art (drawn),flatbread
 T2,item,sgn_banh_chung,mod,20x20,1,Saigon art (drawn),dry_rice
 T2,item,sgn_banh_mi_bread,mod,20x20,1,Saigon art (drawn),bread
 T2,item,sgn_banh_mi_thit,mod,20x20,1,Saigon art (drawn),sandwich_t
 T2,item,sgn_banh_pho,mod,20x20,1,Saigon art (drawn),noodles_fast
+T2,item,sgn_banh_trang,mod,20x20,1,Saigon art (drawn),tortilla_corn
+T2,item,sgn_banh_xeo,mod,20x20,1,Saigon art (drawn),pancakes
+T2,item,sgn_bep_than_to_ong,mod,20x20,1,Saigon art (drawn),brazier
 T2,item,sgn_bia_hoi,mod,32x32,1,Saigon art (derived),water_clean
+T2,item,sgn_bich_nylon,mod,20x20,1,Saigon art (drawn),bottle_plastic
+T2,item,sgn_binh_gas,mod,20x20,1,Saigon art (drawn),medium_propane_tank
 T2,item,sgn_book_almanac,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_book_construction,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_book_fishing,mod,20x20,1,Saigon art (drawn),radio_book
@@ -239,31 +284,66 @@ T2,item,sgn_book_sutra,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_book_tailoring,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_book_tv_repair,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_book_wuxia,mod,20x20,1,Saigon art (drawn),book_fict_soft_pulp_tpl
+T2,item,sgn_ca_phe_bot,mod,20x20,1,Saigon art (drawn),coffee_raw
 T2,item,sgn_ca_phe_sua_da,mod,32x32,1,Saigon art (derived),coffee
+T2,item,sgn_can_nhua,mod,20x20,1,Saigon art (drawn),jerrycan
+T2,item,sgn_chai_nuoc_mam,mod,20x20,1,Saigon art (drawn),bottle_plastic
 T2,item,sgn_che,mod,32x32,1,Saigon art (derived),water_clean
 T2,item,sgn_com_tam,mod,20x20,1,Saigon art (drawn),dry_rice
 T2,item,sgn_dao_rua,mod,20x20,1,Saigon art (drawn),machete
+T2,item,sgn_dau_gio,mod,20x20,1,Saigon art (drawn),aspirin
+T2,item,sgn_den_dau,mod,20x20,1,Saigon art (drawn),oil_lamp
+T2,item,sgn_dep_lao,mod,20x20,1,Saigon art (drawn),sneakers
+T2,item,sgn_dien_thoai,mod,20x20,1,Saigon art (drawn),cell_phone
 T2,item,sgn_dong_100k,mod,20x20,1,Saigon art (drawn),money_one
 T2,item,sgn_dong_10k,mod,20x20,1,Saigon art (drawn),money_one
 T2,item,sgn_dong_50k,mod,20x20,1,Saigon art (drawn),money_one
 T2,item,sgn_durian,mod,20x20,1,Saigon art (drawn),mango
 T2,item,sgn_engine_110cc_item,mod,20x20,1,Saigon art (drawn),engine_combustion
+T2,item,sgn_goi_cuon,mod,20x20,1,Saigon art (drawn),dry_rice
+T2,item,sgn_hu_tieu,mod,20x20,1,Saigon art (drawn),water_clean
 T2,item,sgn_karaoke_songbook,mod,20x20,1,Saigon art (drawn),radio_book
+T2,item,sgn_khan_quang_do,mod,20x20,1,Saigon art (derived),scarf
+T2,item,sgn_khau_trang,mod,20x20,1,Saigon art (drawn),scarf
+T2,item,sgn_kho_muc,mod,20x20,1,Saigon art (drawn),flesh
+T2,item,sgn_luoi_chai,mod,20x20,1,Saigon art (drawn),net
+T2,item,sgn_ly_nhua,mod,20x20,1,Saigon art (drawn),cup_plastic
 T2,item,sgn_mi_goi,mod,20x20,1,Saigon art (drawn),noodles_fast
 T2,item,sgn_mit,mod,20x20,1,Saigon art (drawn),mango
 T2,item,sgn_moto_tank_4l,mod,20x20,1,Saigon art (drawn),30l_barrel
+T2,item,sgn_mung,mod,20x20,1,Saigon art (drawn),
+T2,item,sgn_nen,mod,20x20,1,Saigon art (drawn),candle
+T2,item,sgn_noi_com_dien,mod,20x20,1,Saigon art (drawn),hotplate
+T2,item,sgn_non_ket,mod,32x32,1,Saigon art (derived),hat_cotton
 T2,item,sgn_note_handwritten,mod,20x20,1,Saigon art (drawn),newest_newspaper
 T2,item,sgn_nuoc_mam,mod,32x32,1,Saigon art (derived),soysauce
 T2,item,sgn_nuoc_mia,mod,32x32,1,Saigon art (derived),juice
 T2,item,sgn_ong_tay_chong_nang,mod,20x20,1,Saigon art (drawn),armguard_larmor
+T2,item,sgn_oresol,mod,20x20,1,Saigon art (drawn),spice
+T2,item,sgn_phin,mod,20x20,1,Saigon art (drawn),
 T2,item,sgn_pho_bo,mod,20x20,1,Saigon art (drawn),water_clean
+T2,item,sgn_quan_cong_an,mod,20x20,1,Saigon art (drawn),jeans
+T2,item,sgn_quan_tay,mod,32x32,1,Saigon art (derived),jeans
+T2,item,sgn_quang_ganh,mod,20x20,1,Saigon art (drawn),ragpouch
+T2,item,sgn_quat_may,mod,20x20,1,Saigon art (drawn),fan
+T2,item,sgn_radio_cassette,mod,20x20,1,Saigon art (drawn),radio
 T2,item,sgn_rau_muong,mod,20x20,1,Saigon art (drawn),spinach
+T2,item,sgn_ro_nhua,mod,20x20,1,Saigon art (drawn),plastic_shopping_bag
 T2,item,sgn_ruou_de,mod,32x32,1,Saigon art (derived),water_clean
+T2,item,sgn_sua_dac,mod,32x32,1,Saigon art (derived),con_milk
+T2,item,sgn_than_to_ong,mod,20x20,1,Saigon art (drawn),charcoal
 T2,item,sgn_thanh_long,mod,20x20,1,Saigon art (drawn),mango
+T2,item,sgn_thau_nhua,mod,20x20,1,Saigon art (drawn),bucket
 T2,item,sgn_thung_xop,mod,20x20,1,Saigon art (drawn),cup_plastic
+T2,item,sgn_thuoc_la,mod,20x20,1,Saigon art (drawn),cig
+T2,item,sgn_tom_kho,mod,20x20,1,Saigon art (drawn),flesh
 T2,item,sgn_tra_da,mod,32x32,1,Saigon art (derived),water_clean
 T2,item,sgn_tuong_ot,mod,32x32,1,Saigon art (derived),hot_sauce
+T2,item,sgn_vang_luong,mod,20x20,1,Saigon art (drawn),gold_small
+T2,item,sgn_ve_so,mod,20x20,1,Saigon art (drawn),
 T2,item,sgn_ward_notice,mod,20x20,1,Saigon art (drawn),newest_newspaper
+T2,item,sgn_xa_beng,mod,20x20,1,Saigon art (drawn),crowbar
+T2,item,sgn_xoi,mod,20x20,1,Saigon art (drawn),dry_rice
 T2,item,sugar,dda,32x32,1,keep original,
 T2,item,tea_raw,dda,20x20,1,keep original,
 T2,item,two_way_radio,dda,20x20,1,keep original,

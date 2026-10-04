@@ -187,21 +187,21 @@ For new building content: church (nhà thờ), school, ward office (UBND phườ
 Ultica_iso equivalents of everything, once renderer phase R3 starts. Out of scope for this plan.
 
 ## Schedule (small resumable units, as in `PROGRESS.md`)
-| Unit | Contents | New ids | New sprites (approx.) | Mostly |
-|---|---|---:|---:|---|
-| G18 | Icon rescale, 4 gap items, size gate, validator in `check_mod.sh` | 4 | 49 | D |
-| G19 | Flora content fixes + forest-edge species | 3–6 | 3 | content + D |
-| G20 | **Street kit:** cột điện, bàn inox + ghế set, xe bánh mì, dù, bảng hiệu, loa phường, cục nóng máy lạnh | 7 | ~14 | D/R |
-| G21 | **Shophouse interior:** gạch bông ×4, gạch men, Thần Tài altar, lu nước, võng, CRT TV, chậu kiểng | 9 | ~16 | D/R |
-| G22 | **Gates and hẻm:** cửa sắt kéo c/o, cửa cuốn open, hẻm paving, tường bông gió (multitile), dây phơi + hẻm extra | 6 | ~30 | D |
-| G23 | **Kitchen and drink items:** nồi cơm điện, bếp than tổ ong + briquettes, phin, cà phê bột, sữa đặc, bịch nylon, ly nhựa, chai nước mắm, bình gas, can nhựa | 11 | 11 | D + recipes |
-| G24 | **Household and medicine items:** quạt máy, đèn dầu, nến, Nokia, radio, mùng, chiếu, dầu gió, oresol, khẩu trang (+overlay) | 10 | 12 | D |
-| G25 | **Work gear and trade:** xà beng, quang gánh (+overlay), rổ/thau, lưới chài, vé số, thuốc lá, lượng vàng, street dishes ×5, dried goods ×3 | 16 | 18 | D |
-| G26 | **Clothing:** áo dài, áo thun, quần tây, áo khoác chống nắng, nón kết, dép lào, uniform, áo trắng (icons + 16 overlays) | 8 | 24 | D/R/H |
-| G27 | **Canal:** kênh water + embankment, ghe canopy, flood water (with B8f canal content) | 3–4 | ~20 | D |
-| G28 | **Animals:** chó ta, mèo, gà, chuột cống (+ snake and lizard) | 4–6 | ~8 | R/D/H |
-| G29 | **Map icons** for new landmarks | 11 | 11 | R/D |
-| H1 | **Hand-art pass (artist):** Saigon zombies ×5, NPC outfits, áo dài overlay, iconic street objects polish | – | ~40 | **H** |
+| Unit | Contents | New ids | New sprites (approx.) | Mostly | Status (2026-10-04) |
+|---|---|---:|---:|---|---|
+| G18 | Icon rescale, 4 gap items, size gate, validator in `check_mod.sh` | 4 | 49 | D | done |
+| G19 | Flora content fixes + forest-edge species | 3–6 | 3 | content + D | done |
+| G20 | **Street kit:** cột điện, bàn inox + ghế set, xe bánh mì, dù, bảng hiệu, loa phường, cục nóng máy lạnh | 7 | ~14 | D/R | done |
+| G21 | **Shophouse interior:** gạch bông ×4, gạch men, Thần Tài altar, lu nước, võng, CRT TV, chậu kiểng | 9 | ~16 | D/R | done |
+| G22 | **Gates and hẻm:** cửa sắt kéo c/o, cửa cuốn open, hẻm paving, tường bông gió (multitile), dây phơi + hẻm extra | 6 | ~30 | D | done |
+| G23 | **Kitchen and drink items:** nồi cơm điện, bếp than tổ ong + briquettes, phin, cà phê bột, sữa đặc, bịch nylon, ly nhựa, chai nước mắm, bình gas, can nhựa | 11 | 11 | D + recipes | done |
+| G24 | **Household and medicine items:** quạt máy, đèn dầu, nến, Nokia, radio, mùng, chiếu, dầu gió, oresol, khẩu trang (+overlay) | 10 | 12 | D | done |
+| G25 | **Work gear and trade:** xà beng, quang gánh (+overlay), rổ/thau, lưới chài, vé số, thuốc lá, lượng vàng, street dishes ×5, dried goods ×3 | 16 | 18 | D | done |
+| G26 | **Clothing:** áo dài, áo thun, quần tây, áo khoác chống nắng, nón kết, dép lào, uniform, áo trắng (icons + 16 overlays) | 8 | 24 | D/R/H | done |
+| G27 | **Canal:** kênh water + embankment, ghe canopy, flood water (with B8f canal content) | 3–4 | ~20 | D | done with B8f (canal water, embankment, tin roofs, icons); ghe canopy and flood water left |
+| G28 | **Animals:** chó ta, mèo, gà, chuột cống (+ snake and lizard) | 4–6 | ~8 | R/D/H | done |
+| G29 | **Map icons** for new landmarks | 11 | 11 | R/D | waits for the landmark buildings |
+| H1 | **Hand-art pass (artist):** Saigon zombies ×5, NPC outfits, áo dài overlay, iconic street objects polish | – | ~40 | **H** | for an artist |
 
 **Total:** about 100 new game ids and about 260 new sprites. About 80% can be code-drawn or derived (G18–G29). The hand-art pass H1 is where a pixel artist adds the most.
 
