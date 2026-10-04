@@ -2763,6 +2763,870 @@
     "looks_like": "sgn_lm_bui_vien_00"
   },
   {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_00",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_10",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_20",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_30",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_01",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_11",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_21",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_31",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_02",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_12",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_22",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_32",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_03",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_13",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_23",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_33",
+    "copy-from": "generic_city_building",
+    "name": "Thảo Cầm Viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_20_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_30_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_01_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_11_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_21_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_31_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_02_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_12_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_22_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_32_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_03_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_13_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_23_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thao_cam_vien_33_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Thảo Cầm Viên (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_thao_cam_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_00",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_10",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_20",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_30",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_01",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_11",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_21",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_31",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_02",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_12",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_22",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_32",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_03",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_13",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_23",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_33",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Đầm Sen",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_20_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_30_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_01_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_11_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_21_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_31_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_02_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_12_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_22_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_32_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_03_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_13_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_23_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_dam_sen_33_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Đầm Sen (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_dam_sen_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_00",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_10",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_20",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_30",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_01",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_11",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_21",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_31",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_02",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_12",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_22",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_32",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_03",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_13",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_23",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_33",
+    "copy-from": "generic_city_building",
+    "name": "Khu du lịch Suối Tiên",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_20_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_30_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_01_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_11_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_21_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_31_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_02_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_12_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_22_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_32_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_03_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_13_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_23_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_suoi_tien_33_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khu du lịch Suối Tiên (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_suoi_tien_00"
+  },
+  {
     "type": "city_building",
     "id": "sgn_lm_ben_thanh",
     "locations": [
@@ -5447,6 +6311,825 @@
           3
         ],
         "overmap": "sgn_lm_bui_vien_20_z3_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_thao_cam_vien",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_10_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_20_north"
+      },
+      {
+        "point": [
+          3,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_30_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_01_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_11_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_21_north"
+      },
+      {
+        "point": [
+          3,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_31_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_02_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_12_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_22_north"
+      },
+      {
+        "point": [
+          3,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_32_north"
+      },
+      {
+        "point": [
+          0,
+          3,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_03_north"
+      },
+      {
+        "point": [
+          1,
+          3,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_13_north"
+      },
+      {
+        "point": [
+          2,
+          3,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_23_north"
+      },
+      {
+        "point": [
+          3,
+          3,
+          0
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_33_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_10_z1_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_20_z1_north"
+      },
+      {
+        "point": [
+          3,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_30_z1_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_01_z1_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_11_z1_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_21_z1_north"
+      },
+      {
+        "point": [
+          3,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_31_z1_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_02_z1_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_12_z1_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_22_z1_north"
+      },
+      {
+        "point": [
+          3,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_32_z1_north"
+      },
+      {
+        "point": [
+          0,
+          3,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_03_z1_north"
+      },
+      {
+        "point": [
+          1,
+          3,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_13_z1_north"
+      },
+      {
+        "point": [
+          2,
+          3,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_23_z1_north"
+      },
+      {
+        "point": [
+          3,
+          3,
+          1
+        ],
+        "overmap": "sgn_lm_thao_cam_vien_33_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_dam_sen",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_10_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_20_north"
+      },
+      {
+        "point": [
+          3,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_30_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_01_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_11_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_21_north"
+      },
+      {
+        "point": [
+          3,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_31_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_02_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_12_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_22_north"
+      },
+      {
+        "point": [
+          3,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_32_north"
+      },
+      {
+        "point": [
+          0,
+          3,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_03_north"
+      },
+      {
+        "point": [
+          1,
+          3,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_13_north"
+      },
+      {
+        "point": [
+          2,
+          3,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_23_north"
+      },
+      {
+        "point": [
+          3,
+          3,
+          0
+        ],
+        "overmap": "sgn_lm_dam_sen_33_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_10_z1_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_20_z1_north"
+      },
+      {
+        "point": [
+          3,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_30_z1_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_01_z1_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_11_z1_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_21_z1_north"
+      },
+      {
+        "point": [
+          3,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_31_z1_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_02_z1_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_12_z1_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_22_z1_north"
+      },
+      {
+        "point": [
+          3,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_32_z1_north"
+      },
+      {
+        "point": [
+          0,
+          3,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_03_z1_north"
+      },
+      {
+        "point": [
+          1,
+          3,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_13_z1_north"
+      },
+      {
+        "point": [
+          2,
+          3,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_23_z1_north"
+      },
+      {
+        "point": [
+          3,
+          3,
+          1
+        ],
+        "overmap": "sgn_lm_dam_sen_33_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_suoi_tien",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_10_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_20_north"
+      },
+      {
+        "point": [
+          3,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_30_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_01_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_11_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_21_north"
+      },
+      {
+        "point": [
+          3,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_31_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_02_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_12_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_22_north"
+      },
+      {
+        "point": [
+          3,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_32_north"
+      },
+      {
+        "point": [
+          0,
+          3,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_03_north"
+      },
+      {
+        "point": [
+          1,
+          3,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_13_north"
+      },
+      {
+        "point": [
+          2,
+          3,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_23_north"
+      },
+      {
+        "point": [
+          3,
+          3,
+          0
+        ],
+        "overmap": "sgn_lm_suoi_tien_33_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_10_z1_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_20_z1_north"
+      },
+      {
+        "point": [
+          3,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_30_z1_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_01_z1_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_11_z1_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_21_z1_north"
+      },
+      {
+        "point": [
+          3,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_31_z1_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_02_z1_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_12_z1_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_22_z1_north"
+      },
+      {
+        "point": [
+          3,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_32_z1_north"
+      },
+      {
+        "point": [
+          0,
+          3,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_03_z1_north"
+      },
+      {
+        "point": [
+          1,
+          3,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_13_z1_north"
+      },
+      {
+        "point": [
+          2,
+          3,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_23_z1_north"
+      },
+      {
+        "point": [
+          3,
+          3,
+          1
+        ],
+        "overmap": "sgn_lm_suoi_tien_33_z1_north"
       }
     ]
   }

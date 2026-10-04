@@ -358,3 +358,92 @@ def bui_vien( c ):
         c.px( x0 + 2, 3, rgb( neon ) )
     for x in range( 1, 47, 3 ):
         c.px( x, 1, rgb( '#e04040' ) )                            # the red plastic stools
+
+
+# --- L4: the zoo and the amusement parks ------------------------------------------------------
+LAKE = rgb( '#3a8ac8' )
+LOTUS = rgb( '#4a9a3a' )
+SAND = rgb( '#e8d49a' )
+
+
+def fence( c, w, h ):
+    c.rect( 0, 1, w - 1, h - 1, PARK )
+    c.frame( 0, 1, w - 1, h - 1, PAVE )
+
+
+@composite( 'sgn_lm_thao_cam_vien', 4, 4 )
+def thao_cam_vien( c ):
+    # trees over the grounds, the museum and the temple either side of the avenue, the lotus
+    # lake, and the enclosures: tigers, bears, elephants, the crocodile garden
+    fence( c, 64, 64 )
+    for y in range( 4, 40, 5 ):
+        for x in range( 3 + ( y // 5 ) % 2 * 3, 62, 6 ):
+            c.ellipse( x, y, 1.6, 1.6, TREE )
+    c.rect( 29, 1, 34, 42, CLAY )                                  # the avenue
+    c.rect( 2, 27, 61, 29, CLAY )                                  # the cross walk
+    tile_roof( c, 5, 4, 23, 15, TERRACOTTA )                       # the history museum
+    tile_roof( c, 40, 5, 53, 14, GLAZE )                           # the Hùng Kings temple
+    c.ellipse( 46.5, 20, 10, 4.5, LOTUS )                          # the lotus lake
+    c.ellipse( 46.5, 20, 6, 2.2, LAKE )
+    for x0, x1, col in ( ( 4, 17, '#e0a040' ), ( 20, 29, '#5a4a3a' ), ( 33, 48, '#a07a50' ) ):   # tiger, bear, elephant yards
+        c.frame( x0, 43, x1, 60, PAVE )
+        c.rect( x0 + 1, 44, x1 - 1, 59, shade( PARK, 1.15 ) if col != '#a07a50' else rgb( '#9a7a50' ) )
+        c.ellipse( ( x0 + x1 ) / 2, 52, 2, 1.4, rgb( col ) )        # the animal
+    c.frame( 51, 32, 62, 47, PAVE )                                # the crocodile garden
+    c.ellipse( 56.5, 39.5, 4, 5, rgb( '#4a6a4a' ) )
+    c.px( 55, 39, rgb( '#7a9a3a' ) )
+    walls( c, 35, 31, 46, 38, rgb( '#d4d4d8' ), shade( CREAM, 0.6 ) )   # the reptile house
+
+
+@composite( 'sgn_lm_dam_sen', 4, 4 )
+def dam_sen( c ):
+    # the lotus-edged lake with the island pagoda and its causeway, the swan boats, the
+    # Ferris wheel, the rock garden, the royal bonsai garden, and the park train's loop
+    fence( c, 64, 64 )
+    c.frame( 2, 3, 61, 61, RAIL )                                  # the park train
+    c.ellipse( 32, 36, 21, 16, LOTUS )
+    c.ellipse( 32, 36, 19, 14, LAKE )
+    c.ellipse( 32, 36, 5, 4, PARK )
+    tile_roof( c, 30, 34, 34, 38, GLAZE, ridge=False )             # island pagoda
+    c.rect( 31, 40, 33, 53, CLAY )                                 # causeway
+    c.rect( 29, 1, 34, 18, CLAY )
+    for x in range( 26, 39, 3 ):                                   # swan boats
+        c.px( x, 20, WHITE )
+    c.ring( 53.5, 10.5, 5, 5, WHITE, 1 )                           # the Ferris wheel
+    c.px( 53, 10, rgb( '#e04040' ) )
+    c.px( 57, 8, rgb( '#f0c020' ) )
+    c.px( 50, 13, rgb( '#3a8ae0' ) )
+    for x, y in ( ( 5, 28 ), ( 7, 31 ), ( 5, 34 ), ( 8, 36 ) ):    # rock garden
+        c.ellipse( x, y, 1.6, 1.4, rgb( '#9a948a' ) )
+    c.rect( 5, 7, 20, 17, CLAY )                                   # the royal bonsai garden
+    for y in range( 8, 17, 2 ):
+        for x in range( 6, 20, 2 ):
+            c.px( x, y, TREE )
+    walls( c, 43, 55, 56, 60, TERRACOTTA, shade( TERRACOTTA, 0.6 ) )   # the restaurant
+
+
+@composite( 'sgn_lm_suoi_tien', 4, 4 )
+def suoi_tien( c ):
+    # the beach and lagoon under the cliff with the giant, the crocodile lake, the painted
+    # dragons in the gardens, the Ferris wheel, the temple, the kỳ lân gate
+    fence( c, 64, 64 )
+    c.frame( 2, 3, 61, 60, RAIL )
+    c.rect( 28, 1, 35, 26, CLAY )
+    c.px( 27, 2, rgb( '#e0b030' ) )                                # kỳ lân guardians
+    c.px( 36, 2, rgb( '#e0b030' ) )
+    c.rect( 4, 29, 29, 58, SAND )                                  # Biển Tiên Đồng
+    c.ellipse( 16.5, 47, 11, 8, LAKE )
+    c.rect( 4, 56, 29, 58, rgb( '#8a8478' ) )                      # the cliff
+    c.ellipse( 16.5, 55, 3, 3.5, rgb( '#2e8a5a' ) )                # Lạc Long Quân
+    c.px( 16, 53, rgb( '#e0c040' ) )
+    c.frame( 36, 32, 61, 46, rgb( '#c8c4b4' ) )                    # Crocodile Kingdom
+    c.ellipse( 48.5, 39, 10, 5.5, rgb( '#4a6a4a' ) )
+    for x in ( 44, 48, 52 ):
+        c.px( x, 39, rgb( '#7a9a3a' ) )
+    for x, y in ( ( 8, 11 ), ( 20, 20 ), ( 43, 11 ), ( 53, 21 ) ):  # the painted dragons
+        for i in range( 5 ):
+            c.px( x + i, y - ( i % 2 ), rgb( '#3a7ae0' ) )
+        c.px( x + 5, y - 1, rgb( '#f08a20' ) )
+    c.ring( 50.5, 51, 4.5, 4.5, WHITE, 1 )                         # the Ferris wheel
+    c.px( 50, 51, rgb( '#e04040' ) )
+    tile_roof( c, 39, 7, 51, 14, GLAZE )                           # the temple

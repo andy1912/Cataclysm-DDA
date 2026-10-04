@@ -39,8 +39,8 @@ Research date: 2026-10-04 (web sources at the end). **Period rule:** only places
 | 15 | **Saigon Trade Center** | 1997 | 145 m, the tallest in Vietnam 1997–2010 | 1 × 1, tall | Glass tower | A vantage point (multi-z) | **L3** ✓ |
 | 16 | **Diamond Plaza** | 1999 | Mall beside the cathedral | 2 × 2 | Mall atrium | Mall loot | **L3** ✓ |
 | 17 | **Phạm Ngũ Lão – Bùi Viện** | backpacker street, busy from the early 2000s | A street of guesthouses, bars and travel agents | row | Shophouse row variant: guesthouses and bars | Foreign loot (passports, dollars) | **L3** ✓ |
-| 18 | **Thảo Cầm Viên** (Saigon Zoo) | 1864–1865 | 20 ha | 4 × 4 | Animal enclosures | Escaped animals | later |
-| 19 | **Đầm Sen / Suối Tiên** (amusement parks) | 1999 / 1995 | | 4 × 4 | Rides | Set pieces | later |
+| 18 | **Thảo Cầm Viên** (Saigon Zoo) | 1864–1865 | 20 ha | 4 × 4 | Animal enclosures | Escaped animals | **L4** ✓ |
+| 19 | **Đầm Sen / Suối Tiên** (amusement parks) | 1999 / 1995 | | 4 × 4 | Rides | Set pieces | **L4** ✓ |
 
 Out of period, so not built: **Bitexco Financial Tower** (opened 31 Oct 2010), **Landmark 81** (2018) and the **metro**.
 
@@ -99,6 +99,31 @@ Top: Ga Sài Gòn, Bến xe Miền Đông, Công viên Tao Đàn. Middle: Diamon
 
 L3 region weight is 120, below L1 (200) and L2 (150).
 
+## L4 as built: the zoo and the amusement parks
+
+Thảo Cầm Viên, Đầm Sen, Suối Tiên (left to right), ground floors:
+
+![L4 parks](art/scene_preview_l4.png)
+
+- **Thảo Cầm Viên** (4×4, founded 1864). The gate opens onto an avenue with the history museum
+  (display halls) on one side and the Hùng Kings temple (red pillars, altar, guardian lions) on the
+  other. Beyond are old trees, an orchid-and-bonsai garden and a lotus lake. South of the cross walk
+  are the enclosures: tigers, bears, a deer paddock, macaques in the primate cages, pythons in the
+  reptile house's glass tanks, an elephant yard with hay, and the crocodile garden. The animals are
+  alive and inside their fences, for now. The test `saigon_zoo_animals` checks that every species spawns.
+- **Đầm Sen** (4×4, opened 1999). A big lake with lotus round its edge, an island pagoda reached by a
+  causeway, swan pedal boats at the jetty, the Ferris wheel, a rock garden with a waterfall pool, the
+  Nam Tú royal garden of bonsai, a restaurant, and the park train circling inside the fence. The
+  water-music show (2005) is after the setting, so it is left out.
+- **Suối Tiên** (4×4, opened 1995). Kỳ lân guardians at the gate, the Buddha temple, giant painted
+  dragons in the gardens, and Biển Tiên Đồng: an artificial beach and lagoon under a cliff, where
+  Lạc Long Quân stands over the waterfall. Also the railed Crocodile Kingdom lake full of crocodiles,
+  the Ferris wheel and the park train.
+
+New animals (monsters/zoo.json) are the Asian elephant, Siamese crocodile, long-tailed macaque and
+reticulated python; tigers, bears and deer are dda's. Region weight is 100, the lowest of the landmarks.
+On the three reference overmaps all 19 landmarks were placed.
+
 ## District 1 geography (for later, optional)
 The real District 1 core is compact: the cathedral faces the post office across Công xã Paris square, Lê Duẩn runs from the cathedral to the palace, and Đồng Khởi runs from the cathedral to the Opera House and the Continental on Lam Sơn square. City Hall heads Nguyễn Huệ, and Bến Thành sits on Quách Thị Trang roundabout at the end of Lê Lợi.
 
@@ -126,3 +151,5 @@ A later unit could place these together as one hand-laid "Quận 1" overmap spec
 - Turtle Lake: https://en.wikipedia.org/wiki/Turtle_Lake_(Ho_Chi_Minh_City)
 - Suối Tiên, 1995: https://en.wikipedia.org/wiki/Su%E1%BB%91i_Ti%C3%AAn_Amusement_Park
 - Thảo Cầm Viên, 1864–1865: https://en.wikipedia.org/wiki/Saigon_Zoo_and_Botanical_Gardens
+- Đầm Sen Park (50 ha, 20 % lakes, Ferris wheel, monorail, rock garden; water show 2005): https://en.wikipedia.org/wiki/%C4%90%E1%BA%A7m_Sen_Park
+- Đầm Sen, opened 1999: https://vietnamdiscovery.com/ho-chi-minh-city/activities/dam-sen-park/ and https://localvietnam.com/ho-chi-minh-city/dam-sen-park-water-park/

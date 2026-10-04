@@ -1,3 +1,4 @@
+#include <map>
 #include <queue>
 #include <set>
 #include <string>
@@ -8,6 +9,7 @@
 #include "coordinates.h"
 #include "map.h"
 #include "map_helpers.h"
+#include "mapbuffer.h"
 #include "mapdata.h"
 #include "omdata.h"
 #include "overmapbuffer.h"
@@ -15,10 +17,11 @@
 #include "point.h"
 #include "rng.h"
 #include "string_formatter.h"
+#include "submap.h"
 #include "type_id.h"
 
 // Saigon 2000s mod: the real District 1 landmarks (tools/saigon/gen_saigon_landmarks.py,
-// doc/saigon/LANDMARKS.md phases L1-L3).  Each one is generated on the real map at every
+// doc/saigon/LANDMARKS.md phases L1-L4).  Each one is generated on the real map at every
 // z-level, then checked: every door is reachable from the street, every indoor tile is
 // roofed, and every up staircase meets a down staircase directly above it.
 // Run with: tests/cata_test --mods=dda,saigon_2000s "[saigon]"
@@ -58,6 +61,7 @@ TEST_CASE( "saigon_district1_landmarks", "[mapgen][saigon]" )
         { "sgn_lm_ga_sai_gon", 3, 3, 0, 1 }, { "sgn_lm_ben_xe_md", 3, 3, 0, 1 }, { "sgn_lm_tao_dan", 3, 3, 0, 1 },
         { "sgn_lm_ho_con_rua", 1, 1, 0, 1 }, { "sgn_lm_stc", 1, 1, 0, 10 }, { "sgn_lm_diamond", 2, 2, 0, 3 },
         { "sgn_lm_bui_vien", 3, 1, 0, 3 },
+        { "sgn_lm_thao_cam_vien", 4, 4, 0, 1 }, { "sgn_lm_dam_sen", 4, 4, 0, 1 }, { "sgn_lm_suoi_tien", 4, 4, 0, 1 },
     };
     const ter_str_id open_air( "t_open_air" );
     const ter_str_id up( "t_stairs_up" );
@@ -139,5 +143,65 @@ TEST_CASE( "saigon_district1_landmarks", "[mapgen][saigon]" )
         CAPTURE( indoor, roofed, first_unroofed );
         CHECK( indoor > 0 );
         CHECK( roofed == indoor );
+    }
+}
+
+// L4: the zoo's and Suối Tiên's animals really spawn.  Every map tile of the park is
+// generated with its submaps saved, over a few seeds, and the mapgen spawn points are
+// counted by monster type.
+TEST_CASE( "saigon_zoo_animals", "[mapgen][saigon]" )
+{
+    if( !mtype_id( "sgn_mon_voi" ).is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    const std::vector<std::pair<std::string, std::vector<std::string>>> parks = {
+        { "sgn_lm_thao_cam_vien", { "sgn_mon_voi", "sgn_mon_ca_sau", "sgn_mon_khi", "sgn_mon_tran", "mon_tiger", "mon_bear", "mon_deer" } },
+        { "sgn_lm_suoi_tien", { "sgn_mon_ca_sau" } },
+    };
+    for( const auto &park : parks ) {
+        CAPTURE( park.first );
+        const landmark l{ park.first, 4, 4, 0, 1 };
+        std::map<std::string, int> seen;
+        for( int seed = 1; seed <= 3; seed++ ) {
+            clear_overmaps();
+            clear_map();
+            clear_avatar();
+            const tripoint_abs_omt base( 140, 140, 0 );
+            for( int z = l.zmin; z <= l.zmax; z++ ) {
+                for( int x = 0; x < l.w; x++ ) {
+                    for( int y = 0; y < l.h; y++ ) {
+                        overmap_buffer.ter_set( base + tripoint( x, y, z ), oter_str_id( piece( l, x, y, z ) ).id() );
+                    }
+                }
+            }
+            rng_set_engine_seed( seed );
+            for( int x = 0; x < l.w; x++ ) {
+                for( int y = 0; y < l.h; y++ ) {
+                    const tripoint_abs_omt pos = base + tripoint( x, y, 0 );
+                    MAPBUFFER.clear_outside_reality_bubble();
+                    smallmap tm;
+                    tm.generate( pos, calendar::turn, true, true );
+                    const tripoint_abs_sm origin = project_to<coords::sm>( pos );
+                    for( const point &d : { point( 0, 0 ), point( 1, 0 ), point( 0, 1 ), point( 1, 1 ) } ) {
+                        submap *sub = MAPBUFFER.lookup_submap( origin + tripoint( d, 0 ) );
+                        if( sub != nullptr ) {
+                            for( const spawn_point &sp : sub->spawns ) {
+                                seen[sp.type.str()] += sp.count;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        std::string counts;
+        for( const auto &kv : seen ) {
+            counts += kv.first + "=" + std::to_string( kv.second ) + " ";
+        }
+        CAPTURE( counts );
+        for( const std::string &mon : park.second ) {
+            CAPTURE( mon );
+            CHECK( seen[mon] > 0 );
+        }
     }
 }

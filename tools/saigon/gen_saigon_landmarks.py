@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the real Saigon landmarks of the 2000s (doc/saigon/LANDMARKS.md, phases L1-L3).
+"""Generate the real Saigon landmarks of the 2000s (doc/saigon/LANDMARKS.md, phases L1-L4).
 
 Each landmark is a multi-tile city building (OVERMAP_UNIQUE, SAIGON) drawn on one big grid
 per z-level (W*24 x H*24 tiles), then cut into a multi-OMT mapgen (2-D om_terrain).
@@ -27,9 +27,17 @@ class Level:
         self.w, self.h = w * 24, h * 24
         self.g = [ [ fill ] * self.w for _ in range( self.h ) ]
         self.vehicles = []      # ( x, y, vehicle_group, rotation, chance ); keep each inside one map tile
+        self.monsters = []      # place_monster entries for specific animals; ranges inside one map tile
 
     def vehicle( self, x, y, group, rotation, chance ):
         self.vehicles.append( ( x, y, group, rotation, chance ) )
+
+    def monster( self, x0, y0, x1, y1, mon, chance=100, repeat=None ):
+        assert x0 // 24 == x1 // 24 and y0 // 24 == y1 // 24, ( 'monster range crosses a map tile', x0, y0, x1, y1 )
+        m = { 'monster': mon, 'x': [ x0, x1 ], 'y': [ y0, y1 ], 'chance': chance }
+        if repeat:
+            m['repeat'] = repeat
+        self.monsters.append( m )
 
     def rect( self, x0, y0, x1, y1, ch ):
         for y in range( max( 0, y0 ), min( self.h - 1, y1 ) + 1 ):
@@ -66,7 +74,25 @@ def roof_over( level, indoor, roof_ch='_' ):
     return out
 
 
-INDOOR = set( '#RCH.:=^wW+DPbktrvqmyuasdcxpKZQAef<>jnhEFUOBY{}234!%&5i' )
+INDOOR = set( '#RCH.:=^wW+DPbktrvqmyuasdcxpKZQAe<>jnhEFUOBY{}234!%&5i/' )
+
+# Per-landmark symbols for the L4 parks (mapgen object keys override the shared palette)
+LOCAL = {
+    'sgn_lm_thao_cam_vien': {
+        'terrain': { '$': 't_sgn_hoa_sen', '(': 't_sgn_gach_tau', '*': 't_grass', 'f': 't_dirt', ';': 't_dirt',
+                     '/': 't_reinforced_glass', '\\': 't_monkey_bars' },
+        'furniture': { '(': 'f_sgn_chau_kieng', '*': 'f_boulder_large', ';': 'f_hay' } },
+    'sgn_lm_dam_sen': {
+        'terrain': { '1': 't_water_dp', '$': 't_sgn_hoa_sen', '(': 't_sgn_gach_tau', ')': 't_water_sh',
+                     '@': 't_concrete', '*': 't_grass', '`': 't_railroad_track_small' },
+        'furniture': { '(': 'f_sgn_chau_kieng', ')': 'f_sgn_thuyen_thien_nga', '@': 'f_sgn_vong_quay',
+                       '*': 'f_boulder_large' } },
+    'sgn_lm_suoi_tien': {
+        'terrain': { '1': 't_water_dp', ';': 't_sand', '@': 't_concrete', "'": 't_concrete', ')': 't_concrete',
+                     '(': 't_grass', '*': 't_grass', '`': 't_railroad_track_small', 'f': 't_dirt' },
+        'furniture': { '@': 'f_sgn_vong_quay', "'": 'f_sgn_tuong_khong_lo', ')': 'f_sgn_ky_lan',
+                       '(': 'f_sgn_rong_lon', '*': 'f_boulder_large' } },
+}
 
 
 # --- 1. Chợ Bến Thành ---------------------------------------------------------------------
@@ -766,6 +792,240 @@ def bui_vien():
     return { 0: z0, 1: z1, 2: z2, 3: z3 }
 
 
+def scatter_trees( lv, step=6 ):
+    """Trees on open lawn only: a tile whose whole 3x3 neighbourhood is still grass."""
+    for y in range( 5, lv.h - 5, step ):
+        for x in range( 5 + ( y // step ) % 2 * ( step // 2 ), lv.w - 5, step + 1 ):
+            if all( lv.get( x + dx, y + dy ) == 'g' for dx in ( -1, 0, 1 ) for dy in ( -1, 0, 1 ) ):
+                lv.at( x, y, '9' if ( x * 7 + y ) % 3 else 'T' )
+
+
+# --- 18. Thảo Cầm Viên (Saigon Zoo and Botanical Gardens) ---------------------------------
+def thao_cam_vien():
+    # the 1864 zoo and botanical garden: the gate on Nguyễn Bỉnh Khiêm, the history museum and
+    # the Hùng Kings temple facing each other across the entrance avenue, old trees, a lotus
+    # lake and an orchid-and-bonsai garden, then the enclosures: tigers, bears, elephants,
+    # deer, the crocodile garden, the primate cages and the reptile house.
+    lv = Level( 4, 4, 'g' )
+    lv.rect( 0, 0, 95, 1, 'S' )
+    lv.rect( 0, 2, 95, 2, 'I' )
+    lv.rect( 0, 2, 0, 95, 'I' )
+    lv.rect( 95, 2, 95, 95, 'I' )
+    lv.rect( 0, 95, 95, 95, 'I' )
+    lv.rect( 44, 2, 51, 2, 'o' )                       # the gate
+    lv.box( 38, 3, 42, 7, 'C', '.' )                   # ticket booth
+    lv.at( 42, 5, '+' )
+    lv.at( 39, 4, '3' )
+    for y in range( 6, 60, 7 ):                        # old trees over the grounds
+        for x in range( 4 + ( y // 7 ) % 2 * 4, 92, 9 ):
+            lv.at( x, y, '9' if ( x + y ) % 3 else 'T' )
+    lv.rect( 44, 3, 51, 62, 'o' )                      # the entrance avenue
+    lv.rect( 3, 40, 92, 43, 'o' )                      # the cross walk
+    lv.box( 8, 6, 34, 22, '#', '.' )                   # Bảo tàng Lịch sử, the history museum
+    for y in range( 8, 21, 3 ):
+        lv.at( 8, y, 'w' )
+    lv.at( 34, 13, '+' )
+    lv.at( 34, 14, '+' )
+    for y in range( 9, 20, 4 ):                        # display cases
+        lv.rect( 12, y, 30, y, 'j' )
+    lv.rect( 35, 12, 43, 15, 'o' )
+    lv.box( 60, 8, 80, 20, '#', 'n' )                  # Đền Hùng, the Hùng Kings temple
+    lv.at( 60, 13, '+' )
+    lv.at( 60, 14, '+' )
+    for x in ( 64, 70, 76 ):
+        lv.at( x, 10, 'O' )
+        lv.at( x, 18, 'O' )
+    lv.rect( 73, 12, 73, 15, 'E' )
+    lv.at( 68, 13, 'U' )
+    lv.rect( 52, 12, 59, 15, 'o' )
+    lv.at( 57, 11, 'L' )
+    lv.at( 57, 16, 'L' )
+    for y in range( 25, 37, 3 ):                       # orchid and bonsai garden
+        for x in range( 8, 32, 3 ):
+            lv.at( x, y, '(' )
+    lv.ellipse( 70, 30, 16, 7, '~' )                   # the lotus lake
+    lv.ellipse( 70, 30, 14, 5.5, '$' )
+    lv.ellipse( 70, 30, 6, 2.5, '~' )
+    for x in range( 52, 90, 6 ):                       # kiosks on the cross walk
+        lv.at( x, 44, 'u' )
+        lv.at( x + 1, 44, 's' )
+    for x in range( 6, 40, 8 ):
+        lv.at( x, 39, 'b' )
+    # enclosures, south of the cross walk
+    lv.box( 30, 46, 44, 58, 'I', 'g' )                 # deer paddock
+    lv.monster( 32, 49, 42, 57, 'mon_deer', 80, [ 2, 4 ] )
+    lv.box( 52, 46, 70, 58, '#', '.' )                 # the reptile house
+    lv.at( 61, 46, '+' )
+    for x0 in ( 54, 59, 64 ):                          # glass tanks
+        lv.box( x0, 50, x0 + 4, 54, '/', '.' )
+    lv.monster( 55, 51, 57, 53, 'sgn_mon_tran', 70 )
+    lv.monster( 65, 51, 67, 53, 'sgn_mon_tran', 70 )
+    lv.box( 6, 46, 26, 58, 'I', 'g' )                  # primate cages
+    for y in range( 48, 57, 3 ):
+        lv.rect( 9, y, 23, y, '\\' )
+    lv.monster( 8, 49, 22, 57, 'sgn_mon_khi', 90, [ 3, 6 ] )
+    lv.box( 76, 48, 93, 70, 'I', 'g' )                 # the crocodile garden
+    lv.ellipse( 85, 59, 6, 8, 'M' )
+    lv.monster( 78, 50, 92, 70, 'sgn_mon_ca_sau', 90, [ 2, 4 ] )
+    lv.box( 6, 64, 26, 88, 'I', 'g' )                  # tigers
+    for x, y in ( ( 10, 70 ), ( 20, 80 ), ( 12, 84 ) ):
+        lv.at( x, y, '*' )
+    lv.ellipse( 18, 70, 3, 2, '~' )
+    lv.monster( 8, 74, 22, 87, 'mon_tiger', 80, [ 1, 2 ] )
+    lv.box( 30, 64, 44, 88, 'I', 'g' )                 # bears
+    lv.at( 36, 82, '*' )
+    lv.monster( 32, 74, 42, 87, 'mon_bear', 70 )
+    lv.box( 50, 64, 72, 92, 'I', 'f' )                 # the elephant yard
+    for x in ( 54, 58, 62 ):
+        lv.at( x, 66, ';' )
+    lv.ellipse( 66, 84, 3, 2, '~' )
+    lv.monster( 52, 74, 70, 90, 'sgn_mon_voi', 90, [ 1, 2 ] )
+    lv.rect( 44, 62, 51, 62, 'o' )
+    lv.rect( 27, 59, 29, 92, 'o' )                     # walks between the enclosures
+    lv.rect( 45, 59, 49, 92, 'o' )
+    lv.rect( 73, 71, 75, 92, 'o' )
+    z1 = roof_over( lv, INDOOR, 'l' )
+    for y in range( 8, 21 ):                           # the temple's green glazed roof
+        for x in range( 60, 81 ):
+            if z1.get( x, y ) == 'l':
+                z1.at( x, y, 'N' )
+    return { 0: lv, 1: z1 }
+
+
+# --- 19. Công viên Văn hóa Đầm Sen --------------------------------------------------------
+def dam_sen():
+    # the lotus-pond park: a big lake with lotus at its edges, an island pagoda reached by a
+    # causeway, swan boats at the jetty, the Ferris wheel, the rock garden with its waterfall,
+    # the Nam Tú royal garden of bonsai, and the park train that runs round the fence
+    lv = Level( 4, 4, 'g' )
+    lv.rect( 0, 0, 95, 1, 'S' )
+    lv.rect( 0, 2, 95, 2, 'I' )
+    lv.rect( 0, 2, 0, 95, 'I' )
+    lv.rect( 95, 2, 95, 95, 'I' )
+    lv.rect( 0, 95, 95, 95, 'I' )
+    lv.rect( 44, 2, 51, 2, 'o' )
+    lv.box( 36, 3, 42, 8, 'C', '.' )                   # ticket booths
+    lv.at( 42, 6, '+' )
+    lv.at( 37, 4, '3' )
+    lv.at( 39, 4, '3' )
+    lv.rect( 44, 3, 51, 26, 'o' )                      # the walk to the lake
+    for y in ( 4, 91 ):                                # the park train's loop
+        lv.rect( 3, y, 92, y, '`' )
+    for x in ( 3, 92 ):
+        lv.rect( x, 4, x, 91, '`' )
+    lv.rect( 44, 4, 51, 4, 'o' )                       # level crossing at the gate
+    lv.vehicle( 12, 91, 'sgn_vg_mini_train', 0, 70 )
+    lv.ellipse( 48, 54, 32, 24, '$' )                  # the lake, lotus round its edge
+    lv.ellipse( 48, 54, 29, 21, '1' )
+    lv.ellipse( 48, 54, 8, 6, 'g' )                    # the island
+    lv.box( 45, 51, 51, 57, '#', 'n' )                 # its pagoda
+    lv.at( 48, 51, '+' )
+    lv.at( 48, 55, 'E' )
+    lv.rect( 47, 60, 49, 79, 'o' )                     # the causeway from the south shore
+    lv.rect( 47, 48, 49, 50, 'o' )
+    lv.rect( 40, 27, 56, 28, 'o' )                     # the jetty
+    for x in range( 41, 56, 3 ):
+        lv.at( x, 29, ')' )
+    lv.at( 80, 16, '@' )                               # the Ferris wheel
+    lv.rect( 74, 18, 86, 20, 'o' )
+    for y in range( 40, 60, 3 ):                       # the rock garden and its waterfall
+        for x in range( 6, 14, 2 ):
+            lv.at( x, y, '*' if ( x + y ) % 4 else 'X' )
+    lv.ellipse( 14, 50, 3, 4, '~' )
+    lv.rect( 8, 10, 30, 26, '(' )                      # Nam Tú royal garden of bonsai
+    for y in range( 11, 26 ):
+        for x in range( 9, 30 ):
+            if ( x % 3 and y % 3 ):
+                lv.at( x, y, 'o' )
+    lv.box( 64, 82, 84, 90, 'C', '.' )                 # the restaurant
+    lv.at( 74, 82, '+' )
+    for x in range( 67, 82, 4 ):
+        lv.at( x, 85, 't' )
+        lv.at( x + 1, 85, 'c' )
+    lv.at( 66, 88, 'u' )
+    for x in range( 12, 40, 7 ):                       # kiosks and benches along the walks
+        lv.at( x, 84, 'u' )
+        lv.at( x + 1, 84, 's' )
+    for y in range( 34, 76, 8 ):
+        lv.at( 86, y, 'b' )
+        lv.at( 10, y + 2, 'b' )
+    for x, y in ( ( 20, 34 ), ( 30, 30 ), ( 64, 30 ), ( 76, 34 ), ( 82, 70 ), ( 20, 74 ), ( 30, 80 ), ( 66, 76 ) ):
+        lv.at( x, y, '9' )
+    scatter_trees( lv )                                # 60 % of Đầm Sen is trees and gardens
+    z1 = roof_over( lv, INDOOR, 'l' )
+    for y in range( 51, 58 ):                          # the island pagoda's green roof
+        for x in range( 45, 52 ):
+            if z1.get( x, y ) == 'l':
+                z1.at( x, y, 'N' )
+    return { 0: lv, 1: z1 }
+
+
+# --- 20. Khu du lịch Suối Tiên ------------------------------------------------------------
+def suoi_tien():
+    # the 1995 legends park: the kỳ lân gate, Biển Tiên Đồng's artificial beach and wave
+    # lagoon under the cliff where Lạc Long Quân stands over the waterfall, the Crocodile
+    # Kingdom's lake, giant painted dragons in the gardens, the Ferris wheel and the park
+    # train, and the temple of the Buddha
+    lv = Level( 4, 4, 'g' )
+    lv.rect( 0, 0, 95, 1, 'S' )
+    lv.rect( 0, 2, 95, 2, 'I' )
+    lv.rect( 0, 2, 0, 95, 'I' )
+    lv.rect( 95, 2, 95, 95, 'I' )
+    lv.rect( 0, 95, 95, 95, 'I' )
+    lv.rect( 42, 2, 53, 2, 'o' )
+    lv.at( 41, 3, ')' )                                # the kỳ lân gate guardians
+    lv.at( 54, 3, ')' )
+    lv.box( 30, 3, 37, 8, 'C', '.' )                   # ticket booths
+    lv.at( 37, 6, '+' )
+    lv.at( 31, 4, '3' )
+    lv.rect( 42, 3, 53, 40, 'o' )                      # the processional walk
+    for y in ( 5, 90 ):                                # the park train
+        lv.rect( 3, y, 92, y, '`' )
+    for x in ( 3, 92 ):
+        lv.rect( x, 5, x, 90, '`' )
+    lv.rect( 42, 5, 53, 5, 'o' )
+    lv.vehicle( 60, 90, 'sgn_vg_mini_train', 0, 70 )
+    # Biển Tiên Đồng: sand, a lagoon, the cliff and the giant over the waterfall
+    lv.rect( 6, 44, 44, 88, ';' )
+    lv.ellipse( 25, 70, 17, 12, '~' )
+    lv.ellipse( 25, 72, 12, 8, '1' )
+    lv.rect( 6, 84, 44, 88, 'X' )                      # the cliff
+    lv.rect( 22, 82, 28, 84, '~' )                     # the waterfall's pool
+    lv.at( 25, 86, "'" )                               # Lạc Long Quân
+    lv.rect( 22, 85, 28, 85, '~' )
+    for x in range( 8, 44, 6 ):                        # beach umbrellas and loungers
+        lv.at( x, 48, 'b' )
+    # the Crocodile Kingdom
+    lv.box( 54, 48, 92, 70, '|', 'g' )
+    lv.ellipse( 73, 59, 16, 9, 'M' )
+    lv.rect( 54, 46, 92, 47, 'o' )                     # the viewing walk
+    for x0 in ( 55, 72 ):
+        lv.monster( x0, 50, x0 + 15, 69, 'sgn_mon_ca_sau', 100, [ 3, 6 ] )
+    # gardens with the giant dragons
+    for x, y in ( ( 12, 16 ), ( 30, 30 ), ( 64, 16 ), ( 80, 32 ) ):
+        lv.at( x, y, '(' )
+    for x, y in ( ( 8, 30 ), ( 20, 24 ), ( 70, 26 ), ( 86, 14 ) ):
+        lv.at( x, y, '9' )
+    lv.at( 76, 76, '@' )                               # the Ferris wheel
+    lv.rect( 70, 78, 82, 80, 'o' )
+    lv.box( 58, 10, 76, 22, '#', 'n' )                 # the temple of the Buddha
+    lv.at( 58, 15, '+' )
+    lv.at( 58, 16, '+' )
+    for x in ( 62, 68 ):
+        lv.at( x, 12, 'O' )
+        lv.at( x, 20, 'O' )
+    lv.rect( 72, 13, 72, 18, 'E' )
+    lv.at( 74, 15, 'F' )
+    lv.at( 67, 15, 'U' )
+    lv.rect( 54, 14, 57, 17, 'o' )
+    for x in range( 10, 40, 8 ):                       # kiosks along the walk
+        lv.at( x, 40, 'u' )
+        lv.at( x + 1, 40, 's' )
+    scatter_trees( lv )
+    z1 = roof_over( lv, INDOOR, 'N' )
+    return { 0: lv, 1: z1 }
+
+
 LANDMARKS = {
     # id: ( builder, w, h, name, symbol colour, monsters per OMT-ish, items per symbol )
     'sgn_lm_ben_thanh': ( ben_thanh, 3, 3, 'Chợ Bến Thành', 'yellow' ),
@@ -784,6 +1044,9 @@ LANDMARKS = {
     'sgn_lm_stc': ( saigon_trade_center, 1, 1, 'Saigon Trade Center', 'cyan' ),
     'sgn_lm_diamond': ( diamond_plaza, 2, 2, 'Diamond Plaza', 'cyan' ),
     'sgn_lm_bui_vien': ( bui_vien, 3, 1, 'Phố Tây Bùi Viện', 'magenta' ),
+    'sgn_lm_thao_cam_vien': ( thao_cam_vien, 4, 4, 'Thảo Cầm Viên', 'green' ),
+    'sgn_lm_dam_sen': ( dam_sen, 4, 4, 'Công viên Đầm Sen', 'light_cyan' ),
+    'sgn_lm_suoi_tien': ( suoi_tien, 4, 4, 'Khu du lịch Suối Tiên', 'light_red' ),
 }
 
 
@@ -869,6 +1132,10 @@ def generate():
                 # one range per map tile: ranges may not cross tile boundaries in multi-tile mapgen
                 obj['place_monster'] = [ dict( m, x=[ ox * 24, ox * 24 + 23 ], y=[ oy * 24 + ( 6 if oy == 0 else 0 ), oy * 24 + 23 ] )
                                          for oy in range( h ) for ox in range( w ) for m in MONSTERS ]
+            if lv.monsters:
+                obj['place_monster'] = obj.get( 'place_monster', [] ) + lv.monsters
+            for key, table in LOCAL.get( lid, {} ).items():
+                obj[key] = table
             if lv.vehicles:
                 obj['place_vehicles'] = [ { 'vehicle': g, 'x': x, 'y': y, 'rotation': r, 'chance': ch }
                                           for x, y, g, r, ch in lv.vehicles ]

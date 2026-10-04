@@ -62,5 +62,11 @@
     "required_str": 10,
     "flags": [ "TRANSPARENT", "PLACE_ITEM", "BLOCKSDOOR" ],
     "bash": { "str_min": 6, "str_max": 30, "sound": "crack!", "sound_fail": "thunk.", "items": [ { "item": "plastic_chunk", "count": [ 5, 15 ] } ] }
+  },
+  {
+    "type": "vehicle_group",
+    "id": "sgn_vg_mini_train",
+    "//": "The park train that ran round Đầm Sen and Suối Tiên: dda's miniature train locomotive.",
+    "vehicles": [ [ "miniature_train_loco", 100 ] ]
   }
 ]

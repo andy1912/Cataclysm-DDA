@@ -27,6 +27,7 @@ T1,furniture,f_sgn_dong_ho,mod,32x32,1,Saigon art (drawn),f_rack
 T1,furniture,f_sgn_du,mod,32x64,1,Saigon art (drawn),f_sign
 T1,furniture,f_sgn_dua_can,mod,32x32,1,Saigon art (drawn),f_dandelion
 T1,furniture,f_sgn_ho_rong,mod,32x32,1,Saigon art (drawn),f_statue
+T1,furniture,f_sgn_ky_lan,mod,32x64,1,Saigon art (drawn),f_statue
 T1,furniture,f_sgn_loa_phuong,mod,32x64,1,Saigon art (drawn),f_utility_pole
 T1,furniture,f_sgn_long_chim,mod,32x64,1,Saigon art (drawn),f_rack
 T1,furniture,f_sgn_lu_huong,mod,32x32,1,Saigon art (drawn),f_brazier
@@ -35,12 +36,16 @@ T1,furniture,f_sgn_may_net,mod,32x32,1,Saigon art (drawn),f_desk
 T1,furniture,f_sgn_nhang_vong,mod,32x32,1,Saigon art (drawn),f_rack
 T1,furniture,f_sgn_quay_vang,mod,32x32,1,Saigon art (drawn),f_display_rack
 T1,furniture,f_sgn_quay_ve,mod,32x32,1,Saigon art (drawn),f_counter
+T1,furniture,f_sgn_rong_lon,mod,64x64,1,Saigon art (drawn),f_statue
 T1,furniture,f_sgn_su_tu_da,mod,32x64,1,Saigon art (drawn),f_statue
 T1,furniture,f_sgn_thap_rua,mod,32x64,1,Saigon art (drawn),f_statue
+T1,furniture,f_sgn_thuyen_thien_nga,mod,32x32,1,Saigon art (drawn),f_rack
 T1,furniture,f_sgn_tivi_crt,mod,32x32,1,Saigon art (drawn),f_dresser
+T1,furniture,f_sgn_tuong_khong_lo,mod,64x96,1,Saigon art (drawn),f_statue
 T1,furniture,f_sgn_tuong_than,mod,32x64,1,Saigon art (drawn),f_statue
 T1,furniture,f_sgn_van_tho,mod,32x32,1,Saigon art (drawn),f_dandelion
 T1,furniture,f_sgn_vong,mod,32x32,1,Saigon art (drawn),t_leanto
+T1,furniture,f_sgn_vong_quay,mod,96x96,1,Saigon art (drawn),f_utility_pole
 T1,furniture,f_sgn_xau_ho,mod,32x32,1,Saigon art (drawn),f_dandelion
 T1,furniture,f_sgn_xe_banh_mi,mod,32x32,1,Saigon art (drawn),f_display_rack
 T1,furniture,f_sign_stop,dda,32x64,1,keep original,
@@ -124,8 +129,12 @@ T1,monster,pseudo_dormant_mon_zombie_crawler,unknown,32x32,2,keep original,mon_z
 T1,monster,pseudo_dormant_mon_zombie_fat,unknown,32x48,3,keep original,mon_zombie_fat
 T1,monster,pseudo_dormant_mon_zombie_rot,unknown,32x32,2,keep original,mon_zombie_rot
 T1,monster,pseudo_dormant_mon_zombie_tough,unknown,32x48,3,keep original,mon_zombie_tough
+T1,monster,sgn_mon_ca_sau,mod,64x64,1,Saigon art (drawn),mon_turtle_abstract
 T1,monster,sgn_mon_cho_ta,mod,32x32,2,Saigon art (derived),mon_dog
 T1,monster,sgn_mon_ga_ta,mod,32x32,3,Saigon art (derived),mon_bird_flying_base
+T1,monster,sgn_mon_khi,mod,32x32,1,Saigon art (drawn),mon_fox_gray
+T1,monster,sgn_mon_tran,mod,32x32,1,Saigon art (drawn),mon_snake_abstract
+T1,monster,sgn_mon_voi,mod,64x64,1,Saigon art (drawn),mon_moose
 T1,monster,sgn_mon_zombie_cong_an,mod,32x48,2,Saigon art (derived),mon_zombie_base
 T1,monster,sgn_mon_zombie_sot,mod,32x48,3,Saigon art (derived),mon_zombie_base
 T1,monster,sgn_mon_zombie_vendor,mod,32x48,3,Saigon art (derived),mon_zombie_base
@@ -264,6 +273,38 @@ T1,overmap_terrain,sgn_lm_buu_dien_20,mod,16x16,1,Saigon art (drawn),house
 T1,overmap_terrain,sgn_lm_buu_dien_20_z1,mod,16x16,1,to do,house
 T1,overmap_terrain,sgn_lm_buu_dien_21,mod,16x16,1,Saigon art (drawn),house
 T1,overmap_terrain,sgn_lm_buu_dien_21_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_02,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_02_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_03,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_03_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_12,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_12_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_13,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_13_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_20,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_20_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_21,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_21_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_22,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_22_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_23,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_23_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_30,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_30_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_31,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_31_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_32,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_32_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_33,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_33_z1,mod,16x16,1,to do,house
 T1,overmap_terrain,sgn_lm_diamond_00,mod,16x16,1,Saigon art (drawn),house
 T1,overmap_terrain,sgn_lm_diamond_00_z1,mod,16x16,1,to do,house
 T1,overmap_terrain,sgn_lm_diamond_00_z2,mod,16x16,1,to do,house
@@ -402,6 +443,38 @@ T1,overmap_terrain,sgn_lm_stc_00_z6,mod,16x16,1,to do,house
 T1,overmap_terrain,sgn_lm_stc_00_z7,mod,16x16,1,to do,house
 T1,overmap_terrain,sgn_lm_stc_00_z8,mod,16x16,1,to do,house
 T1,overmap_terrain,sgn_lm_stc_00_z9,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_02,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_02_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_03,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_03_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_12,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_12_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_13,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_13_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_20,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_20_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_21,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_21_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_22,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_22_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_23,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_23_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_30,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_30_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_31,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_31_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_32,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_32_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_33,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_33_z1,mod,16x16,1,to do,house
 T1,overmap_terrain,sgn_lm_tao_dan_00,mod,16x16,1,Saigon art (drawn),house
 T1,overmap_terrain,sgn_lm_tao_dan_00_z1,mod,16x16,1,to do,house
 T1,overmap_terrain,sgn_lm_tao_dan_01,mod,16x16,1,Saigon art (drawn),house
@@ -420,6 +493,38 @@ T1,overmap_terrain,sgn_lm_tao_dan_21,mod,16x16,1,Saigon art (drawn),house
 T1,overmap_terrain,sgn_lm_tao_dan_21_z1,mod,16x16,1,to do,house
 T1,overmap_terrain,sgn_lm_tao_dan_22,mod,16x16,1,Saigon art (drawn),house
 T1,overmap_terrain,sgn_lm_tao_dan_22_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_02,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_02_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_03,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_03_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_12,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_12_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_13,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_13_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_20,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_20_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_21,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_21_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_22,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_22_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_23,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_23_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_30,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_30_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_31,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_31_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_32,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_32_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_33,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_33_z1,mod,16x16,1,to do,house
 T1,overmap_terrain,sgn_lm_thien_hau_00,mod,16x16,1,Saigon art (drawn),house
 T1,overmap_terrain,sgn_lm_thien_hau_00_z1,mod,16x16,1,to do,house
 T1,overmap_terrain,sgn_lm_thien_hau_01,mod,16x16,1,Saigon art (drawn),house
@@ -503,6 +608,7 @@ T1,terrain,t_sgn_gach_men,mod,32x32,1,Saigon art (drawn),t_thconc_floor
 T1,terrain,t_sgn_gach_tau,mod,32x32,1,Saigon art (drawn),t_pavement
 T1,terrain,t_sgn_gach_tau_trong,mod,32x32,20,to do,t_pavement
 T1,terrain,t_sgn_hem_xi_mang,mod,32x32,3,Saigon art (drawn),t_pavement
+T1,terrain,t_sgn_hoa_sen,mod,32x32,1,Saigon art (drawn),t_water_sh
 T1,terrain,t_sgn_kinh_xanh,mod,32x32,16,Saigon art (derived),t_window
 T1,terrain,t_sgn_mai_ngoi,mod,32x32,2,Saigon art (drawn),t_pavement
 T1,terrain,t_sgn_mai_ton,mod,32x32,3,Saigon art (drawn),t_scrap_floor
@@ -566,9 +672,11 @@ T1,vehicle_part,door_opaque,dda,32x64,9,keep original,t_door_metal_c
 T1,vehicle_part,door_sliding,dda,32x32,1,keep original,t_door_metal_c
 T1,vehicle_part,engine_1cyl,dda,32x32,2,keep original,engine_combustion
 T1,vehicle_part,engine_1cyl_large,dda,32x32,1,keep original,engine_combustion
+T1,vehicle_part,engine_steam_small,dda,32x32,1,keep original,engine_combustion
 T1,vehicle_part,foot_pedals,dda,32x32,2,keep original,engine_manual
 T1,vehicle_part,frame,dda,32x32,1,keep original,frame_abstract
 T1,vehicle_part,frame_wood,dda,32x32,2,keep original,frame_abstract
+T1,vehicle_part,fuel_bunker,dda,32x32,1,keep original,tank
 T1,vehicle_part,halfboard,dda,32x32,1,keep original,base_board_abstract
 T1,vehicle_part,hand_paddles,dda,32x32,1,keep original,engine_manual
 T1,vehicle_part,hdboard,dda,32x32,1,keep original,base_board_abstract
@@ -587,6 +695,7 @@ T1,vehicle_part,muffler,dda,32x32,2,keep original,
 T1,vehicle_part,omnicam,dda,32x48,3,keep original,
 T1,vehicle_part,plating_steel,dda,32x32,2,keep original,
 T1,vehicle_part,rail_wheel,dda,32x32,1,keep original,
+T1,vehicle_part,rail_wheel_small_pair,dda,32x32,1,keep original,rail_wheel
 T1,vehicle_part,rail_wheel_steerable,dda,32x32,1,keep original,rail_wheel
 T1,vehicle_part,reinforced_windshield,dda,32x32,5,keep original,t_wall_glass
 T1,vehicle_part,roof,dda,32x32,2,keep original,
