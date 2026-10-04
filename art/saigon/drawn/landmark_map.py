@@ -248,3 +248,113 @@ def binh_tay( c ):
     walls( c, 19, 0, 28, 7, rgb( '#f0d478' ), shade( OCHRE, 0.55 ) )   # clock tower
     c.rect( 21, 1, 26, 3, GLAZE )
     clock( c, 23.5, 5 )
+
+
+# --- L3 (A6) ----------------------------------------------------------------------------------
+GLASS = rgb( '#3ab0b0' )
+RAIL = rgb( '#8a7a6a' )
+CANOPY = rgb( '#a0a4aa' )
+
+
+@composite( 'sgn_lm_ga_sai_gon', 3, 3 )
+def ga_sai_gon( c ):
+    # the long station hall on the forecourt, then platform canopies between the tracks
+    c.rect( 4, 2, 43, 4, PAVE )
+    walls( c, 4, 5, 43, 16, rgb( '#e4e0d4' ), shade( CREAM, 0.6 ) )
+    for x in range( 6, 42, 3 ):                                   # the hall's arched windows
+        c.px( x, 6, rgb( '#6aa0c8' ) )
+    c.rect( 22, 5, 25, 5, INK )
+    for y0 in ( 17, 25, 32, 40 ):                                 # platform canopies
+        c.rect( 1, y0, 46, y0 + 1, CANOPY )
+    for y in ( 20, 22, 28, 30, 35, 37, 43, 45 ):                  # tracks
+        c.line( 0, y, 47, y, RAIL )
+    for y in range( 19, 47, 1 ):
+        if y % 2:
+            for x in range( 0, 48, 3 ):
+                if c.get( x, y )[3] == 0:
+                    c.px( x, y, rgb( '#5a4a3a' ) )                # sleepers
+    for x0, y0 in ( ( 3, 20 ), ( 18, 20 ), ( 33, 20 ), ( 18, 35 ), ( 33, 35 ) ):   # the stranded trains
+        c.rect( x0, y0, x0 + 11, y0 + 2, rgb( '#2a6a9a' ) )
+        c.line( x0, y0 + 1, x0 + 11, y0 + 1, rgb( '#e8e0c8' ) )
+
+
+@composite( 'sgn_lm_ben_xe_md', 3, 3 )
+def ben_xe_md( c ):
+    # the ticket hall, the kiosk canopy, the loading bays, and the yard full of coaches
+    walls( c, 3, 3, 27, 12, rgb( '#e4e0d4' ), shade( CREAM, 0.6 ) )
+    c.rect( 13, 3, 15, 3, INK )
+    c.rect( 30, 3, 45, 6, rgb( '#c86a3a' ) )                      # kiosk canopy
+    c.rect( 1, 14, 46, 16, CANOPY )                               # loading bays
+    c.rect( 1, 17, 46, 46, rgb( '#5a5a5e' ) )                     # the yard
+    for row, y in enumerate( ( 19, 26, 35, 42 ) ):
+        for col, x in enumerate( ( 3, 19, 35 ) ):
+            colour = ( '#e8c040', '#3a7ac8', '#e8e8e8', '#c84a3a' )[( row + col ) % 4]
+            c.rect( x, y, x + 9, y + 3, rgb( colour ) )           # coaches
+            c.line( x + 1, y + 1, x + 8, y + 1, rgb( '#2a3a4a' ) )   # windows
+
+
+@composite( 'sgn_lm_tao_dan', 3, 3 )
+def tao_dan( c ):
+    # old trees over lawns inside the railing, the cross walks and the round centre, the bird
+    # café's pavilion in the corner
+    c.rect( 1, 1, 46, 46, PARK )
+    c.frame( 1, 1, 46, 46, PAVE )
+    c.rect( 22, 1, 25, 46, CLAY )
+    c.rect( 1, 22, 46, 25, CLAY )
+    c.ring( 23.5, 23.5, 8, 8, CLAY, 2 )
+    for y in range( 4, 45, 5 ):
+        for x in range( 4 + ( y // 5 ) % 2 * 2, 45, 5 ):
+            if c.get( x, y )[:3] == PARK[:3]:
+                c.ellipse( x, y, 1.8, 1.8, TREE )
+                c.px( x - 1, y - 1, shade( TREE, 1.4 ) )
+    walls( c, 32, 4, 43, 12, TERRACOTTA, shade( TERRACOTTA, 0.6 ) )   # the bird café
+    for x in range( 34, 42, 3 ):
+        c.px( x, 8, rgb( '#e8d080' ) )
+
+
+@composite( 'sgn_lm_ho_con_rua', 1, 1 )
+def ho_con_rua( c ):
+    # the round pool and the white lotus-and-spire monument
+    c.ellipse( 7.5, 8.5, 6.5, 6.5, CLAY )
+    c.ellipse( 7.5, 8.5, 5, 5, WATER )
+    c.ellipse( 7.5, 8.5, 2.2, 2.2, WHITE )
+    c.px( 7, 8, rgb( '#b0b0b8' ) )
+    c.px( 13, 13, rgb( '#e0e0e8' ) )                              # the drinks kiosk
+
+
+@composite( 'sgn_lm_stc', 1, 1 )
+def stc( c ):
+    # the glass tower seen from above: a teal block, its light side, the crown on the roof
+    c.rect( 2, 3, 13, 14, shade( GLASS, 0.7 ) )
+    c.rect( 2, 3, 12, 13, GLASS )
+    c.line( 2, 3, 12, 3, shade( GLASS, 1.4 ) )
+    c.line( 2, 3, 2, 13, shade( GLASS, 1.3 ) )
+    c.rect( 5, 6, 9, 10, rgb( '#d8dce0' ) )                       # the crown
+    c.ellipse( 7, 8, 1.4, 1.4, rgb( '#d04040' ) )                 # aircraft warning light
+
+
+@composite( 'sgn_lm_diamond', 2, 2 )
+def diamond( c ):
+    # the mall's glass block with its diamond crown, the plaza on the street
+    c.rect( 2, 1, 29, 3, PAVE )
+    walls( c, 2, 4, 29, 29, GLASS, shade( GLASS, 0.6 ) )
+    for y in range( 6, 28, 3 ):
+        c.line( 3, y, 28, y, shade( GLASS, 0.85 ) )
+    c.polygon( [ ( 15.5, 9 ), ( 23, 16.5 ), ( 15.5, 24 ), ( 8, 16.5 ) ], WHITE )   # the diamond
+    c.polygon( [ ( 15.5, 11 ), ( 21, 16.5 ), ( 15.5, 22 ), ( 10, 16.5 ) ], rgb( '#a8e0f0' ) )
+    c.rect( 13, 4, 18, 4, INK )
+
+
+@composite( 'sgn_lm_bui_vien', 3, 1 )
+def bui_vien( c ):
+    # twelve narrow roofs of the backpacker street, neon signs and beer tables on the sidewalk
+    c.rect( 0, 1, 47, 3, PAVE )
+    for k in range( 12 ):
+        x0 = k * 4
+        colour = ( '#c86a3a', '#d8b860', '#a0a4aa', '#c84a5a' )[k % 4]
+        walls( c, x0, 4, x0 + 3, 14, rgb( colour ), shade( rgb( colour ), 0.6 ) )
+        neon = ( '#ff40c0', '#40e0ff', '#ffe040', '#60ff60' )[( k * 3 ) % 4]
+        c.px( x0 + 1, 3, rgb( neon ) )
+        c.px( x0 + 2, 3, rgb( neon ) )
+    for x in range( 1, 47, 3 ):
+        c.px( x, 1, rgb( '#e04040' ) )                            # the red plastic stools

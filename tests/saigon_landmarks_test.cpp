@@ -18,7 +18,7 @@
 #include "type_id.h"
 
 // Saigon 2000s mod: the real District 1 landmarks (tools/saigon/gen_saigon_landmarks.py,
-// doc/saigon/LANDMARKS.md phases L1 and L2).  Each one is generated on the real map at every
+// doc/saigon/LANDMARKS.md phases L1-L3).  Each one is generated on the real map at every
 // z-level, then checked: every door is reachable from the street, every indoor tile is
 // roofed, and every up staircase meets a down staircase directly above it.
 // Run with: tests/cata_test --mods=dda,saigon_2000s "[saigon]"
@@ -55,6 +55,9 @@ TEST_CASE( "saigon_district1_landmarks", "[mapgen][saigon]" )
         { "sgn_lm_ben_thanh", 3, 3, 0, 3 }, { "sgn_lm_duc_ba", 2, 3, 0, 4 }, { "sgn_lm_buu_dien", 3, 2, 0, 1 },
         { "sgn_lm_nha_hat", 2, 2, 0, 1 }, { "sgn_lm_ubnd_tp", 3, 2, 0, 3 }, { "sgn_lm_dinh_doc_lap", 3, 3, -1, 3 },
         { "sgn_lm_thien_hau", 2, 2, 0, 1 }, { "sgn_lm_ngoc_hoang", 2, 2, 0, 1 }, { "sgn_lm_binh_tay", 3, 3, 0, 3 },
+        { "sgn_lm_ga_sai_gon", 3, 3, 0, 1 }, { "sgn_lm_ben_xe_md", 3, 3, 0, 1 }, { "sgn_lm_tao_dan", 3, 3, 0, 1 },
+        { "sgn_lm_ho_con_rua", 1, 1, 0, 1 }, { "sgn_lm_stc", 1, 1, 0, 10 }, { "sgn_lm_diamond", 2, 2, 0, 3 },
+        { "sgn_lm_bui_vien", 3, 1, 0, 3 },
     };
     const ter_str_id open_air( "t_open_air" );
     const ter_str_id up( "t_stairs_up" );

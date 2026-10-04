@@ -50,5 +50,32 @@
       { "item": "sgn_ao_mua_canh_doi", "prob": 10 },
       { "item": "blanket", "prob": 8 }
     ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_mall_fashion",
+    "subtype": "distribution",
+    "//": "L3 Diamond Plaza boutiques: tropical city fashion of 2004, not dda's greatcoats and top hats.",
+    "items": [
+      { "item": "sgn_ao_dai_mau", "prob": 15 },
+      { "item": "sgn_ao_dai_trang", "prob": 8 },
+      { "item": "sgn_ao_thun", "prob": 25 },
+      { "item": "sgn_quan_tay", "prob": 15 },
+      { "item": "sgn_ao_khoac_chong_nang", "prob": 15 },
+      { "item": "sgn_non_ket", "prob": 10 },
+      { "item": "tshirt", "prob": 20 },
+      { "item": "polo_shirt", "prob": 15 },
+      { "item": "jeans", "prob": 20 },
+      { "item": "skirt", "prob": 12 },
+      { "item": "sundress", "prob": 12 },
+      { "item": "dress", "prob": 8 },
+      { "item": "tank_top", "prob": 10 },
+      { "item": "shorts", "prob": 10 },
+      { "item": "sneakers", "prob": 12 },
+      { "item": "flip_flops", "prob": 10 },
+      { "item": "purse", "prob": 10 },
+      { "item": "sunglasses", "prob": 12 },
+      { "item": "makeup_kit", "prob": 10 }
+    ]
   }
 ]

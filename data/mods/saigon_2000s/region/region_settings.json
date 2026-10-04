@@ -35,7 +35,14 @@
       [ "sgn_lm_dinh_doc_lap", 200 ],
       [ "sgn_lm_thien_hau", 150 ],
       [ "sgn_lm_ngoc_hoang", 150 ],
-      [ "sgn_lm_binh_tay", 150 ]
+      [ "sgn_lm_binh_tay", 150 ],
+      [ "sgn_lm_ga_sai_gon", 120 ],
+      [ "sgn_lm_ben_xe_md", 120 ],
+      [ "sgn_lm_tao_dan", 120 ],
+      [ "sgn_lm_ho_con_rua", 120 ],
+      [ "sgn_lm_stc", 120 ],
+      [ "sgn_lm_diamond", 120 ],
+      [ "sgn_lm_bui_vien", 120 ]
     ],
     "parks": [ [ "sgn_chua_1", 100 ], [ "sgn_kenh_row_1", 40 ], [ "sgn_truong_1", 40 ], [ "sgn_nha_tho_1", 25 ] ],
     "name_snippet": "<sgn_city_name>"

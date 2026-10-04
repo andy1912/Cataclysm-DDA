@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the real Saigon landmarks of the 2000s (doc/saigon/LANDMARKS.md, phases L1 and L2).
+"""Generate the real Saigon landmarks of the 2000s (doc/saigon/LANDMARKS.md, phases L1-L3).
 
 Each landmark is a multi-tile city building (OVERMAP_UNIQUE, SAIGON) drawn on one big grid
 per z-level (W*24 x H*24 tiles), then cut into a multi-OMT mapgen (2-D om_terrain).
@@ -26,6 +26,10 @@ class Level:
     def __init__( self, w, h, fill ):
         self.w, self.h = w * 24, h * 24
         self.g = [ [ fill ] * self.w for _ in range( self.h ) ]
+        self.vehicles = []      # ( x, y, vehicle_group, rotation, chance ); keep each inside one map tile
+
+    def vehicle( self, x, y, group, rotation, chance ):
+        self.vehicles.append( ( x, y, group, rotation, chance ) )
 
     def rect( self, x0, y0, x1, y1, ch ):
         for y in range( max( 0, y0 ), min( self.h - 1, y1 ) + 1 ):
@@ -62,7 +66,7 @@ def roof_over( level, indoor, roof_ch='_' ):
     return out
 
 
-INDOOR = set( '#RCH.:=^wW+DPbktrvqmyuasdcxpKZQAef<>jnhEFUOB' )
+INDOOR = set( '#RCH.:=^wW+DPbktrvqmyuasdcxpKZQAef<>jnhEFUOBY{}234!%&5i' )
 
 
 # --- 1. Chợ Bến Thành ---------------------------------------------------------------------
@@ -461,6 +465,307 @@ def binh_tay():
     return { 0: z0, 1: z1, 2: z2, 3: z3 }
 
 
+# --- 11. Ga Sài Gòn ------------------------------------------------------------------------
+def ga_sai_gon():
+    # the station forecourt, the ticket hall (windows, departure boards, waiting benches,
+    # food stalls), then covered platforms between four tracks where the last trains stand.
+    # Each track bed is 7 rows (a passenger car is 17 x 7) and lies inside one map-tile row.
+    z0 = Level( 3, 3, ',' )
+    z0.rect( 0, 0, 71, 1, 'S' )
+    for x in range( 6, 66, 8 ):                        # xe ôm and parked motorbikes on the forecourt
+        z0.vehicle( x, 4, 'sgn_vg_sidewalk_parked', 90, 45 )
+    z0.box( 6, 8, 65, 24, 'C', '.' )                   # the ticket hall
+    for x in range( 8, 64, 3 ):
+        z0.at( x, 8, 'W' )
+    for x in range( 33, 39 ):
+        z0.at( x, 8, 'D' )
+    z0.rect( 9, 11, 31, 11, '3' )                      # ticket windows, staff behind them
+    z0.rect( 7, 9, 31, 10, '.' )
+    for x in range( 40, 47 ):
+        z0.at( x, 10, '2' )                            # the departure boards
+    for y in ( 14, 17, 20 ):                           # waiting benches
+        for x in range( 38, 63 ):
+            if ( x - 38 ) % 6 < 4:
+                z0.at( x, y, '4' )
+    for x in range( 9, 30, 4 ):                        # food stalls
+        z0.at( x, 19, 'u' )
+        z0.at( x, 20, 's' )
+    for x in ( 14, 15, 34, 35, 54, 55 ):               # out to the platforms
+        z0.at( x, 24, '+' )
+    for y0, y1 in ( ( 25, 30 ), ( 38, 40 ), ( 48, 51 ), ( 59, 61 ) ):   # covered platforms
+        z0.rect( 2, y0, 69, y1, ':' )
+        for x in range( 4, 69, 8 ):
+            z0.at( x, y0, 'P' )
+        for x in range( 8, 66, 12 ):
+            z0.at( x, y0 + 1, '4' )
+    for y0, track in ( ( 31, True ), ( 41, True ), ( 52, True ), ( 62, True ) ):   # track beds
+        z0.rect( 0, y0, 71, y0 + 6, '"' )               # ballast, then one standard-gauge track
+        z0.rect( 0, y0 + 1, 71, y0 + 5, '-' )
+        z0.rect( 0, y0 + 1, 71, y0 + 1, '0' )
+        z0.rect( 0, y0 + 5, 71, y0 + 5, '0' )
+    for cx in ( 12, 36, 60 ):                          # stranded trains: SE1 on track 1 ...
+        z0.vehicle( cx, 34, 'sgn_vg_train', 0, 75 )
+    for cx in ( 36, 60 ):                              # ... a half train on track 3
+        z0.vehicle( cx, 55, 'sgn_vg_train', 0, 60 )
+    z0.vehicle( 12, 65, 'sgn_vg_train', 0, 40 )        # a locomotive or car in the yard
+    z0.rect( 0, 70, 71, 70, 'I' )
+    z1 = roof_over( z0, INDOOR )
+    return { 0: z0, 1: z1 }
+
+
+# --- 12. Bến xe Miền Đông ------------------------------------------------------------------
+def ben_xe_mien_dong():
+    # the ticket hall, a row of kiosks under a canopy, the loading bays, and a yard of coaches
+    # that never left.  Each coach (14 x 7) is parked inside one map tile.
+    z0 = Level( 3, 3, ',' )
+    z0.rect( 0, 0, 71, 1, 'S' )
+    z0.box( 4, 4, 40, 19, 'C', '.' )                   # ticket hall
+    for x in range( 6, 39, 3 ):
+        z0.at( x, 4, 'W' )
+    for x in range( 20, 24 ):
+        z0.at( x, 4, 'D' )
+    for x in range( 7, 38 ):                           # ticket windows of forty bus companies
+        if x % 4 != 0:
+            z0.at( x, 8, '3' )
+    for y in ( 12, 15 ):
+        for x in range( 8, 37 ):
+            if x % 5 != 0:
+                z0.at( x, y, '4' )
+    for x in ( 10, 11, 30, 31 ):
+        z0.at( x, 19, '+' )
+    z0.rect( 44, 4, 69, 10, ':' )                      # kiosks under a canopy
+    for x in range( 45, 69, 4 ):
+        z0.at( x, 6, 'u' )
+        z0.at( x, 7, 's' )
+    for x in range( 44, 70, 6 ):
+        z0.at( x, 4, 'P' )
+    z0.rect( 2, 21, 69, 24, ':' )                      # loading bays
+    for x in range( 2, 70, 6 ):
+        z0.at( x, 24, 'P' )
+    for x in range( 6, 66, 12 ):
+        z0.at( x, 22, '4' )
+    for cy in ( 30, 40, 54, 64 ):
+        for cx in ( 14, 38, 62 ):
+            z0.vehicle( cx, cy, 'sgn_vg_coach', 0, 55 )
+    z1 = roof_over( z0, INDOOR )
+    return { 0: z0, 1: z1 }
+
+
+# --- 13. Công viên Tao Đàn -----------------------------------------------------------------
+def tao_dan():
+    # old sao trees over lawns and paths inside a railing, the bird café's pavilion where old
+    # men hang their cages beside their coffee, stone chess tables under the trees
+    z0 = Level( 3, 3, 'g' )
+    z0.rect( 0, 0, 71, 1, 'S' )
+    z0.rect( 1, 2, 70, 2, 'I' )
+    z0.rect( 1, 2, 1, 70, 'I' )
+    z0.rect( 70, 2, 70, 70, 'I' )
+    z0.rect( 1, 70, 70, 70, 'I' )
+    z0.rect( 32, 2, 39, 2, 'o' )                       # the gate
+    z0.rect( 33, 3, 38, 68, 'o' )                      # the main walks
+    z0.rect( 3, 33, 68, 38, 'o' )
+    z0.ellipse( 35.5, 35.5, 12, 12, 'o' )
+    z0.ellipse( 35.5, 35.5, 8, 8, 'g' )
+    trees = [ ( x, y ) for y in range( 6, 68, 7 ) for x in range( 5 + ( y // 7 ) % 2 * 3, 68, 8 ) ]
+    for x, y in trees:
+        if z0.get( x, y ) == 'g':
+            z0.at( x, y, '9' )
+    for x, y in ( ( 28, 10 ), ( 43, 10 ), ( 28, 60 ), ( 43, 60 ), ( 10, 30 ), ( 10, 41 ), ( 61, 30 ), ( 61, 41 ) ):
+        z0.at( x, y, '7' )                             # stone chess tables beside the walks
+    for x in range( 31, 41, 3 ):
+        z0.at( x, 31, 'b' )
+        z0.at( x, 40, 'b' )
+    # the bird café: a pavilion in the north-east corner
+    z0.rect( 48, 6, 66, 20, 'o' )
+    z0.rect( 50, 8, 64, 18, ':' )
+    for x, y in ( ( 50, 8 ), ( 64, 8 ), ( 50, 18 ), ( 64, 18 ), ( 57, 8 ), ( 57, 18 ) ):
+        z0.at( x, y, 'P' )
+    for x in range( 52, 64, 3 ):
+        z0.at( x, 10, '6' )                            # bird cages hung along the eaves
+        z0.at( x, 16, '6' )
+    for x in range( 53, 63, 4 ):
+        z0.at( x, 13, 't' )
+        z0.at( x + 1, 13, 's' )
+    z0.box( 40, 8, 46, 14, 'C', '.' )                  # the café's kitchen kiosk
+    z0.at( 43, 14, '+' )
+    z0.at( 42, 10, 'u' )
+    z0.at( 44, 10, 'u' )
+    z1 = roof_over( z0, INDOOR, 'l' )
+    return { 0: z0, 1: z1 }
+
+
+# --- 14. Hồ Con Rùa ------------------------------------------------------------------------
+def ho_con_rua():
+    # the round pool with the lotus-and-spire monument, benches on the rim, and a drinks
+    # kiosk where students bought bánh tráng trộn after class
+    z0 = Level( 1, 1, ',' )
+    z0.rect( 0, 0, 23, 1, 'S' )
+    z0.ellipse( 12, 13, 9, 9, 'o' )
+    z0.ellipse( 12, 13, 7, 7, '~' )
+    z0.at( 11, 12, '8' )
+    for x, y in ( ( 4, 6 ), ( 19, 6 ), ( 3, 13 ), ( 20, 13 ) ):
+        z0.at( x, y, 'b' )
+    for x, y in ( ( 1, 3 ), ( 22, 3 ), ( 1, 22 ), ( 22, 22 ) ):
+        z0.at( x, y, 'T' )
+    z0.box( 17, 18, 21, 22, 'C', '.' )
+    z0.at( 18, 18, '+' )
+    z0.at( 19, 20, 'u' )
+    z1 = roof_over( z0, INDOOR )
+    return { 0: z0, 1: z1 }
+
+
+# --- 15. Saigon Trade Center ---------------------------------------------------------------
+def saigon_trade_center():
+    # the tallest tower in Vietnam until 2010, cut to ten storeys: a glass lobby, office
+    # floors around a stair core, a sky lounge at the top.  The vantage point of the city.
+    def shell():
+        lv = Level( 1, 1, ' ' )
+        lv.box( 3, 4, 20, 21, 'Y', '.' )
+        lv.box( 13, 14, 19, 20, 'C', '.' )             # the stair core
+        lv.at( 13, 17, '+' )
+        return lv
+    levels = {}
+    z0 = Level( 1, 1, ',' )
+    z0.rect( 0, 0, 23, 1, 'S' )
+    z0.box( 3, 4, 20, 21, 'Y', '.' )
+    z0.box( 13, 14, 19, 20, 'C', '.' )
+    z0.at( 13, 17, '+' )
+    for x in range( 10, 14 ):
+        z0.at( x, 4, 'D' )
+    z0.rect( 5, 8, 9, 8, 'j' )                         # the reception desk
+    for x in ( 6, 9 ):
+        z0.at( x, 12, 'b' )
+    levels[0] = z0
+    stairs = ( ( 15, 16 ), ( 17, 18 ) )                # alternate so each flight meets the next
+    for z in range( 1, 10 ):
+        lv = shell()
+        if z < 9:
+            for y in ( 7, 10 ):
+                for x in range( 5, 19, 3 ):
+                    lv.at( x, y, 'Q' )
+                    lv.at( x, y + 1, 'c' )
+            for y in range( 14, 21, 3 ):
+                lv.at( 5, y, 'x' )
+        else:                                          # the sky lounge
+            for x, y in ( ( 6, 7 ), ( 10, 7 ), ( 6, 11 ), ( 10, 11 ), ( 6, 15 ), ( 6, 19 ) ):
+                lv.at( x, y, 't' )
+                lv.at( x + 1, y, 'c' )
+        levels[z] = lv
+    for z in range( 0, 9 ):
+        x, y = stairs[z % 2]
+        levels[z].at( x, y, '<' )
+        levels[z + 1].at( x, y, '>' )
+    levels[10] = roof_over( levels[9], INDOOR )
+    return levels
+
+
+# --- 16. Diamond Plaza ---------------------------------------------------------------------
+def diamond_plaza():
+    # the 1999 mall beside the cathedral: glass front, boutiques around an atrium with
+    # escalators, a department-store floor, and the food court and cinema on top
+    def shell( z ):
+        lv = Level( 2, 2, ',' if z == 0 else ' ' )
+        lv.box( 2, 4, 45, 45, 'Y', '.' )
+        for x0 in ( 12, 35 ):                          # boutique fronts along both sides
+            lv.rect( x0, 8, x0, 42, 'Y' )
+            for y in range( 11, 42, 6 ):
+                lv.at( x0, y, 'D' )
+        return lv
+    z0 = shell( 0 )
+    z0.rect( 0, 0, 47, 1, 'S' )
+    for x in range( 21, 27 ):
+        z0.at( x, 4, 'D' )
+    for y in range( 9, 42, 3 ):                        # boutiques: fashion and cosmetics
+        for x in ( 4, 7, 10 ):
+            z0.at( x, y, '!' )
+        for x in ( 37, 40, 43 ):
+            z0.at( x, y, '!' if y % 2 else '%' )
+    z0.rect( 17, 12, 30, 12, 'j' )                     # perfume counters in the atrium
+    z1 = shell( 1 )
+    for y in range( 9, 42, 3 ):                        # department store: shoes and electronics
+        for x in ( 4, 7, 10 ):
+            z1.at( x, y, '%' )
+        for x in ( 37, 40, 43 ):
+            z1.at( x, y, '&' )
+    z2 = Level( 2, 2, ' ' )
+    z2.box( 2, 4, 45, 45, 'Y', '.' )
+    for x in range( 6, 42, 6 ):                        # food court
+        z2.at( x, 8, 'u' )
+        for y in range( 12, 20, 3 ):
+            z2.at( x, y, 't' )
+            z2.at( x + 1, y, 'c' )
+    z2.box( 4, 26, 32, 43, 'C', '.' )                  # the cinema
+    z2.at( 18, 26, '+' )
+    for y in range( 29, 41, 2 ):
+        z2.rect( 7, y, 29, y, 'b' )
+    z2.rect( 6, 42, 30, 42, '=' )                      # the screen wall
+    # escalators: up from each floor, landing beside the next flight up
+    z0.at( 23, 30, '{' )
+    z1.at( 23, 30, '}' )
+    z1.at( 25, 30, '{' )
+    z2.at( 25, 30, '}' )
+    z3 = roof_over( z2, INDOOR )
+    return { 0: z0, 1: z1, 2: z2, 3: z3 }
+
+
+# --- 17. Phạm Ngũ Lão – Bùi Viện -----------------------------------------------------------
+def bui_vien():
+    # a block of the backpacker street: twelve narrow lots of bars, travel agents and
+    # guesthouse lobbies, beer tables and low stools spilling over the sidewalk under the
+    # signs, two floors of guesthouse rooms above
+    z0 = Level( 3, 1, ',' )
+    z0.rect( 0, 0, 71, 1, 'S' )
+    for x in range( 2, 70, 5 ):                        # bia hơi tables on the sidewalk
+        z0.at( x, 3, '[' )
+        z0.at( x + 1, 3, ']' )
+        z0.at( x, 4, ']' )
+    for k in range( 12 ):
+        z0.at( 6 * k + 3, 5, '?' )                     # the shop signs
+    z1, z2 = Level( 3, 1, ' ' ), Level( 3, 1, ' ' )
+    for lv in ( z0, z1, z2 ):
+        lv.rect( 0, 6, 71, 21, '.' )
+        lv.rect( 0, 6, 71, 6, '#' )
+        lv.rect( 0, 21, 71, 21, '#' )
+        for k in range( 12 ):
+            lv.rect( 6 * k, 6, 6 * k, 21, '#' )
+        lv.rect( 71, 6, 71, 21, '#' )
+    for k in range( 12 ):
+        x0 = 6 * k
+        z0.at( x0 + 2, 6, '+' )                        # open bar fronts
+        z0.at( x0 + 3, 6, '+' )
+        kind = k % 3
+        if kind == 0:                                  # bar
+            z0.rect( x0 + 1, 16, x0 + 3, 16, 'j' )
+            for y in ( 9, 12 ):
+                z0.at( x0 + 2, y, 't' )
+                z0.at( x0 + 3, y, 's' )
+            z0.at( x0 + 1, 14, 'i' )
+        elif kind == 1:                                # travel agent: open tours, bus tickets to Phnom Penh
+            for y in ( 9, 12 ):
+                z0.at( x0 + 2, y, 'Q' )
+                z0.at( x0 + 3, y, 'c' )
+            z0.at( x0 + 1, 15, 'i' )
+            z0.at( x0 + 1, 16, 'i' )
+        else:                                          # guesthouse lobby
+            z0.rect( x0 + 1, 10, x0 + 2, 10, 'j' )
+            z0.at( x0 + 4, 8, 'b' )
+            z0.at( x0 + 1, 14, 'i' )
+        for lv in ( z1, z2 ):                          # guesthouse rooms
+            for x in range( x0 + 2, x0 + 4 ):
+                lv.at( x, 6, 'w' )
+            lv.rect( x0 + 1, 13, x0 + 2, 13, '#' )
+            lv.at( x0 + 2, 13, '+' )
+            for y in ( 8, 10, 15, 18 ):
+                lv.at( x0 + 1, y, '5' )
+        z0.at( x0 + 4, 19, '<' )
+        z1.at( x0 + 4, 19, '>' )
+        z1.at( x0 + 4, 17, '<' )
+        z2.at( x0 + 4, 17, '>' )
+    z3 = roof_over( z2, INDOOR )
+    z3.rect( 0, 6, 71, 6, '|' )                        # roof railing over the street
+    return { 0: z0, 1: z1, 2: z2, 3: z3 }
+
+
 LANDMARKS = {
     # id: ( builder, w, h, name, symbol colour, monsters per OMT-ish, items per symbol )
     'sgn_lm_ben_thanh': ( ben_thanh, 3, 3, 'Chợ Bến Thành', 'yellow' ),
@@ -472,6 +777,13 @@ LANDMARKS = {
     'sgn_lm_thien_hau': ( thien_hau, 2, 2, 'Chùa Bà Thiên Hậu', 'light_red' ),
     'sgn_lm_ngoc_hoang': ( ngoc_hoang, 2, 2, 'Chùa Ngọc Hoàng', 'light_red' ),
     'sgn_lm_binh_tay': ( binh_tay, 3, 3, 'Chợ Bình Tây', 'yellow' ),
+    'sgn_lm_ga_sai_gon': ( ga_sai_gon, 3, 3, 'Ga Sài Gòn', 'light_gray' ),
+    'sgn_lm_ben_xe_md': ( ben_xe_mien_dong, 3, 3, 'Bến xe Miền Đông', 'light_gray' ),
+    'sgn_lm_tao_dan': ( tao_dan, 3, 3, 'Công viên Tao Đàn', 'green' ),
+    'sgn_lm_ho_con_rua': ( ho_con_rua, 1, 1, 'Hồ Con Rùa', 'light_blue' ),
+    'sgn_lm_stc': ( saigon_trade_center, 1, 1, 'Saigon Trade Center', 'cyan' ),
+    'sgn_lm_diamond': ( diamond_plaza, 2, 2, 'Diamond Plaza', 'cyan' ),
+    'sgn_lm_bui_vien': ( bui_vien, 3, 1, 'Phố Tây Bùi Viện', 'magenta' ),
 }
 
 
@@ -493,7 +805,12 @@ def palette():
             'o': 't_sgn_gach_tau', 'n': 't_sgn_gach_tau_trong', 'O': 't_sgn_cot_son', 'h': 't_sgn_gach_tau_trong',
             'E': 't_sgn_gach_tau_trong', 'F': 't_sgn_gach_tau_trong', 'U': 't_sgn_gach_tau_trong',
             'L': 't_sgn_gach_tau', 'V': 't_sgn_gach_tau', 'J': 't_sgn_gach_tau', 'z': 't_sgn_gach_tau',
-            'B': 't_thconc_floor', 'M': 't_water_murky', 'N': 't_sgn_ngoi_men_xanh', 'l': 't_sgn_mai_ngoi' },
+            'B': 't_thconc_floor', 'M': 't_water_murky', 'N': 't_sgn_ngoi_men_xanh', 'l': 't_sgn_mai_ngoi',
+            'Y': 't_sgn_kinh_xanh', 'Q': 't_sgn_gach_men', '{': 't_sgn_thang_cuon_len', '}': 't_sgn_thang_cuon_xuong',
+            '0': 't_railroad_track_h_on_tie', '-': 't_railroad_tie_h', '"': 't_railroad_rubble', '2': 't_thconc_floor', '3': 't_sgn_gach_men',
+            '4': 't_thconc_floor', '6': 't_sgn_gach_tau', '7': 't_sgn_gach_tau', '8': 't_water_sh',
+            '9': 't_sgn_tree_sao', '!': 't_sgn_gach_men', '%': 't_sgn_gach_men', '&': 't_sgn_gach_men',
+            '5': 't_sgn_gach_men', 'i': 't_sgn_gach_men', '?': 't_concrete', '[': 't_concrete', ']': 't_concrete' },
         'furniture': {
             'G': 'f_sgn_van_tho', 'b': 'f_bench', 'k': 'f_counter', 't': 'f_table', 'r': 'f_rack',
             'v': 'f_sgn_quay_vang', 'q': 'f_counter', 'm': 'f_counter', 'y': 'f_rack', 'u': 'f_sgn_ban_inox',
@@ -501,7 +818,10 @@ def palette():
             'p': 'f_sgn_buong_dien_thoai', 'K': 'f_sgn_dong_ho', 'Z': 'f_statue', 'A': 'f_piano', 'e': 'f_desk',
             'j': 'f_counter', 'h': 'f_sgn_nhang_vong', 'E': 'f_sgn_ban_tho_lon', 'F': 'f_sgn_tuong_than',
             'U': 'f_sgn_lu_huong', 'V': 'f_sgn_lu_huong', 'L': 'f_sgn_su_tu_da', 'J': 'f_sgn_ho_rong',
-            'z': 'f_statue', 'B': 'f_sgn_bao_gao' },
+            'z': 'f_statue', 'B': 'f_sgn_bao_gao', 'Q': 'f_desk', '2': 'f_sgn_bang_gio_tau', '3': 'f_sgn_quay_ve',
+            '4': 'f_bench', '6': 'f_sgn_long_chim', '7': 'f_sgn_ban_da', '8': 'f_sgn_thap_rua', '!': 'f_rack',
+            '%': 'f_rack', '&': 'f_rack', '5': 'f_bed', 'i': 'f_rack', '?': 'f_sgn_bang_hieu',
+            '[': 'f_table', ']': 'f_stool' },
         'items': {
             'y': { 'item': 'sgn_cho_cloth', 'chance': 60, 'repeat': [ 1, 3 ] },
             'v': { 'item': 'sgn_gold_shop', 'chance': 50 },
@@ -515,7 +835,14 @@ def palette():
             'x': { 'item': 'sgn_ward_office', 'chance': 60, 'repeat': [ 1, 2 ] },
             'e': { 'item': 'sgn_palace_bunker', 'chance': 80, 'repeat': [ 1, 3 ] },
             'E': { 'item': 'sgn_temple', 'chance': 70, 'repeat': [ 1, 2 ] },
-            'B': { 'item': 'sgn_cho_wholesale', 'chance': 60, 'repeat': [ 1, 2 ] } } }
+            'B': { 'item': 'sgn_cho_wholesale', 'chance': 60, 'repeat': [ 1, 2 ] },
+            'Q': { 'item': 'SUS_office_desk', 'chance': 50 },
+            '4': { 'item': 'sgn_train_station', 'chance': 25 },
+            '!': { 'item': 'sgn_mall_fashion', 'chance': 50, 'repeat': [ 1, 2 ] },
+            '%': { 'item': 'shoestore_shoes', 'chance': 50 },
+            '&': { 'item': 'electronics', 'chance': 40 },
+            '5': { 'item': 'sgn_tourist', 'chance': 30 },
+            'i': { 'item': 'sgn_tourist', 'chance': 45, 'repeat': [ 1, 2 ] } } }
 
 
 def oter( lid, x, y, z ):
@@ -542,6 +869,9 @@ def generate():
                 # one range per map tile: ranges may not cross tile boundaries in multi-tile mapgen
                 obj['place_monster'] = [ dict( m, x=[ ox * 24, ox * 24 + 23 ], y=[ oy * 24 + ( 6 if oy == 0 else 0 ), oy * 24 + 23 ] )
                                          for oy in range( h ) for ox in range( w ) for m in MONSTERS ]
+            if lv.vehicles:
+                obj['place_vehicles'] = [ { 'vehicle': g, 'x': x, 'y': y, 'rotation': r, 'chance': ch }
+                                          for x, y, g, r, ch in lv.vehicles ]
             mapgens.append( { 'type': 'mapgen', 'om_terrain': grid, 'object': obj } )
             for y in range( h ):
                 for x in range( w ):

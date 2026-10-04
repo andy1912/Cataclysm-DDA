@@ -1908,6 +1908,861 @@
     "looks_like": "sgn_lm_binh_tay_00"
   },
   {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_00",
+    "copy-from": "generic_city_building",
+    "name": "Ga Sài Gòn",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_10",
+    "copy-from": "generic_city_building",
+    "name": "Ga Sài Gòn",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_20",
+    "copy-from": "generic_city_building",
+    "name": "Ga Sài Gòn",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_01",
+    "copy-from": "generic_city_building",
+    "name": "Ga Sài Gòn",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_11",
+    "copy-from": "generic_city_building",
+    "name": "Ga Sài Gòn",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_21",
+    "copy-from": "generic_city_building",
+    "name": "Ga Sài Gòn",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_02",
+    "copy-from": "generic_city_building",
+    "name": "Ga Sài Gòn",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_12",
+    "copy-from": "generic_city_building",
+    "name": "Ga Sài Gòn",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_22",
+    "copy-from": "generic_city_building",
+    "name": "Ga Sài Gòn",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Ga Sài Gòn (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Ga Sài Gòn (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_20_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Ga Sài Gòn (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_01_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Ga Sài Gòn (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_11_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Ga Sài Gòn (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_21_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Ga Sài Gòn (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_02_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Ga Sài Gòn (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_12_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Ga Sài Gòn (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ga_sai_gon_22_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Ga Sài Gòn (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ga_sai_gon_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_00",
+    "copy-from": "generic_city_building",
+    "name": "Bến xe Miền Đông",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_10",
+    "copy-from": "generic_city_building",
+    "name": "Bến xe Miền Đông",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_20",
+    "copy-from": "generic_city_building",
+    "name": "Bến xe Miền Đông",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_01",
+    "copy-from": "generic_city_building",
+    "name": "Bến xe Miền Đông",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_11",
+    "copy-from": "generic_city_building",
+    "name": "Bến xe Miền Đông",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_21",
+    "copy-from": "generic_city_building",
+    "name": "Bến xe Miền Đông",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_02",
+    "copy-from": "generic_city_building",
+    "name": "Bến xe Miền Đông",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_12",
+    "copy-from": "generic_city_building",
+    "name": "Bến xe Miền Đông",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_22",
+    "copy-from": "generic_city_building",
+    "name": "Bến xe Miền Đông",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến xe Miền Đông (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến xe Miền Đông (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_20_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến xe Miền Đông (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_01_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến xe Miền Đông (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_11_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến xe Miền Đông (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_21_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến xe Miền Đông (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_02_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến xe Miền Đông (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_12_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến xe Miền Đông (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ben_xe_md_22_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến xe Miền Đông (upper floor)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_00",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Tao Đàn",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_10",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Tao Đàn",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_20",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Tao Đàn",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_01",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Tao Đàn",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_11",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Tao Đàn",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_21",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Tao Đàn",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_02",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Tao Đàn",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_12",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Tao Đàn",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_22",
+    "copy-from": "generic_city_building",
+    "name": "Công viên Tao Đàn",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Tao Đàn (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Tao Đàn (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_20_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Tao Đàn (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_01_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Tao Đàn (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_11_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Tao Đàn (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_21_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Tao Đàn (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_02_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Tao Đàn (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_12_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Tao Đàn (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tao_dan_22_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Công viên Tao Đàn (upper floor)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_lm_tao_dan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ho_con_rua_00",
+    "copy-from": "generic_city_building",
+    "name": "Hồ Con Rùa",
+    "sym": "&",
+    "color": "light_blue",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ho_con_rua_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Hồ Con Rùa (upper floor)",
+    "sym": "#",
+    "color": "light_blue",
+    "looks_like": "sgn_lm_ho_con_rua_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_stc_00",
+    "copy-from": "generic_city_building",
+    "name": "Saigon Trade Center",
+    "sym": "&",
+    "color": "cyan",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_stc_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Saigon Trade Center (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_stc_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_stc_00_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Saigon Trade Center (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_stc_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_stc_00_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Saigon Trade Center (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_stc_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_stc_00_z4",
+    "copy-from": "generic_city_building_roof",
+    "name": "Saigon Trade Center (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_stc_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_stc_00_z5",
+    "copy-from": "generic_city_building_roof",
+    "name": "Saigon Trade Center (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_stc_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_stc_00_z6",
+    "copy-from": "generic_city_building_roof",
+    "name": "Saigon Trade Center (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_stc_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_stc_00_z7",
+    "copy-from": "generic_city_building_roof",
+    "name": "Saigon Trade Center (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_stc_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_stc_00_z8",
+    "copy-from": "generic_city_building_roof",
+    "name": "Saigon Trade Center (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_stc_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_stc_00_z9",
+    "copy-from": "generic_city_building_roof",
+    "name": "Saigon Trade Center (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_stc_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_stc_00_z10",
+    "copy-from": "generic_city_building_roof",
+    "name": "Saigon Trade Center (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_stc_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_00",
+    "copy-from": "generic_city_building",
+    "name": "Diamond Plaza",
+    "sym": "&",
+    "color": "cyan",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_10",
+    "copy-from": "generic_city_building",
+    "name": "Diamond Plaza",
+    "sym": "&",
+    "color": "cyan",
+    "looks_like": "sgn_lm_diamond_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_01",
+    "copy-from": "generic_city_building",
+    "name": "Diamond Plaza",
+    "sym": "&",
+    "color": "cyan",
+    "looks_like": "sgn_lm_diamond_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_11",
+    "copy-from": "generic_city_building",
+    "name": "Diamond Plaza",
+    "sym": "&",
+    "color": "cyan",
+    "looks_like": "sgn_lm_diamond_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Diamond Plaza (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_diamond_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Diamond Plaza (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_diamond_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_01_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Diamond Plaza (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_diamond_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_11_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Diamond Plaza (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_diamond_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_00_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Diamond Plaza (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_diamond_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_10_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Diamond Plaza (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_diamond_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_01_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Diamond Plaza (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_diamond_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_11_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Diamond Plaza (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_diamond_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_00_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Diamond Plaza (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_diamond_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_10_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Diamond Plaza (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_diamond_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_01_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Diamond Plaza (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_diamond_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_diamond_11_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Diamond Plaza (upper floor)",
+    "sym": "#",
+    "color": "cyan",
+    "looks_like": "sgn_lm_diamond_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_bui_vien_00",
+    "copy-from": "generic_city_building",
+    "name": "Phố Tây Bùi Viện",
+    "sym": "&",
+    "color": "magenta",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_bui_vien_10",
+    "copy-from": "generic_city_building",
+    "name": "Phố Tây Bùi Viện",
+    "sym": "&",
+    "color": "magenta",
+    "looks_like": "sgn_lm_bui_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_bui_vien_20",
+    "copy-from": "generic_city_building",
+    "name": "Phố Tây Bùi Viện",
+    "sym": "&",
+    "color": "magenta",
+    "looks_like": "sgn_lm_bui_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_bui_vien_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Phố Tây Bùi Viện (upper floor)",
+    "sym": "#",
+    "color": "magenta",
+    "looks_like": "sgn_lm_bui_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_bui_vien_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Phố Tây Bùi Viện (upper floor)",
+    "sym": "#",
+    "color": "magenta",
+    "looks_like": "sgn_lm_bui_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_bui_vien_20_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Phố Tây Bùi Viện (upper floor)",
+    "sym": "#",
+    "color": "magenta",
+    "looks_like": "sgn_lm_bui_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_bui_vien_00_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Phố Tây Bùi Viện (upper floor)",
+    "sym": "#",
+    "color": "magenta",
+    "looks_like": "sgn_lm_bui_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_bui_vien_10_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Phố Tây Bùi Viện (upper floor)",
+    "sym": "#",
+    "color": "magenta",
+    "looks_like": "sgn_lm_bui_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_bui_vien_20_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Phố Tây Bùi Viện (upper floor)",
+    "sym": "#",
+    "color": "magenta",
+    "looks_like": "sgn_lm_bui_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_bui_vien_00_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Phố Tây Bùi Viện (upper floor)",
+    "sym": "#",
+    "color": "magenta",
+    "looks_like": "sgn_lm_bui_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_bui_vien_10_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Phố Tây Bùi Viện (upper floor)",
+    "sym": "#",
+    "color": "magenta",
+    "looks_like": "sgn_lm_bui_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_bui_vien_20_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Phố Tây Bùi Viện (upper floor)",
+    "sym": "#",
+    "color": "magenta",
+    "looks_like": "sgn_lm_bui_vien_00"
+  },
+  {
     "type": "city_building",
     "id": "sgn_lm_ben_thanh",
     "locations": [
@@ -3713,6 +4568,885 @@
           3
         ],
         "overmap": "sgn_lm_binh_tay_22_z3_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_ga_sai_gon",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_10_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_20_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_01_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_11_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_21_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_02_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_12_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_22_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_10_z1_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_20_z1_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_01_z1_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_11_z1_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_21_z1_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_02_z1_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_12_z1_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_ga_sai_gon_22_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_ben_xe_md",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_ben_xe_md_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_ben_xe_md_10_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_ben_xe_md_20_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_ben_xe_md_01_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_ben_xe_md_11_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_ben_xe_md_21_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_ben_xe_md_02_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_ben_xe_md_12_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_ben_xe_md_22_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_ben_xe_md_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_ben_xe_md_10_z1_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_ben_xe_md_20_z1_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_ben_xe_md_01_z1_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_ben_xe_md_11_z1_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_ben_xe_md_21_z1_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_ben_xe_md_02_z1_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_ben_xe_md_12_z1_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_ben_xe_md_22_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_tao_dan",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_tao_dan_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_tao_dan_10_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_tao_dan_20_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_tao_dan_01_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_tao_dan_11_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_tao_dan_21_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_tao_dan_02_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_tao_dan_12_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_tao_dan_22_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_tao_dan_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_tao_dan_10_z1_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_tao_dan_20_z1_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_tao_dan_01_z1_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_tao_dan_11_z1_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_tao_dan_21_z1_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_tao_dan_02_z1_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_tao_dan_12_z1_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_tao_dan_22_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_ho_con_rua",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_ho_con_rua_00_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_ho_con_rua_00_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_stc",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_stc_00_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_stc_00_z1_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          2
+        ],
+        "overmap": "sgn_lm_stc_00_z2_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          3
+        ],
+        "overmap": "sgn_lm_stc_00_z3_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          4
+        ],
+        "overmap": "sgn_lm_stc_00_z4_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          5
+        ],
+        "overmap": "sgn_lm_stc_00_z5_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          6
+        ],
+        "overmap": "sgn_lm_stc_00_z6_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          7
+        ],
+        "overmap": "sgn_lm_stc_00_z7_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          8
+        ],
+        "overmap": "sgn_lm_stc_00_z8_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          9
+        ],
+        "overmap": "sgn_lm_stc_00_z9_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          10
+        ],
+        "overmap": "sgn_lm_stc_00_z10_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_diamond",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_diamond_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_diamond_10_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_diamond_01_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_diamond_11_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_diamond_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_diamond_10_z1_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_diamond_01_z1_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_diamond_11_z1_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          2
+        ],
+        "overmap": "sgn_lm_diamond_00_z2_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          2
+        ],
+        "overmap": "sgn_lm_diamond_10_z2_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          2
+        ],
+        "overmap": "sgn_lm_diamond_01_z2_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          2
+        ],
+        "overmap": "sgn_lm_diamond_11_z2_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          3
+        ],
+        "overmap": "sgn_lm_diamond_00_z3_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          3
+        ],
+        "overmap": "sgn_lm_diamond_10_z3_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          3
+        ],
+        "overmap": "sgn_lm_diamond_01_z3_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          3
+        ],
+        "overmap": "sgn_lm_diamond_11_z3_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_bui_vien",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_bui_vien_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_bui_vien_10_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_bui_vien_20_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_bui_vien_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_bui_vien_10_z1_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_bui_vien_20_z1_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          2
+        ],
+        "overmap": "sgn_lm_bui_vien_00_z2_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          2
+        ],
+        "overmap": "sgn_lm_bui_vien_10_z2_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          2
+        ],
+        "overmap": "sgn_lm_bui_vien_20_z2_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          3
+        ],
+        "overmap": "sgn_lm_bui_vien_00_z3_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          3
+        ],
+        "overmap": "sgn_lm_bui_vien_10_z3_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          3
+        ],
+        "overmap": "sgn_lm_bui_vien_20_z3_north"
       }
     ]
   }

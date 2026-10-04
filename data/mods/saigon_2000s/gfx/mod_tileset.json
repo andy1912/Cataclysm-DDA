@@ -17,372 +17,380 @@
       "fg": 0
      },
      {
-      "id": "holybook_catechism",
+      "id": "guidebook",
       "fg": 1
      },
      {
-      "id": "incense",
+      "id": "holybook_catechism",
       "fg": 2
      },
      {
-      "id": "knife_cleaver",
+      "id": "incense",
       "fg": 3
      },
      {
-      "id": "noodles_fast",
+      "id": "knife_cleaver",
       "fg": 4
      },
      {
-      "id": "pickle",
+      "id": "noodles_fast",
       "fg": 5
      },
      {
-      "id": "processor",
+      "id": "pickle",
       "fg": 6
      },
      {
-      "id": "ring_wedding",
+      "id": "processor",
       "fg": 7
      },
      {
-      "id": "sgn_ao_ba_ba",
+      "id": "ring_wedding",
       "fg": 8
      },
      {
-      "id": "sgn_ao_cong_an",
+      "id": "sgn_ao_ba_ba",
       "fg": 9
      },
      {
-      "id": "sgn_ao_dai_mau",
+      "id": "sgn_ao_cong_an",
       "fg": 10
      },
      {
-      "id": "sgn_ao_dai_trang",
+      "id": "sgn_ao_dai_mau",
       "fg": 11
      },
      {
-      "id": "sgn_ao_khoac_chong_nang",
+      "id": "sgn_ao_dai_trang",
       "fg": 12
      },
      {
-      "id": "sgn_ao_trang_hoc_sinh",
+      "id": "sgn_ao_khoac_chong_nang",
       "fg": 13
      },
      {
-      "id": "sgn_banh_bao",
+      "id": "sgn_ao_trang_hoc_sinh",
       "fg": 14
      },
      {
-      "id": "sgn_banh_chung",
+      "id": "sgn_banh_bao",
       "fg": 15
      },
      {
-      "id": "sgn_banh_mi_bread",
+      "id": "sgn_banh_chung",
       "fg": 16
      },
      {
-      "id": "sgn_banh_mi_thit",
+      "id": "sgn_banh_mi_bread",
       "fg": 17
      },
      {
-      "id": "sgn_banh_pho",
+      "id": "sgn_banh_mi_thit",
       "fg": 18
      },
      {
-      "id": "sgn_banh_trang",
+      "id": "sgn_banh_pho",
       "fg": 19
      },
      {
-      "id": "sgn_banh_xeo",
+      "id": "sgn_banh_trang",
       "fg": 20
      },
      {
-      "id": "sgn_bep_ga_mini",
+      "id": "sgn_banh_xeo",
       "fg": 21
      },
      {
-      "id": "sgn_bep_than_to_ong",
+      "id": "sgn_bep_ga_mini",
       "fg": 22
      },
      {
-      "id": "sgn_bich_nylon",
+      "id": "sgn_bep_than_to_ong",
       "fg": 23
      },
      {
-      "id": "sgn_binh_gas",
+      "id": "sgn_bich_nylon",
       "fg": 24
      },
      {
-      "id": "sgn_book_almanac",
+      "id": "sgn_binh_gas",
       "fg": 25
      },
      {
-      "id": "sgn_book_construction",
+      "id": "sgn_book_almanac",
       "fg": 26
      },
      {
-      "id": "sgn_book_fishing",
+      "id": "sgn_book_construction",
       "fg": 27
      },
      {
-      "id": "sgn_book_moto_repair",
+      "id": "sgn_book_fishing",
       "fg": 28
      },
      {
-      "id": "sgn_book_nursing",
+      "id": "sgn_book_moto_repair",
       "fg": 29
      },
      {
-      "id": "sgn_book_southern_cooking",
+      "id": "sgn_book_nursing",
       "fg": 30
      },
      {
-      "id": "sgn_book_sutra",
+      "id": "sgn_book_southern_cooking",
       "fg": 31
      },
      {
-      "id": "sgn_book_tailoring",
+      "id": "sgn_book_sutra",
       "fg": 32
      },
      {
-      "id": "sgn_book_tv_repair",
+      "id": "sgn_book_tailoring",
       "fg": 33
      },
      {
-      "id": "sgn_book_wuxia",
+      "id": "sgn_book_tv_repair",
       "fg": 34
      },
      {
-      "id": "sgn_ca_phe_bot",
+      "id": "sgn_book_wuxia",
       "fg": 35
      },
      {
-      "id": "sgn_can_nhua",
+      "id": "sgn_ca_phe_bot",
       "fg": 36
      },
      {
-      "id": "sgn_chai_nuoc_mam",
+      "id": "sgn_can_nhua",
       "fg": 37
      },
      {
-      "id": "sgn_com_tam",
+      "id": "sgn_chai_nuoc_mam",
       "fg": 38
      },
      {
-      "id": "sgn_dao_rua",
+      "id": "sgn_com_tam",
       "fg": 39
      },
      {
-      "id": "sgn_dau_gio",
+      "id": "sgn_dao_rua",
       "fg": 40
      },
      {
-      "id": "sgn_den_dau",
+      "id": "sgn_dau_gio",
       "fg": 41
      },
      {
-      "id": "sgn_dep_lao",
+      "id": "sgn_den_dau",
       "fg": 42
      },
      {
-      "id": "sgn_dep_to_ong",
+      "id": "sgn_dep_lao",
       "fg": 43
      },
      {
-      "id": "sgn_dien_thoai",
+      "id": "sgn_dep_to_ong",
       "fg": 44
      },
      {
-      "id": "sgn_dong_100k",
+      "id": "sgn_dien_thoai",
       "fg": 45
      },
      {
-      "id": "sgn_dong_10k",
+      "id": "sgn_dong_100k",
       "fg": 46
      },
      {
-      "id": "sgn_dong_50k",
+      "id": "sgn_dong_10k",
       "fg": 47
      },
      {
-      "id": "sgn_durian",
+      "id": "sgn_dong_50k",
       "fg": 48
      },
      {
-      "id": "sgn_engine_110cc_item",
+      "id": "sgn_durian",
       "fg": 49
      },
      {
-      "id": "sgn_goi_cuon",
+      "id": "sgn_engine_110cc_item",
       "fg": 50
      },
      {
-      "id": "sgn_ho_chieu",
+      "id": "sgn_goi_cuon",
       "fg": 51
      },
      {
-      "id": "sgn_hu_tieu",
+      "id": "sgn_ho_chieu",
       "fg": 52
      },
      {
-      "id": "sgn_karaoke_songbook",
+      "id": "sgn_hu_tieu",
       "fg": 53
      },
      {
-      "id": "sgn_khau_trang",
+      "id": "sgn_karaoke_songbook",
       "fg": 54
      },
      {
-      "id": "sgn_kho_muc",
+      "id": "sgn_khau_trang",
       "fg": 55
      },
      {
-      "id": "sgn_luoi_chai",
+      "id": "sgn_kho_muc",
       "fg": 56
      },
      {
-      "id": "sgn_ly_nhua",
+      "id": "sgn_luoi_chai",
       "fg": 57
      },
      {
-      "id": "sgn_mi_goi",
+      "id": "sgn_ly_nhua",
       "fg": 58
      },
      {
-      "id": "sgn_mit",
+      "id": "sgn_mi_goi",
       "fg": 59
      },
      {
-      "id": "sgn_moto_tank_4l",
+      "id": "sgn_mit",
       "fg": 60
      },
      {
-      "id": "sgn_mung",
+      "id": "sgn_moto_tank_4l",
       "fg": 61
      },
      {
-      "id": "sgn_nen",
+      "id": "sgn_mung",
       "fg": 62
      },
      {
-      "id": "sgn_newspaper",
+      "id": "sgn_nen",
       "fg": 63
      },
      {
-      "id": "sgn_noi_com_dien",
+      "id": "sgn_newspaper",
       "fg": 64
      },
      {
-      "id": "sgn_non_la",
+      "id": "sgn_noi_com_dien",
       "fg": 65
      },
      {
-      "id": "sgn_note_handwritten",
+      "id": "sgn_non_la",
       "fg": 66
      },
      {
-      "id": "sgn_ong_tay_chong_nang",
+      "id": "sgn_note_handwritten",
       "fg": 67
      },
      {
-      "id": "sgn_oresol",
+      "id": "sgn_ong_tay_chong_nang",
       "fg": 68
      },
      {
-      "id": "sgn_phin",
+      "id": "sgn_oresol",
       "fg": 69
      },
      {
-      "id": "sgn_pho_bo",
+      "id": "sgn_phin",
       "fg": 70
      },
      {
-      "id": "sgn_quan_cong_an",
+      "id": "sgn_pho_bo",
       "fg": 71
      },
      {
-      "id": "sgn_quang_ganh",
+      "id": "sgn_quan_cong_an",
       "fg": 72
      },
      {
-      "id": "sgn_quat_may",
+      "id": "sgn_quang_ganh",
       "fg": 73
      },
      {
-      "id": "sgn_radio_cassette",
+      "id": "sgn_quat_may",
       "fg": 74
      },
      {
-      "id": "sgn_rau_muong",
+      "id": "sgn_radio_cassette",
       "fg": 75
      },
      {
-      "id": "sgn_ro_nhua",
+      "id": "sgn_rau_muong",
       "fg": 76
      },
      {
-      "id": "sgn_than_to_ong",
+      "id": "sgn_ro_nhua",
       "fg": 77
      },
      {
-      "id": "sgn_thanh_long",
+      "id": "sgn_than_to_ong",
       "fg": 78
      },
      {
-      "id": "sgn_thau_nhua",
+      "id": "sgn_thanh_long",
       "fg": 79
      },
      {
-      "id": "sgn_thung_xop",
+      "id": "sgn_thau_nhua",
       "fg": 80
      },
      {
-      "id": "sgn_thuoc_la",
+      "id": "sgn_thung_xop",
       "fg": 81
      },
      {
-      "id": "sgn_tom_kho",
+      "id": "sgn_thuoc_la",
       "fg": 82
      },
      {
-      "id": "sgn_ung_cao_su",
+      "id": "sgn_tom_kho",
       "fg": 83
      },
      {
-      "id": "sgn_vang_chi",
+      "id": "sgn_ung_cao_su",
       "fg": 84
      },
      {
-      "id": "sgn_vang_luong",
+      "id": "sgn_vang_chi",
       "fg": 85
      },
      {
-      "id": "sgn_ve_so",
+      "id": "sgn_vang_luong",
       "fg": 86
      },
      {
-      "id": "sgn_ward_notice",
+      "id": "sgn_ve_so",
       "fg": 87
      },
      {
-      "id": "sgn_xa_beng",
+      "id": "sgn_ward_notice",
       "fg": 88
      },
      {
-      "id": "sgn_xoi",
+      "id": "sgn_xa_beng",
       "fg": 89
      },
      {
-      "id": "tape_measure",
+      "id": "sgn_xoi",
       "fg": 90
      },
      {
-      "id": "wood_block",
+      "id": "sunscreen",
       "fg": 91
      },
      {
-      "id": "wooden_post_short",
+      "id": "tape_measure",
       "fg": 92
+     },
+     {
+      "id": "wood_block",
+      "fg": 93
+     },
+     {
+      "id": "wooden_post_short",
+      "fg": 94
      }
     ]
    },

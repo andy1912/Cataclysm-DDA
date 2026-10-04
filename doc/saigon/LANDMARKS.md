@@ -32,13 +32,13 @@ Research date: 2026-10-04 (web sources at the end). **Period rule:** only places
 | 8 | **Chùa Bà Thiên Hậu** (Thiên Hậu Temple, Chợ Lớn) | c. 1760 | Courtyard temple, **incense coils hanging from the ceiling** | 2 × 2 | Courtyards, red-and-gold altars, hanging incense spirals | Incense and candles; sanctuary | **L2** ✓ |
 | 9 | **Chùa Ngọc Hoàng** (Jade Emperor Pagoda, Đa Kao) | 1909 | Taoist temple, dark smoky halls full of statues, a turtle pond | 2 × 2 | Turtle pond, statue halls | Atmosphere; a few valuables | **L2** ✓ |
 | 10 | **Nhà thờ Tân Định** (the pink church) | 1876; pink since 1957 | | — | Already covered by the generic pink `sgn_nha_tho` (B8h) | — | done |
-| 11 | **Ga Sài Gòn** (Saigon Railway Station) | 1978–1983 | 1 Nguyễn Thông, District 3; the southern terminus of the North–South line | 3 × 3 | Station hall, platforms, stalled trains | Way out north (lore); train scrap | L3 |
-| 12 | **Bến xe Miền Đông** (Eastern Bus Station) | Bình Thạnh, built 1985–1990, in its role from 1996 | Huge yard of coaches | 3 × 3 | Bus yard full of coaches, ticket hall | Vehicles, fuel, an evacuation-chaos story | L3 |
-| 13 | **Công viên Tao Đàn** (Tao Đàn Park) | 1860s | 10 ha of old trees behind the palace; the bird cafés | 3 × 3 | Old-tree park, bird-cage café | Safe-ish green space | L3 |
-| 14 | **Hồ Con Rùa** (Turtle Lake) | late 1960s | 3,800 m² fountain roundabout | 1 × 1 | Round pool with a concrete monument | A meeting point | L3 |
-| 15 | **Saigon Trade Center** | 1997 | 145 m, the tallest in Vietnam 1997–2010 | 1 × 1, tall | Glass tower | A vantage point (multi-z) | L3 |
-| 16 | **Diamond Plaza** | 1999 | Mall beside the cathedral | 2 × 2 | Mall atrium | Mall loot | L3 |
-| 17 | **Phạm Ngũ Lão – Bùi Viện** | backpacker street, busy from the early 2000s | A street of guesthouses, bars and travel agents | row | Shophouse row variant: guesthouses and bars | Foreign loot (passports, dollars) | L3 |
+| 11 | **Ga Sài Gòn** (Saigon Railway Station) | 1978–1983 | 1 Nguyễn Thông, District 3; the southern terminus of the North–South line | 3 × 3 | Station hall, platforms, stalled trains | Way out north (lore); train scrap | **L3** ✓ |
+| 12 | **Bến xe Miền Đông** (Eastern Bus Station) | Bình Thạnh, built 1985–1990, in its role from 1996 | Huge yard of coaches | 3 × 3 | Bus yard full of coaches, ticket hall | Vehicles, fuel, an evacuation-chaos story | **L3** ✓ |
+| 13 | **Công viên Tao Đàn** (Tao Đàn Park) | 1860s | 10 ha of old trees behind the palace; the bird cafés | 3 × 3 | Old-tree park, bird-cage café | Safe-ish green space | **L3** ✓ |
+| 14 | **Hồ Con Rùa** (Turtle Lake) | late 1960s | 3,800 m² fountain roundabout | 1 × 1 | Round pool with a concrete monument | A meeting point | **L3** ✓ |
+| 15 | **Saigon Trade Center** | 1997 | 145 m, the tallest in Vietnam 1997–2010 | 1 × 1, tall | Glass tower | A vantage point (multi-z) | **L3** ✓ |
+| 16 | **Diamond Plaza** | 1999 | Mall beside the cathedral | 2 × 2 | Mall atrium | Mall loot | **L3** ✓ |
+| 17 | **Phạm Ngũ Lão – Bùi Viện** | backpacker street, busy from the early 2000s | A street of guesthouses, bars and travel agents | row | Shophouse row variant: guesthouses and bars | Foreign loot (passports, dollars) | **L3** ✓ |
 | 18 | **Thảo Cầm Viên** (Saigon Zoo) | 1864–1865 | 20 ha | 4 × 4 | Animal enclosures | Escaped animals | later |
 | 19 | **Đầm Sen / Suối Tiên** (amusement parks) | 1999 / 1995 | | 4 × 4 | Rides | Set pieces | later |
 
@@ -69,6 +69,35 @@ Chùa Bà Thiên Hậu, Chùa Ngọc Hoàng, Chợ Bình Tây (left to right), g
   fountain. Terracotta roofs. Loot `sgn_cho_wholesale`.
 
 These three have a lower region weight than L1 (150), so a city still gets District 1 first.
+
+## L3 as built
+
+Top: Ga Sài Gòn, Bến xe Miền Đông, Công viên Tao Đàn. Middle: Diamond Plaza, Saigon Trade Center
+(lobby), Hồ Con Rùa. Bottom: Phạm Ngũ Lão – Bùi Viện. Ground floors:
+
+![L3 landmarks](art/scene_preview_l3.png)
+
+- **Ga Sài Gòn** (3×3): forecourt with parked xe ôm, the ticket hall (windows, flip-slat departure
+  boards, benches, food stalls), four covered platforms and four tracks. Stranded passenger cars and
+  locomotives from dda's trains sit on the tracks, each kept inside one map tile. Loot: abandoned
+  luggage (`sgn_train_station`).
+- **Bến xe Miền Đông** (3×3): the ticket hall of the coach companies, kiosks under a canopy, the
+  loading bays, and a yard of up to twelve coaches.
+- **Công viên Tao Đàn** (3×3): a fenced park of old sao trees, cross walks and a round centre, stone
+  chess tables, and the bird café pavilion with its cages and kitchen kiosk.
+- **Hồ Con Rùa** (1×1): the round pool with the lotus-and-spire monument, benches on the rim, and a
+  drinks kiosk.
+- **Saigon Trade Center** (1×1, 10 storeys + roof): a blue-green glass tower with a lobby, eight
+  office floors around a stair core, and a sky lounge at the top. It is the tallest vantage point in
+  the city.
+- **Diamond Plaza** (2×2, 3 floors): boutiques around an atrium with escalators (they work as stairs),
+  a department-store floor (shoes, electronics), and the food court and cinema on top. Loot
+  `sgn_mall_fashion`: tropical fashion of 2004.
+- **Phạm Ngũ Lão – Bùi Viện** (3×1, 3 floors): twelve narrow lots of bars, travel agents and guesthouse
+  lobbies, beer tables and red plastic stools on the sidewalk under the signs, and guesthouse rooms
+  above. Loot `sgn_tourist`: passports, US dollars, guidebooks, cameras, beer.
+
+L3 region weight is 120, below L1 (200) and L2 (150).
 
 ## District 1 geography (for later, optional)
 The real District 1 core is compact: the cathedral faces the post office across Công xã Paris square, Lê Duẩn runs from the cathedral to the palace, and Đồng Khởi runs from the cathedral to the Opera House and the Continental on Lam Sơn square. City Hall heads Nguyễn Huệ, and Bến Thành sits on Quách Thị Trang roundabout at the end of Lê Lợi.

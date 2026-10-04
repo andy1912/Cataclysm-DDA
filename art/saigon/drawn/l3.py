@@ -167,3 +167,27 @@ def ho_chieu( c ):
     c.line( 6, 13, 13, 13, rgb( '#d8b048' ) )
     c.outline( OUTLINE )
     c.drop_shadow( 1, 1, 60 )
+
+
+# dda items the tourist loot uses that UltimateCataclysm has no sprite for
+@sprite( 'guidebook', 20, 20 )
+def guidebook( c ):
+    # a fat, dog-eared backpacker's guidebook, blue cover, a city photo band
+    c.rect( 4, 3, 15, 16, rgb( '#2a5a9a' ) )
+    c.rect( 4, 3, 5, 16, rgb( '#1a3a6a' ) )                            # spine
+    c.rect( 6, 8, 15, 11, rgb( '#e8a040' ) )                           # photo band
+    c.line( 7, 5, 13, 5, rgb( '#f0f0f0' ) )                            # title
+    c.rect( 6, 16, 15, 16, rgb( '#f0ecdc' ) )                          # page edges
+    c.px( 15, 3, rgb( '#c8c4b4' ) )                                    # the dog-ear
+    c.outline( OUTLINE )
+    c.drop_shadow( 1, 1, 60 )
+
+
+@sprite( 'sunscreen', 20, 20 )
+def sunscreen( c ):
+    # a squeezed white tube of sunscreen, orange cap, a sun on the label
+    c.capsule( 6, 6, 13, 13, 3.2, rgb( '#f4f2ea' ) )
+    c.rect( 12, 12, 15, 15, rgb( '#f08a20' ) )                         # cap
+    c.ellipse( 9, 9, 1.8, 1.8, rgb( '#f0c020' ) )
+    c.outline( OUTLINE )
+    c.drop_shadow( 1, 1, 60 )

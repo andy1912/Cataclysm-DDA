@@ -79,6 +79,16 @@ The cost is an 8–19 s pause each time the player reaches a new overmap (about 
 not on by default. To try it, add `"is_megacity": true` to `sgn_city` in `region/region_settings.json`.
 All nine landmarks were placed on every overmap measured with each setting.
 
+### After L3: sixteen landmarks
+
+With L1–L3 in the pool, each of the three reference overmaps placed **all 16 landmarks**
+(generation 0.7–1.9 s). On overmap (0,0), fourteen of them form a downtown within about 30 × 20 map
+tiles. Left to right and top to bottom: the post office, Bến Thành, Diamond Plaza, the Jade Emperor
+pagoda, Bến xe Miền Đông, Thiên Hậu, City Hall, Hồ Con Rùa, the Trade Center, the opera house,
+Ga Sài Gòn, Bùi Viện, Bình Tây and Đức Bà. Tao Đàn and the palace lie at the edge of the city.
+
+![The landmark district](art/overmap_landmarks_l3.png)
+
 How to regenerate these pictures:
 
 ```bash
@@ -160,3 +170,4 @@ of section 3, with step 5 replaced by a slot in the district.
 | A3 | Overmap pictures for the L2 landmarks: Thiên Hậu (green glazed halls around the burner courtyard), Ngọc Hoàng (garden with the turtle pond), Bình Tây (four terracotta wings, corner pavilions, garden courtyard, clock tower). 17 more pieces in `landmark_map.py` | done |
 | A4 | Lake fix and denser cities (done, see "After A4"). District 1 special layout: still proposed, less urgent now that the landmarks cluster on their own | lakes + density done |
 | A5 | L3 assets (`art/saigon/drawn/l3.py`, `furniture/l3.json`, `items/gear/travel.json`): escalators that work as stairs (up / down), departure board, ticket window, bird-cage rack, stone chess table, Turtle Lake monument, passport; blue-green curtain wall derived from t_wall_glass. Train and coach vehicle groups; tourist and station loot. Preview: ![](art/l3_preview.png) | done |
+| A6 | Overmap pictures for the seven L3 landmarks (station tracks and trains, coach yard, park, round pool, glass tower, the diamond-crowned mall, the neon street row), plus guidebook and sunscreen item sprites the tourist loot needed | done |
