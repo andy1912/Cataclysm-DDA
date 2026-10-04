@@ -68,7 +68,8 @@
       { "item": "sgn_quan_tay", "prob": 20 },
       { "item": "sgn_ao_khoac_chong_nang", "prob": 10 },
       { "item": "sgn_dep_lao", "prob": 15 },
-      { "item": "sgn_non_ket", "prob": 8 }
+      { "item": "sgn_non_ket", "prob": 8 },
+      { "item": "sgn_ung_cao_su", "prob": 10 }
     ]
   },
   {
@@ -149,7 +150,8 @@
       { "item": "sgn_non_ket", "prob": 12 },
       { "item": "sgn_dep_lao", "prob": 12 },
       { "item": "sgn_ao_trang_hoc_sinh", "prob": 8 },
-      { "item": "sgn_khan_quang_do", "prob": 6 }
+      { "item": "sgn_khan_quang_do", "prob": 6 },
+      { "item": "sgn_ung_cao_su", "prob": 10 }
     ],
     "//": "Living room, altar and bedrooms of a nhà ống home."
   },
@@ -191,7 +193,8 @@
       { "item": "sgn_kho_muc", "prob": 30 },
       { "item": "sgn_tom_kho", "prob": 30 },
       { "item": "sgn_thau_nhua", "prob": 30 },
-      { "item": "sgn_luoi_chai", "prob": 8 }
+      { "item": "sgn_luoi_chai", "prob": 8 },
+      { "item": "sgn_ung_cao_su", "prob": 30 }
     ],
     "//": "Wet-market fish and meat stall; the heat spoils everything fast."
   },

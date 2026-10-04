@@ -1487,5 +1487,29 @@
       }
     ],
     "//": "B8h church walls: candy-pink stucco (Tân Định)."
+  },
+  {
+    "target": "overlay_male_worn_sgn_ung_cao_su",
+    "source": "overlay_male_worn_boots_rubber",
+    "ops": [
+      {
+        "op": "desaturate",
+        "sat_mul": 0.1,
+        "val_mul": 0.45
+      }
+    ],
+    "//": "G30 rubber flood boots: black."
+  },
+  {
+    "target": "overlay_female_worn_sgn_ung_cao_su",
+    "source": "overlay_female_worn_boots_rubber",
+    "ops": [
+      {
+        "op": "desaturate",
+        "sat_mul": 0.1,
+        "val_mul": 0.45
+      }
+    ],
+    "//": "G30 rubber flood boots: black."
   }
 ]

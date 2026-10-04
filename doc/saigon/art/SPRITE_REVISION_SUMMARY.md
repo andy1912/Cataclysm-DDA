@@ -60,7 +60,7 @@ No T1 or T2 sprite is left to do. The work after G15 is quality, not coverage. T
 Previews:
 - code-drawn: [`drawn_preview_small.png`](drawn_preview_small.png) (icons), [`drawn_preview_world.png`](drawn_preview_world.png) (terrain and furniture), [`drawn_preview_trees.png`](drawn_preview_trees.png);
 - derived: [`derived_preview.png`](derived_preview.png), [`derived_overmap_preview.png`](derived_overmap_preview.png);
-- a real generated block: [`scene_preview.png`](scene_preview.png), [`scene_preview_street.png`](scene_preview_street.png), [`scene_preview_canal.png`](scene_preview_canal.png), [`scene_preview_landmarks.png`](scene_preview_landmarks.png).
+- a real generated block: [`scene_preview.png`](scene_preview.png), [`scene_preview_street.png`](scene_preview_street.png), [`scene_preview_canal.png`](scene_preview_canal.png), [`scene_preview_landmarks.png`](scene_preview_landmarks.png), [`scene_preview_flood.png`](scene_preview_flood.png) (the same street in a wet-season flood).
 
 ## Format rules
 

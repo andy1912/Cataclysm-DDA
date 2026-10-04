@@ -120,7 +120,7 @@ Priority **A** = seen in every house or shop, or part of a core loop (cooking, w
 | `t_sgn_cua_sat_keo_c/o` | cửa sắt kéo | Accordion iron gate, closed and open: the iconic loud, slow entry (copy-from `t_door_metal_c`) | **A** | D (+open) |
 | `t_sgn_cua_cuon_o` | cửa cuốn (open) | Rolled-up shutter state (the closed one exists) | A | D |
 | `t_sgn_kenh` + `t_sgn_bo_ke` | nước kênh, bờ kè | Murky green canal water and a stone embankment (needs B8f canal content) | A | D/R |
-| `t_sgn_ngap` | nước ngập | Shallow street flood water over pavement for triều cường (needs a weather hook) | B | D |
+| `t_sgn_ngap_*` | nước ngập | **Done (G30):** flooded road, sidewalk and alley, raised and drained by wet-season rain (region/flood.json) | B | D |
 | `t_sgn_cong` | nắp cống | Sidewalk drain grate (R of `t_grate`) | C | R |
 
 ### 3b. Furniture (32×32 or 32×64)
@@ -198,7 +198,7 @@ Ultica_iso equivalents of everything, once renderer phase R3 starts. Out of scop
 | G24 | **Household and medicine items:** quạt máy, đèn dầu, nến, Nokia, radio, mùng, chiếu, dầu gió, oresol, khẩu trang (+overlay) | 10 | 12 | D | done |
 | G25 | **Work gear and trade:** xà beng, quang gánh (+overlay), rổ/thau, lưới chài, vé số, thuốc lá, lượng vàng, street dishes ×5, dried goods ×3 | 16 | 18 | D | done |
 | G26 | **Clothing:** áo dài, áo thun, quần tây, áo khoác chống nắng, nón kết, dép lào, uniform, áo trắng (icons + 16 overlays) | 8 | 24 | D/R/H | done |
-| G27 | **Canal:** kênh water + embankment, ghe canopy, flood water (with B8f canal content) | 3–4 | ~20 | D | done with B8f (canal water, embankment, tin roofs, icons); ghe canopy and flood water left |
+| G27 | **Canal:** kênh water + embankment, ghe canopy, flood water (with B8f canal content) | 3–4 | ~20 | D | done with B8f (canal water, embankment, tin roofs, icons); flood water done in G30; ghe canopy left |
 | G28 | **Animals:** chó ta, mèo, gà, chuột cống (+ snake and lizard) | 4–6 | ~8 | R/D/H | done |
 | G29 | **Map icons** for new landmarks | 11 | 11 | R/D | done for the church, ward office and school (B8h-2); gold shop, net café and karaoke are shophouse lots (B8h-1) |
 | H1 | **Hand-art pass (artist):** Saigon zombies ×5, NPC outfits, áo dài overlay, iconic street objects polish | – | ~40 | **H** | for an artist |
