@@ -39,13 +39,13 @@ The small town has the cathedral, the post office, the palace and City Hall:
 
 ### Problems this map shows
 
-1. **One huge lake covers two thirds of the overmap.** The Saigon region inherits the dda lake
+1. ~~**One huge lake covers two thirds of the overmap.**~~ Fixed in A4, see below. The Saigon region inherits the dda lake
    settings. Saigon is a river-and-canal city with no big lakes, so lakes should be rare and the
    Saigon River should be wide.
-2. **The landmarks are scattered.** The landmarks are city buildings, so each one lands wherever a city has a big enough
+2. ~~**The landmarks are scattered.**~~ Mostly fixed by A4's denser cities; see below. The landmarks are city buildings, so each one lands wherever a city has a big enough
    block. In this seed that put them in two different towns. In the real city they all stand within about 1 km
    of each other in District 1.
-3. **The cities are small and separate.** Saigon should read as one dense metropolis.
+3. ~~**The cities are small and separate.**~~ Better after A4; see below. Saigon should read as one dense metropolis.
 4. ~~**Big landmarks show as repeated icons.**~~ Fixed in A1: each landmark is now one plan-view picture
    spread over its tiles, and it turns with the building:
 
@@ -57,10 +57,32 @@ The small town has the cathedral, the post office, the palace and City Hall:
    (oval lawn, fountain, fins, the roof helipad, facing east), City Hall (statue garden, courtyard, clock tower),
    Bến Thành (skylit cross aisles, clock-tower gate, facing west) and the opera house (arched entrance, fly tower).
 
+### After A4 (lakes and density)
+
+The same overmap position (0,0) with the A4 region settings: rare, small lakes (`region/water.json`,
+noise threshold 0.25 → 0.4, minimum size 20 → 60) and denser cities (`city_spacing` 3 → 1). A wide
+river runs through one large city, and the landmarks now cluster together near its centre:
+
+![Overmap after A4](art/overmap_a4.png)
+
+Measured on three overmap positions (0,0 / −3,2 / 2,3). "Generate" is the time to build one
+overmap, measured inside the test (`overmap generated in … ms`):
+
+| Setting | Lake | Buildings | Generate |
+|---|---|---|---|
+| Before (dda lakes, spacing 3) | 65 / 37 / 0 % | 4 / 5 / 14 % | 0.3–1.6 s |
+| **A4 (shipped)**: rare lakes, spacing 1 | 10 / 0 / 0 % | 16 / 11 / 14 % | 1.2–3.1 s |
+| Option: megacity (`"is_megacity": true` in `sgn_city`) | 10 / 0 / 0 % | 22 / 33 / 34 % | 8–19 s |
+
+Megacity mode fills each overmap with five size-40 cities, which is closest to one continuous Saigon.
+The cost is an 8–19 s pause each time the player reaches a new overmap (about every 4 km), so it is
+not on by default. To try it, add `"is_megacity": true` to `sgn_city` in `region/region_settings.json`.
+All nine landmarks were placed on every overmap measured with each setting.
+
 How to regenerate these pictures:
 
 ```bash
-SAIGON_OVERMAP_OUT=om.json SAIGON_OVERMAP_SEED=4242 tests/cata_test --mods=dda,saigon_2000s "[saigon_overmap]"
+SAIGON_OVERMAP_OUT=om.json SAIGON_OVERMAP_SEED=4242 SAIGON_OVERMAP_AT=0,0 tests/cata_test --mods=dda,saigon_2000s "[saigon_overmap]"
 ```
 ```bash
 python3 tools/saigon/art/render_overmap.py om.json overmap.png --scale 0.5 --landmarks landmarks.md
@@ -136,4 +158,4 @@ of section 3, with step 5 replaced by a slot in the district.
 | A1 | Overmap pictures for the six L1 landmarks: one plan-view picture per landmark, sliced over its tiles (16 × 16 per piece), rotating with the building. `art/saigon/drawn/landmark_map.py`, 40 pieces | done |
 | A2 | L2 sprites (Chợ Lớn), in `art/saigon/drawn/cholon.py` with game objects in `furniture/cholon.json`. Thiên Hậu: hanging incense coils (they give off incense smoke), the bronze incense burner (also smoking), the temple altar, the stone guardian lion, red lacquered pillars, green glazed roof, terracotta courtyard tiles. Ngọc Hoàng: the carved deity statue (the turtle pond uses the canal's murky water). Bình Tây: rice-sack stacks (a container; smash them and rice spills out), the dragon fountain. Preview: ![](art/cholon_preview.png) | done |
 | A3 | Overmap pictures for the L2 landmarks: Thiên Hậu (green glazed halls around the burner courtyard), Ngọc Hoàng (garden with the turtle pond), Bình Tây (four terracotta wings, corner pavilions, garden courtyard, clock tower). 17 more pieces in `landmark_map.py` | done |
-| A4 | District 1 special and the lake fix, from sections 1 and 4 (map design, not art) | proposed |
+| A4 | Lake fix and denser cities (done, see "After A4"). District 1 special layout: still proposed, less urgent now that the landmarks cluster on their own | lakes + density done |

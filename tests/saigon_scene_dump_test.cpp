@@ -1,3 +1,4 @@
+#include <chrono>
 #include <cstdio>
 #include <cstdlib>
 #include <fstream>
@@ -227,7 +228,10 @@ TEST_CASE( "saigon_landmark_dump", "[.][saigon_landmark_scene]" )
 // (the oter type, as cata_tiles::get_omt_id_rotation_and_subtile asks for it), plus either
 // its rotation or, for connected and water terrain, the S/E/W/N connection bits that the
 // renderer turns into a subtile.  Hidden test; run with:
-//   SAIGON_OVERMAP_OUT=om.json [SAIGON_OVERMAP_SEED=4242] tests/cata_test --mods=dda,saigon_2000s "[saigon_overmap]"
+//   SAIGON_OVERMAP_OUT=om.json [SAIGON_OVERMAP_SEED=4242] [SAIGON_OVERMAP_AT=x,y]
+//       tests/cata_test --mods=dda,saigon_2000s "[saigon_overmap]"
+// Lakes and rivers come from noise keyed on the overmap's position, so SAIGON_OVERMAP_AT
+// (overmap coordinates) is what gives a different landscape; the seed varies the cities.
 TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
 {
     const char *out_path = std::getenv( "SAIGON_OVERMAP_OUT" );
@@ -237,8 +241,19 @@ TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
     }
     const char *seed = std::getenv( "SAIGON_OVERMAP_SEED" );
     rng_set_engine_seed( seed ? std::atoi( seed ) : 4242 );
+    const char *at = std::getenv( "SAIGON_OVERMAP_AT" );
+    point_abs_om where;
+    if( at != nullptr ) {
+        int ox = 0;
+        int oy = 0;
+        REQUIRE( std::sscanf( at, "%d,%d", &ox, &oy ) == 2 );
+        where = point_abs_om( ox, oy );
+    }
     overmap_buffer.clear();
-    overmap &om = overmap_buffer.get( point_abs_om() );
+    const auto t0 = std::chrono::steady_clock::now();
+    overmap &om = overmap_buffer.get( where );
+    const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::steady_clock::now() - t0 );
+    WARN( "overmap generated in " << ms.count() << " ms" );
     std::map<std::string, std::vector<std::string>> looks_like;
     std::ofstream out( out_path );
     out << "{\"width\":" << OMAPX << ",\"height\":" << OMAPY << ",\"tiles\":[";

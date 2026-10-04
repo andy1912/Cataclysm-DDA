@@ -1,0 +1,10 @@
+[
+  {
+    "type": "region_settings_lake",
+    "id": "sgn_lakes",
+    "copy-from": "default",
+    "//": "A4: the Saigon delta is flat land cut by rivers and canals; lakes are rare and small.  dda's default (threshold 0.25, min 20 OMT) floods two overmaps in six, one to 65 %.",
+    "noise_threshold_lake": 0.4,
+    "lake_size_min": 60
+  }
+]

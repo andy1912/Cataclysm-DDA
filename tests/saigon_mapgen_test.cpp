@@ -207,7 +207,7 @@ TEST_CASE( "saigon_cities_use_shophouses", "[overmap][saigon]" )
             } else if( id.rfind( "sgn_cho_", 0 ) == 0 ) {
                 cho_cells++;
             } else if( id.rfind( "sgn_lm_", 0 ) == 0 ) {
-                // the District 1 landmarks (L1): count each by its north-west piece
+                // the landmarks (L1, L2): count each by its north-west piece
                 if( id.find( "_00_" ) != std::string::npos ) {
                     landmarks += id.substr( 7, id.find( "_00_" ) - 7 ) + " ";
                 }
@@ -230,7 +230,7 @@ TEST_CASE( "saigon_cities_use_shophouses", "[overmap][saigon]" )
     // The 2x2 chợ only fits 2-deep blocks, so it is reported rather than required.
     WARN( "chợ cells on this overmap: " << cho_cells );
     // The landmarks are OVERMAP_UNIQUE and up to 3x3, so they are reported rather than required.
-    WARN( "District 1 landmarks on this overmap: " << landmarks );
+    WARN( "Saigon landmarks on this overmap: " << landmarks );
     // The Saigon region routes every city slot to Saigon buildings, and its SAIGON
     // feature-flag whitelist (B8g-2) removes every dda overmap special, highway and
     // US store, so no dda building may appear at all.
