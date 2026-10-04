@@ -1,3 +1,4 @@
+#include <cstdio>
 #include <cstdlib>
 #include <fstream>
 #include <map>
@@ -67,6 +68,65 @@ static int rotation_targets( map &here, const tripoint_bub_ms &p, const T &obj_a
     return group.none() ? 127 : connections( here, p, obj_at, group );
 }
 
+// Write the z0 tiles of the loaded map, (0,0)-(width,height), as the renderer's JSON.
+static void dump_scene( const char *out_path, const int width, const int height )
+{
+    map &here = get_map();
+    std::map<std::string, std::string> looks_like;
+    std::ofstream out( out_path );
+    out << "{\"width\": " << width << ", \"height\": " << height << ", \"tiles\": [\n";
+    for( int y = 0; y < height; y++ ) {
+        for( int x = 0; x < width; x++ ) {
+            const tripoint_bub_ms p( x, y, 0 );
+            const ter_t &ter = here.ter( p ).obj();
+            const furn_t &furn = here.furn( p ).obj();
+            const auto ter_at = [&]( const tripoint_bub_ms & q ) -> const ter_t & {
+                return here.ter( q ).obj();
+            };
+            const auto furn_at = [&]( const tripoint_bub_ms & q ) -> const furn_t & {
+                return here.furn( q ).obj();
+            };
+            looks_like[ter.id.str()] = ter.looks_like;
+            out << "[" << quoted( ter.id.str() ) << "," << connections( here, p, ter_at, ter.connect_to_groups )
+                << "," << rotation_targets( here, p, ter_at, ter.rotate_to_groups ) << ",";
+            if( furn.id.str() == "f_null" ) {
+                out << "\"\",0,127,";
+            } else {
+                looks_like[furn.id.str()] = furn.looks_like;
+                out << quoted( furn.id.str() ) << "," << connections( here, p, furn_at, furn.connect_to_groups )
+                    << "," << rotation_targets( here, p, furn_at, furn.rotate_to_groups ) << ",";
+            }
+            const map_stack items = here.i_at( p );
+            if( items.empty() ) {
+                out << "\"\",";
+            } else {
+                const itype &it = *items.begin()->type;
+                looks_like[it.get_id().str()] = it.looks_like.str();
+                out << quoted( it.get_id().str() ) << ",";
+            }
+            const optional_vpart_position ovp = here.veh_at( p );
+            const vpart_display vd = ovp ? ovp->vehicle().get_display_of_tile( ovp->mount_pos() ) :
+                                     vpart_display();
+            if( ovp && !vd.id.is_null() ) {
+                looks_like["vp_" + vd.id.str()] = vd.id->looks_like;
+                out << quoted( "vp_" + vd.id.str() ) << "," << quoted( vd.variant.id ) << ","
+                    << angle_to_dir4( ovp->vehicle().face.dir() - 270_degrees ) << "]";
+            } else {
+                out << "\"\",\"\",0]";
+            }
+            out << ( x + 1 < width || y + 1 < height ? ",\n" : "\n" );
+        }
+    }
+    out << "], \"looks_like\": {";
+    bool first = true;
+    for( const auto &kv : looks_like ) {
+        out << ( first ? "" : ",\n" ) << quoted( kv.first ) << ": " << quoted( kv.second );
+        first = false;
+    }
+    out << "}}\n";
+    CHECK( out.good() );
+}
+
 TEST_CASE( "saigon_scene_dump", "[.][saigon_scene]" )
 {
     const char *out_path = std::getenv( "SAIGON_SCENE_OUT" );
@@ -121,59 +181,42 @@ TEST_CASE( "saigon_scene_dump", "[.][saigon_scene]" )
     }
     here.build_map_cache( 0 );
 
-    const int width = 5 * 24;
-    const int height = 4 * 24;
-    std::map<std::string, std::string> looks_like;
-    std::ofstream out( out_path );
-    out << "{\"width\": " << width << ", \"height\": " << height << ", \"tiles\": [\n";
-    for( int y = 0; y < height; y++ ) {
-        for( int x = 0; x < width; x++ ) {
-            const tripoint_bub_ms p( x, y, 0 );
-            const ter_t &ter = here.ter( p ).obj();
-            const furn_t &furn = here.furn( p ).obj();
-            const auto ter_at = [&]( const tripoint_bub_ms & q ) -> const ter_t & {
-                return here.ter( q ).obj();
-            };
-            const auto furn_at = [&]( const tripoint_bub_ms & q ) -> const furn_t & {
-                return here.furn( q ).obj();
-            };
-            looks_like[ter.id.str()] = ter.looks_like;
-            out << "[" << quoted( ter.id.str() ) << "," << connections( here, p, ter_at, ter.connect_to_groups )
-                << "," << rotation_targets( here, p, ter_at, ter.rotate_to_groups ) << ",";
-            if( furn.id.str() == "f_null" ) {
-                out << "\"\",0,127,";
-            } else {
-                looks_like[furn.id.str()] = furn.looks_like;
-                out << quoted( furn.id.str() ) << "," << connections( here, p, furn_at, furn.connect_to_groups )
-                    << "," << rotation_targets( here, p, furn_at, furn.rotate_to_groups ) << ",";
+    dump_scene( out_path, 5 * 24, 4 * 24 );
+}
+
+// One landmark on its own: SAIGON_LANDMARK=<id> SAIGON_LANDMARK_SIZE=<w>x<h>x<zmin>x<zmax>
+TEST_CASE( "saigon_landmark_dump", "[.][saigon_landmark_scene]" )
+{
+    const char *out_path = std::getenv( "SAIGON_SCENE_OUT" );
+    const char *lid = std::getenv( "SAIGON_LANDMARK" );
+    const char *size = std::getenv( "SAIGON_LANDMARK_SIZE" );
+    if( out_path == nullptr || lid == nullptr || size == nullptr ) {
+        WARN( "set SAIGON_SCENE_OUT, SAIGON_LANDMARK and SAIGON_LANDMARK_SIZE" );
+        return;
+    }
+    int w = 0;
+    int h = 0;
+    int zmin = 0;
+    int zmax = 0;
+    REQUIRE( std::sscanf( size, "%dx%dx%dx%d", &w, &h, &zmin, &zmax ) == 4 );
+    clear_overmaps();
+    clear_avatar();
+    const tripoint_abs_omt base( 200, 200, 0 );
+    for( int z = zmin; z <= zmax; z++ ) {
+        for( int x = 0; x < w; x++ ) {
+            for( int y = 0; y < h; y++ ) {
+                std::string id = std::string( lid ) + "_" + std::to_string( x ) + std::to_string( y );
+                if( z < 0 ) {
+                    id += "_b";
+                } else if( z > 0 ) {
+                    id += "_z" + std::to_string( z );
+                }
+                overmap_buffer.ter_set( base + tripoint( x, y, z ), oter_str_id( id + "_north" ).id() );
             }
-            const map_stack items = here.i_at( p );
-            if( items.empty() ) {
-                out << "\"\",";
-            } else {
-                const itype &it = *items.begin()->type;
-                looks_like[it.get_id().str()] = it.looks_like.str();
-                out << quoted( it.get_id().str() ) << ",";
-            }
-            const optional_vpart_position ovp = here.veh_at( p );
-            const vpart_display vd = ovp ? ovp->vehicle().get_display_of_tile( ovp->mount_pos() ) :
-                                     vpart_display();
-            if( ovp && !vd.id.is_null() ) {
-                looks_like["vp_" + vd.id.str()] = vd.id->looks_like;
-                out << quoted( "vp_" + vd.id.str() ) << "," << quoted( vd.variant.id ) << ","
-                    << angle_to_dir4( ovp->vehicle().face.dir() - 270_degrees ) << "]";
-            } else {
-                out << "\"\",\"\",0]";
-            }
-            out << ( x + 1 < width || y + 1 < height ? ",\n" : "\n" );
         }
     }
-    out << "], \"looks_like\": {";
-    bool first = true;
-    for( const auto &kv : looks_like ) {
-        out << ( first ? "" : ",\n" ) << quoted( kv.first ) << ": " << quoted( kv.second );
-        first = false;
-    }
-    out << "}}\n";
-    CHECK( out.good() );
+    rng_set_engine_seed( 2004 );
+    get_map().load( project_to<coords::sm>( base ), true );
+    get_map().build_map_cache( 0 );
+    dump_scene( out_path, w * 24, h * 24 );
 }

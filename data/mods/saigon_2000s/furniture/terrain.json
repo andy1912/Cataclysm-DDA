@@ -121,5 +121,14 @@
     "name": "terracotta tile roof",
     "description": "Mái ngói: overlapping red clay roof tiles on a timber frame, mossy in the gutters.",
     "color": "light_red"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_gach_do",
+    "copy-from": "t_brick_wall",
+    "looks_like": "t_brick_wall",
+    "name": "red brick wall",
+    "description": "Bare red brick shipped from Toulouse a century and a half ago, never plastered: the walls of the cathedral.",
+    "color": "red"
   }
 ]

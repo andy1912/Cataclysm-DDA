@@ -390,5 +390,56 @@
       { "item": "sgn_ao_trang_hoc_sinh", "prob": 8 },
       { "item": "sgn_xoi", "prob": 8 }
     ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_cho_cloth",
+    "subtype": "distribution",
+    "//": "L1 Bến Thành cloth and clothing stalls.",
+    "items": [
+      { "item": "sheet_cotton", "prob": 30 },
+      { "item": "cotton_patchwork", "prob": 30, "count": [ 2, 8 ] },
+      { "item": "sgn_ao_ba_ba", "prob": 25 },
+      { "item": "sgn_ao_thun", "prob": 30 },
+      { "item": "sgn_quan_tay", "prob": 20 },
+      { "item": "sgn_ao_dai_trang", "prob": 10 },
+      { "item": "sgn_ao_dai_mau", "prob": 10 },
+      { "item": "sgn_non_la", "prob": 25 },
+      { "item": "sgn_khau_trang", "prob": 20 },
+      { "item": "sgn_dep_to_ong", "prob": 20 },
+      { "item": "sgn_ao_khoac_chong_nang", "prob": 15 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_post_office",
+    "subtype": "distribution",
+    "//": "L1 Central Post Office counters and booths.",
+    "items": [
+      { "item": "envelope", "prob": 40, "count": [ 1, 6 ] },
+      { "item": "paper", "prob": 40, "count": [ 5, 15 ] },
+      { "item": "pen", "prob": 30 },
+      { "item": "sgn_newspaper", "prob": 25 },
+      { "item": "sgn_dong_10k", "prob": 20, "count": [ 1, 6 ] },
+      { "item": "sgn_dien_thoai", "prob": 8 },
+      { "item": "sgn_ve_so", "prob": 15, "count": [ 1, 4 ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_palace_bunker",
+    "subtype": "distribution",
+    "//": "L1 Independence Palace command bunker: the war room.",
+    "items": [
+      { "item": "two_way_radio", "prob": 40 },
+      { "item": "binoculars", "prob": 20 },
+      { "item": "flashlight", "prob": 40 },
+      { "item": "mre_beef", "prob": 25 },
+      { "item": "mre_veggy", "prob": 20 },
+      { "item": "jacket_army", "prob": 15 },
+      { "item": "helmet_army", "prob": 15 },
+      { "item": "paper", "prob": 40, "count": [ 5, 20 ] },
+      { "item": "sgn_ward_notice", "prob": 30, "count": [ 1, 3 ] }
+    ]
   }
 ]

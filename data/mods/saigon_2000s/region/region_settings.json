@@ -17,11 +17,22 @@
     "type": "region_settings_city",
     "id": "sgn_city",
     "copy-from": "default",
-    "//": "Dense, tightly spaced cities of nhà ống rows, hẻm blocks and old chung cư.  Shops: the chợ plus 1-OMT Saigon fallbacks (shophouse ground floors are shops).  Parks: pagodas; B8f: canal rows (kênh) among the parks slot; B8h: schools and churches among the parks, a ward office among the shops.",
+    "//": "Dense, tightly spaced cities of nhà ống rows, hẻm blocks and old chung cư.  Shops: the chợ plus 1-OMT Saigon fallbacks (shophouse ground floors are shops).  Parks: pagodas; B8f: canal rows (kênh) among the parks slot; B8h: schools and churches among the parks, a ward office among the shops; L1: the six District 1 landmarks (OVERMAP_UNIQUE, weight 200 in the central shops pool, see doc/saigon/LANDMARKS.md).",
     "city_size": 12,
     "city_spacing": 3,
     "houses": [ [ "sgn_nhaong_row_1", 100 ], [ "sgn_hem_block_1", 40 ], [ "sgn_chungcu_1", 12 ] ],
-    "shops": [ [ "sgn_cho_1", 8 ], [ "sgn_nhaong_row_1", 100 ], [ "sgn_hem_block_1", 20 ], [ "sgn_ubnd_1", 6 ] ],
+    "shops": [
+      [ "sgn_cho_1", 8 ],
+      [ "sgn_nhaong_row_1", 100 ],
+      [ "sgn_hem_block_1", 20 ],
+      [ "sgn_ubnd_1", 6 ],
+      [ "sgn_lm_ben_thanh", 200 ],
+      [ "sgn_lm_duc_ba", 200 ],
+      [ "sgn_lm_buu_dien", 200 ],
+      [ "sgn_lm_nha_hat", 200 ],
+      [ "sgn_lm_ubnd_tp", 200 ],
+      [ "sgn_lm_dinh_doc_lap", 200 ]
+    ],
     "parks": [ [ "sgn_chua_1", 100 ], [ "sgn_kenh_row_1", 40 ], [ "sgn_truong_1", 40 ], [ "sgn_nha_tho_1", 25 ] ],
     "name_snippet": "<sgn_city_name>"
   }

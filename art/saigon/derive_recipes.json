@@ -1511,5 +1511,11 @@
       }
     ],
     "//": "G30 rubber flood boots: black."
+  },
+  {
+    "target": "t_sgn_gach_do",
+    "source": "t_brick_wall",
+    "ops": [],
+    "//": "L1 cathedral: the original red brick, which the mod restyles to stucco under t_brick_wall."
   }
 ]

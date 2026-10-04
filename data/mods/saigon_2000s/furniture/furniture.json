@@ -250,5 +250,52 @@
       "items": [ { "item": "2x4", "count": [ 1, 3 ] }, { "item": "splinter", "count": [ 2, 6 ] } ]
     },
     "deconstruct": { "items": [ { "item": "2x4", "count": 3 }, { "item": "nail", "charges": [ 4, 8 ] } ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_buong_dien_thoai",
+    "name": "telephone booth",
+    "symbol": "&",
+    "color": "brown",
+    "looks_like": "f_rack",
+    "description": "A varnished wooden telephone cabinet with a folding glass door and a numbered brass plate, one of a row along the post office wall.  The line is dead.",
+    "move_cost_mod": -1,
+    "coverage": 60,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "PLACE_ITEM", "BLOCKSDOOR" ],
+    "bash": {
+      "str_min": 8,
+      "str_max": 30,
+      "sound": "crunch!",
+      "sound_fail": "whump.",
+      "items": [
+        { "item": "2x4", "count": [ 1, 3 ] },
+        { "item": "glass_shard", "count": [ 1, 4 ] },
+        { "item": "e_scrap", "count": [ 0, 2 ] }
+      ]
+    },
+    "deconstruct": {
+      "items": [ { "item": "2x4", "count": 4 }, { "item": "nail", "charges": [ 6, 12 ] }, { "item": "e_scrap", "count": [ 1, 2 ] } ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_dong_ho",
+    "name": "tower clock",
+    "symbol": "o",
+    "color": "white",
+    "looks_like": "f_rack",
+    "description": "The great clock face of the tower, white enamel and black iron hands, stopped at the hour the power failed.",
+    "move_cost_mod": -1,
+    "coverage": 80,
+    "required_str": -1,
+    "flags": [ "NOITEM", "BLOCKSDOOR" ],
+    "bash": {
+      "str_min": 20,
+      "str_max": 60,
+      "sound": "clang!",
+      "sound_fail": "clang.",
+      "items": [ { "item": "scrap", "count": [ 2, 6 ] }, { "item": "glass_shard", "count": [ 2, 6 ] } ]
+    }
   }
 ]

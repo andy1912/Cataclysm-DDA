@@ -14,10 +14,12 @@ T1,furniture,f_sgn_ban_tho,mod,1,1-4,f_table,data/mods/saigon_2000s/furniture/fu
 T1,furniture,f_sgn_ban_tho_than_tai,mod,1,1-4,f_table,data/mods/saigon_2000s/furniture/furniture.json; palette sgn_nhaong
 T1,furniture,f_sgn_bang_den,mod,1,1-4,f_desk,data/mods/saigon_2000s/furniture/furniture.json
 T1,furniture,f_sgn_bang_hieu,mod,1,1-4,f_sign,data/mods/saigon_2000s/furniture/furniture.json
+T1,furniture,f_sgn_buong_dien_thoai,mod,1,1-4,f_rack,data/mods/saigon_2000s/furniture/furniture.json
 T1,furniture,f_sgn_chau_kieng,mod,1,1-4,f_indoor_plant,data/mods/saigon_2000s/furniture/furniture.json; palette sgn_nhaong
 T1,furniture,f_sgn_cot_dien,mod,1,1-4,f_utility_pole,data/mods/saigon_2000s/furniture/furniture.json
 T1,furniture,f_sgn_dan_karaoke,mod,1,1-4,f_speaker_cabinet,data/mods/saigon_2000s/furniture/furniture.json; palette sgn_nhaong
 T1,furniture,f_sgn_day_phoi,mod,1,1-4,f_rack,data/mods/saigon_2000s/furniture/furniture.json; palette sgn_hem
+T1,furniture,f_sgn_dong_ho,mod,1,1-4,f_rack,data/mods/saigon_2000s/furniture/furniture.json
 T1,furniture,f_sgn_du,mod,1,1-4,f_sign,data/mods/saigon_2000s/furniture/furniture.json
 T1,furniture,f_sgn_dua_can,mod,1,1-4,f_dandelion,data/mods/saigon_2000s/region/flora.json
 T1,furniture,f_sgn_loa_phuong,mod,1,1-4,f_utility_pole,data/mods/saigon_2000s/furniture/furniture.json
@@ -59,7 +61,7 @@ T1,item,hammer,dda,1,1,,item_group hiking; item_group tools_common_small; profes
 T1,item,hat_hard,dda,1,1,hat_cotton,item_group prof-plumbing_gear; profession sgn_construction; item_group costume_hats_hoods
 T1,item,howto_computer,dda,1,1,manual_gun,profession sgn_student
 T1,item,incense,dda,1,1,,item_group sgn_shophouse_living; item_group sgn_pagoda; profession sgn_monk
-T1,item,jacket_army,dda,1,1,coat_rain,profession sgn_veteran; item_group coats_unisex; item_group costume_jackets
+T1,item,jacket_army,dda,1,1,coat_rain,item_group sgn_palace_bunker; profession sgn_veteran; item_group coats_unisex
 T1,item,jeans,dda,1,1,jeans,item_group default_zombie_clothes; profession sgn_student; item_group pants_male
 T1,item,jerrycan,dda,1,1,,item_group supplies_plumbing; item_group sgn_moto_shop; profession sgn_market_trader
 T1,item,jumper_cable,dda,1,1,,item_group tools_common_small; profession sgn_mechanic; item_group road
@@ -82,10 +84,10 @@ T1,item,screwdriver,dda,1,1,,item_group toy_radio_car; item_group tools_common_s
 T1,item,sgn_ao_mua_canh_doi,mod,1,1,coat_winter,item_group default_zombie_clothes; item_group sgn_drops_xe_om; item_group sgn_shophouse_living
 T1,item,sgn_bep_ga_mini,mod,1,1,esbit_stove,item_group sgn_shophouse_kitchen; item_group sgn_street_cart; data/mods/saigon_2000s/items/gear/gear.json
 T1,item,sgn_book_nursing,mod,1,1,radio_book,item_group sgn_pharmacy; data/mods/saigon_2000s/items/books/skill_books.json; profession sgn_nurse
-T1,item,sgn_dep_to_ong,mod,1,1,sneakers,item_group default_zombie_clothes; item_group sgn_shophouse_living; data/mods/saigon_2000s/items/gear/gear.json
+T1,item,sgn_dep_to_ong,mod,1,1,sneakers,item_group default_zombie_clothes; item_group sgn_shophouse_living; item_group sgn_cho_cloth
 T1,item,sgn_newspaper,mod,1,1,newest_newspaper,item_group sgn_shophouse_living; item_group sgn_cafe; item_group sgn_ward_office
 T1,item,sgn_non_bao_hiem,mod,1,1,hat_cotton,item_group default_zombie_clothes; item_group sgn_drops_xe_om; item_group sgn_shophouse_living
-T1,item,sgn_non_la,mod,1,1,hat_cotton,item_group default_zombie_clothes; item_group sgn_shophouse_living; data/mods/saigon_2000s/items/gear/gear.json
+T1,item,sgn_non_la,mod,1,1,hat_cotton,item_group default_zombie_clothes; item_group sgn_shophouse_living; item_group sgn_cho_cloth
 T1,item,sgn_vang_chi,mod,1,1,gold_small,item_group sgn_gold_shop; data/mods/saigon_2000s/items/currency.json; item_group sgn_wallet
 T1,item,shorts,dda,1,1,boxer_briefs,item_group default_zombie_clothes; profession sgn_fisherman; item_group pants_male
 T1,item,sneakers,dda,1,1,dress_shoes,item_group default_zombie_clothes; item_group postman_gear; profession sgn_nurse
@@ -136,6 +138,161 @@ T1,overmap_terrain,sgn_hem_block,mod,1-4 (rotated),1-4,house,data/mods/saigon_20
 T1,overmap_terrain,sgn_hem_block_roof,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/hem.json
 T1,overmap_terrain,sgn_kenh,mod,1-4 (rotated),1-4,generic_water,data/mods/saigon_2000s/overmap/kenh.json
 T1,overmap_terrain,sgn_kenh_roof,mod,1-4 (rotated),1-4,generic_water,data/mods/saigon_2000s/overmap/kenh.json
+T1,overmap_terrain,sgn_lm_ben_thanh_00,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_00_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_00_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_00_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_01,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_01_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_01_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_01_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_02,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_02_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_02_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_02_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_10,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_10_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_10_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_10_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_11,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_11_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_11_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_11_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_12,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_12_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_12_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_12_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_20,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_20_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_20_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_20_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_21,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_21_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_21_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_21_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_22,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_22_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_22_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ben_thanh_22_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_buu_dien_00,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_buu_dien_00_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_buu_dien_01,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_buu_dien_01_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_buu_dien_10,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_buu_dien_10_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_buu_dien_11,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_buu_dien_11_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_buu_dien_20,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_buu_dien_20_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_buu_dien_21,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_buu_dien_21_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_00,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_00_b,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_00_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_00_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_00_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_01,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_01_b,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_01_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_01_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_01_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_02,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_02_b,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_02_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_02_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_02_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_10,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_10_b,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_10_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_10_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_10_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_11,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_11_b,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_11_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_11_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_11_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_12,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_12_b,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_12_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_12_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_12_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_20,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_20_b,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_20_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_20_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_20_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_21,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_21_b,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_21_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_21_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_21_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_22,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_22_b,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_22_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_22_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_22_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_00,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_00_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_00_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_00_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_00_z4,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_01,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_01_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_01_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_01_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_01_z4,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_02,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_02_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_02_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_02_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_02_z4,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_10,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_10_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_10_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_10_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_10_z4,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_11,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_11_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_11_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_11_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_11_z4,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_12,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_12_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_12_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_12_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_duc_ba_12_z4,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_nha_hat_00,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_nha_hat_00_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_nha_hat_01,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_nha_hat_01_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_nha_hat_10,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_nha_hat_10_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_nha_hat_11,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_nha_hat_11_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_00,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_00_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_00_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_00_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_01,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_01_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_01_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_01_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_10,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_10_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_10_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_10_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_11,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_11_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_11_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_11_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_20,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_20_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_20_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_20_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_21,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_21_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_21_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
+T1,overmap_terrain,sgn_lm_ubnd_tp_21_z3,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/saigon_landmarks.json
 T1,overmap_terrain,sgn_nh_solo_z0,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/nha_ong.json
 T1,overmap_terrain,sgn_nh_solo_z1,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/nha_ong.json
 T1,overmap_terrain,sgn_nh_solo_z2,mod,1-4 (rotated),1-4,house,data/mods/saigon_2000s/overmap/nha_ong.json
@@ -181,10 +338,14 @@ T1,terrain,t_sgn_gach_bong_1,mod,1-16 (connecting),1-6 (2 faces if wall),t_thcon
 T1,terrain,t_sgn_gach_bong_2,mod,1-16 (connecting),1-6 (2 faces if wall),t_thconc_floor,data/mods/saigon_2000s/furniture/terrain.json; palette sgn_nhaong
 T1,terrain,t_sgn_gach_bong_3,mod,1-16 (connecting),1-6 (2 faces if wall),t_thconc_floor,data/mods/saigon_2000s/furniture/terrain.json; palette sgn_nhaong; palette sgn_hem
 T1,terrain,t_sgn_gach_bong_4,mod,1-16 (connecting),1-6 (2 faces if wall),t_thconc_floor,data/mods/saigon_2000s/furniture/terrain.json; palette sgn_nhaong
+T1,terrain,t_sgn_gach_do,mod,1-16 (connecting),1-6 (2 faces if wall),t_abstract_wall,data/mods/saigon_2000s/furniture/terrain.json
 T1,terrain,t_sgn_gach_men,mod,1-16 (connecting),1-6 (2 faces if wall),t_thconc_floor,data/mods/saigon_2000s/furniture/terrain.json; palette sgn_nhaong; palette sgn_hem
 T1,terrain,t_sgn_hem_xi_mang,mod,1-16 (connecting),1-6 (2 faces if wall),t_pavement,data/mods/saigon_2000s/furniture/terrain.json; palette sgn_hem
 T1,terrain,t_sgn_mai_ngoi,mod,1-16 (connecting),1-6 (2 faces if wall),t_pavement,data/mods/saigon_2000s/furniture/terrain.json
 T1,terrain,t_sgn_mai_ton,mod,1-16 (connecting),1-6 (2 faces if wall),t_scrap_floor,data/mods/saigon_2000s/furniture/terrain.json
+T1,terrain,t_sgn_ngap_duong,mod,1-16 (connecting),1-6 (2 faces if wall),t_water_sh,data/mods/saigon_2000s/region/flood.json
+T1,terrain,t_sgn_ngap_hem,mod,1-16 (connecting),1-6 (2 faces if wall),t_water_sh,data/mods/saigon_2000s/region/flood.json
+T1,terrain,t_sgn_ngap_le,mod,1-16 (connecting),1-6 (2 faces if wall),t_water_sh,data/mods/saigon_2000s/region/flood.json
 T1,terrain,t_sgn_shrub_hoa_giay,mod,1-16 (connecting),1-6 (2 faces if wall),t_shrub_abstract,data/mods/saigon_2000s/region/flora.json
 T1,terrain,t_sgn_shrub_khoai_mi,mod,1-16 (connecting),1-6 (2 faces if wall),t_shrub_abstract,data/mods/saigon_2000s/region/flora.json
 T1,terrain,t_sgn_shrub_ngu_sac,mod,1-16 (connecting),1-6 (2 faces if wall),t_shrub_abstract,data/mods/saigon_2000s/region/flora.json
@@ -255,6 +416,7 @@ T1,vehicle_part,wood box,dda,1 (rotates),4,f_crate_o,vehicle sgn_veh_xuong; vehi
 T1,vehicle_part,xlframe,dda,1 (rotates),4,frame_abstract,vehicle sgn_veh_underbone; vehicle sgn_veh_ba_gac_may; vehicle sgn_veh_xich_lo
 T2,item,banana,dda,1,1,,item_group sgn_cho_stall_produce; item_group lunchbox_fruit
 T2,item,beer,dda,1,1,water_clean,item_group sgn_karaoke
+T2,item,binoculars,dda,1,1,,item_group tools_survival; item_group hiking; item_group sgn_palace_bunker
 T2,item,butane,dda,1,1,,item_group sgn_shophouse_kitchen; item_group sgn_street_cart
 T2,item,butane_can,dda,1,1,spray_can,item_group tools_survival; item_group default_zombie_items_pockets; item_group sgn_shophouse_kitchen
 T2,item,candle,dda,1,1,,item_group tools_lighting; item_group sgn_shophouse_living; item_group sgn_pagoda
@@ -262,34 +424,40 @@ T2,item,cash_card,dda,1,1,card_plastic_abstract,item_group sgn_shophouse_living
 T2,item,coconut,dda,1,1,,item_group sgn_cho_stall_produce
 T2,item,coffee_raw,dda,1,1,,item_group sgn_shophouse_kitchen; item_group sgn_cafe
 T2,item,con_milk,dda,1,1,,item_group sgn_shophouse_kitchen; item_group sgn_cafe
+T2,item,cotton_patchwork,dda,1,1,,item_group sgn_cho_cloth; item_group SUS_trash_floor_light; item_group SUS_trash_floor_heavy
 T2,item,diamond_ring,dda,1,1,ring_engagement,item_group rings_gold; item_group jewelry_front; item_group sgn_gold_shop
 T2,item,dry_rice,dda,1,1,,item_group dollar_food; item_group dry_rice_bag_plastic_full; item_group sgn_shophouse_kitchen
 T2,item,e_scrap,dda,1,1,,item_group sgn_net_cafe; item_group SUS_trash_electrical
 T2,item,egg_chicken,dda,1,1,,item_group sgn_shophouse_kitchen; item_group sgn_cho_stall_produce
+T2,item,envelope,dda,1,1,paper,item_group postman_carried; item_group sgn_post_office
 T2,item,fish,dda,1,1,flesh,item_group sgn_cho_stall_meat_fish
+T2,item,flashlight,dda,1,1,,item_group tools_lighting; item_group hiking; item_group camping_lighting_electric
 T2,item,gasoline,dda,1,1,,item_group sgn_moto_shop
 T2,item,gold_ring,dda,1,1,,item_group bugout_memento; item_group rings_gold; item_group jewelry_front
 T2,item,gold_watch,dda,1,1,,item_group bugout_memento; item_group jewelry_front; item_group sgn_gold_shop
+T2,item,helmet_army,dda,1,1,hat_ball,item_group sgn_palace_bunker
 T2,item,holy_symbol,dda,1,1,,item_group bugout_memento; item_group jewelry_front; item_group sgn_church
 T2,item,holybook_bible1,dda,1,1,radio_book,item_group SUS_book_nonf_hard_spirit; item_group sgn_church
 T2,item,holybook_catechism,dda,1,1,radio_book,item_group sgn_church
 T2,item,laptop,dda,1,1,abstract_laptop,item_group sgn_net_cafe; item_group civilian_laptops
 T2,item,mango,dda,1,1,,item_group sgn_cho_stall_produce
 T2,item,meat,dda,1,1,flesh,item_group sgn_cho_stall_meat_fish
+T2,item,mre_beef,dda,1,1,mre_beef,item_group sgn_palace_bunker
+T2,item,mre_veggy,dda,1,1,mre_beef,item_group sgn_palace_bunker
 T2,item,papaya,dda,1,1,,item_group sgn_cho_stall_produce
-T2,item,paper,dda,1,1,,item_group sgn_ward_office; item_group sgn_school; item_group SUS_trash_floor_light
+T2,item,paper,dda,1,1,,item_group sgn_ward_office; item_group sgn_school; item_group sgn_post_office
 T2,item,pen,dda,1,1,,item_group pens; item_group sgn_ward_office; item_group sgn_school
 T2,item,pencil,dda,1,1,survival_marker,item_group writing_utensils; item_group sgn_school
 T2,item,processor,dda,1,1,,item_group sgn_net_cafe
 T2,item,ring_engagement,dda,1,1,,item_group jewelry_front; item_group sgn_gold_shop; item_group accesories_personal_womens
 T2,item,ring_wedding,dda,1,1,,item_group default_zombie_clothes; item_group jewelry_front; item_group sgn_gold_shop
 T2,item,salt,dda,1,1,spice,item_group salt_bottle_plastic_small; item_group salt_bottle_glass_small; item_group salt_bottle_plastic
-T2,item,sgn_ao_ba_ba,mod,1,1,dress_shirt,item_group default_zombie_clothes; item_group sgn_shophouse_living; data/mods/saigon_2000s/items/gear/gear.json
+T2,item,sgn_ao_ba_ba,mod,1,1,dress_shirt,item_group default_zombie_clothes; item_group sgn_shophouse_living; item_group sgn_cho_cloth
 T2,item,sgn_ao_cong_an,mod,1,1,buttonshirt,item_group sgn_ward_office; data/mods/saigon_2000s/items/gear/clothing.json
-T2,item,sgn_ao_dai_mau,mod,1,1,coat_rain,item_group sgn_shophouse_living; data/mods/saigon_2000s/items/gear/clothing.json
-T2,item,sgn_ao_dai_trang,mod,1,1,coat_rain,item_group sgn_shophouse_living; data/mods/saigon_2000s/items/gear/clothing.json
-T2,item,sgn_ao_khoac_chong_nang,mod,1,1,jacket_light,item_group default_zombie_clothes; item_group sgn_shophouse_living; data/mods/saigon_2000s/items/gear/clothing.json
-T2,item,sgn_ao_thun,mod,1,1,camisole,item_group default_zombie_clothes; item_group sgn_shophouse_living; data/mods/saigon_2000s/items/gear/clothing.json
+T2,item,sgn_ao_dai_mau,mod,1,1,coat_rain,item_group sgn_shophouse_living; item_group sgn_cho_cloth; data/mods/saigon_2000s/items/gear/clothing.json
+T2,item,sgn_ao_dai_trang,mod,1,1,coat_rain,item_group sgn_shophouse_living; item_group sgn_cho_cloth; data/mods/saigon_2000s/items/gear/clothing.json
+T2,item,sgn_ao_khoac_chong_nang,mod,1,1,jacket_light,item_group default_zombie_clothes; item_group sgn_shophouse_living; item_group sgn_cho_cloth
+T2,item,sgn_ao_thun,mod,1,1,camisole,item_group default_zombie_clothes; item_group sgn_shophouse_living; item_group sgn_cho_cloth
 T2,item,sgn_ao_trang_hoc_sinh,mod,1,1,buttonshirt,item_group sgn_shophouse_living; item_group sgn_school; data/mods/saigon_2000s/items/gear/clothing.json
 T2,item,sgn_banh_bao,mod,1,1,flatbread,item_group sgn_street_cart; data/mods/saigon_2000s/items/food/street_food_2.json
 T2,item,sgn_banh_chung,mod,1,1,dry_rice,item_group sgn_shophouse_kitchen; item_group sgn_pagoda; data/mods/saigon_2000s/items/food/street_food.json
@@ -321,9 +489,9 @@ T2,item,sgn_dao_rua,mod,1,1,machete,item_group sgn_drops_vendor; item_group sgn_
 T2,item,sgn_dau_gio,mod,1,1,aspirin,item_group sgn_shophouse_living; item_group sgn_pharmacy; data/mods/saigon_2000s/items/gear/household.json
 T2,item,sgn_den_dau,mod,1,1,oil_lamp,item_group sgn_shophouse_living; data/mods/saigon_2000s/items/gear/household.json
 T2,item,sgn_dep_lao,mod,1,1,sneakers,item_group default_zombie_clothes; item_group sgn_shophouse_living; data/mods/saigon_2000s/items/gear/clothing.json
-T2,item,sgn_dien_thoai,mod,1,1,cell_phone,item_group sgn_shophouse_living; item_group sgn_net_cafe; data/mods/saigon_2000s/items/gear/household.json
+T2,item,sgn_dien_thoai,mod,1,1,cell_phone,item_group sgn_shophouse_living; item_group sgn_net_cafe; item_group sgn_post_office
 T2,item,sgn_dong_100k,mod,1,1,money_one,item_group sgn_dong_notes; data/mods/saigon_2000s/items/currency.json
-T2,item,sgn_dong_10k,mod,1,1,money_one,item_group sgn_dong_notes; item_group sgn_ward_office; data/mods/saigon_2000s/items/currency.json
+T2,item,sgn_dong_10k,mod,1,1,money_one,item_group sgn_dong_notes; item_group sgn_ward_office; item_group sgn_post_office
 T2,item,sgn_dong_50k,mod,1,1,money_one,item_group sgn_dong_notes; data/mods/saigon_2000s/items/currency.json
 T2,item,sgn_durian,mod,1,1,mango,item_group sgn_cho_stall_produce; data/mods/saigon_2000s/items/food/street_food.json
 T2,item,sgn_engine_110cc_item,mod,1,1,engine_combustion,item_group sgn_moto_shop; data/mods/saigon_2000s/vehicles/vehicle_parts.json
@@ -350,7 +518,7 @@ T2,item,sgn_oresol,mod,1,1,spice,item_group sgn_pharmacy; data/mods/saigon_2000s
 T2,item,sgn_phin,mod,1,1,,item_group sgn_shophouse_kitchen; item_group sgn_cafe; data/mods/saigon_2000s/items/gear/kitchen.json
 T2,item,sgn_pho_bo,mod,1,1,water_clean,data/mods/saigon_2000s/items/food/street_food.json
 T2,item,sgn_quan_cong_an,mod,1,1,jeans,data/mods/saigon_2000s/items/gear/clothing.json
-T2,item,sgn_quan_tay,mod,1,1,jeans,item_group default_zombie_clothes; item_group sgn_shophouse_living; data/mods/saigon_2000s/items/gear/clothing.json
+T2,item,sgn_quan_tay,mod,1,1,jeans,item_group default_zombie_clothes; item_group sgn_shophouse_living; item_group sgn_cho_cloth
 T2,item,sgn_quang_ganh,mod,1,1,ragpouch,item_group sgn_cho_stall_produce; data/mods/saigon_2000s/items/gear/work_trade.json
 T2,item,sgn_quat_may,mod,1,1,fan,item_group sgn_shophouse_living; data/mods/saigon_2000s/items/gear/household.json
 T2,item,sgn_radio_cassette,mod,1,1,radio,item_group sgn_shophouse_living; data/mods/saigon_2000s/items/gear/household.json
@@ -366,16 +534,18 @@ T2,item,sgn_thuoc_la,mod,1,1,cig,item_group sgn_shophouse_living; item_group sgn
 T2,item,sgn_tom_kho,mod,1,1,flesh,item_group sgn_cho_stall_meat_fish; data/mods/saigon_2000s/items/food/street_food_2.json
 T2,item,sgn_tra_da,mod,1,1,water_clean,item_group sgn_cafe; data/mods/saigon_2000s/items/food/drinks_condiments.json
 T2,item,sgn_tuong_ot,mod,1,1,hot_sauce,item_group sgn_shophouse_kitchen; item_group sgn_street_cart; data/mods/saigon_2000s/items/food/drinks_condiments.json
+T2,item,sgn_ung_cao_su,mod,1,1,shoes_bowling,item_group default_zombie_clothes; item_group sgn_shophouse_living; item_group sgn_cho_stall_meat_fish
 T2,item,sgn_vang_luong,mod,1,1,gold_small,item_group sgn_shophouse_living; item_group sgn_gold_shop; data/mods/saigon_2000s/items/gear/work_trade.json
-T2,item,sgn_ve_so,mod,1,1,,item_group sgn_shophouse_living; item_group sgn_street_cart; data/mods/saigon_2000s/items/gear/work_trade.json
-T2,item,sgn_ward_notice,mod,1,1,newest_newspaper,item_group sgn_shophouse_living; item_group sgn_ward_office; data/mods/saigon_2000s/items/books/fiction_media.json
+T2,item,sgn_ve_so,mod,1,1,,item_group sgn_shophouse_living; item_group sgn_street_cart; item_group sgn_post_office
+T2,item,sgn_ward_notice,mod,1,1,newest_newspaper,item_group sgn_shophouse_living; item_group sgn_ward_office; item_group sgn_palace_bunker
 T2,item,sgn_xa_beng,mod,1,1,crowbar,item_group sgn_moto_shop; data/mods/saigon_2000s/items/gear/work_trade.json
 T2,item,sgn_xoi,mod,1,1,dry_rice,item_group sgn_street_cart; item_group sgn_school; data/mods/saigon_2000s/items/food/street_food_2.json
+T2,item,sheet_cotton,dda,1,1,,item_group sgn_cho_cloth; item_group SUS_trash_sewing
 T2,item,silver_necklace,dda,1,1,,item_group pendant_necklaces_silver; item_group jewelry_front; item_group sgn_gold_shop
 T2,item,sugar,dda,1,1,,item_group sgn_shophouse_kitchen; item_group sgn_cafe
 T2,item,tea_raw,dda,1,1,,item_group tea_raw_bag_plastic_33; item_group sgn_shophouse_kitchen; item_group sgn_cafe
 T2,item,textbook_firstaid,dda,1,1,,item_group sgn_school
-T2,item,two_way_radio,dda,1,1,,item_group sgn_drops_cong_an; item_group charged_two_way_radio
+T2,item,two_way_radio,dda,1,1,,item_group sgn_drops_cong_an; item_group sgn_palace_bunker; item_group charged_two_way_radio
 T2,item,wallet,dda,1,1,bag_canvas,item_group wallet_full; item_group wallet_industrial_full; item_group sgn_wallet
 T3,item,10gal_hat,dda,1,1,hat_ball,item_group hiking; item_group hatstore_hats
 T3,item,10mm_ammo_box_20,dda,1,1,box_small,item_group boxed_10mm_20_used; item_group boxed_10mm_20
@@ -738,7 +908,6 @@ T3,item,bigback,dda,1,1,ragpouch,item_group large_bags
 T3,item,bikini_bottom,dda,1,1,boxer_shorts,item_group female_underwear_bottom
 T3,item,bikini_top,dda,1,1,tank_top,item_group female_underwear_top_child
 T3,item,binder_top,dda,1,1,camisole,item_group male_underwear_top; item_group female_underwear_top
-T3,item,binoculars,dda,1,1,,item_group tools_survival; item_group hiking; item_group accesories_personal_unisex_child
 T3,item,birdfood,dda,1,1,,item_group pet_food_in_container
 T3,item,birth_control,dda,1,1,,item_group birth_control
 T3,item,black_pen,dda,1,1,pen,item_group pens
@@ -1150,7 +1319,6 @@ T3,item,corpse_generic_male,dda,1,1,corpse,item_group everyday_corpse_male
 T3,item,corset,dda,1,1,camisole,item_group female_underwear_top
 T3,item,corset_waist,dda,1,1,tshirt,item_group female_underwear_top
 T3,item,cotton_ball,dda,1,1,,item_group cotton_ball_bag_full; item_group cotton_ball_bag_used; item_group SUS_trash_trashcan_full
-T3,item,cotton_patchwork,dda,1,1,,item_group SUS_trash_floor_light; item_group SUS_trash_floor_heavy; item_group SUS_trash_sewing
 T3,item,cow_candy,dda,1,1,candy2,item_group cow_candy_bag_plastic_3
 T3,item,cowboy_hat,dda,1,1,hat_cotton,item_group hiking; item_group hatstore_hats; item_group costume_hats_hoods
 T3,item,cowrie_hair_beads,dda,1,1,hat_cotton,item_group jewelry_front
@@ -1284,7 +1452,6 @@ T3,item,emerald_silver_ring,dda,1,1,silver_ring,item_group rings_silver
 T3,item,emerald_silver_tiara,dda,1,1,hat_ball,item_group tiaras_silver
 T3,item,enfield_303mag,dda,1,1,stanag30,item_group nested_number4; item_group nested_mk3
 T3,item,enfield_bayonet,dda,1,1,,item_group nested_number4
-T3,item,envelope,dda,1,1,paper,item_group postman_carried
 T3,item,eraser,dda,1,1,,item_group SUS_trash_trashcan_full
 T3,item,esapi_plate,dda,1,1,,item_group pristine_esapi_front_plates
 T3,item,esbit_stove,dda,1,1,,item_group tools_survival; item_group hiking; item_group camping_cooking
@@ -1315,7 +1482,6 @@ T3,item,fitness_band,dda,1,1,,item_group clothing_watch
 T3,item,fitover_sunglasses,dda,1,1,glasses_eye,item_group clothing_glasses
 T3,item,five-point_harness,dda,1,1,spare_part,item_group road
 T3,item,flaregun,dda,1,1,gun_base_handgun_semi,item_group tools_survival; item_group hiking
-T3,item,flashlight,dda,1,1,,item_group tools_lighting; item_group hiking; item_group camping_lighting_electric
 T3,item,flask_hip,dda,1,1,bottle_plastic,item_group flask_liquor
 T3,item,flatbread,dda,1,1,,item_group flatbread_in_bag_full
 T3,item,flint_steel,dda,1,1,,item_group tools_survival; item_group hiking; item_group used_survival_kit
@@ -2343,7 +2509,6 @@ T3,item,shears,dda,1,1,,item_group tools_earthworking
 T3,item,sheath,dda,1,1,holster,item_group camping_blades; item_group accessory_weaponcarry
 T3,item,shed_stick,dda,1,1,,item_group tools_tailor
 T3,item,sheet_canvas,dda,1,1,,item_group SUS_trash_sewing
-T3,item,sheet_cotton,dda,1,1,,item_group SUS_trash_sewing
 T3,item,sheet_felt,dda,1,1,,item_group SUS_trash_sewing
 T3,item,sheet_kevlar,dda,1,1,,item_group SUS_trash_sewing
 T3,item,sheet_lycra,dda,1,1,,item_group SUS_trash_sewing
