@@ -1,0 +1,12 @@
+{
+ "fg": [
+  {
+   "weight": 3,
+   "sprite": "@t_sgn_mai_ngoi"
+  },
+  {
+   "weight": 1,
+   "sprite": "@t_sgn_mai_ngoi__old"
+  }
+ ]
+}

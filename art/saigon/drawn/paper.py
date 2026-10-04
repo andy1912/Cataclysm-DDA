@@ -190,3 +190,13 @@ def note( c ):
             c.line( x, y - 1, min( x + word, 14 - i ), y - 1, rgb( '#3050a8' ) )
             x += word + 2
     finish( c )
+
+
+@sprite( 'holybook_catechism', 20, 20 )
+def catechism( c ):
+    # a small black catechism with a gold cross, as kept in church pews
+    x0, y0, x1, y1 = book( c, rgb( '#2a2a30' ), thick=3, x0=5, y0=5, w=10, h=11 )
+    cx = ( x0 + x1 ) // 2
+    c.line( cx, y0 + 2, cx, y1 - 1, rgb( '#e8c040' ) )
+    c.line( cx - 2, y0 + 4, cx + 2, y0 + 4, rgb( '#e8c040' ) )
+    finish( c )

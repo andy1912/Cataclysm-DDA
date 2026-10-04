@@ -190,3 +190,22 @@ def ring_wedding( c ):
     c.polygon( [ ( 8.5, 9 ), ( 11.5, 9 ), ( 10, 6.5 ) ], rgb( '#e8f4fa' ) )
     c.px( 9, 8, rgb( '#ffffff' ) )
     finish( c )
+
+
+@sprite( 'wood_block', 20, 20 )
+def wood_block( c ):
+    # a short sawn block of wood, end grain showing (debris of smashed furniture)
+    c.rect( 5, 9, 14, 14, rgb( '#a8784a' ) )
+    c.rect( 5, 9, 14, 9, rgb( '#c8986a' ) )
+    c.ellipse( 14, 11.5, 1.6, 2.6, rgb( '#d8b07a' ) )
+    c.ring( 14, 11.5, 1.2, 2, rgb( '#a8784a' ), 0.6 )
+    finish( c )
+
+
+@sprite( 'wooden_post_short', 20, 20 )
+def wooden_post_short( c ):
+    # a broken chair or table leg
+    c.line( 4, 15, 14, 5, rgb( '#8a5a32' ) )
+    c.line( 5, 15, 15, 5, rgb( '#b07a48' ) )
+    c.line( 14, 4, 16, 5, rgb( '#d8b07a' ) )                     # splintered end
+    finish( c )

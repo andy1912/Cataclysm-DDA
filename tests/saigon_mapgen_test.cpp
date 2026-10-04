@@ -747,3 +747,50 @@ TEST_CASE( "saigon_kenh_structure", "[mapgen][saigon]" )
         tm.delete_unmerged_submaps();
     }
 }
+
+// B8h landmarks (tools/saigon/gen_landmarks.py): every door is reachable from the street
+// gate and every building tile has its roof at z1.
+TEST_CASE( "saigon_landmarks_structure", "[mapgen][saigon]" )
+{
+    if( !oter_str_id( "sgn_nha_tho_north" ).is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    const ter_str_id open_air( "t_open_air" );
+    for( const std::string id : { "sgn_nha_tho", "sgn_ubnd", "sgn_truong" } ) {
+        CAPTURE( id );
+        sgn_clear_map_and_reset_player();
+        const tripoint_abs_omt pos( 120, 120, 0 );
+        overmap_buffer.ter_set( pos, oter_str_id( id + "_north" ).id() );
+        overmap_buffer.ter_set( pos + tripoint::above, oter_str_id( id + "_roof_north" ).id() );
+        rng_set_engine_seed( 7 );
+        MAPBUFFER.clear_outside_reality_bubble();
+        smallmap tm;
+        tm.generate( pos, calendar::turn, false, true );
+        map &m = *tm.cast_to_map();
+        const std::set<point> reach = reachable_through_doors( m, point( 11, 1 ), 0 );
+        int doors = 0;
+        int doors_reached = 0;
+        int indoor = 0;
+        int roofed = 0;
+        for( int x = 0; x < SEEX * 2; x++ ) {
+            for( int y = 0; y < SEEY * 2; y++ ) {
+                const tripoint_bub_ms p( x, y, 0 );
+                if( is_door( m, p ) ) {
+                    doors++;
+                    doors_reached += reach.count( point( x, y ) );
+                }
+                const ter_t &t = m.ter( p ).obj();
+                if( t.has_flag( ter_furn_flag::TFLAG_INDOORS ) ) {
+                    indoor++;
+                    roofed += m.ter( tripoint_bub_ms( x, y, 1 ) ) != open_air.id();
+                }
+            }
+        }
+        CHECK( doors > 0 );
+        CHECK( doors_reached == doors );
+        CHECK( indoor > 100 );
+        CHECK( roofed == indoor );
+        tm.delete_unmerged_submaps();
+    }
+}

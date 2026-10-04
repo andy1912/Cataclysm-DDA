@@ -76,13 +76,13 @@ TEST_CASE( "saigon_scene_dump", "[.][saigon_scene]" )
     }
     clear_overmaps();
     clear_avatar();
-    // street on top, buildings fronting it, a chợ and a canal below, some green
+    // street on top, buildings fronting it, a chợ, a canal and the landmarks below
     const tripoint_abs_omt base( 200, 200, 0 );
     const std::vector<std::vector<std::string>> layout = {
         { "road_ew", "road_ew", "road_ew", "road_ew", "road_ew" },
         { "sgn_nh_solo", "sgn_nh_solo", "sgn_hem_block", "sgn_chungcu", "sgn_chua" },
         { "sgn_cho_nw", "sgn_cho_ne", "sgn_kenh", "sgn_kenh", "sgn_kenh" },
-        { "sgn_cho_sw", "sgn_cho_se", "forest", "field", "field" },
+        { "sgn_cho_sw", "sgn_cho_se", "sgn_nha_tho", "sgn_ubnd", "sgn_truong" },
     };
     for( size_t y = 0; y < layout.size(); y++ ) {
         for( size_t x = 0; x < layout[y].size(); x++ ) {
@@ -98,7 +98,8 @@ TEST_CASE( "saigon_scene_dump", "[.][saigon_scene]" )
                 overmap_buffer.ter_set( pos, oter_str_id( rotatable ? id + "_north" : id ).id() );
                 const std::string roof = id.rfind( "sgn_cho_", 0 ) == 0 ? "sgn_cho_roof_" + id.substr( 8 ) :
                                          id == "sgn_hem_block" ? "sgn_hem_block_roof" : id == "sgn_chua" ? "sgn_chua_roof" :
-                                         id == "sgn_kenh" ? "sgn_kenh_roof" : "";
+                                         id == "sgn_kenh" ? "sgn_kenh_roof" : id == "sgn_nha_tho" || id == "sgn_ubnd" ||
+                                         id == "sgn_truong" ? id + "_roof" : "";
                 if( !roof.empty() ) {
                     overmap_buffer.ter_set( pos + tripoint::above, oter_str_id( roof + "_north" ).id() );
                 }

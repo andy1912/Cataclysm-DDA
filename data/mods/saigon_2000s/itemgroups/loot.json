@@ -343,5 +343,49 @@
       { "item": "sgn_thuoc_la", "prob": 25, "count": [ 1, 8 ] },
       { "item": "sgn_ly_nhua", "prob": 15 }
     ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_church",
+    "subtype": "distribution",
+    "//": "B8h nhà thờ altar and pews.",
+    "items": [
+      { "item": "holybook_catechism", "prob": 30 },
+      { "item": "holybook_bible1", "prob": 20 },
+      { "item": "holy_symbol", "prob": 25, "variant": "cross_necklace" },
+      { "item": "sgn_nen", "prob": 50, "count": [ 1, 4 ] },
+      { "item": "candle", "prob": 20 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_ward_office",
+    "subtype": "distribution",
+    "//": "B8h UBND phường desks and cabinets.",
+    "items": [
+      { "item": "sgn_ward_notice", "prob": 60, "count": [ 1, 5 ] },
+      { "item": "sgn_newspaper", "prob": 25 },
+      { "item": "paper", "prob": 40, "count": [ 5, 20 ] },
+      { "item": "pen", "prob": 40 },
+      { "item": "sgn_dong_10k", "prob": 15, "count": [ 1, 5 ] },
+      { "item": "sgn_ao_cong_an", "prob": 5 },
+      { "item": "sgn_khau_trang", "prob": 20 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_school",
+    "subtype": "distribution",
+    "//": "B8h trường học desks.",
+    "items": [
+      { "item": "textbook_speech", "prob": 10 },
+      { "item": "textbook_firstaid", "prob": 8 },
+      { "item": "paper", "prob": 40, "count": [ 3, 10 ] },
+      { "item": "pencil", "prob": 40 },
+      { "item": "pen", "prob": 20 },
+      { "item": "sgn_khan_quang_do", "prob": 15 },
+      { "item": "sgn_ao_trang_hoc_sinh", "prob": 8 },
+      { "item": "sgn_xoi", "prob": 8 }
+    ]
   }
 ]

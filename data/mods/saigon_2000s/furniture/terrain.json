@@ -103,5 +103,23 @@
     "name": "corrugated metal roof",
     "description": "Mái tôn: corrugated iron sheets nailed over a shack, rusted at the seams and weighted down with old tyres against the monsoon wind.  Rain on it is deafening.",
     "color": "light_blue"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_tuong_hong",
+    "copy-from": "t_brick_wall",
+    "looks_like": "t_brick_wall",
+    "name": "pink stucco wall",
+    "description": "Thick colonial-era masonry rendered in a candy-pink stucco, the colour Saigon's churches are famous for.",
+    "color": "pink"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_mai_ngoi",
+    "copy-from": "t_metal_roof",
+    "looks_like": "t_shingle_flat_roof",
+    "name": "terracotta tile roof",
+    "description": "Mái ngói: overlapping red clay roof tiles on a timber frame, mossy in the gutters.",
+    "color": "light_red"
   }
 ]
