@@ -28,9 +28,9 @@ Research date: 2026-10-04 (web sources at the end). **Period rule:** only places
 | 4 | **Nhà hát Thành phố** (Municipal Theatre / Opera House) | 1898–1900 | Lam Sơn square, beside the Continental Hotel (1880) | 2 × 2 | Cream façade with a **great arched entrance**, a horseshoe auditorium of seat rows, a stage | Quiet loot; the stage | **L1** |
 | 5 | **UBND Thành phố** (City Hall, ex-Hôtel de Ville) | 1898–1908 | Beaux-Arts, at the head of Nguyễn Huệ boulevard; Hồ Chí Minh statue in the small park in front | 3 × 2 | **Yellow façade with a central clock tower**, an inner courtyard, office wings, the statue on the plaza | Official documents; city keys (lore) | **L1** |
 | 6 | **Dinh Độc Lập / Hội trường Thống Nhất** (Independence / Reunification Palace) | 1962–1966 | 12 ha grounds; the building is 80 m wide; **oval front lawn of 102 m**; at the end of Lê Duẩn; bunker below | 3 × 3 | Gate and fence on the street, **oval lawn with a fountain**, the long modernist palace with concrete brise-soleil fins, a bunker at z−1 | A fortress; the bunker's war-room loot | **L1** |
-| 7 | **Chợ Bình Tây** (Bình Tây Market, Chợ Lớn) | 1928–1930 | Bagua-style hall around a **central courtyard** with a fountain | 3 × 3 | Courtyard ringed by stalls, tiled roofs, Chinese-Vietnamese wholesale goods | Bulk food and goods | L2 |
-| 8 | **Chùa Bà Thiên Hậu** (Thiên Hậu Temple, Chợ Lớn) | c. 1760 | Courtyard temple, **incense coils hanging from the ceiling** | 2 × 2 | Courtyards, red-and-gold altars, hanging incense spirals | Incense and candles; sanctuary | L2 |
-| 9 | **Chùa Ngọc Hoàng** (Jade Emperor Pagoda, Đa Kao) | 1909 | Taoist temple, dark smoky halls full of statues, a turtle pond | 2 × 2 | Turtle pond, statue halls | Atmosphere; a few valuables | L2 |
+| 7 | **Chợ Bình Tây** (Bình Tây Market, Chợ Lớn) | 1928–1930 | Bagua-style hall around a **central courtyard** with a fountain | 3 × 3 | Courtyard ringed by stalls, tiled roofs, Chinese-Vietnamese wholesale goods | Bulk food and goods | **L2** ✓ |
+| 8 | **Chùa Bà Thiên Hậu** (Thiên Hậu Temple, Chợ Lớn) | c. 1760 | Courtyard temple, **incense coils hanging from the ceiling** | 2 × 2 | Courtyards, red-and-gold altars, hanging incense spirals | Incense and candles; sanctuary | **L2** ✓ |
+| 9 | **Chùa Ngọc Hoàng** (Jade Emperor Pagoda, Đa Kao) | 1909 | Taoist temple, dark smoky halls full of statues, a turtle pond | 2 × 2 | Turtle pond, statue halls | Atmosphere; a few valuables | **L2** ✓ |
 | 10 | **Nhà thờ Tân Định** (the pink church) | 1876; pink since 1957 | | — | Already covered by the generic pink `sgn_nha_tho` (B8h) | — | done |
 | 11 | **Ga Sài Gòn** (Saigon Railway Station) | 1978–1983 | 1 Nguyễn Thông, District 3; the southern terminus of the North–South line | 3 × 3 | Station hall, platforms, stalled trains | Way out north (lore); train scrap | L3 |
 | 12 | **Bến xe Miền Đông** (Eastern Bus Station) | Bình Thạnh, built 1985–1990, in its role from 1996 | Huge yard of coaches | 3 × 3 | Bus yard full of coaches, ticket hall | Vehicles, fuel, an evacuation-chaos story | L3 |
@@ -51,6 +51,24 @@ Generated ground floors, rendered with the mod tileset (`render_scene.py` on a `
 ![District 1 landmarks](art/scene_preview_district1.png)
 
 Each is `OVERMAP_UNIQUE`, so a city gets at most one of each. A landmark needs a city block deep enough for its footprint, so a 3×3 one can be missing from a given overmap (the first test overmap placed 4 of 6).
+
+## L2 as built
+
+Chùa Bà Thiên Hậu, Chùa Ngọc Hoàng, Chợ Bình Tây (left to right), ground floors:
+
+![Chợ Lớn landmarks](art/scene_preview_cholon.png)
+
+- **Thiên Hậu:** guardian lions in the forecourt; a gate hall of red lacquered pillars; the open courtyard
+  with the great bronze burner; side galleries; the main hall hung with incense coils that still smoulder;
+  the goddess's altar flanked by side altars. Green glazed roofs. Loot `sgn_temple`.
+- **Ngọc Hoàng:** a walled garden with the turtle pond and trees; a front hall of guardian statues; the
+  Jade Emperor's altar with his court along the wall; the dark Hall of the Ten Hells to the east, lined with
+  the judges.
+- **Bình Tây:** the clock-tower gate on the street; four wings of stalls (rice and grain by the sack,
+  produce, food stalls, household goods) around a garden courtyard with the founder's statue and the dragon
+  fountain. Terracotta roofs. Loot `sgn_cho_wholesale`.
+
+These three have a lower region weight than L1 (150), so a city still gets District 1 first.
 
 ## District 1 geography (for later, optional)
 The real District 1 core is compact: the cathedral faces the post office across Công xã Paris square, Lê Duẩn runs from the cathedral to the palace, and Đồng Khởi runs from the cathedral to the Opera House and the Continental on Lam Sơn square. City Hall heads Nguyễn Huệ, and Bến Thành sits on Quách Thị Trang roundabout at the end of Lê Lợi.

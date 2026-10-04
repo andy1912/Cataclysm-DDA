@@ -441,5 +441,45 @@
       { "item": "paper", "prob": 40, "count": [ 5, 20 ] },
       { "item": "sgn_ward_notice", "prob": 30, "count": [ 1, 3 ] }
     ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_temple",
+    "subtype": "distribution",
+    "//": "L2 Chợ Lớn temples (Thiên Hậu, Ngọc Hoàng): altars, offerings and the donation box.",
+    "items": [
+      { "item": "incense", "prob": 45, "count": [ 1, 3 ] },
+      { "item": "sgn_nen", "prob": 40, "count": [ 1, 4 ] },
+      { "item": "candle", "prob": 20 },
+      { "group": "sgn_dong_notes", "prob": 25, "count": [ 1, 3 ] },
+      { "item": "banana", "prob": 10 },
+      { "item": "mango", "prob": 8 },
+      { "item": "matches", "prob": 10 },
+      { "item": "lighter", "prob": 5 },
+      { "item": "tea_raw", "prob": 10 },
+      { "item": "sgn_banh_chung", "prob": 5 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_cho_wholesale",
+    "subtype": "distribution",
+    "//": "L2 Chợ Bình Tây wholesale stalls: dry goods by the sack and the carton.",
+    "items": [
+      { "item": "dry_rice", "prob": 40, "count": [ 5, 20 ] },
+      { "item": "sgn_mi_goi", "prob": 25, "count": [ 5, 20 ] },
+      { "item": "sugar", "prob": 15 },
+      { "item": "salt", "prob": 15 },
+      { "item": "sgn_tom_kho", "prob": 15 },
+      { "item": "sgn_kho_muc", "prob": 10 },
+      { "item": "sgn_ca_phe_bot", "prob": 15 },
+      { "item": "tea_raw", "prob": 15 },
+      { "item": "peanut_shelled", "prob": 15 },
+      { "item": "cooking_oil", "prob": 15 },
+      { "item": "sgn_nuoc_mam", "prob": 20 },
+      { "item": "noodles_fast", "prob": 10 },
+      { "item": "sgn_thau_nhua", "prob": 10 },
+      { "item": "sgn_ro_nhua", "prob": 10 }
+    ]
   }
 ]

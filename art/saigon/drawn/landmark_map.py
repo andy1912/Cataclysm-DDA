@@ -169,3 +169,82 @@ def dinh_doc_lap( c ):
     c.px( 33, 39, rgb( '#d04040' ) )
     c.px( 34, 39, rgb( '#d04040' ) )
     c.rect( 22, 31, 25, 31, INK )                                 # glass doors
+
+
+# --- L2: Chợ Lớn (A3) -------------------------------------------------------------------------
+GLAZE = rgb( '#2e8a4a' )
+TERRACOTTA = rgb( '#c0603a' )
+CLAY = rgb( '#b45c3a' )
+
+
+def tile_roof( c, x0, y0, x1, y1, colour, ridge=True ):
+    # a Chinese tiled roof: courses of tiles, a ridge with red-and-gold ornaments at the ends
+    walls( c, x0, y0, x1, y1, colour, shade( colour, 0.6 ) )
+    for y in range( y0 + 2, y1, 2 ):
+        c.line( x0 + 1, y, x1 - 1, y, shade( colour, 0.82 ) )
+    if ridge:
+        my = ( y0 + y1 ) // 2
+        c.line( x0 + 1, my, x1 - 1, my, shade( colour, 1.4 ) )
+        c.px( x0 + 1, my, rgb( '#e04030' ) )
+        c.px( x1 - 1, my, rgb( '#e04030' ) )
+        c.px( ( x0 + x1 ) // 2, my, rgb( '#f0c040' ) )
+
+
+@composite( 'sgn_lm_thien_hau', 2, 2 )
+def thien_hau( c ):
+    # gate hall and main hall under green glazed roofs, side galleries, the open courtyard
+    # with its great burner, the guardian lions in the terracotta forecourt
+    c.rect( 2, 1, 29, 4, CLAY )
+    c.px( 12, 3, WHITE )
+    c.px( 19, 3, WHITE )
+    tile_roof( c, 2, 5, 29, 12, GLAZE )                           # gate hall
+    tile_roof( c, 2, 19, 29, 29, GLAZE )                          # main hall
+    tile_roof( c, 2, 12, 9, 19, shade( GLAZE, 0.85 ), ridge=False )    # side galleries
+    tile_roof( c, 22, 12, 29, 19, shade( GLAZE, 0.85 ), ridge=False )
+    c.rect( 10, 13, 21, 18, CLAY )                                # the courtyard
+    c.ellipse( 15.5, 15.5, 1.8, 1.6, rgb( '#a07a3a' ) )           # the burner
+    c.px( 15, 14, rgb( '#ff8a3a' ) )
+    c.rect( 14, 5, 17, 5, INK )                                   # the gate
+
+
+@composite( 'sgn_lm_ngoc_hoang', 2, 2 )
+def ngoc_hoang( c ):
+    # the walled garden with its turtle pond and trees, the path to the dark temple
+    c.rect( 1, 1, 30, 11, PARK )
+    c.line( 1, 1, 30, 1, rgb( '#c8a070' ) )
+    c.erase( 13, 1, 18, 1 )
+    c.rect( 13, 2, 18, 11, CLAY )
+    c.ellipse( 24.5, 6.5, 5, 3.2, rgb( '#c8a070' ) )             # the turtle pond, stone rim
+    c.ellipse( 24.5, 6.5, 4, 2.4, rgb( '#4aa0b8' ) )
+    for x, y in ( ( 23, 6 ), ( 26, 7 ), ( 25, 5 ) ):               # turtles basking
+        c.px( x, y, rgb( '#6a5a2a' ) )
+    for x, y in ( ( 4, 4 ), ( 8, 7 ), ( 4, 9 ), ( 21, 10 ) ):
+        c.ellipse( x, y, 1.6, 1.6, TREE )
+    tile_roof( c, 3, 12, 28, 19, GLAZE )                          # front hall
+    tile_roof( c, 3, 19, 21, 29, shade( GLAZE, 0.9 ) )            # Jade Emperor hall
+    tile_roof( c, 21, 19, 28, 29, shade( GLAZE, 0.75 ), ridge=False )  # Hall of the Ten Hells
+    c.rect( 14, 12, 17, 12, INK )
+
+
+@composite( 'sgn_lm_binh_tay', 3, 3 )
+def binh_tay( c ):
+    # four wings under terracotta roofs around the garden courtyard with the dragon fountain,
+    # pavilion roofs at the corners, the clock tower over the north gate
+    tile_roof( c, 3, 6, 44, 17, TERRACOTTA )                      # north wing
+    tile_roof( c, 3, 32, 44, 44, TERRACOTTA )                     # south wing
+    tile_roof( c, 3, 17, 15, 32, TERRACOTTA, ridge=False )        # west wing
+    tile_roof( c, 32, 17, 44, 32, TERRACOTTA, ridge=False )       # east wing
+    for x0, y0 in ( ( 2, 5 ), ( 39, 5 ), ( 2, 39 ), ( 39, 39 ) ):  # corner pavilions
+        walls( c, x0, y0, x0 + 6, y0 + 6, GLAZE, shade( GLAZE, 0.55 ) )
+        c.px( x0 + 3, y0 + 3, rgb( '#f0c040' ) )
+    c.rect( 16, 18, 31, 31, CLAY )                                # the courtyard
+    for x0, y0 in ( ( 17, 19 ), ( 26, 19 ), ( 17, 27 ), ( 26, 27 ) ):
+        c.rect( x0, y0, x0 + 3, y0 + 3, GRASS )
+        c.ellipse( x0 + 1.5, y0 + 1.5, 1.3, 1.3, TREE )
+    c.ellipse( 23.5, 24.5, 2.6, 2, WATER )                        # the dragon fountain
+    c.px( 23, 24, rgb( '#3aa05a' ) )
+    c.px( 24, 25, rgb( '#e0c040' ) )
+    c.px( 23, 21, WHITE )                                         # Quách Đàm's statue
+    walls( c, 19, 0, 28, 7, rgb( '#f0d478' ), shade( OCHRE, 0.55 ) )   # clock tower
+    c.rect( 21, 1, 26, 3, GLAZE )
+    clock( c, 23.5, 5 )

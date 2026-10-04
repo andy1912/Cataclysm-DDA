@@ -39,6 +39,7 @@ LANDMARK_COLOURS = [ ( 'red', ( 255, 64, 64 ) ), ( 'yellow', ( 255, 220, 0 ) ), 
 LANDMARK_NAMES = {
     'ben_thanh': 'Chợ Bến Thành', 'duc_ba': 'Nhà thờ Đức Bà', 'buu_dien': 'Bưu điện Thành phố',
     'nha_hat': 'Nhà hát Thành phố', 'ubnd_tp': 'UBND Thành phố', 'dinh_doc_lap': 'Dinh Độc Lập',
+    'thien_hau': 'Chùa Bà Thiên Hậu', 'ngoc_hoang': 'Chùa Ngọc Hoàng', 'binh_tay': 'Chợ Bình Tây',
 }
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the real Saigon landmarks of the 2000s (doc/saigon/LANDMARKS.md, phase L1).
+"""Generate the real Saigon landmarks of the 2000s (doc/saigon/LANDMARKS.md, phases L1 and L2).
 
 Each landmark is a multi-tile city building (OVERMAP_UNIQUE, SAIGON) drawn on one big grid
 per z-level (W*24 x H*24 tiles), then cut into a multi-OMT mapgen (2-D om_terrain).
@@ -62,7 +62,7 @@ def roof_over( level, indoor, roof_ch='_' ):
     return out
 
 
-INDOOR = set( '#RCH.:=^wW+DPbktrvqmyuasdcxpKZQAef<>' )
+INDOOR = set( '#RCH.:=^wW+DPbktrvqmyuasdcxpKZQAef<>jnhEFUOB' )
 
 
 # --- 1. Chợ Bến Thành ---------------------------------------------------------------------
@@ -94,7 +94,7 @@ def ben_thanh():
                 if ( x - x0 ) % 8 < 6:
                     z0.at( x, y, stall )
                     if y + 1 <= y1:
-                        z0.at( x, y + 1, 'k' if stall != 'v' else 'v' )
+                        z0.at( x, y + 1, 'j' if stall != 'v' else 'v' )
     for x in range( 8, 64, 6 ):                        # food stalls in the aisle (the famous food court)
         if not 32 <= x <= 39:
             z0.at( x, 35, 'u' )
@@ -314,6 +314,153 @@ def dinh_doc_lap():
     return levels
 
 
+# --- 7. Chùa Bà Thiên Hậu (Chợ Lớn) ---------------------------------------------------------
+def thien_hau():
+    # the Cantonese temple of the sea goddess: a gate hall, an open courtyard with the great
+    # burner under the sky, side galleries, and the main hall, its ceiling hung with coils
+    z0 = Level( 2, 2, ',' )
+    z0.rect( 0, 0, 47, 1, 'S' )
+    z0.rect( 2, 2, 45, 6, 'o' )                        # forecourt
+    z0.at( 18, 5, 'L' )                                # the guardian lions
+    z0.at( 29, 5, 'L' )
+    z0.box( 2, 7, 45, 45, '#', 'n' )
+    for x in range( 22, 26 ):                          # the gate
+        z0.at( x, 7, '+' )
+    for x in ( 6, 12, 18, 29, 35, 41 ):                # gate hall: two rows of red pillars
+        z0.at( x, 10, 'O' )
+        z0.at( x, 15, 'O' )
+    for x in range( 5, 43, 4 ):
+        z0.at( x, 12, 'h' )
+    z0.rect( 3, 18, 44, 18, '#' )                      # into the courtyard
+    z0.rect( 16, 18, 31, 18, 'n' )
+    z0.rect( 14, 19, 33, 28, 'o' )                     # the courtyard, open to the sky
+    z0.at( 23, 23, 'V' )
+    for y in ( 19, 28 ):
+        for x in ( 14, 33 ):
+            z0.at( x, y, 'O' )
+    for y in range( 20, 28, 3 ):                       # side galleries
+        z0.at( 7, y, 'h' )
+        z0.at( 40, y, 'h' )
+    z0.rect( 3, 29, 44, 29, '#' )                      # into the main hall
+    z0.rect( 16, 29, 31, 29, 'n' )
+    for y in range( 31, 39, 3 ):                       # the ceiling of hanging coils
+        for x in range( 5, 43, 5 ):
+            z0.at( x, y, 'h' )
+    for x in ( 10, 16, 31, 37 ):
+        for y in ( 32, 38 ):
+            z0.at( x, y, 'O' )
+    z0.at( 23, 36, 'U' )                               # the burner before the goddess
+    z0.rect( 16, 41, 31, 41, 'E' )                     # the main altar
+    z0.at( 23, 43, 'F' )                               # Thiên Hậu and her attendants
+    z0.at( 24, 43, 'F' )
+    z0.rect( 5, 41, 10, 41, 'E' )                      # side altars
+    z0.rect( 37, 41, 42, 41, 'E' )
+    z0.at( 7, 43, 'F' )
+    z0.at( 40, 43, 'F' )
+    z1 = roof_over( z0, INDOOR, 'N' )                  # green glazed tile roofs
+    return { 0: z0, 1: z1 }
+
+
+# --- 8. Chùa Ngọc Hoàng (Đa Kao) -----------------------------------------------------------
+def ngoc_hoang():
+    # the Jade Emperor pagoda: a garden with the turtle pond, a front hall of fierce guardian
+    # statues, the Jade Emperor's hall, and the dark Hall of the Ten Hells to one side
+    z0 = Level( 2, 2, 'g' )
+    z0.rect( 0, 0, 47, 1, 'S' )
+    z0.rect( 2, 2, 45, 2, '#' )                        # garden wall and gate
+    z0.rect( 20, 2, 27, 2, 'o' )
+    z0.rect( 20, 3, 27, 17, 'o' )                      # path to the hall
+    z0.at( 19, 4, 'L' )
+    z0.at( 28, 4, 'L' )
+    z0.ellipse( 37, 10, 7, 4.5, 'M' )                  # the turtle pond
+    for x, y in ( ( 6, 5 ), ( 12, 9 ), ( 6, 14 ), ( 43, 16 ), ( 31, 15 ) ):
+        z0.at( x, y, 'T' )
+    z0.at( 23, 12, 'V' )
+    z0.box( 5, 18, 42, 45, '#', 'n' )
+    for x in range( 22, 26 ):
+        z0.at( x, 18, '+' )
+    for y in range( 20, 28, 2 ):                       # guardian statues along the walls
+        z0.at( 6, y, 'F' )
+        z0.at( 41, y, 'F' )
+    for x, y in ( ( 16, 20 ), ( 31, 20 ), ( 16, 27 ), ( 31, 27 ) ):
+        z0.at( x, y, 'O' )
+    for x, y in ( ( 12, 24 ), ( 18, 22 ), ( 29, 22 ), ( 35, 24 ) ):
+        z0.at( x, y, 'h' )
+    z0.at( 23, 23, 'U' )
+    z0.rect( 6, 29, 41, 29, '#' )
+    z0.at( 23, 29, '+' )
+    z0.at( 24, 29, '+' )
+    z0.rect( 33, 30, 33, 44, '#' )                     # the Hall of the Ten Hells
+    z0.at( 33, 37, '+' )
+    for y in range( 31, 44, 2 ):
+        z0.at( 7, y, 'F' )                             # the Emperor's court
+        z0.at( 40, y, 'F' )                            # the judges of hell
+        z0.at( 36, y, 'F' )
+    z0.rect( 12, 39, 27, 39, 'E' )                     # the Jade Emperor's altar
+    z0.at( 19, 41, 'F' )
+    z0.at( 20, 41, 'F' )
+    for x, y in ( ( 14, 33 ), ( 25, 33 ), ( 19, 35 ) ):
+        z0.at( x, y, 'h' )
+    z1 = roof_over( z0, INDOOR, 'N' )
+    return { 0: z0, 1: z1 }
+
+
+# --- 9. Chợ Bình Tây (Chợ Lớn) -------------------------------------------------------------
+def binh_tay():
+    # the wholesale market: four wings of stalls around a garden courtyard with the dragon
+    # fountain and the founder's statue, and a clock tower over the north gate
+    z0 = Level( 3, 3, ',' )
+    z0.rect( 0, 0, 71, 1, 'S' )
+    z0.box( 4, 8, 67, 67, '#', ':' )
+    z0.rect( 30, 3, 41, 8, '#' )                       # clock-tower gate
+    z0.rect( 32, 4, 39, 8, ':' )
+    for x in range( 33, 39 ):
+        z0.at( x, 3, '+' )
+    for y in ( 36, 37 ):                               # the other three gates
+        z0.at( 4, y, '+' )
+        z0.at( 67, y, '+' )
+    for x in ( 35, 36 ):
+        z0.at( x, 67, '+' )
+    z0.box( 24, 26, 47, 49, '#', 'o' )                 # the courtyard
+    for x in ( 35, 36 ):
+        z0.at( x, 26, ':' )
+        z0.at( x, 49, ':' )
+    for y in ( 37, 38 ):
+        z0.at( 24, y, ':' )
+        z0.at( 47, y, ':' )
+    for x0, y0 in ( ( 26, 28 ), ( 40, 28 ), ( 26, 42 ), ( 40, 42 ) ):   # garden beds
+        z0.rect( x0, y0, x0 + 5, y0 + 5, 'g' )
+        z0.at( x0 + 2, y0 + 2, 'T' )
+    z0.at( 35, 37, 'J' )                               # the dragon fountain
+    z0.at( 35, 31, 'z' )                               # the founder, Quách Đàm
+    for y in ( 12, 17, 22 ):                           # north wing: rice and grain by the sack
+        for x in range( 7, 65 ):
+            if ( x - 7 ) % 8 < 6 and not 31 <= x <= 40:
+                z0.at( x, y, 'B' )
+    for y in ( 53, 58, 63 ):                           # south wing: household goods
+        for x in range( 7, 65 ):
+            if ( x - 7 ) % 8 < 6 and not 33 <= x <= 38:
+                z0.at( x, y, 'y' )
+    for x in ( 9, 14, 19 ):                            # west wing: produce
+        for y in range( 27, 49 ):
+            if not 35 <= y <= 40:
+                z0.at( x, y, 'q' )
+    for x in ( 52, 58 ):                               # east wing: the food stalls
+        for y in range( 28, 48, 3 ):
+            if not 35 <= y <= 40:
+                z0.at( x, y, 'u' )
+                z0.at( x + 1, y, 's' )
+    z1 = roof_over( z0, INDOOR, 'l' )                  # terracotta tile roofs
+    z1.rect( 30, 3, 41, 8, '#' )
+    z2 = Level( 3, 3, ' ' )
+    z2.rect( 31, 3, 40, 7, '#' )
+    for x in ( 35, 36 ):
+        z2.at( x, 3, 'K' )
+    z3 = Level( 3, 3, ' ' )
+    z3.rect( 32, 4, 39, 6, '_' )
+    return { 0: z0, 1: z1, 2: z2, 3: z3 }
+
+
 LANDMARKS = {
     # id: ( builder, w, h, name, symbol colour, monsters per OMT-ish, items per symbol )
     'sgn_lm_ben_thanh': ( ben_thanh, 3, 3, 'Chợ Bến Thành', 'yellow' ),
@@ -322,6 +469,9 @@ LANDMARKS = {
     'sgn_lm_nha_hat': ( nha_hat, 2, 2, 'Nhà hát Thành phố', 'white' ),
     'sgn_lm_ubnd_tp': ( ubnd_tp, 3, 2, 'UBND Thành phố', 'yellow' ),
     'sgn_lm_dinh_doc_lap': ( dinh_doc_lap, 3, 3, 'Dinh Độc Lập', 'white' ),
+    'sgn_lm_thien_hau': ( thien_hau, 2, 2, 'Chùa Bà Thiên Hậu', 'light_red' ),
+    'sgn_lm_ngoc_hoang': ( ngoc_hoang, 2, 2, 'Chùa Ngọc Hoàng', 'light_red' ),
+    'sgn_lm_binh_tay': ( binh_tay, 3, 3, 'Chợ Bình Tây', 'yellow' ),
 }
 
 
@@ -339,12 +489,19 @@ def palette():
             'v': 't_thconc_floor', 'q': 't_thconc_floor', 'm': 't_thconc_floor', 'y': 't_thconc_floor',
             'u': 't_thconc_floor', 's': 't_thconc_floor', 'a': 't_sgn_gach_men', 'd': 't_sgn_gach_men',
             'c': 't_sgn_gach_men', 'x': 't_sgn_gach_men', 'p': 't_thconc_floor', 'K': 't_concrete_roof',
-            'Z': 't_concrete', 'A': 't_floor_waxed', 'e': 't_sgn_gach_men' },
+            'Z': 't_concrete', 'A': 't_floor_waxed', 'e': 't_sgn_gach_men', 'j': 't_thconc_floor',
+            'o': 't_sgn_gach_tau', 'n': 't_sgn_gach_tau_trong', 'O': 't_sgn_cot_son', 'h': 't_sgn_gach_tau_trong',
+            'E': 't_sgn_gach_tau_trong', 'F': 't_sgn_gach_tau_trong', 'U': 't_sgn_gach_tau_trong',
+            'L': 't_sgn_gach_tau', 'V': 't_sgn_gach_tau', 'J': 't_sgn_gach_tau', 'z': 't_sgn_gach_tau',
+            'B': 't_thconc_floor', 'M': 't_water_murky', 'N': 't_sgn_ngoi_men_xanh', 'l': 't_sgn_mai_ngoi' },
         'furniture': {
             'G': 'f_sgn_van_tho', 'b': 'f_bench', 'k': 'f_counter', 't': 'f_table', 'r': 'f_rack',
             'v': 'f_sgn_quay_vang', 'q': 'f_counter', 'm': 'f_counter', 'y': 'f_rack', 'u': 'f_sgn_ban_inox',
             's': 'f_stool', 'a': 'f_table', 'd': 'f_desk', 'c': 'f_chair', 'x': 'f_filing_cabinet',
-            'p': 'f_sgn_buong_dien_thoai', 'K': 'f_sgn_dong_ho', 'Z': 'f_statue', 'A': 'f_piano', 'e': 'f_desk' },
+            'p': 'f_sgn_buong_dien_thoai', 'K': 'f_sgn_dong_ho', 'Z': 'f_statue', 'A': 'f_piano', 'e': 'f_desk',
+            'j': 'f_counter', 'h': 'f_sgn_nhang_vong', 'E': 'f_sgn_ban_tho_lon', 'F': 'f_sgn_tuong_than',
+            'U': 'f_sgn_lu_huong', 'V': 'f_sgn_lu_huong', 'L': 'f_sgn_su_tu_da', 'J': 'f_sgn_ho_rong',
+            'z': 'f_statue', 'B': 'f_sgn_bao_gao' },
         'items': {
             'y': { 'item': 'sgn_cho_cloth', 'chance': 60, 'repeat': [ 1, 3 ] },
             'v': { 'item': 'sgn_gold_shop', 'chance': 50 },
@@ -356,7 +513,9 @@ def palette():
             'k': { 'item': 'sgn_post_office', 'chance': 15 },
             'd': { 'item': 'sgn_ward_office', 'chance': 40 },
             'x': { 'item': 'sgn_ward_office', 'chance': 60, 'repeat': [ 1, 2 ] },
-            'e': { 'item': 'sgn_palace_bunker', 'chance': 80, 'repeat': [ 1, 3 ] } } }
+            'e': { 'item': 'sgn_palace_bunker', 'chance': 80, 'repeat': [ 1, 3 ] },
+            'E': { 'item': 'sgn_temple', 'chance': 70, 'repeat': [ 1, 2 ] },
+            'B': { 'item': 'sgn_cho_wholesale', 'chance': 60, 'repeat': [ 1, 2 ] } } }
 
 
 def oter( lid, x, y, z ):

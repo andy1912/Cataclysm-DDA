@@ -31,7 +31,10 @@
       [ "sgn_lm_buu_dien", 200 ],
       [ "sgn_lm_nha_hat", 200 ],
       [ "sgn_lm_ubnd_tp", 200 ],
-      [ "sgn_lm_dinh_doc_lap", 200 ]
+      [ "sgn_lm_dinh_doc_lap", 200 ],
+      [ "sgn_lm_thien_hau", 150 ],
+      [ "sgn_lm_ngoc_hoang", 150 ],
+      [ "sgn_lm_binh_tay", 150 ]
     ],
     "parks": [ [ "sgn_chua_1", 100 ], [ "sgn_kenh_row_1", 40 ], [ "sgn_truong_1", 40 ], [ "sgn_nha_tho_1", 25 ] ],
     "name_snippet": "<sgn_city_name>"

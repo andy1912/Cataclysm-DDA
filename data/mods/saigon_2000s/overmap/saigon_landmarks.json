@@ -1440,6 +1440,474 @@
     "looks_like": "sgn_lm_dinh_doc_lap_00"
   },
   {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thien_hau_00",
+    "copy-from": "generic_city_building",
+    "name": "Chùa Bà Thiên Hậu",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thien_hau_10",
+    "copy-from": "generic_city_building",
+    "name": "Chùa Bà Thiên Hậu",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_thien_hau_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thien_hau_01",
+    "copy-from": "generic_city_building",
+    "name": "Chùa Bà Thiên Hậu",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_thien_hau_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thien_hau_11",
+    "copy-from": "generic_city_building",
+    "name": "Chùa Bà Thiên Hậu",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_thien_hau_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thien_hau_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chùa Bà Thiên Hậu (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_thien_hau_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thien_hau_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chùa Bà Thiên Hậu (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_thien_hau_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thien_hau_01_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chùa Bà Thiên Hậu (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_thien_hau_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_thien_hau_11_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chùa Bà Thiên Hậu (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_thien_hau_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ngoc_hoang_00",
+    "copy-from": "generic_city_building",
+    "name": "Chùa Ngọc Hoàng",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ngoc_hoang_10",
+    "copy-from": "generic_city_building",
+    "name": "Chùa Ngọc Hoàng",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_ngoc_hoang_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ngoc_hoang_01",
+    "copy-from": "generic_city_building",
+    "name": "Chùa Ngọc Hoàng",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_ngoc_hoang_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ngoc_hoang_11",
+    "copy-from": "generic_city_building",
+    "name": "Chùa Ngọc Hoàng",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_lm_ngoc_hoang_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ngoc_hoang_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chùa Ngọc Hoàng (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_ngoc_hoang_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ngoc_hoang_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chùa Ngọc Hoàng (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_ngoc_hoang_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ngoc_hoang_01_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chùa Ngọc Hoàng (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_ngoc_hoang_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_ngoc_hoang_11_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chùa Ngọc Hoàng (upper floor)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_lm_ngoc_hoang_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_00",
+    "copy-from": "generic_city_building",
+    "name": "Chợ Bình Tây",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_10",
+    "copy-from": "generic_city_building",
+    "name": "Chợ Bình Tây",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_20",
+    "copy-from": "generic_city_building",
+    "name": "Chợ Bình Tây",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_01",
+    "copy-from": "generic_city_building",
+    "name": "Chợ Bình Tây",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_11",
+    "copy-from": "generic_city_building",
+    "name": "Chợ Bình Tây",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_21",
+    "copy-from": "generic_city_building",
+    "name": "Chợ Bình Tây",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_02",
+    "copy-from": "generic_city_building",
+    "name": "Chợ Bình Tây",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_12",
+    "copy-from": "generic_city_building",
+    "name": "Chợ Bình Tây",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_22",
+    "copy-from": "generic_city_building",
+    "name": "Chợ Bình Tây",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_20_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_01_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_11_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_21_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_02_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_12_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_22_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_00_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_10_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_20_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_01_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_11_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_21_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_02_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_12_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_22_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_00_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_10_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_20_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_01_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_11_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_21_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_02_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_12_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_binh_tay_22_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Bình Tây (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_binh_tay_00"
+  },
+  {
     "type": "city_building",
     "id": "sgn_lm_ben_thanh",
     "locations": [
@@ -2778,6 +3246,473 @@
           3
         ],
         "overmap": "sgn_lm_dinh_doc_lap_22_z3_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_thien_hau",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_thien_hau_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_thien_hau_10_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_thien_hau_01_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_thien_hau_11_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_thien_hau_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_thien_hau_10_z1_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_thien_hau_01_z1_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_thien_hau_11_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_ngoc_hoang",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_ngoc_hoang_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_ngoc_hoang_10_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_ngoc_hoang_01_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_ngoc_hoang_11_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_ngoc_hoang_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_ngoc_hoang_10_z1_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_ngoc_hoang_01_z1_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_ngoc_hoang_11_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_binh_tay",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_binh_tay_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_binh_tay_10_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_binh_tay_20_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_binh_tay_01_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_binh_tay_11_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_binh_tay_21_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_binh_tay_02_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_binh_tay_12_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          0
+        ],
+        "overmap": "sgn_lm_binh_tay_22_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_binh_tay_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_binh_tay_10_z1_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_binh_tay_20_z1_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_binh_tay_01_z1_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_binh_tay_11_z1_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_binh_tay_21_z1_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_binh_tay_02_z1_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_binh_tay_12_z1_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          1
+        ],
+        "overmap": "sgn_lm_binh_tay_22_z1_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          2
+        ],
+        "overmap": "sgn_lm_binh_tay_00_z2_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          2
+        ],
+        "overmap": "sgn_lm_binh_tay_10_z2_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          2
+        ],
+        "overmap": "sgn_lm_binh_tay_20_z2_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          2
+        ],
+        "overmap": "sgn_lm_binh_tay_01_z2_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          2
+        ],
+        "overmap": "sgn_lm_binh_tay_11_z2_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          2
+        ],
+        "overmap": "sgn_lm_binh_tay_21_z2_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          2
+        ],
+        "overmap": "sgn_lm_binh_tay_02_z2_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          2
+        ],
+        "overmap": "sgn_lm_binh_tay_12_z2_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          2
+        ],
+        "overmap": "sgn_lm_binh_tay_22_z2_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          3
+        ],
+        "overmap": "sgn_lm_binh_tay_00_z3_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          3
+        ],
+        "overmap": "sgn_lm_binh_tay_10_z3_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          3
+        ],
+        "overmap": "sgn_lm_binh_tay_20_z3_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          3
+        ],
+        "overmap": "sgn_lm_binh_tay_01_z3_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          3
+        ],
+        "overmap": "sgn_lm_binh_tay_11_z3_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          3
+        ],
+        "overmap": "sgn_lm_binh_tay_21_z3_north"
+      },
+      {
+        "point": [
+          0,
+          2,
+          3
+        ],
+        "overmap": "sgn_lm_binh_tay_02_z3_north"
+      },
+      {
+        "point": [
+          1,
+          2,
+          3
+        ],
+        "overmap": "sgn_lm_binh_tay_12_z3_north"
+      },
+      {
+        "point": [
+          2,
+          2,
+          3
+        ],
+        "overmap": "sgn_lm_binh_tay_22_z3_north"
       }
     ]
   }

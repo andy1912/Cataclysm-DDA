@@ -140,5 +140,14 @@
       "ter_set": "t_floor",
       "items": [ { "item": "log", "count": [ 1, 2 ] }, { "item": "splinter", "count": [ 5, 15 ] } ]
     }
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_gach_tau_trong",
+    "copy-from": "t_floor",
+    "looks_like": "t_sgn_gach_tau",
+    "name": "terracotta tile floor",
+    "description": "Gạch tàu indoors: square red clay tiles, dark with soot and polished by a century of bare feet before the altars.",
+    "color": "light_red"
   }
 ]

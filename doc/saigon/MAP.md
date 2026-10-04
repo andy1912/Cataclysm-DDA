@@ -135,5 +135,5 @@ of section 3, with step 5 replaced by a slot in the district.
 |---|---|---|
 | A1 | Overmap pictures for the six L1 landmarks: one plan-view picture per landmark, sliced over its tiles (16 × 16 per piece), rotating with the building. `art/saigon/drawn/landmark_map.py`, 40 pieces | done |
 | A2 | L2 sprites (Chợ Lớn), in `art/saigon/drawn/cholon.py` with game objects in `furniture/cholon.json`. Thiên Hậu: hanging incense coils (they give off incense smoke), the bronze incense burner (also smoking), the temple altar, the stone guardian lion, red lacquered pillars, green glazed roof, terracotta courtyard tiles. Ngọc Hoàng: the carved deity statue (the turtle pond uses the canal's murky water). Bình Tây: rice-sack stacks (a container; smash them and rice spills out), the dragon fountain. Preview: ![](art/cholon_preview.png) | done |
-| A3 | Overmap pictures for the L2 landmarks | after A2 |
+| A3 | Overmap pictures for the L2 landmarks: Thiên Hậu (green glazed halls around the burner courtyard), Ngọc Hoàng (garden with the turtle pond), Bình Tây (four terracotta wings, corner pavilions, garden courtyard, clock tower). 17 more pieces in `landmark_map.py` | done |
 | A4 | District 1 special and the lake fix, from sections 1 and 4 (map design, not art) | proposed |
