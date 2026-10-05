@@ -1,7 +1,7 @@
 # Saigon 2000s fork: progress ledger
 
 Base: upstream `CleverRaven/Cataclysm-DDA` @ `fe6a10c2b1425882574b4ad7bfbebc4c6170dbf8` (2026-09-28)
-Branch: `saigon/pass1-vertical-slice`. Remotes: `upstream` = CleverRaven (the fork `origin` gets added when the user provides its URL).
+Branch: `saigon/pass1-vertical-slice`. Remotes: `upstream` = CleverRaven, `origin` = the user's fork https://github.com/andy1912/Cataclysm-DDA (branch pushed 2026-10-05).
 Plan: see `doc/saigon/PLAN.md`.
 
 ## Resume protocol
@@ -102,7 +102,7 @@ The domain reports each number their own C++ seams. Modding (d4) uses C1 = vehic
 | I-B5f rain collectors next to tanks | todo | - | §10.12 | |
 | I-B5b2 ice block | todo | - | §10.11 | |
 | I-B4b / B4d / B4c / M-C1 / C2 C++ seams | B4b done (f6bf096c3d); B4c, B4d, M-C1, C2 todo | - | §10.15–17, 22–23 | order per integration §9.3 |
-| I-B5perf + R0 perf harness | todo | - | §10.24–25 | tier a: p50 ≤ 40 ms with ≤100 awake |
+| I-B5perf + R0 perf harness | done | (this) | §10.24–25 | tests/saigon_perf_test.cpp (hidden [saigon_perf]): megacity overmap, 3 sites, dusk + rain, 300 do_turn() each. Gate p50 ≤ 40 ms (≤ 100 awake) PASSES: p50 3–21 ms for 52–260 monsters. One stall per run = autosave of 4 megacity overmaps, 4.2–5.0 s (2.2 s without megacity) — options in doc/saigon/PERF.md. Engine: null-guard gamemode in do_turn (tests have none) |
 | A6 TDD (absorbs §10.27) | done | 5aa2f795fa | §10.27 | |
 
 ### Decisions

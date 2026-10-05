@@ -536,7 +536,10 @@ bool game::do_turn()
         new_game = false;
         weather.on_game_start();
     } else {
-        gamemode->per_turn();
+        // Saigon fork: tests drive do_turn() without start_game(), so there may be no gamemode
+        if( gamemode ) {
+            gamemode->per_turn();
+        }
         calendar::turn += 1_turns;
     }
     //used for dimension swapping
