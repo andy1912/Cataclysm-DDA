@@ -18,7 +18,7 @@
     "price": "20 cent",
     "price_postapoc": "1 USD",
     "vitamins": [ [ "iron", 15 ], [ "calcium", 4 ], [ "egg_allergen", 1 ] ],
-    "looks_like": "egg_boiled"
+    "looks_like": "boiled_egg"
   },
   {
     "type": "ITEM",

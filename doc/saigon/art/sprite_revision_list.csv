@@ -803,6 +803,7 @@ T2,item,sgn_ao_dai_trang,mod,20x20,1,Saigon art (drawn),coat_rain
 T2,item,sgn_ao_khoac_chong_nang,mod,20x20,1,Saigon art (drawn),jacket_light
 T2,item,sgn_ao_thun,mod,20x20,1,Saigon art (derived),camisole
 T2,item,sgn_ao_trang_hoc_sinh,mod,20x20,1,Saigon art (drawn),buttonshirt
+T2,item,sgn_bang_cassette,mod,20x20,1,Saigon art (drawn),
 T2,item,sgn_banh_bao,mod,20x20,1,Saigon art (drawn),flatbread
 T2,item,sgn_banh_chung,mod,20x20,1,Saigon art (drawn),dry_rice
 T2,item,sgn_banh_cuon,mod,20x20,1,Saigon art (drawn),dry_rice
@@ -811,7 +812,9 @@ T2,item,sgn_banh_mi_bread,mod,20x20,1,Saigon art (drawn),bread
 T2,item,sgn_banh_mi_thit,mod,20x20,1,Saigon art (drawn),sandwich_t
 T2,item,sgn_banh_pho,mod,20x20,1,Saigon art (drawn),noodles_fast
 T2,item,sgn_banh_trang,mod,20x20,1,Saigon art (drawn),tortilla_corn
+T2,item,sgn_banh_trung_thu,mod,20x20,1,Saigon art (drawn),pie
 T2,item,sgn_banh_xeo,mod,20x20,1,Saigon art (drawn),pancakes
+T2,item,sgn_bao_li_xi,mod,20x20,1,Saigon art (drawn),
 T2,item,sgn_bep_than_to_ong,mod,20x20,1,Saigon art (drawn),brazier
 T2,item,sgn_bia_hoi,mod,32x32,1,Saigon art (derived),water_clean
 T2,item,sgn_bich_nylon,mod,20x20,1,Saigon art (drawn),bottle_plastic
@@ -853,7 +856,7 @@ T2,item,sgn_durian,mod,20x20,1,Saigon art (drawn),mango
 T2,item,sgn_engine_110cc_item,mod,20x20,1,Saigon art (drawn),engine_combustion
 T2,item,sgn_goi_cuon,mod,20x20,1,Saigon art (drawn),dry_rice
 T2,item,sgn_ho_chieu,mod,20x20,1,Saigon art (drawn),
-T2,item,sgn_hot_vit_lon,mod,20x20,1,Saigon art (drawn),egg_boiled
+T2,item,sgn_hot_vit_lon,mod,20x20,1,Saigon art (drawn),egg_chicken
 T2,item,sgn_hu_tieu,mod,20x20,1,Saigon art (drawn),water_clean
 T2,item,sgn_karaoke_songbook,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_khan_quang_do,mod,20x20,1,Saigon art (derived),scarf
@@ -863,7 +866,9 @@ T2,item,sgn_kho_bo,mod,20x20,1,Saigon art (drawn),flesh
 T2,item,sgn_kho_muc,mod,20x20,1,Saigon art (drawn),flesh
 T2,item,sgn_khoa_chu_u,mod,20x20,1,Saigon art (drawn),pipe
 T2,item,sgn_lap_xuong,mod,20x20,1,Saigon art (drawn),sausage_raw
+T2,item,sgn_lich_bloc,mod,20x20,1,Saigon art (drawn),paper
 T2,item,sgn_long_ban,mod,20x20,1,Saigon art (drawn),
+T2,item,sgn_long_den_ong_sao,mod,20x20,1,Saigon art (drawn),
 T2,item,sgn_luoi_chai,mod,20x20,1,Saigon art (drawn),net
 T2,item,sgn_ly_nhua,mod,20x20,1,Saigon art (drawn),cup_plastic
 T2,item,sgn_mam_tom,mod,20x20,1,Saigon art (drawn),soysauce
@@ -902,9 +907,12 @@ T2,item,sgn_thung_xop,mod,20x20,1,Saigon art (drawn),cup_plastic
 T2,item,sgn_thuoc_la,mod,20x20,1,Saigon art (drawn),cig
 T2,item,sgn_tom_kho,mod,20x20,1,Saigon art (drawn),flesh
 T2,item,sgn_tra_da,mod,32x32,1,Saigon art (derived),water_clean
+T2,item,sgn_truyen_meo_may,mod,20x20,1,Saigon art (drawn),mag_glam
 T2,item,sgn_tuong_ot,mod,32x32,1,Saigon art (derived),hot_sauce
 T2,item,sgn_ung_cao_su,mod,20x20,1,Saigon art (drawn),shoes_bowling
 T2,item,sgn_vang_luong,mod,20x20,1,Saigon art (drawn),gold_small
+T2,item,sgn_vang_ma,mod,20x20,1,Saigon art (drawn),paper
+T2,item,sgn_vcd_phim_bo,mod,20x20,1,Saigon art (drawn),
 T2,item,sgn_ve_so,mod,20x20,1,Saigon art (drawn),
 T2,item,sgn_ward_notice,mod,20x20,1,Saigon art (drawn),newest_newspaper
 T2,item,sgn_xa_beng,mod,20x20,1,Saigon art (drawn),crowbar

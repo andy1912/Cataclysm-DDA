@@ -83,7 +83,7 @@
     "subtype": "collection",
     "id": "sgn_zombie_bag",
     "//": "B10: what was in a Saigon zombie's bag.",
-    "entries": [
+    "entries": [ { "item": "sgn_truyen_meo_may", "prob": 4 }, { "item": "sgn_bao_li_xi", "prob": 3 }, { "item": "sgn_bang_cassette", "prob": 3 }, 
       { "item": "sgn_ao_mua_canh_doi", "prob": 25 },
       { "item": "sgn_mi_goi", "count": [ 1, 3 ], "prob": 20 },
       { "item": "sgn_banh_mi_thit", "prob": 10 },
