@@ -1,5 +1,8 @@
 # The Saigon map: what it looks like now, and how to add landmarks
 
+The mod has two maps. **Vietmap** (scenario "Sài Gòn, 2004 (Vietmap)") is generated: sections 1–5.
+**Sài Gòn, 2009 (real map)** is the real city from OpenStreetMap: section 6.
+
 ## 1. The current map
 
 One whole generated overmap (180 × 180 overmap tiles; one tile is one 24 × 24 local map),
@@ -167,6 +170,8 @@ landmark appears:
 
 ## 4. Proposed: a real District 1 layout (a "district special")
 
+*Superseded by the real map (section 6), where the landmarks stand on their real sites.*
+
 Instead of scattering the landmarks, place them **together**, arranged roughly as in the real city
 (compressed, since one overmap tile is only 24 m). This would be one `overmap_special`,
 `sgn_district1`. It is `GLOBALLY_UNIQUE` and sits next to the biggest city (`city_distance [0, 3]`),
@@ -203,3 +208,63 @@ of section 3, with step 5 replaced by a slot in the district.
 | A6 | Overmap pictures for the seven L3 landmarks (station tracks and trains, coach yard, park, round pool, glass tower, the diamond-crowned mall, the neon street row), plus guidebook and sunscreen item sprites the tourist loot needed | done |
 | A7 | L4 assets (`art/saigon/drawn/parks.py`, `monsters/zoo.json`, `furniture/parks.json`): zoo animals dda lacks — Asian elephant, Siamese crocodile, long-tailed macaque, reticulated python (64×64 / 32×32 like dda's) — plus the Ferris wheel (96×96), Lạc Long Quân statue (64×96), kỳ lân gate guardian, giant painted dragon, swan pedal boat and lotus pond. Preview: ![](art/parks_preview.png) | done |
 | A8 | Overmap pictures for the zoo (museum, temple, lotus lake, enclosures), Đầm Sen (lake, island pagoda, Ferris wheel, bonsai garden, train loop) and Suối Tiên (beach and giant, crocodile lake, dragons, temple) | done |
+
+## 6. The real map: Sài Gòn, 2009
+
+Scenario **"Sài Gòn, 2009 (real map)"**. 5 × 4 overmaps (21.6 × 17.3 km, 24 m per tile) from Tân
+Sơn Nhất and Gò Vấp to Thủ Đức and Nhà Bè, at overmaps −1..3 × −2..1. Overmap (0, 0) is District 1
+west, 3 and 10, where a new game starts. Beyond the area the game generates Vietmap.
+
+![The whole real map](art/realmap_2009_omap_v3.png)
+
+*One pixel per tile. Dark: streets; orange: nhà ống facing them; tan: hẻm blocks; pale: fields;
+green: parks; teal: Thủ Thiêm marsh; grey: port and warehouses; magenta: landmarks; cyan, red,
+blue, brown: places; black: the railway.*
+
+In the game's own overmap view: District 1 with its landmarks outlined, and Chợ Lớn.
+
+![District 1 in game](art/realmap_2009_game_d1_v2.png)
+![Chợ Lớn in game](art/realmap_2009_game_cholon_v3.png)
+
+### What it is made of
+
+| Layer | Source | Tool |
+|---|---|---|
+| Streets | OSM major roads and named streets ≥ 150 m (alleys stay inside blocks as hẻm); each divided road drawn once | `osm_to_grid.py` |
+| Water, bridges | OSM river, canal and lake areas and waterway lines; bridges where a street crosses water (the game adds decks and ramps) | `osm_to_grid.py`, `write_omaps.py` |
+| Land use | OSM land use, parks, the airport | `osm_to_grid.py` |
+| 2009 | Thủ Thiêm marsh, Tân Cảng port, Ba Son shipyard, Đảo Kim Cương marsh, Quận 2/9 farmland; roads opened later removed | `corrections_2009.json` (every entry says why) |
+| Blocks | nhà ống facing the best street; hẻm blocks inside; fields where streets are sparse | `write_omaps.py` |
+| Landmarks | the 19 landmarks at their real anchors and facing | `landmarks_2009.json`, `place_landmarks.py` |
+| Places | petrol stations, markets, pagodas, churches, schools, hospitals, police, 2009 supermarket chains, cemeteries | `place_places.py` |
+| Railway | the North-South line into Ga Sài Gòn and the Thủ Đức branch | `gen_duong_sat.py`, `write_omaps.py` |
+
+### Rebuilding it
+
+```sh
+tools/saigon/realmap/osm/fetch_osm.sh      # once: ~34 MB of OSM data, not committed
+tools/saigon/realmap/make_realmap.sh       # grid + overmap files, ~1 minute
+tests/cata_test --mods=dda,saigon_2000s "saigon_realmap*"
+```
+
+`make_realmap.sh` also writes `tools/saigon/realmap/build/realmap_2009.omap.png` (the picture above).
+To see it with the game's tiles, dump and render:
+
+```sh
+SAIGON_OVERMAP_OUT=om.json SAIGON_OVERMAP_AT=-1,-2 SAIGON_OVERMAP_SPAN=5,4 \
+  SAIGON_OVERMAP_MAP=saigon_2000s/realmap_2009 tests/cata_test --mods=dda,saigon_2000s "[saigon_overmap]"
+python3 tools/saigon/art/render_overmap.py --crop 310,470,375,530 om.json d1.png
+```
+
+### Adding a landmark to the real map
+
+Build the landmark as in section 3 (steps 1–4). Then add its anchor to `landmarks_2009.json`: the
+middle of the real site (`lat`, `lon`), a `source`, and `facing` if its entrance must face a
+particular way. Run `make_realmap.sh`; the report says where it went and how far from its site.
+
+### Correcting the map to 2009
+
+Add an entry to `corrections_2009.json`: a road name in `drop_road_names`, or a zone (polygon,
+`class`, `drop_roads_inside` or `drop_minor_streets`) with a `why`. Then run `make_realmap.sh`.
+
+Map data © OpenStreetMap contributors, ODbL 1.0 (`tools/saigon/realmap/osm/README.md`).

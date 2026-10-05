@@ -118,7 +118,8 @@ TEST_CASE( "saigon_realmap_reads_dda_single_layer_maps", "[overmap][saigon]" )
 // tools/saigon/realmap/write_omaps.py from OpenStreetMap). Overmap (0, 0) is central Saigon
 // (District 1 west, 3, 10): it loads with its streets, river, shophouses and bridges; the game
 // adds the bridge decks; Bến Thành stands on its site; a new game's start location is found there;
-// and the map generates without errors at Bến Thành and on a bridge over the Saigon River.
+// and the map generates without errors at Bến Thành, on a bridge over the Saigon River and on the
+// railway.
 TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
 {
     const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
@@ -145,6 +146,7 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     overmap &om = overmap_buffer.get( point_abs_om() );
     std::map<std::string, int> count;
     tripoint_om_omt bridge = tripoint_om_omt::invalid;
+    tripoint_om_omt rail = tripoint_om_omt::invalid;
     for( int x = 0; x < OMAPX; x++ ) {
         for( int y = 0; y < OMAPY; y++ ) {
             const std::string id = om.ter( tripoint_om_omt( x, y, 0 ) ).id().str();
@@ -152,10 +154,13 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
                                      id.rfind( "lake", 0 ) == 0 ? "water" : id.rfind( "sgn_nh_solo", 0 ) == 0 ? "nha_ong" :
                                      id.rfind( "sgn_hem", 0 ) == 0 ? "hem" : id.rfind( "sgn_chua", 0 ) == 0 ? "pagoda" :
                                      id.rfind( "sgn_truong", 0 ) == 0 ? "school" : id.rfind( "sgn_pl_cay_xang", 0 ) == 0 ? "fuel" :
-                                     id.rfind( "sgn_cho", 0 ) == 0 ? "market" : id;
+                                     id.rfind( "sgn_cho", 0 ) == 0 ? "market" : id.rfind( "sgn_duong_sat", 0 ) == 0 ? "rail" : id;
             count[kind]++;
             if( kind == "bridge" && bridge.is_invalid() ) {
                 bridge = tripoint_om_omt( x, y, 0 );
+            }
+            if( kind == "rail" && rail.is_invalid() ) {
+                rail = tripoint_om_omt( x, y, 0 );
             }
         }
     }
@@ -177,6 +182,8 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     CHECK( count["school"] >= 20 );
     CHECK( count["fuel"] >= 10 );
     CHECK( count["market"] >= 4 * 5 );
+    // the railway runs through to Ga Sài Gòn
+    CHECK( count["rail"] > 20 );
     // the 2009 outskirts (R3): overmap (2, 0), Quận 2 east, is mostly fields
     overmap &east = overmap_buffer.get( point_abs_om( 2, 0 ) );
     int fields = 0;
@@ -205,6 +212,8 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     g->place_player_overmap( ben_thanh );
     REQUIRE_FALSE( bridge.is_invalid() );
     g->place_player_overmap( project_combine( point_abs_om(), bridge ) );
+    REQUIRE_FALSE( rail.is_invalid() );
+    g->place_player_overmap( project_combine( point_abs_om(), rail ) );
     get_globals().remove_global_value( "overmap_pregenerated_path" );
     clear_avatar();
     clear_map();

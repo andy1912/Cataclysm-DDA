@@ -10,6 +10,7 @@ top (doc/saigon/REALMAP_PLAN.md).  Overmaps beyond them are generated as usual (
 v1 (unit R2b):
   roads      road pieces from the connections in the grid; bridges where a road crosses water
              (straight, north-south or east-west; the game adds the deck, supports and ramps)
+  railway    sgn_duong_sat pieces along the North-South line (level crossings stay street)
   water      lake_surface: the game turns the edges into shores and adds the lake bed below
   blocks     tiles facing a street become nhà ống (5 storeys + roof) turned to face it; tiles
              inside blocks become hẻm blocks, or fields where streets are sparse (R3); farmland
@@ -92,6 +93,89 @@ def rotated( ter, r ):
     return ter
 
 
+MIN_ISLAND = 8                 # road pieces smaller than this, away from the area's edge, are dropped
+
+
+def components( road_tiles ):
+    seen, parts = set(), []
+    for p in road_tiles:
+        if p in seen:
+            continue
+        stack, part = [ p ], []
+        seen.add( p )
+        while stack:
+            c = stack.pop()
+            part.append( c )
+            for d in road_tiles[c][0]:
+                q = ( c[0] + DIRS[d][0], c[1] + DIRS[d][1] )
+                if q in road_tiles and q not in seen:
+                    seen.add( q )
+                    stack.append( q )
+        parts.append( part )
+    return parts
+
+
+def heal( road_tiles, land_ok ):
+    """Where two separate road pieces touch (a divided road's halves, a street ending one tile short
+    of another), link them once: one link per pair of pieces, so parallel streets of the same
+    network are not laddered together."""
+    parent = {}
+
+    def find( p ):
+        while parent.get( p, p ) != p:
+            parent[p] = parent.get( parent[p], parent[p] )
+            p = parent[p]
+        return p
+    for part in components( road_tiles ):
+        for p in part:
+            parent[p] = part[0]
+    links = 0
+    OPP = { 'n': 's', 's': 'n', 'e': 'w', 'w': 'e' }
+    # dead ends first: they are where a missing link most likely belongs
+    order = sorted( road_tiles, key=lambda p: len( road_tiles[p][0] ) )
+    for p in order:
+        for d, ( dx, dy ) in DIRS.items():
+            q = ( p[0] + dx, p[1] + dy )
+            if q in road_tiles and find( p ) != find( q ):
+                c, cls, br = road_tiles[p]
+                road_tiles[p] = ( ''.join( x for x in 'nesw' if x in c + d ), cls, br )
+                c, cls, br = road_tiles[q]
+                road_tiles[q] = ( ''.join( x for x in 'nesw' if x in c + OPP[d] ), cls, br )
+                parent[find( p )] = find( q )
+                links += 1
+    # a dead end one free land tile short of another piece: fill the gap
+    for p in [ p for p in road_tiles if len( road_tiles[p][0] ) == 1 ]:
+        for d, ( dx, dy ) in DIRS.items():
+            gap, q = ( p[0] + dx, p[1] + dy ), ( p[0] + 2 * dx, p[1] + 2 * dy )
+            if gap in road_tiles or q not in road_tiles or find( p ) == find( q ) or not land_ok( gap ):
+                continue
+            road_tiles[gap] = ( ''.join( x for x in 'nesw' if x in d + OPP[d] ), road_tiles[p][1], False )
+            for a, b in ( ( p, d ), ( q, OPP[d] ) ):
+                c, cls, br = road_tiles[a]
+                road_tiles[a] = ( ''.join( x for x in 'nesw' if x in c + b ), cls, br )
+            parent[gap] = find( p )
+            parent[find( p )] = find( q )
+            links += 1
+            break
+    return links
+
+
+def prune_islands( road_tiles, W, H ):
+    parts = components( road_tiles )
+    dropped = 0
+    for part in parts:
+        edge = any( x in ( 0, W - 1 ) or y in ( 0, H - 1 ) for x, y in part )
+        if len( part ) < MIN_ISLAND and not edge:
+            for p in part:
+                del road_tiles[p]
+            dropped += 1
+    biggest = max( len( p ) for p in components( road_tiles ) )
+    if biggest < 0.93 * len( road_tiles ):
+        sys.exit( 'road network broken: the largest piece holds only %d of %d road tiles' % ( biggest, len( road_tiles ) ) )
+    return 'road network: %d small cut-off pieces dropped; the largest network holds %.1f %% of %d road tiles' % (
+        dropped, 100 * biggest / len( road_tiles ), len( road_tiles ) )
+
+
 DENSITY_RADIUS = 15            # tiles: a 31 x 31 window, about 750 m
 RURAL_DENSITY = 0.06           # below this share of street tiles a block's inside is fields, not hẻm
 
@@ -138,7 +222,7 @@ class World:
                 self.used.add( ( x + dx, y + dy ) )
 
 
-PREVIEW = [ ( 'sgn_lm_', ( 255, 0, 255 ) ), ( 'sgn_pl_', ( 0, 200, 220 ) ), ( 'sgn_cho', ( 255, 127, 0 ) ),
+PREVIEW = [ ( 'sgn_lm_', ( 255, 0, 255 ) ), ( 'sgn_duong_sat', ( 20, 20, 20 ) ), ( 'sgn_pl_', ( 0, 200, 220 ) ), ( 'sgn_cho', ( 255, 127, 0 ) ),
             ( 'sgn_chua', ( 192, 0, 0 ) ), ( 'sgn_nha_tho', ( 255, 176, 200 ) ), ( 'sgn_truong', ( 0, 80, 255 ) ), ( 'road', ( 70, 70, 70 ) ), ( 'bridge', ( 155, 63, 200 ) ),
             ( 'lake', ( 31, 79, 176 ) ), ( 'sgn_nh_', ( 232, 150, 60 ) ), ( 'sgn_hem', ( 230, 200, 154 ) ),
             ( 'park', ( 63, 165, 72 ) ), ( 'warehouse', ( 150, 150, 150 ) ), ( 'forest_water', ( 122, 184, 160 ) ),
@@ -176,6 +260,12 @@ def main():
         c = ''.join( d for d in conn if ( p[0] + DIRS[d][0], p[1] + DIRS[d][1] ) in roads )
         if c:
             road_tiles[p] = ( c, cls, br )
+    # ---- road network check (R9): pieces cut off from everything (gated compounds, streets whose
+    # only link was an alley) are dropped when small; report how much is one network
+    print( '  road network: %d links added where separate pieces touch or end one tile apart'
+           % heal( road_tiles, lambda p: 0 <= p[0] < W and 0 <= p[1] < H and terrain[p[1]][p[0]] not in WATER ) )
+    print( '  ' + prune_islands( road_tiles, W, H ) )
+
     # ---- landmarks on their real sites (R5); minor streets under them are removed
     for line in place_landmarks.place( world, terrain, road_tiles, bld ):
         print( '  ' + line )
@@ -195,6 +285,18 @@ def main():
         else:
             world.set( x, y, 0, 'road' + LINEAR_SUFFIX[c] )
         world.used.add( ( x, y ) )
+
+    # ---- the railway into Ga Sài Gòn (gen_duong_sat.py); a street it crosses stays a street (a level
+    # crossing) and the rail pieces on either side join it
+    rail = { tuple( p ) for p in g.get( 'rail', [] ) }
+    rails = 0
+    for ( x, y ) in sorted( rail ):
+        if ( x, y ) in world.used or terrain[y][x] in WATER:
+            continue
+        c = ''.join( d for d in 'nesw' if ( x + DIRS[d][0], y + DIRS[d][1] ) in rail )
+        world.set( x, y, 0, 'sgn_duong_sat' + LINEAR_SUFFIX[c] )
+        world.used.add( ( x, y ) )
+        rails += 1
 
     # ---- water and land use; farmland along a main road is left for the village shophouses below
     LAND = { 'park': 'park', 'industrial': 'warehouse', 'farmland': 'field', 'marsh': 'forest_water',
@@ -258,8 +360,9 @@ def main():
     for om in world.oms.values():
         om.write( out )
     preview( world, W, H, os.path.splitext( grid_path )[0].replace( '.grid', '' ) + '.omap.png' )
-    print( 'wrote %d overmaps to %s: %d road tiles (%d bridges), %d shophouse fronts, %d hẻm blocks, %d fields inside sparse blocks'
-           % ( len( world.oms ), os.path.relpath( out, ROOT ), len( road_tiles ), bridges, fronts, inner, fields ) )
+    print( 'wrote %d overmaps to %s: %d road tiles (%d bridges), %d railway tiles, %d shophouse fronts, %d hẻm blocks, '
+           '%d fields inside sparse blocks'
+           % ( len( world.oms ), os.path.relpath( out, ROOT ), len( road_tiles ), bridges, rails, fronts, inner, fields ) )
 
 
 if __name__ == '__main__':

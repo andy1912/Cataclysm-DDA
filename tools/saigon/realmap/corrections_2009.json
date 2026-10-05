@@ -123,6 +123,81 @@
           106.785
         ]
       ]
+    },
+    {
+      "name": "Tân Cảng (now Vinhomes Central Park)",
+      "why": "until 2007 the Tân Cảng container port and navy land; in 2009 an emptied port yard. Vinhomes Central Park and Landmark 81 were built 2015-2018",
+      "class": "industrial",
+      "drop_roads_inside": true,
+      "polygon": [
+        [
+          10.7987,
+          106.7185
+        ],
+        [
+          10.7987,
+          106.7266
+        ],
+        [
+          10.7885,
+          106.7266
+        ],
+        [
+          10.7885,
+          106.7185
+        ]
+      ]
+    },
+    {
+      "name": "Ba Son shipyard (now Vinhomes Golden River)",
+      "why": "the Ba Son naval shipyard worked here until 2015; the towers came after",
+      "class": "industrial",
+      "drop_roads_inside": true,
+      "keep_road_names": [
+        "Tôn Đức Thắng"
+      ],
+      "polygon": [
+        [
+          10.788,
+          106.7085
+        ],
+        [
+          10.788,
+          106.714
+        ],
+        [
+          10.782,
+          106.714
+        ],
+        [
+          10.782,
+          106.7085
+        ]
+      ]
+    },
+    {
+      "name": "Đảo Kim Cương",
+      "why": "the Diamond Island towers on the Quận 2 riverbank were built 2011-2018; in 2009 the spit was marsh",
+      "class": "marsh",
+      "drop_roads_inside": true,
+      "polygon": [
+        [
+          10.7808,
+          106.7448
+        ],
+        [
+          10.7808,
+          106.749
+        ],
+        [
+          10.7768,
+          106.749
+        ],
+        [
+          10.7768,
+          106.7448
+        ]
+      ]
     }
   ]
 }
