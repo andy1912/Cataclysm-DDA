@@ -47,11 +47,20 @@
               }
             ],
             "prob": 50
+          },
+          {
+            "collection": [
+              { "group": "female_underwear", "prob": 100, "damage": [ 1, 4 ] },
+              { "item": "sgn_do_bo", "prob": 100, "damage": [ 1, 4 ] }
+            ],
+            "prob": 20
           }
         ]
       },
+      { "item": "sgn_khan_ran", "prob": 4, "damage": [ 1, 4 ] },
       {
         "distribution": [
+          { "item": "sgn_dep_quai_hau", "prob": 15, "damage": [ 1, 4 ] },
           { "item": "sgn_dep_to_ong", "prob": 45, "damage": [ 1, 4 ] },
           { "item": "flip_flops", "prob": 25, "damage": [ 1, 4 ] },
           { "item": "sneakers", "prob": 25, "damage": [ 1, 4 ] },
@@ -76,7 +85,7 @@
     "type": "item_group",
     "id": "sgn_shophouse_kitchen",
     "subtype": "distribution",
-    "entries": [ { "item": "sgn_mam_tom", "prob": 10 }, { "item": "sgn_lap_xuong", "prob": 10, "count": [ 1, 4 ] }, { "item": "sgn_kho_bo", "prob": 6 }, 
+    "entries": [ { "item": "sgn_binh_thuy", "prob": 20 }, { "item": "sgn_noi_dat", "prob": 12 }, { "item": "sgn_thot_go_me", "prob": 15 }, { "item": "sgn_am_nhom", "prob": 15 }, { "item": "sgn_long_ban", "prob": 12 }, { "item": "sgn_choi_cha", "prob": 8 },  { "item": "sgn_mam_tom", "prob": 10 }, { "item": "sgn_lap_xuong", "prob": 10, "count": [ 1, 4 ] }, { "item": "sgn_kho_bo", "prob": 6 }, 
       { "item": "dry_rice", "prob": 40 },
       { "item": "sgn_nuoc_mam", "prob": 40, "container-item": "sgn_chai_nuoc_mam" },
       { "item": "sgn_mi_goi", "prob": 50 },
@@ -110,7 +119,7 @@
     "type": "item_group",
     "id": "sgn_shophouse_living",
     "subtype": "distribution",
-    "entries": [
+    "entries": [ { "item": "sgn_non_coi", "prob": 5 }, { "item": "sgn_do_bo", "prob": 12 }, { "item": "sgn_khan_ran", "prob": 6 }, { "item": "sgn_dep_quai_hau", "prob": 8 }, { "item": "sgn_khoa_chu_u", "prob": 6 }, { "item": "sgn_can_cau_tre", "prob": 3 }, 
       { "item": "sgn_book_almanac", "prob": 10 },
       { "item": "sgn_karaoke_songbook", "prob": 6 },
       { "item": "sgn_book_wuxia", "prob": 15 },
@@ -254,7 +263,7 @@
     "type": "item_group",
     "id": "sgn_moto_shop",
     "subtype": "distribution",
-    "entries": [
+    "entries": [ { "item": "sgn_bo_va_xe", "prob": 25 }, { "item": "sgn_khoa_chu_u", "prob": 15 }, 
       { "item": "wrench", "prob": 20 },
       { "item": "screwdriver", "prob": 20 },
       { "item": "pliers", "prob": 15 },
@@ -395,7 +404,7 @@
     "id": "sgn_cho_cloth",
     "subtype": "distribution",
     "//": "L1 Bến Thành cloth and clothing stalls.",
-    "items": [
+    "items": [ { "item": "sgn_do_bo", "prob": 25 }, { "item": "sgn_khan_ran", "prob": 15 }, { "item": "sgn_dep_quai_hau", "prob": 15 }, { "item": "sgn_non_coi", "prob": 8 }, 
       { "item": "sheet_cotton", "prob": 30 },
       { "item": "cotton_patchwork", "prob": 30, "count": [ 2, 8 ] },
       { "item": "sgn_ao_ba_ba", "prob": 25 },

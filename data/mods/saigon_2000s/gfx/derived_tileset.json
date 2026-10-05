@@ -9547,6 +9547,34 @@
      {
       "id": "overlay_female_worn_sgn_ung_cao_su",
       "fg": 1267
+     },
+     {
+      "id": "overlay_female_worn_sgn_non_coi",
+      "fg": 1268
+     },
+     {
+      "id": "overlay_female_worn_sgn_do_bo",
+      "fg": 1269
+     },
+     {
+      "id": "overlay_female_worn_sgn_khan_ran",
+      "fg": 1270
+     },
+     {
+      "id": "overlay_male_worn_sgn_non_coi",
+      "fg": 1271
+     },
+     {
+      "id": "overlay_male_worn_sgn_do_bo",
+      "fg": 1272
+     },
+     {
+      "id": "overlay_male_worn_sgn_khan_ran",
+      "fg": 1273
+     },
+     {
+      "id": "overlay_worn_sgn_dep_quai_hau",
+      "fg": 1274
      }
     ]
    }

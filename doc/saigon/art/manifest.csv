@@ -795,6 +795,7 @@ T2,item,ring_engagement,dda,1,1,,item_group sgn_gold_shop; item_group accesories
 T2,item,ring_wedding,dda,1,1,,item_group default_zombie_clothes; item_group sgn_gold_shop
 T2,item,rubber_band,dda,1,1,string_6,item_group sgn_office_desk
 T2,item,salt,dda,1,1,spice,item_group sgn_shophouse_kitchen; item_group sgn_cho_stall_meat_fish; item_group sgn_cho_wholesale
+T2,item,sgn_am_nhom,mod,1,1,base_cookpot,item_group sgn_shophouse_kitchen; data/mods/saigon_2000s/items/gear/household_2.json
 T2,item,sgn_ao_ba_ba,mod,1,1,dress_shirt,item_group default_zombie_clothes; item_group sgn_shophouse_living; item_group sgn_cho_cloth
 T2,item,sgn_ao_cong_an,mod,1,1,buttonshirt,item_group sgn_ward_office; data/mods/saigon_2000s/items/gear/clothing.json
 T2,item,sgn_ao_dai_mau,mod,1,1,coat_rain,item_group sgn_shophouse_living; item_group sgn_cho_cloth; item_group sgn_mall_fashion
@@ -815,7 +816,9 @@ T2,item,sgn_bep_than_to_ong,mod,1,1,brazier,item_group sgn_shophouse_kitchen; it
 T2,item,sgn_bia_hoi,mod,1,1,water_clean,item_group sgn_cafe; item_group sgn_tourist; data/mods/saigon_2000s/items/food/drinks_condiments.json
 T2,item,sgn_bich_nylon,mod,1,1,bottle_plastic,item_group sgn_street_cart; item_group sgn_cafe; data/mods/saigon_2000s/items/gear/kitchen.json
 T2,item,sgn_binh_gas,mod,1,1,medium_propane_tank,item_group sgn_shophouse_kitchen; data/mods/saigon_2000s/items/gear/kitchen.json
+T2,item,sgn_binh_thuy,mod,1,1,bottle_plastic,item_group sgn_shophouse_kitchen; data/mods/saigon_2000s/items/gear/household_2.json
 T2,item,sgn_bo_bia,mod,1,1,dry_rice,item_group sgn_street_cart; data/mods/saigon_2000s/items/food/street_food_3.json
+T2,item,sgn_bo_va_xe,mod,1,1,spare_part,item_group sgn_moto_shop; data/mods/saigon_2000s/items/gear/household_2.json
 T2,item,sgn_book_almanac,mod,1,1,radio_book,item_group sgn_shophouse_living; data/mods/saigon_2000s/items/books/fiction_media.json
 T2,item,sgn_book_construction,mod,1,1,radio_book,data/mods/saigon_2000s/items/books/skill_books.json
 T2,item,sgn_book_fishing,mod,1,1,radio_book,data/mods/saigon_2000s/items/books/skill_books.json
@@ -829,16 +832,20 @@ T2,item,sgn_bun_bo_hue,mod,1,1,water_clean,item_group sgn_street_cart; data/mods
 T2,item,sgn_bun_thit_nuong,mod,1,1,water_clean,item_group sgn_street_cart; data/mods/saigon_2000s/items/food/street_food_3.json
 T2,item,sgn_ca_phe_bot,mod,1,1,coffee_raw,item_group sgn_office_desk; item_group sgn_shophouse_kitchen; item_group sgn_cafe
 T2,item,sgn_ca_phe_sua_da,mod,1,1,coffee,item_group sgn_cafe; data/mods/saigon_2000s/items/food/drinks_condiments.json
+T2,item,sgn_can_cau_tre,mod,1,1,fishing_rod_basic,item_group sgn_shophouse_living; data/mods/saigon_2000s/items/gear/household_2.json
 T2,item,sgn_can_nhua,mod,1,1,jerrycan,item_group sgn_shophouse_kitchen; data/mods/saigon_2000s/items/gear/kitchen.json
 T2,item,sgn_chai_nuoc_mam,mod,1,1,bottle_plastic,item_group sgn_shophouse_kitchen; item_group sgn_street_cart; data/mods/saigon_2000s/items/gear/kitchen.json
 T2,item,sgn_chao_long,mod,1,1,water_clean,item_group sgn_street_cart; data/mods/saigon_2000s/items/food/street_food_3.json
 T2,item,sgn_che,mod,1,1,water_clean,item_group sgn_street_cart; data/mods/saigon_2000s/items/food/street_food.json
+T2,item,sgn_choi_cha,mod,1,1,broom,item_group sgn_shophouse_kitchen; data/mods/saigon_2000s/items/gear/household_2.json
 T2,item,sgn_com_tam,mod,1,1,dry_rice,data/mods/saigon_2000s/items/food/street_food.json
 T2,item,sgn_dao_rua,mod,1,1,machete,item_group sgn_drops_vendor; item_group sgn_cho_stall_meat_fish; data/mods/saigon_2000s/items/gear/gear.json
 T2,item,sgn_dau_gio,mod,1,1,aspirin,item_group sgn_shophouse_living; item_group sgn_pharmacy; data/mods/saigon_2000s/items/gear/household.json
 T2,item,sgn_den_dau,mod,1,1,oil_lamp,item_group sgn_shophouse_living; data/mods/saigon_2000s/items/gear/household.json
 T2,item,sgn_dep_lao,mod,1,1,sneakers,item_group default_zombie_clothes; item_group sgn_shoes; item_group sgn_shophouse_living
+T2,item,sgn_dep_quai_hau,mod,1,1,dress_shoes,item_group default_zombie_clothes; item_group sgn_shophouse_living; item_group sgn_cho_cloth
 T2,item,sgn_dien_thoai,mod,1,1,cell_phone,item_group sgn_shophouse_living; item_group sgn_net_cafe; item_group sgn_post_office
+T2,item,sgn_do_bo,mod,1,1,jumpsuit_pocketless,item_group default_zombie_clothes; item_group sgn_shophouse_living; item_group sgn_cho_cloth
 T2,item,sgn_dong_100k,mod,1,1,money_one,item_group sgn_dong_notes; data/mods/saigon_2000s/items/currency.json
 T2,item,sgn_dong_10k,mod,1,1,money_one,item_group sgn_dong_notes; item_group sgn_ward_office; item_group sgn_post_office
 T2,item,sgn_dong_50k,mod,1,1,money_one,item_group sgn_dong_notes; data/mods/saigon_2000s/items/currency.json
@@ -850,10 +857,13 @@ T2,item,sgn_hot_vit_lon,mod,1,1,egg_boiled,item_group sgn_street_cart; data/mods
 T2,item,sgn_hu_tieu,mod,1,1,water_clean,item_group sgn_street_cart; data/mods/saigon_2000s/items/food/street_food_2.json
 T2,item,sgn_karaoke_songbook,mod,1,1,radio_book,item_group sgn_zombie_bag; item_group sgn_shophouse_living; item_group sgn_cafe
 T2,item,sgn_khan_quang_do,mod,1,1,scarf,item_group sgn_shophouse_living; item_group sgn_school; data/mods/saigon_2000s/items/gear/clothing.json
+T2,item,sgn_khan_ran,mod,1,1,scarf,item_group default_zombie_clothes; item_group sgn_shophouse_living; item_group sgn_cho_cloth
 T2,item,sgn_khau_trang,mod,1,1,scarf,item_group default_zombie_items_pockets; item_group sgn_zombie_bag; item_group sgn_shophouse_living
 T2,item,sgn_kho_bo,mod,1,1,flesh,item_group sgn_shophouse_kitchen; item_group sgn_cho_wholesale; data/mods/saigon_2000s/items/food/street_food_3.json
 T2,item,sgn_kho_muc,mod,1,1,flesh,item_group sgn_cho_stall_meat_fish; item_group sgn_cafe; item_group sgn_karaoke
+T2,item,sgn_khoa_chu_u,mod,1,1,pipe,item_group sgn_shophouse_living; item_group sgn_moto_shop; data/mods/saigon_2000s/items/gear/household_2.json
 T2,item,sgn_lap_xuong,mod,1,1,sausage_raw,item_group sgn_shophouse_kitchen; item_group sgn_cho_stall_produce; item_group sgn_cho_wholesale
+T2,item,sgn_long_ban,mod,1,1,,item_group sgn_shophouse_kitchen; data/mods/saigon_2000s/items/gear/household_2.json
 T2,item,sgn_luoi_chai,mod,1,1,net,item_group sgn_cho_stall_meat_fish; data/mods/saigon_2000s/items/gear/work_trade.json
 T2,item,sgn_ly_nhua,mod,1,1,cup_plastic,item_group sgn_street_cart; item_group sgn_cafe; item_group sgn_net_cafe
 T2,item,sgn_mam_tom,mod,1,1,soysauce,item_group sgn_shophouse_kitchen; item_group sgn_cho_wholesale; data/mods/saigon_2000s/items/food/street_food_3.json
@@ -863,6 +873,8 @@ T2,item,sgn_moto_tank_4l,mod,1,1,30l_barrel,item_group sgn_moto_shop; data/mods/
 T2,item,sgn_mung,mod,1,1,,item_group sgn_shophouse_living; data/mods/saigon_2000s/items/gear/household.json
 T2,item,sgn_nen,mod,1,1,candle,item_group sgn_pagoda; item_group sgn_church; item_group sgn_temple
 T2,item,sgn_noi_com_dien,mod,1,1,hotplate,item_group sgn_shophouse_kitchen; data/mods/saigon_2000s/items/gear/kitchen.json
+T2,item,sgn_noi_dat,mod,1,1,clay_pot,item_group sgn_shophouse_kitchen; data/mods/saigon_2000s/items/gear/household_2.json
+T2,item,sgn_non_coi,mod,1,1,hat_ball,item_group sgn_shophouse_living; item_group sgn_cho_cloth; data/mods/saigon_2000s/items/gear/household_2.json
 T2,item,sgn_non_ket,mod,1,1,hat_cotton,item_group default_zombie_clothes; item_group sgn_shophouse_living; item_group sgn_mall_fashion
 T2,item,sgn_note_handwritten,mod,1,1,newest_newspaper,item_group sgn_shophouse_living; data/mods/saigon_2000s/items/books/fiction_media.json
 T2,item,sgn_nuoc_dua,mod,1,1,coconut,item_group sgn_cho_stall_produce; data/mods/saigon_2000s/items/food/street_food_3.json
@@ -885,6 +897,7 @@ T2,item,sgn_sua_dau_nanh,mod,1,1,milk,item_group sgn_street_cart; data/mods/saig
 T2,item,sgn_than_to_ong,mod,1,1,charcoal,item_group sgn_shophouse_kitchen; item_group sgn_street_cart; data/mods/saigon_2000s/items/gear/kitchen.json
 T2,item,sgn_thanh_long,mod,1,1,mango,item_group sgn_cho_stall_produce; data/mods/saigon_2000s/items/food/street_food.json
 T2,item,sgn_thau_nhua,mod,1,1,bucket,item_group sgn_cho_stall_produce; item_group sgn_cho_stall_meat_fish; item_group sgn_cho_wholesale
+T2,item,sgn_thot_go_me,mod,1,1,cutting_board,item_group sgn_shophouse_kitchen; data/mods/saigon_2000s/items/gear/household_2.json
 T2,item,sgn_thung_xop,mod,1,1,cup_plastic,item_group sgn_cho_stall_produce; item_group sgn_cho_stall_meat_fish; data/mods/saigon_2000s/items/gear/gear.json
 T2,item,sgn_thuoc_la,mod,1,1,cig,item_group sgn_shophouse_living; item_group sgn_cafe; item_group sgn_net_cafe
 T2,item,sgn_tom_kho,mod,1,1,flesh,item_group sgn_cho_stall_meat_fish; item_group sgn_cho_wholesale; data/mods/saigon_2000s/items/food/street_food_2.json

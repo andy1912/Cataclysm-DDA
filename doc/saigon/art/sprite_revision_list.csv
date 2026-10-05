@@ -795,6 +795,7 @@ T2,item,ring_engagement,dda,20x20,1,keep original,
 T2,item,ring_wedding,dda,20x20,1,Saigon art (drawn),
 T2,item,rubber_band,dda,32x32,1,keep original,string_6
 T2,item,salt,dda,20x20,1,keep original,spice
+T2,item,sgn_am_nhom,mod,20x20,1,Saigon art (drawn),base_cookpot
 T2,item,sgn_ao_ba_ba,mod,20x20,1,Saigon art (drawn),dress_shirt
 T2,item,sgn_ao_cong_an,mod,20x20,1,Saigon art (drawn),buttonshirt
 T2,item,sgn_ao_dai_mau,mod,20x20,1,Saigon art (drawn),coat_rain
@@ -815,7 +816,9 @@ T2,item,sgn_bep_than_to_ong,mod,20x20,1,Saigon art (drawn),brazier
 T2,item,sgn_bia_hoi,mod,32x32,1,Saigon art (derived),water_clean
 T2,item,sgn_bich_nylon,mod,20x20,1,Saigon art (drawn),bottle_plastic
 T2,item,sgn_binh_gas,mod,20x20,1,Saigon art (drawn),medium_propane_tank
+T2,item,sgn_binh_thuy,mod,20x20,1,Saigon art (drawn),bottle_plastic
 T2,item,sgn_bo_bia,mod,20x20,1,Saigon art (drawn),dry_rice
+T2,item,sgn_bo_va_xe,mod,20x20,1,Saigon art (drawn),spare_part
 T2,item,sgn_book_almanac,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_book_construction,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_book_fishing,mod,20x20,1,Saigon art (drawn),radio_book
@@ -829,16 +832,20 @@ T2,item,sgn_bun_bo_hue,mod,20x20,1,Saigon art (drawn),water_clean
 T2,item,sgn_bun_thit_nuong,mod,20x20,1,Saigon art (drawn),water_clean
 T2,item,sgn_ca_phe_bot,mod,20x20,1,Saigon art (drawn),coffee_raw
 T2,item,sgn_ca_phe_sua_da,mod,32x32,1,Saigon art (derived),coffee
+T2,item,sgn_can_cau_tre,mod,20x20,1,Saigon art (drawn),fishing_rod_basic
 T2,item,sgn_can_nhua,mod,20x20,1,Saigon art (drawn),jerrycan
 T2,item,sgn_chai_nuoc_mam,mod,20x20,1,Saigon art (drawn),bottle_plastic
 T2,item,sgn_chao_long,mod,20x20,1,Saigon art (drawn),water_clean
 T2,item,sgn_che,mod,32x32,1,Saigon art (derived),water_clean
+T2,item,sgn_choi_cha,mod,20x20,1,Saigon art (drawn),broom
 T2,item,sgn_com_tam,mod,20x20,1,Saigon art (drawn),dry_rice
 T2,item,sgn_dao_rua,mod,20x20,1,Saigon art (drawn),machete
 T2,item,sgn_dau_gio,mod,20x20,1,Saigon art (drawn),aspirin
 T2,item,sgn_den_dau,mod,20x20,1,Saigon art (drawn),oil_lamp
 T2,item,sgn_dep_lao,mod,20x20,1,Saigon art (drawn),sneakers
+T2,item,sgn_dep_quai_hau,mod,20x20,1,Saigon art (drawn),dress_shoes
 T2,item,sgn_dien_thoai,mod,20x20,1,Saigon art (drawn),cell_phone
+T2,item,sgn_do_bo,mod,20x20,1,Saigon art (drawn),jumpsuit_pocketless
 T2,item,sgn_dong_100k,mod,20x20,1,Saigon art (drawn),money_one
 T2,item,sgn_dong_10k,mod,20x20,1,Saigon art (drawn),money_one
 T2,item,sgn_dong_50k,mod,20x20,1,Saigon art (drawn),money_one
@@ -850,10 +857,13 @@ T2,item,sgn_hot_vit_lon,mod,20x20,1,Saigon art (drawn),egg_boiled
 T2,item,sgn_hu_tieu,mod,20x20,1,Saigon art (drawn),water_clean
 T2,item,sgn_karaoke_songbook,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_khan_quang_do,mod,20x20,1,Saigon art (derived),scarf
+T2,item,sgn_khan_ran,mod,20x20,1,Saigon art (drawn),scarf
 T2,item,sgn_khau_trang,mod,20x20,1,Saigon art (drawn),scarf
 T2,item,sgn_kho_bo,mod,20x20,1,Saigon art (drawn),flesh
 T2,item,sgn_kho_muc,mod,20x20,1,Saigon art (drawn),flesh
+T2,item,sgn_khoa_chu_u,mod,20x20,1,Saigon art (drawn),pipe
 T2,item,sgn_lap_xuong,mod,20x20,1,Saigon art (drawn),sausage_raw
+T2,item,sgn_long_ban,mod,20x20,1,Saigon art (drawn),
 T2,item,sgn_luoi_chai,mod,20x20,1,Saigon art (drawn),net
 T2,item,sgn_ly_nhua,mod,20x20,1,Saigon art (drawn),cup_plastic
 T2,item,sgn_mam_tom,mod,20x20,1,Saigon art (drawn),soysauce
@@ -863,6 +873,8 @@ T2,item,sgn_moto_tank_4l,mod,20x20,1,Saigon art (drawn),30l_barrel
 T2,item,sgn_mung,mod,20x20,1,Saigon art (drawn),
 T2,item,sgn_nen,mod,20x20,1,Saigon art (drawn),candle
 T2,item,sgn_noi_com_dien,mod,20x20,1,Saigon art (drawn),hotplate
+T2,item,sgn_noi_dat,mod,20x20,1,Saigon art (drawn),clay_pot
+T2,item,sgn_non_coi,mod,20x20,1,Saigon art (drawn),hat_ball
 T2,item,sgn_non_ket,mod,32x32,1,Saigon art (derived),hat_cotton
 T2,item,sgn_note_handwritten,mod,20x20,1,Saigon art (drawn),newest_newspaper
 T2,item,sgn_nuoc_dua,mod,20x20,1,Saigon art (drawn),coconut
@@ -885,6 +897,7 @@ T2,item,sgn_sua_dau_nanh,mod,20x20,1,Saigon art (drawn),milk
 T2,item,sgn_than_to_ong,mod,20x20,1,Saigon art (drawn),charcoal
 T2,item,sgn_thanh_long,mod,20x20,1,Saigon art (drawn),mango
 T2,item,sgn_thau_nhua,mod,20x20,1,Saigon art (drawn),bucket
+T2,item,sgn_thot_go_me,mod,20x20,1,Saigon art (drawn),cutting_board
 T2,item,sgn_thung_xop,mod,20x20,1,Saigon art (drawn),cup_plastic
 T2,item,sgn_thuoc_la,mod,20x20,1,Saigon art (drawn),cig
 T2,item,sgn_tom_kho,mod,20x20,1,Saigon art (drawn),flesh
