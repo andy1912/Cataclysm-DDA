@@ -139,7 +139,35 @@ when reaching a new overmap goes away inside the covered area.
 
 Each unit is small and gets committed on its own. R1–R3 already give a playable real street plan.
 
-## 8. Decisions for you
+## 8. Decisions (answered 2026-10-05)
+
+| Question | Answer |
+|---|---|
+| Source of the layout | **A map image the user uploads.** The converter reads the image (colours for water, roads, parks, blocks) instead of OSM. Details are agreed before building (§9). |
+| Coverage | **Greater city, 4 × 4 overmaps** (≈ 17 km) |
+| Delivery | **A second map inside `saigon_2000s`, not a separate mod.** At world creation the player chooses the procedural megacity or the real map. Mechanism to be settled in R1: the engine's `OVERMAP_PREGENERATED_PATH` world option, pre-filled or offered as a choice, or a small option that switches the Saigon region to a real-map region. |
+| Period | **Apply the 2004 corrections** (§5) |
+
+## 9. What the converter needs from the map image
+
+- **File:** the original, full-resolution file saved into the project, for example
+  `tools/saigon/realmap/source/`. An image pasted into chat is shrunk before I see it, so it is not
+  enough to measure from.
+- **Resolution:** at least 1 pixel per 24 m over the covered area (≈ 720 px for 17 km). 2–4× that is
+  better, so narrow roads and canals survive.
+- **Georeference:** north up, plus a scale bar or the real distance between two marked points.
+  Better still: 3–4 known points marked on the image (for example the Bến Thành gate, Đức Bà, the
+  Independence Palace gate, Bến Nhà Rồng).
+- **Colours:** a legend, or a style with flat distinct colours: water, major roads, minor streets,
+  parks, cemeteries, built-up blocks. Labels make detection harder, so a no-labels version helps if the
+  source has one.
+- **Where it comes from:** the image's origin decides whether game data may be traced from it. Your own
+  drawing, or an OSM-based render with attribution, is fine. Tracing Google Maps, other commercial map
+  services, or a scanned published map may not be allowed by their terms or copyright.
+- **Coverage split:** one image or several tiles both work. Several tiles need overlap, or marked
+  points on each.
+
+## 10. Original decision questions (kept for the record)
 
 1. **Data source:** OpenStreetMap (accurate; needs a download and a licence decision) or hand-authored
    (no licence question, much coarser)?
