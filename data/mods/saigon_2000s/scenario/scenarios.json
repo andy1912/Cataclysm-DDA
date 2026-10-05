@@ -32,6 +32,7 @@
     "copy-from": "sgn_saigon_2004",
     "name": "Sài Gòn, 2009 (real map)",
     "description": "The real city, street by street, as it stood in late 2009: the new Phú Mỹ bridge open over the river, Thủ Thiêm still marsh and creeks across from District 1, buses leaving Miền Đông on Đinh Bộ Lĩnh.  Since October the loa phường have been repeating the same notice about the \"sốt lạ\", the fever the evening news first called the new swine flu.  Wards were sealed, markets were hosed down with chlorine, and Tân Sơn Nhất stopped taking flights.  Five days ago the fever's dead stopped staying dead.  The hẻm outside are silent except for dripping air conditioners and the dragging of sandals.",
-    "overmap_pregenerated_path": "saigon_2000s/realmap_2009"
+    "overmap_pregenerated_path": "saigon_2000s/realmap_2009",
+    "overmap_outside_region": "sgn_saigon_delta"
   }
 ]

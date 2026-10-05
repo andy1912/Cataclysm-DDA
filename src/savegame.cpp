@@ -966,6 +966,27 @@ void overmap::unserialize_omap( const JsonValue &jsin, const cata_path &json_pat
         }
     }
 
+    // Saigon fork: a complete hand-made overmap records the roads that leave it as its
+    // inter-city road exits, so a generated neighbour joins its roads to them
+    if( pregenerated_final ) {
+        std::vector<tripoint_om_omt> &out =
+            connections_out[settings->overmap_connection.inter_city_road_connection];
+        const auto exit_at = [&]( const tripoint_om_omt & p, om_direction::type dir ) {
+            const oter_id &t = ter( p );
+            if( t->is_linear() && t.id().str().rfind( "road", 0 ) == 0 && t->has_connection( dir ) ) {
+                out.push_back( p );
+            }
+        };
+        for( int i = 0; i < OMAPX; i++ ) {
+            exit_at( tripoint_om_omt( i, 0, 0 ), om_direction::type::north );
+            exit_at( tripoint_om_omt( i, OMAPY - 1, 0 ), om_direction::type::south );
+        }
+        for( int j = 0; j < OMAPY; j++ ) {
+            exit_at( tripoint_om_omt( 0, j, 0 ), om_direction::type::west );
+            exit_at( tripoint_om_omt( OMAPX - 1, j, 0 ), om_direction::type::east );
+        }
+    }
+
     std::unordered_set<tripoint_om_omt> lake_set;
     for( auto &p : lake_points ) {
         lake_set.emplace( p );

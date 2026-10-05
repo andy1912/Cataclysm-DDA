@@ -399,7 +399,7 @@ def main():
     # zones that replace today's land use (Thủ Thiêm's new-town plots) are painted again on top,
     # keeping only the water
     for z in corr.get( 'zones', [] ):
-        if z.get( 'drop_roads_inside' ):
+        if z.get( 'drop_roads_inside' ) or z.get( 'repaint' ):
             rings = [ [ C.latlon_to_tile( lat, lon ) for lat, lon in z['polygon'] ] ]
 
             def mark( x, y, cls=z['class'] ):

@@ -249,3 +249,43 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     clear_map();
     clear_overmaps();
 }
+
+// R7: beyond the real map's 5 x 4 overmaps the scenario's outside region (sgn_saigon_delta:
+// small towns far apart) is generated instead of Vietmap's megacity.
+TEST_CASE( "saigon_realmap_2009_countryside", "[saigon]" )
+{
+    if( !region_settings_id( "sgn_saigon_delta" ).is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
+    get_globals().set_global_value( "overmap_outside_region", diag_value( std::string( "sgn_saigon_delta" ) ) );
+    clear_avatar();
+    clear_map();
+    clear_overmaps();
+    CHECK( overmap_buffer.get_overmap_region( tripoint_abs_om( 0, 0, 0 ) ).str() == "sgn_saigon" );
+    CHECK( overmap_buffer.get_overmap_region( tripoint_abs_om( 4, 0, 0 ) ).str() == "sgn_saigon_delta" );
+    CHECK( overmap_buffer.get_overmap_region( tripoint_abs_om( -2, -3, 0 ) ).str() == "sgn_saigon_delta" );
+    // east of Thủ Đức: land with a town or two (not dda's water fill for missing files), not
+    // wall-to-wall shophouses
+    overmap &om = overmap_buffer.get( point_abs_om( 4, 0 ) );
+    int town = 0;
+    int water = 0;
+    for( int x = 0; x < OMAPX; x++ ) {
+        for( int y = 0; y < OMAPY; y++ ) {
+            const oter_id &t = om.ter( tripoint_om_omt( x, y, 0 ) );
+            const std::string id = t.id().str();
+            town += id.rfind( "sgn_nh_", 0 ) == 0 || id.rfind( "sgn_hem", 0 ) == 0;
+            water += t->is_water();
+        }
+    }
+    CAPTURE( town, water );
+    CHECK( town > 0 );
+    CHECK( town < OMAPX * OMAPY / 5 );
+    CHECK( water < OMAPX * OMAPY / 2 );
+    get_globals().remove_global_value( "overmap_pregenerated_path" );
+    get_globals().remove_global_value( "overmap_outside_region" );
+    clear_avatar();
+    clear_map();
+    clear_overmaps();
+}

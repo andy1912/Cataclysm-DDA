@@ -213,7 +213,11 @@ of section 3, with step 5 replaced by a slot in the district.
 
 Scenario **"Sài Gòn, 2009 (real map)"**. 5 × 4 overmaps (21.6 × 17.3 km, 24 m per tile) from Tân
 Sơn Nhất and Gò Vấp to Thủ Đức and Nhà Bè, at overmaps −1..3 × −2..1. Overmap (0, 0) is District 1
-west, 3 and 10, where a new game starts. Beyond the area the game generates Vietmap.
+west, 3 and 10, where a new game starts. Beyond the area the game generates the 2009 delta
+countryside (region `sgn_saigon_delta`: fields, patches of woods, small market towns far apart),
+whose roads join the real map's roads at the edge.
+
+![The east edge: real map (left), delta countryside (right)](art/realmap_2009_edge_r7.png)
 
 ![The whole real map](art/realmap_2009_omap_v3.png)
 

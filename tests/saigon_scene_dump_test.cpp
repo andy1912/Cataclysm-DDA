@@ -232,11 +232,12 @@ TEST_CASE( "saigon_landmark_dump", "[.][saigon_landmark_scene]" )
 // renderer turns into a subtile.  Hidden test; run with:
 //   SAIGON_OVERMAP_OUT=om.json [SAIGON_OVERMAP_SEED=4242] [SAIGON_OVERMAP_AT=x,y]
 //       [SAIGON_OVERMAP_SPAN=w,h] [SAIGON_OVERMAP_MAP=saigon_2000s/realmap_2009]
+//       [SAIGON_OVERMAP_OUTSIDE=sgn_saigon_delta]
 //       tests/cata_test --mods=dda,saigon_2000s "[saigon_overmap]"
 // Lakes and rivers come from noise keyed on the overmap's position, so SAIGON_OVERMAP_AT
 // (overmap coordinates) is what gives a different landscape; the seed varies the cities.
 // SPAN dumps w x h overmaps from AT as one picture; MAP picks a pregenerated map (as the
-// scenario would) instead of the generated Vietmap.
+// scenario would) instead of the generated Vietmap, OUTSIDE the region beyond it.
 TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
 {
     const char *out_path = std::getenv( "SAIGON_OVERMAP_OUT" );
@@ -262,6 +263,10 @@ TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
     const char *map = std::getenv( "SAIGON_OVERMAP_MAP" );
     if( map != nullptr ) {
         get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( map ) ) );
+    }
+    const char *outside = std::getenv( "SAIGON_OVERMAP_OUTSIDE" );
+    if( outside != nullptr ) {
+        get_globals().set_global_value( "overmap_outside_region", diag_value( std::string( outside ) ) );
     }
     overmap_buffer.clear();
     const auto t0 = std::chrono::steady_clock::now();
@@ -321,5 +326,8 @@ TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
     CHECK( out.good() );
     if( map != nullptr ) {
         get_globals().remove_global_value( "overmap_pregenerated_path" );
+    }
+    if( outside != nullptr ) {
+        get_globals().remove_global_value( "overmap_outside_region" );
     }
 }

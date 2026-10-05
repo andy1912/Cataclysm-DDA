@@ -56,5 +56,30 @@
     ],
     "parks": [ [ "sgn_chua_1", 100 ], [ "sgn_pl_nghia_trang", 6 ], [ "sgn_kenh_row_1", 40 ], [ "sgn_truong_1", 40 ], [ "sgn_nha_tho_1", 25 ] ],
     "name_snippet": "<sgn_city_name>"
+  },
+  {
+    "type": "region_settings_city",
+    "id": "sgn_city_delta",
+    "copy-from": "sgn_city",
+    "//": "R7: the countryside around the real 2009 city (scenario 'Sài Gòn, 2009 (real map)', beyond its 5 x 4 overmaps): small market towns and canal villages far apart instead of Vietmap's megacity.",
+    "city_size": 3,
+    "city_spacing": 5,
+    "is_megacity": false
+  },
+  {
+    "type": "region_settings_forest",
+    "id": "sgn_forest_delta",
+    "copy-from": "default",
+    "//": "R7: the delta around the city is paddies, orchards and villages, with only patches of woods; more swamp along the water.",
+    "noise_threshold_forest": 0.42,
+    "noise_threshold_forest_thick": 0.5,
+    "noise_threshold_swamp_adjacent_water": 0.22
+  },
+  {
+    "type": "region_settings",
+    "id": "sgn_saigon_delta",
+    "copy-from": "sgn_saigon",
+    "cities": "sgn_city_delta",
+    "forests": "sgn_forest_delta"
   }
 ]

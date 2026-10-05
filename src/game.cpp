@@ -823,6 +823,7 @@ bool game::start_game()
     // pregenerated overmap set (e.g. the real-map Saigon); later games keep the world's choice.
     if( get_globals().maybe_get_global_value( "overmap_pregenerated_path" ) == nullptr ) {
         get_globals().set_global_value( "overmap_pregenerated_path", scen->overmap_pregenerated_path() );
+        get_globals().set_global_value( "overmap_outside_region", scen->overmap_outside_region() );
     }
 
     // Make sure the items are added after the calendar is started

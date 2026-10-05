@@ -62,6 +62,8 @@ class scenario
         std::vector<effect_on_condition_id> _eoc;
         // Saigon fork: a pregenerated overmap set (mod-relative path) this scenario's world uses
         std::string _overmap_pregenerated_path;
+        // Saigon fork: the region for overmaps beyond the pregenerated set (empty: the usual one)
+        std::string _overmap_outside_region;
 
         // does this scenario require a specific achiement to unlock
         std::optional<achievement_id> _requirement;
@@ -168,6 +170,7 @@ class scenario
         const std::vector<mission_type_id> &missions() const;
         const std::vector<effect_on_condition_id> &eoc() const;
         const std::string &overmap_pregenerated_path() const;
+        const std::string &overmap_outside_region() const;
         const std::vector<std::pair<mongroup_id, float>> &surround_groups() const;
 
         std::vector<std::pair<string_id<scenario>, mod_id>> src;

@@ -2,8 +2,10 @@
 #include "coordinates.h"
 #include "debug.h"
 #include "enum_conversions.h"
+#include "filesystem.h"
 #include "flexbuffer_json.h"
 #include "game.h"
+#include "global_vars.h"
 #include "generic_factory.h"
 #include "imgui/imgui.h"
 
@@ -13,7 +15,9 @@
 #include "jc_voronoi/jc_voronoi.h"
 #include "line.h"
 #include "map_iterator.h"
+#include "math_parser_diag_value.h"
 #include "output.h"
+#include "path_info.h"
 #include "overmap_worldgen.h"
 #include "overmapbuffer.h"
 #include "rng.h"
@@ -22,6 +26,7 @@
 #include "units.h"
 
 #include <cstring>
+#include <map>
 #include <unordered_set>
 #include <utility>
 #include <vector>
@@ -170,6 +175,27 @@ region_settings_id dimension_region_layout_dynamic::get_overmap_region(
 
 region_settings_id overmapbuffer::get_overmap_region( tripoint_abs_om om_point )
 {
+    // Saigon fork: with a pregenerated map chosen (game::start_game), overmaps that have no file
+    // of their own can use another region, e.g. countryside around the real city
+    const diag_value *path = get_globals().maybe_get_global_value( "overmap_pregenerated_path" );
+    const diag_value *outside = get_globals().maybe_get_global_value( "overmap_outside_region" );
+    if( path != nullptr && outside != nullptr && path->is_str() && outside->is_str() &&
+        !path->str().empty() && !outside->str().empty() ) {
+        static std::map<std::pair<std::string, point>, bool> has_file;
+        const std::pair<std::string, point> key( path->str(), om_point.xy().raw() );
+        auto it = has_file.find( key );
+        if( it == has_file.end() ) {
+            const cata_path file = PATH_INFO::moddir() / string_format( "%s/overmap_%d_%d.omap.gz",
+                                   path->str(), om_point.x(), om_point.y() );
+            it = has_file.emplace( key, file_exist( file ) ).first;
+        }
+        if( !it->second ) {
+            const region_settings_id region( outside->str() );
+            if( region.is_valid() ) {
+                return region;
+            }
+        }
+    }
     dimension_region_layout_id region_layout = g->get_dimension_prefix()->get_region_layout();
 
     const std::shared_ptr<dimension_region_layout_generator> &layout_generator =

@@ -115,6 +115,7 @@ void scenario::load( const JsonObject &jo, std::string_view )
 
     optional( jo, was_loaded, "eoc", _eoc, auto_flags_reader<effect_on_condition_id> {} );
     optional( jo, was_loaded, "overmap_pregenerated_path", _overmap_pregenerated_path );
+    optional( jo, was_loaded, "overmap_outside_region", _overmap_outside_region );
 
     optional( jo, was_loaded, "origin_offset", origin_offset, point_rel_om::zero );
 
@@ -760,6 +761,11 @@ const std::vector<effect_on_condition_id> &scenario::eoc() const
 const std::string &scenario::overmap_pregenerated_path() const
 {
     return _overmap_pregenerated_path;
+}
+
+const std::string &scenario::overmap_outside_region() const
+{
+    return _overmap_outside_region;
 }
 const std::vector<std::pair<mongroup_id, float>> &scenario::surround_groups() const
 {

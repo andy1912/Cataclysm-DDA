@@ -928,14 +928,17 @@ void overmap::generate( const std::vector<const overmap *> &neighbor_overmaps,
                         overmap_special_batch &enabled_specials )
 {
     dbg( D_INFO ) << "overmap::generate start…";
-    const oter_id omt_outside_defined_omap = static_cast<oter_id>
-            ( get_option<std::string>( "OUTSIDE_DEFINED_OMAP_OMT" ) );
+    oter_id omt_outside_defined_omap = static_cast<oter_id>
+                                       ( get_option<std::string>( "OUTSIDE_DEFINED_OMAP_OMT" ) );
     std::string overmap_pregenerated_path =
         get_option<std::string>( "OVERMAP_PREGENERATED_PATH" );
-    // Saigon fork: the world's scenario choice (set once in game::start_game) wins over the option
+    // Saigon fork: the world's scenario choice (set once in game::start_game) wins over the option.
+    // Its overmaps beyond the pregenerated set start as open land and are generated as usual
+    // (dda's option fills them with water, which leaves no room for towns).
     if( diag_value const *chosen = get_globals().maybe_get_global_value( "overmap_pregenerated_path" ) ) {
         if( chosen->is_str() && !chosen->str().empty() ) {
             overmap_pregenerated_path = chosen->str();
+            omt_outside_defined_omap = oter_field.id();
         }
     }
     if( !overmap_pregenerated_path.empty() ) {

@@ -1,5 +1,5 @@
 {
-  "about": "Turns today's OpenStreetMap into Saigon as of late 2009. Every entry gives its reason. Zones are painted before the OSM land use (OSM water and parks still win inside them); drop_roads_inside removes OSM streets lying wholly inside the zone unless named in keep_road_names. drop_minor_streets removes the zone's named side streets (major roads stay).",
+  "about": "Turns today's OpenStreetMap into Saigon as of late 2009. Every entry gives its reason. Zones are painted before the OSM land use (OSM water and parks still win inside them); drop_roads_inside removes OSM streets lying wholly inside the zone unless named in keep_road_names. drop_minor_streets removes the zone's named side streets (major roads stay). repaint paints the zone's class over today's land use (water stays).",
   "drop_road_names": [
     "Mai Chí Thọ",
     "Phạm Văn Đồng",
@@ -196,6 +196,31 @@
         [
           10.7768,
           106.7448
+        ]
+      ]
+    },
+    {
+      "name": "Khu Công nghệ cao (Saigon Hi-Tech Park)",
+      "why": "set up in 2002, but in 2009 mostly cleared lots with a few plants (Nidec, Jabil; Intel's opened in 2010, Samsung's complex in 2016); the factory blocks and their side streets are later",
+      "class": "open",
+      "repaint": true,
+      "drop_minor_streets": true,
+      "polygon": [
+        [
+          10.8608,
+          106.7839
+        ],
+        [
+          10.8608,
+          106.8261
+        ],
+        [
+          10.8149,
+          106.8261
+        ],
+        [
+          10.8149,
+          106.7839
         ]
       ]
     }
