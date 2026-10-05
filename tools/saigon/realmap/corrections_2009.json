@@ -51,18 +51,35 @@
           106.721
         ],
         [
-          10.765,
-          106.7085
+          10.7635,
+          106.714
         ],
         [
-          10.7745,
-          106.706
+          10.766,
+          106.71
         ],
         [
-          10.785,
-          106.7075
+          10.771,
+          106.7081
+        ],
+        [
+          10.775,
+          106.7083
+        ],
+        [
+          10.779,
+          106.7092
+        ],
+        [
+          10.783,
+          106.7114
+        ],
+        [
+          10.788,
+          106.7135
         ]
-      ]
+      ],
+      "polygon_note": "west edge along the middle of the river (measured from the OSM water), so District 1's own bank (Tôn Đức Thắng, Bến Bạch Đằng) stays city; the first version reached across the river"
     },
     {
       "name": "Quận 2 east and Quận 9 south",

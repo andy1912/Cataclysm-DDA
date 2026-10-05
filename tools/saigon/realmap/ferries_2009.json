@@ -1,0 +1,17 @@
+{
+  "about": "Ferry landings of 2009 on the real map (sgn_ben_pha: a dock with river boats). write_omaps.py puts each on the water tile nearest its anchor that borders a street, the pier facing the land. Positions approximate.",
+  "ferries": [
+    {
+      "name": "Bến Bạch Đằng (phà Thủ Thiêm, District 1 side)",
+      "lat": 10.7737,
+      "lon": 106.7068,
+      "why": "the Thủ Thiêm ferry left from the foot of Hàm Nghi until the tunnel opened in 2011"
+    },
+    {
+      "name": "Bến phà Thủ Thiêm (Thủ Thiêm side)",
+      "lat": 10.7745,
+      "lon": 106.7092,
+      "why": "its landing across the river, on the marsh side"
+    }
+  ]
+}

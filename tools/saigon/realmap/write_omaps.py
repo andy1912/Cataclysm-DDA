@@ -508,6 +508,43 @@ def main():
                 world.set( x, y, 0, ter if ter in UNROTATED else ter + '_' + ROT[rng.randrange( 4 )] )
                 world.used.add( ( x, y ) )
 
+    # ---- ferry landings (ferries_2009.json): a dock on the water tile nearest each anchor that
+    # borders a street, the pier towards the land
+    docks = 0
+    for f in json.load( open( os.path.join( HERE, 'ferries_2009.json' ) ) )['ferries']:
+        ax, ay = ( int( v ) for v in C.latlon_to_tile( f['lat'], f['lon'] ) )
+        best = None
+        for y in range( ay - 8, ay + 9 ):
+            for x in range( ax - 8, ax + 9 ):
+                if not ( 0 <= x < W and 0 <= y < H ) or terrain[y][x] not in WATER or ( x, y ) in road_tiles:
+                    continue
+                for d, ( dx, dy ) in DIRS.items():
+                    q = ( x + dx, y + dy )
+                    if not ( 0 <= q[0] < W and 0 <= q[1] < H ) or terrain[q[1]][q[0]] in WATER:
+                        continue
+                    # the bank tile is the street, or open ground left between the street and the pier
+                    on_street = q in road_tiles
+                    near_street = q not in world.used and any( ( q[0] + ex, q[1] + ey ) in road_tiles and
+                                                               terrain[q[1] + ey][q[0] + ex] not in WATER
+                                                               for ex, ey in DIRS.values() )
+                    # with no street near (Thủ Thiêm's marsh bank in 2009) any open bank will do
+                    open_bank = q not in world.used or world.oms[( q[0] // OM, q[1] // OM )].get(
+                        q[0] % OM, q[1] % OM, 0, '' ) in ( 'field', 'forest_water' )
+                    if on_street or near_street or open_bank:
+                        dist = abs( x - ax ) + abs( y - ay ) + ( 0 if on_street else 1 if near_street else 20 )
+                        if best is None or dist < best[0]:
+                            best = ( dist, x, y, d, None if on_street or q in world.used else q )
+        if best is None:
+            print( '  no landing for %s' % f['name'] )
+            continue
+        _, x, y, d, bank = best
+        world.set( x, y, 0, 'sgn_ben_pha_' + ROT[FACING[d]] )
+        if bank:
+            world.set( bank[0], bank[1], 0, 'field' )
+            world.used.add( bank )
+        docks += 1
+    print( '  %d ferry landings' % docks )
+
     # ---- city blocks: frontage shophouses facing the best street; inside, hẻm blocks where the city
     # was dense in 2009 and fields where it was not (R3: few named streets within ~750 m)
     density = road_density( road_tiles, W, H, DENSITY_RADIUS )

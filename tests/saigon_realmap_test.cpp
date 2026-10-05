@@ -419,3 +419,33 @@ TEST_CASE( "saigon_realmap_2009_walkable", "[saigon]" )
 }
 
 
+
+// The Thủ Thiêm ferry of 2009 (tools/saigon/realmap/ferries_2009.json): its landing at Bến Bạch
+// Đằng is on the map and generates (a dock with river boats) without errors.
+TEST_CASE( "saigon_realmap_2009_ferry", "[saigon]" )
+{
+    const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_1_0.omap.gz";
+    if( !oter_str_id( "sgn_ben_pha_north" ).is_valid() || !file_exist( file.get_unrelative_path() ) ) {
+        WARN( "saigon_2000s or its real map is not present; skipping" );
+        return;
+    }
+    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
+    clear_avatar();
+    clear_map();
+    clear_overmaps();
+    overmap &om = overmap_buffer.get( point_abs_om( 1, 0 ) );
+    tripoint_om_omt dock = tripoint_om_omt::invalid;
+    for( int x = 0; x < OMAPX && dock.is_invalid(); x++ ) {
+        for( int y = 0; y < OMAPY && dock.is_invalid(); y++ ) {
+            if( om.ter( tripoint_om_omt( x, y, 0 ) ).id().str().rfind( "sgn_ben_pha", 0 ) == 0 ) {
+                dock = tripoint_om_omt( x, y, 0 );
+            }
+        }
+    }
+    REQUIRE_FALSE( dock.is_invalid() );
+    g->place_player_overmap( project_combine( point_abs_om( 1, 0 ), dock ) );
+    get_globals().remove_global_value( "overmap_pregenerated_path" );
+    clear_avatar();
+    clear_map();
+    clear_overmaps();
+}
