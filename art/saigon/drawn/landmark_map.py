@@ -447,3 +447,71 @@ def suoi_tien( c ):
     c.ring( 50.5, 51, 4.5, 4.5, WHITE, 1 )                         # the Ferris wheel
     c.px( 50, 51, rgb( '#e04040' ) )
     tile_roof( c, 39, 7, 51, 14, GLAZE )                           # the temple
+
+
+# --- P2 everyday places (not landmarks, but they get pictures too) -------------------------
+@composite( 'sgn_pl_cay_xang', 1, 1 )
+def cay_xang( c ):
+    # the red-and-white canopy over the pumps, the kiosk behind
+    c.rect( 2, 2, 13, 7, rgb( '#e8e8e8' ) )
+    c.rect( 2, 2, 13, 3, rgb( '#d83030' ) )
+    for x in ( 4, 7, 10, 12 ):
+        c.px( x, 5, rgb( '#f0c020' ) )
+    walls( c, 3, 9, 12, 14, rgb( '#d4d4d8' ), shade( CREAM, 0.6 ) )
+
+
+@composite( 'sgn_pl_coopmart', 2, 2 )
+def coopmart( c ):
+    # a big flat-roofed box with the red sign over the glass front
+    walls( c, 1, 3, 30, 30, rgb( '#c8ccd0' ), shade( CREAM, 0.6 ) )
+    c.rect( 8, 3, 23, 5, rgb( '#d83030' ) )
+    c.line( 10, 4, 21, 4, rgb( '#f4f4f4' ) )
+    for y in range( 9, 28, 4 ):
+        c.line( 3, y, 28, y, rgb( '#b0b4b8' ) )
+
+
+@composite( 'sgn_pl_benh_vien', 2, 2 )
+def benh_vien( c ):
+    # a white two-storey block with the red cross on the roof
+    walls( c, 1, 4, 30, 30, rgb( '#f0f0ec' ), shade( CREAM, 0.6 ) )
+    c.rect( 13, 13, 18, 22, rgb( '#d83030' ) )
+    c.rect( 11, 15, 20, 20, rgb( '#d83030' ) )
+    c.rect( 13, 1, 18, 3, PAVE )
+
+
+@composite( 'sgn_pl_cong_an', 1, 1 )
+def cong_an( c ):
+    # the yellow ward police station with its flag
+    walls( c, 2, 4, 13, 14, rgb( '#e8c050' ), shade( OCHRE, 0.6 ) )
+    c.line( 3, 1, 3, 4, rgb( '#c8c8cc' ) )
+    c.rect( 4, 1, 6, 2, rgb( '#d83030' ) )
+    c.px( 5, 1, rgb( '#f0d040' ) )
+
+
+@composite( 'sgn_pl_nghia_trang', 2, 2 )
+def nghia_trang( c ):
+    # rows of pale tombs in the grass inside a wall, the path from the gate
+    c.rect( 1, 1, 30, 30, PARK )
+    c.frame( 1, 1, 30, 30, rgb( '#a8a49a' ) )
+    c.rect( 14, 1, 17, 30, CLAY )
+    for y in range( 4, 29, 3 ):
+        for x in list( range( 3, 13, 2 ) ) + list( range( 19, 29, 2 ) ):
+            c.px( x, y, rgb( '#d8e0dc' ) )
+    tile_roof( c, 20, 3, 24, 6, TERRACOTTA, ridge=False )
+
+
+@composite( 'sgn_pl_nha_sach', 1, 1 )
+def nha_sach( c ):
+    # a shopfront with coloured book spines in the window
+    walls( c, 2, 3, 13, 14, rgb( '#d4d4d8' ), shade( CREAM, 0.6 ) )
+    for i, x in enumerate( range( 3, 13 ) ):
+        c.line( x, 4, x, 7, rgb( ( '#d83030', '#3a7ac8', '#f0c020', '#40a060' )[i % 4] ) )
+
+
+@composite( 'sgn_pl_xe_may', 1, 1 )
+def xe_may( c ):
+    # a showroom with a row of new motorbikes behind the glass
+    walls( c, 1, 3, 14, 14, rgb( '#d4d4d8' ), shade( CREAM, 0.6 ) )
+    c.rect( 2, 4, 13, 8, rgb( '#a8d8e8' ) )
+    for x in ( 3, 6, 9, 12 ):
+        c.line( x, 5, x, 7, rgb( '#d83030' ) )

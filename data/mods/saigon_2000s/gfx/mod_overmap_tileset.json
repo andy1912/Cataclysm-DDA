@@ -716,6 +716,86 @@
       "id": "sgn_lm_ubnd_tp_21",
       "fg": 140,
       "rotates": true
+     },
+     {
+      "id": "sgn_pl_benh_vien_00",
+      "fg": 141,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_benh_vien_01",
+      "fg": 142,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_benh_vien_10",
+      "fg": 143,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_benh_vien_11",
+      "fg": 144,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_cay_xang_00",
+      "fg": 145,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_cong_an_00",
+      "fg": 146,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_coopmart_00",
+      "fg": 147,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_coopmart_01",
+      "fg": 148,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_coopmart_10",
+      "fg": 149,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_coopmart_11",
+      "fg": 150,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_nghia_trang_00",
+      "fg": 151,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_nghia_trang_01",
+      "fg": 152,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_nghia_trang_10",
+      "fg": 153,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_nghia_trang_11",
+      "fg": 154,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_nha_sach_00",
+      "fg": 155,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_xe_may_00",
+      "fg": 156,
+      "rotates": true
      }
     ]
    }

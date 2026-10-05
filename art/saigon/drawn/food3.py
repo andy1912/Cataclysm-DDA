@@ -177,3 +177,17 @@ def mam_tom( c ):
     c.px( 9, 11, rgb( '#c83030' ) )
     c.px( 11, 11, rgb( '#c83030' ) )
     finish( c )
+
+
+# a dda item the Co.op Mart sells that UltimateCataclysm has no sprite for
+@sprite( 'can_sardine', 20, 20 )
+def can_sardine( c ):
+    # a flat oval tin of sardines in tomato sauce, red label with a fish, ring pull on top
+    c.ellipse( 10, 13, 7, 3.4, rgb( '#9aa0a8' ) )                        # tin side
+    c.ellipse( 10, 11, 7, 3.4, rgb( '#d83030' ) )                        # label lid
+    c.ellipse( 10, 11, 5.6, 2.4, rgb( '#e85040' ) )
+    c.ellipse( 9, 11, 3, 1, rgb( '#c8d0d8' ) )                          # the fish
+    c.px( 12, 11, rgb( '#c8d0d8' ) )
+    c.px( 7, 10, rgb( '#1a1a1a' ) )
+    c.ring( 14, 9, 1.4, 1, rgb( '#e8e8ec' ), 1 )                        # ring pull
+    finish( c )

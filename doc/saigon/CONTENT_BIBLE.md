@@ -117,3 +117,19 @@ Gameplay goals:
 - Reflavored zombie variants: the sick (người bệnh), a xe ôm zombie in a helmet (head armor), a market-worker zombie, a police zombie.
 - Tropical fauna and pests: rats, stray dogs, feral chickens (bird-flu carriers), canal snakes, monitor lizards.
 - Density: much higher human-zombie density per OMT than in dda cities. This needs a spawn and performance budget from A2/A3.
+
+## 11. More Vietnamese items and places (units V1–V3, P1–P2, 2026-10-05)
+
+| Group | Added | Where it spawns |
+|---|---|---|
+| Street food (V1) | trứng vịt lộn, bún bò Huế, bún thịt nướng, bánh cuốn, cháo lòng, bò bía, bánh flan, sữa đậu nành, green coconut (nước dừa), khô bò, lạp xưởng, mắm tôm | street carts, chợ, wholesale, shophouse kitchens, Co.op Mart |
+| Household, tools, clothes (V2) | Rạng Đông vacuum flask, nồi đất, tamarind-wood chopping block, coconut-rib broom, aluminium kettle, lồng bàn, bơm vá xe kit, bamboo fishing pole, motorbike U-lock (a club), nón cối, đồ bộ, khăn rằn, dép quai hậu | kitchens, living rooms, moto shops, chợ cloth stalls, mall, zombie outfits |
+| Media and festivals (V3) | robot-cat comic (fictionalised), drama VCDs, nhạc vàng cassette, lịch bloc with proverb pages, lì xì envelope, vàng mã, star lantern, bánh trung thu | homes, pagodas, temples, karaoke, net cafés, schools, bookstores |
+| Shophouse businesses (P1) | barber, tailor (treadle sewing machine), electronics repair, thuốc bắc herbalist (herb-drawer wall, remedy packets), pawn shop, photocopy shop, bánh mì bakery, quán nhậu (clay grill, beer crates) | nhà ống ground floors (15 variants in all) |
+| Everyday places (P2) | cây xăng (pumps with real gasoline), Co.op Mart (one per city), district hospital (one per city), ward police station (no guns), cemetery with tiled tombs, bookstore, motorbike dealer (new bikes) | city shop pool; the cemetery in the parks pool |
+
+![New places](art/places_preview.png)
+
+Top: Co.op Mart, district hospital, cemetery. Bottom: petrol station, ward police station, motorbike
+dealer. Every place passes the structure test (doors reachable, indoors roofed, stairs paired), and every
+new item has its own sprite.

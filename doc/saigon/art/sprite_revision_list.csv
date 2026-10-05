@@ -41,6 +41,7 @@ T1,furniture,f_sgn_lu_nuoc,mod,32x32,1,Saigon art (drawn),f_standing_tank
 T1,furniture,f_sgn_may_may,mod,32x32,1,Saigon art (drawn),f_counter
 T1,furniture,f_sgn_may_net,mod,32x32,1,Saigon art (drawn),f_desk
 T1,furniture,f_sgn_may_photo,mod,32x32,1,Saigon art (drawn),f_counter
+T1,furniture,f_sgn_mo,mod,32x32,1,Saigon art (drawn),f_grave_monument
 T1,furniture,f_sgn_nhang_vong,mod,32x32,1,Saigon art (drawn),f_rack
 T1,furniture,f_sgn_quay_vang,mod,32x32,1,Saigon art (drawn),f_display_rack
 T1,furniture,f_sgn_quay_ve,mod,32x32,1,Saigon art (drawn),f_counter
@@ -575,6 +576,42 @@ T1,overmap_terrain,sgn_nh_solo_z4,mod,16x16,1,Saigon art (derived),house
 T1,overmap_terrain,sgn_nh_solo_z5,mod,16x16,1,Saigon art (derived),house
 T1,overmap_terrain,sgn_nha_tho,mod,16x16,1,Saigon art (derived),house
 T1,overmap_terrain,sgn_nha_tho_roof,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_pl_benh_vien_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_benh_vien_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_benh_vien_00_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_benh_vien_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_benh_vien_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_benh_vien_01_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_benh_vien_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_benh_vien_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_benh_vien_10_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_benh_vien_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_benh_vien_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_benh_vien_11_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_cay_xang_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_cay_xang_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_cong_an_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_cong_an_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_coopmart_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_coopmart_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_coopmart_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_coopmart_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_coopmart_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_coopmart_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_coopmart_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_coopmart_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_nghia_trang_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_nghia_trang_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_nghia_trang_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_nghia_trang_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_nghia_trang_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_nghia_trang_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_nghia_trang_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_nghia_trang_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_nha_sach_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_nha_sach_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_xe_may_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_xe_may_00_z1,mod,16x16,1,to do,house
 T1,overmap_terrain,sgn_truong,mod,16x16,1,Saigon art (derived),house
 T1,overmap_terrain,sgn_truong_roof,mod,16x16,1,Saigon art (derived),house
 T1,overmap_terrain,sgn_ubnd,mod,16x16,1,Saigon art (derived),house
@@ -741,18 +778,22 @@ T1,vehicle_part,windshield,dda,32x48,5,keep original,t_wall_glass
 T1,vehicle_part,wing_mirror,dda,64x64,4,keep original,
 T1,vehicle_part,wood box,dda,32x32,3,keep original,f_crate_o
 T1,vehicle_part,xlframe,dda,32x32,1,keep original,frame_abstract
+T2,item,antibiotics,dda,20x20,1,keep original,
 T2,item,backpack_hiking,dda,32x32,1,keep original,ragpouch
 T2,item,banana,dda,20x20,1,keep original,
+T2,item,bandages,dda,20x20,1,keep original,
 T2,item,battery,dda,20x20,1,keep original,
 T2,item,beer,dda,32x32,1,keep original,water_clean
 T2,item,binoculars,dda,20x20,1,to do (no sprite),
 T2,item,blanket,dda,32x32,1,keep original,towel
 T2,item,boots_rubber,dda,32x32,1,keep original,dress_shoes
+T2,item,bottle_plastic,dda,20x20,1,keep original,
 T2,item,bottle_plastic_small,dda,20x20,1,keep original,bottle_plastic
 T2,item,butane,dda,32x32,1,keep original,
 T2,item,butane_can,dda,32x32,1,keep original,spray_can
 T2,item,cable,dda,20x20,1,keep original,
 T2,item,camera,dda,20x20,1,keep original,abstract_camera
+T2,item,can_sardine,dda,20x20,1,Saigon art (drawn),
 T2,item,candle,dda,20x20,1,keep original,
 T2,item,cell_phone,dda,20x20,1,keep original,
 T2,item,cig,dda,20x20,1,keep original,
@@ -761,6 +802,7 @@ T2,item,coffee_raw,dda,32x32,1,keep original,
 T2,item,con_milk,dda,32x32,1,keep original,
 T2,item,cooking_oil,dda,32x32,1,keep original,
 T2,item,cotton_patchwork,dda,20x20,1,keep original,
+T2,item,detergent,dda,32x32,1,keep original,
 T2,item,diamond_ring,dda,20x20,1,keep original,ring_engagement
 T2,item,dress,dda,20x20,1,keep original,coat_winter
 T2,item,dress_shoes,dda,32x32,1,keep original,shoes_bowling
@@ -794,6 +836,7 @@ T2,item,mango,dda,32x32,1,keep original,
 T2,item,meat,dda,20x20,1,keep original,flesh
 T2,item,money_hundred,dda,20x20,1,keep original,money_one
 T2,item,money_twenty,dda,20x20,1,keep original,money_one
+T2,item,motor_oil,dda,32x32,1,keep original,
 T2,item,mre_beef,dda,20x20,1,to do (no sprite),mre_beef
 T2,item,mre_veggy,dda,20x20,1,to do (no sprite),mre_beef
 T2,item,noodles_fast,dda,20x20,1,Saigon art (drawn),
@@ -811,6 +854,7 @@ T2,item,razor_shaving,dda,32x32,1,keep original,base_toiletries
 T2,item,ring_engagement,dda,20x20,1,keep original,
 T2,item,ring_wedding,dda,20x20,1,Saigon art (drawn),
 T2,item,rubber_band,dda,32x32,1,keep original,string_6
+T2,item,saline,dda,32x32,1,keep original,
 T2,item,salt,dda,20x20,1,keep original,spice
 T2,item,scissors,dda,32x32,1,keep original,
 T2,item,sewing_kit,dda,32x32,1,keep original,
@@ -940,14 +984,17 @@ T2,item,sgn_xoi,mod,20x20,1,Saigon art (drawn),dry_rice
 T2,item,sheet_cotton,dda,20x20,1,keep original,
 T2,item,silver_necklace,dda,20x20,1,keep original,
 T2,item,skirt,dda,20x20,1,keep original,skirt
+T2,item,soap,dda,20x20,1,keep original,
 T2,item,soldering_iron,dda,20x20,1,keep original,
 T2,item,stapler,dda,20x20,1,keep original,
 T2,item,sugar,dda,32x32,1,keep original,
 T2,item,sundress,dda,32x32,1,keep original,coat_rain
 T2,item,sunglasses,dda,20x20,1,keep original,sunglasses
 T2,item,sunscreen,dda,20x20,1,Saigon art (drawn),
+T2,item,syringe,dda,20x20,1,keep original,
 T2,item,tea_raw,dda,20x20,1,keep original,
 T2,item,textbook_firstaid,dda,20x20,1,keep original,
+T2,item,thermometer,dda,20x20,1,keep original,
 T2,item,thread,dda,32x32,1,keep original,
 T2,item,toothbrush_plain,dda,32x32,1,keep original,base_toiletries
 T2,item,two_way_radio,dda,20x20,1,keep original,
@@ -1084,7 +1131,6 @@ T3,item,bostonchan_wig,dda,20x20,1,base tileset gap,
 T3,item,bottle_glass,dda,20x20,1,keep original,bottle_plastic
 T3,item,bottle_glass_seasoning,dda,20x20,1,keep original,bottle_plastic
 T3,item,bottle_glass_seasoning_small,dda,20x20,1,keep original,bottle_plastic
-T3,item,bottle_plastic,dda,20x20,1,keep original,
 T3,item,bottle_plastic_355ml,dda,20x20,1,keep original,bottle_plastic
 T3,item,bottle_plastic_pill_painkiller,dda,20x20,1,keep original,aspirin
 T3,item,bottle_plastic_pill_supplement,dda,20x20,1,keep original,vitamins
@@ -1804,7 +1850,6 @@ T3,item,survivor_scope,dda,20x20,1,keep original,
 T3,item,survnote,dda,20x20,1,keep original,
 T3,item,sweater,dda,32x32,1,keep original,dress_shirt
 T3,item,sweatshirt,dda,32x32,1,keep original,dress_shirt
-T3,item,syringe,dda,20x20,1,keep original,
 T3,item,tacjacket,dda,20x20,1,keep original,coat_winter
 T3,item,tea_bag,dda,20x20,1,keep original,
 T3,item,tea_bag_chamomile,dda,20x20,1,keep original,tea_bag
@@ -1819,7 +1864,6 @@ T3,item,thermal_gloves,dda,20x20,1,base tileset gap,
 T3,item,thermal_mask,dda,20x20,1,keep original,
 T3,item,thermal_shirt,dda,20x20,1,base tileset gap,
 T3,item,thermal_socks,dda,20x20,1,keep original,
-T3,item,thermometer,dda,20x20,1,keep original,
 T3,item,thermos,dda,32x32,1,keep original,bottle_plastic
 T3,item,thigh_high_boots,dda,20x20,1,keep original,shoes_bowling
 T3,item,thread_canvas,dda,32x32,1,keep original,thread
