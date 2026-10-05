@@ -1,6 +1,10 @@
 #include <algorithm>
 #include <chrono>
 #include <cstdlib>
+#include <filesystem>
+#include <fstream>
+#include <iterator>
+#include <optional>
 #include <string>
 #include <vector>
 
@@ -19,6 +23,8 @@
 #include "player_helpers.h"
 #include "point.h"
 #include "type_id.h"
+#include "zzip.h"
+#include "zstd/zstd.h"
 
 // Saigon 2000s mod: turn-time harness (I-B5perf, doc/saigon/analysis/integration.md §10.24).
 // Puts the player in three generated Saigon places (a shophouse street, the Bến Thành
@@ -146,5 +152,51 @@ TEST_CASE( "saigon_turn_time", "[.][saigon_perf]" )
         if( monsters <= 100 ) {
             CHECK( p50 <= 40.0 );
         }
+    }
+}
+
+// Compression level trade-off for save files (doc/saigon/PERF.md): unpack a saved zzip
+// (a copy; the world is not touched) and recompress every entry with the same dictionary at
+// zstd levels 3 and 7, reporting total size and time.  Hidden; run with:
+//   SAIGON_ZZIP=copy/of/o.0.0.zzip SAIGON_ZZIP_DICT=world/overmaps.dict \
+//       tests/cata_test --mods=dda,saigon_2000s "[saigon_zzip_level]"
+TEST_CASE( "saigon_zzip_level", "[.][saigon_zzip_level]" )
+{
+    const char *path = std::getenv( "SAIGON_ZZIP" );
+    const char *dict_path = std::getenv( "SAIGON_ZZIP_DICT" );
+    if( path == nullptr || dict_path == nullptr ) {
+        WARN( "set SAIGON_ZZIP and SAIGON_ZZIP_DICT" );
+        return;
+    }
+    std::optional<zzip> z = zzip::load( path, dict_path );
+    REQUIRE( z.has_value() );
+    std::ifstream df( dict_path, std::ios::binary );
+    const std::string dict( ( std::istreambuf_iterator<char>( df ) ), std::istreambuf_iterator<char>() );
+    size_t raw = 0;
+    std::vector<std::vector<std::byte>> files;
+    for( const std::filesystem::path &e : z->get_entries() ) {
+        files.push_back( z->get_file( e ) );
+        raw += files.back().size();
+    }
+    REQUIRE( !files.empty() );
+    for( int level : { 3, 7 } ) {
+        ZSTD_CCtx *cctx = ZSTD_createCCtx();
+        ZSTD_CCtx_setParameter( cctx, ZSTD_c_compressionLevel, level );
+        size_t packed = 0;
+        const auto t0 = std::chrono::steady_clock::now();
+        for( int rep = 0; rep < 5; rep++ ) {
+            packed = 0;
+            for( const std::vector<std::byte> &f : files ) {
+                ZSTD_CCtx_loadDictionary( cctx, dict.data(), dict.size() );
+                std::vector<char> out( ZSTD_compressBound( f.size() ) );
+                const size_t n = ZSTD_compress2( cctx, out.data(), out.size(), f.data(), f.size() );
+                REQUIRE( !ZSTD_isError( n ) );
+                packed += n;
+            }
+        }
+        const double ms = std::chrono::duration<double, std::milli>( std::chrono::steady_clock::now() - t0 ).count() / 5;
+        ZSTD_freeCCtx( cctx );
+        WARN( "level " << level << ": " << files.size() << " files, " << raw << " bytes -> " << packed
+              << " bytes (" << 100.0 * packed / raw << " %), " << ms << " ms" );
     }
 }

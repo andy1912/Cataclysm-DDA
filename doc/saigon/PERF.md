@@ -44,8 +44,23 @@ pause of a few seconds about every 5 minutes. Options:
 | Leave it | 4–5 s pause every 5 real minutes | none |
 | Players raise *Real minutes between autosaves* (Options → General) | rarer pauses | more progress lost on a crash |
 | Engine: save only overmaps that changed since the last save | most autosaves skip the big overmaps entirely | a small C++ change in the fork (overmap dirty flag) |
-| Engine: a faster zstd level for overmap saves | about 2–4× faster saves | slightly larger save files |
+| **Engine: a faster zstd level for saves (done)** | autosave 4.2–5.0 s → **2.3 s** | save files about 13 % larger |
 | Turn megacity off | 2.2 s pause | a sparser city |
+
+## Done: faster save compression
+
+`src/zzip.cpp` compressed every save file at zstd level 7. It now uses level 3. Recompressing a world's
+overmap archive with its own dictionary (hidden test `[saigon_zzip_level]`) gives:
+
+| zstd level | Size (2.02 MB raw overmap) | Time |
+|---|---|---|
+| 7 (before) | 228 KB (11.3 %) | 225 ms |
+| 3 (now) | 256 KB (12.7 %) | 49 ms |
+
+In the turn harness the autosave stall drops from 4.2–5.0 s to **2.3 s**, the same as dda's own
+autosave without megacity. The rest of the save time is serialization, not compression. zstd
+decompresses any level the same way, so existing saves load unchanged, and dda's zzip tests pass.
+Pass 2 could go further: skipping overmaps that have not changed since the last save.
 
 ## Engine change made for the harness
 
