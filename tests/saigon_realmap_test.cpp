@@ -154,9 +154,16 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     CHECK( count["water"] > 500 );
     CHECK( count["bridge"] > 5 );
     CHECK( decks > 5 );
-    // Bến Thành (10.7725 N, 106.6980 E) is tile (338, 521) of the area: in the city, not open field
+    // Bến Thành (10.7725 N, 106.6980 E) is tile (338, 521) of the area: the market stands within
+    // 5 tiles (120 m) of it (tools/saigon/realmap/landmarks_2009.json)
     const tripoint_abs_omt ben_thanh( 338, 521, 0 );
-    CHECK( overmap_buffer.ter( ben_thanh ).id().str() != "field" );
+    int market = 0;
+    for( int dx = -5; dx <= 5; dx++ ) {
+        for( int dy = -5; dy <= 5; dy++ ) {
+            market += overmap_buffer.ter( ben_thanh + point( dx, dy ) ).id().str().rfind( "sgn_lm_ben_thanh", 0 ) == 0;
+        }
+    }
+    CHECK( market == 9 );
     g->place_player_overmap( ben_thanh );
     REQUIRE_FALSE( bridge.is_invalid() );
     g->place_player_overmap( project_combine( point_abs_om( 1, 2 ), bridge ) );

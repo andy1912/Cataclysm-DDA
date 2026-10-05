@@ -14,7 +14,8 @@ v1 (unit R2b):
   blocks     tiles facing a street become nhà ống (5 storeys + roof) turned to face it; tiles
              inside blocks become hẻm blocks
   land use   parks, warehouses, fields, marsh; airport and cemeteries are open ground until R4
-Places and landmarks come in R4/R5.
+  landmarks  the 19 landmarks on their real sites (R5, place_landmarks.py, landmarks_2009.json)
+Places come in R4.
 
 Every terrain id written is checked against the overmap_terrain definitions of dda and the mod.
 """
@@ -27,7 +28,9 @@ import sys
 HERE = os.path.dirname( os.path.abspath( __file__ ) )
 ROOT = os.path.join( HERE, '..', '..', '..' )
 sys.path.insert( 0, HERE )
+sys.path.insert( 0, os.path.join( HERE, '..', 'art' ) )
 from omap import Overmap  # noqa: E402
+import place_landmarks  # noqa: E402
 
 OM = 180
 ROT = [ 'north', 'east', 'south', 'west' ]
@@ -109,6 +112,25 @@ class World:
                 self.used.add( ( x + dx, y + dy ) )
 
 
+PREVIEW = [ ( 'sgn_lm_', ( 255, 0, 255 ) ), ( 'road', ( 70, 70, 70 ) ), ( 'bridge', ( 155, 63, 200 ) ),
+            ( 'lake', ( 31, 79, 176 ) ), ( 'sgn_nh_', ( 232, 150, 60 ) ), ( 'sgn_hem', ( 230, 200, 154 ) ),
+            ( 'park', ( 63, 165, 72 ) ), ( 'warehouse', ( 150, 150, 150 ) ), ( 'forest_water', ( 122, 184, 160 ) ),
+            ( 'field', ( 242, 237, 220 ) ) ]
+
+
+def preview( world, W, H, path ):
+    """z 0 at one pixel per tile, coloured by kind (landmarks magenta)."""
+    import pngio
+    img = pngio.Image( W, H )
+    for ( ox, oy ), om in world.oms.items():
+        for y in range( OM ):
+            for x in range( OM ):
+                ter = om.get( x, y, 0, 'field' )
+                c = next( ( col for pre, col in PREVIEW if ter.startswith( pre ) ), ( 0, 0, 0 ) )
+                img.set( ox * OM + x, oy * OM + y, c + ( 255, ) )
+    pngio.write( path, img )
+
+
 def main():
     grid_path = sys.argv[1]
     out = sys.argv[2] if len( sys.argv ) > 2 else os.path.join( ROOT, 'data/mods/saigon_2000s/realmap_2009' )
@@ -127,8 +149,13 @@ def main():
         c = ''.join( d for d in conn if ( p[0] + DIRS[d][0], p[1] + DIRS[d][1] ) in roads )
         if c:
             road_tiles[p] = ( c, cls, br )
+    # ---- landmarks on their real sites (R5); minor streets under them are removed
+    for line in place_landmarks.place( world, terrain, road_tiles, bld ):
+        print( '  ' + line )
     bridges = 0
     for ( x, y ), ( c, cls, br ) in road_tiles.items():
+        if ( x, y ) in world.used:
+            continue
         if terrain[y][x] in WATER:
             # the game's bridges run straight: keep the axis with the most links
             ns = ( 'n' in c ) + ( 's' in c )
@@ -188,6 +215,7 @@ def main():
     os.makedirs( out, exist_ok=True )
     for om in world.oms.values():
         om.write( out )
+    preview( world, W, H, os.path.splitext( grid_path )[0].replace( '.grid', '' ) + '.omap.png' )
     print( 'wrote %d overmaps to %s: %d road tiles (%d bridges), %d shophouse fronts, %d hẻm blocks'
            % ( len( world.oms ), os.path.relpath( out, ROOT ), len( road_tiles ), bridges, fronts, inner ) )
 
