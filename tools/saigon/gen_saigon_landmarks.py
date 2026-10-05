@@ -1099,10 +1099,10 @@ def palette():
             'e': { 'item': 'sgn_palace_bunker', 'chance': 80, 'repeat': [ 1, 3 ] },
             'E': { 'item': 'sgn_temple', 'chance': 70, 'repeat': [ 1, 2 ] },
             'B': { 'item': 'sgn_cho_wholesale', 'chance': 60, 'repeat': [ 1, 2 ] },
-            'Q': { 'item': 'SUS_office_desk', 'chance': 50 },
+            'Q': { 'item': 'sgn_office_desk', 'chance': 50 },
             '4': { 'item': 'sgn_train_station', 'chance': 25 },
             '!': { 'item': 'sgn_mall_fashion', 'chance': 50, 'repeat': [ 1, 2 ] },
-            '%': { 'item': 'shoestore_shoes', 'chance': 50 },
+            '%': { 'item': 'sgn_shoes', 'chance': 50 },
             '&': { 'item': 'electronics', 'chance': 40 },
             '5': { 'item': 'sgn_tourist', 'chance': 30 },
             'i': { 'item': 'sgn_tourist', 'chance': 45, 'repeat': [ 1, 2 ] } } }

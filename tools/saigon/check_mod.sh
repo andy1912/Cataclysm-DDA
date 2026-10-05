@@ -52,6 +52,13 @@ if [[ " ${mods[*]} " == *" saigon_2000s "* ]]; then
         head -20 "$ud/validate_tileset.txt"
         fail=1
     fi
+    # B10: no dda item that reads as American may be reachable from Saigon loot
+    # (deliberate exceptions are listed in the script's ALLOWED table)
+    if ! python3 tools/saigon/audit_us_content.py > "$ud/audit_us_content.txt" 2>&1; then
+        echo "FAIL: American items reachable from Saigon loot (tools/saigon/audit_us_content.py):"
+        head -20 "$ud/audit_us_content.txt"
+        fail=1
+    fi
 fi
 [ $fail -eq 0 ] && echo "OK: ${mods[*]}"
 exit $fail

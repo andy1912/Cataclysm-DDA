@@ -79,7 +79,7 @@ Plan: see `doc/saigon/PLAN.md`.
 | B9a monsters + monstergroups | done (see I-B9a) | - | | B1 | |
 | B9b NPCs + talk_topic + mission | done | 2a97bed55c | npcs/npcs.json | B2 | Cô Ba + Chú Tư (unique_id), Medicine for Bà Năm; nhà thuốc lot variant. Peer-reviewed |
 | B9.R review | todo | - | | B9b | |
-| B10 de-Americanize blacklists | todo | - | | B8g | |
+| B10 de-Americanize blacklists | done | (this) | itemgroups/de_americanize.json, tools/saigon/audit_us_content.py | B8g | Audit walks every loot group the mod uses (nested collections/distributions, mod overrides dda) and flags reachable non-Saigon items that read as American. Before: 58 incl. US dollar wallets, everyday-carry pistols and AR rifles on every zombie, US novels, a New England newspaper, Sioux cookbook, moccasins. Fix: mod overrides of default_zombie_death_drops / default_zombie_items / default_zombie_items_pockets (đồng wallet, lighter, cigarettes, phone, vé số, face mask, no guns), new sgn_zombie_bag, sgn_office_desk, sgn_shoes; cash card removed from shophouse loot. After: 302 reachable items, 0 flagged; ALLOWED = USD in sgn_tourist. check_mod.sh now fails on any hit. [saigon] 18/18, real-game load OK |
 | V1 playtest + screenshots | todo | - | | all B | |
 
 ## Naming note

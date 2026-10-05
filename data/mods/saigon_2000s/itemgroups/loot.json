@@ -130,7 +130,6 @@
       { "item": "sgn_book_southern_cooking", "prob": 4 },
       { "item": "sgn_book_tailoring", "prob": 3 },
       { "item": "sgn_book_tv_repair", "prob": 2 },
-      { "item": "cash_card", "prob": 5 },
       { "item": "aspirin", "prob": 10 },
       { "item": "sgn_quat_may", "prob": 30 },
       { "item": "sgn_den_dau", "prob": 15 },

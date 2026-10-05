@@ -211,7 +211,7 @@
         ]
       },
       "Q": {
-        "item": "SUS_office_desk",
+        "item": "sgn_office_desk",
         "chance": 50
       },
       "4": {
@@ -227,7 +227,7 @@
         ]
       },
       "%": {
-        "item": "shoestore_shoes",
+        "item": "sgn_shoes",
         "chance": 50
       },
       "&": {
