@@ -891,62 +891,68 @@ void overmap::unserialize_omap( const JsonValue &jsin, const cata_path &json_pat
     const int ocean_depth = settings_ocean.ocean_depth;
 
     JsonArray ja = jsin.get_array();
-    JsonObject jo = ja.next_object();
-
-    std::string type;
-    point_abs_om om_pos = point_abs_om::invalid;
-    int z = 0;
-
-    jo.read( "type", type );
-    jo.read( "om_pos", om_pos );
-    jo.read( "z", z );
-    JsonArray jal = jo.get_array( "layers" );
 
     std::vector<tripoint_om_omt> lake_points;
     std::vector<tripoint_om_omt> ocean_points;
     std::vector<tripoint_om_omt> forest_points;
 
-    if( type == "overmap" ) {
-        std::unordered_map<tripoint_om_omt, std::string> oter_id_migrations;
-        if( om_pos != pos() ) {
-            debugmsg( "Loaded invalid overmap from omap file %s. Loaded %s, expected %s",
-                      json_path.generic_u8string(), om_pos.to_string(), pos().to_string() );
-        } else {
-            int count = 0;
-            std::string tmp_ter;
-            oter_id tmp_otid( 0 );
-            for( int j = 0; j < OMAPY; j++ ) {
-                for( int i = 0; i < OMAPX; i++ ) {
-                    if( count == 0 ) {
-                        JsonArray jat = jal.next_array();
-                        tmp_ter = jat.next_string();
-                        count = jat.next_int();
-                        if( is_oter_id_obsolete( tmp_ter ) ) {
-                            for( int p = i; p < i + count; p++ ) {
-                                oter_id_migrations.emplace( tripoint_om_omt( p, j, z - OVERMAP_DEPTH ), tmp_ter );
+    // Saigon fork: one object per z level (upper floors, basements), not only z 0; and
+    // "final": true marks a complete hand-made overmap that generate() must not add to.
+    for( JsonObject jo : ja ) {
+        std::string type;
+        point_abs_om om_pos = point_abs_om::invalid;
+        int z = 0;
+
+        jo.read( "type", type );
+        jo.read( "om_pos", om_pos );
+        jo.read( "z", z );
+        bool is_final = false;
+        jo.read( "final", is_final );
+        pregenerated_final = pregenerated_final || is_final;
+        JsonArray jal = jo.get_array( "layers" );
+
+        if( type == "overmap" ) {
+            std::unordered_map<tripoint_om_omt, std::string> oter_id_migrations;
+            if( om_pos != pos() ) {
+                debugmsg( "Loaded invalid overmap from omap file %s. Loaded %s, expected %s",
+                          json_path.generic_u8string(), om_pos.to_string(), pos().to_string() );
+            } else {
+                int count = 0;
+                std::string tmp_ter;
+                oter_id tmp_otid( 0 );
+                for( int j = 0; j < OMAPY; j++ ) {
+                    for( int i = 0; i < OMAPX; i++ ) {
+                        if( count == 0 ) {
+                            JsonArray jat = jal.next_array();
+                            tmp_ter = jat.next_string();
+                            count = jat.next_int();
+                            if( is_oter_id_obsolete( tmp_ter ) ) {
+                                for( int p = i; p < i + count; p++ ) {
+                                    oter_id_migrations.emplace( tripoint_om_omt( p, j, z - OVERMAP_DEPTH ), tmp_ter );
+                                }
+                            } else if( oter_str_id( tmp_ter ).is_valid() ) {
+                                tmp_otid = oter_id( tmp_ter );
+                            } else {
+                                debugmsg( "Loaded invalid oter_id '%s'", tmp_ter.c_str() );
+                                tmp_otid = oter_omt_obsolete;
                             }
-                        } else if( oter_str_id( tmp_ter ).is_valid() ) {
-                            tmp_otid = oter_id( tmp_ter );
-                        } else {
-                            debugmsg( "Loaded invalid oter_id '%s'", tmp_ter.c_str() );
-                            tmp_otid = oter_omt_obsolete;
                         }
-                    }
-                    count--;
-                    layer[z + OVERMAP_DEPTH].terrain[i][j] = tmp_otid;
-                    if( tmp_otid == oter_lake_shore || tmp_otid == oter_lake_surface ) {
-                        lake_points.emplace_back( i, j, z );
-                    }
-                    if( tmp_otid == oter_ocean_shore || tmp_otid == oter_ocean_surface ) {
-                        ocean_points.emplace_back( i, j, z );
-                    }
-                    if( tmp_otid == oter_forest || tmp_otid == oter_forest_thick ) {
-                        forest_points.emplace_back( i, j, z );
+                        count--;
+                        layer[z + OVERMAP_DEPTH].terrain[i][j] = tmp_otid;
+                        if( tmp_otid == oter_lake_shore || tmp_otid == oter_lake_surface ) {
+                            lake_points.emplace_back( i, j, z );
+                        }
+                        if( tmp_otid == oter_ocean_shore || tmp_otid == oter_ocean_surface ) {
+                            ocean_points.emplace_back( i, j, z );
+                        }
+                        if( tmp_otid == oter_forest || tmp_otid == oter_forest_thick ) {
+                            forest_points.emplace_back( i, j, z );
+                        }
                     }
                 }
             }
+            migrate_oter_ids( oter_id_migrations );
         }
-        migrate_oter_ids( oter_id_migrations );
     }
 
     std::unordered_set<tripoint_om_omt> lake_set;

@@ -89,6 +89,12 @@ fields, canals, hamlets), not more city.
 6. **Landmarks at real coordinates.** Each of the 19 has an anchor point and a facing taken from the
    real building (Bến Thành's gate faces the roundabout; Đức Bà faces Đồng Khởi). They are placed as
    whole multi-tile buildings, and removed from the random pools in the real-map mod.
+   With the user's image as the source (§8a), steps 2–6 read a class grid instead of OSM tags:
+   `classify.py IMAGE POINTS.json OUT` fits the image onto real coordinates from its black reference
+   marks (least squares, north-up fit preferred), samples every tile's footprint, lets thin linear
+   classes (bridge, river, canal, roads, railway) win over area classes when they cover a quarter of the
+   tile, and writes `OUT.grid.json` (one letter per tile, plus every landmark and place marker in tile
+   coordinates) and `OUT.preview.png` (one pixel per tile). A full-size image takes a few minutes.
 7. **Write** one `overmap_<x>_<y>.omap.gz` per overmap, every z level, plus a preview PNG through
    `render_overmap.py`, side by side with an OSM reference render.
 
@@ -138,6 +144,23 @@ when reaching a new overmap goes away inside the covered area.
 | R10 | Docs: the map with a side-by-side reference, how to regenerate it, attribution | — |
 
 Each unit is small and gets committed on its own. R1–R3 already give a playable real street plan.
+
+## 8a. Second round of decisions (2026-10-05)
+
+- **Names.** The world's map is chosen by scenario when the first character starts:
+  - **"Vietmap"** is the current procedural megacity (the existing Sài Gòn scenario);
+  - **"Saigon 2009"** is the real map.
+
+  A world keeps the map its first game chose.
+- **Year.** The real map shows **2009**, with the **Phú Mỹ bridge** (opened Sep 2009) and the Thủ Thiêm
+  bridge (2008). The §5 corrections are re-cut for 2009. Still not there: the Võ Văn Kiệt boulevard (under
+  construction), the Thủ Thiêm tunnel (2011), Bitexco (2010), Landmark 81 and the metro.
+- **Source.** The user's **illustrated 2006–2009 map** (`tools/saigon/realmap/source/saigon_2009_illustrated.png`)
+  is kept as the reference for 2009 features and district character. It is a poster, not to scale:
+  measured scale runs from 3 to 15 m per pixel, and the airport is about 60° off. So its geometry is not
+  traced. A Google Maps screenshot was also offered and is **not used** (its terms do not allow deriving
+  map data). **The user is making a new, to-scale image to REALMAP_IMAGE_SPEC.md.**
+- **Area.** 5 × 4 overmaps, so Đầm Sen and Suối Tiên both fit (REALMAP_IMAGE_SPEC.md §5).
 
 ## 8. Decisions (answered 2026-10-05)
 

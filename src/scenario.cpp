@@ -114,6 +114,7 @@ void scenario::load( const JsonObject &jo, std::string_view )
     optional( jo, was_loaded, "distance_initial_visibility", distance_initial_visibility, 15 );
 
     optional( jo, was_loaded, "eoc", _eoc, auto_flags_reader<effect_on_condition_id> {} );
+    optional( jo, was_loaded, "overmap_pregenerated_path", _overmap_pregenerated_path );
 
     optional( jo, was_loaded, "origin_offset", origin_offset, point_rel_om::zero );
 
@@ -755,6 +756,10 @@ const std::vector<mission_type_id> &scenario::missions() const
 const std::vector<effect_on_condition_id> &scenario::eoc() const
 {
     return _eoc;
+}
+const std::string &scenario::overmap_pregenerated_path() const
+{
+    return _overmap_pregenerated_path;
 }
 const std::vector<std::pair<mongroup_id, float>> &scenario::surround_groups() const
 {

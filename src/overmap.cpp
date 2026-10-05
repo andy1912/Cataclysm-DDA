@@ -28,6 +28,8 @@
 #include "filesystem.h"
 #include "flood_fill.h"
 #include "game.h"
+#include "global_vars.h"
+#include "math_parser_diag_value.h"
 #include "horde_entity.h"
 #include "line.h"
 #include "map.h"
@@ -928,8 +930,14 @@ void overmap::generate( const std::vector<const overmap *> &neighbor_overmaps,
     dbg( D_INFO ) << "overmap::generate start…";
     const oter_id omt_outside_defined_omap = static_cast<oter_id>
             ( get_option<std::string>( "OUTSIDE_DEFINED_OMAP_OMT" ) );
-    const std::string overmap_pregenerated_path =
+    std::string overmap_pregenerated_path =
         get_option<std::string>( "OVERMAP_PREGENERATED_PATH" );
+    // Saigon fork: the world's scenario choice (set once in game::start_game) wins over the option
+    if( diag_value const *chosen = get_globals().maybe_get_global_value( "overmap_pregenerated_path" ) ) {
+        if( chosen->is_str() && !chosen->str().empty() ) {
+            overmap_pregenerated_path = chosen->str();
+        }
+    }
     if( !overmap_pregenerated_path.empty() ) {
         // HACK: For some reason gz files are automatically unpacked and renamed during Android build process
 #if defined(__ANDROID__)
@@ -959,6 +967,9 @@ void overmap::generate( const std::vector<const overmap *> &neighbor_overmaps,
     std::vector<Highway_path> highway_paths;
     calculate_urbanity();
     calculate_forestosity();
+    // Saigon fork: a complete hand-made overmap ("final": true) keeps its layout; only the
+    // sublevels, bridge decks, monster groups and radios below are added.
+    if( !pregenerated_final ) {
     if( settings->neighbor_connections ) {
         populate_connections_out_from_neighbors( neighbor_overmaps );
     }
@@ -1025,6 +1036,7 @@ void overmap::generate( const std::vector<const overmap *> &neighbor_overmaps,
     }
     if( settings->overmap_river ) {
         polish_river( neighbor_overmaps ); // Polish again for placed specials
+    }
     }
 
     // TODO: there is no reason we can't generate the sublevels in one pass

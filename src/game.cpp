@@ -1,4 +1,6 @@
 #include "game.h"
+#include "global_vars.h"
+#include "math_parser_diag_value.h"
 #include "map_memory.h"
 
 #include <algorithm>
@@ -816,6 +818,12 @@ bool game::start_game()
 
     load_master();
     u.setID( assign_npc_id() ); // should be as soon as possible, but *after* load_master
+
+    // Saigon fork: the first game in a world fixes which map it uses.  A scenario can name a
+    // pregenerated overmap set (e.g. the real-map Saigon); later games keep the world's choice.
+    if( get_globals().maybe_get_global_value( "overmap_pregenerated_path" ) == nullptr ) {
+        get_globals().set_global_value( "overmap_pregenerated_path", scen->overmap_pregenerated_path() );
+    }
 
     // Make sure the items are added after the calendar is started
     u.add_profession_items();
