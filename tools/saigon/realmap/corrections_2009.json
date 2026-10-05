@@ -1,0 +1,32 @@
+{
+  "about": "Turns today's OpenStreetMap into Saigon as of late 2009. Every entry gives its reason. Zones are painted before the OSM land use (OSM water and parks still win inside them); drop_roads_inside removes OSM streets lying wholly inside the zone unless named in keep_road_names.",
+  "drop_road_names": [
+    "Mai Chí Thọ",
+    "Phạm Văn Đồng",
+    "Long Thành",
+    "Cầu Ba Son",
+    "Cầu Thủ Thiêm 2",
+    "Vành đai 2"
+  ],
+  "drop_road_names_why": {
+    "Mai Chí Thọ": "the East-West avenue through Thủ Thiêm opened in 2011",
+    "Phạm Văn Đồng": "the Gò Vấp - Thủ Đức avenue opened in 2013",
+    "Long Thành": "the HCMC - Long Thành - Dầu Giây expressway opened in 2015",
+    "Cầu Ba Son / Cầu Thủ Thiêm 2": "the Ba Son bridge opened in 2022",
+    "Vành đai 2": "ring road 2 sections were built after 2010"
+  },
+  "drop_way_ids": [],
+  "zones": [
+    {
+      "name": "Thủ Thiêm",
+      "why": "in 2009 the peninsula opposite District 1 was being cleared for the new town: marsh, creeks and a few old lanes; the grid streets came after 2010",
+      "class": "marsh",
+      "drop_roads_inside": true,
+      "keep_road_names": [ "Lương Định Của", "Trần Não", "Nguyễn Thị Định" ],
+      "polygon": [
+        [ 10.7905, 106.7140 ], [ 10.7885, 106.7240 ], [ 10.7800, 106.7335 ], [ 10.7700, 106.7335 ],
+        [ 10.7635, 106.7210 ], [ 10.7650, 106.7085 ], [ 10.7745, 106.7060 ], [ 10.7850, 106.7075 ]
+      ]
+    }
+  ]
+}
