@@ -20,6 +20,7 @@
     "//": "L3 Phạm Ngũ Lão – Bùi Viện: guesthouse rooms, bars and travel agents of the backpacker quarter.",
     "items": [
       { "item": "sgn_ho_chieu", "prob": 25 },
+      { "item": "sgn_ban_do_tphcm", "prob": 15 },
       { "item": "money_twenty", "prob": 20, "count": [ 1, 5 ] },
       { "item": "money_hundred", "prob": 5 },
       { "item": "guidebook", "prob": 20 },
@@ -39,6 +40,7 @@
     "subtype": "distribution",
     "//": "L3 Ga Sài Gòn and Bến xe Miền Đông: luggage abandoned in the evacuation crush.",
     "items": [
+      { "item": "sgn_ban_do_tphcm", "prob": 6 },
       { "item": "backpack_hiking", "prob": 8 },
       { "item": "duffelbag", "prob": 10 },
       { "item": "sgn_banh_mi_thit", "prob": 15 },

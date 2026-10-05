@@ -120,6 +120,7 @@
       { "item": "sgn_book_wuxia", "prob": 25 },
       { "item": "sgn_truyen_meo_may", "prob": 25 },
       { "item": "sgn_book_almanac", "prob": 10 },
+      { "item": "sgn_ban_do_tphcm", "prob": 8 },
       { "item": "sgn_lich_bloc", "prob": 10 },
       { "item": "sgn_book_southern_cooking", "prob": 6 },
       { "item": "sgn_book_moto_repair", "prob": 6 },

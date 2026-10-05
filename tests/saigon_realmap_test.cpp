@@ -23,6 +23,7 @@
 #include "pathfinding.h"
 #include "point.h"
 #include "player_helpers.h"
+#include "scenario.h"
 #include "start_location.h"
 #include "worldfactory.h"
 #include "type_id.h"
@@ -223,6 +224,15 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
                                        point_abs_om() ).first;
     CAPTURE( start.to_string() );
     CHECK( project_to<coords::om>( start.xy() ) == point_abs_om() );
+    // the 2009 scenario's other starts are on the real map too: an inner hẻm, Ga Sài Gòn's hall,
+    // Tân Sơn Nhất's departures hall
+    for( const char *loc : { "sgn_sloc_hem", "sgn_sloc_ga_sai_gon", "sgn_sloc_san_bay" } ) {
+        CAPTURE( loc );
+        CHECK_FALSE( start_location_id( loc )->find_player_initial_location( point_abs_om() ).first.is_invalid() );
+    }
+    // and it reveals a wide neighbourhood at the start (a getter that returned bool cut every
+    // scenario's radius to 1)
+    CHECK( string_id<scenario>( "sgn_saigon_2009" )->get_distance_initial_visibility() == 40 );
     // Tân Sơn Nhất (overmap (-1, -1)): runways and the terminal (gen_san_bay.py, sgn_lm_san_bay)
     overmap &airport = overmap_buffer.get( point_abs_om( -1, -1 ) );
     int runway = 0;
