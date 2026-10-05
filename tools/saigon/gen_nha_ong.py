@@ -75,6 +75,31 @@ GROUND = {
     'karaoke': [
         'WRRR', 'W..G', 'W...', 'WCC.', 'W...', 'WQs.', 'W.s.', 'W+WW', 'WQs.',
         'W.s.', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
+    # P1 more shophouse businesses
+    'hotoc': [                                       # barber: chairs facing mirrors, a sink
+        'WRRR', 'W..G', 'Wih.', 'W...', 'Wih.', 'W...', 'Wih.', 'W.S.', 'Wcc.',
+        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
+    'may': [                                         # tailor: treadle machines, cloth racks
+        'WRRR', 'W..G', 'Wff.', 'W...', 'We..', 'We.c', 'W...', 'WCC.', 'Wff.',
+        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
+    'suadien': [                                     # electronics repair: benches, TVs waiting
+        'WRRR', 'W..G', 'WjV.', 'W.c.', 'WjV.', 'W.c.', 'WVV.', 'WCC.', 'W...',
+        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
+    'thuocbac': [                                    # herbalist: walls of herb drawers
+        'WRRR', 'W..G', 'Wuu.', 'W...', 'Wuu.', 'W...', 'W.c.', 'WCC.', 'Wuu.',
+        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
+    'camdo': [                                       # pawn shop: glass cases, a safe
+        'WRRR', 'W..G', 'Wyy.', 'W...', 'Wyy.', 'W...', 'Wx..', 'WCC.', 'W...',
+        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
+    'photo': [                                       # photocopy shop
+        'WRRR', 'W..G', 'Wz..', 'W...', 'Wz..', 'W...', 'Wqq.', 'WCC.', 'W...',
+        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
+    'banhmi': [                                      # bakery: ovens and bread racks
+        'WRRR', 'W..G', 'Waa.', 'W...', 'Woo.', 'W...', 'Wo..', 'WCC.', 'Waa.',
+        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
+    'nhau': [                                        # quán nhậu: low tables, a grill, beer crates
+        'WRRR', 'W..G', 'Wtc.', 'Wtc.', 'W...', 'Wtc.', 'W.l.', 'WBB.', 'Wtc.',
+        'W...', 'W...', 'W...', 'W...', 'W.A.', 'WF..', 'WTb.', 'W..L', 'WW+W' ],
 }
 FLOOR = {
     'family': [
@@ -158,7 +183,9 @@ def nested_object( rows ):
 def lot_height( nid, top ):
     ground = { 'chunks': [ [ 'sgn_lot_z0_pho', 3 ], [ 'sgn_lot_z0_taphoa', 4 ], [ 'sgn_lot_z0_moto', 2 ],
                            [ 'sgn_lot_z0_nhathuoc', 1 ], [ 'sgn_lot_z0_tiemvang', 1 ], [ 'sgn_lot_z0_net', 1 ],
-                           [ 'sgn_lot_z0_karaoke', 1 ] ],
+                           [ 'sgn_lot_z0_karaoke', 1 ], [ 'sgn_lot_z0_hotoc', 1 ], [ 'sgn_lot_z0_may', 1 ],
+                           [ 'sgn_lot_z0_suadien', 1 ], [ 'sgn_lot_z0_thuocbac', 1 ], [ 'sgn_lot_z0_camdo', 1 ],
+                           [ 'sgn_lot_z0_photo', 1 ], [ 'sgn_lot_z0_banhmi', 1 ], [ 'sgn_lot_z0_nhau', 1 ] ],
                'x': 0, 'y': 0, 'check_z': [ 0 ] }
     floors = [ { 'chunks': [ [ 'sgn_lot_z%d_family' % z, 3 ], [ 'sgn_lot_z%d_rental' % z, 1 ] ],
                  'x': 0, 'y': 0, 'check_z': [ z ] } for z in ( 1, 2 ) ]
@@ -203,6 +230,9 @@ def palette():
             's': FLOOR_PARAM, 'p': FLOOR_PARAM,
             'G': FLOOR_PARAM, 'L': FLOOR_PARAM, 'V': FLOOR_PARAM, 'v': FLOOR_PARAM,
             'g': FLOOR_PARAM, 'n': FLOOR_PARAM, 'Q': FLOOR_PARAM,
+            'h': FLOOR_PARAM, 'i': FLOOR_PARAM, 'e': FLOOR_PARAM, 'f': FLOOR_PARAM, 'j': FLOOR_PARAM,
+            'u': FLOOR_PARAM, 'x': FLOOR_PARAM, 'y': FLOOR_PARAM, 'z': FLOOR_PARAM, 'q': FLOOR_PARAM,
+            'o': FLOOR_PARAM, 'a': FLOOR_PARAM, 'l': FLOOR_PARAM, 'B': FLOOR_PARAM,
             'P': 't_concrete_roof', 'M': 't_concrete_roof',
             '<': 't_stairs_up', '>': 't_stairs_down', '_': 't_concrete_roof', '=': 't_railing' },
         'furniture': {
@@ -214,7 +244,11 @@ def palette():
             'G': 'f_sgn_ban_tho_than_tai', 'L': 'f_sgn_lu_nuoc', 'V': 'f_sgn_tivi_crt', 'v': 'f_sgn_vong',
             'P': 'f_sgn_chau_kieng', 'M': 'f_air_conditioner',
             # B8h businesses
-            'g': 'f_sgn_quay_vang', 'n': 'f_sgn_may_net', 'Q': 'f_sgn_dan_karaoke' },
+            'g': 'f_sgn_quay_vang', 'n': 'f_sgn_may_net', 'Q': 'f_sgn_dan_karaoke',
+            # P1 businesses
+            'h': 'f_barber_chair', 'i': 'f_bigmirror', 'e': 'f_sgn_may_may', 'f': 'f_rack', 'j': 'f_workbench',
+            'u': 'f_sgn_tu_thuoc_bac', 'x': 'f_safe_l', 'y': 'f_displaycase', 'z': 'f_sgn_may_photo', 'q': 'f_rack',
+            'o': 'f_oven', 'a': 'f_rack', 'l': 'f_sgn_bep_nuong', 'B': 'f_crate_c' },
         'liquids': { 'K': { 'liquid': 'water', 'amount': [ 120, 720 ] },
                      'L': { 'liquid': 'water', 'amount': [ 40, 240 ] } },
         'items': {
@@ -222,6 +256,16 @@ def palette():
             'g': { 'item': 'sgn_gold_shop', 'chance': 70, 'repeat': [ 1, 3 ] },
             'n': { 'item': 'sgn_net_cafe', 'chance': 35 },
             'Q': { 'item': 'sgn_karaoke', 'chance': 60, 'repeat': [ 1, 2 ] },
+            'h': { 'item': 'sgn_barber', 'chance': 25 },
+            'f': { 'item': 'sgn_tailor', 'chance': 60, 'repeat': [ 1, 3 ] },
+            'e': { 'item': 'sgn_tailor', 'chance': 30 },
+            'j': { 'item': 'sgn_electronics_repair', 'chance': 60, 'repeat': [ 1, 2 ] },
+            'u': { 'item': 'sgn_herbalist', 'chance': 70, 'repeat': [ 1, 3 ] },
+            'x': { 'item': 'sgn_pawn', 'chance': 80, 'repeat': [ 1, 3 ] },
+            'y': { 'item': 'sgn_pawn', 'chance': 50, 'repeat': [ 1, 2 ] },
+            'q': { 'item': 'sgn_photocopy', 'chance': 60, 'repeat': [ 1, 2 ] },
+            'a': { 'item': 'sgn_bakery', 'chance': 60, 'repeat': [ 1, 3 ] },
+            'B': { 'item': 'sgn_nhau', 'chance': 60, 'repeat': [ 1, 3 ] },
             'C': { 'item': 'sgn_street_cart', 'chance': 35 },
             'O': { 'item': 'sgn_shophouse_kitchen', 'chance': 50 },
             'F': { 'item': 'sgn_shophouse_kitchen', 'chance': 40 },

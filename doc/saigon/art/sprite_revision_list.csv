@@ -1,14 +1,19 @@
 tier,category,id,source,size,images,status,fallback
 T1,furniture,f_air_conditioner,dda,32x32,1,keep original,t_machinery_light
+T1,furniture,f_barber_chair,dda,32x32,1,to do (no sprite),
 T1,furniture,f_bed,dda,32x32,16,Saigon art (derived),
 T1,furniture,f_bench,dda,32x32,16,keep original,
+T1,furniture,f_bigmirror,dda,32x64,1,keep original,
 T1,furniture,f_bike_rack,dda,32x32,17,keep original,t_metal_railing
 T1,furniture,f_counter,dda,32x32,16,keep original,
+T1,furniture,f_crate_c,dda,32x64,1,keep original,
+T1,furniture,f_displaycase,dda,32x32,2,keep original,f_rack
 T1,furniture,f_dresser,dda,32x64,4,keep original,
 T1,furniture,f_fridge,dda,32x64,4,keep original,
 T1,furniture,f_oven,dda,32x32,1,Saigon art (drawn),
 T1,furniture,f_rack,dda,32x32,1,keep original,
 T1,furniture,f_region_flower_decorative,dda,32x32,1,keep original,f_region_pseudo
+T1,furniture,f_safe_l,dda,32x32,2,keep original,f_gunsafe_ml
 T1,furniture,f_sgn_ban_da,mod,32x32,1,Saigon art (drawn),f_table
 T1,furniture,f_sgn_ban_inox,mod,32x32,1,Saigon art (drawn),f_table
 T1,furniture,f_sgn_ban_tho,mod,32x32,16,Saigon art (derived),f_table
@@ -18,6 +23,7 @@ T1,furniture,f_sgn_bang_den,mod,32x32,1,Saigon art (drawn),f_desk
 T1,furniture,f_sgn_bang_gio_tau,mod,32x64,1,Saigon art (drawn),f_desk
 T1,furniture,f_sgn_bang_hieu,mod,32x32,3,Saigon art (drawn),f_sign
 T1,furniture,f_sgn_bao_gao,mod,32x64,1,Saigon art (drawn),f_crate_c
+T1,furniture,f_sgn_bep_nuong,mod,32x32,1,Saigon art (drawn),f_brazier
 T1,furniture,f_sgn_buong_dien_thoai,mod,32x32,1,Saigon art (drawn),f_rack
 T1,furniture,f_sgn_chau_kieng,mod,32x32,1,Saigon art (drawn),f_indoor_plant
 T1,furniture,f_sgn_cot_dien,mod,32x64,1,Saigon art (drawn),f_utility_pole
@@ -32,7 +38,9 @@ T1,furniture,f_sgn_loa_phuong,mod,32x64,1,Saigon art (drawn),f_utility_pole
 T1,furniture,f_sgn_long_chim,mod,32x64,1,Saigon art (drawn),f_rack
 T1,furniture,f_sgn_lu_huong,mod,32x32,1,Saigon art (drawn),f_brazier
 T1,furniture,f_sgn_lu_nuoc,mod,32x32,1,Saigon art (drawn),f_standing_tank
+T1,furniture,f_sgn_may_may,mod,32x32,1,Saigon art (drawn),f_counter
 T1,furniture,f_sgn_may_net,mod,32x32,1,Saigon art (drawn),f_desk
+T1,furniture,f_sgn_may_photo,mod,32x32,1,Saigon art (drawn),f_counter
 T1,furniture,f_sgn_nhang_vong,mod,32x32,1,Saigon art (drawn),f_rack
 T1,furniture,f_sgn_quay_vang,mod,32x32,1,Saigon art (drawn),f_display_rack
 T1,furniture,f_sgn_quay_ve,mod,32x32,1,Saigon art (drawn),f_counter
@@ -41,6 +49,7 @@ T1,furniture,f_sgn_su_tu_da,mod,32x64,1,Saigon art (drawn),f_statue
 T1,furniture,f_sgn_thap_rua,mod,32x64,1,Saigon art (drawn),f_statue
 T1,furniture,f_sgn_thuyen_thien_nga,mod,32x32,1,Saigon art (drawn),f_rack
 T1,furniture,f_sgn_tivi_crt,mod,32x32,1,Saigon art (drawn),f_dresser
+T1,furniture,f_sgn_tu_thuoc_bac,mod,32x64,1,Saigon art (drawn),f_cupboard
 T1,furniture,f_sgn_tuong_khong_lo,mod,64x96,1,Saigon art (drawn),f_statue
 T1,furniture,f_sgn_tuong_than,mod,32x64,1,Saigon art (drawn),f_statue
 T1,furniture,f_sgn_van_tho,mod,32x32,1,Saigon art (drawn),f_dandelion
@@ -58,6 +67,7 @@ T1,furniture,f_table,dda,32x32,16,keep original,
 T1,furniture,f_toilet,dda,32x32,1,Saigon art (drawn),
 T1,furniture,f_traffic_light,dda,32x64,1,keep original,f_utility_pole
 T1,furniture,f_trashcan,dda,32x32,1,Saigon art (derived),
+T1,furniture,f_workbench,dda,32x64,1,keep original,f_counter
 T1,item,adhesive_bandages,dda,20x20,1,keep original,
 T1,item,apron_cotton,dda,20x20,1,keep original,tshirt
 T1,item,aspirin,dda,20x20,1,keep original,
@@ -733,6 +743,7 @@ T1,vehicle_part,wood box,dda,32x32,3,keep original,f_crate_o
 T1,vehicle_part,xlframe,dda,32x32,1,keep original,frame_abstract
 T2,item,backpack_hiking,dda,32x32,1,keep original,ragpouch
 T2,item,banana,dda,20x20,1,keep original,
+T2,item,battery,dda,20x20,1,keep original,
 T2,item,beer,dda,32x32,1,keep original,water_clean
 T2,item,binoculars,dda,20x20,1,to do (no sprite),
 T2,item,blanket,dda,32x32,1,keep original,towel
@@ -740,6 +751,7 @@ T2,item,boots_rubber,dda,32x32,1,keep original,dress_shoes
 T2,item,bottle_plastic_small,dda,20x20,1,keep original,bottle_plastic
 T2,item,butane,dda,32x32,1,keep original,
 T2,item,butane_can,dda,32x32,1,keep original,spray_can
+T2,item,cable,dda,20x20,1,keep original,
 T2,item,camera,dda,20x20,1,keep original,abstract_camera
 T2,item,candle,dda,20x20,1,keep original,
 T2,item,cell_phone,dda,20x20,1,keep original,
@@ -761,10 +773,13 @@ T2,item,file,dda,20x20,1,keep original,
 T2,item,fish,dda,20x20,1,keep original,flesh
 T2,item,flashlight,dda,20x20,1,keep original,
 T2,item,flip_flops,dda,20x20,1,keep original,shoes_bowling
+T2,item,flour,dda,20x20,1,keep original,
 T2,item,gasoline,dda,32x32,1,keep original,
 T2,item,gold_ring,dda,20x20,1,keep original,
 T2,item,gold_watch,dda,20x20,1,keep original,
 T2,item,guidebook,dda,20x20,1,Saigon art (drawn),radio_book
+T2,item,hair_dryer,dda,20x20,1,keep original,
+T2,item,hairbrush,dda,32x32,1,keep original,base_toiletries
 T2,item,hairpin,dda,20x20,1,keep original,
 T2,item,heels,dda,32x32,1,keep original,sneakers
 T2,item,helmet_army,dda,20x20,1,keep original,hat_ball
@@ -791,10 +806,14 @@ T2,item,pockknife,dda,20x20,1,keep original,
 T2,item,polo_shirt,dda,32x32,1,keep original,camisole
 T2,item,processor,dda,20x20,1,Saigon art (drawn),
 T2,item,purse,dda,20x20,1,keep original,ragpouch
+T2,item,radio,dda,32x32,1,keep original,
+T2,item,razor_shaving,dda,32x32,1,keep original,base_toiletries
 T2,item,ring_engagement,dda,20x20,1,keep original,
 T2,item,ring_wedding,dda,20x20,1,Saigon art (drawn),
 T2,item,rubber_band,dda,32x32,1,keep original,string_6
 T2,item,salt,dda,20x20,1,keep original,spice
+T2,item,scissors,dda,32x32,1,keep original,
+T2,item,sewing_kit,dda,32x32,1,keep original,
 T2,item,sgn_am_nhom,mod,20x20,1,Saigon art (drawn),base_cookpot
 T2,item,sgn_ao_ba_ba,mod,20x20,1,Saigon art (drawn),dress_shirt
 T2,item,sgn_ao_cong_an,mod,20x20,1,Saigon art (drawn),buttonshirt
@@ -904,6 +923,7 @@ T2,item,sgn_thanh_long,mod,20x20,1,Saigon art (drawn),mango
 T2,item,sgn_thau_nhua,mod,20x20,1,Saigon art (drawn),bucket
 T2,item,sgn_thot_go_me,mod,20x20,1,Saigon art (drawn),cutting_board
 T2,item,sgn_thung_xop,mod,20x20,1,Saigon art (drawn),cup_plastic
+T2,item,sgn_thuoc_bac,mod,20x20,1,to do (no sprite),veggy_raw
 T2,item,sgn_thuoc_la,mod,20x20,1,Saigon art (drawn),cig
 T2,item,sgn_tom_kho,mod,20x20,1,Saigon art (drawn),flesh
 T2,item,sgn_tra_da,mod,32x32,1,Saigon art (derived),water_clean
@@ -920,6 +940,7 @@ T2,item,sgn_xoi,mod,20x20,1,Saigon art (drawn),dry_rice
 T2,item,sheet_cotton,dda,20x20,1,keep original,
 T2,item,silver_necklace,dda,20x20,1,keep original,
 T2,item,skirt,dda,20x20,1,keep original,skirt
+T2,item,soldering_iron,dda,20x20,1,keep original,
 T2,item,stapler,dda,20x20,1,keep original,
 T2,item,sugar,dda,32x32,1,keep original,
 T2,item,sundress,dda,32x32,1,keep original,coat_rain
@@ -927,6 +948,7 @@ T2,item,sunglasses,dda,20x20,1,keep original,sunglasses
 T2,item,sunscreen,dda,20x20,1,Saigon art (drawn),
 T2,item,tea_raw,dda,20x20,1,keep original,
 T2,item,textbook_firstaid,dda,20x20,1,keep original,
+T2,item,thread,dda,32x32,1,keep original,
 T2,item,toothbrush_plain,dda,32x32,1,keep original,base_toiletries
 T2,item,two_way_radio,dda,20x20,1,keep original,
 T2,item,wallet,dda,32x32,1,keep original,bag_canvas
@@ -1019,7 +1041,6 @@ T3,item,basic_papr_belt_off,dda,32x32,1,keep original,leather_belt
 T3,item,basic_papr_helmet,dda,20x20,1,keep original,helmet_motor
 T3,item,bastsandals,dda,32x32,1,keep original,sneakers
 T3,item,bat_anklet,dda,20x20,1,base tileset gap,
-T3,item,battery,dda,20x20,1,keep original,
 T3,item,battery_car,dda,20x20,1,keep original,
 T3,item,battery_motorbike,dda,20x20,1,keep original,battery_car
 T3,item,bbholster,dda,20x20,1,keep original,sheath
@@ -1353,7 +1374,6 @@ T3,item,grinder_cutoff_disc,dda,20x20,1,keep original,
 T3,item,grinder_metal_grinding_disc,dda,20x20,1,keep original,
 T3,item,gum,dda,20x20,1,keep original,
 T3,item,hacksaw,dda,20x20,1,keep original,
-T3,item,hairbrush,dda,32x32,1,keep original,base_toiletries
 T3,item,hakama,dda,20x20,1,keep original,kilt
 T3,item,halter_top,dda,20x20,1,keep original,tshirt
 T3,item,hamburger,dda,20x20,1,base tileset gap,
@@ -1750,7 +1770,6 @@ T3,item,socks_ankle,dda,20x20,1,keep original,socks_wool
 T3,item,socks_wool,dda,20x20,1,keep original,socks_wool
 T3,item,soft_3a_vest,dda,20x20,1,keep original,tshirt
 T3,item,solder_wire,dda,20x20,1,keep original,
-T3,item,soldering_iron,dda,20x20,1,keep original,
 T3,item,soldering_iron_portable,dda,20x20,1,keep original,soldering_iron
 T3,item,soup_instant_chicken_noodle_powder,dda,32x32,1,keep original,meal_bone
 T3,item,soup_instant_vegetable_powder,dda,32x32,1,keep original,meal_bone
@@ -1803,7 +1822,6 @@ T3,item,thermal_socks,dda,20x20,1,keep original,
 T3,item,thermometer,dda,20x20,1,keep original,
 T3,item,thermos,dda,32x32,1,keep original,bottle_plastic
 T3,item,thigh_high_boots,dda,20x20,1,keep original,shoes_bowling
-T3,item,thread,dda,32x32,1,keep original,
 T3,item,thread_canvas,dda,32x32,1,keep original,thread
 T3,item,thread_cutting_set,dda,20x20,1,base tileset gap,
 T3,item,thread_kevlar,dda,32x32,1,keep original,thread
