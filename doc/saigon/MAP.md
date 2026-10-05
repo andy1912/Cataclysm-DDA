@@ -109,6 +109,16 @@ The costs for the player:
 
 Each overmap is generated only once per world.
 
+### Megacity with everything (2026-10-05)
+
+Overmap (0,0) after the Vietnamese items and places units: buildings 25.9 %, roads 27.5 %, all 19
+landmarks clustered downtown, plus 22 petrol stations, 13 police stations, 13 motorbike dealers,
+11 bookstores, 7 cemeteries, 3 district hospitals and 2 Co.op Marts.
+
+![Megacity now](art/overmap_megacity_now.png)
+
+![Downtown now](art/overmap_megacity_downtown.png)
+
 How to regenerate these pictures:
 
 ```bash
