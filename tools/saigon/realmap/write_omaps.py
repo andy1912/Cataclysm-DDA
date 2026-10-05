@@ -291,6 +291,30 @@ def settle_bridges( road_tiles, terrain, used ):
     return n
 
 
+def path_to_road( starts, road_tiles, ok, limit ):
+    """Shortest 4-connected path from any of `starts` (ok() tiles) to the nearest road tile, over
+    ok() tiles: [start, ..., road tile], or [] when none is within `limit` steps."""
+    prev = { s: None for s in starts if ok( s ) }
+    frontier = list( prev )
+    for _ in range( limit ):
+        nxt = []
+        for c in frontier:
+            for dx, dy in DIRS.values():
+                q = ( c[0] + dx, c[1] + dy )
+                if q in prev:
+                    continue
+                if q in road_tiles:
+                    path = [ q, c ]
+                    while prev[path[-1]] is not None:
+                        path.append( prev[path[-1]] )
+                    return path[::-1]
+                if ok( q ):
+                    prev[q] = c
+                    nxt.append( q )
+        frontier = nxt
+    return []
+
+
 def land_path( a, b, ok, limit ):
     """Shortest 4-connected path from a to b over tiles where ok() holds (both ends included), or
     [] when b is not within `limit` steps."""
@@ -377,6 +401,7 @@ class World:
         self.cols, self.rows = cols, rows
         self.oms = { ( x, y ): Overmap( x + ORIGIN_OM[0], y + ORIGIN_OM[1] ) for x in range( cols ) for y in range( rows ) }
         self.used = set()
+        self.landmarks = []            # ( id, the tiles just outside its front ), set by place_landmarks
 
     def set( self, x, y, z, ter ):
         self.oms[( x // OM, y // OM )].set( x % OM, y % OM, z, ter )
@@ -446,6 +471,17 @@ def main():
     # ---- landmarks on their real sites (R5); minor streets under them are removed
     for line in place_landmarks.place( world, terrain, road_tiles, bld ):
         print( '  ' + line )
+    # a landmark whose front touches no street (Tân Sơn Nhất's terminal stands in its aprons: the
+    # airport's own roads are service roads, not in the extract) gets an access road over open land
+    for lid, front in world.landmarks:
+        if any( t in road_tiles for t in front ):
+            continue
+        path = path_to_road( front, road_tiles, lambda q: 0 <= q[0] < W and 0 <= q[1] < H and
+                             terrain[q[1]][q[0]] not in WATER and q not in world.used, 60 )
+        for a, b in zip( path, path[1:] ):
+            link( road_tiles, a, b, 'street' )
+        print( '  %s: access road of %d tiles to the nearest street' % ( lid, max( 0, len( path ) - 1 ) )
+               if path else '  %s: no street within reach of its front' % lid )
     # ---- everyday places from the data (R4)
     for line in place_places.place( world, terrain, road_tiles, bld, g['places'], W, H ):
         print( '  ' + line )

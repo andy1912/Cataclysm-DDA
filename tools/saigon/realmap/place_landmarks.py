@@ -81,6 +81,8 @@ def place( world, terrain, road_tiles, buildings ):
             elif t in road_tiles:
                 road_tiles.pop( t )
         world.place( parts, x0, y0, r )
+        w, h = footprint( parts, r )
+        world.landmarks.append( ( lm['id'], front_edge( x0, y0, w, h, r ) ) )
         cx, cy = x0 + footprint( parts, r )[0] / 2, y0 + footprint( parts, r )[1] / 2
         report.append( '%-22s at %3d,%3d facing %-5s %3.0f m from its site, %d minor street tiles removed%s'
                        % ( lm['id'], x0, y0, [ 'north', 'east', 'south', 'west' ][r],

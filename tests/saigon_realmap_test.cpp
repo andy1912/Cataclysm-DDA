@@ -1,3 +1,4 @@
+#include <chrono>
 #include <map>
 #include <set>
 #include <memory>
@@ -449,3 +450,73 @@ TEST_CASE( "saigon_realmap_2009_ferry", "[saigon]" )
     clear_map();
     clear_overmaps();
 }
+
+// Driving across the 2009 city: the game's own overmap travel (as auto-travel and autodrive use
+// it, roads only) finds a route from Bến Thành to each of these, including across the Saigon
+// River (Thủ Đức, Thanh Đa, Quận 7) and the canals (Chợ Lớn, Gò Vấp).
+TEST_CASE( "saigon_realmap_2009_routes", "[saigon]" )
+{
+    const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
+    if( !oter_str_id( "sgn_hem_block_north" ).is_valid() || !file_exist( file.get_unrelative_path() ) ) {
+        WARN( "saigon_2000s or its real map is not present; skipping" );
+        return;
+    }
+    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
+    get_globals().set_global_value( "overmap_outside_region", diag_value( std::string( "sgn_saigon_delta" ) ) );
+    clear_avatar();
+    clear_map();
+    clear_overmaps();
+    // the road tile nearest a place (absolute overmap tiles, from its real coordinates)
+    const auto road_near = []( const point_abs_omt & p ) {
+        for( int r = 0; r <= 8; r++ ) {
+            for( int dx = -r; dx <= r; dx++ ) {
+                for( int dy = -r; dy <= r; dy++ ) {
+                    const tripoint_abs_omt q( p + point( dx, dy ), 0 );
+                    if( overmap_buffer.ter( q ).id().str().rfind( "road", 0 ) == 0 ) {
+                        return q;
+                    }
+                }
+            }
+        }
+        return tripoint_abs_omt::invalid;
+    };
+    // overmap travel only routes through overmaps that exist, as in a game the city has been
+    // generated as the player went: load the whole real map first
+    for( int ox = -1; ox <= 3; ox++ ) {
+        for( int oy = -2; oy <= 1; oy++ ) {
+            overmap_buffer.get( point_abs_om( ox, oy ) );
+        }
+    }
+    overmap_path_params params = overmap_path_params::for_land_vehicle( 0.0f, false, false );
+    params.only_known_by_player = false;
+    params.avoid_danger = false;
+    const tripoint_abs_omt from = road_near( point_abs_omt( 158, 161 ) );   // Bến Thành
+    REQUIRE_FALSE( from.is_invalid() );
+    const std::vector<std::pair<std::string, point_abs_omt>> places = {
+        { "Ga Sài Gòn", point_abs_omt( 62, 116 ) },
+        { "Tân Sơn Nhất", point_abs_omt( -22, -33 ) },
+        { "Thảo Cầm Viên", point_abs_omt( 197, 90 ) },
+        { "Chợ Lớn", point_abs_omt( -56, 267 ) },
+        { "Gò Vấp", point_abs_omt( 9, -144 ) },
+        { "Thanh Đa", point_abs_omt( 272, -49 ) },
+        { "Chợ Thủ Đức", point_abs_omt( 418, -199 ) },
+        { "Phú Mỹ Hưng", point_abs_omt( 249, 330 ) },
+    };
+    for( const auto &pl : places ) {
+        const tripoint_abs_omt to = road_near( pl.second );
+        CAPTURE( pl.first, to.to_string() );
+        REQUIRE_FALSE( to.is_invalid() );
+        const auto t0 = std::chrono::steady_clock::now();
+        const size_t length = overmap_buffer.get_travel_path( from, to, params ).points.size();
+        const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::steady_clock::now() - t0 ).count();
+        CAPTURE( length );
+        CHECK( length > 0 );
+        WARN( "Bến Thành -> " << pl.first << ": " << length << " overmap tiles by road, planned in " << ms << " ms" );
+    }
+    get_globals().remove_global_value( "overmap_pregenerated_path" );
+    get_globals().remove_global_value( "overmap_outside_region" );
+    clear_avatar();
+    clear_map();
+    clear_overmaps();
+}
+
