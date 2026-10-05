@@ -76,7 +76,7 @@
     "type": "item_group",
     "id": "sgn_shophouse_kitchen",
     "subtype": "distribution",
-    "entries": [
+    "entries": [ { "item": "sgn_mam_tom", "prob": 10 }, { "item": "sgn_lap_xuong", "prob": 10, "count": [ 1, 4 ] }, { "item": "sgn_kho_bo", "prob": 6 }, 
       { "item": "dry_rice", "prob": 40 },
       { "item": "sgn_nuoc_mam", "prob": 40, "container-item": "sgn_chai_nuoc_mam" },
       { "item": "sgn_mi_goi", "prob": 50 },
@@ -158,7 +158,7 @@
     "type": "item_group",
     "id": "sgn_cho_stall_produce",
     "subtype": "distribution",
-    "entries": [
+    "entries": [ { "item": "sgn_nuoc_dua", "prob": 20, "count": [ 1, 3 ] }, { "item": "sgn_lap_xuong", "prob": 10, "count": [ 2, 6 ] }, 
       { "item": "sgn_rau_muong", "prob": 40 },
       { "item": "mango", "prob": 25 },
       { "item": "papaya", "prob": 20 },
@@ -201,7 +201,7 @@
     "type": "item_group",
     "id": "sgn_street_cart",
     "subtype": "distribution",
-    "entries": [
+    "entries": [ { "item": "sgn_hot_vit_lon", "prob": 15, "count": [ 1, 4 ] }, { "item": "sgn_bun_bo_hue", "prob": 10 }, { "item": "sgn_bun_thit_nuong", "prob": 10 }, { "item": "sgn_banh_cuon", "prob": 8 }, { "item": "sgn_chao_long", "prob": 8 }, { "item": "sgn_bo_bia", "prob": 10, "count": [ 1, 3 ] }, { "item": "sgn_banh_flan", "prob": 8, "count": [ 1, 4 ] }, { "item": "sgn_sua_dau_nanh", "prob": 10 }, 
       { "item": "sgn_banh_mi_bread", "prob": 30 },
       { "item": "sgn_banh_mi_thit", "prob": 15 },
       { "item": "sgn_banh_pho", "prob": 15 },
@@ -464,7 +464,7 @@
     "id": "sgn_cho_wholesale",
     "subtype": "distribution",
     "//": "L2 Chợ Bình Tây wholesale stalls: dry goods by the sack and the carton.",
-    "items": [
+    "items": [ { "item": "sgn_kho_bo", "prob": 12, "count": [ 2, 8 ] }, { "item": "sgn_lap_xuong", "prob": 15, "count": [ 4, 12 ] }, { "item": "sgn_mam_tom", "prob": 10 }, 
       { "item": "dry_rice", "prob": 40, "count": [ 5, 20 ] },
       { "item": "sgn_mi_goi", "prob": 25, "count": [ 5, 20 ] },
       { "item": "sugar", "prob": 15 },

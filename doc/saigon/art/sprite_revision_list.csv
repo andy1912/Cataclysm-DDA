@@ -736,11 +736,14 @@ T2,item,banana,dda,20x20,1,keep original,
 T2,item,beer,dda,32x32,1,keep original,water_clean
 T2,item,binoculars,dda,20x20,1,to do (no sprite),
 T2,item,blanket,dda,32x32,1,keep original,towel
+T2,item,boots_rubber,dda,32x32,1,keep original,dress_shoes
+T2,item,bottle_plastic_small,dda,20x20,1,keep original,bottle_plastic
 T2,item,butane,dda,32x32,1,keep original,
 T2,item,butane_can,dda,32x32,1,keep original,spray_can
 T2,item,camera,dda,20x20,1,keep original,abstract_camera
 T2,item,candle,dda,20x20,1,keep original,
-T2,item,cash_card,dda,20x20,1,keep original,card_plastic_abstract
+T2,item,cell_phone,dda,20x20,1,keep original,
+T2,item,cig,dda,20x20,1,keep original,
 T2,item,coconut,dda,20x20,1,keep original,
 T2,item,coffee_raw,dda,32x32,1,keep original,
 T2,item,con_milk,dda,32x32,1,keep original,
@@ -748,11 +751,13 @@ T2,item,cooking_oil,dda,32x32,1,keep original,
 T2,item,cotton_patchwork,dda,20x20,1,keep original,
 T2,item,diamond_ring,dda,20x20,1,keep original,ring_engagement
 T2,item,dress,dda,20x20,1,keep original,coat_winter
+T2,item,dress_shoes,dda,32x32,1,keep original,shoes_bowling
 T2,item,dry_rice,dda,20x20,1,Saigon art (drawn),
 T2,item,duffelbag,dda,32x32,1,keep original,ragpouch
 T2,item,e_scrap,dda,20x20,1,keep original,
 T2,item,egg_chicken,dda,20x20,1,keep original,
 T2,item,envelope,dda,20x20,1,keep original,paper
+T2,item,file,dda,20x20,1,keep original,
 T2,item,fish,dda,20x20,1,keep original,flesh
 T2,item,flashlight,dda,20x20,1,keep original,
 T2,item,flip_flops,dda,20x20,1,keep original,shoes_bowling
@@ -760,11 +765,15 @@ T2,item,gasoline,dda,32x32,1,keep original,
 T2,item,gold_ring,dda,20x20,1,keep original,
 T2,item,gold_watch,dda,20x20,1,keep original,
 T2,item,guidebook,dda,20x20,1,Saigon art (drawn),radio_book
+T2,item,hairpin,dda,20x20,1,keep original,
+T2,item,heels,dda,32x32,1,keep original,sneakers
 T2,item,helmet_army,dda,20x20,1,keep original,hat_ball
 T2,item,holy_symbol,dda,32x32,1,keep original,
 T2,item,holybook_bible1,dda,20x20,1,keep original,radio_book
 T2,item,holybook_catechism,dda,20x20,1,Saigon art (drawn),radio_book
 T2,item,laptop,dda,20x20,1,keep original,abstract_laptop
+T2,item,leathersandals,dda,32x32,1,keep original,sneakers
+T2,item,lowtops,dda,20x20,1,keep original,shoes_bowling
 T2,item,makeup_kit,dda,20x20,1,to do (no sprite),hair_dye_kit
 T2,item,mango,dda,32x32,1,keep original,
 T2,item,meat,dda,20x20,1,keep original,flesh
@@ -778,11 +787,13 @@ T2,item,paper,dda,20x20,1,keep original,
 T2,item,peanut_shelled,dda,20x20,1,to do (no sprite),
 T2,item,pen,dda,20x20,1,keep original,
 T2,item,pencil,dda,20x20,1,keep original,survival_marker
+T2,item,pockknife,dda,20x20,1,keep original,
 T2,item,polo_shirt,dda,32x32,1,keep original,camisole
 T2,item,processor,dda,20x20,1,Saigon art (drawn),
 T2,item,purse,dda,20x20,1,keep original,ragpouch
 T2,item,ring_engagement,dda,20x20,1,keep original,
 T2,item,ring_wedding,dda,20x20,1,Saigon art (drawn),
+T2,item,rubber_band,dda,32x32,1,keep original,string_6
 T2,item,salt,dda,20x20,1,keep original,spice
 T2,item,sgn_ao_ba_ba,mod,20x20,1,Saigon art (drawn),dress_shirt
 T2,item,sgn_ao_cong_an,mod,20x20,1,Saigon art (drawn),buttonshirt
@@ -793,6 +804,8 @@ T2,item,sgn_ao_thun,mod,20x20,1,Saigon art (derived),camisole
 T2,item,sgn_ao_trang_hoc_sinh,mod,20x20,1,Saigon art (drawn),buttonshirt
 T2,item,sgn_banh_bao,mod,20x20,1,Saigon art (drawn),flatbread
 T2,item,sgn_banh_chung,mod,20x20,1,Saigon art (drawn),dry_rice
+T2,item,sgn_banh_cuon,mod,20x20,1,Saigon art (drawn),dry_rice
+T2,item,sgn_banh_flan,mod,20x20,1,Saigon art (drawn),pudding
 T2,item,sgn_banh_mi_bread,mod,20x20,1,Saigon art (drawn),bread
 T2,item,sgn_banh_mi_thit,mod,20x20,1,Saigon art (drawn),sandwich_t
 T2,item,sgn_banh_pho,mod,20x20,1,Saigon art (drawn),noodles_fast
@@ -802,6 +815,7 @@ T2,item,sgn_bep_than_to_ong,mod,20x20,1,Saigon art (drawn),brazier
 T2,item,sgn_bia_hoi,mod,32x32,1,Saigon art (derived),water_clean
 T2,item,sgn_bich_nylon,mod,20x20,1,Saigon art (drawn),bottle_plastic
 T2,item,sgn_binh_gas,mod,20x20,1,Saigon art (drawn),medium_propane_tank
+T2,item,sgn_bo_bia,mod,20x20,1,Saigon art (drawn),dry_rice
 T2,item,sgn_book_almanac,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_book_construction,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_book_fishing,mod,20x20,1,Saigon art (drawn),radio_book
@@ -811,10 +825,13 @@ T2,item,sgn_book_sutra,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_book_tailoring,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_book_tv_repair,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_book_wuxia,mod,20x20,1,Saigon art (drawn),book_fict_soft_pulp_tpl
+T2,item,sgn_bun_bo_hue,mod,20x20,1,Saigon art (drawn),water_clean
+T2,item,sgn_bun_thit_nuong,mod,20x20,1,Saigon art (drawn),water_clean
 T2,item,sgn_ca_phe_bot,mod,20x20,1,Saigon art (drawn),coffee_raw
 T2,item,sgn_ca_phe_sua_da,mod,32x32,1,Saigon art (derived),coffee
 T2,item,sgn_can_nhua,mod,20x20,1,Saigon art (drawn),jerrycan
 T2,item,sgn_chai_nuoc_mam,mod,20x20,1,Saigon art (drawn),bottle_plastic
+T2,item,sgn_chao_long,mod,20x20,1,Saigon art (drawn),water_clean
 T2,item,sgn_che,mod,32x32,1,Saigon art (derived),water_clean
 T2,item,sgn_com_tam,mod,20x20,1,Saigon art (drawn),dry_rice
 T2,item,sgn_dao_rua,mod,20x20,1,Saigon art (drawn),machete
@@ -829,13 +846,17 @@ T2,item,sgn_durian,mod,20x20,1,Saigon art (drawn),mango
 T2,item,sgn_engine_110cc_item,mod,20x20,1,Saigon art (drawn),engine_combustion
 T2,item,sgn_goi_cuon,mod,20x20,1,Saigon art (drawn),dry_rice
 T2,item,sgn_ho_chieu,mod,20x20,1,Saigon art (drawn),
+T2,item,sgn_hot_vit_lon,mod,20x20,1,Saigon art (drawn),egg_boiled
 T2,item,sgn_hu_tieu,mod,20x20,1,Saigon art (drawn),water_clean
 T2,item,sgn_karaoke_songbook,mod,20x20,1,Saigon art (drawn),radio_book
 T2,item,sgn_khan_quang_do,mod,20x20,1,Saigon art (derived),scarf
 T2,item,sgn_khau_trang,mod,20x20,1,Saigon art (drawn),scarf
+T2,item,sgn_kho_bo,mod,20x20,1,Saigon art (drawn),flesh
 T2,item,sgn_kho_muc,mod,20x20,1,Saigon art (drawn),flesh
+T2,item,sgn_lap_xuong,mod,20x20,1,Saigon art (drawn),sausage_raw
 T2,item,sgn_luoi_chai,mod,20x20,1,Saigon art (drawn),net
 T2,item,sgn_ly_nhua,mod,20x20,1,Saigon art (drawn),cup_plastic
+T2,item,sgn_mam_tom,mod,20x20,1,Saigon art (drawn),soysauce
 T2,item,sgn_mi_goi,mod,20x20,1,Saigon art (drawn),noodles_fast
 T2,item,sgn_mit,mod,20x20,1,Saigon art (drawn),mango
 T2,item,sgn_moto_tank_4l,mod,20x20,1,Saigon art (drawn),30l_barrel
@@ -844,6 +865,7 @@ T2,item,sgn_nen,mod,20x20,1,Saigon art (drawn),candle
 T2,item,sgn_noi_com_dien,mod,20x20,1,Saigon art (drawn),hotplate
 T2,item,sgn_non_ket,mod,32x32,1,Saigon art (derived),hat_cotton
 T2,item,sgn_note_handwritten,mod,20x20,1,Saigon art (drawn),newest_newspaper
+T2,item,sgn_nuoc_dua,mod,20x20,1,Saigon art (drawn),coconut
 T2,item,sgn_nuoc_mam,mod,32x32,1,Saigon art (derived),soysauce
 T2,item,sgn_nuoc_mia,mod,32x32,1,Saigon art (derived),juice
 T2,item,sgn_ong_tay_chong_nang,mod,20x20,1,Saigon art (drawn),armguard_larmor
@@ -859,6 +881,7 @@ T2,item,sgn_rau_muong,mod,20x20,1,Saigon art (drawn),spinach
 T2,item,sgn_ro_nhua,mod,20x20,1,Saigon art (drawn),plastic_shopping_bag
 T2,item,sgn_ruou_de,mod,32x32,1,Saigon art (derived),water_clean
 T2,item,sgn_sua_dac,mod,32x32,1,Saigon art (derived),con_milk
+T2,item,sgn_sua_dau_nanh,mod,20x20,1,Saigon art (drawn),milk
 T2,item,sgn_than_to_ong,mod,20x20,1,Saigon art (drawn),charcoal
 T2,item,sgn_thanh_long,mod,20x20,1,Saigon art (drawn),mango
 T2,item,sgn_thau_nhua,mod,20x20,1,Saigon art (drawn),bucket
@@ -876,344 +899,101 @@ T2,item,sgn_xoi,mod,20x20,1,Saigon art (drawn),dry_rice
 T2,item,sheet_cotton,dda,20x20,1,keep original,
 T2,item,silver_necklace,dda,20x20,1,keep original,
 T2,item,skirt,dda,20x20,1,keep original,skirt
+T2,item,stapler,dda,20x20,1,keep original,
 T2,item,sugar,dda,32x32,1,keep original,
 T2,item,sundress,dda,32x32,1,keep original,coat_rain
 T2,item,sunglasses,dda,20x20,1,keep original,sunglasses
 T2,item,sunscreen,dda,20x20,1,Saigon art (drawn),
 T2,item,tea_raw,dda,20x20,1,keep original,
 T2,item,textbook_firstaid,dda,20x20,1,keep original,
+T2,item,toothbrush_plain,dda,32x32,1,keep original,base_toiletries
 T2,item,two_way_radio,dda,20x20,1,keep original,
 T2,item,wallet,dda,32x32,1,keep original,bag_canvas
 T2,item,wallet_travel,dda,20x20,1,to do (no sprite),
 T2,item,water_clean,dda,32x32,1,keep original,
 T3,item,10gal_hat,dda,32x32,1,keep original,hat_ball
-T3,item,10mm_ammo_box_20,dda,20x20,1,keep original,box_small
-T3,item,10mm_ammo_box_50,dda,20x20,1,keep original,box_small
-T3,item,10mm_ammo_box_500,dda,20x20,1,keep original,box_small
 T3,item,10mm_casing,dda,32x32,1,keep original,casing
-T3,item,10mm_fmj,dda,32x32,2,keep original,
-T3,item,10mm_jhp,dda,32x32,2,keep original,10mm_fmj
-T3,item,12_ammo_box_10,dda,20x20,1,keep original,box_small
-T3,item,12_ammo_box_100,dda,20x20,1,keep original,box_small
-T3,item,12_ammo_box_25,dda,20x20,1,keep original,box_small
-T3,item,12_ammo_box_5,dda,20x20,1,keep original,box_small
-T3,item,1895sbl,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,1911_22,dda,20x20,1,base tileset gap,1911
-T3,item,1911_22_mag,dda,32x32,1,keep original,glock17_17
-T3,item,1st_aid_box,dda,32x32,1,keep original,1st_aid_box
-T3,item,20shot_bird,dda,20x20,1,base tileset gap,20shot_slug
-T3,item,20shot_buck,dda,20x20,1,base tileset gap,20shot_slug
-T3,item,20shot_slug,dda,20x20,1,base tileset gap,
-T3,item,223,dda,32x32,2,keep original,
-T3,item,223_ammo_box_20,dda,20x20,1,keep original,box_small
-T3,item,223_ammo_box_50,dda,20x20,1,keep original,box_small
 T3,item,223_casing,dda,32x32,1,keep original,casing
-T3,item,22_ar15mag_10,dda,20x20,1,base tileset gap,
-T3,item,22_ar15mag_28,dda,20x20,1,base tileset gap,
 T3,item,22_casing,dda,32x32,1,keep original,casing
-T3,item,22_lr,dda,32x32,2,keep original,
-T3,item,22lr_ammo_box_100,dda,20x20,1,keep original,box_small
-T3,item,22lr_ammo_box_1000,dda,20x20,1,keep original,box_small
-T3,item,22lr_ammo_box_500,dda,20x20,1,keep original,box_small
-T3,item,22lr_ammo_tray,dda,20x20,1,keep original,box_small
 T3,item,270win_casing,dda,32x32,1,keep original,casing
-T3,item,270win_jsp,dda,32x32,2,keep original,270win_fmj
-T3,item,2lcanteen,dda,20x20,1,keep original,bottle_plastic
 T3,item,2x4,dda,32x32,1,keep original,
-T3,item,3006,dda,32x32,2,keep original,
-T3,item,3006_ammo_box_20,dda,20x20,1,keep original,box_small
 T3,item,3006_casing,dda,32x32,1,keep original,casing
-T3,item,3006_jsp,dda,32x32,2,keep original,3006
-T3,item,300_ammo_box_20,dda,20x20,1,keep original,box_small
 T3,item,300_casing,dda,32x32,1,keep original,casing
-T3,item,300_winmag,dda,32x32,2,keep original,
-T3,item,300blk,dda,32x32,2,keep original,
 T3,item,300blk_casing,dda,32x32,1,keep original,casing
-T3,item,3030,dda,20x20,1,base tileset gap,
-T3,item,3030_ammo_box_20,dda,20x20,1,keep original,box_small
 T3,item,3030_casing,dda,20x20,1,keep original,casing
-T3,item,303_ammo_box_20,dda,20x20,1,keep original,box_small
-T3,item,303_bthp,dda,20x20,1,base tileset gap,303_fmjbt
 T3,item,303_casing,dda,20x20,1,keep original,casing
-T3,item,303_fmjbt,dda,20x20,1,base tileset gap,
-T3,item,303_sp,dda,20x20,1,base tileset gap,303_fmjbt
-T3,item,308,dda,32x32,2,keep original,762_51
-T3,item,308_ammo_box_100,dda,20x20,1,keep original,box_small
-T3,item,308_ammo_box_20,dda,20x20,1,keep original,box_small
 T3,item,308_casing,dda,32x32,1,keep original,casing
-T3,item,30carbine,dda,20x20,1,base tileset gap,
-T3,item,30carbine_ammo_box_50,dda,20x20,1,keep original,box_small
 T3,item,30carbine_casing,dda,20x20,1,keep original,casing
-T3,item,30carbine_jsp,dda,20x20,1,base tileset gap,30carbine
-T3,item,32_acp,dda,32x32,2,keep original,
-T3,item,32_acp_jhp,dda,32x32,2,keep original,32_acp
-T3,item,32_ammo_box_50,dda,20x20,1,keep original,box_small
 T3,item,32_casing,dda,32x32,1,keep original,casing
-T3,item,338_ammo_box_20,dda,20x20,1,keep original,box_small
 T3,item,338lapua_casing,dda,20x20,1,keep original,casing
-T3,item,338lapua_hpbt,dda,20x20,1,base tileset gap,
-T3,item,357_ammo_box_20,dda,20x20,1,keep original,box_small
-T3,item,357_ammo_box_200,dda,20x20,1,keep original,box_small
-T3,item,357_ammo_box_50,dda,20x20,1,keep original,box_small
 T3,item,357mag_casing,dda,32x32,1,keep original,casing
-T3,item,357mag_fmj,dda,32x32,2,keep original,
-T3,item,357mag_jhp,dda,32x32,2,keep original,357mag_fmj
 T3,item,357sig_casing,dda,32x32,1,keep original,casing
-T3,item,380_FMJ,dda,32x32,2,keep original,
-T3,item,380_JHP,dda,32x32,2,keep original,380_FMJ
-T3,item,380_ammo_box_20,dda,20x20,1,keep original,box_small
-T3,item,380_ammo_box_500,dda,20x20,1,keep original,box_small
 T3,item,380_casing,dda,32x32,1,keep original,casing
-T3,item,380_p,dda,32x32,2,keep original,380_FMJ
-T3,item,38_ammo_box_20,dda,20x20,1,keep original,box_small
-T3,item,38_ammo_box_200,dda,20x20,1,keep original,box_small
-T3,item,38_ammo_box_50,dda,20x20,1,keep original,box_small
-T3,item,38_ammo_box_500,dda,20x20,1,keep original,box_small
 T3,item,38_casing,dda,32x32,1,keep original,casing
-T3,item,38_fmj,dda,32x32,2,keep original,
-T3,item,38_special,dda,32x32,2,keep original,38_fmj
-T3,item,38_special_p,dda,32x32,2,keep original,38_fmj
-T3,item,38_speedloader6,dda,20x20,1,base tileset gap,38_speedloader
-T3,item,38_super,dda,32x32,2,keep original,38super_fmj
-T3,item,38super_ammo_box_50,dda,20x20,1,keep original,box_small
 T3,item,38super_casing,dda,20x20,1,keep original,casing
-T3,item,38super_fmj,dda,32x32,2,keep original,
-T3,item,40_ammo_box_20,dda,20x20,1,keep original,box_small
-T3,item,40_ammo_box_50,dda,20x20,1,keep original,box_small
-T3,item,40_ammo_box_500,dda,20x20,1,keep original,box_small
 T3,item,40_casing,dda,32x32,1,keep original,casing
-T3,item,40fmj,dda,32x32,2,keep original,
-T3,item,40sw,dda,32x32,2,keep original,40fmj
-T3,item,410_ammo_box_25,dda,20x20,1,keep original,box_small
-T3,item,410_ammo_box_5,dda,20x20,1,keep original,box_small
-T3,item,410shot_000,dda,32x32,2,keep original,410shot_slug
-T3,item,410shot_bird,dda,20x20,1,base tileset gap,410shot_slug
 T3,item,410shot_hull,dda,32x32,1,keep original,shot_hull
-T3,item,410shot_slug,dda,20x20,1,base tileset gap,
-T3,item,44_ammo_box_100,dda,20x20,1,keep original,box_small
-T3,item,44_ammo_box_20,dda,20x20,1,keep original,box_small
-T3,item,44_ammo_box_200,dda,20x20,1,keep original,box_small
 T3,item,44_casing,dda,32x32,1,keep original,casing
-T3,item,44fmj,dda,32x32,2,keep original,
-T3,item,44magnum,dda,32x32,2,keep original,44fmj
-T3,item,450_ammo_box_20,dda,20x20,1,keep original,box_small
-T3,item,450_ar15mag,dda,20x20,1,base tileset gap,
 T3,item,450_casing,dda,20x20,1,keep original,casing
-T3,item,450_ftx,dda,20x20,1,base tileset gap,
-T3,item,454_Casull,dda,32x32,2,keep original,
-T3,item,454_ammo_box_20,dda,20x20,1,keep original,box_small
 T3,item,454_casing,dda,32x32,1,keep original,casing
-T3,item,4570_ammo_box_20,dda,20x20,1,keep original,box_small
 T3,item,4570_casing,dda,32x32,1,keep original,casing
-T3,item,4570_low,dda,32x32,2,keep original,4570_sp
-T3,item,4570_pen,dda,32x32,2,keep original,4570_sp
-T3,item,4570_sp,dda,32x32,2,keep original,
 T3,item,458wm_casing,dda,20x20,1,keep original,casing
-T3,item,45_acp,dda,32x32,2,keep original,
-T3,item,45_ammo_box_20,dda,20x20,1,keep original,box_small
-T3,item,45_ammo_box_200,dda,20x20,1,keep original,box_small
-T3,item,45_ammo_box_50,dda,20x20,1,keep original,box_small
-T3,item,45_ammo_box_500,dda,20x20,1,keep original,box_small
 T3,item,45_casing,dda,32x32,1,keep original,casing
-T3,item,45_jhp,dda,32x32,2,keep original,45_acp
-T3,item,45_super,dda,32x32,2,keep original,45_acp
-T3,item,45colt_ammo_box_20,dda,20x20,1,keep original,box_small
-T3,item,45colt_ammo_box_50,dda,20x20,1,keep original,box_small
 T3,item,45colt_casing,dda,32x32,1,keep original,casing
-T3,item,45colt_cowboy,dda,20x20,1,base tileset gap,45colt_fmj
-T3,item,45colt_jhp,dda,32x32,2,keep original,45colt_fmj
-T3,item,460_ammo_box_20,dda,20x20,1,keep original,box_small
-T3,item,460_xvr,dda,20x20,1,keep original,gun_base_handgun_manual
-T3,item,460sw,dda,20x20,1,base tileset gap,
 T3,item,460sw_casing,dda,20x20,1,keep original,casing
-T3,item,460sw_jhp,dda,20x20,1,base tileset gap,
-T3,item,500_Magnum,dda,32x32,2,keep original,
 T3,item,500_casing,dda,32x32,1,keep original,casing
 T3,item,50ae_casing,dda,20x20,1,keep original,casing
-T3,item,50ae_fmj,dda,20x20,1,base tileset gap,
-T3,item,50ae_jhp,dda,20x20,1,base tileset gap,50ae_fmj
-T3,item,50beowulf_ar15mag,dda,20x20,1,base tileset gap,
 T3,item,50beowulf_casing,dda,20x20,1,keep original,casing
-T3,item,50beowulf_penetrator,dda,20x20,1,base tileset gap,50beowulf_xtp
-T3,item,50beowulf_xtp,dda,20x20,1,base tileset gap,
-T3,item,545,dda,32x32,2,keep original,
-T3,item,545_ap,dda,32x32,2,keep original,545
 T3,item,545_casing,dda,32x32,1,keep original,casing
-T3,item,556,dda,32x32,2,keep original,223
-T3,item,556_m855a1,dda,32x32,2,keep original,223
-T3,item,57_ammo_box_50,dda,20x20,1,keep original,box_small
-T3,item,57mm,dda,32x32,2,keep original,
 T3,item,57mm_casing,dda,32x32,1,keep original,casing
-T3,item,57mm_lf,dda,32x32,2,keep original,57mm
 T3,item,762R_casing,dda,32x32,1,keep original,casing
-T3,item,762_25,dda,32x32,2,keep original,
 T3,item,762_25_casing,dda,32x32,1,keep original,casing
-T3,item,762_51,dda,32x32,2,keep original,
 T3,item,762_51_casing,dda,32x32,1,keep original,casing
-T3,item,762_54R,dda,32x32,2,keep original,
-T3,item,762_ammo_box_20,dda,20x20,1,keep original,box_small
-T3,item,762_ammo_box_50,dda,20x20,1,keep original,box_small
-T3,item,762_ammo_box_500,dda,20x20,1,keep original,box_small
-T3,item,762_ar15mag_30rd,dda,32x32,1,keep original,stanag30
 T3,item,762_casing,dda,32x32,1,keep original,casing
-T3,item,762_jhp,dda,32x32,2,keep original,762_m87
-T3,item,762_m87,dda,32x32,2,keep original,
 T3,item,77arisaka_casing,dda,20x20,1,keep original,casing
-T3,item,77mm_arisaka_jsp,dda,20x20,1,base tileset gap,
-T3,item,9mm,dda,32x32,2,keep original,
-T3,item,9mmP,dda,32x32,2,keep original,9mm
-T3,item,9mmP2,dda,32x32,2,keep original,9mm
-T3,item,9mm_ammo_box_100,dda,20x20,1,keep original,box_small
-T3,item,9mm_ammo_box_20,dda,20x20,1,keep original,box_small
-T3,item,9mm_ammo_box_250,dda,20x20,1,keep original,box_small
-T3,item,9mm_ammo_box_50,dda,20x20,1,keep original,box_small
 T3,item,9mm_casing,dda,32x32,1,keep original,casing
-T3,item,9mmfmj,dda,32x32,2,keep original,9mm
-T3,item,9x18mm,dda,32x32,2,keep original,
 T3,item,9x18mm_casing,dda,32x32,1,keep original,casing
-T3,item,RPG_die,dda,20x20,1,keep original,pebble
 T3,item,acetaminophen,dda,20x20,1,base tileset gap,
-T3,item,adderall,dda,20x20,1,base tileset gap,
 T3,item,advanced_ecig,dda,20x20,1,base tileset gap,
-T3,item,agricola,dda,20x20,1,base tileset gap,
-T3,item,airgun_pellet_hunting,dda,20x20,1,keep original,pebble
-T3,item,airgun_pellet_target,dda,20x20,1,keep original,pebble
-T3,item,airhorn,dda,20x20,1,keep original,
-T3,item,ak308,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,ak74_semi,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,ak74mag,dda,32x32,1,keep original,stanag30
-T3,item,akmag10,dda,32x32,1,keep original,stanag30
-T3,item,akmag30,dda,32x32,1,keep original,stanag30
-T3,item,aksemi,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,alcohol_wipes,dda,20x20,1,keep original,
-T3,item,alexandrite,dda,20x20,1,base tileset gap,garnet
-T3,item,alexandrite_dental_grill,dda,20x20,1,keep original,gold_dental_grill
-T3,item,alexandrite_gold_bracelet,dda,20x20,1,keep original,gold_bracelet
-T3,item,alexandrite_gold_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,alexandrite_gold_earring,dda,20x20,1,keep original,gold_ear
-T3,item,alexandrite_gold_pendant_necklace,dda,20x20,1,keep original,gold_necklace
-T3,item,alexandrite_gold_ring,dda,20x20,1,keep original,gold_ring
-T3,item,alexandrite_gold_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,alexandrite_platinum_bracelet,dda,20x20,1,keep original,platinum_bracelet
-T3,item,alexandrite_platinum_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,alexandrite_platinum_earring,dda,20x20,1,keep original,platinum_ear
-T3,item,alexandrite_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
-T3,item,alexandrite_platinum_ring,dda,20x20,1,keep original,platinum_ring
-T3,item,alexandrite_platinum_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,alexandrite_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
-T3,item,alexandrite_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,alexandrite_silver_earring,dda,20x20,1,keep original,silver_ear
-T3,item,alexandrite_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
-T3,item,alexandrite_silver_ring,dda,20x20,1,keep original,silver_ring
-T3,item,alexandrite_silver_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,almond_shelled,dda,20x20,1,keep original,
-T3,item,alquerque,dda,20x20,1,base tileset gap,
 T3,item,aluminum_stepladder,dda,32x32,1,keep original,stepladder
-T3,item,ambush,dda,20x20,1,base tileset gap,
 T3,item,american_flag,dda,32x32,1,keep original,towel
-T3,item,amethyst,dda,20x20,1,base tileset gap,garnet
-T3,item,amethyst_dental_grill,dda,20x20,1,keep original,gold_dental_grill
-T3,item,amethyst_gold_bracelet,dda,20x20,1,keep original,gold_bracelet
-T3,item,amethyst_gold_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,amethyst_gold_earring,dda,20x20,1,keep original,gold_ear
-T3,item,amethyst_gold_pendant_necklace,dda,20x20,1,keep original,gold_necklace
-T3,item,amethyst_gold_ring,dda,20x20,1,keep original,gold_ring
-T3,item,amethyst_gold_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,amethyst_platinum_bracelet,dda,20x20,1,keep original,platinum_bracelet
-T3,item,amethyst_platinum_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,amethyst_platinum_earring,dda,20x20,1,keep original,platinum_ear
-T3,item,amethyst_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
-T3,item,amethyst_platinum_ring,dda,20x20,1,keep original,platinum_ring
-T3,item,amethyst_platinum_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,amethyst_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
-T3,item,amethyst_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,amethyst_silver_earring,dda,20x20,1,keep original,silver_ear
-T3,item,amethyst_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
-T3,item,amethyst_silver_ring,dda,20x20,1,keep original,silver_ring
-T3,item,amethyst_silver_tiara,dda,32x32,1,keep original,hat_ball
 T3,item,angel_halo_headband,dda,20x20,1,base tileset gap,
 T3,item,angel_wings,dda,32x32,1,keep original,ragpouch
 T3,item,angle_grinder,dda,20x20,1,keep original,
 T3,item,ankle_wallet_pouch,dda,32x32,1,keep original,ragpouch
-T3,item,antibiotics,dda,20x20,1,keep original,
-T3,item,antifungal,dda,20x20,1,keep original,
-T3,item,antihistamine,dda,20x20,1,base tileset gap,
-T3,item,antiparasitic,dda,20x20,1,keep original,
 T3,item,apple,dda,20x20,1,keep original,
 T3,item,apron_leather,dda,20x20,1,keep original,camisole
-T3,item,apron_plastic,dda,20x20,1,keep original,tshirt
-T3,item,aquamarine,dda,20x20,1,base tileset gap,garnet
-T3,item,aquamarine_dental_grill,dda,20x20,1,keep original,gold_dental_grill
-T3,item,aquamarine_gold_bracelet,dda,20x20,1,keep original,gold_bracelet
-T3,item,aquamarine_gold_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,aquamarine_gold_earring,dda,20x20,1,keep original,gold_ear
-T3,item,aquamarine_gold_pendant_necklace,dda,20x20,1,keep original,gold_necklace
-T3,item,aquamarine_gold_ring,dda,20x20,1,keep original,gold_ring
-T3,item,aquamarine_gold_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,aquamarine_platinum_bracelet,dda,20x20,1,keep original,platinum_bracelet
-T3,item,aquamarine_platinum_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,aquamarine_platinum_earring,dda,20x20,1,keep original,platinum_ear
-T3,item,aquamarine_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
-T3,item,aquamarine_platinum_ring,dda,20x20,1,keep original,platinum_ring
-T3,item,aquamarine_platinum_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,aquamarine_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
-T3,item,aquamarine_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,aquamarine_silver_earring,dda,20x20,1,keep original,silver_ear
-T3,item,aquamarine_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
-T3,item,aquamarine_silver_ring,dda,20x20,1,keep original,silver_ring
-T3,item,aquamarine_silver_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,ar10,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,ar10mag_20rd,dda,32x32,1,keep original,stanag30
-T3,item,ar12_shotgun,dda,20x20,1,keep original,gun_base_shotgun_manual
-T3,item,arisaka_monopod,dda,20x20,1,base tileset gap,
 T3,item,arm_warmers,dda,20x20,1,keep original,arm_warmers
 T3,item,armguard_hard,dda,20x20,1,keep original,armguard_larmor
 T3,item,armguard_soft,dda,32x32,1,keep original,armguard_larmor
-T3,item,armrig,dda,20x20,1,keep original,arm_warmers
-T3,item,arrow_cf,dda,20x20,1,keep original,arrow_fire_hardened_fletched
-T3,item,arrow_field_point_fletched,dda,20x20,1,keep original,arrow_field_point_fletched
-T3,item,arrow_fire_hardened_fletched,dda,20x20,1,keep original,arrow_fire_hardened_fletched
-T3,item,arrow_heavy_field_point_fletched,dda,20x20,1,keep original,arrow_fire_hardened_fletched
-T3,item,arrow_heavy_fire_hardened_fletched,dda,20x20,1,keep original,arrow_fire_hardened_fletched
-T3,item,arrow_metal,dda,20x20,1,keep original,arrow_fire_hardened_fletched
-T3,item,arrow_metal_bodkin,dda,20x20,1,keep original,arrow_fire_hardened_fletched
-T3,item,arrow_metal_sharpened_fletched,dda,20x20,1,keep original,arrow_fire_hardened_fletched
-T3,item,arrow_metal_target,dda,20x20,1,keep original,arrow_field_point_fletched
-T3,item,arrow_plastic,dda,20x20,1,keep original,arrow_fire_hardened_fletched
-T3,item,arrow_small_game_fletched,dda,20x20,1,keep original,arrow_fire_hardened_fletched
-T3,item,arrow_wood,dda,20x20,1,keep original,arrow_fire_hardened_fletched
-T3,item,arrow_wood_heavy,dda,20x20,1,keep original,arrow_fire_hardened_fletched
-T3,item,arrowrest,dda,20x20,1,keep original,
-T3,item,awl_steel,dda,20x20,1,keep original,awl_bone
 T3,item,ax,dda,32x32,1,keep original,
 T3,item,b_shorts,dda,32x32,1,keep original,boxer_shorts
 T3,item,back_holster,dda,20x20,1,keep original,sheath
-T3,item,backgammon,dda,20x20,1,base tileset gap,
 T3,item,backpack_denim,dda,32x32,1,keep original,ragpouch
-T3,item,backpack_hunting,dda,32x32,1,keep original,ragpouch
 T3,item,backpack_leather,dda,32x32,1,keep original,ragpouch
 T3,item,backpack_small,dda,32x32,1,keep original,ragpouch
-T3,item,backpack_tactical_large,dda,32x32,1,keep original,ragpouch
 T3,item,bacon,dda,32x32,1,keep original,
 T3,item,bag_canvas_small,dda,32x32,1,keep original,bag_plastic
 T3,item,bag_garbage,dda,32x32,1,keep original,bag_plastic
 T3,item,bag_paper_powder,dda,32x32,1,keep original,bag_canvas
 T3,item,bag_plastic,dda,20x20,1,keep original,bag_plastic
 T3,item,bag_plastic_small,dda,32x32,1,keep original,bag_canvas
-T3,item,bag_zipper,dda,20x20,1,keep original,bag_canvas
 T3,item,bag_zipper_gallon,dda,20x20,1,keep original,bag_plastic
 T3,item,balclava,dda,32x32,1,keep original,hat_ball
-T3,item,ballistic_vest_light,dda,20x20,1,keep original,ballistic_vest_esapi
-T3,item,ballistic_vest_light_operator,dda,20x20,1,keep original,ballistic_vest_esapi
-T3,item,ballistic_vest_light_pouches,dda,20x20,1,keep original,ballistic_vest_esapi
 T3,item,balloon,dda,32x32,1,keep original,condom
-T3,item,bandages,dda,20x20,1,keep original,
 T3,item,bandana,dda,20x20,1,keep original,scarf
 T3,item,bandana_head,dda,20x20,1,keep original,scarf
 T3,item,barbecue_sauce,dda,32x32,1,keep original,molasses
-T3,item,barometer,dda,20x20,1,keep original,
 T3,item,barrette,dda,20x20,1,keep original,
-T3,item,baseball,dda,20x20,1,keep original,
 T3,item,basic_papr_belt_off,dda,32x32,1,keep original,leather_belt
 T3,item,basic_papr_helmet,dda,20x20,1,keep original,helmet_motor
 T3,item,bastsandals,dda,32x32,1,keep original,sneakers
@@ -1221,131 +1001,22 @@ T3,item,bat_anklet,dda,20x20,1,base tileset gap,
 T3,item,battery,dda,20x20,1,keep original,
 T3,item,battery_car,dda,20x20,1,keep original,
 T3,item,battery_motorbike,dda,20x20,1,keep original,battery_car
-T3,item,battleship,dda,32x32,1,keep original,
-T3,item,bb,dda,32x32,1,keep original,pebble
-T3,item,bbgun,dda,32x32,1,keep original,gun_base_rifle_semi
 T3,item,bbholster,dda,20x20,1,keep original,sheath
 T3,item,bead_bracelet,dda,20x20,1,keep original,silver_bracelet
-T3,item,beartrap,dda,20x20,1,keep original,
 T3,item,beekeeping_gloves,dda,20x20,1,keep original,gloves_light
 T3,item,bench_vise,dda,20x20,1,base tileset gap,
-T3,item,benelli_m4,dda,20x20,1,keep original,gun_base_shotgun_manual
-T3,item,benelli_sa,dda,20x20,1,keep original,gun_base_shotgun_manual
-T3,item,benelli_tsa,dda,20x20,1,keep original,gun_base_shotgun_manual
-T3,item,bfipowder,dda,32x32,1,keep original,
-T3,item,bfr,dda,20x20,1,keep original,gun_base_handgun_manual
 T3,item,bholster,dda,20x20,1,keep original,sheath
-T3,item,bhp40mag,dda,32x32,1,keep original,glock17_17
-T3,item,bhp9mag_13rd,dda,32x32,1,keep original,glock17_17
-T3,item,bifocal_contacts_daily,dda,32x32,1,keep original,myopia_contacts_weekly
-T3,item,bifocal_contacts_weekly,dda,32x32,1,keep original,myopia_contacts_weekly
-T3,item,bifocal_transition_contacts_daily,dda,32x32,1,keep original,myopia_contacts_weekly
-T3,item,bifocal_transition_contacts_weekly,dda,32x32,1,keep original,myopia_contacts_weekly
 T3,item,big_pliers,dda,20x20,1,keep original,
-T3,item,bigback,dda,32x32,1,keep original,ragpouch
 T3,item,bikini_bottom,dda,32x32,1,keep original,boxer_shorts
 T3,item,bikini_top,dda,32x32,1,keep original,tank_top
 T3,item,binder_top,dda,20x20,1,keep original,camisole
-T3,item,birdfood,dda,20x20,1,keep original,
-T3,item,birth_control,dda,20x20,1,base tileset gap,
 T3,item,black_pen,dda,20x20,1,keep original,pen
 T3,item,blazer,dda,20x20,1,keep original,jacket_windbreaker
-T3,item,blrmag,dda,32x32,1,keep original,stanag30
 T3,item,blue_pen,dda,20x20,1,keep original,pen
-T3,item,blue_topaz,dda,20x20,1,base tileset gap,garnet
-T3,item,blue_topaz_dental_grill,dda,20x20,1,keep original,gold_dental_grill
-T3,item,blue_topaz_gold_bracelet,dda,20x20,1,keep original,gold_bracelet
-T3,item,blue_topaz_gold_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,blue_topaz_gold_earring,dda,20x20,1,keep original,gold_ear
-T3,item,blue_topaz_gold_pendant_necklace,dda,20x20,1,keep original,gold_necklace
-T3,item,blue_topaz_gold_ring,dda,20x20,1,keep original,gold_ring
-T3,item,blue_topaz_gold_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,blue_topaz_platinum_bracelet,dda,20x20,1,keep original,platinum_bracelet
-T3,item,blue_topaz_platinum_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,blue_topaz_platinum_earring,dda,20x20,1,keep original,platinum_ear
-T3,item,blue_topaz_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
-T3,item,blue_topaz_platinum_ring,dda,20x20,1,keep original,platinum_ring
-T3,item,blue_topaz_platinum_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,blue_topaz_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
-T3,item,blue_topaz_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,blue_topaz_silver_earring,dda,20x20,1,keep original,silver_ear
-T3,item,blue_topaz_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
-T3,item,blue_topaz_silver_ring,dda,20x20,1,keep original,silver_ring
-T3,item,blue_topaz_silver_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,bolt_cf,dda,20x20,1,keep original,bolt_wood_bodkin
-T3,item,bolt_crude,dda,20x20,1,keep original,bolt_wood_bodkin
-T3,item,bolt_makeshift,dda,20x20,1,keep original,bolt_wood_bodkin
-T3,item,bolt_metal,dda,20x20,1,keep original,bolt_wood_bodkin
-T3,item,bolt_simple_small_game,dda,20x20,1,keep original,bolt_wood_bodkin
-T3,item,bolt_simple_wood,dda,20x20,1,keep original,bolt_wood_bodkin
-T3,item,bolt_steel,dda,20x20,1,keep original,bolt_wood_bodkin
-T3,item,bolt_steel_bodkin,dda,20x20,1,keep original,bolt_wood_bodkin
-T3,item,bolt_steel_target,dda,20x20,1,keep original,bolt_wood_bodkin
-T3,item,bolt_wood,dda,20x20,1,keep original,bolt_wood_bodkin
-T3,item,bolt_wood_bodkin,dda,20x20,1,keep original,
-T3,item,bolt_wood_small_game,dda,20x20,1,keep original,bolt_wood_bodkin
 T3,item,boltcutters,dda,20x20,1,keep original,
-T3,item,bond_410,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,bondage_mask,dda,32x32,1,keep original,hat_cotton
-T3,item,book_anthology_an,dda,20x20,1,keep original,radio_book
-T3,item,book_anthology_bk,dda,20x20,1,keep original,radio_book
-T3,item,book_anthology_cw,dda,20x20,1,keep original,radio_book
-T3,item,book_anthology_htloop,dda,20x20,1,keep original,radio_book
-T3,item,book_anthology_moataatgb,dda,20x20,1,keep original,radio_book
-T3,item,book_anthology_sst,dda,20x20,1,keep original,radio_book
-T3,item,book_anthology_sunvault,dda,20x20,1,keep original,radio_book
-T3,item,book_archery,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_hard_scifi_dune,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_hard_scifi_fifth,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_hard_scifi_talnt,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_hard_scifi_zamwe,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_hard_sports_omni,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_hard_sports_semi,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_hard_sports_uni,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_hard_ya_btwo,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_hard_ya_dark,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_pulp_ddive,dda,20x20,1,keep original,novel_pulp
-T3,item,book_fict_soft_pulp_flashcc,dda,20x20,1,keep original,novel_pulp
-T3,item,book_fict_soft_pulp_gcapes,dda,20x20,1,keep original,novel_pulp
-T3,item,book_fict_soft_pulp_nogod,dda,20x20,1,keep original,novel_pulp
-T3,item,book_fict_soft_pulp_squids,dda,20x20,1,keep original,novel_pulp
-T3,item,book_fict_soft_pulp_venus,dda,20x20,1,keep original,novel_pulp
-T3,item,book_fict_soft_pulp_wtmrw,dda,20x20,1,keep original,novel_pulp
-T3,item,book_fict_soft_pulp_yesmurd,dda,20x20,1,keep original,novel_pulp
-T3,item,book_fict_soft_satire_catch,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_satire_cats,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_satire_dust,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_satire_hgod,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_satire_mandm,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_scifi_brave,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_scifi_cybrd,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_scifi_dune,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_scifi_f451,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_scifi_roadp,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_scifi_zamwe,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_sports_bunt,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_sports_envy,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_sports_tdsp,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_swash_blkfreight,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_swash_buccaneer,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_swash_searovers,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_west_atwixt,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_west_bart,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_west_beans,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_west_calico,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_west_gore,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_west_riot,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_west_vaq,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_west_vride,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_ya_adrk,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_ya_bjak,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_ya_burn,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_ya_hilo,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_ya_myeyes,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_ya_pbbr,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_ya_rwya,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_ya_sboy,dda,20x20,1,keep original,radio_book
-T3,item,book_fict_soft_ya_sumv,dda,20x20,1,keep original,radio_book
 T3,item,book_newage_aliens,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
 T3,item,book_newage_beyondveil,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
 T3,item,book_newage_generic,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
@@ -1356,156 +1027,68 @@ T3,item,book_newage_oilsecrets,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
 T3,item,book_newage_weapcrys,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
 T3,item,book_newage_witchcraftadv,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
 T3,item,book_newage_witchcraftbeg,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
-T3,item,book_nonf_hard_autobiography,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_biography_dead,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_biography_living,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_business_strategy,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_dodge_tlwd,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_history_ancient,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_history_modern,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_homemk_anythingcan,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_homemk_grtrms,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_homemk_handshome,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_homemk_loverms,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_homemk_nyparti,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_homemk_outkitchn,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_homemk_plantshome,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_homemk_wmencolor,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_humor,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_language_learning,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_parenting,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_phil_aesth,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_phil_mdlogic,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_phil_phinfo,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_photography_book,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_popular_science,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_psych_forpsych,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_psych_grconres,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_psych_moodalm,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_psych_phonodis,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_psych_thergar,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_religion,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_self_help,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_sports_bike,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_sports_ergo,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_sports_hoop,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_sports_morg,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_travelogue,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_hard_true_crime,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_soft_mechnic_hotrod,dda,20x20,1,keep original,textbook_firstaid
-T3,item,book_nonf_soft_parent_howtogen,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_soft_phil_benoth,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_soft_psych_adrugds,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_soft_psych_arteatds,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_soft_psych_cggamers,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_soft_psych_paranoia,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_soft_psych_psycolo,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_soft_psych_psycstlk,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_soft_safety_radiaea,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_soft_speech_naillaw,dda,20x20,1,keep original,manual_gun
-T3,item,book_nonf_soft_sports_bdgt,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_soft_sports_lads,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_soft_sports_vlly,dda,20x20,1,keep original,radio_book
-T3,item,book_nonf_soft_wedding_coolring,dda,20x20,1,keep original,radio_book
 T3,item,book_nonf_zine_news_anlyst,dda,20x20,1,keep original,flyer
 T3,item,book_ruined,dda,20x20,1,keep original,
-T3,item,booklet_firstaid,dda,20x20,1,keep original,pocket_firstaid
 T3,item,boots_combat,dda,32x32,1,keep original,dress_shoes
 T3,item,boots_denim,dda,32x32,1,keep original,dress_shoes
 T3,item,boots_faux_fur,dda,20x20,1,keep original,shoes_bowling
 T3,item,boots_fur,dda,32x32,1,keep original,dress_shoes
 T3,item,boots_hiking,dda,32x32,1,keep original,dress_shoes
-T3,item,boots_rubber,dda,32x32,1,keep original,dress_shoes
 T3,item,boots_western,dda,32x32,1,keep original,dress_shoes
 T3,item,boots_winter,dda,20x20,1,keep original,shoes_bowling
 T3,item,bootsheath,dda,32x32,1,keep original,scabbard
 T3,item,bootstrap,dda,20x20,1,keep original,sheath
 T3,item,bostonchan_wig,dda,20x20,1,base tileset gap,
-T3,item,bottle_folding,dda,20x20,1,base tileset gap,
 T3,item,bottle_glass,dda,20x20,1,keep original,bottle_plastic
 T3,item,bottle_glass_seasoning,dda,20x20,1,keep original,bottle_plastic
 T3,item,bottle_glass_seasoning_small,dda,20x20,1,keep original,bottle_plastic
-T3,item,bottle_metal,dda,20x20,1,base tileset gap,
 T3,item,bottle_plastic,dda,20x20,1,keep original,
 T3,item,bottle_plastic_355ml,dda,20x20,1,keep original,bottle_plastic
-T3,item,bottle_plastic_glue,dda,20x20,1,keep original,bottle_plastic
 T3,item,bottle_plastic_pill_painkiller,dda,20x20,1,keep original,aspirin
-T3,item,bottle_plastic_pill_prescription,dda,20x20,1,keep original,antibiotics
 T3,item,bottle_plastic_pill_supplement,dda,20x20,1,keep original,vitamins
 T3,item,bottle_plastic_seasoning,dda,20x20,1,keep original,bottle_plastic
 T3,item,bottle_plastic_seasoning_small,dda,20x20,1,keep original,bottle_plastic
-T3,item,bottle_plastic_small,dda,20x20,1,keep original,bottle_plastic
 T3,item,bottle_plastic_small_glue,dda,20x20,1,keep original,bottle_plastic
 T3,item,bottle_plastic_tiny,dda,20x20,1,keep original,bottle_plastic
 T3,item,bottle_plastic_tiny_glue,dda,20x20,1,keep original,bottle_plastic
-T3,item,bottle_twoliter_glue,dda,20x20,1,keep original,bottle_plastic
 T3,item,bow_saw,dda,20x20,1,keep original,
-T3,item,bow_scope,dda,20x20,1,base tileset gap,
-T3,item,bow_sight,dda,20x20,1,base tileset gap,
-T3,item,bow_sight_pin,dda,20x20,1,base tileset gap,
-T3,item,bow_silencer,dda,20x20,1,base tileset gap,
-T3,item,bow_stabilizer,dda,20x20,1,base tileset gap,
-T3,item,bow_stabilizer_set,dda,20x20,1,base tileset gap,
 T3,item,bowhat,dda,32x32,1,keep original,hat_ball
 T3,item,bowl_pewter,dda,20x20,1,keep original,base_tin_dish
 T3,item,box_cigarette,dda,20x20,1,keep original,box_small
-T3,item,box_medium,dda,32x32,1,keep original,box_small
 T3,item,box_medium_folded,dda,32x32,1,keep original,
-T3,item,box_paper_small,dda,20x20,1,keep original,box_small
 T3,item,box_small,dda,20x20,1,keep original,
 T3,item,box_snack,dda,20x20,1,keep original,
 T3,item,box_tea,dda,20x20,1,keep original,box_small
 T3,item,boxcutter,dda,20x20,1,keep original,
 T3,item,boxer_briefs,dda,32x32,1,keep original,boxer_shorts
 T3,item,boxer_shorts,dda,32x32,1,keep original,shorts
-T3,item,boxing_gloves,dda,20x20,1,keep original,gloves_light
 T3,item,boy_shorts,dda,32x32,1,keep original,shorts
 T3,item,bra,dda,32x32,1,keep original,tshirt
 T3,item,bracelet_friendship,dda,20x20,1,keep original,silver_bracelet
 T3,item,brandy,dda,32x32,1,keep original,whiskey
 T3,item,brazing_rod_alloy,dda,20x20,1,keep original,
 T3,item,brazing_rod_bronze,dda,20x20,1,keep original,
-T3,item,bread,dda,20x20,1,keep original,
 T3,item,breeches,dda,32x32,1,keep original,jeans
-T3,item,bren2_556,dda,20x20,1,keep original,gun_base_rifle_semi
 T3,item,briefcase,dda,20x20,1,keep original,plastic_shopping_bag
 T3,item,briefs,dda,32x32,1,keep original,shorts
 T3,item,bronze_medal,dda,20x20,1,keep original,silver_necklace
-T3,item,browning_a5,dda,20x20,1,base tileset gap,gun_base_shotgun_semi
-T3,item,browning_blr,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,browning_citori_20,dda,20x20,1,base tileset gap,gun_base_shotgun_manual
 T3,item,brush_axe,dda,32x32,1,keep original,ax
 T3,item,brush_handaxe,dda,20x20,1,keep original,machete
 T3,item,brush_pole,dda,32x32,1,keep original,glaive
 T3,item,bubblewrap,dda,32x32,1,keep original,
 T3,item,bucket,dda,32x32,1,keep original,
 T3,item,bucket_5gal,dda,32x32,1,keep original,
-T3,item,bullwhip,dda,20x20,1,base tileset gap,
 T3,item,bum_wine,dda,32x32,1,keep original,wine_cabernet
 T3,item,bunny_ears_black,dda,20x20,1,base tileset gap,
 T3,item,button_plastic,dda,20x20,1,keep original,
 T3,item,caff_gum,dda,20x20,1,keep original,
-T3,item,caffeine,dda,20x20,1,keep original,
-T3,item,calcium_tablet,dda,20x20,1,keep original,
-T3,item,camelbak,dda,32x32,1,keep original,ragpouch
 T3,item,camera_bag,dda,32x32,1,keep original,ragpouch
 T3,item,camera_pro,dda,32x32,1,keep original,abstract_camera
 T3,item,camisole,dda,20x20,1,keep original,tshirt
-T3,item,camping_multitool,dda,20x20,1,keep original,multitool
 T3,item,can_aluminum_250ml,dda,20x20,1,keep original,can_drink
-T3,item,can_beans,dda,20x20,1,keep original,
-T3,item,can_cheese,dda,20x20,1,keep original,
-T3,item,can_chicken,dda,20x20,1,base tileset gap,
 T3,item,can_drink,dda,20x20,1,keep original,
 T3,item,can_food,dda,20x20,1,keep original,can_drink
-T3,item,can_food_big,dda,20x20,1,keep original,can_drink
-T3,item,can_medium,dda,20x20,1,keep original,can_drink
-T3,item,can_opener,dda,20x20,1,keep original,hand_crank_charger
-T3,item,can_pineapple,dda,20x20,1,keep original,
-T3,item,can_spam,dda,20x20,1,keep original,
-T3,item,can_tuna,dda,20x20,1,base tileset gap,
 T3,item,canadian_whiskey,dda,32x32,1,keep original,whiskey
-T3,item,candlestick,dda,20x20,1,keep original,
 T3,item,candy,dda,20x20,1,base tileset gap,
 T3,item,candy2,dda,20x20,1,base tileset gap,
 T3,item,candy3,dda,20x20,1,base tileset gap,
@@ -1513,87 +1096,40 @@ T3,item,candy4,dda,20x20,1,base tileset gap,
 T3,item,candy_bracelet,dda,20x20,1,keep original,silver_bracelet
 T3,item,candy_coated_peanuts,dda,20x20,1,base tileset gap,
 T3,item,candycigarette,dda,20x20,1,base tileset gap,
-T3,item,canteen,dda,20x20,1,keep original,bottle_plastic
 T3,item,cardboard_roll,dda,20x20,1,keep original,
-T3,item,case_cigar,dda,20x20,1,keep original,box_small
-T3,item,cashews,dda,20x20,1,keep original,
 T3,item,cassock,dda,20x20,1,keep original,coat_winter
-T3,item,catan,dda,32x32,1,keep original,
-T3,item,catfood,dda,20x20,1,keep original,
-T3,item,catfood_dry,dda,20x20,1,keep original,
-T3,item,ccpmag_9rd,dda,32x32,1,keep original,glock17_17
-T3,item,cell_phone,dda,20x20,1,keep original,
 T3,item,ceramic_mug,dda,20x20,1,keep original,base_ceramic_dish
 T3,item,ceramic_shard,dda,20x20,1,keep original,
-T3,item,cereal,dda,20x20,1,keep original,
-T3,item,cereal2,dda,20x20,1,keep original,cereal
-T3,item,cereal3,dda,20x20,1,keep original,cereal
-T3,item,cereal_fp1,dda,20x20,1,keep original,cereal
-T3,item,cereal_fp2,dda,20x20,1,keep original,cereal
-T3,item,cereal_fp4,dda,20x20,1,keep original,cereal
 T3,item,ch_wire,dda,20x20,1,keep original,lc_wire
 T3,item,chain,dda,20x20,1,keep original,
 T3,item,chainsaw_off,dda,32x32,1,keep original,
 T3,item,char_smoker,dda,32x32,1,keep original,
-T3,item,character_sheet,dda,20x20,1,keep original,survnote
-T3,item,chaturanga,dda,20x20,1,base tileset gap,
 T3,item,chaw,dda,20x20,1,base tileset gap,
 T3,item,cheap_whiskey,dda,32x32,1,keep original,whiskey
-T3,item,checkers,dda,32x32,1,keep original,
 T3,item,cheerleader_skirt,dda,20x20,1,keep original,kilt
 T3,item,cheerleader_skirt_short,dda,20x20,1,keep original,kilt
 T3,item,cheerleader_top_short,dda,20x20,1,keep original,tshirt
 T3,item,cheese,dda,20x20,1,keep original,
 T3,item,cheese_fries,dda,20x20,1,keep original,
-T3,item,cheese_powder,dda,20x20,1,base tileset gap,
 T3,item,cheeseburger,dda,20x20,1,base tileset gap,
-T3,item,chem_hexamine,dda,20x20,1,base tileset gap,
 T3,item,cheongsam,dda,32x32,1,keep original,coat_rain
-T3,item,chess,dda,20x20,1,keep original,
-T3,item,chestguard_hard,dda,20x20,1,keep original,chestguard_hard
-T3,item,chiappa_rhino,dda,20x20,1,keep original,gun_base_handgun_manual
 T3,item,chili,dda,20x20,1,keep original,
 T3,item,chilidogs,dda,20x20,1,keep original,
-T3,item,chinese_checkers,dda,20x20,1,base tileset gap,
 T3,item,chips,dda,20x20,1,keep original,
 T3,item,chisel,dda,20x20,1,keep original,
 T3,item,choc_drink,dda,32x32,1,keep original,milk
-T3,item,choco_coffee_beans,dda,20x20,1,keep original,
 T3,item,chocolate,dda,20x20,1,base tileset gap,
-T3,item,chocpretzels,dda,20x20,1,base tileset gap,
-T3,item,cig,dda,20x20,1,keep original,
 T3,item,cig_butt,dda,20x20,1,keep original,
 T3,item,cigar,dda,20x20,1,keep original,
 T3,item,cigar_cutter,dda,20x20,1,base tileset gap,
 T3,item,cigar_punch,dda,20x20,1,base tileset gap,
 T3,item,circsaw_off,dda,20x20,1,keep original,
-T3,item,citrine,dda,20x20,1,base tileset gap,garnet
-T3,item,citrine_dental_grill,dda,20x20,1,keep original,gold_dental_grill
-T3,item,citrine_gold_bracelet,dda,20x20,1,keep original,gold_bracelet
-T3,item,citrine_gold_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,citrine_gold_earring,dda,20x20,1,keep original,gold_ear
-T3,item,citrine_gold_pendant_necklace,dda,20x20,1,keep original,gold_necklace
-T3,item,citrine_gold_ring,dda,20x20,1,keep original,gold_ring
-T3,item,citrine_gold_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,citrine_platinum_bracelet,dda,20x20,1,keep original,platinum_bracelet
-T3,item,citrine_platinum_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,citrine_platinum_earring,dda,20x20,1,keep original,platinum_ear
-T3,item,citrine_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
-T3,item,citrine_platinum_ring,dda,20x20,1,keep original,platinum_ring
-T3,item,citrine_platinum_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,citrine_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
-T3,item,citrine_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,citrine_silver_earring,dda,20x20,1,keep original,silver_ear
-T3,item,citrine_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
-T3,item,citrine_silver_ring,dda,20x20,1,keep original,silver_ring
-T3,item,citrine_silver_tiara,dda,32x32,1,keep original,hat_ball
 T3,item,clamp,dda,20x20,1,keep original,
-T3,item,classic_literature,dda,20x20,1,keep original,radio_book
 T3,item,claw_bar,dda,20x20,1,base tileset gap,
 T3,item,cleats,dda,20x20,1,keep original,shoes_bowling
-T3,item,clip223_10rd,dda,32x32,1,keep original,stanag30
-T3,item,clip303_5rd,dda,32x32,1,keep original,stanag30
-T3,item,clip_77mm_arisaka,dda,32x32,1,keep original,stanag30
 T3,item,cloak,dda,32x32,1,keep original,coat_winter
 T3,item,cloak_black,dda,32x32,1,keep original,coat_rain
 T3,item,cloak_fur,dda,32x32,1,keep original,coat_winter
@@ -1604,44 +1140,28 @@ T3,item,cloak_wool,dda,32x32,1,keep original,coat_rain
 T3,item,clogs,dda,32x32,1,keep original,dress_shoes
 T3,item,clown_nose,dda,20x20,1,base tileset gap,
 T3,item,clown_wig,dda,20x20,1,base tileset gap,
-T3,item,clue,dda,32x32,1,keep original,
 T3,item,coat_faux_fur,dda,20x20,1,keep original,coat_winter
 T3,item,coat_fur,dda,32x32,1,keep original,coat_rain
 T3,item,coat_lab,dda,32x32,1,keep original,coat_rain
 T3,item,coat_rain,dda,32x32,1,keep original,coat_rain
 T3,item,coat_straw,dda,32x32,1,keep original,coat_rain
 T3,item,coat_winter,dda,20x20,1,keep original,coat_winter
-T3,item,codeine,dda,20x20,1,keep original,
-T3,item,coffee_syrup,dda,32x32,1,keep original,coffee
-T3,item,coffeemaker,dda,32x32,1,keep original,
 T3,item,coin_dime,dda,20x20,1,keep original,
 T3,item,coin_dollar,dda,20x20,1,keep original,
 T3,item,coin_half_dollar,dda,20x20,1,keep original,
 T3,item,coin_nickel,dda,20x20,1,keep original,
 T3,item,coin_penny,dda,20x20,1,keep original,
 T3,item,coin_quarter,dda,20x20,1,keep original,
-T3,item,coke,dda,32x32,1,keep original,
 T3,item,cola,dda,32x32,1,keep original,coffee
 T3,item,colamdew,dda,32x32,1,keep original,coffee
 T3,item,collar_playboy,dda,20x20,1,base tileset gap,
 T3,item,collarpin,dda,32x32,1,keep original,tieclip
-T3,item,collector_book,dda,20x20,1,keep original,radio_book
-T3,item,colt_anaconda_4,dda,20x20,1,keep original,gun_base_handgun_manual
-T3,item,colt_anaconda_6,dda,20x20,1,keep original,gun_base_handgun_manual
-T3,item,colt_anaconda_8,dda,20x20,1,keep original,gun_base_handgun_manual
-T3,item,colt_python,dda,20x20,1,keep original,gun_base_handgun_manual
-T3,item,colt_saa,dda,20x20,1,keep original,gun_base_handgun_manual
-T3,item,comb_lice,dda,20x20,1,keep original,base_toiletries
 T3,item,comb_pocket,dda,20x20,1,keep original,base_toiletries
-T3,item,compbow,dda,32x32,1,keep original,longbow
-T3,item,compcrossbow,dda,32x32,1,keep original,crossbow
 T3,item,con_mix_foldable,dda,20x20,1,keep original,con_mix
 T3,item,condiment_bottle_sealed,dda,20x20,1,keep original,bottle_plastic
 T3,item,condom_sealed,dda,32x32,1,keep original,condom
-T3,item,connect_four,dda,20x20,1,base tileset gap,
 T3,item,cookies,dda,20x20,1,keep original,
 T3,item,copper_bracelet,dda,20x20,1,keep original,silver_bracelet
-T3,item,copper_ear,dda,20x20,1,keep original,gold_ear
 T3,item,copper_hairpin,dda,32x32,1,keep original,tieclip
 T3,item,copper_locket,dda,20x20,1,keep original,silver_necklace
 T3,item,copper_necklace,dda,20x20,1,keep original,silver_necklace
@@ -1658,33 +1178,18 @@ T3,item,corset_waist,dda,20x20,1,keep original,tshirt
 T3,item,cotton_ball,dda,20x20,1,keep original,
 T3,item,cow_candy,dda,20x20,1,base tileset gap,candy2
 T3,item,cowboy_hat,dda,32x32,1,keep original,hat_cotton
-T3,item,cowrie_hair_beads,dda,32x32,1,keep original,hat_cotton
 T3,item,crab_cakes,dda,20x20,1,base tileset gap,fish_fried
-T3,item,crack,dda,20x20,1,base tileset gap,
-T3,item,cracklins,dda,20x20,1,keep original,
-T3,item,crackpipe,dda,20x20,1,base tileset gap,
 T3,item,creamsoda,dda,32x32,1,keep original,coffee
 T3,item,credit_card,dda,20x20,1,base tileset gap,card_plastic_abstract
 T3,item,creepy_doll,dda,20x20,1,keep original,talking_doll
 T3,item,crispycran,dda,32x32,1,keep original,cranberry_juice
-T3,item,crossbow,dda,32x32,1,keep original,
 T3,item,crowbar,dda,32x32,1,keep original,
-T3,item,cu_pipe,dda,20x20,1,keep original,
 T3,item,cufflinks,dda,20x20,1,keep original,
 T3,item,cufflinks_intricate,dda,20x20,1,keep original,
 T3,item,cuffs,dda,20x20,1,base tileset gap,
 T3,item,cup_foil,dda,20x20,1,keep original,
 T3,item,cup_plastic,dda,20x20,1,keep original,
-T3,item,cz75,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,cz75mag_16rd,dda,32x32,1,keep original,glock17_17
 T3,item,dance_shoes,dda,32x32,1,keep original,sneakers
-T3,item,daypack,dda,32x32,1,keep original,ragpouch
-T3,item,dayquil,dda,32x32,1,keep original,
-T3,item,deaglemag,dda,32x32,1,keep original,glock17_17
-T3,item,deaglemag_357,dda,32x32,1,keep original,glock17_17
-T3,item,deaglemag_50,dda,32x32,1,keep original,glock17_17
-T3,item,deck_of_cards,dda,20x20,1,keep original,
-T3,item,deck_of_tarot_cards,dda,20x20,1,keep original,deck_of_cards
 T3,item,decoy_elfa,dda,20x20,1,keep original,record_patient
 T3,item,deflated_wheel,dda,32x32,1,keep original,wheel
 T3,item,deflated_wheel_bicycle,dda,32x32,1,keep original,
@@ -1694,65 +1199,27 @@ T3,item,deflated_wheel_motorbike_or,dda,32x32,1,keep original,deflated_wheel_mot
 T3,item,deflated_wheel_slick,dda,32x32,1,keep original,wheel_slick
 T3,item,deflated_wheel_wide_or,dda,32x32,1,keep original,deflated_wheel_wide
 T3,item,deluxe_cheeseburger,dda,20x20,1,base tileset gap,cheeseburger
-T3,item,denim_overalls,dda,20x20,1,base tileset gap,
 T3,item,denim_shirt,dda,20x20,1,keep original,buttonshirt
 T3,item,devil_horn_headband,dda,20x20,1,base tileset gap,
 T3,item,devil_tail,dda,20x20,1,base tileset gap,
-T3,item,diamond,dda,20x20,1,base tileset gap,
 T3,item,diamond_dental_grill,dda,20x20,1,keep original,gold_dental_grill
-T3,item,diamond_gold_bracelet,dda,20x20,1,keep original,gold_bracelet
-T3,item,diamond_gold_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,diamond_gold_earring,dda,20x20,1,keep original,gold_ear
-T3,item,diamond_gold_pendant_necklace,dda,20x20,1,keep original,gold_necklace
-T3,item,diamond_gold_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,diamond_platinum_bracelet,dda,20x20,1,keep original,platinum_bracelet
-T3,item,diamond_platinum_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,diamond_platinum_earring,dda,20x20,1,keep original,platinum_ear
-T3,item,diamond_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
-T3,item,diamond_platinum_ring,dda,20x20,1,keep original,platinum_ring
-T3,item,diamond_platinum_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,diamond_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
-T3,item,diamond_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,diamond_silver_earring,dda,20x20,1,keep original,silver_ear
-T3,item,diamond_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
-T3,item,diamond_silver_ring,dda,20x20,1,keep original,silver_ring
-T3,item,diamond_silver_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,diazepam,dda,20x20,1,keep original,
-T3,item,dive_bag,dda,32x32,1,keep original,ragpouch
 T3,item,diving_watch,dda,20x20,1,keep original,gold_watch
-T3,item,dnd,dda,32x32,1,keep original,
-T3,item,dnd_2,dda,32x32,1,keep original,
-T3,item,dnd_3,dda,32x32,1,keep original,
-T3,item,dnd_handbook,dda,20x20,1,keep original,textbook_firstaid
 T3,item,dog_whistle,dda,20x20,1,keep original,
-T3,item,dogfood,dda,20x20,1,keep original,
-T3,item,dogfood_dry,dda,20x20,1,keep original,
-T3,item,domino,dda,20x20,1,base tileset gap,
-T3,item,dp_12,dda,20x20,1,base tileset gap,gun_base_shotgun_manual
 T3,item,dremel,dda,20x20,1,keep original,angle_grinder
 T3,item,dress_shirt,dda,32x32,1,keep original,longshirt
-T3,item,dress_shoes,dda,32x32,1,keep original,shoes_bowling
 T3,item,dress_wedding,dda,32x32,1,keep original,coat_rain
-T3,item,dry_bag,dda,32x32,1,keep original,ragpouch
-T3,item,dry_bag_large,dda,20x20,1,keep original,bag_plastic
-T3,item,dry_beans,dda,20x20,1,keep original,
-T3,item,dry_duffelbag,dda,32x32,1,keep original,ragpouch
-T3,item,dry_lentils,dda,20x20,1,keep original,
 T3,item,duct_tape,dda,32x32,1,keep original,
-T3,item,duffelbag_gym_l,dda,32x32,1,keep original,ragpouch
 T3,item,duffelbag_gym_m,dda,32x32,1,keep original,ragpouch
 T3,item,duffelbag_gym_s,dda,32x32,1,keep original,ragpouch
-T3,item,duffelbag_gym_xl,dda,32x32,1,keep original,ragpouch
 T3,item,duffelbag_gym_xs,dda,32x32,1,keep original,ragpouch
 T3,item,duffelbag_gym_xxs,dda,32x32,1,keep original,ragpouch
-T3,item,duffelbag_l_poly,dda,32x32,1,keep original,ragpouch
-T3,item,duffelbag_xl_nylon,dda,32x32,1,keep original,ragpouch
 T3,item,duster,dda,20x20,1,keep original,coat_winter
 T3,item,duster_faux_fur,dda,32x32,1,keep original,coat_rain
 T3,item,duster_fur,dda,20x20,1,keep original,coat_winter
 T3,item,duster_leather,dda,32x32,1,keep original,coat_rain
-T3,item,dutch_oven,dda,20x20,1,base tileset gap,base_cookpot
-T3,item,e_tool,dda,20x20,1,keep original,
 T3,item,ear_plugs,dda,20x20,1,keep original,
 T3,item,eboshi,dda,32x32,1,keep original,hat_cotton
 T3,item,ecig,dda,20x20,1,keep original,
@@ -1760,128 +1227,52 @@ T3,item,eclipse_glasses,dda,20x20,1,keep original,glasses_eye
 T3,item,eink_tablet_pc,dda,20x20,1,keep original,abstract_tablet
 T3,item,elbow_pads,dda,20x20,1,keep original,arm_warmers
 T3,item,elec_chainsaw_off,dda,20x20,1,base tileset gap,
-T3,item,elec_hairtrimmer,dda,32x32,1,keep original,
 T3,item,elec_jackhammer,dda,20x20,1,keep original,
-T3,item,electric_lantern,dda,20x20,1,keep original,
-T3,item,electric_spinwheel,dda,20x20,1,keep original,box_small
-T3,item,emer_blanket,dda,32x32,1,keep original,
-T3,item,emerald,dda,20x20,1,base tileset gap,garnet
-T3,item,emerald_dental_grill,dda,20x20,1,keep original,gold_dental_grill
-T3,item,emerald_gold_bracelet,dda,20x20,1,keep original,gold_bracelet
-T3,item,emerald_gold_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,emerald_gold_earring,dda,20x20,1,keep original,gold_ear
-T3,item,emerald_gold_pendant_necklace,dda,20x20,1,keep original,gold_necklace
-T3,item,emerald_gold_ring,dda,20x20,1,keep original,gold_ring
-T3,item,emerald_gold_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,emerald_platinum_bracelet,dda,20x20,1,keep original,platinum_bracelet
-T3,item,emerald_platinum_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,emerald_platinum_earring,dda,20x20,1,keep original,platinum_ear
-T3,item,emerald_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
-T3,item,emerald_platinum_ring,dda,20x20,1,keep original,platinum_ring
-T3,item,emerald_platinum_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,emerald_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
-T3,item,emerald_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,emerald_silver_earring,dda,20x20,1,keep original,silver_ear
-T3,item,emerald_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
-T3,item,emerald_silver_ring,dda,20x20,1,keep original,silver_ring
-T3,item,emerald_silver_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,enfield_303mag,dda,32x32,1,keep original,stanag30
-T3,item,enfield_bayonet,dda,20x20,1,base tileset gap,
 T3,item,eraser,dda,20x20,1,keep original,
-T3,item,esapi_plate,dda,20x20,1,keep original,
-T3,item,esbit_stove,dda,20x20,1,keep original,
 T3,item,espadrilles,dda,32x32,1,keep original,dress_shoes
-T3,item,essay_book,dda,20x20,1,keep original,radio_book
-T3,item,estrogen,dda,20x20,1,base tileset gap,
 T3,item,extension_cable,dda,20x20,1,keep original,
 T3,item,eyedrops,dda,20x20,1,keep original,
 T3,item,eyepatch_leather,dda,20x20,1,keep original,glasses_eye
-T3,item,falmag,dda,32x32,1,keep original,stanag30
 T3,item,family_photo,dda,32x32,1,keep original,
 T3,item,faux_fur_cat_ears,dda,20x20,1,base tileset gap,fur_cat_ears
 T3,item,faux_fur_cat_tail,dda,20x20,1,base tileset gap,fur_cat_tail
 T3,item,faux_fur_collar,dda,20x20,1,base tileset gap,fur_collar
 T3,item,fc_hairpin,dda,32x32,1,keep original,hairpin
-T3,item,feast_for_odin,dda,20x20,1,base tileset gap,
 T3,item,fedora,dda,20x20,1,base tileset gap,
-T3,item,fields_of_arle,dda,20x20,1,base tileset gap,
-T3,item,file,dda,20x20,1,keep original,
 T3,item,fish_fried,dda,20x20,1,base tileset gap,
 T3,item,fish_sandwich,dda,20x20,1,keep original,
 T3,item,fish_smoked,dda,20x20,1,base tileset gap,flesh
-T3,item,fishing_hook_basic,dda,20x20,1,keep original,
-T3,item,fishing_rod_2pc_packed,dda,32x32,1,keep original,PR24-extended
-T3,item,fishing_rod_tele_packed,dda,32x32,1,keep original,PR24-retracted
-T3,item,fishing_waders,dda,32x32,1,keep original,pants
 T3,item,fitness_band,dda,20x20,1,base tileset gap,
 T3,item,fitover_sunglasses,dda,20x20,1,keep original,glasses_eye
 T3,item,five-point_harness,dda,20x20,1,base tileset gap,spare_part
-T3,item,flaregun,dda,20x20,1,keep original,gun_base_handgun_semi
 T3,item,flask_hip,dda,20x20,1,keep original,bottle_plastic
-T3,item,flatbread,dda,20x20,1,keep original,
-T3,item,flint_steel,dda,20x20,1,keep original,
 T3,item,flip_flops_exp,dda,32x32,1,keep original,sneakers
 T3,item,flower_anklet,dda,20x20,1,base tileset gap,
-T3,item,flu_shot,dda,32x32,1,keep original,
 T3,item,flyer,dda,20x20,1,keep original,
 T3,item,flyer_evac,dda,20x20,1,base tileset gap,
-T3,item,fn57,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,fn57mag,dda,32x32,1,keep original,glock17_17
-T3,item,fn_fal_semi,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,fn_ps90,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,fnp90mag_10rd,dda,32x32,1,keep original,mp5mag
-T3,item,folded_inflatable_boat,dda,32x32,1,keep original,generic_folded_vehicle
 T3,item,folding_poncho,dda,32x32,1,keep original,
-T3,item,folding_solar_panel,dda,32x32,1,keep original,solar_panel
 T3,item,foodperson_mask,dda,20x20,1,keep original,
 T3,item,foodplace_food,dda,20x20,1,base tileset gap,
-T3,item,foodplace_snack_bar,dda,20x20,1,base tileset gap,
 T3,item,foodplace_zero_drink,dda,32x32,1,keep original,juice
 T3,item,foon,dda,20x20,1,keep original,base_silverware
-T3,item,football,dda,20x20,1,keep original,
 T3,item,forged_shears,dda,20x20,1,keep original,
 T3,item,fork,dda,20x20,1,keep original,base_silverware
 T3,item,fp_loyalty_card,dda,20x20,1,keep original,
-T3,item,freeze_dried_meal,dda,20x20,1,base tileset gap,
-T3,item,freeze_dried_stroganoff,dda,20x20,1,base tileset gap,
-T3,item,freeze_dried_veggypasta,dda,20x20,1,base tileset gap,
-T3,item,friday,dda,20x20,1,base tileset gap,
 T3,item,fried_seeds,dda,20x20,1,keep original,
 T3,item,fries,dda,20x20,1,base tileset gap,
-T3,item,fruit_leather,dda,20x20,1,base tileset gap,
 T3,item,fuel_tin,dda,32x32,1,keep original,jerrycan
-T3,item,fun_survival,dda,20x20,1,keep original,textbook_fireman
 T3,item,funnel,dda,32x32,1,keep original,
 T3,item,fur_cat_ears,dda,20x20,1,base tileset gap,
 T3,item,fur_cat_tail,dda,20x20,1,base tileset gap,
 T3,item,fur_collar,dda,20x20,1,base tileset gap,
-T3,item,g3mag,dda,32x32,1,keep original,stanag30
 T3,item,g_shovel,dda,20x20,1,keep original,
-T3,item,g_warhammer,dda,32x32,1,keep original,
-T3,item,g_warhammer40k,dda,32x32,1,keep original,
 T3,item,game_watch,dda,20x20,1,keep original,
-T3,item,garand,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,garandclip,dda,32x32,1,keep original,stanag30
-T3,item,garnet,dda,20x20,1,base tileset gap,
-T3,item,garnet_dental_grill,dda,20x20,1,keep original,gold_dental_grill
-T3,item,garnet_gold_bracelet,dda,20x20,1,keep original,gold_bracelet
-T3,item,garnet_gold_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,garnet_gold_earring,dda,20x20,1,keep original,gold_ear
-T3,item,garnet_gold_pendant_necklace,dda,20x20,1,keep original,gold_necklace
-T3,item,garnet_gold_ring,dda,20x20,1,keep original,gold_ring
-T3,item,garnet_gold_tiara,dda,32x32,1,keep original,hat_cotton
-T3,item,garnet_platinum_bracelet,dda,20x20,1,keep original,platinum_bracelet
-T3,item,garnet_platinum_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,garnet_platinum_earring,dda,20x20,1,keep original,platinum_ear
-T3,item,garnet_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
-T3,item,garnet_platinum_ring,dda,20x20,1,keep original,platinum_ring
-T3,item,garnet_platinum_tiara,dda,32x32,1,keep original,hat_cotton
-T3,item,garnet_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
-T3,item,garnet_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,garnet_silver_earring,dda,20x20,1,keep original,silver_ear
-T3,item,garnet_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
-T3,item,garnet_silver_ring,dda,20x20,1,keep original,silver_ring
-T3,item,garnet_silver_tiara,dda,32x32,1,keep original,hat_cotton
 T3,item,garter_belt,dda,32x32,1,keep original,boxer_shorts
 T3,item,gartersheath1,dda,32x32,1,keep original,scabbard
 T3,item,gartersheath2,dda,32x32,1,keep original,scabbard
@@ -1889,9 +1280,7 @@ T3,item,gasdiscount_gold,dda,20x20,1,keep original,card_plastic_abstract
 T3,item,gasdiscount_platinum,dda,20x20,1,keep original,card_plastic_abstract
 T3,item,gasdiscount_silver,dda,20x20,1,keep original,card_plastic_abstract
 T3,item,gasfilter_med,dda,20x20,1,base tileset gap,
-T3,item,gasoline_lantern,dda,20x20,1,keep original,
 T3,item,geta,dda,20x20,1,keep original,shoes_bowling
-T3,item,gfy_1,dda,20x20,1,keep original,gun_base_shotgun_manual
 T3,item,ghost_robe,dda,32x32,1,keep original,coat_rain
 T3,item,ghost_robe_sheet,dda,20x20,1,keep original,towel
 T3,item,gin,dda,32x32,1,keep original,water_clean
@@ -1901,37 +1290,6 @@ T3,item,glasses_bal,dda,20x20,1,keep original,glasses_eye
 T3,item,glasses_bifocal,dda,20x20,1,keep original,sunglasses
 T3,item,glasses_monocle,dda,20x20,1,keep original,sunglasses
 T3,item,glasses_reading,dda,20x20,1,keep original,sunglasses
-T3,item,glock17_17,dda,32x32,1,keep original,
-T3,item,glock36_mag,dda,32x32,1,keep original,glock17_17
-T3,item,glock40mag,dda,32x32,1,keep original,glock17_17
-T3,item,glock40mag_9,dda,20x20,1,base tileset gap,
-T3,item,glock42_mag,dda,32x32,1,keep original,glock17_17
-T3,item,glock43_mag,dda,32x32,1,keep original,glock17_17
-T3,item,glock43x/48_mag,dda,32x32,1,keep original,glock17_17
-T3,item,glock44_mag,dda,32x32,1,keep original,glock17_17
-T3,item,glock_17,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glock_19,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glock_20,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glock_20mag,dda,32x32,1,keep original,glock17_17
-T3,item,glock_21,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glock_21mag,dda,32x32,1,keep original,glock17_17
-T3,item,glock_22,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glock_23,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glock_26,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glock_27,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glock_29,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glock_29mag,dda,32x32,1,keep original,glock17_17
-T3,item,glock_30,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glock_34,dda,20x20,1,base tileset gap,gun_base_handgun_semi
-T3,item,glock_36,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glock_40,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glock_42,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glock_43,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glock_43x,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glock_44,dda,20x20,1,base tileset gap,glock19
-T3,item,glock_48,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,glockmag,dda,32x32,1,keep original,glock17_17
-T3,item,gloomhaven,dda,20x20,1,base tileset gap,
 T3,item,gloves_black,dda,20x20,1,keep original,gloves_leather
 T3,item,gloves_claws,dda,20x20,1,keep original,gloves_light
 T3,item,gloves_fingerless,dda,20x20,1,keep original,gloves_leather
@@ -1939,7 +1297,6 @@ T3,item,gloves_golf,dda,20x20,1,keep original,gloves_leather
 T3,item,gloves_leather,dda,20x20,1,keep original,gloves_leather
 T3,item,gloves_light,dda,20x20,1,keep original,gloves_light
 T3,item,gloves_liner,dda,20x20,1,keep original,gloves_leather
-T3,item,gloves_rubber,dda,20x20,1,keep original,gloves_leather
 T3,item,gloves_skeleton,dda,20x20,1,keep original,gloves_light
 T3,item,gloves_white,dda,20x20,1,keep original,gloves_light
 T3,item,gloves_winter,dda,20x20,1,keep original,gloves_light
@@ -1948,7 +1305,6 @@ T3,item,gloves_wool_fingerless,dda,20x20,1,keep original,gloves_light
 T3,item,glowstick,dda,20x20,1,keep original,
 T3,item,glue_strong,dda,20x20,1,base tileset gap,glue_weak
 T3,item,glue_weak,dda,20x20,1,base tileset gap,
-T3,item,go,dda,20x20,1,base tileset gap,
 T3,item,godco_flier,dda,20x20,1,keep original,abstractmap
 T3,item,goggles_ski,dda,20x20,1,keep original,glasses_eye
 T3,item,goggles_swim,dda,20x20,1,keep original,sunglasses
@@ -1957,7 +1313,6 @@ T3,item,gold_anklet,dda,20x20,1,base tileset gap,
 T3,item,gold_bracelet,dda,20x20,1,keep original,
 T3,item,gold_dental_grill,dda,20x20,1,keep original,
 T3,item,gold_ear,dda,20x20,1,keep original,
-T3,item,gold_hair_beads,dda,32x32,1,keep original,hat_ball
 T3,item,gold_hairpin,dda,20x20,1,keep original,hairpin
 T3,item,gold_lip_ring_loop,dda,20x20,1,base tileset gap,
 T3,item,gold_lip_ring_stud,dda,20x20,1,base tileset gap,
@@ -1966,12 +1321,9 @@ T3,item,gold_medal,dda,20x20,1,base tileset gap,
 T3,item,gold_necklace,dda,20x20,1,keep original,
 T3,item,gold_nose_ring_loop,dda,20x20,1,base tileset gap,
 T3,item,gold_nose_ring_stud,dda,20x20,1,base tileset gap,
-T3,item,gold_small,dda,20x20,1,keep original,
 T3,item,gold_toe_ring,dda,20x20,1,base tileset gap,
 T3,item,golf_shoes,dda,32x32,1,keep original,sneakers
-T3,item,granola,dda,20x20,1,base tileset gap,
 T3,item,graphite,dda,20x20,1,keep original,charcoal
-T3,item,grapnel,dda,32x32,1,keep original,string_6
 T3,item,gravy_mix,dda,32x32,1,keep original,meal_bone
 T3,item,greatcoat,dda,32x32,1,keep original,coat_rain
 T3,item,green_pen,dda,20x20,1,keep original,pen
@@ -1979,12 +1331,8 @@ T3,item,grim_reaper_robe,dda,32x32,1,keep original,coat_rain
 T3,item,grinder_cutoff_disc,dda,20x20,1,keep original,
 T3,item,grinder_metal_grinding_disc,dda,20x20,1,keep original,
 T3,item,gum,dda,20x20,1,keep original,
-T3,item,gummy_vitamins,dda,20x20,1,keep original,vitamins
-T3,item,gun_lock,dda,20x20,1,base tileset gap,
-T3,item,gun_manual,dda,20x20,1,keep original,mag_guns
 T3,item,hacksaw,dda,20x20,1,keep original,
 T3,item,hairbrush,dda,32x32,1,keep original,base_toiletries
-T3,item,hairpin,dda,20x20,1,keep original,
 T3,item,hakama,dda,20x20,1,keep original,kilt
 T3,item,halter_top,dda,20x20,1,keep original,tshirt
 T3,item,hamburger,dda,20x20,1,base tileset gap,
@@ -1993,14 +1341,10 @@ T3,item,hammer_sledge_engineer,dda,20x20,1,keep original,hammer_sledge
 T3,item,hammer_sledge_heavy,dda,20x20,1,keep original,hammer_sledge
 T3,item,hammer_sledge_short,dda,20x20,1,keep original,hammer_sledge
 T3,item,hand_crank_charger,dda,20x20,1,keep original,
-T3,item,hand_crossbow,dda,32x32,1,keep original,crossbow
 T3,item,hand_drill,dda,20x20,1,keep original,
 T3,item,hand_pump,dda,20x20,1,keep original,
-T3,item,handflare,dda,20x20,1,keep original,
 T3,item,handflare_dead,dda,32x32,1,keep original,
-T3,item,handrolled_cig,dda,20x20,1,keep original,
 T3,item,haori,dda,32x32,1,keep original,coat_rain
-T3,item,hardtack,dda,20x20,1,base tileset gap,
 T3,item,harmonica_holder,dda,20x20,1,keep original,flute
 T3,item,hat_ball,dda,32x32,1,keep original,hat_ball
 T3,item,hat_chef,dda,20x20,1,keep original,hat_ball
@@ -2016,52 +1360,17 @@ T3,item,hatchet,dda,32x32,1,keep original,
 T3,item,hc_wire,dda,20x20,1,keep original,lc_wire
 T3,item,hd_tow_cable,dda,32x32,1,keep original,
 T3,item,headscarf,dda,20x20,1,keep original,scarf
-T3,item,heatpack,dda,20x20,1,keep original,
 T3,item,heavy_flashlight,dda,20x20,1,keep original,
-T3,item,heels,dda,32x32,1,keep original,sneakers
-T3,item,helmet_football,dda,20x20,1,keep original,helmet_motor
-T3,item,henry_big_boy,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,henry_golden_boy,dda,20x20,1,keep original,gun_base_rifle_semi
 T3,item,herbal_tea_bag,dda,20x20,1,keep original,tea_bag
-T3,item,heroin,dda,32x32,1,keep original,
-T3,item,hi_power_40,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,hi_power_9mm,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,hi_q_shatter,dda,32x32,1,keep original,water_clean
-T3,item,hi_q_wax,dda,32x32,1,keep original,water_clean
-T3,item,hk_g3,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,hk_mp5_semi_pistol,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,hk_usc45,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,hnefatafl,dda,20x20,1,base tileset gap,
 T3,item,hoe,dda,20x20,1,keep original,
 T3,item,holster,dda,32x32,1,keep original,scabbard
 T3,item,holy_symbol_wood,dda,32x32,1,keep original,
-T3,item,holybook_bible2,dda,20x20,1,keep original,radio_book
-T3,item,holybook_bible3,dda,20x20,1,keep original,radio_book
-T3,item,holybook_granth,dda,20x20,1,keep original,radio_book
-T3,item,holybook_hadith,dda,20x20,1,keep original,radio_book
-T3,item,holybook_havamal,dda,20x20,1,keep original,radio_book
-T3,item,holybook_kallisti,dda,20x20,1,keep original,radio_book
-T3,item,holybook_kojiki,dda,20x20,1,keep original,radio_book
-T3,item,holybook_mormon,dda,20x20,1,keep original,radio_book
-T3,item,holybook_nag_hammadi,dda,20x20,1,keep original,radio_book
-T3,item,holybook_pastafarian,dda,20x20,1,keep original,radio_book
-T3,item,holybook_quran,dda,20x20,1,keep original,radio_book
-T3,item,holybook_slack,dda,20x20,1,keep original,radio_book
-T3,item,holybook_sutras,dda,20x20,1,keep original,radio_book
-T3,item,holybook_talmud,dda,20x20,1,keep original,radio_book
-T3,item,holybook_tanakh,dda,20x20,1,keep original,radio_book
-T3,item,holybook_tripitaka,dda,20x20,1,keep original,radio_book
-T3,item,holybook_upanishads,dda,20x20,1,keep original,radio_book
-T3,item,holybook_vedas,dda,20x20,1,keep original,radio_book
-T3,item,homeopathic_pills,dda,20x20,1,keep original,
 T3,item,honey_mustard,dda,32x32,1,keep original,milk
 T3,item,hood_ninja,dda,32x32,1,keep original,hat_cotton
-T3,item,hood_rain,dda,32x32,1,keep original,hat_ball
 T3,item,hoodie,dda,32x32,1,keep original,longshirt
 T3,item,hoodie_cropped,dda,20x20,1,keep original,buttonshirt
 T3,item,horn_bicycle,dda,20x20,1,keep original,
 T3,item,horseradish,dda,32x32,1,keep original,
-T3,item,hose,dda,32x32,1,keep original,
 T3,item,hose_garden,dda,32x32,1,keep original,hose
 T3,item,hot_pants,dda,20x20,1,keep original,shorts
 T3,item,hot_pants_fur,dda,32x32,1,keep original,boxer_shorts
@@ -2070,33 +1379,11 @@ T3,item,hot_sauce,dda,32x32,1,Saigon art (derived),
 T3,item,hotdogs_cooked,dda,20x20,1,keep original,
 T3,item,hotdogs_frozen,dda,20x20,1,keep original,
 T3,item,hotdogs_newyork,dda,20x20,1,keep original,hotdogs_cooked
-T3,item,hotplate,dda,32x32,1,keep original,
-T3,item,hpt3895,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,hpt3895mag_10rd,dda,32x32,1,keep original,glock17_17
-T3,item,hptc9,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,hptc9mag_8rd,dda,32x32,1,keep original,glock17_17
-T3,item,hptcf380,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,hptcf380mag_8rd,dda,32x32,1,keep original,glock17_17
-T3,item,hptjcp,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,hptjcpmag,dda,32x32,1,keep original,glock17_17
-T3,item,hptjhp,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,hptjhpmag,dda,32x32,1,keep original,glock17_17
-T3,item,hygrometer,dda,20x20,1,base tileset gap,
-T3,item,hyperopia_contacts_daily,dda,32x32,1,keep original,myopia_contacts_weekly
-T3,item,hyperopia_contacts_weekly,dda,32x32,1,keep original,myopia_contacts_weekly
-T3,item,hyperopia_transition_contacts_daily,dda,32x32,1,keep original,myopia_contacts_weekly
-T3,item,hyperopia_transition_contacts_weekly,dda,32x32,1,keep original,myopia_contacts_weekly
 T3,item,ibuprofen,dda,20x20,1,base tileset gap,
 T3,item,id_industrial,dda,20x20,1,keep original,card_plastic_abstract
 T3,item,ifak_pouch,dda,20x20,1,keep original,ifak_pouch
 T3,item,iggaak,dda,20x20,1,keep original,glasses_eye
 T3,item,inhaler,dda,20x20,1,keep original,
-T3,item,inj_iron,dda,20x20,1,base tileset gap,
-T3,item,instant_coffee,dda,32x32,1,keep original,coffee_raw
-T3,item,iodine,dda,20x20,1,keep original,
-T3,item,ipok,dda,20x20,1,keep original,mre_beef_box
-T3,item,ithaca37,dda,20x20,1,base tileset gap,gun_base_shotgun_manual
-T3,item,iwi_tavor_x95_300blk,dda,32x32,1,keep original,gun_base_rifle_semi
 T3,item,jack,dda,20x20,1,keep original,
 T3,item,jack_small,dda,20x20,1,keep original,
 T3,item,jacket_chef,dda,20x20,1,keep original,coat_winter
@@ -2108,28 +1395,20 @@ T3,item,jacket_ninja,dda,20x20,1,base tileset gap,jacket
 T3,item,jacket_varsity,dda,20x20,1,base tileset gap,
 T3,item,jacket_windbreaker,dda,20x20,1,keep original,jacket_windbreaker
 T3,item,jackhammer,dda,20x20,1,keep original,
-T3,item,jackstraws,dda,20x20,1,base tileset gap,
 T3,item,jade_brooch,dda,20x20,1,base tileset gap,
-T3,item,jam_fruit,dda,32x32,1,keep original,
 T3,item,jar_3l_glass_sealed,dda,20x20,1,keep original,jar_glass_sealed
 T3,item,jar_glass_sealed,dda,20x20,1,keep original,
 T3,item,jeans_ripped,dda,32x32,1,keep original,pants
 T3,item,jeans_skinny,dda,32x32,1,keep original,pants
 T3,item,jedi_cloak,dda,20x20,1,keep original,coat_winter
-T3,item,jerky,dda,20x20,1,base tileset gap,flesh
 T3,item,jerrycan_big,dda,32x32,1,keep original,jerrycan
 T3,item,jersey,dda,20x20,1,keep original,camisole
-T3,item,jigsaw,dda,20x20,1,base tileset gap,
 T3,item,joint,dda,20x20,1,keep original,
 T3,item,joint_roach,dda,20x20,1,keep original,
 T3,item,jug_plastic,dda,20x20,1,keep original,bottle_plastic
-T3,item,jug_plastic_glue,dda,20x20,1,keep original,bottle_plastic
 T3,item,jumper_cable_heavy,dda,32x32,1,keep original,jumper_cable
 T3,item,keffiyeh,dda,20x20,1,keep original,scarf
-T3,item,kernels,dda,20x20,1,base tileset gap,
 T3,item,ketchup,dda,32x32,1,keep original,tomato_juice
-T3,item,kevlar,dda,20x20,1,keep original,camisole
-T3,item,kevlar_shears,dda,20x20,1,keep original,
 T3,item,kilt,dda,20x20,1,keep original,kilt
 T3,item,kilt_leather,dda,20x20,1,keep original,skirt
 T3,item,kimono,dda,20x20,1,keep original,coat_winter
@@ -2137,23 +1416,11 @@ T3,item,kippah,dda,32x32,1,keep original,hat_ball
 T3,item,knee_high_boots,dda,20x20,1,keep original,shoes_bowling
 T3,item,knee_pads,dda,20x20,1,keep original,leg_warmers
 T3,item,knife_butter,dda,20x20,1,keep original,base_silverware
-T3,item,knife_hunting,dda,20x20,1,keep original,
-T3,item,knife_large,dda,20x20,1,base tileset gap,base_kitchen_knife
-T3,item,knife_rambo,dda,20x20,1,keep original,
 T3,item,knife_small,dda,20x20,1,base tileset gap,base_kitchen_knife
 T3,item,knife_swissarmy,dda,20x20,1,keep original,
-T3,item,knife_trench,dda,20x20,1,keep original,
-T3,item,knight_mage,dda,20x20,1,base tileset gap,
 T3,item,knit_scarf,dda,20x20,1,keep original,
-T3,item,knitting_needles,dda,20x20,1,keep original,
-T3,item,ksg,dda,32x32,1,keep original,gun_base_shotgun_manual
-T3,item,ksub2000,dda,32x32,1,keep original,gun_base_rifle_semi
 T3,item,kufi,dda,32x32,1,keep original,hat_ball
-T3,item,kukri,dda,20x20,1,base tileset gap,
-T3,item,lamp_oil,dda,32x32,1,keep original,
 T3,item,large_propane_tank,dda,20x20,1,keep original,
-T3,item,lasagne_raw,dda,20x20,1,base tileset gap,
-T3,item,latrunculi,dda,20x20,1,base tileset gap,
 T3,item,lc_wire,dda,20x20,1,keep original,
 T3,item,leather,dda,20x20,1,keep original,
 T3,item,leather_belt,dda,32x32,1,keep original,
@@ -2161,22 +1428,13 @@ T3,item,leather_cat_ears,dda,20x20,1,base tileset gap,
 T3,item,leather_cat_tail,dda,20x20,1,base tileset gap,
 T3,item,leather_collar,dda,20x20,1,keep original,
 T3,item,leather_police_jacket,dda,32x32,1,keep original,jacket_light
-T3,item,leathersandals,dda,32x32,1,keep original,sneakers
 T3,item,leg_bag,dda,20x20,1,base tileset gap,legrig
 T3,item,leg_sheath6,dda,32x32,1,keep original,scabbard
-T3,item,leg_small_bag,dda,20x20,1,keep original,armguard_larmor
 T3,item,leggings,dda,20x20,1,keep original,leggings
 T3,item,lemonlime,dda,32x32,1,keep original,juice
-T3,item,letter,dda,20x20,1,keep original,paper
-T3,item,level_3_vest,dda,20x20,1,keep original,ballistic_vest_esapi
-T3,item,licorice,dda,20x20,1,keep original,
-T3,item,lifestraw,dda,32x32,1,keep original,advanced_ecig
 T3,item,light_battery_cell,dda,20x20,1,keep original,battery
-T3,item,light_cell_rechargeable,dda,20x20,1,keep original,battery
 T3,item,light_minus_battery_cell,dda,20x20,1,keep original,battery
 T3,item,light_minus_disposable_cell,dda,20x20,1,keep original,battery
-T3,item,light_snare_kit,dda,20x20,1,base tileset gap,
-T3,item,liq_bandage_spray,dda,20x20,1,base tileset gap,
 T3,item,lobster_cakes,dda,20x20,1,base tileset gap,fish_fried
 T3,item,lobster_roll,dda,20x20,1,keep original,fish_sandwich
 T3,item,lobster_smoked,dda,20x20,1,base tileset gap,flesh
@@ -2184,284 +1442,80 @@ T3,item,long_glove_white,dda,20x20,1,keep original,gloves_leather
 T3,item,long_knit_scarf,dda,20x20,1,keep original,
 T3,item,long_underpants,dda,20x20,1,keep original,leg_warmers
 T3,item,long_undertop,dda,20x20,1,keep original,dress_shirt
-T3,item,longbow,dda,32x32,1,keep original,
-T3,item,loom_frame,dda,20x20,1,base tileset gap,
-T3,item,lowtops,dda,20x20,1,keep original,shoes_bowling
-T3,item,lsd,dda,20x20,1,keep original,
-T3,item,ludo,dda,20x20,1,base tileset gap,
 T3,item,lug_wrench,dda,20x20,1,keep original,
 T3,item,lunchbox,dda,20x20,1,base tileset gap,
-T3,item,lws32,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,lws32mag,dda,32x32,1,keep original,glock17_17
-T3,item,m1014,dda,20x20,1,keep original,gun_base_shotgun_manual
-T3,item,m11,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,m14smallmag,dda,32x32,1,keep original,stanag30
-T3,item,m17,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,m18,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,m1903,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,m1911,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,m1911_10,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,m1911_10mag,dda,20x20,1,base tileset gap,m1911mag
-T3,item,m1911a1_38super,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,m1911mag,dda,20x20,1,base tileset gap,
-T3,item,m1911mag_10rd_38super,dda,32x32,1,keep original,glock17_17
-T3,item,m1a,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,m1carbine,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,m1carbinemag,dda,32x32,1,keep original,stanag30
-T3,item,m9,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,m9mag,dda,32x32,1,keep original,glock17_17
-T3,item,m9mag_17rd,dda,32x32,1,keep original,glock17_17
-T3,item,macaroni_raw,dda,20x20,1,base tileset gap,
 T3,item,machete,dda,20x20,1,keep original,
-T3,item,machete_gimmick,dda,32x32,1,keep original,
-T3,item,mag_archery,dda,20x20,1,keep original,
-T3,item,mag_bashing,dda,20x20,1,keep original,mag_glam
-T3,item,mag_beauty,dda,20x20,1,keep original,mag_glam
-T3,item,mag_cars,dda,20x20,1,keep original,mag_glam
-T3,item,mag_computer,dda,20x20,1,keep original,mag_glam
-T3,item,mag_cooking,dda,20x20,1,keep original,
-T3,item,mag_cutting,dda,20x20,1,keep original,mag_glam
-T3,item,mag_dude,dda,20x20,1,keep original,mag_glam
-T3,item,mag_electronics,dda,20x20,1,keep original,
-T3,item,mag_fabrication,dda,20x20,1,keep original,
-T3,item,mag_gaming,dda,20x20,1,keep original,mag_glam
 T3,item,mag_glam,dda,20x20,1,keep original,
-T3,item,mag_guns,dda,20x20,1,keep original,
-T3,item,mag_mechanics,dda,20x20,1,keep original,mag_glam
 T3,item,mag_news,dda,20x20,1,keep original,flyer
-T3,item,mag_rifle,dda,20x20,1,keep original,mag_guns
-T3,item,mag_shotgun,dda,20x20,1,keep original,mag_guns
-T3,item,mag_stabbing,dda,20x20,1,keep original,mag_glam
-T3,item,mag_survival,dda,20x20,1,keep original,mag_glam
-T3,item,mag_swimming,dda,20x20,1,keep original,mag_glam
-T3,item,mag_tailor,dda,20x20,1,keep original,mag_glam
-T3,item,mag_throwing,dda,20x20,1,keep original,mag_glam
-T3,item,mag_traps,dda,20x20,1,keep original,mag_glam
-T3,item,mag_unarmed,dda,20x20,1,keep original,mag_glam
 T3,item,magnifying_glass,dda,20x20,1,keep original,
-T3,item,mahjong,dda,20x20,1,base tileset gap,
 T3,item,maid_hat,dda,32x32,1,keep original,hat_ball
-T3,item,makarov,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,makarovmag,dda,20x20,1,keep original,glock17_17
-T3,item,malachite,dda,20x20,1,base tileset gap,garnet
 T3,item,maltballs,dda,20x20,1,base tileset gap,
-T3,item,mancala,dda,20x20,1,base tileset gap,
-T3,item,mansions_of_madness,dda,20x20,1,base tileset gap,
-T3,item,manual_archery,dda,20x20,1,keep original,radio_book
-T3,item,manual_cutting,dda,20x20,1,keep original,record_patient
-T3,item,manual_dodge,dda,20x20,1,keep original,manual_gun
-T3,item,manual_dodge_kid,dda,20x20,1,keep original,manual_gun
-T3,item,manual_first_aid,dda,20x20,1,keep original,
-T3,item,manual_gun,dda,20x20,1,keep original,
-T3,item,manual_knives,dda,20x20,1,keep original,manual_gun
-T3,item,manual_pistol,dda,20x20,1,keep original,radio_book
-T3,item,manual_shotgun,dda,20x20,1,keep original,manual_gun
-T3,item,manual_smg,dda,20x20,1,keep original,manual_gun
-T3,item,manual_survival,dda,20x20,1,keep original,radio_book
-T3,item,manual_swords,dda,20x20,1,keep original,manual_gun
-T3,item,manual_traps,dda,20x20,1,keep original,manual_gun
 T3,item,many_years_old_newspaper,dda,32x32,1,keep original,
 T3,item,maple_candy,dda,20x20,1,keep original,
 T3,item,marble,dda,32x32,1,keep original,pebble
-T3,item,marlin60,dda,20x20,1,base tileset gap,ruger1022
-T3,item,marlin_336_3030,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,marlin_9a,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,mask_filter,dda,20x20,1,keep original,scarf
-T3,item,mask_gas,dda,32x32,1,keep original,
-T3,item,mask_hockey,dda,20x20,1,keep original,glasses_eye
 T3,item,mask_ski,dda,20x20,1,base tileset gap,
 T3,item,material_styrofoam_chunk,dda,20x20,1,base tileset gap,
-T3,item,mauser_c96,dda,20x20,1,keep original,gun_base_handgun_semi
 T3,item,mayonnaise,dda,32x32,1,keep original,milk
 T3,item,mbag,dda,20x20,1,keep original,ragpouch
 T3,item,mc_wire,dda,20x20,1,keep original,lc_wire
-T3,item,mdrx,dda,20x20,1,keep original,gun_base_rifle_semi
 T3,item,meat_smoked,dda,20x20,1,keep original,flesh
-T3,item,medical_gauze,dda,20x20,1,keep original,
-T3,item,medical_tape,dda,20x20,1,keep original,
 T3,item,medium_battery_cell,dda,20x20,1,keep original,battery
 T3,item,medium_propane_tank,dda,20x20,1,keep original,
-T3,item,melatonin_tablet,dda,20x20,1,base tileset gap,
 T3,item,memory_card,dda,32x32,1,keep original,mobile_memory_card
-T3,item,memory_card_unread,dda,32x32,1,keep original,mobile_memory_card
-T3,item,menstrual_cup,dda,20x20,1,keep original,bottle_plastic
-T3,item,menstrual_pad,dda,20x20,1,keep original,bandages
-T3,item,mess_kit,dda,20x20,1,keep original,
-T3,item,metal_RPG_die,dda,20x20,1,keep original,pebble
 T3,item,metal_file,dda,32x32,1,keep original,
 T3,item,metal_smoother,dda,20x20,1,keep original,
-T3,item,metal_tank,dda,20x20,1,keep original,30l_barrel
-T3,item,metal_tank_little,dda,20x20,1,keep original,30l_barrel
-T3,item,meth,dda,20x20,1,keep original,
-T3,item,milk_evap,dda,32x32,1,keep original,milk
 T3,item,milkshake_fastfood,dda,32x32,1,keep original,milkshake
 T3,item,mintpatties,dda,20x20,1,base tileset gap,
 T3,item,misc_repairkit,dda,20x20,1,keep original,
 T3,item,mittens,dda,20x20,1,keep original,gloves_light
-T3,item,mk47,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,mka_1919_10,dda,20x20,1,base tileset gap,
-T3,item,mka_1919_20,dda,32x32,1,keep original,mka_1919_10
-T3,item,mka_1919_5,dda,20x20,1,base tileset gap,mka_1919_10
 T3,item,mocassins,dda,32x32,1,keep original,dress_shoes
-T3,item,model_10_revolver,dda,20x20,1,keep original,gun_base_handgun_manual
-T3,item,modern_tanner,dda,20x20,1,keep original,
-T3,item,modular_ar15,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,modular_ar_pistol,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,modular_deagle,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,molle_large_rucksack,dda,32x32,1,keep original,ragpouch
-T3,item,molle_medium_rucksack,dda,32x32,1,keep original,ragpouch
-T3,item,molle_pack,dda,32x32,1,keep original,ragpouch
 T3,item,money_fifty,dda,20x20,1,keep original,money_one
 T3,item,money_five,dda,20x20,1,keep original,money_one
 T3,item,money_one,dda,20x20,1,keep original,
 T3,item,money_ten,dda,20x20,1,keep original,money_one
 T3,item,money_two,dda,20x20,1,keep original,money_one
-T3,item,monopoly,dda,32x32,1,keep original,
 T3,item,months_old_newspaper,dda,32x32,1,keep original,
 T3,item,moonshine,dda,32x32,1,keep original,water_clean
 T3,item,mop,dda,32x32,1,keep original,
 T3,item,mop_folded,dda,32x32,1,keep original,mop
-T3,item,morphine,dda,20x20,1,keep original,
-T3,item,mosin44,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,mosin91_30,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,mosquitomag,dda,32x32,1,keep original,glock17_17
-T3,item,mossberg_500,dda,32x32,1,keep original,gun_base_shotgun_manual
-T3,item,mossberg_500_20,dda,20x20,1,keep original,gun_base_shotgun_manual
-T3,item,mossberg_500_410,dda,20x20,1,keep original,gun_base_shotgun_manual
-T3,item,mossberg_590,dda,32x32,1,keep original,gun_base_shotgun_manual
-T3,item,mossberg_590_shockwave,dda,20x20,1,keep original,gun_base_shotgun_manual
-T3,item,mossberg_590m_mag_10,dda,20x20,1,base tileset gap,
-T3,item,mossberg_590m_mag_15,dda,20x20,1,base tileset gap,mossberg_590m_mag_10
-T3,item,mossberg_590m_mag_20,dda,20x20,1,base tileset gap,mossberg_590m_mag_10
-T3,item,mossberg_590m_mag_5,dda,20x20,1,base tileset gap,mossberg_590m_mag_10
-T3,item,mossberg_930,dda,32x32,1,keep original,gun_base_shotgun_manual
 T3,item,motorbike_boots,dda,32x32,1,keep original,sneakers
 T3,item,mozzarella_cheese,dda,20x20,1,keep original,
-T3,item,mp1522_mag,dda,20x20,1,base tileset gap,
 T3,item,mp3,dda,20x20,1,keep original,
-T3,item,mp40mag_32rd,dda,32x32,1,keep original,stanag30
-T3,item,mp40semi,dda,32x32,1,keep original,gun_base_handgun_semi
-T3,item,mp5mag_10rd,dda,32x32,1,keep original,glock17_17
-T3,item,mp_15,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,mp_15_22,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,mrad_338lapua_mag,dda,32x32,1,keep original,stanag30
-T3,item,mrad_smr,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,mre_package,dda,20x20,1,keep original,mre_beef_box
 T3,item,multimeter,dda,20x20,1,keep original,
 T3,item,multitool,dda,20x20,1,keep original,
 T3,item,mustard,dda,32x32,1,keep original,milk
-T3,item,mycenacean_hymns,dda,20x20,1,keep original,radio_book
-T3,item,myopia_contacts_daily,dda,32x32,1,keep original,myopia_contacts_weekly
-T3,item,myopia_contacts_weekly,dda,32x32,1,keep original,
-T3,item,myopia_transition_contacts_daily,dda,32x32,1,keep original,myopia_contacts_weekly
-T3,item,myopia_transition_contacts_weekly,dda,32x32,1,keep original,myopia_contacts_weekly
-T3,item,nachos,dda,20x20,1,keep original,
 T3,item,nail,dda,32x32,1,keep original,
 T3,item,nailgun,dda,20x20,1,keep original,gun_base_handgun_semi
 T3,item,nanoskirt,dda,20x20,1,keep original,kilt
 T3,item,napkin,dda,20x20,1,base tileset gap,
-T3,item,naproxen,dda,20x20,1,base tileset gap,
 T3,item,national_flag,dda,20x20,1,keep original,towel
 T3,item,neccowafers,dda,20x20,1,base tileset gap,
-T3,item,needle_curved,dda,32x32,1,keep original,
-T3,item,needle_steel,dda,32x32,1,keep original,
-T3,item,nemo,dda,20x20,1,base tileset gap,
 T3,item,newest_newspaper,dda,32x32,1,keep original,
 T3,item,news_regional,dda,20x20,1,keep original,mag_glam
 T3,item,nic_gum,dda,20x20,1,keep original,
 T3,item,nic_pouch,dda,20x20,1,base tileset gap,
 T3,item,nic_pouch_can,dda,20x20,1,keep original,box_small
 T3,item,nicotine_liquid,dda,32x32,1,keep original,
-T3,item,novel_coa,dda,20x20,1,keep original,
-T3,item,novel_coa2,dda,20x20,1,keep original,radio_book
-T3,item,novel_crime_midnight,dda,20x20,1,keep original,radio_book
-T3,item,novel_crime_murdergrape,dda,20x20,1,keep original,radio_book
-T3,item,novel_pulp,dda,20x20,1,keep original,novel_pulp
-T3,item,novel_romance,dda,20x20,1,keep original,radio_book
-T3,item,novel_samurai,dda,20x20,1,keep original,radio_book
-T3,item,novel_satire,dda,20x20,1,keep original,radio_book
-T3,item,novel_scifi,dda,20x20,1,keep original,radio_book
-T3,item,novel_sports,dda,20x20,1,keep original,radio_book
-T3,item,novel_spy,dda,20x20,1,keep original,radio_book
-T3,item,novel_spy_comefly,dda,20x20,1,keep original,radio_book
-T3,item,novel_spy_rocketsci,dda,20x20,1,keep original,radio_book
-T3,item,novel_swash,dda,20x20,1,keep original,radio_book
-T3,item,novel_western,dda,20x20,1,keep original,radio_book
-T3,item,number4_mki,dda,20x20,1,keep original,gun_base_rifle_semi
 T3,item,nun_habit,dda,32x32,1,keep original,coat_rain
 T3,item,nun_wimple,dda,20x20,1,base tileset gap,
 T3,item,nuts_bolts,dda,20x20,1,keep original,
-T3,item,nylon_bag,dda,20x20,1,keep original,bag_plastic
 T3,item,nylon_holster,dda,32x32,1,keep original,scabbard
-T3,item,nylon_quiver,dda,32x32,1,keep original,holster
-T3,item,nyquil,dda,32x32,1,keep original,
-T3,item,occult_bobliographon,dda,20x20,1,keep original,radio_book
-T3,item,occult_economicon,dda,20x20,1,keep original,radio_book
-T3,item,occult_glimpses,dda,20x20,1,keep original,radio_book
-T3,item,oil_lamp,dda,20x20,1,keep original,
 T3,item,one_year_old_newspaper,dda,32x32,1,keep original,
 T3,item,onion_rings,dda,20x20,1,base tileset gap,
-T3,item,onirim,unknown,20x20,1,base tileset gap,
-T3,item,onyx,dda,20x20,1,base tileset gap,garnet
-T3,item,onyx_gold_bracelet,dda,20x20,1,keep original,gold_bracelet
-T3,item,onyx_gold_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,onyx_gold_earring,dda,20x20,1,keep original,gold_ear
-T3,item,onyx_gold_pendant_necklace,dda,20x20,1,keep original,gold_necklace
-T3,item,onyx_gold_ring,dda,20x20,1,keep original,gold_ring
-T3,item,onyx_gold_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,onyx_platinum_bracelet,dda,20x20,1,keep original,platinum_bracelet
-T3,item,onyx_platinum_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,onyx_platinum_earring,dda,20x20,1,keep original,platinum_ear
-T3,item,onyx_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
-T3,item,onyx_platinum_ring,dda,20x20,1,keep original,platinum_ring
-T3,item,onyx_platinum_tiara,dda,32x32,1,keep original,hat_ball
 T3,item,onyx_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
 T3,item,onyx_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,onyx_silver_earring,dda,20x20,1,keep original,silver_ear
 T3,item,onyx_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
 T3,item,onyx_silver_ring,dda,20x20,1,keep original,silver_ring
 T3,item,onyx_silver_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,opal,dda,20x20,1,base tileset gap,garnet
-T3,item,opal_gold_bracelet,dda,20x20,1,keep original,gold_bracelet
-T3,item,opal_gold_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,opal_gold_earring,dda,20x20,1,keep original,gold_ear
-T3,item,opal_gold_pendant_necklace,dda,20x20,1,keep original,gold_necklace
-T3,item,opal_gold_ring,dda,20x20,1,keep original,gold_ring
-T3,item,opal_gold_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,opal_platinum_bracelet,dda,20x20,1,keep original,platinum_bracelet
-T3,item,opal_platinum_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,opal_platinum_earring,dda,20x20,1,keep original,platinum_ear
-T3,item,opal_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
-T3,item,opal_platinum_ring,dda,20x20,1,keep original,platinum_ring
-T3,item,opal_platinum_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,opal_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
-T3,item,opal_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,opal_silver_earring,dda,20x20,1,keep original,silver_ear
-T3,item,opal_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
-T3,item,opal_silver_ring,dda,20x20,1,keep original,silver_ring
-T3,item,opal_silver_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,openfire,dda,20x20,1,base tileset gap,
 T3,item,orange,dda,20x20,1,keep original,
 T3,item,orangesoda,dda,32x32,1,keep original,juice
-T3,item,othello,dda,20x20,1,base tileset gap,
-T3,item,ouija,dda,20x20,1,base tileset gap,
 T3,item,oxy_torch,dda,32x32,1,keep original,
-T3,item,oxycodone,dda,20x20,1,keep original,
-T3,item,p08,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,p08mag_32rd,dda,32x32,1,keep original,glock17_17
-T3,item,p08mag_8rd,dda,32x32,1,keep original,glock17_17
-T3,item,p220_10,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,p220_10_mag,dda,32x32,1,keep original,glock17_17
-T3,item,p226_357sig,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,p226_9mm,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,p226mag_15rd_9x19mm,dda,20x20,1,base tileset gap,
-T3,item,p228mag_13rd_9x19mm,dda,20x20,1,base tileset gap,
-T3,item,p320mag_17rd_9x19mm,dda,32x32,1,keep original,glock17_17
-T3,item,p365,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,p365_mag,dda,32x32,1,keep original,glock17_17
-T3,item,p38mag,dda,32x32,1,keep original,glock17_17
-T3,item,pan,dda,20x20,1,keep original,base_cookpot
-T3,item,pandemic,dda,20x20,1,base tileset gap,
 T3,item,panties,dda,32x32,1,keep original,boxer_briefs
 T3,item,pants,dda,32x32,1,keep original,pants
 T3,item,pants_checkered,dda,32x32,1,keep original,jeans
@@ -2471,103 +1525,44 @@ T3,item,pants_hiking,dda,32x32,1,keep original,jeans
 T3,item,pants_leather,dda,32x32,1,keep original,jeans
 T3,item,pants_ski,dda,32x32,1,keep original,jeans
 T3,item,pants_tactical,dda,32x32,1,keep original,jeans
-T3,item,paperback_romance_circuses,dda,20x20,1,keep original,radio_book
-T3,item,paperback_romance_cloven,dda,20x20,1,keep original,radio_book
-T3,item,paperback_romance_conq,dda,20x20,1,keep original,radio_book
-T3,item,paperback_romance_dd,dda,20x20,1,keep original,radio_book
-T3,item,paperback_romance_diodes,dda,20x20,1,keep original,radio_book
-T3,item,paperback_romance_envyh,dda,20x20,1,keep original,radio_book
-T3,item,paperback_romance_grue,dda,20x20,1,keep original,radio_book
-T3,item,paperback_romance_rider,dda,20x20,1,keep original,radio_book
-T3,item,paperback_romance_rogue,dda,20x20,1,keep original,radio_book
-T3,item,paperback_romance_secret,dda,20x20,1,keep original,radio_book
-T3,item,papm77mag_10rd,dda,32x32,1,keep original,stanag30
 T3,item,peacoat,dda,32x32,1,keep original,coat_rain
-T3,item,peanutbutter,dda,32x32,1,keep original,
-T3,item,pearl,dda,20x20,1,keep original,garnet
 T3,item,pearl_collar,dda,20x20,1,keep original,
-T3,item,pearl_gold_bracelet,dda,20x20,1,keep original,gold_bracelet
-T3,item,pearl_gold_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,pearl_gold_earring,dda,20x20,1,keep original,gold_ear
-T3,item,pearl_gold_pendant_necklace,dda,20x20,1,keep original,gold_necklace
-T3,item,pearl_gold_ring,dda,20x20,1,keep original,gold_ring
-T3,item,pearl_gold_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,pearl_platinum_bracelet,dda,20x20,1,keep original,platinum_bracelet
-T3,item,pearl_platinum_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,pearl_platinum_earring,dda,20x20,1,keep original,platinum_ear
-T3,item,pearl_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
-T3,item,pearl_platinum_ring,dda,20x20,1,keep original,platinum_ring
-T3,item,pearl_platinum_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,pearl_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
-T3,item,pearl_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,pearl_silver_earring,dda,20x20,1,keep original,silver_ear
-T3,item,pearl_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
-T3,item,pearl_silver_ring,dda,20x20,1,keep original,silver_ring
-T3,item,pearl_silver_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,pemmican,dda,20x20,1,base tileset gap,
 T3,item,pepper,dda,20x20,1,keep original,spice
-T3,item,pepto,dda,32x32,1,keep original,
-T3,item,peridot,dda,20x20,1,base tileset gap,garnet
-T3,item,peridot_dental_grill,dda,20x20,1,keep original,gold_dental_grill
-T3,item,peridot_gold_bracelet,dda,20x20,1,keep original,gold_bracelet
-T3,item,peridot_gold_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,peridot_gold_earring,dda,20x20,1,keep original,gold_ear
-T3,item,peridot_gold_pendant_necklace,dda,20x20,1,keep original,gold_necklace
-T3,item,peridot_gold_ring,dda,20x20,1,keep original,gold_ring
-T3,item,peridot_gold_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,peridot_platinum_bracelet,dda,20x20,1,keep original,platinum_bracelet
-T3,item,peridot_platinum_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,peridot_platinum_earring,dda,20x20,1,keep original,platinum_ear
-T3,item,peridot_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
-T3,item,peridot_platinum_ring,dda,20x20,1,keep original,platinum_ring
-T3,item,peridot_platinum_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,peridot_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
-T3,item,peridot_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,peridot_silver_earring,dda,20x20,1,keep original,silver_ear
-T3,item,peridot_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
-T3,item,peridot_silver_ring,dda,20x20,1,keep original,silver_ring
-T3,item,peridot_silver_tiara,dda,32x32,1,keep original,hat_ball
 T3,item,permanent_marker,dda,20x20,1,keep original,
 T3,item,petpack,dda,32x32,1,keep original,ragpouch
-T3,item,petrified_eye,dda,20x20,1,keep original,
 T3,item,pickaxe,dda,32x32,1,keep original,
 T3,item,pickle,dda,20x20,1,Saigon art (drawn),gherkin
-T3,item,pictionary,dda,32x32,1,keep original,
 T3,item,pie,dda,20x20,1,keep original,
 T3,item,pie_maple,dda,20x20,1,keep original,
 T3,item,pie_meat,dda,20x20,1,keep original,
 T3,item,pie_veggy,dda,20x20,1,keep original,
 T3,item,pillbox,dda,20x20,1,base tileset gap,
 T3,item,pillbox_large,dda,20x20,1,base tileset gap,pillbox
-T3,item,pills_sleep,dda,20x20,1,base tileset gap,
-T3,item,pilot_light,dda,20x20,1,base tileset gap,
 T3,item,pin_badge,dda,20x20,1,base tileset gap,badge_abstract
 T3,item,pin_reamer,dda,20x20,1,base tileset gap,
-T3,item,pine_nuts,dda,20x20,1,keep original,
 T3,item,pipe,dda,20x20,1,keep original,
-T3,item,pipe_cpvc,dda,20x20,1,keep original,pipe
-T3,item,pipe_fittings,dda,20x20,1,keep original,spare_part
 T3,item,pipe_glass,dda,20x20,1,keep original,
 T3,item,pipe_tobacco,dda,20x20,1,keep original,
 T3,item,pipe_water,dda,20x20,1,keep original,bottle_plastic
-T3,item,pistachio_shelled,dda,20x20,1,keep original,
 T3,item,pitchfork,dda,32x32,1,keep original,
 T3,item,pizza_cheese,dda,20x20,1,keep original,
 T3,item,pizza_meat,dda,20x20,1,keep original,
 T3,item,pizza_veggy,dda,20x20,1,keep original,
 T3,item,plaguedoctor_robe,dda,32x32,1,keep original,coat_rain
-T3,item,plano_transition_contacts_daily,dda,32x32,1,keep original,myopia_contacts_weekly
-T3,item,plano_transition_contacts_weekly,dda,32x32,1,keep original,myopia_contacts_weekly
 T3,item,plastic_bucket,dda,20x20,1,keep original,
 T3,item,plastic_fork,dda,20x20,1,keep original,base_silverware
 T3,item,plastic_knife,dda,20x20,1,keep original,base_silverware
 T3,item,plastic_mandible_guard,dda,20x20,1,base tileset gap,
-T3,item,plastic_plate,dda,20x20,1,keep original,base_plastic_dish
 T3,item,plastic_sheet,dda,32x32,1,keep original,
 T3,item,plastic_sheet_small,dda,20x20,1,base tileset gap,
 T3,item,plastic_shopping_bag,dda,32x32,1,keep original,
 T3,item,plastic_spoon,dda,20x20,1,keep original,base_silverware
-T3,item,plastichoboreel,dda,32x32,1,keep original,baton
 T3,item,platinum_bracelet,dda,20x20,1,keep original,
 T3,item,platinum_dental_grill,dda,20x20,1,base tileset gap,
 T3,item,platinum_ear,dda,20x20,1,keep original,
@@ -2575,187 +1570,58 @@ T3,item,platinum_hairpin,dda,32x32,1,keep original,hairpin
 T3,item,platinum_locket,dda,20x20,1,keep original,
 T3,item,platinum_necklace,dda,20x20,1,keep original,
 T3,item,platinum_ring,dda,20x20,1,keep original,
-T3,item,platinum_small,dda,20x20,1,keep original,
 T3,item,platinum_watch,dda,20x20,1,keep original,
 T3,item,pliers_locking,dda,20x20,1,keep original,pliers
-T3,item,plunger_futuristic,dda,32x32,1,keep original,
-T3,item,plunger_toilet,dda,32x32,1,keep original,
 T3,item,pocket_firearms,dda,20x20,1,keep original,
 T3,item,pocket_firstaid,dda,20x20,1,keep original,
 T3,item,pocket_survival,dda,20x20,1,keep original,mag_glam
 T3,item,pocketwatch,dda,32x32,1,keep original,
-T3,item,pockknife,dda,20x20,1,keep original,
 T3,item,poetic_edda,dda,20x20,1,keep original,radio_book
 T3,item,pointed_hat,dda,20x20,1,base tileset gap,
 T3,item,polesaw_off,dda,32x32,1,keep original,chainsaw_off
 T3,item,polisher,dda,20x20,1,keep original,
 T3,item,polycarbonate_sheet,dda,32x32,1,keep original,
 T3,item,poncho,dda,32x32,1,keep original,coat_rain
-T3,item,popcan_stove,dda,20x20,1,keep original,
-T3,item,popcorn,dda,20x20,1,keep original,
-T3,item,popcorn2,dda,20x20,1,keep original,popcorn
-T3,item,popcorn3,dda,20x20,1,keep original,popcorn
-T3,item,poppirate,dda,20x20,1,base tileset gap,
-T3,item,pork_beans,dda,20x20,1,base tileset gap,
 T3,item,porkpie,dda,32x32,1,keep original,hat_cotton
-T3,item,porkstick,dda,20x20,1,base tileset gap,
 T3,item,portable_game,dda,20x20,1,keep original,
 T3,item,portable_generator,dda,32x32,1,keep original,f_active_backup_generator
-T3,item,portable_stove,dda,20x20,1,base tileset gap,
-T3,item,postcard,dda,20x20,1,keep original,paper
 T3,item,postman_hat,dda,32x32,1,keep original,hat_cotton
 T3,item,postman_shirt,dda,20x20,1,keep original,tshirt
 T3,item,postman_shorts,dda,20x20,1,keep original,shorts
-T3,item,pot_copper,dda,20x20,1,keep original,base_cookpot
 T3,item,powder_candy,dda,32x32,1,keep original,
-T3,item,ppkmag,dda,32x32,1,keep original,glock17_17
-T3,item,ppq45mag,dda,32x32,1,keep original,glock17_17
-T3,item,ppq9mag_10rd,dda,32x32,1,keep original,glock17_17
-T3,item,pretzels,dda,20x20,1,base tileset gap,
 T3,item,pride_flag,dda,20x20,1,keep original,towel
-T3,item,propane_cooker,dda,20x20,1,keep original,
-T3,item,propane_lantern,dda,20x20,1,keep original,
-T3,item,protein_bar_evac,dda,20x20,1,keep original,
-T3,item,protein_bar_milk,dda,20x20,1,keep original,protein_bar_zero
-T3,item,protein_bar_peanut,dda,20x20,1,keep original,protein_bar_zero
-T3,item,protein_bar_zero,dda,20x20,1,keep original,
-T3,item,protein_powder,dda,32x32,1,keep original,
-T3,item,prozac,dda,20x20,1,base tileset gap,
-T3,item,prussian_blue,dda,20x20,1,keep original,
-T3,item,psl,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,pslmag10,dda,32x32,1,keep original,stanag30
-T3,item,pslmag5,dda,32x32,1,keep original,stanag30
-T3,item,pump_complex,dda,20x20,1,base tileset gap,spare_part
 T3,item,punch_dagger,dda,20x20,1,base tileset gap,
-T3,item,pur_tablets,dda,20x20,1,keep original,
 T3,item,purple_drink,dda,32x32,1,keep original,cranberry_juice
-T3,item,px4,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,px4_40,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,px4_40mag,dda,32x32,1,keep original,glock17_17
-T3,item,px4mag,dda,32x32,1,keep original,glock17_17
 T3,item,qt_wire,dda,20x20,1,keep original,lc_wire
-T3,item,quikclot,dda,32x32,1,keep original,
-T3,item,quiver,dda,32x32,1,keep original,holster
-T3,item,quiver_large,dda,32x32,1,keep original,scabbard
-T3,item,quiver_takedown_bow,dda,32x32,1,keep original,scabbard
-T3,item,radio,dda,32x32,1,keep original,
-T3,item,radio_car,dda,20x20,1,keep original,
-T3,item,radiocontrol,dda,20x20,1,keep original,
-T3,item,raging_bull,dda,20x20,1,keep original,gun_base_handgun_manual
 T3,item,rake,dda,20x20,1,keep original,
 T3,item,rake_plastic,dda,32x32,1,keep original,
-T3,item,ranger,dda,20x20,1,base tileset gap,
 T3,item,rashguard,dda,20x20,1,keep original,dress_shirt
-T3,item,ravioli,dda,20x20,1,base tileset gap,
 T3,item,razor_blade,dda,32x32,1,keep original,
 T3,item,rc_car_box,dda,20x20,1,keep original,
-T3,item,rdb_223,dda,20x20,1,keep original,gun_base_rifle_semi
 T3,item,recharge_station,dda,20x20,1,keep original,
-T3,item,recipe_arrows,dda,20x20,1,keep original,
-T3,item,recipe_bows,dda,20x20,1,keep original,
 T3,item,reciprocating_saw,dda,20x20,1,keep original,
-T3,item,recurbow,dda,32x32,1,keep original,longbow
 T3,item,red_pen,dda,20x20,1,keep original,pen
 T3,item,ref_lighter,dda,32x32,1,keep original,
 T3,item,ref_lighter_butane,dda,20x20,1,base tileset gap,
 T3,item,ref_matches,dda,20x20,1,keep original,matches
-T3,item,reflexbow,dda,32x32,1,keep original,longbow
-T3,item,rehydration_drink,dda,32x32,1,keep original,coffee
-T3,item,remington700_270,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,remington_1100,dda,20x20,1,base tileset gap,gun_base_shotgun_semi
-T3,item,remington_700,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,remington_700_308,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,remington_870,dda,32x32,1,keep original,gun_base_shotgun_manual
-T3,item,remington_870_20,dda,20x20,1,base tileset gap,gun_base_shotgun_manual
-T3,item,remington_870_express,dda,32x32,1,keep original,gun_base_shotgun_manual
 T3,item,restaurantmap,dda,20x20,1,keep original,abstractmap
-T3,item,retool_ar15_22,dda,20x20,1,base tileset gap,
-T3,item,retool_ar15_223rem,dda,20x20,1,base tileset gap,
-T3,item,retool_ar15_223rem_extended,dda,20x20,1,base tileset gap,retool_ar15_223rem
-T3,item,retool_ar15_223rem_pistol,dda,20x20,1,base tileset gap,retool_ar15_223rem
-T3,item,retool_ar15_223rem_short,dda,20x20,1,base tileset gap,retool_ar15_223rem
-T3,item,retool_ar15_300blk,dda,20x20,1,base tileset gap,
-T3,item,retool_ar15_300blk_medium,dda,20x20,1,base tileset gap,retool_ar15_300blk
-T3,item,retool_ar15_300blk_short,dda,20x20,1,base tileset gap,retool_ar15_300blk
-T3,item,retool_ar15_450,dda,20x20,1,base tileset gap,
-T3,item,retool_ar15_450_short,dda,20x20,1,base tileset gap,retool_ar15_450
-T3,item,retool_ar15_50beowulf,dda,20x20,1,base tileset gap,
-T3,item,retool_ar15_50beowulf_medium,dda,20x20,1,base tileset gap,retool_ar15_50beowulf
-T3,item,retool_ar15_50beowulf_short,dda,20x20,1,base tileset gap,retool_ar15_50beowulf
-T3,item,retool_ar15_762,dda,20x20,1,base tileset gap,
-T3,item,retool_deagle_357,dda,20x20,1,base tileset gap,
-T3,item,retool_deagle_44,dda,20x20,1,base tileset gap,
-T3,item,retool_deagle_50,dda,20x20,1,base tileset gap,
-T3,item,retool_mdrx_223rem,dda,20x20,1,base tileset gap,
-T3,item,retool_mdrx_223rem_medium,dda,20x20,1,base tileset gap,retool_mdrx_223rem
-T3,item,rfb_308,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,rifle_scope,dda,20x20,1,base tileset gap,
 T3,item,ring_purity,dda,20x20,1,base tileset gap,
 T3,item,ring_signet,dda,20x20,1,base tileset gap,
-T3,item,rio_bravo,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,roadmap,dda,20x20,1,keep original,abstractmap
 T3,item,robe_wizard,dda,20x20,1,keep original,coat_winter
 T3,item,roller_blades,dda,20x20,1,keep original,roller_blades
 T3,item,roller_shoes_off,dda,20x20,1,keep original,shoes_bowling
 T3,item,rollerskates,dda,20x20,1,keep original,rollerskates
 T3,item,rolling_paper,dda,20x20,1,keep original,
-T3,item,rollmat,dda,32x32,1,keep original,
 T3,item,rootbeer,dda,32x32,1,keep original,coffee
-T3,item,rope_30,dda,32x32,1,keep original,string_6
-T3,item,rope_6,dda,32x32,1,keep original,string_6
-T3,item,rossi_gallery,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,rossi_r92_357_16,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,rossi_r92_357_20,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,rossi_r92_44_16,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,rossi_r92_44_20,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,rough_rider_pistol,dda,20x20,1,base tileset gap,gun_base_handgun_manual
-T3,item,rough_rider_pistol_9,dda,20x20,1,base tileset gap,gun_base_handgun_manual
-T3,item,rp63,dda,20x20,1,keep original,gun_base_handgun_manual
-T3,item,ruby,dda,20x20,1,base tileset gap,garnet
-T3,item,ruby_dental_grill,dda,20x20,1,keep original,gold_dental_grill
-T3,item,ruby_gold_bracelet,dda,20x20,1,keep original,gold_bracelet
-T3,item,ruby_gold_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,ruby_gold_earring,dda,20x20,1,keep original,gold_ear
-T3,item,ruby_gold_pendant_necklace,dda,20x20,1,keep original,gold_necklace
-T3,item,ruby_gold_ring,dda,20x20,1,keep original,gold_ring
-T3,item,ruby_gold_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,ruby_platinum_bracelet,dda,20x20,1,keep original,platinum_bracelet
-T3,item,ruby_platinum_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,ruby_platinum_earring,dda,20x20,1,keep original,platinum_ear
-T3,item,ruby_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
-T3,item,ruby_platinum_ring,dda,20x20,1,keep original,platinum_ring
-T3,item,ruby_platinum_tiara,dda,32x32,1,keep original,hat_ball
 T3,item,ruby_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
 T3,item,ruby_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,ruby_silver_earring,dda,20x20,1,keep original,silver_ear
 T3,item,ruby_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
 T3,item,ruby_silver_ring,dda,20x20,1,keep original,silver_ring
 T3,item,ruby_silver_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,rucksack,dda,32x32,1,keep original,ragpouch
-T3,item,ruger10,dda,32x32,1,keep original,stanag30
-T3,item,ruger1022mag,dda,32x32,1,keep original,stanag30
-T3,item,ruger_1022,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,ruger_57,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,ruger_57mag,dda,32x32,1,keep original,glock17_17
-T3,item,ruger_arr,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,ruger_arr_mag,dda,20x20,1,base tileset gap,
-T3,item,ruger_lcr_22,dda,20x20,1,keep original,gun_base_handgun_manual
-T3,item,ruger_lcr_38,dda,20x20,1,keep original,gun_base_handgun_manual
-T3,item,ruger_m77,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,ruger_mini,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,ruger_mk4,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,ruger_mk4_mag,dda,32x32,1,keep original,glock17_17
-T3,item,ruger_pr,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,ruger_pr_mag,dda,32x32,1,keep original,stanag30
-T3,item,rugerlcp,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,rugerlcpmag,dda,32x32,1,keep original,glock17_17
-T3,item,rugerpcc,dda,20x20,1,keep original,gun_base_rifle_semi
 T3,item,rum,dda,32x32,1,keep original,whiskey
-T3,item,rummy,dda,20x20,1,base tileset gap,
-T3,item,runner_bag,dda,32x32,1,keep original,ragpouch
-T3,item,saiga10mag,dda,20x20,1,base tileset gap,shotbelt_20
-T3,item,saiga_12,dda,32x32,1,keep original,gun_base_shotgun_manual
-T3,item,saline,dda,32x32,1,keep original,
 T3,item,samghati,dda,20x20,1,keep original,coat_winter
 T3,item,sandpaper,dda,20x20,1,keep original,
 T3,item,sandwich_cheese,dda,20x20,1,keep original,
@@ -2778,64 +1644,27 @@ T3,item,santa_jacket,dda,32x32,1,keep original,coat_rain
 T3,item,santa_jacket_short,dda,20x20,1,keep original,jacket_windbreaker
 T3,item,santa_pants,dda,32x32,1,keep original,jeans
 T3,item,santa_shorts,dda,32x32,1,keep original,boxer_shorts
-T3,item,sapphire,dda,20x20,1,base tileset gap,garnet
-T3,item,sapphire_dental_grill,dda,20x20,1,keep original,gold_dental_grill
-T3,item,sapphire_gold_bracelet,dda,20x20,1,keep original,gold_bracelet
-T3,item,sapphire_gold_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,sapphire_gold_earring,dda,20x20,1,keep original,gold_ear
-T3,item,sapphire_gold_pendant_necklace,dda,20x20,1,keep original,gold_necklace
-T3,item,sapphire_gold_ring,dda,20x20,1,keep original,gold_ring
-T3,item,sapphire_gold_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,sapphire_platinum_bracelet,dda,20x20,1,keep original,platinum_bracelet
-T3,item,sapphire_platinum_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,sapphire_platinum_earring,dda,20x20,1,keep original,platinum_ear
-T3,item,sapphire_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
-T3,item,sapphire_platinum_ring,dda,20x20,1,keep original,platinum_ring
-T3,item,sapphire_platinum_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,sapphire_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
-T3,item,sapphire_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,sapphire_silver_earring,dda,20x20,1,keep original,silver_ear
-T3,item,sapphire_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
-T3,item,sapphire_silver_ring,dda,20x20,1,keep original,silver_ring
-T3,item,sapphire_silver_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,savage112,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,savage_220_magazine,dda,20x20,1,base tileset gap,
-T3,item,savage_model_220,dda,20x20,1,base tileset gap,gun_base_shotgun_manual
-T3,item,savage_rascal,dda,20x20,1,keep original,gun_base_rifle_semi
 T3,item,saw,dda,20x20,1,keep original,
-T3,item,scalpel,dda,20x20,1,keep original,
-T3,item,scar_16s,dda,20x20,1,base tileset gap,gun_base_rifle_semi
-T3,item,scar_17s,dda,20x20,1,keep original,gun_base_rifle_semi
 T3,item,scarf,dda,20x20,1,keep original,
 T3,item,scarf_fur,dda,20x20,1,keep original,
 T3,item,scarf_fur_long,dda,20x20,1,keep original,
 T3,item,scarf_long,dda,20x20,1,keep original,
-T3,item,scarhmag,dda,32x32,1,keep original,stanag30
-T3,item,scissors,dda,32x32,1,keep original,
-T3,item,scissors_medical,dda,20x20,1,keep original,
 T3,item,scorecard,dda,20x20,1,keep original,
-T3,item,scrabble,dda,20x20,1,base tileset gap,
 T3,item,scrap,dda,20x20,1,keep original,
 T3,item,scrap_aluminum,dda,20x20,1,keep original,
 T3,item,scrap_brass,dda,20x20,1,base tileset gap,
 T3,item,scrap_bronze,dda,20x20,1,keep original,
 T3,item,scrap_cast_iron,dda,20x20,1,base tileset gap,
-T3,item,scrap_copper,dda,32x32,1,keep original,
 T3,item,scrap_tin,dda,20x20,1,base tileset gap,
 T3,item,screwdriver_set,dda,20x20,1,keep original,
 T3,item,scythe,dda,32x32,1,keep original,
-T3,item,scythe_game,dda,20x20,1,base tileset gap,
 T3,item,seatbelt,dda,32x32,1,keep original,string_6
-T3,item,senet,dda,20x20,1,base tileset gap,
-T3,item,sewermap,dda,20x20,1,keep original,abstractmap
-T3,item,sewing_kit,dda,32x32,1,keep original,
-T3,item,sewing_machine,dda,20x20,1,base tileset gap,
 T3,item,sf_watch,dda,20x20,1,keep original,
-T3,item,sharps,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,shavingkit,dda,20x20,1,base tileset gap,
 T3,item,shears,dda,20x20,1,keep original,
 T3,item,sheath,dda,32x32,1,keep original,holster
-T3,item,shed_stick,dda,20x20,1,base tileset gap,
 T3,item,sheet_canvas,dda,20x20,1,base tileset gap,
 T3,item,sheet_felt,dda,20x20,1,keep original,
 T3,item,sheet_kevlar,dda,20x20,1,base tileset gap,
@@ -2844,31 +1673,18 @@ T3,item,sheet_metal_small,dda,32x32,1,keep original,sheet_metal
 T3,item,sheet_nomex,dda,20x20,1,base tileset gap,
 T3,item,sheet_nylon,dda,20x20,1,base tileset gap,
 T3,item,shoes_denim,dda,20x20,1,keep original,shoes_bowling
-T3,item,shogi,dda,20x20,1,base tileset gap,
 T3,item,sholster,dda,20x20,1,keep original,sheath
-T3,item,shortbow,dda,32x32,1,keep original,longbow
 T3,item,shorts_cargo,dda,32x32,1,keep original,boxer_shorts
 T3,item,shorts_denim,dda,32x32,1,keep original,boxer_shorts
-T3,item,shot_00,dda,32x32,2,keep original,shotshell_abstract
-T3,item,shot_bird,dda,32x32,2,keep original,shotshell_abstract
 T3,item,shot_hull,dda,32x32,1,keep original,
-T3,item,shot_slug,dda,32x32,2,keep original,shotshell_abstract
-T3,item,shotgun_d,dda,32x32,1,keep original,gun_base_shotgun_manual
-T3,item,shotgun_s,dda,32x32,1,keep original,gun_base_shotgun_manual
-T3,item,shotgun_triple,dda,20x20,1,keep original,gun_base_shotgun_manual
 T3,item,shoulder_holster,dda,20x20,1,keep original,sheath
 T3,item,shovel,dda,32x32,1,keep original,
 T3,item,shovel_snow,dda,32x32,1,keep original,shovel
 T3,item,shovel_snow_plastic,dda,32x32,1,keep original,shovel
-T3,item,shuttlecock,dda,20x20,1,keep original,
 T3,item,sickle,dda,20x20,1,keep original,
-T3,item,sig_assault_rifle,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,sig_mosquito,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,signal_flare,dda,20x20,1,keep original,
 T3,item,silver_anklet,dda,20x20,1,base tileset gap,
 T3,item,silver_bracelet,dda,20x20,1,keep original,
 T3,item,silver_ear,dda,20x20,1,keep original,
-T3,item,silver_hair_beads,dda,32x32,1,keep original,hat_ball
 T3,item,silver_hairpin,dda,32x32,1,keep original,hairpin
 T3,item,silver_lip_ring_loop,dda,20x20,1,base tileset gap,
 T3,item,silver_lip_ring_stud,dda,20x20,1,base tileset gap,
@@ -2877,7 +1693,6 @@ T3,item,silver_medal,dda,20x20,1,base tileset gap,
 T3,item,silver_nose_ring_loop,dda,20x20,1,base tileset gap,
 T3,item,silver_nose_ring_stud,dda,20x20,1,base tileset gap,
 T3,item,silver_ring,dda,20x20,1,keep original,
-T3,item,silver_small,dda,20x20,1,keep original,
 T3,item,silver_toe_ring,dda,20x20,1,base tileset gap,
 T3,item,silver_watch,dda,20x20,1,keep original,
 T3,item,single_pot_whiskey,dda,32x32,1,keep original,whiskey
@@ -2886,10 +1701,6 @@ T3,item,skirt_bostonchan,dda,20x20,1,keep original,kilt
 T3,item,skirt_denim,dda,20x20,1,keep original,kilt
 T3,item,skirt_leather,dda,20x20,1,keep original,kilt
 T3,item,skirt_long,dda,20x20,1,keep original,skirt
-T3,item,sks,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,sl8,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,sl8mag,dda,32x32,1,keep original,stanag30
-T3,item,sleeping_bag,dda,20x20,1,keep original,towel
 T3,item,sleeveless_duster,dda,32x32,1,keep original,coat_rain
 T3,item,sleeveless_duster_faux_fur,dda,20x20,1,keep original,coat_winter
 T3,item,sleeveless_duster_fur,dda,32x32,1,keep original,coat_rain
@@ -2902,9 +1713,6 @@ T3,item,sleeveless_tunic,dda,20x20,1,keep original,camisole
 T3,item,slingpack,dda,20x20,1,keep original,ragpouch
 T3,item,slippers,dda,32x32,1,keep original,socks
 T3,item,sloppyjoe,dda,20x20,1,keep original,
-T3,item,sm_extinguisher,dda,32x32,1,keep original,
-T3,item,small_checkers,dda,20x20,1,base tileset gap,
-T3,item,small_chess,dda,20x20,1,base tileset gap,
 T3,item,small_lighter,dda,20x20,3,keep original,lighter
 T3,item,small_propane_tank,dda,20x20,1,keep original,
 T3,item,small_relic,dda,32x32,1,keep original,
@@ -2914,9 +1722,6 @@ T3,item,smart_phone,dda,20x20,1,keep original,cell_phone
 T3,item,smart_phone_locked,dda,20x20,1,keep original,cell_phone
 T3,item,smart_watch,dda,20x20,1,base tileset gap,
 T3,item,smart_watch_adv,dda,20x20,1,base tileset gap,smart_watch
-T3,item,smle_mk3,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,smoxygen_tank,dda,20x20,1,base tileset gap,
-T3,item,snakesnladders,dda,20x20,1,base tileset gap,
 T3,item,sneakers_steel,dda,20x20,1,keep original,shoes_bowling
 T3,item,socket_screwdriver_set,dda,20x20,1,keep original,screwdriver_set
 T3,item,socket_wrench_set,dda,20x20,1,keep original,screwdriver_set
@@ -2926,106 +1731,49 @@ T3,item,soft_3a_vest,dda,20x20,1,keep original,tshirt
 T3,item,solder_wire,dda,20x20,1,keep original,
 T3,item,soldering_iron,dda,20x20,1,keep original,
 T3,item,soldering_iron_portable,dda,20x20,1,keep original,soldering_iron
-T3,item,soup_chicken,dda,32x32,1,keep original,water_clean
 T3,item,soup_instant_chicken_noodle_powder,dda,32x32,1,keep original,meal_bone
 T3,item,soup_instant_vegetable_powder,dda,32x32,1,keep original,meal_bone
-T3,item,soup_tomato,dda,32x32,1,keep original,tomato_juice
-T3,item,soyang,dda,20x20,1,base tileset gap,
 T3,item,soysauce,dda,32x32,1,keep original,
-T3,item,sp2022,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,sp2022mag_15rd_9mm,dda,32x32,1,keep original,glock17_17
-T3,item,spaghetti_raw,dda,20x20,1,keep original,
 T3,item,sparkling,dda,32x32,1,keep original,water_clean
 T3,item,sparkling_peach,dda,32x32,1,keep original,water_clean
 T3,item,sparkling_pomegranate,dda,32x32,1,keep original,water_clean
-T3,item,spiral_stone,dda,20x20,1,keep original,
-T3,item,spirit_island,dda,20x20,1,base tileset gap,
 T3,item,splinter,dda,32x32,1,keep original,
 T3,item,spool_small,dda,20x20,1,base tileset gap,
 T3,item,spoon,dda,32x32,1,keep original,base_silverware
 T3,item,spork,dda,20x20,1,keep original,base_silverware
 T3,item,sports_bra,dda,32x32,1,keep original,tank_top
-T3,item,sports_drink,dda,32x32,1,keep original,coffee
 T3,item,spray_can,dda,32x32,1,keep original,
 T3,item,spring,dda,20x20,1,keep original,
-T3,item,sr22,dda,20x20,1,base tileset gap,gun_base_handgun_semi
-T3,item,sr22_mag,dda,32x32,1,keep original,glock17_17
-T3,item,srm_1216,dda,20x20,1,keep original,gun_base_shotgun_manual
-T3,item,srm_1216_mag_16,dda,20x20,1,base tileset gap,
-T3,item,stab_plate,dda,20x20,1,base tileset gap,
 T3,item,stab_vest,dda,20x20,1,keep original,tshirt
-T3,item,stanag10,dda,32x32,1,keep original,stanag30
-T3,item,stanag30,dda,32x32,1,keep original,
-T3,item,stanag30ranger,dda,20x20,1,base tileset gap,
 T3,item,state_flag,dda,20x20,1,keep original,towel
-T3,item,steel_ballistic_plate,dda,20x20,1,base tileset gap,
 T3,item,stereo,dda,32x32,1,keep original,
 T3,item,steroid_eyedrops,dda,20x20,1,base tileset gap,
-T3,item,stethoscope,dda,20x20,1,keep original,
-T3,item,steyr_scout,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,steyr_scout_mag,dda,32x32,1,keep original,stanag30
 T3,item,stockings,dda,32x32,1,keep original,leggings
-T3,item,storage_line,dda,32x32,1,keep original,string_6
 T3,item,straw_fedora,dda,20x20,1,keep original,
 T3,item,straw_hat,dda,32x32,1,keep original,hat_ball
 T3,item,straw_sandals,dda,32x32,1,keep original,dress_shoes
 T3,item,string_36,dda,32x32,1,keep original,string_6
 T3,item,string_6,dda,32x32,1,keep original,
 T3,item,striped_pants,dda,32x32,1,keep original,pants
-T3,item,strong_antibiotic,dda,20x20,1,keep original,
 T3,item,stuffed_clams,dda,20x20,1,keep original,fish_fried
-T3,item,subwaymap,dda,20x20,1,keep original,abstractmap
-T3,item,subwaystationmap,dda,20x20,1,keep original,abstractmap
 T3,item,suit,dda,20x20,1,keep original,jumpsuit_pocketless
 T3,item,sunglasses_bifocal,dda,20x20,1,keep original,sunglasses
 T3,item,sunglasses_eye,dda,20x20,1,keep original,glasses_eye
 T3,item,sunglasses_reading,dda,20x20,1,keep original,glasses_eye
-T3,item,survival_kit_box,dda,20x20,1,keep original,box_small
-T3,item,survival_match,dda,20x20,1,keep original,matches
 T3,item,survivor_scope,dda,20x20,1,keep original,
-T3,item,survivormap,dda,20x20,1,keep original,abstractmap
 T3,item,survnote,dda,20x20,1,keep original,
-T3,item,sw617,dda,20x20,1,base tileset gap,gun_base_handgun_manual
-T3,item,sw629,dda,20x20,1,keep original,gun_base_handgun_manual
-T3,item,sw642,dda,20x20,1,keep original,gun_base_handgun_manual
-T3,item,sw_500,dda,20x20,1,keep original,gun_base_handgun_manual
-T3,item,sw_619,dda,20x20,1,keep original,gun_base_handgun_manual
-T3,item,swbodyguard,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,swbodyguard_mag,dda,32x32,1,keep original,glock17_17
 T3,item,sweater,dda,32x32,1,keep original,dress_shirt
 T3,item,sweatshirt,dda,32x32,1,keep original,dress_shirt
-T3,item,switchblade,dda,20x20,1,base tileset gap,
-T3,item,sword_bayonet,dda,20x20,1,base tileset gap,
 T3,item,syringe,dda,20x20,1,keep original,
-T3,item,syrup,dda,32x32,1,keep original,
 T3,item,tacjacket,dda,20x20,1,keep original,coat_winter
-T3,item,tailors_kit,dda,32x32,1,keep original,
-T3,item,takedown_recurbow,dda,32x32,1,keep original,longbow
-T3,item,talking_doll,dda,20x20,1,keep original,
-T3,item,tampon,dda,20x20,1,keep original,cotton_ball
-T3,item,tangram,dda,20x20,1,base tileset gap,
-T3,item,tarp,dda,32x32,1,keep original,towel
-T3,item,taurus_judge,dda,20x20,1,keep original,gun_base_handgun_manual
-T3,item,tavor_12,dda,32x32,1,keep original,gun_base_shotgun_manual
-T3,item,tazer,dda,20x20,1,keep original,
 T3,item,tea_bag,dda,20x20,1,keep original,
 T3,item,tea_bag_chamomile,dda,20x20,1,keep original,tea_bag
 T3,item,tea_bag_dandelion,dda,20x20,1,keep original,tea_bag
 T3,item,tea_fruit_bag,dda,20x20,1,keep original,tea_bag
 T3,item,tea_green_bag,dda,20x20,1,keep original,tea_bag
-T3,item,tea_green_raw,dda,20x20,1,keep original,tea_raw
-T3,item,teapot,dda,20x20,1,keep original,
 T3,item,teargas_sprayer,dda,20x20,1,base tileset gap,
-T3,item,technician_coveralls,dda,20x20,1,keep original,jumpsuit_pocketless
-T3,item,technician_coveralls_h,dda,32x32,1,keep original,jumpsuit
-T3,item,technician_pants_gray,dda,32x32,1,keep original,jeans
-T3,item,technician_shirt_gray,dda,20x20,1,keep original,tshirt
 T3,item,teleumbrella,dda,20x20,1,keep original,
-T3,item,tent_kit,dda,32x32,1,keep original,
 T3,item,tequila,dda,32x32,1,keep original,water_clean
-T3,item,terraforming_mercury,dda,20x20,1,base tileset gap,
-T3,item,textbook_survival,dda,20x20,1,keep original,textbook_firstaid
-T3,item,textbook_traps,dda,20x20,1,keep original,manual_gun
 T3,item,thawb,dda,20x20,1,keep original,coat_winter
 T3,item,thermal_gloves,dda,20x20,1,base tileset gap,
 T3,item,thermal_mask,dda,20x20,1,keep original,
@@ -3034,7 +1782,6 @@ T3,item,thermal_socks,dda,20x20,1,keep original,
 T3,item,thermometer,dda,20x20,1,keep original,
 T3,item,thermos,dda,32x32,1,keep original,bottle_plastic
 T3,item,thigh_high_boots,dda,20x20,1,keep original,shoes_bowling
-T3,item,thorazine,dda,20x20,1,base tileset gap,
 T3,item,thread,dda,32x32,1,keep original,
 T3,item,thread_canvas,dda,32x32,1,keep original,thread
 T3,item,thread_cutting_set,dda,20x20,1,base tileset gap,
@@ -3050,7 +1797,6 @@ T3,item,tights,dda,32x32,1,keep original,leg_warmers
 T3,item,tin_cup,dda,20x20,1,keep original,base_ceramic_dish
 T3,item,tin_plate,dda,20x20,1,keep original,base_ceramic_dish
 T3,item,tin_snips,dda,20x20,1,keep original,
-T3,item,tinderbox,dda,20x20,1,keep original,
 T3,item,tinyweldtank,dda,20x20,1,keep original,pressurized_canister
 T3,item,tire_bicycle,dda,20x20,1,keep original,wheel_bicycle
 T3,item,tire_bicycle_or,dda,20x20,1,keep original,wheel_bicycle
@@ -3062,39 +1808,13 @@ T3,item,tire_wide,dda,32x32,1,keep original,wheel_wide
 T3,item,tire_wide_or,dda,32x32,1,keep original,wheel_wide
 T3,item,tobacco,dda,20x20,1,base tileset gap,
 T3,item,tofu_rice,dda,20x20,1,base tileset gap,
-T3,item,tokarev,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,tokarevmag,dda,32x32,1,keep original,glock17_17
 T3,item,toolbox_empty,dda,32x32,1,keep original,
 T3,item,toolbox_workshop_empty,dda,32x32,1,keep original,toolbox_empty
 T3,item,tophat,dda,32x32,1,keep original,hat_ball
 T3,item,touristmap,dda,20x20,1,keep original,abstractmap
-T3,item,tourmaline,dda,20x20,1,base tileset gap,garnet
-T3,item,tourmaline_dental_grill,dda,20x20,1,keep original,gold_dental_grill
-T3,item,tourmaline_gold_bracelet,dda,20x20,1,keep original,gold_bracelet
-T3,item,tourmaline_gold_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,tourmaline_gold_earring,dda,20x20,1,keep original,gold_ear
-T3,item,tourmaline_gold_pendant_necklace,dda,20x20,1,keep original,gold_necklace
-T3,item,tourmaline_gold_ring,dda,20x20,1,keep original,gold_ring
-T3,item,tourmaline_gold_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,tourmaline_platinum_bracelet,dda,20x20,1,keep original,platinum_bracelet
-T3,item,tourmaline_platinum_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,tourmaline_platinum_earring,dda,20x20,1,keep original,platinum_ear
-T3,item,tourmaline_platinum_pendant_necklace,dda,20x20,1,keep original,platinum_necklace
-T3,item,tourmaline_platinum_ring,dda,20x20,1,keep original,platinum_ring
-T3,item,tourmaline_platinum_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,tourmaline_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
-T3,item,tourmaline_silver_cufflinks,dda,20x20,1,keep original,cufflinks
 T3,item,tourmaline_silver_earring,dda,20x20,1,keep original,silver_ear
-T3,item,tourmaline_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
-T3,item,tourmaline_silver_ring,dda,20x20,1,keep original,silver_ring
-T3,item,tourmaline_silver_tiara,dda,32x32,1,keep original,hat_ball
-T3,item,tourniquet_upper,dda,20x20,1,keep original,arm_warmers
-T3,item,towel,dda,20x20,1,keep original,
-T3,item,trailmap,dda,20x20,1,keep original,abstractmap
-T3,item,tramadol,dda,20x20,1,keep original,
-T3,item,transition_contacts,unknown,20x20,1,base tileset gap,
-T3,item,trappers_companion,dda,20x20,1,keep original,recipe_lab_elec
-T3,item,travelpack,dda,32x32,1,keep original,ragpouch
 T3,item,trenchcoat,dda,32x32,1,keep original,coat_rain
 T3,item,trenchcoat_faux_fur,dda,20x20,1,keep original,coat_winter
 T3,item,trenchcoat_fur,dda,32x32,1,keep original,coat_rain
@@ -3103,45 +1823,28 @@ T3,item,trenchcoat_steampunk,dda,20x20,1,keep original,coat_winter
 T3,item,tricorne,dda,32x32,1,keep original,hat_cotton
 T3,item,trimmer_off,dda,32x32,1,keep original,
 T3,item,trousers_ninja,dda,32x32,1,keep original,jeans
-T3,item,tums,dda,20x20,1,base tileset gap,melatonin_tablet
 T3,item,tunic,dda,32x32,1,keep original,longshirt
 T3,item,turtleneck,dda,32x32,1,keep original,longshirt
 T3,item,turtleneck_shirt,dda,32x32,1,keep original,longshirt
 T3,item,tux,dda,32x32,1,keep original,jumpsuit
-T3,item,type99,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,type99_sniper,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,uberti_1873,dda,20x20,1,keep original,gun_base_rifle_semi
 T3,item,umbrella,dda,32x32,1,keep original,
 T3,item,under_armor,dda,20x20,1,keep original,dress_shirt
 T3,item,under_armor_shorts,dda,32x32,1,keep original,boxer_shorts
 T3,item,undershirt,dda,32x32,1,keep original,camisole
 T3,item,union_suit,dda,20x20,1,keep original,jumpsuit_pocketless
-T3,item,uno,unknown,20x20,1,base tileset gap,
-T3,item,urbexmap,dda,20x20,1,keep original,abstractmap
 T3,item,usb_drive,dda,20x20,1,keep original,abstract_usb_drive
 T3,item,usb_drive_older,dda,20x20,1,base tileset gap,abstract_usb_drive
-T3,item,usc20mag,dda,32x32,1,keep original,stanag30
-T3,item,usp45mag,dda,32x32,1,keep original,glock17_17
-T3,item,usp9mag,dda,32x32,1,keep original,glock17_17
-T3,item,usp_45,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,usp_9mm,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,utility_knife_folding,dda,20x20,1,keep original,knife_folding
 T3,item,vac_mold,dda,20x20,1,base tileset gap,
-T3,item,vacutainer,dda,20x20,1,base tileset gap,
 T3,item,valentine_card,dda,20x20,1,base tileset gap,
 T3,item,vampire_fangs,dda,20x20,1,keep original,mouthpiece
-T3,item,varmint_airgun,dda,20x20,1,keep original,gun_base_rifle_semi
 T3,item,vegan_gravy_mix,dda,32x32,1,keep original,meal_bone
 T3,item,veil_wedding,dda,20x20,1,keep original,scarf
 T3,item,vest,dda,20x20,1,keep original,tshirt
 T3,item,vest_jean,dda,20x20,1,keep original,camisole
 T3,item,vest_leather,dda,32x32,1,keep original,tank_top
 T3,item,vitamins,dda,20x20,1,keep original,
-T3,item,vitc_tablet,dda,20x20,1,base tileset gap,
-T3,item,viticulture,dda,20x20,1,base tileset gap,
 T3,item,vodka,dda,32x32,1,keep original,water_clean
 T3,item,voltmeter,dda,20x20,1,keep original,
-T3,item,waffleiron,dda,32x32,1,keep original,
 T3,item,waist_apron_long,dda,20x20,1,keep original,tank_top
 T3,item,waist_apron_short,dda,20x20,1,keep original,tank_top
 T3,item,waistcoat,dda,32x32,1,keep original,jacket_light
@@ -3150,20 +1853,8 @@ T3,item,wallet_large,dda,20x20,1,keep original,bag_plastic
 T3,item,wallet_leather,dda,20x20,1,keep original,bag_plastic
 T3,item,wallet_photo,dda,20x20,1,base tileset gap,
 T3,item,wallet_stylish,dda,20x20,1,keep original,bag_plastic
-T3,item,walther_ccp,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,walther_p22,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,walther_p38,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,walther_ppk,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,walther_ppq_45,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,walther_ppq_9mm,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,water_faucet,dda,20x20,1,keep original,
-T3,item,water_mineral,dda,32x32,1,keep original,water_clean
-T3,item,water_purifier,dda,20x20,1,keep original,
 T3,item,waterproof_smart_phone_case,dda,20x20,1,keep original,cell_phone
-T3,item,weak_antibiotic,dda,20x20,1,keep original,
 T3,item,wearable_light,dda,20x20,1,keep original,
-T3,item,weatherby_5,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,weed,dda,20x20,1,keep original,
 T3,item,weeks_old_newspaper,dda,32x32,1,keep original,
 T3,item,welder,dda,32x32,1,keep original,
 T3,item,welding_blanket,dda,20x20,1,base tileset gap,
@@ -3173,7 +1864,6 @@ T3,item,welding_rod_steel,dda,20x20,1,keep original,
 T3,item,welding_wire_alloy,dda,20x20,1,keep original,
 T3,item,welding_wire_steel,dda,20x20,1,keep original,
 T3,item,weldtank,dda,32x32,1,keep original,pressurized_tank
-T3,item,well_pump,dda,20x20,1,base tileset gap,spare_part
 T3,item,wheel,dda,20x20,1,keep original,
 T3,item,wheel_bicycle,dda,20x20,1,keep original,
 T3,item,wheel_bicycle_or,dda,20x20,1,keep original,wheel_bicycle
@@ -3188,20 +1878,10 @@ T3,item,wheel_small,dda,20x20,1,keep original,
 T3,item,wheel_wide,dda,32x32,1,keep original,
 T3,item,wheel_wide_or,dda,32x32,1,keep original,wheel_wide
 T3,item,whiskey,dda,32x32,1,keep original,
-T3,item,whistle_multitool,dda,20x20,1,base tileset gap,
-T3,item,win70,dda,32x32,1,keep original,gun_base_rifle_semi
-T3,item,winchester_1897,dda,32x32,1,keep original,gun_base_shotgun_manual
-T3,item,winchester_94_3030,dda,20x20,1,keep original,gun_base_rifle_semi
-T3,item,witness_10,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,witness_mag_10,dda,32x32,1,keep original,glock17_17
 T3,item,wizard_hat_costume,dda,20x20,1,base tileset gap,
 T3,item,wood_block,dda,20x20,1,Saigon art (drawn),
-T3,item,wooden_hair_beads,dda,32x32,1,keep original,hat_ball
 T3,item,wool_hoodie,dda,20x20,1,keep original,buttonshirt
-T3,item,world_nations,dda,20x20,1,base tileset gap,
 T3,item,woven_anklet,dda,20x20,1,base tileset gap,
-T3,item,wp22mag,dda,32x32,1,keep original,glock17_17
-T3,item,wrapped_rad_badge,dda,20x20,1,base tileset gap,
 T3,item,wrapper,dda,20x20,1,keep original,
 T3,item,wrapper_foil,dda,20x20,1,keep original,
 T3,item,wrapper_foil_roll,dda,20x20,1,base tileset gap,
@@ -3210,9 +1890,6 @@ T3,item,wrench_48,dda,20x20,1,keep original,wrench
 T3,item,wrench_large,dda,20x20,1,keep original,wrench
 T3,item,wrench_small,dda,20x20,1,keep original,wrench
 T3,item,xacto,dda,32x32,1,keep original,
-T3,item,xanax,dda,20x20,1,base tileset gap,
-T3,item,xd_10,dda,20x20,1,keep original,gun_base_handgun_semi
-T3,item,xd_10_mag,dda,32x32,1,keep original,glock17_17
 T3,item,years_old_newspaper,dda,32x32,1,keep original,
 T3,item,zerocola,dda,32x32,1,keep original,coffee
 T3,item,zeromdew,dda,32x32,1,keep original,coffee
