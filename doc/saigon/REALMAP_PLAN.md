@@ -163,7 +163,8 @@ images (`classify.py`) and for printed maps (`trace_tourist_map.py`) stay availa
 Status: R1 engine done; R2a grid from OSM done; R2b overmap writer + scenario "Sài Gòn, 2009 (real
 map)" done (v1 blocks: nhà ống facing streets, hẻm blocks inside). Next: R2c dual carriageways and
 small road pieces; R3 district rules (rural outskirts in 2009, Chợ Lớn, downtown); R4 places;
-R5 landmarks at their real anchors; R8 start in a central hẻm.
+R5 landmarks at their real anchors (done); R8 start in central Saigon (done: the area is written at
+overmaps -1..3 x -2..1 so its District 1/3/10 overmap is the world origin, where the start search begins).
 
 ## 8a. Second round of decisions (2026-10-05)
 

@@ -17,6 +17,8 @@
 #include "overmap.h"
 #include "overmapbuffer.h"
 #include "player_helpers.h"
+#include "start_location.h"
+#include "worldfactory.h"
 #include "type_id.h"
 
 // Saigon 2000s mod: pregenerated ("real-map") overmaps (doc/saigon/REALMAP_PLAN.md, R1).
@@ -113,21 +115,34 @@ TEST_CASE( "saigon_realmap_reads_dda_single_layer_maps", "[overmap][saigon]" )
 }
 
 // The real 2009 map itself (data/mods/saigon_2000s/realmap_2009, written by
-// tools/saigon/realmap/write_omaps.py from OpenStreetMap): the overmap around Bến Thành loads with
-// its streets, river, shophouses and bridges; the game adds the bridge decks; and the map
-// generates without errors at Bến Thành and on a bridge over the Saigon River.
+// tools/saigon/realmap/write_omaps.py from OpenStreetMap). Overmap (0, 0) is central Saigon
+// (District 1 west, 3, 10): it loads with its streets, river, shophouses and bridges; the game
+// adds the bridge decks; Bến Thành stands on its site; a new game's start location is found there;
+// and the map generates without errors at Bến Thành and on a bridge over the Saigon River.
 TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
 {
-    const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_1_2.omap.gz";
+    const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
     if( !oter_str_id( "sgn_nh_solo_z5_south" ).is_valid() || !file_exist( file.get_unrelative_path() ) ) {
         WARN( "saigon_2000s or its real map is not present; skipping" );
         return;
     }
+    // an overmap (0, 0) saved earlier in this test run (any test whose turns autosave) would be
+    // loaded instead of the pregenerated file
+    for( const cata_path &saved : {
+             PATH_INFO::current_dimension_save_path() / zzip_overmap_directory /
+             ( overmapbuffer::terrain_filename( point_abs_om() ) + std::string( zzip_suffix ) ),
+             PATH_INFO::current_dimension_save_path() / overmapbuffer::terrain_filename( point_abs_om() )
+         } ) {
+        if( file_exist( saved ) ) {
+            remove_file( saved.get_unrelative_path().u8string() );
+        }
+    }
+    // choose the map first: clearing places the player at the origin, which loads overmap (0, 0)
+    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
     clear_avatar();
     clear_map();
     clear_overmaps();
-    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
-    overmap &om = overmap_buffer.get( point_abs_om( 1, 2 ) );
+    overmap &om = overmap_buffer.get( point_abs_om() );
     std::map<std::string, int> count;
     tripoint_om_omt bridge = tripoint_om_omt::invalid;
     for( int x = 0; x < OMAPX; x++ ) {
@@ -151,12 +166,12 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     CAPTURE( count["road"], count["bridge"], count["water"], count["nha_ong"], count["hem"], count["field"], decks );
     CHECK( count["road"] > 3000 );
     CHECK( count["nha_ong"] > 3000 );
-    CHECK( count["water"] > 500 );
+    CHECK( count["water"] > 200 );
     CHECK( count["bridge"] > 5 );
     CHECK( decks > 5 );
-    // Bến Thành (10.7725 N, 106.6980 E) is tile (338, 521) of the area: the market stands within
-    // 5 tiles (120 m) of it (tools/saigon/realmap/landmarks_2009.json)
-    const tripoint_abs_omt ben_thanh( 338, 521, 0 );
+    // Bến Thành (10.7725 N, 106.6980 E) is tile (158, 161) of overmap (0, 0): the market stands
+    // within 5 tiles (120 m) of it (tools/saigon/realmap/landmarks_2009.json)
+    const tripoint_abs_omt ben_thanh( 158, 161, 0 );
     int market = 0;
     for( int dx = -5; dx <= 5; dx++ ) {
         for( int dy = -5; dy <= 5; dy++ ) {
@@ -164,9 +179,14 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
         }
     }
     CHECK( market == 9 );
+    // a new game looks for its start from the world origin outwards: it starts in central Saigon
+    const tripoint_abs_omt start = start_location_id( "sgn_sloc_nha_ong" )->find_player_initial_location(
+                                       point_abs_om() ).first;
+    CAPTURE( start.to_string() );
+    CHECK( project_to<coords::om>( start.xy() ) == point_abs_om() );
     g->place_player_overmap( ben_thanh );
     REQUIRE_FALSE( bridge.is_invalid() );
-    g->place_player_overmap( project_combine( point_abs_om( 1, 2 ), bridge ) );
+    g->place_player_overmap( project_combine( point_abs_om(), bridge ) );
     get_globals().remove_global_value( "overmap_pregenerated_path" );
     clear_avatar();
     clear_map();

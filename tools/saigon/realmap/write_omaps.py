@@ -4,7 +4,7 @@
   python3 tools/saigon/realmap/write_omaps.py GRID.json [OUT_FOLDER]
 
 OUT_FOLDER defaults to data/mods/saigon_2000s/realmap_2009.  Writes overmap_<x>_<y>.omap.gz for the
-5 x 4 overmaps (x 0-4, y 0-3), every z level, marked "final" so the game adds nothing procedural on
+5 x 4 overmaps (x -1..3, y -2..1: see ORIGIN_OM), every z level, marked "final" so the game adds nothing procedural on
 top (doc/saigon/REALMAP_PLAN.md).  Overmaps beyond them are generated as usual (Vietmap).
 
 v1 (unit R2b):
@@ -33,6 +33,10 @@ from omap import Overmap  # noqa: E402
 import place_landmarks  # noqa: E402
 
 OM = 180
+# The area's overmap (1, 2) - District 1 west, District 3, District 10, south Phú Nhuận - is the
+# game's overmap (0, 0): a new game looks for its start there first (game::start_game spirals out
+# from the world origin), so it begins in central Saigon. The area spans overmaps -1..3, -2..1.
+ORIGIN_OM = ( -1, -2 )
 ROT = [ 'north', 'east', 'south', 'west' ]
 DIRS = { 'n': ( 0, -1 ), 'e': ( 1, 0 ), 's': ( 0, 1 ), 'w': ( -1, 0 ) }
 FACING = { 'n': 0, 'e': 1, 's': 2, 'w': 3 }
@@ -90,7 +94,7 @@ class World:
 
     def __init__( self, cols, rows ):
         self.cols, self.rows = cols, rows
-        self.oms = { ( x, y ): Overmap( x, y ) for x in range( cols ) for y in range( rows ) }
+        self.oms = { ( x, y ): Overmap( x + ORIGIN_OM[0], y + ORIGIN_OM[1] ) for x in range( cols ) for y in range( rows ) }
         self.used = set()
 
     def set( self, x, y, z, ter ):
