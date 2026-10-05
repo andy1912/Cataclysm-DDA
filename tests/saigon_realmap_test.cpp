@@ -150,7 +150,9 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
             const std::string id = om.ter( tripoint_om_omt( x, y, 0 ) ).id().str();
             const std::string kind = id.rfind( "road", 0 ) == 0 ? "road" : id.rfind( "bridge", 0 ) == 0 ? "bridge" :
                                      id.rfind( "lake", 0 ) == 0 ? "water" : id.rfind( "sgn_nh_solo", 0 ) == 0 ? "nha_ong" :
-                                     id.rfind( "sgn_hem", 0 ) == 0 ? "hem" : id;
+                                     id.rfind( "sgn_hem", 0 ) == 0 ? "hem" : id.rfind( "sgn_chua", 0 ) == 0 ? "pagoda" :
+                                     id.rfind( "sgn_truong", 0 ) == 0 ? "school" : id.rfind( "sgn_pl_cay_xang", 0 ) == 0 ? "fuel" :
+                                     id.rfind( "sgn_cho", 0 ) == 0 ? "market" : id;
             count[kind]++;
             if( kind == "bridge" && bridge.is_invalid() ) {
                 bridge = tripoint_om_omt( x, y, 0 );
@@ -169,6 +171,22 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     CHECK( count["water"] > 200 );
     CHECK( count["bridge"] > 5 );
     CHECK( decks > 5 );
+    // places from the data (R4): central Saigon has its pagodas, schools, petrol stations, markets
+    CAPTURE( count["pagoda"], count["school"], count["fuel"], count["market"] );
+    CHECK( count["pagoda"] >= 10 );
+    CHECK( count["school"] >= 20 );
+    CHECK( count["fuel"] >= 10 );
+    CHECK( count["market"] >= 4 * 5 );
+    // the 2009 outskirts (R3): overmap (2, 0), Quận 2 east, is mostly fields
+    overmap &east = overmap_buffer.get( point_abs_om( 2, 0 ) );
+    int fields = 0;
+    for( int x = 0; x < OMAPX; x++ ) {
+        for( int y = 0; y < OMAPY; y++ ) {
+            fields += east.ter( tripoint_om_omt( x, y, 0 ) ).id().str() == "field";
+        }
+    }
+    CAPTURE( fields );
+    CHECK( fields > OMAPX * OMAPY / 3 );
     // Bến Thành (10.7725 N, 106.6980 E) is tile (158, 161) of overmap (0, 0): the market stands
     // within 5 tiles (120 m) of it (tools/saigon/realmap/landmarks_2009.json)
     const tripoint_abs_omt ben_thanh( 158, 161, 0 );

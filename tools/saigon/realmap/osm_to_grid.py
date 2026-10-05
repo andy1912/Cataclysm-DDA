@@ -234,6 +234,11 @@ def roads( terrain, corr ):
             continue
         if t.get( 'tunnel' ) in ( 'yes', 'building_passage' ) or t.get( 'area' ) == 'yes':
             continue
+        if hw not in MAJOR and any( z.get( 'drop_minor_streets' ) and
+                                    all( point_in( z['polygon'], p['lat'], p['lon'] ) for p in e['geometry'] )
+                                    for z in corr.get( 'zones', [] ) ):
+            skipped += 1
+            continue
         if hw in MAJOR:
             cls = MAJOR[hw]
         elif hw in MINOR and name and not ALLEY_NAME.match( name ) and length_m( e['geometry'] ) >= MIN_STREET_M:

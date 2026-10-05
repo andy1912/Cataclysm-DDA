@@ -1,5 +1,5 @@
 {
-  "about": "Turns today's OpenStreetMap into Saigon as of late 2009. Every entry gives its reason. Zones are painted before the OSM land use (OSM water and parks still win inside them); drop_roads_inside removes OSM streets lying wholly inside the zone unless named in keep_road_names.",
+  "about": "Turns today's OpenStreetMap into Saigon as of late 2009. Every entry gives its reason. Zones are painted before the OSM land use (OSM water and parks still win inside them); drop_roads_inside removes OSM streets lying wholly inside the zone unless named in keep_road_names. drop_minor_streets removes the zone's named side streets (major roads stay).",
   "drop_road_names": [
     "Mai Chí Thọ",
     "Phạm Văn Đồng",
@@ -22,10 +22,104 @@
       "why": "in 2009 the peninsula opposite District 1 was being cleared for the new town: marsh, creeks and a few old lanes; the grid streets came after 2010",
       "class": "marsh",
       "drop_roads_inside": true,
-      "keep_road_names": [ "Lương Định Của", "Trần Não", "Nguyễn Thị Định" ],
+      "keep_road_names": [
+        "Lương Định Của",
+        "Trần Não",
+        "Nguyễn Thị Định"
+      ],
       "polygon": [
-        [ 10.7905, 106.7140 ], [ 10.7885, 106.7240 ], [ 10.7800, 106.7335 ], [ 10.7700, 106.7335 ],
-        [ 10.7635, 106.7210 ], [ 10.7650, 106.7085 ], [ 10.7745, 106.7060 ], [ 10.7850, 106.7075 ]
+        [
+          10.7905,
+          106.714
+        ],
+        [
+          10.7885,
+          106.724
+        ],
+        [
+          10.78,
+          106.7335
+        ],
+        [
+          10.77,
+          106.7335
+        ],
+        [
+          10.7635,
+          106.721
+        ],
+        [
+          10.765,
+          106.7085
+        ],
+        [
+          10.7745,
+          106.706
+        ],
+        [
+          10.785,
+          106.7075
+        ]
+      ]
+    },
+    {
+      "name": "Quận 2 east and Quận 9 south",
+      "why": "in 2009 Bình Trưng, Thạnh Mỹ Lợi, Cát Lái and Phú Hữu were rice fields, shrimp ponds and canal villages along a few roads; the side-street grids are 2010s subdivisions",
+      "class": "farmland",
+      "drop_minor_streets": true,
+      "polygon": [
+        [
+          10.805,
+          106.765
+        ],
+        [
+          10.805,
+          106.821
+        ],
+        [
+          10.729,
+          106.821
+        ],
+        [
+          10.729,
+          106.75
+        ],
+        [
+          10.76,
+          106.748
+        ],
+        [
+          10.785,
+          106.758
+        ]
+      ]
+    },
+    {
+      "name": "Quận 9 around Suối Tiên",
+      "why": "east of Xa lộ Hà Nội the High-Tech Park was mostly empty lots in 2009 and the rest fields and villages",
+      "class": "farmland",
+      "drop_minor_streets": true,
+      "polygon": [
+        [
+          10.886,
+          106.79
+        ],
+        [
+          10.886,
+          106.821
+        ],
+        [
+          10.805,
+          106.821
+        ],
+        [
+          10.805,
+          106.79
+        ],
+        [
+          10.84,
+          106.785
+        ]
       ]
     }
   ]

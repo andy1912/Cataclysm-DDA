@@ -12,10 +12,12 @@ v1 (unit R2b):
              (straight, north-south or east-west; the game adds the deck, supports and ramps)
   water      lake_surface: the game turns the edges into shores and adds the lake bed below
   blocks     tiles facing a street become nhà ống (5 storeys + roof) turned to face it; tiles
-             inside blocks become hẻm blocks
+             inside blocks become hẻm blocks, or fields where streets are sparse (R3); farmland
+             along main roads gets village shophouses
   land use   parks, warehouses, fields, marsh; airport and cemeteries are open ground until R4
   landmarks  the 19 landmarks on their real sites (R5, place_landmarks.py, landmarks_2009.json)
-Places come in R4.
+  places     fuel, markets, pagodas, churches, schools, hospitals, police, supermarkets of 2009 and
+             cemeteries from the data (R4, place_places.py)
 
 Every terrain id written is checked against the overmap_terrain definitions of dda and the mod.
 """
@@ -31,6 +33,7 @@ sys.path.insert( 0, HERE )
 sys.path.insert( 0, os.path.join( HERE, '..', 'art' ) )
 from omap import Overmap  # noqa: E402
 import place_landmarks  # noqa: E402
+import place_places  # noqa: E402
 
 OM = 180
 # The area's overmap (1, 2) - District 1 west, District 3, District 10, south Phú Nhuận - is the
@@ -89,6 +92,25 @@ def rotated( ter, r ):
     return ter
 
 
+DENSITY_RADIUS = 15            # tiles: a 31 x 31 window, about 750 m
+RURAL_DENSITY = 0.06           # below this share of street tiles a block's inside is fields, not hẻm
+
+
+def road_density( road_tiles, W, H, r ):
+    """Share of road tiles in the ( 2r+1 )^2 window around a tile (summed-area table)."""
+    I = [ [ 0 ] * ( W + 1 ) for _ in range( H + 1 ) ]
+    for y in range( H ):
+        acc, cur, prev = 0, I[y + 1], I[y]
+        for x in range( W ):
+            acc += ( x, y ) in road_tiles
+            cur[x + 1] = prev[x + 1] + acc
+
+    def at( x, y ):
+        x0, x1, y0, y1 = max( 0, x - r ), min( W, x + r + 1 ), max( 0, y - r ), min( H, y + r + 1 )
+        return ( I[y1][x1] - I[y0][x1] - I[y1][x0] + I[y0][x0] ) / ( ( x1 - x0 ) * ( y1 - y0 ) )
+    return at
+
+
 class World:
     """The 5 x 4 overmaps as one big tile space."""
 
@@ -116,7 +138,8 @@ class World:
                 self.used.add( ( x + dx, y + dy ) )
 
 
-PREVIEW = [ ( 'sgn_lm_', ( 255, 0, 255 ) ), ( 'road', ( 70, 70, 70 ) ), ( 'bridge', ( 155, 63, 200 ) ),
+PREVIEW = [ ( 'sgn_lm_', ( 255, 0, 255 ) ), ( 'sgn_pl_', ( 0, 200, 220 ) ), ( 'sgn_cho', ( 255, 127, 0 ) ),
+            ( 'sgn_chua', ( 192, 0, 0 ) ), ( 'sgn_nha_tho', ( 255, 176, 200 ) ), ( 'sgn_truong', ( 0, 80, 255 ) ), ( 'road', ( 70, 70, 70 ) ), ( 'bridge', ( 155, 63, 200 ) ),
             ( 'lake', ( 31, 79, 176 ) ), ( 'sgn_nh_', ( 232, 150, 60 ) ), ( 'sgn_hem', ( 230, 200, 154 ) ),
             ( 'park', ( 63, 165, 72 ) ), ( 'warehouse', ( 150, 150, 150 ) ), ( 'forest_water', ( 122, 184, 160 ) ),
             ( 'field', ( 242, 237, 220 ) ) ]
@@ -156,6 +179,9 @@ def main():
     # ---- landmarks on their real sites (R5); minor streets under them are removed
     for line in place_landmarks.place( world, terrain, road_tiles, bld ):
         print( '  ' + line )
+    # ---- everyday places from the data (R4)
+    for line in place_places.place( world, terrain, road_tiles, bld, g['places'], W, H ):
+        print( '  ' + line )
     bridges = 0
     for ( x, y ), ( c, cls, br ) in road_tiles.items():
         if ( x, y ) in world.used:
@@ -170,9 +196,20 @@ def main():
             world.set( x, y, 0, 'road' + LINEAR_SUFFIX[c] )
         world.used.add( ( x, y ) )
 
-    # ---- water and land use
+    # ---- water and land use; farmland along a main road is left for the village shophouses below
     LAND = { 'park': 'park', 'industrial': 'warehouse', 'farmland': 'field', 'marsh': 'forest_water',
              'cemetery': 'field', 'government': 'field', 'open': 'field' }
+    rank = { 'boulevard': 3, 'main_street': 2, 'street': 1 }
+
+    def best_street( x, y, minimum=1 ):
+        best = None
+        for d, ( dx, dy ) in DIRS.items():
+            q = ( x + dx, y + dy )
+            if q in road_tiles and terrain[q[1]][q[0]] not in WATER and rank[road_tiles[q][1]] >= minimum:
+                score = rank[road_tiles[q][1]] + rng.random() * 0.1
+                if best is None or score > best[0]:
+                    best = ( score, d )
+        return best
     for y in range( H ):
         for x in range( W ):
             if ( x, y ) in world.used:
@@ -181,29 +218,30 @@ def main():
             if t in WATER:
                 world.set( x, y, 0, 'lake_surface' )
                 world.used.add( ( x, y ) )
+            elif t == 'farmland' and best_street( x, y, 2 ) and rng.random() < 0.6:
+                continue
             elif t in LAND:
                 ter = LAND[t]
                 world.set( x, y, 0, ter if ter in ( 'field', 'forest_water' ) else ter + '_' + ROT[rng.randrange( 4 )] )
                 world.used.add( ( x, y ) )
 
-    # ---- city blocks: frontage shophouses facing the best street, hẻm blocks inside
-    rank = { 'boulevard': 3, 'main_street': 2, 'street': 1 }
+    # ---- city blocks: frontage shophouses facing the best street; inside, hẻm blocks where the city
+    # was dense in 2009 and fields where it was not (R3: few named streets within ~750 m)
+    density = road_density( road_tiles, W, H, DENSITY_RADIUS )
     nha_ong, hem = bld['sgn_nhaong_row_1'], bld['sgn_hem_block_1']
-    fronts = inner = 0
+    fronts = inner = fields = 0
     for y in range( H ):
         for x in range( W ):
             if ( x, y ) in world.used:
                 continue
-            best = None
-            for d, ( dx, dy ) in DIRS.items():
-                q = ( x + dx, y + dy )
-                if q in road_tiles and terrain[q[1]][q[0]] not in WATER:
-                    score = rank[road_tiles[q][1]] + rng.random() * 0.1
-                    if best is None or score > best[0]:
-                        best = ( score, d )
+            best = best_street( x, y )
             if best:
                 world.place( nha_ong, x, y, FACING[best[1]] )
                 fronts += 1
+            elif density( x, y ) < RURAL_DENSITY:
+                world.set( x, y, 0, 'field' )
+                world.used.add( ( x, y ) )
+                fields += 1
             else:
                 world.place( hem, x, y, rng.randrange( 4 ) )
                 inner += 1
@@ -220,8 +258,8 @@ def main():
     for om in world.oms.values():
         om.write( out )
     preview( world, W, H, os.path.splitext( grid_path )[0].replace( '.grid', '' ) + '.omap.png' )
-    print( 'wrote %d overmaps to %s: %d road tiles (%d bridges), %d shophouse fronts, %d hẻm blocks'
-           % ( len( world.oms ), os.path.relpath( out, ROOT ), len( road_tiles ), bridges, fronts, inner ) )
+    print( 'wrote %d overmaps to %s: %d road tiles (%d bridges), %d shophouse fronts, %d hẻm blocks, %d fields inside sparse blocks'
+           % ( len( world.oms ), os.path.relpath( out, ROOT ), len( road_tiles ), bridges, fronts, inner, fields ) )
 
 
 if __name__ == '__main__':
