@@ -909,6 +909,17 @@ void overmap::unserialize_omap( const JsonValue &jsin, const cata_path &json_pat
         bool is_final = false;
         jo.read( "final", is_final );
         pregenerated_final = pregenerated_final || is_final;
+        // Saigon fork: a hand-made overmap can name its cities (districts), so the overmap shows
+        // their names and place_mongroups() gives them their city hordes
+        if( jo.has_array( "cities" ) ) {
+            for( JsonObject jc : jo.get_array( "cities" ) ) {
+                city c( jc.get_string( "name" ), point_om_omt( jc.get_int( "x" ), jc.get_int( "y" ) ),
+                        jc.get_int( "size" ) );
+                c.pos_om = pos();
+                c.population = jc.get_int( "population", 0 );
+                cities.push_back( c );
+            }
+        }
         JsonArray jal = jo.get_array( "layers" );
 
         if( type == "overmap" ) {

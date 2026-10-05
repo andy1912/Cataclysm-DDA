@@ -1,9 +1,11 @@
 #include <map>
+#include <set>
 #include <memory>
 #include <string>
 #include <vector>
 
 #include "cata_catch.h"
+#include "city.h"
 #include "cata_utility.h"
 #include "filesystem.h"
 #include "game.h"
@@ -194,6 +196,13 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     }
     CAPTURE( fields );
     CHECK( fields > OMAPX * OMAPY / 3 );
+    // the 2009 districts are the overmap's cities: their names on the map, their hordes
+    std::set<std::string> names;
+    for( const city &c : om.cities ) {
+        names.insert( c.name );
+    }
+    CHECK( names.count( "Quận 1" ) == 1 );
+    CHECK( names.count( "Quận 3" ) == 1 );
     // Bến Thành (10.7725 N, 106.6980 E) is tile (158, 161) of overmap (0, 0): the market stands
     // within 5 tiles (120 m) of it (tools/saigon/realmap/landmarks_2009.json)
     const tripoint_abs_omt ben_thanh( 158, 161, 0 );

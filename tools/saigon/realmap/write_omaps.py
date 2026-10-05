@@ -16,6 +16,7 @@ v1 (unit R2b):
              inside blocks become hẻm blocks, or fields where streets are sparse (R3); farmland
              along main roads gets village shophouses
   land use   parks, warehouses, fields, marsh; airport and cemeteries are open ground until R4
+  districts  the 2009 districts as named cities (districts_2009.json): overmap labels and hordes
   landmarks  the 19 landmarks on their real sites (R5, place_landmarks.py, landmarks_2009.json)
   places     fuel, markets, pagodas, churches, schools, hospitals, police, supermarkets of 2009 and
              cemeteries from the data (R4, place_places.py)
@@ -34,6 +35,7 @@ sys.path.insert( 0, HERE )
 sys.path.insert( 0, os.path.join( HERE, '..', 'art' ) )
 from omap import Overmap  # noqa: E402
 import place_landmarks  # noqa: E402
+import classify as C  # noqa: E402
 import place_places  # noqa: E402
 
 OM = 180
@@ -347,6 +349,12 @@ def main():
             else:
                 world.place( hem, x, y, rng.randrange( 4 ) )
                 inner += 1
+
+    # ---- the 2009 districts as the overmap's cities (names, hordes)
+    for d in json.load( open( os.path.join( HERE, 'districts_2009.json' ) ) )['districts']:
+        x, y = ( int( v ) for v in C.latlon_to_tile( d['lat'], d['lon'] ) )
+        world.oms[( x // OM, y // OM )].cities.append( { 'name': d['name'], 'x': x % OM, 'y': y % OM,
+                                                        'size': d['size'], 'population': d['population'] } )
 
     # ---- check and write
     bad = set()

@@ -5,7 +5,9 @@ Format, as read by overmap::unserialize_omap (src/savegame.cpp): a JSON array wi
 per z level, each {"type": "overmap", "om_pos": [x, y], "z": z, "final": true,
 "layers": [[oter_id, run_length], ...]} covering 180 x 180 tiles in row-major order
 (x fastest).  "final": true (Saigon fork) tells overmap::generate() to keep this layout and
-skip its procedural steps.  dda's own files (the MA mod) have one layer and no "final".
+skip its procedural steps; the z 0 object may list "cities" ({name, x, y, size, population}),
+which the overmap shows and gives city hordes (Saigon fork).  dda's own files (the MA mod)
+have one layer and no "final".
 """
 import gzip
 import json
@@ -20,6 +22,7 @@ class Overmap:
     def __init__( self, x, y ):
         self.pos = ( x, y )
         self.cells = {}                                   # ( x, y, z ) -> oter id
+        self.cities = []                                  # { name, x, y, size, population }
 
     def set( self, x, y, z, oter ):
         assert 0 <= x < OMAPX and 0 <= y < OMAPY, ( x, y )
@@ -46,6 +49,8 @@ class Overmap:
             default = ground if z == 0 else ( above if z > 0 else below )
             objs.append( { 'type': 'overmap', 'om_pos': list( self.pos ), 'z': z, 'final': True,
                            'layers': self.layer( z, default ) } )
+            if z == 0 and self.cities:
+                objs[-1]['cities'] = self.cities
         os.makedirs( folder, exist_ok=True )
         path = os.path.join( folder, 'overmap_%d_%d.omap.gz' % self.pos )
         with gzip.open( path, 'wt', encoding='utf-8' ) as f:

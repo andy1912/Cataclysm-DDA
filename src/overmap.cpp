@@ -970,73 +970,73 @@ void overmap::generate( const std::vector<const overmap *> &neighbor_overmaps,
     // Saigon fork: a complete hand-made overmap ("final": true) keeps its layout; only the
     // sublevels, bridge decks, monster groups and radios below are added.
     if( !pregenerated_final ) {
-    if( settings->neighbor_connections ) {
-        populate_connections_out_from_neighbors( neighbor_overmaps );
-    }
-    if( settings->overmap_river ) {
-        place_rivers( neighbor_overmaps );
-    }
-    if( settings->overmap_lake ) {
-        place_lakes( neighbor_overmaps );
-    }
-    if( settings->overmap_ocean ) {
-        place_oceans( neighbor_overmaps );
-    }
-    if( settings->overmap_forest ) {
-        place_forests();
-    }
-    if( settings->overmap_forest && settings->place_swamps ) {
-        place_swamps();
-    }
-    if( settings->overmap_ravine ) {
-        place_ravines();
-    }
-    if( settings->overmap_river ) {
-        // Polish rivers now so highways get the correct predecessors rather than river_center
-        polish_river( neighbor_overmaps );
-    }
-    if( settings->overmap_highway ) {
-        highway_paths = place_highways( neighbor_overmaps );
-    }
-    if( settings->city_spec ) {
-        place_cities();
-    }
-    if( settings->overmap_highway ) {
-        place_highway_interchanges( highway_paths );
-    }
-    if( settings->city_spec ) {
-        build_cities();
-    }
-    if( settings->forest_trail ) {
-        place_forest_trails();
-    }
-    if( settings->place_railroads_before_roads ) {
-        if( settings->place_railroads ) {
-            place_railroads( neighbor_overmaps );
+        if( settings->neighbor_connections ) {
+            populate_connections_out_from_neighbors( neighbor_overmaps );
         }
-        if( settings->place_roads ) {
-            place_roads( neighbor_overmaps );
+        if( settings->overmap_river ) {
+            place_rivers( neighbor_overmaps );
         }
-    } else {
-        if( settings->place_roads ) {
-            place_roads( neighbor_overmaps );
+        if( settings->overmap_lake ) {
+            place_lakes( neighbor_overmaps );
         }
-        if( settings->place_railroads ) {
-            place_railroads( neighbor_overmaps );
+        if( settings->overmap_ocean ) {
+            place_oceans( neighbor_overmaps );
         }
-    }
-    if( settings->place_specials ) {
-        place_specials( enabled_specials );
-    }
-    if( settings->overmap_highway ) {
-        finalize_highways( highway_paths );
-    }
-    if( settings->forest_trail ) {
-        place_forest_trailheads();
-    }
-    if( settings->overmap_river ) {
-        polish_river( neighbor_overmaps ); // Polish again for placed specials
-    }
+        if( settings->overmap_forest ) {
+            place_forests();
+        }
+        if( settings->overmap_forest && settings->place_swamps ) {
+            place_swamps();
+        }
+        if( settings->overmap_ravine ) {
+            place_ravines();
+        }
+        if( settings->overmap_river ) {
+            // Polish rivers now so highways get the correct predecessors rather than river_center
+            polish_river( neighbor_overmaps );
+        }
+        if( settings->overmap_highway ) {
+            highway_paths = place_highways( neighbor_overmaps );
+        }
+        if( settings->city_spec ) {
+            place_cities();
+        }
+        if( settings->overmap_highway ) {
+            place_highway_interchanges( highway_paths );
+        }
+        if( settings->city_spec ) {
+            build_cities();
+        }
+        if( settings->forest_trail ) {
+            place_forest_trails();
+        }
+        if( settings->place_railroads_before_roads ) {
+            if( settings->place_railroads ) {
+                place_railroads( neighbor_overmaps );
+            }
+            if( settings->place_roads ) {
+                place_roads( neighbor_overmaps );
+            }
+        } else {
+            if( settings->place_roads ) {
+                place_roads( neighbor_overmaps );
+            }
+            if( settings->place_railroads ) {
+                place_railroads( neighbor_overmaps );
+            }
+        }
+        if( settings->place_specials ) {
+            place_specials( enabled_specials );
+        }
+        if( settings->overmap_highway ) {
+            finalize_highways( highway_paths );
+        }
+        if( settings->forest_trail ) {
+            place_forest_trailheads();
+        }
+        if( settings->overmap_river ) {
+            polish_river( neighbor_overmaps ); // Polish again for placed specials
+        }
     }
 
     // TODO: there is no reason we can't generate the sublevels in one pass
