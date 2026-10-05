@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 
+#include "avatar.h"
 #include "cata_catch.h"
 #include "city.h"
 #include "cata_utility.h"
@@ -13,11 +14,14 @@
 #include "path_info.h"
 #include "coordinates.h"
 #include "global_vars.h"
+#include "map.h"
 #include "map_helpers.h"
 #include "math_parser_diag_value.h"
 #include "omdata.h"
 #include "overmap.h"
 #include "overmapbuffer.h"
+#include "pathfinding.h"
+#include "point.h"
 #include "player_helpers.h"
 #include "start_location.h"
 #include "worldfactory.h"
@@ -176,8 +180,9 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     CHECK( count["road"] > 3000 );
     CHECK( count["nha_ong"] > 3000 );
     CHECK( count["water"] > 200 );
-    CHECK( count["bridge"] > 5 );
-    CHECK( decks > 5 );
+    // canal crossings of 1-2 tiles are culverts; only the longer crossings are bridges with decks
+    CHECK( count["bridge"] > 0 );
+    CHECK( decks > 0 );
     // places from the data (R4): central Saigon has its pagodas, schools, petrol stations, markets
     CAPTURE( count["pagoda"], count["school"], count["fuel"], count["market"] );
     CHECK( count["pagoda"] >= 10 );
@@ -289,3 +294,118 @@ TEST_CASE( "saigon_realmap_2009_countryside", "[saigon]" )
     clear_map();
     clear_overmaps();
 }
+
+// Review 2026-10-06: the real map could not be walked.  Every hẻm network was sealed (a hẻm block
+// opens its alleys only towards roads, canals and other hẻm blocks, and every street front was a
+// shophouse) and most bridges had no ramps (one-tile runs, bends).  This walks, with the game's
+// own pathfinding on the generated map, from a street over a bridge to the far bank, and from a
+// street through an alley mouth into an inner hẻm block.
+static tripoint_bub_ms omt_centre( const tripoint_abs_omt &p )
+{
+    return get_map().get_bub( project_to<coords::ms>( p ) + point( 12, 12 ) );
+}
+
+TEST_CASE( "saigon_realmap_2009_walkable", "[saigon]" )
+{
+    const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
+    if( !oter_str_id( "sgn_hem_block_north" ).is_valid() || !file_exist( file.get_unrelative_path() ) ) {
+        WARN( "saigon_2000s or its real map is not present; skipping" );
+        return;
+    }
+    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
+    clear_avatar();
+    clear_map();
+    clear_overmaps();
+    overmap &om = overmap_buffer.get( point_abs_om() );
+    const auto id_at = [&]( const point_om_omt & p ) {
+        return om.ter( tripoint_om_omt( p, 0 ) ).id().str();
+    };
+    const auto starts = [&]( const point_om_omt & p, const std::string & prefix ) {
+        return overmap::inbounds( tripoint_om_omt( p, 0 ) ) && id_at( p ).rfind( prefix, 0 ) == 0;
+    };
+    // a short bridge with a road beyond each end, anywhere on the real map (central Saigon's
+    // canal crossings are culverts)
+    tripoint_abs_omt bank_a = tripoint_abs_omt::invalid;
+    tripoint_abs_omt bank_b = tripoint_abs_omt::invalid;
+    for( int ox = -1; ox <= 3 && bank_a.is_invalid(); ox++ ) {
+        for( int oy = -2; oy <= 1 && bank_a.is_invalid(); oy++ ) {
+            overmap &o = overmap_buffer.get( point_abs_om( ox, oy ) );
+            const auto ter_at = [&]( const point_om_omt & p ) {
+                return overmap::inbounds( tripoint_om_omt( p, 0 ) ) ? o.ter( tripoint_om_omt( p, 0 ) ).id().str() :
+                       std::string();
+            };
+            for( int x = 6; x < OMAPX - 6 && bank_a.is_invalid(); x++ ) {
+                for( int y = 6; y < OMAPY - 6 && bank_a.is_invalid(); y++ ) {
+                    // the game turns the end tiles of a run into ramps (bridgehead_ground)
+                    const point_om_omt p( x, y );
+                    if( ter_at( p ).rfind( "bridgehead_ground", 0 ) != 0 ) {
+                        continue;
+                    }
+                    for( const point &d : { point::east, point::south } ) {
+                        point_om_omt end = p + d;
+                        while( ter_at( end ).rfind( "bridge_", 0 ) == 0 ) {
+                            end += d;
+                        }
+                        if( end != p + d && ter_at( end ).rfind( "bridgehead_ground", 0 ) == 0 &&
+                            ter_at( p - d ).rfind( "road", 0 ) == 0 && ter_at( end + d ).rfind( "road", 0 ) == 0 &&
+                            ( end - p ).x() + ( end - p ).y() <= 3 && bank_a.is_invalid() ) {
+                            bank_a = project_combine( point_abs_om( ox, oy ), tripoint_om_omt( p - d, 0 ) );
+                            bank_b = project_combine( point_abs_om( ox, oy ), tripoint_om_omt( end + d, 0 ) );
+                        }
+                    }
+                }
+            }
+        }
+    }
+    REQUIRE_FALSE( bank_a.is_invalid() );
+    {
+        // the player stands mid-bridge so both banks are inside the reality bubble (it reaches
+        // about 66 tiles each way); walk from the near bank's road to the far bank's road
+        const point step( ( bank_b.x() > bank_a.x() ) - ( bank_b.x() < bank_a.x() ),
+                          ( bank_b.y() > bank_a.y() ) - ( bank_b.y() < bank_a.y() ) );
+        g->place_player_overmap( tripoint_abs_omt( ( bank_a.x() + bank_b.x() ) / 2, ( bank_a.y() + bank_b.y() ) / 2, 0 ) );
+        map &here = get_map();
+        avatar &u = get_avatar();
+        const tripoint_bub_ms from = omt_centre( bank_a ) + step * 10;
+        const tripoint_bub_ms to = omt_centre( bank_b ) - step * 10;
+        u.setpos( here, from );
+        CAPTURE( bank_a.to_string(), bank_b.to_string() );
+        const std::vector<tripoint_bub_ms> path = here.route( u, pathfinding_target::point( to ) );
+        CHECK_FALSE( path.empty() );
+    }
+    // an alley mouth: a hẻm block between a road and an inner hẻm block
+    tripoint_abs_omt street = tripoint_abs_omt::invalid;
+    tripoint_abs_omt inner = tripoint_abs_omt::invalid;
+    for( int x = 6; x < OMAPX - 6 && street.is_invalid(); x++ ) {
+        for( int y = 6; y < OMAPY - 6 && street.is_invalid(); y++ ) {
+            const point_om_omt p( x, y );
+            if( !starts( p, "sgn_hem_block" ) ) {
+                continue;
+            }
+            for( const point &d : four_adjacent_offsets ) {
+                if( starts( p + d, "road" ) && starts( p - d, "sgn_hem_block" ) ) {
+                    street = project_combine( point_abs_om(), tripoint_om_omt( p + d, 0 ) );
+                    inner = project_combine( point_abs_om(), tripoint_om_omt( p - d, 0 ) );
+                    break;
+                }
+            }
+        }
+    }
+    REQUIRE_FALSE( street.is_invalid() );
+    clear_avatar();                                    // out of the river under the bridge
+    g->place_player_overmap( street );
+    {
+        map &here = get_map();
+        avatar &u = get_avatar();
+        u.setpos( here, omt_centre( street ) );
+        CAPTURE( street.to_string(), inner.to_string() );
+        const std::vector<tripoint_bub_ms> path = here.route( u, pathfinding_target::point( omt_centre( inner ) ) );
+        CHECK_FALSE( path.empty() );
+    }
+    get_globals().remove_global_value( "overmap_pregenerated_path" );
+    clear_avatar();
+    clear_map();
+    clear_overmaps();
+}
+
+

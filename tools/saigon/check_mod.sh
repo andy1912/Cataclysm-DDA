@@ -59,6 +59,12 @@ if [[ " ${mods[*]} " == *" saigon_2000s "* ]]; then
         head -20 "$ud/audit_us_content.txt"
         fail=1
     fi
+    # the real map must be walkable: straight, ramped bridges and a way into every hẻm network
+    if ! python3 tools/saigon/realmap/check_realmap.py > "$ud/check_realmap.txt" 2>&1; then
+        echo "FAIL: real map (tools/saigon/realmap/check_realmap.py):"
+        head -20 "$ud/check_realmap.txt"
+        fail=1
+    fi
 fi
 [ $fail -eq 0 ] && echo "OK: ${mods[*]}"
 exit $fail

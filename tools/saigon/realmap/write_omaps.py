@@ -138,7 +138,7 @@ def heal( road_tiles, land_ok ):
     for p in order:
         for d, ( dx, dy ) in DIRS.items():
             q = ( p[0] + dx, p[1] + dy )
-            if q in road_tiles and find( p ) != find( q ):
+            if q in road_tiles and find( p ) != find( q ) and land_ok( p ) and land_ok( q ):
                 c, cls, br = road_tiles[p]
                 road_tiles[p] = ( ''.join( x for x in 'nesw' if x in c + d ), cls, br )
                 c, cls, br = road_tiles[q]
@@ -162,6 +162,156 @@ def heal( road_tiles, land_ok ):
     return links
 
 
+def link( road_tiles, a, b, cls='street' ):
+    """Make a and b ( 4-adjacent ) road tiles linked to each other, creating them if needed."""
+    OPP = { 'n': 's', 's': 'n', 'e': 'w', 'w': 'e' }
+    d = next( k for k, ( dx, dy ) in DIRS.items() if ( a[0] + dx, a[1] + dy ) == b )
+    for p, x in ( ( a, d ), ( b, OPP[d] ) ):
+        c, k, br = road_tiles.get( p, ( '', cls, False ) )
+        road_tiles[p] = ( ''.join( y for y in 'nesw' if y in c + x ), k, br )
+
+
+def unlink_all( road_tiles, p ):
+    OPP = { 'n': 's', 's': 'n', 'e': 'w', 'w': 'e' }
+    for d in road_tiles.pop( p )[0]:
+        q = ( p[0] + DIRS[d][0], p[1] + DIRS[d][1] )
+        if q in road_tiles:
+            c, k, br = road_tiles[q]
+            road_tiles[q] = ( c.replace( OPP[d], '' ), k, br )
+
+
+def fix_crossings( road_tiles, terrain, W, H ):
+    """The game's bridges are straight decks with a ramp on each end tile, and it only adds the
+    ramps where a run of at least two bridge tiles ends: a one-tile bridge, a crossing that bends
+    or one that ends against water or a building cannot be walked.  So: a crossing of one or two
+    water tiles becomes plain road (a culvert); a longer one is rebuilt as one straight bridge from
+    bank to bank along its main direction, joined to the street on the far side over land."""
+    wet = lambda p: terrain[p[1]][p[0]] in WATER
+    inside = lambda p: 0 <= p[0] < W and 0 <= p[1] < H
+    seen = set()
+    crossings = [ p for p in road_tiles if wet( p ) ]
+    culverts = rebuilt = dropped = 0
+    for start in crossings:
+        if start in seen or start not in road_tiles:
+            continue
+        comp, stack = [], [ start ]
+        seen.add( start )
+        while stack:                                   # the crossing: linked road tiles on water
+            c = stack.pop()
+            comp.append( c )
+            for d in road_tiles[c][0]:
+                q = ( c[0] + DIRS[d][0], c[1] + DIRS[d][1] )
+                if q in road_tiles and wet( q ) and q not in seen:
+                    seen.add( q )
+                    stack.append( q )
+        cls = max( ( road_tiles[p][1] for p in comp ), key=[ 'street', 'main_street', 'boulevard' ].index )
+        entries = []                                   # ( land tile, direction from it into the water )
+        for c in comp:
+            for d in road_tiles[c][0]:
+                q = ( c[0] + DIRS[d][0], c[1] + DIRS[d][1] )
+                if q in road_tiles and not wet( q ):
+                    entries.append( ( q, next( k for k, v in DIRS.items() if ( q[0] + v[0], q[1] + v[1] ) == c ) ) )
+        if len( comp ) <= 2:
+            for c in comp:                             # a culvert: the road runs over the canal
+                terrain[c[1]][c[0]] = 'open'
+            culverts += 1
+            continue
+        for c in comp:
+            unlink_all( road_tiles, c )
+        if not entries:
+            dropped += 1
+            continue
+        # the bridge starts at the entry whose way into the water, followed straight, reaches the
+        # farthest other entry
+        best = None
+        for a, d in entries:
+            for b, _ in entries:
+                along = ( b[0] - a[0] ) * DIRS[d][0] + ( b[1] - a[1] ) * DIRS[d][1]
+                if along > 0 and ( best is None or along > best[0] ):
+                    best = ( along, a, d, b )
+        if best is None:
+            dropped += 1
+            continue
+        _, a, d, b = best
+        run, p = [], ( a[0] + DIRS[d][0], a[1] + DIRS[d][1] )
+        while inside( p ) and wet( p ) and len( run ) < 400:
+            run.append( p )
+            p = ( p[0] + DIRS[d][0], p[1] + DIRS[d][1] )
+        if not inside( p ) or len( run ) >= 400:
+            dropped += 1
+            continue
+        if len( run ) <= 2:
+            for c in run:
+                terrain[c[1]][c[0]] = 'open'
+        prev = a
+        for c in run + [ p ]:
+            link( road_tiles, prev, c, cls )
+            c0, k, _ = road_tiles[c]
+            road_tiles[c] = ( c0, k, len( run ) > 2 and c in run )
+            prev = c
+        # over land from the far bank to the street the crossing used to reach
+        if p != b:
+            path = land_path( p, b, lambda q: inside( q ) and not wet( q ), 40 )
+            for x, y in zip( path, path[1:] ):
+                link( road_tiles, x, y, cls )
+        rebuilt += 1
+    return 'crossings: %d short ones made culverts, %d rebuilt as straight bridges, %d dropped (no far bank)' % (
+        culverts, rebuilt, dropped )
+
+
+def settle_bridges( road_tiles, terrain, used ):
+    """Every road tile on water must belong to a straight bridge run of 2+ tiles with a road tile
+    beyond each end along its axis (where the game adds the ramps); anything else is a culvert."""
+    wet = lambda p: terrain[p[1]][p[0]] in WATER
+    good = set()
+    for p, ( c, cls, br ) in road_tiles.items():
+        if not wet( p ) or p in good or p in used:
+            continue
+        for axis, ( d0, d1 ) in ( ( 'ns', ( 'n', 's' ) ), ( 'ew', ( 'w', 'e' ) ) ):
+            if not ( set( c ) <= set( axis ) and c ):
+                continue
+            run = [ p ]
+            for d in ( d0, d1 ):
+                q = p
+                while True:
+                    q = ( q[0] + DIRS[d][0], q[1] + DIRS[d][1] )
+                    if q in road_tiles and wet( q ) and set( road_tiles[q][0] ) <= set( axis ):
+                        run.append( q )
+                    else:
+                        break
+            ends = [ ( min( run ), d0 ), ( max( run ), d1 ) ]
+            if len( run ) >= 2 and all( ( e[0] + DIRS[d][0], e[1] + DIRS[d][1] ) in road_tiles and
+                                        not wet( ( e[0] + DIRS[d][0], e[1] + DIRS[d][1] ) ) for e, d in ends ):
+                good.update( run )
+    n = 0
+    for p in list( road_tiles ):
+        if wet( p ) and p not in good and p not in used:
+            terrain[p[1]][p[0]] = 'open'
+            n += 1
+    return n
+
+
+def land_path( a, b, ok, limit ):
+    """Shortest 4-connected path from a to b over tiles where ok() holds (both ends included), or
+    [] when b is not within `limit` steps."""
+    prev, frontier = { a: None }, [ a ]
+    for _ in range( limit ):
+        nxt = []
+        for c in frontier:
+            for dx, dy in DIRS.values():
+                q = ( c[0] + dx, c[1] + dy )
+                if q not in prev and ( q == b or ok( q ) ):
+                    prev[q] = c
+                    nxt.append( q )
+        if b in prev:
+            path = [ b ]
+            while prev[path[-1]] is not None:
+                path.append( prev[path[-1]] )
+            return path[::-1]
+        frontier = nxt
+    return []
+
+
 def prune_islands( road_tiles, W, H ):
     parts = components( road_tiles )
     dropped = 0
@@ -176,6 +326,29 @@ def prune_islands( road_tiles, W, H ):
         sys.exit( 'road network broken: the largest piece holds only %d of %d road tiles' % ( biggest, len( road_tiles ) ) )
     return 'road network: %d small cut-off pieces dropped; the largest network holds %.1f %% of %d road tiles' % (
         dropped, 100 * biggest / len( road_tiles ), len( road_tiles ) )
+
+
+MOUTH_EVERY = 6                # one street-front tile in this many becomes an alley mouth
+
+
+def groups( tiles ):
+    """4-connected groups of a set of tiles."""
+    seen, out = set(), []
+    for p in sorted( tiles ):
+        if p in seen:
+            continue
+        stack, part = [ p ], []
+        seen.add( p )
+        while stack:
+            c = stack.pop()
+            part.append( c )
+            for dx, dy in DIRS.values():
+                q = ( c[0] + dx, c[1] + dy )
+                if q in tiles and q not in seen:
+                    seen.add( q )
+                    stack.append( q )
+        out.append( part )
+    return out
 
 
 DENSITY_RADIUS = 15            # tiles: a 31 x 31 window, about 750 m
@@ -262,6 +435,8 @@ def main():
         c = ''.join( d for d in conn if ( p[0] + DIRS[d][0], p[1] + DIRS[d][1] ) in roads )
         if c:
             road_tiles[p] = ( c, cls, br )
+    # ---- river and canal crossings the game can build (see fix_crossings)
+    print( '  ' + fix_crossings( road_tiles, terrain, W, H ) )
     # ---- road network check (R9): pieces cut off from everything (gated compounds, streets whose
     # only link was an alley) are dropped when small; report how much is one network
     print( '  road network: %d links added where separate pieces touch or end one tile apart'
@@ -274,15 +449,17 @@ def main():
     # ---- everyday places from the data (R4)
     for line in place_places.place( world, terrain, road_tiles, bld, g['places'], W, H ):
         print( '  ' + line )
+    # last check on the bridges: a straight run of 2+ landing on road at both ends, or a culvert
+    culverts = settle_bridges( road_tiles, terrain, world.used )
+    if culverts:
+        print( '  %d leftover bridge tiles made culverts' % culverts )
     bridges = 0
     for ( x, y ), ( c, cls, br ) in road_tiles.items():
         if ( x, y ) in world.used:
             continue
         if terrain[y][x] in WATER:
-            # the game's bridges run straight: keep the axis with the most links
-            ns = ( 'n' in c ) + ( 's' in c )
-            ew = ( 'e' in c ) + ( 'w' in c )
-            world.set( x, y, 0, 'bridge_north' if ns >= ew else 'bridge_east' )
+            # fix_crossings left only straight runs of 3+: the axis is the one the tile links along
+            world.set( x, y, 0, 'bridge_north' if 'n' in c or 's' in c else 'bridge_east' )
             bridges += 1
         else:
             world.set( x, y, 0, 'road' + LINEAR_SUFFIX[c] )
@@ -335,22 +512,51 @@ def main():
     # was dense in 2009 and fields where it was not (R3: few named streets within ~750 m)
     density = road_density( road_tiles, W, H, DENSITY_RADIUS )
     nha_ong, hem = bld['sgn_nhaong_row_1'], bld['sgn_hem_block_1']
-    fronts = inner = fields = 0
+    front, inside = {}, set()
+    fields = 0
     for y in range( H ):
         for x in range( W ):
             if ( x, y ) in world.used:
                 continue
             best = best_street( x, y )
             if best:
-                world.place( nha_ong, x, y, FACING[best[1]] )
-                fronts += 1
+                front[( x, y )] = best[1]
             elif density( x, y ) < RURAL_DENSITY:
                 world.set( x, y, 0, 'field' )
                 world.used.add( ( x, y ) )
                 fields += 1
             else:
-                world.place( hem, x, y, rng.randrange( 4 ) )
-                inner += 1
+                inside.add( ( x, y ) )
+    # alley mouths (đầu hẻm): a hẻm block opens its alleys only towards roads, canals and other
+    # hẻm blocks, so every network of inner hẻm blocks gets street-front tiles turned into hẻm
+    # blocks: about one in MOUTH_EVERY of the frontage it touches, at least one
+    mouths = set()
+    sealed = 0
+    for part in groups( set( inside ) ):
+        touching = sorted( { q for p in part for q in ( ( p[0] + dx, p[1] + dy ) for dx, dy in DIRS.values() )
+                             if q in front } )
+        if not touching:
+            # boxed in by parks, landmarks, places or water: an open lot, not a sealed alley maze
+            for p in part:
+                world.set( p[0], p[1], 0, 'field' )
+                world.used.add( p )
+                inside.discard( p )
+            sealed += 1
+            continue
+        mouths.update( touching[::MOUTH_EVERY] )
+    fronts = inner = 0
+    for p, d in front.items():
+        if p in mouths:
+            world.place( hem, p[0], p[1], FACING[d] )
+            inner += 1
+        else:
+            world.place( nha_ong, p[0], p[1], FACING[d] )
+            fronts += 1
+    for p in inside:
+        world.place( hem, p[0], p[1], rng.randrange( 4 ) )
+        inner += 1
+    print( '  hẻm: %d alley mouths on the streets; %d boxed-in pieces with no street frontage left as open lots'
+           % ( len( mouths ), sealed ) )
 
     # ---- the 2009 districts as the overmap's cities (names, hordes)
     for d in json.load( open( os.path.join( HERE, 'districts_2009.json' ) ) )['districts']:

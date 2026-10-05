@@ -13,7 +13,9 @@
 #include "cata_catch.h"
 #include "coordinates.h"
 #include "game.h"
+#include "global_vars.h"
 #include "map.h"
+#include "math_parser_diag_value.h"
 #include "map_helpers.h"
 #include "monster.h"
 #include "omdata.h"
@@ -88,6 +90,15 @@ TEST_CASE( "saigon_turn_time", "[.][saigon_perf]" )
         { "Bến Thành downtown", "sgn_lm_ben_thanh_11" },
         { "chợ", "sgn_cho_" },
     };
+    // SAIGON_PERF_MAP=saigon_2000s/realmap_2009 (with SAIGON_PERF_OUTSIDE=sgn_saigon_delta) measures
+    // a pregenerated map, chosen before clearing: clearing loads overmap (0, 0)
+    const char *perf_map = std::getenv( "SAIGON_PERF_MAP" );
+    if( perf_map != nullptr ) {
+        get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( perf_map ) ) );
+    }
+    if( const char *outside = std::getenv( "SAIGON_PERF_OUTSIDE" ) ) {
+        get_globals().set_global_value( "overmap_outside_region", diag_value( std::string( outside ) ) );
+    }
     clear_avatar();
     clear_map();
     clear_overmaps();
