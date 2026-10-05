@@ -238,6 +238,8 @@ In the game's own overmap view: District 1 with its landmarks outlined, and Ch�
 | Landmarks | the 19 landmarks at their real anchors and facing | `landmarks_2009.json`, `place_landmarks.py` |
 | Places | petrol stations, markets, pagodas, churches, schools, hospitals, police, 2009 supermarket chains, cemeteries | `place_places.py` |
 | Railway | the North-South line into Ga Sài Gòn and the Thủ Đức branch | `gen_duong_sat.py`, `write_omaps.py` |
+| Airport | Tân Sơn Nhất's runways, taxiways and aprons from OSM; the international terminal (landmark 20) | `gen_san_bay.py`, `osm_to_grid.py` |
+| Districts | the 18 urban districts of 2009 as the overmap's cities (names, hordes) | `districts_2009.json` |
 
 ### Rebuilding it
 

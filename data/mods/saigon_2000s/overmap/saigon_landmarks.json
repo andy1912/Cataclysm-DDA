@@ -3627,6 +3627,114 @@
     "looks_like": "sgn_lm_suoi_tien_00"
   },
   {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_san_bay_00",
+    "copy-from": "generic_city_building",
+    "name": "Sân bay Tân Sơn Nhất",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_san_bay_10",
+    "copy-from": "generic_city_building",
+    "name": "Sân bay Tân Sơn Nhất",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_san_bay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_san_bay_20",
+    "copy-from": "generic_city_building",
+    "name": "Sân bay Tân Sơn Nhất",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_san_bay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_san_bay_01",
+    "copy-from": "generic_city_building",
+    "name": "Sân bay Tân Sơn Nhất",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_san_bay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_san_bay_11",
+    "copy-from": "generic_city_building",
+    "name": "Sân bay Tân Sơn Nhất",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_san_bay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_san_bay_21",
+    "copy-from": "generic_city_building",
+    "name": "Sân bay Tân Sơn Nhất",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_san_bay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_san_bay_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Sân bay Tân Sơn Nhất (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_san_bay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_san_bay_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Sân bay Tân Sơn Nhất (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_san_bay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_san_bay_20_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Sân bay Tân Sơn Nhất (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_san_bay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_san_bay_01_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Sân bay Tân Sơn Nhất (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_san_bay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_san_bay_11_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Sân bay Tân Sơn Nhất (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_san_bay_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_san_bay_21_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Sân bay Tân Sơn Nhất (upper floor)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_san_bay_00"
+  },
+  {
     "type": "city_building",
     "id": "sgn_lm_ben_thanh",
     "locations": [
@@ -7130,6 +7238,119 @@
           1
         ],
         "overmap": "sgn_lm_suoi_tien_33_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_san_bay",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_san_bay_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_san_bay_10_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_san_bay_20_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_san_bay_01_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_san_bay_11_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_san_bay_21_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_san_bay_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_san_bay_10_z1_north"
+      },
+      {
+        "point": [
+          2,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_san_bay_20_z1_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_san_bay_01_z1_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_san_bay_11_z1_north"
+      },
+      {
+        "point": [
+          2,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_san_bay_21_z1_north"
       }
     ]
   }

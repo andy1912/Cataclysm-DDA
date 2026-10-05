@@ -120,8 +120,8 @@ TEST_CASE( "saigon_realmap_reads_dda_single_layer_maps", "[overmap][saigon]" )
 // tools/saigon/realmap/write_omaps.py from OpenStreetMap). Overmap (0, 0) is central Saigon
 // (District 1 west, 3, 10): it loads with its streets, river, shophouses and bridges; the game
 // adds the bridge decks; Bến Thành stands on its site; a new game's start location is found there;
-// and the map generates without errors at Bến Thành, on a bridge over the Saigon River and on the
-// railway.
+// and the map generates without errors at Tân Sơn Nhất's terminal and runway, at Bến Thành, on a
+// bridge over the Saigon River and on the railway.
 TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
 {
     const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
@@ -218,6 +218,27 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
                                        point_abs_om() ).first;
     CAPTURE( start.to_string() );
     CHECK( project_to<coords::om>( start.xy() ) == point_abs_om() );
+    // Tân Sơn Nhất (overmap (-1, -1)): runways and the terminal (gen_san_bay.py, sgn_lm_san_bay)
+    overmap &airport = overmap_buffer.get( point_abs_om( -1, -1 ) );
+    int runway = 0;
+    tripoint_om_omt terminal = tripoint_om_omt::invalid;
+    tripoint_om_omt tarmac = tripoint_om_omt::invalid;
+    for( int x = 0; x < OMAPX; x++ ) {
+        for( int y = 0; y < OMAPY; y++ ) {
+            const std::string id = airport.ter( tripoint_om_omt( x, y, 0 ) ).id().str();
+            if( id == "sgn_sb_runway" ) {
+                runway++;
+                tarmac = tripoint_om_omt( x, y, 0 );
+            } else if( id.rfind( "sgn_lm_san_bay", 0 ) == 0 && terminal.is_invalid() ) {
+                terminal = tripoint_om_omt( x, y, 0 );
+            }
+        }
+    }
+    CAPTURE( runway );
+    CHECK( runway > 200 );
+    REQUIRE_FALSE( terminal.is_invalid() );
+    g->place_player_overmap( project_combine( point_abs_om( -1, -1 ), terminal ) );
+    g->place_player_overmap( project_combine( point_abs_om( -1, -1 ), tarmac ) );
     g->place_player_overmap( ben_thanh );
     REQUIRE_FALSE( bridge.is_invalid() );
     g->place_player_overmap( project_combine( point_abs_om(), bridge ) );

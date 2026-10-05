@@ -458,344 +458,386 @@
       "rotates": true
      },
      {
-      "id": "sgn_lm_stc_00",
+      "id": "sgn_lm_san_bay_00",
       "fg": 89,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_00",
+      "id": "sgn_lm_san_bay_01",
       "fg": 90,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_01",
+      "id": "sgn_lm_san_bay_10",
       "fg": 91,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_02",
+      "id": "sgn_lm_san_bay_11",
       "fg": 92,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_03",
+      "id": "sgn_lm_san_bay_20",
       "fg": 93,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_10",
+      "id": "sgn_lm_san_bay_21",
       "fg": 94,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_11",
+      "id": "sgn_lm_stc_00",
       "fg": 95,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_12",
+      "id": "sgn_lm_suoi_tien_00",
       "fg": 96,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_13",
+      "id": "sgn_lm_suoi_tien_01",
       "fg": 97,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_20",
+      "id": "sgn_lm_suoi_tien_02",
       "fg": 98,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_21",
+      "id": "sgn_lm_suoi_tien_03",
       "fg": 99,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_22",
+      "id": "sgn_lm_suoi_tien_10",
       "fg": 100,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_23",
+      "id": "sgn_lm_suoi_tien_11",
       "fg": 101,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_30",
+      "id": "sgn_lm_suoi_tien_12",
       "fg": 102,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_31",
+      "id": "sgn_lm_suoi_tien_13",
       "fg": 103,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_32",
+      "id": "sgn_lm_suoi_tien_20",
       "fg": 104,
       "rotates": true
      },
      {
-      "id": "sgn_lm_suoi_tien_33",
+      "id": "sgn_lm_suoi_tien_21",
       "fg": 105,
       "rotates": true
      },
      {
-      "id": "sgn_lm_tao_dan_00",
+      "id": "sgn_lm_suoi_tien_22",
       "fg": 106,
       "rotates": true
      },
      {
-      "id": "sgn_lm_tao_dan_01",
+      "id": "sgn_lm_suoi_tien_23",
       "fg": 107,
       "rotates": true
      },
      {
-      "id": "sgn_lm_tao_dan_02",
+      "id": "sgn_lm_suoi_tien_30",
       "fg": 108,
       "rotates": true
      },
      {
-      "id": "sgn_lm_tao_dan_10",
+      "id": "sgn_lm_suoi_tien_31",
       "fg": 109,
       "rotates": true
      },
      {
-      "id": "sgn_lm_tao_dan_11",
+      "id": "sgn_lm_suoi_tien_32",
       "fg": 110,
       "rotates": true
      },
      {
-      "id": "sgn_lm_tao_dan_12",
+      "id": "sgn_lm_suoi_tien_33",
       "fg": 111,
       "rotates": true
      },
      {
-      "id": "sgn_lm_tao_dan_20",
+      "id": "sgn_lm_tao_dan_00",
       "fg": 112,
       "rotates": true
      },
      {
-      "id": "sgn_lm_tao_dan_21",
+      "id": "sgn_lm_tao_dan_01",
       "fg": 113,
       "rotates": true
      },
      {
-      "id": "sgn_lm_tao_dan_22",
+      "id": "sgn_lm_tao_dan_02",
       "fg": 114,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_00",
+      "id": "sgn_lm_tao_dan_10",
       "fg": 115,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_01",
+      "id": "sgn_lm_tao_dan_11",
       "fg": 116,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_02",
+      "id": "sgn_lm_tao_dan_12",
       "fg": 117,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_03",
+      "id": "sgn_lm_tao_dan_20",
       "fg": 118,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_10",
+      "id": "sgn_lm_tao_dan_21",
       "fg": 119,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_11",
+      "id": "sgn_lm_tao_dan_22",
       "fg": 120,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_12",
+      "id": "sgn_lm_thao_cam_vien_00",
       "fg": 121,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_13",
+      "id": "sgn_lm_thao_cam_vien_01",
       "fg": 122,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_20",
+      "id": "sgn_lm_thao_cam_vien_02",
       "fg": 123,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_21",
+      "id": "sgn_lm_thao_cam_vien_03",
       "fg": 124,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_22",
+      "id": "sgn_lm_thao_cam_vien_10",
       "fg": 125,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_23",
+      "id": "sgn_lm_thao_cam_vien_11",
       "fg": 126,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_30",
+      "id": "sgn_lm_thao_cam_vien_12",
       "fg": 127,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_31",
+      "id": "sgn_lm_thao_cam_vien_13",
       "fg": 128,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_32",
+      "id": "sgn_lm_thao_cam_vien_20",
       "fg": 129,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thao_cam_vien_33",
+      "id": "sgn_lm_thao_cam_vien_21",
       "fg": 130,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thien_hau_00",
+      "id": "sgn_lm_thao_cam_vien_22",
       "fg": 131,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thien_hau_01",
+      "id": "sgn_lm_thao_cam_vien_23",
       "fg": 132,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thien_hau_10",
+      "id": "sgn_lm_thao_cam_vien_30",
       "fg": 133,
       "rotates": true
      },
      {
-      "id": "sgn_lm_thien_hau_11",
+      "id": "sgn_lm_thao_cam_vien_31",
       "fg": 134,
       "rotates": true
      },
      {
-      "id": "sgn_lm_ubnd_tp_00",
+      "id": "sgn_lm_thao_cam_vien_32",
       "fg": 135,
       "rotates": true
      },
      {
-      "id": "sgn_lm_ubnd_tp_01",
+      "id": "sgn_lm_thao_cam_vien_33",
       "fg": 136,
       "rotates": true
      },
      {
-      "id": "sgn_lm_ubnd_tp_10",
+      "id": "sgn_lm_thien_hau_00",
       "fg": 137,
       "rotates": true
      },
      {
-      "id": "sgn_lm_ubnd_tp_11",
+      "id": "sgn_lm_thien_hau_01",
       "fg": 138,
       "rotates": true
      },
      {
-      "id": "sgn_lm_ubnd_tp_20",
+      "id": "sgn_lm_thien_hau_10",
       "fg": 139,
       "rotates": true
      },
      {
-      "id": "sgn_lm_ubnd_tp_21",
+      "id": "sgn_lm_thien_hau_11",
       "fg": 140,
       "rotates": true
      },
      {
-      "id": "sgn_pl_benh_vien_00",
+      "id": "sgn_lm_ubnd_tp_00",
       "fg": 141,
       "rotates": true
      },
      {
-      "id": "sgn_pl_benh_vien_01",
+      "id": "sgn_lm_ubnd_tp_01",
       "fg": 142,
       "rotates": true
      },
      {
-      "id": "sgn_pl_benh_vien_10",
+      "id": "sgn_lm_ubnd_tp_10",
       "fg": 143,
       "rotates": true
      },
      {
-      "id": "sgn_pl_benh_vien_11",
+      "id": "sgn_lm_ubnd_tp_11",
       "fg": 144,
       "rotates": true
      },
      {
-      "id": "sgn_pl_cay_xang_00",
+      "id": "sgn_lm_ubnd_tp_20",
       "fg": 145,
       "rotates": true
      },
      {
-      "id": "sgn_pl_cong_an_00",
+      "id": "sgn_lm_ubnd_tp_21",
       "fg": 146,
       "rotates": true
      },
      {
-      "id": "sgn_pl_coopmart_00",
+      "id": "sgn_pl_benh_vien_00",
       "fg": 147,
       "rotates": true
      },
      {
-      "id": "sgn_pl_coopmart_01",
+      "id": "sgn_pl_benh_vien_01",
       "fg": 148,
       "rotates": true
      },
      {
-      "id": "sgn_pl_coopmart_10",
+      "id": "sgn_pl_benh_vien_10",
       "fg": 149,
       "rotates": true
      },
      {
-      "id": "sgn_pl_coopmart_11",
+      "id": "sgn_pl_benh_vien_11",
       "fg": 150,
       "rotates": true
      },
      {
-      "id": "sgn_pl_nghia_trang_00",
+      "id": "sgn_pl_cay_xang_00",
       "fg": 151,
       "rotates": true
      },
      {
-      "id": "sgn_pl_nghia_trang_01",
+      "id": "sgn_pl_cong_an_00",
       "fg": 152,
       "rotates": true
      },
      {
-      "id": "sgn_pl_nghia_trang_10",
+      "id": "sgn_pl_coopmart_00",
       "fg": 153,
       "rotates": true
      },
      {
-      "id": "sgn_pl_nghia_trang_11",
+      "id": "sgn_pl_coopmart_01",
       "fg": 154,
       "rotates": true
      },
      {
-      "id": "sgn_pl_nha_sach_00",
+      "id": "sgn_pl_coopmart_10",
       "fg": 155,
       "rotates": true
      },
      {
-      "id": "sgn_pl_xe_may_00",
+      "id": "sgn_pl_coopmart_11",
       "fg": 156,
       "rotates": true
+     },
+     {
+      "id": "sgn_pl_nghia_trang_00",
+      "fg": 157,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_nghia_trang_01",
+      "fg": 158,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_nghia_trang_10",
+      "fg": 159,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_nghia_trang_11",
+      "fg": 160,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_nha_sach_00",
+      "fg": 161,
+      "rotates": true
+     },
+     {
+      "id": "sgn_pl_xe_may_00",
+      "fg": 162,
+      "rotates": true
+     },
+     {
+      "id": "sgn_sb_apron",
+      "fg": 163
+     },
+     {
+      "id": "sgn_sb_runway",
+      "fg": 164
+     },
+     {
+      "id": "sgn_sb_taxiway",
+      "fg": 165
      }
     ]
    }

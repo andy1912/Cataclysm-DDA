@@ -30,6 +30,8 @@ import pngio  # noqa: E402
 import classify as C  # noqa: E402
 
 W, H = C.AREA_W, C.AREA_H
+# classes the OSM converter adds to the image classes (classify.py), with their preview colours
+EXTRA_CLASSES = { 'runway': '#4A4C52', 'taxiway': '#C8A030', 'apron': '#7C7E86' }
 MAJOR = { 'motorway': 'boulevard', 'trunk': 'boulevard', 'primary': 'main_street',
           'secondary': 'main_street', 'tertiary': 'street' }
 MINOR = ( 'residential', 'unclassified', 'living_street' )
@@ -175,8 +177,10 @@ def land( terrain, corr ):
             cls, order = 'open', 2
         elif t.get( 'aeroway' ) in ( 'aerodrome', ):
             cls, order = 'government', 0
-        elif t.get( 'aeroway' ) in ( 'runway', 'taxiway', 'apron' ) and e['type'] == 'way' and e['geometry'][0] != e['geometry'][-1]:
-            cls, order = 'airstrip', 3
+        elif t.get( 'aeroway' ) in ( 'runway', 'taxiway' ) and e['type'] == 'way' and e['geometry'][0] != e['geometry'][-1]:
+            cls, order = t['aeroway'], 3 if t['aeroway'] == 'runway' else 2.5
+        elif t.get( 'aeroway' ) == 'apron':
+            cls, order = 'apron', 2
         elif t.get( 'natural' ) == 'water':
             w = t.get( 'water', '' )
             cls = 'river' if w in ( 'river', 'oxbow' ) else 'canal' if w in ( 'canal', 'ditch', 'stream' ) else 'lake'
@@ -185,10 +189,14 @@ def land( terrain, corr ):
             layers.append( ( order, cls, e ) )
     layers.sort( key=lambda l: l[0] )
     for order, cls, e in layers:
-        if cls == 'airstrip':
+        if cls in ( 'runway', 'taxiway' ):
+            # a runway is ~46 m wide: two tiles across its (mostly east-west) line
+            steep = abs( tile( e['geometry'][-1] )[1] - tile( e['geometry'][0] )[1] ) > \
+                abs( tile( e['geometry'][-1] )[0] - tile( e['geometry'][0] )[0] )
             for p in walk( e['geometry'] ):
-                if inside( p ):
-                    terrain[p[1]][p[0]] = 'government'
+                for q in ( [ p, ( p[0] + 1, p[1] ) if steep else ( p[0], p[1] + 1 ) ] if cls == 'runway' else [ p ] ):
+                    if inside( q ) and not ( cls == 'taxiway' and terrain[q[1]][q[0]] == 'runway' ):
+                        terrain[q[1]][q[0]] = cls
             continue
         outer, inner = rings_of( e )
 
@@ -406,7 +414,7 @@ def main():
             counts[c] = counts.get( c, 0 ) + 1
     print( 'terrain: ' + ', '.join( '%s %.1f%%' % ( k, 100 * v / ( W * H ) ) for k, v in sorted( counts.items(), key=lambda kv: -kv[1] ) ) )
     print( 'places: ' + ', '.join( '%s %d' % ( k, sum( p['kind'] == k for p in pl ) ) for k in sorted( { p['kind'] for p in pl } ) ) )
-    legend = list( C.CLASSES )
+    legend = list( C.CLASSES ) + list( EXTRA_CLASSES )
     with open( out + '.grid.json', 'w' ) as fo:
         json.dump( { 'width': W, 'height': H, 'origin': [ C.ORIGIN_LAT, C.ORIGIN_LON ], 'tile_m': C.TILE_M,
                      'source': 'OpenStreetMap (ODbL) + corrections_2009.json',
@@ -425,7 +433,7 @@ def main():
             return ( 155, 63, 200 ) if p in bridge else road_col[klass.get( p, 'street' )]
         if p in rail:
             return ( 60, 60, 60 )
-        return C.hexrgb( C.CLASSES[terrain[y][x]] )
+        return C.hexrgb( C.CLASSES.get( terrain[y][x] ) or EXTRA_CLASSES[terrain[y][x]] )
     img = pngio.Image( W, H )
     for y in range( H ):
         for x in range( W ):

@@ -62,6 +62,8 @@ TEST_CASE( "saigon_district1_landmarks", "[mapgen][saigon]" )
         { "sgn_lm_ho_con_rua", 1, 1, 0, 1 }, { "sgn_lm_stc", 1, 1, 0, 10 }, { "sgn_lm_diamond", 2, 2, 0, 3 },
         { "sgn_lm_bui_vien", 3, 1, 0, 3 },
         { "sgn_lm_thao_cam_vien", 4, 4, 0, 1 }, { "sgn_lm_dam_sen", 4, 4, 0, 1 }, { "sgn_lm_suoi_tien", 4, 4, 0, 1 },
+        // R12: Tân Sơn Nhất's terminal (real map only)
+        { "sgn_lm_san_bay", 3, 2, 0, 1 },
         // P2 everyday places (tools/saigon/gen_places.py), same piece naming
         { "sgn_pl_cay_xang", 1, 1, 0, 1 }, { "sgn_pl_coopmart", 2, 2, 0, 1 }, { "sgn_pl_benh_vien", 2, 2, 0, 2 },
         { "sgn_pl_cong_an", 1, 1, 0, 1 }, { "sgn_pl_nghia_trang", 2, 2, 0, 1 }, { "sgn_pl_nha_sach", 1, 1, 0, 1 },

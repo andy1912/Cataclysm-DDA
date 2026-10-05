@@ -224,7 +224,7 @@ class World:
                 self.used.add( ( x + dx, y + dy ) )
 
 
-PREVIEW = [ ( 'sgn_lm_', ( 255, 0, 255 ) ), ( 'sgn_duong_sat', ( 20, 20, 20 ) ), ( 'sgn_pl_', ( 0, 200, 220 ) ), ( 'sgn_cho', ( 255, 127, 0 ) ),
+PREVIEW = [ ( 'sgn_lm_', ( 255, 0, 255 ) ), ( 'sgn_sb_runway', ( 40, 40, 46 ) ), ( 'sgn_sb_', ( 120, 122, 130 ) ), ( 'sgn_duong_sat', ( 20, 20, 20 ) ), ( 'sgn_pl_', ( 0, 200, 220 ) ), ( 'sgn_cho', ( 255, 127, 0 ) ),
             ( 'sgn_chua', ( 192, 0, 0 ) ), ( 'sgn_nha_tho', ( 255, 176, 200 ) ), ( 'sgn_truong', ( 0, 80, 255 ) ), ( 'road', ( 70, 70, 70 ) ), ( 'bridge', ( 155, 63, 200 ) ),
             ( 'lake', ( 31, 79, 176 ) ), ( 'sgn_nh_', ( 232, 150, 60 ) ), ( 'sgn_hem', ( 230, 200, 154 ) ),
             ( 'park', ( 63, 165, 72 ) ), ( 'warehouse', ( 150, 150, 150 ) ), ( 'forest_water', ( 122, 184, 160 ) ),
@@ -302,7 +302,9 @@ def main():
 
     # ---- water and land use; farmland along a main road is left for the village shophouses below
     LAND = { 'park': 'park', 'industrial': 'warehouse', 'farmland': 'field', 'marsh': 'forest_water',
-             'cemetery': 'field', 'government': 'field', 'open': 'field' }
+             'cemetery': 'field', 'government': 'field', 'open': 'field',
+             'runway': 'sgn_sb_runway', 'taxiway': 'sgn_sb_taxiway', 'apron': 'sgn_sb_apron' }
+    UNROTATED = ( 'field', 'forest_water', 'sgn_sb_runway', 'sgn_sb_taxiway', 'sgn_sb_apron' )
     rank = { 'boulevard': 3, 'main_street': 2, 'street': 1 }
 
     def best_street( x, y, minimum=1 ):
@@ -326,7 +328,7 @@ def main():
                 continue
             elif t in LAND:
                 ter = LAND[t]
-                world.set( x, y, 0, ter if ter in ( 'field', 'forest_water' ) else ter + '_' + ROT[rng.randrange( 4 )] )
+                world.set( x, y, 0, ter if ter in UNROTATED else ter + '_' + ROT[rng.randrange( 4 )] )
                 world.used.add( ( x, y ) )
 
     # ---- city blocks: frontage shophouses facing the best street; inside, hẻm blocks where the city

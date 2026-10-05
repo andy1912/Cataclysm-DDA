@@ -515,3 +515,45 @@ def xe_may( c ):
     c.rect( 2, 4, 13, 8, rgb( '#a8d8e8' ) )
     for x in ( 3, 6, 9, 12 ):
         c.line( x, 5, x, 7, rgb( '#d83030' ) )
+
+
+# --- Sân bay Tân Sơn Nhất (real map) ---------------------------------------------------------
+TARMAC = rgb( '#5c5e64' )
+MARK_Y = rgb( '#e8c040' )
+
+
+@composite( 'sgn_lm_san_bay', 3, 2 )
+def san_bay( c ):
+    # the curb with taxis, the long glass terminal under its pale roof, the apron with stands
+    c.rect( 0, 1, 47, 4, PAVE )
+    for x, colour in ( ( 4, '#e8e8e8' ), ( 14, '#2a8a4a' ), ( 24, '#e8e8e8' ), ( 38, '#e8c040' ) ):
+        c.rect( x, 2, x + 3, 3, rgb( colour ) )                   # taxis and a coach at the curb
+    walls( c, 1, 6, 46, 23, rgb( '#dfe6ea' ), rgb( '#3ab0b0' ) )    # glass walls, pale roof
+    for x in range( 4, 44, 6 ):
+        c.line( x, 8, x + 3, 8, rgb( '#b8c4cc' ) )                # roof ribs
+    c.rect( 20, 12, 27, 17, rgb( '#c8d4dc' ) )                    # the raised centre roof
+    c.rect( 0, 24, 47, 31, TARMAC )                               # apron and stands
+    for x in ( 8, 23, 38 ):
+        c.line( x, 25, x, 31, MARK_Y )
+        c.rect( x - 1, 24, x + 1, 24, rgb( '#9aa0a8' ) )          # the gate bridges
+
+
+@sprite( 'sgn_sb_runway', 16, 16, overmap=True )
+def sb_runway( c ):
+    c.rect( 0, 2, 15, 13, TARMAC )
+    for x in range( 0, 16, 6 ):
+        c.rect( x, 7, x + 2, 8, rgb( '#f0f0f0' ) )                # centre-line dashes
+
+
+@sprite( 'sgn_sb_taxiway', 16, 16, overmap=True )
+def sb_taxiway( c ):
+    c.rect( 0, 0, 15, 15, TARMAC )
+    c.line( 0, 7, 15, 7, MARK_Y )
+    c.line( 7, 0, 7, 15, MARK_Y )
+
+
+@sprite( 'sgn_sb_apron', 16, 16, overmap=True )
+def sb_apron( c ):
+    c.rect( 0, 0, 15, 15, shade( TARMAC, 1.15 ) )
+    c.line( 0, 0, 15, 0, MARK_Y )
+    c.line( 8, 2, 8, 15, MARK_Y )

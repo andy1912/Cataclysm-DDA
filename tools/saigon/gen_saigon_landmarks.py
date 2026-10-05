@@ -87,6 +87,12 @@ LOCAL = {
                      '@': 't_concrete', '*': 't_grass', '`': 't_railroad_track_small' },
         'furniture': { '(': 'f_sgn_chau_kieng', ')': 'f_sgn_thuyen_thien_nga', '@': 'f_sgn_vong_quay',
                        '*': 'f_boulder_large' } },
+    'sgn_lm_san_bay': {
+        'terrain': { '@': 't_pavement', '`': 't_pavement_y' },
+        'furniture': { 'B': 'f_counter' },          # the bag belts behind check-in, not rice sacks
+        'items': { '4': { 'item': 'sgn_tourist', 'chance': 15 },
+                   'j': { 'item': 'sgn_tourist', 'chance': 25 },
+                   'B': { 'item': 'sgn_tourist', 'chance': 40, 'repeat': [ 1, 2 ] } } },
     'sgn_lm_suoi_tien': {
         'terrain': { '1': 't_water_dp', ';': 't_sand', '@': 't_concrete', "'": 't_concrete', ')': 't_concrete',
                      '(': 't_grass', '*': 't_grass', '`': 't_railroad_track_small', 'f': 't_dirt' },
@@ -1026,6 +1032,59 @@ def suoi_tien():
     return { 0: lv, 1: z1 }
 
 
+# --- 20. Sân bay Tân Sơn Nhất (the international terminal of 2007) -------------------------
+def san_bay():
+    # landside curb with abandoned taxis and a coach, the glass departures hall (check-in rows,
+    # benches), security, duty-free and food on the airside, the gate lounges, and the apron
+    # with its stand lines.  Real-map only: the airfield around it is sgn_sb_* (gen_san_bay.py).
+    z0 = Level( 3, 2, ',' )
+    z0.rect( 0, 0, 71, 1, 'S' )
+    # each vehicle sits 12+ tiles into its map tile: a coach reaches 11 tiles back from its x
+    for x, group in ( ( 12, 'sgn_vg_street_traffic' ), ( 20, 'sgn_vg_street_traffic' ),
+                      ( 38, 'sgn_vg_street_traffic' ), ( 62, 'sgn_vg_coach' ) ):
+        z0.vehicle( x, 4, group, 0, 50 )
+    z0.rect( 0, 8, 71, 9, 'S' )
+    z0.box( 2, 10, 69, 37, 'Y', '.' )
+    for x0 in ( 10, 34, 58 ):                          # the doors from the curb
+        z0.rect( x0, 10, x0 + 3, 10, 'D' )
+    for x in range( 30, 42, 3 ):                       # benches in front of the departure boards
+        z0.at( x, 13, '4' )
+        z0.at( x + 1, 13, '4' )
+    z0.rect( 32, 11, 39, 11, '2' )
+    for x0, x1 in ( ( 6, 26 ), ( 44, 64 ) ):           # check-in counters, bag belts behind
+        z0.rect( x0, 17, x1, 17, 'j' )
+        z0.rect( x0, 19, x1, 19, 'B' )
+    z0.rect( 3, 22, 68, 22, 'C' )                      # security: two lanes through the wall
+    for x0 in ( 18, 50 ):
+        z0.rect( x0, 22, x0 + 3, 22, ':' )
+        z0.at( x0 - 1, 21, 'j' )
+        z0.at( x0 + 4, 21, 'j' )
+    for x in range( 5, 17, 2 ):                        # duty-free: clothes, then electronics
+        z0.at( x, 25, '!' )
+        z0.at( x, 27, '%' )
+    for x in range( 20, 30, 2 ):
+        z0.at( x, 25, '&' )
+    for x in range( 44, 62, 4 ):                       # the food court
+        z0.at( x, 25, 'u' )
+        z0.at( x, 26, 's' )
+        z0.at( x + 1, 26, 's' )
+    for x in range( 6, 66, 8 ):                        # pillars, then the gate lounges
+        z0.at( x, 29, 'P' )
+    for y in ( 31, 33, 35 ):
+        for x in range( 5, 67 ):
+            if ( x - 5 ) % 7 < 5:
+                z0.at( x, y, '4' )
+    for x0 in ( 11, 34, 57 ):                          # gates out to the stands
+        z0.rect( x0, 37, x0 + 1, 37, 'D' )
+    z0.rect( 0, 38, 71, 47, '@' )                      # the apron, a stand line per gate
+    z0.rect( 0, 39, 71, 39, '`' )
+    for x in ( 12, 35, 58 ):
+        z0.rect( x, 40, x, 47, '`' )
+    z0.vehicle( 40, 43, 'sgn_vg_coach', 0, 30 )        # an apron bus that never left
+    z1 = roof_over( z0, INDOOR )
+    return { 0: z0, 1: z1 }
+
+
 LANDMARKS = {
     # id: ( builder, w, h, name, symbol colour, monsters per OMT-ish, items per symbol )
     'sgn_lm_ben_thanh': ( ben_thanh, 3, 3, 'Chợ Bến Thành', 'yellow' ),
@@ -1047,6 +1106,7 @@ LANDMARKS = {
     'sgn_lm_thao_cam_vien': ( thao_cam_vien, 4, 4, 'Thảo Cầm Viên', 'green' ),
     'sgn_lm_dam_sen': ( dam_sen, 4, 4, 'Công viên Đầm Sen', 'light_cyan' ),
     'sgn_lm_suoi_tien': ( suoi_tien, 4, 4, 'Khu du lịch Suối Tiên', 'light_red' ),
+    'sgn_lm_san_bay': ( san_bay, 3, 2, 'Sân bay Tân Sơn Nhất', 'light_cyan' ),
 }
 
 

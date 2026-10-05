@@ -123,6 +123,14 @@
       "lat": 10.863885,
       "lon": 106.802173,
       "source": "wiki (Suối Tiên Theme Park)"
+    },
+    {
+      "id": "sgn_lm_san_bay",
+      "lat": 10.8146,
+      "lon": 106.6585,
+      "source": "approx (the international terminal of 2007, south of the aprons; checked against the OSM aprons)",
+      "facing": "south",
+      "facing_why": "the curb and car park are on the city side, south; the apron faces the runways to the north"
     }
   ]
 }
