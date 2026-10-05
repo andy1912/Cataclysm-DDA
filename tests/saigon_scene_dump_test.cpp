@@ -10,11 +10,13 @@
 #include "cata_catch.h"
 #include "coordinates.h"
 #include "enums.h"
+#include "global_vars.h"
 #include "item.h"
 #include "itype.h"
 #include "map.h"
 #include "map_helpers.h"
 #include "mapdata.h"
+#include "math_parser_diag_value.h"
 #include "omdata.h"
 #include "overmap.h"
 #include "overmapbuffer.h"
@@ -229,9 +231,12 @@ TEST_CASE( "saigon_landmark_dump", "[.][saigon_landmark_scene]" )
 // its rotation or, for connected and water terrain, the S/E/W/N connection bits that the
 // renderer turns into a subtile.  Hidden test; run with:
 //   SAIGON_OVERMAP_OUT=om.json [SAIGON_OVERMAP_SEED=4242] [SAIGON_OVERMAP_AT=x,y]
+//       [SAIGON_OVERMAP_SPAN=w,h] [SAIGON_OVERMAP_MAP=saigon_2000s/realmap_2009]
 //       tests/cata_test --mods=dda,saigon_2000s "[saigon_overmap]"
 // Lakes and rivers come from noise keyed on the overmap's position, so SAIGON_OVERMAP_AT
 // (overmap coordinates) is what gives a different landscape; the seed varies the cities.
+// SPAN dumps w x h overmaps from AT as one picture; MAP picks a pregenerated map (as the
+// scenario would) instead of the generated Vietmap.
 TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
 {
     const char *out_path = std::getenv( "SAIGON_OVERMAP_OUT" );
@@ -249,17 +254,34 @@ TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
         REQUIRE( std::sscanf( at, "%d,%d", &ox, &oy ) == 2 );
         where = point_abs_om( ox, oy );
     }
+    int span_x = 1;
+    int span_y = 1;
+    if( const char *span = std::getenv( "SAIGON_OVERMAP_SPAN" ) ) {
+        REQUIRE( std::sscanf( span, "%d,%d", &span_x, &span_y ) == 2 );
+    }
+    const char *map = std::getenv( "SAIGON_OVERMAP_MAP" );
+    if( map != nullptr ) {
+        get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( map ) ) );
+    }
     overmap_buffer.clear();
     const auto t0 = std::chrono::steady_clock::now();
-    overmap &om = overmap_buffer.get( where );
+    for( int oy = 0; oy < span_y; oy++ ) {
+        for( int ox = 0; ox < span_x; ox++ ) {
+            overmap_buffer.get( where + point( ox, oy ) );
+        }
+    }
     const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::steady_clock::now() - t0 );
-    WARN( "overmap generated in " << ms.count() << " ms" );
+    WARN( span_x * span_y << " overmap(s) generated in " << ms.count() << " ms" );
+    const tripoint_abs_omt corner( project_to<coords::omt>( where ), 0 );
+    const int W = OMAPX * span_x;
+    const int H = OMAPY * span_y;
     std::map<std::string, std::vector<std::string>> looks_like;
     std::ofstream out( out_path );
-    out << "{\"width\":" << OMAPX << ",\"height\":" << OMAPY << ",\"tiles\":[";
-    for( int y = 0; y < OMAPY; y++ ) {
-        for( int x = 0; x < OMAPX; x++ ) {
-            const oter_t &ot = *om.ter( tripoint_om_omt( x, y, 0 ) );
+    out << "{\"width\":" << W << ",\"height\":" << H << ",\"tiles\":[";
+    for( int y = 0; y < H; y++ ) {
+        for( int x = 0; x < W; x++ ) {
+            const tripoint_abs_omt here = corner + point( x, y );
+            const oter_t &ot = *overmap_buffer.ter( here );
             const oter_type_t &type = ot.get_type_id().obj();
             const std::string id = ot.get_type_id().str();
             looks_like.emplace( id, type.looks_like );
@@ -269,11 +291,11 @@ TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
                 conn = 0;
                 // same order as get_omt_id_rotation_and_subtile: S, E, W, N -> bits 1, 2, 4, 8
                 for( int i = 0; i < 4; i++ ) {
-                    const tripoint_om_omt q( x + offsets[i].x, y + offsets[i].y, 0 );
-                    if( !overmap::inbounds( q ) ) {
+                    const point q( x + offsets[i].x, y + offsets[i].y );
+                    if( q.x < 0 || q.y < 0 || q.x >= W || q.y >= H ) {
                         continue;
                     }
-                    const oter_type_t &other = om.ter( q )->get_type_id().obj();
+                    const oter_type_t &other = overmap_buffer.ter( corner + q )->get_type_id().obj();
                     if( type.has_connections() ? type.connects_to( other.id.id() ) : other.has_flag( oter_flags::water ) ) {
                         conn += 1 << i;
                     }
@@ -297,4 +319,7 @@ TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
     }
     out << "}}\n";
     CHECK( out.good() );
+    if( map != nullptr ) {
+        get_globals().remove_global_value( "overmap_pregenerated_path" );
+    }
 }

@@ -6,3 +6,5 @@ source/*.png
 source/*.jpg
 source/*.jpeg
 source/*.webp
+# Intermediate grids and previews (make_realmap.sh)
+build/

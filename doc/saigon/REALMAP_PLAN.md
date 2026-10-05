@@ -145,6 +145,26 @@ when reaching a new overmap goes away inside the covered area.
 
 Each unit is small and gets committed on its own. R1–R3 already give a playable real street plan.
 
+## 8b. Source of the layout (decided 2026-10-05, after the uploaded maps)
+
+The uploaded maps were checked against the converter's needs:
+
+| Map | Verdict |
+|---|---|
+| Caravelle Hotel tourist map (2000s) | **to scale** (5.56 m/px, fitted by 8 points, 10–160 m off) and right for the era, but labels on every street break the auto-traced streets, and it covers 19 % of the 5 × 4 area |
+| Its District 1–10 inset | same map, same limits |
+| OSM screenshot of District 1 | accurate but today's city and a 2.5 km patch |
+| AI-coloured map | invented geography |
+
+**Decision (yours): streets, water, land use and places from OpenStreetMap data (ODbL, credited), made
+into 2009 by `corrections_2009.json`, checked against the tourist map.** The tracer for spec-colour
+images (`classify.py`) and for printed maps (`trace_tourist_map.py`) stay available.
+
+Status: R1 engine done; R2a grid from OSM done; R2b overmap writer + scenario "Sài Gòn, 2009 (real
+map)" done (v1 blocks: nhà ống facing streets, hẻm blocks inside). Next: R2c dual carriageways and
+small road pieces; R3 district rules (rural outskirts in 2009, Chợ Lớn, downtown); R4 places;
+R5 landmarks at their real anchors; R8 start in a central hẻm.
+
 ## 8a. Second round of decisions (2026-10-05)
 
 - **Names.** The world's map is chosen by scenario when the first character starts:

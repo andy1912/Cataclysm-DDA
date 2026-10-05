@@ -1,3 +1,4 @@
+#include <map>
 #include <memory>
 #include <string>
 #include <vector>
@@ -5,6 +6,7 @@
 #include "cata_catch.h"
 #include "cata_utility.h"
 #include "filesystem.h"
+#include "game.h"
 #include "json.h"
 #include "path_info.h"
 #include "coordinates.h"
@@ -108,4 +110,58 @@ TEST_CASE( "saigon_realmap_reads_dda_single_layer_maps", "[overmap][saigon]" )
     }
     CAPTURE( same );
     CHECK( same == OMAPX * OMAPY );
+}
+
+// The real 2009 map itself (data/mods/saigon_2000s/realmap_2009, written by
+// tools/saigon/realmap/write_omaps.py from OpenStreetMap): the overmap around Bến Thành loads with
+// its streets, river, shophouses and bridges; the game adds the bridge decks; and the map
+// generates without errors at Bến Thành and on a bridge over the Saigon River.
+TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
+{
+    const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_1_2.omap.gz";
+    if( !oter_str_id( "sgn_nh_solo_z5_south" ).is_valid() || !file_exist( file.get_unrelative_path() ) ) {
+        WARN( "saigon_2000s or its real map is not present; skipping" );
+        return;
+    }
+    clear_avatar();
+    clear_map();
+    clear_overmaps();
+    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
+    overmap &om = overmap_buffer.get( point_abs_om( 1, 2 ) );
+    std::map<std::string, int> count;
+    tripoint_om_omt bridge = tripoint_om_omt::invalid;
+    for( int x = 0; x < OMAPX; x++ ) {
+        for( int y = 0; y < OMAPY; y++ ) {
+            const std::string id = om.ter( tripoint_om_omt( x, y, 0 ) ).id().str();
+            const std::string kind = id.rfind( "road", 0 ) == 0 ? "road" : id.rfind( "bridge", 0 ) == 0 ? "bridge" :
+                                     id.rfind( "lake", 0 ) == 0 ? "water" : id.rfind( "sgn_nh_solo", 0 ) == 0 ? "nha_ong" :
+                                     id.rfind( "sgn_hem", 0 ) == 0 ? "hem" : id;
+            count[kind]++;
+            if( kind == "bridge" && bridge.is_invalid() ) {
+                bridge = tripoint_om_omt( x, y, 0 );
+            }
+        }
+    }
+    int decks = 0;
+    for( int x = 0; x < OMAPX; x++ ) {
+        for( int y = 0; y < OMAPY; y++ ) {
+            decks += om.ter( tripoint_om_omt( x, y, 1 ) ).id().str().rfind( "bridge_road", 0 ) == 0;
+        }
+    }
+    CAPTURE( count["road"], count["bridge"], count["water"], count["nha_ong"], count["hem"], count["field"], decks );
+    CHECK( count["road"] > 3000 );
+    CHECK( count["nha_ong"] > 3000 );
+    CHECK( count["water"] > 500 );
+    CHECK( count["bridge"] > 5 );
+    CHECK( decks > 5 );
+    // Bến Thành (10.7725 N, 106.6980 E) is tile (338, 521) of the area: in the city, not open field
+    const tripoint_abs_omt ben_thanh( 338, 521, 0 );
+    CHECK( overmap_buffer.ter( ben_thanh ).id().str() != "field" );
+    g->place_player_overmap( ben_thanh );
+    REQUIRE_FALSE( bridge.is_invalid() );
+    g->place_player_overmap( project_combine( point_abs_om( 1, 2 ), bridge ) );
+    get_globals().remove_global_value( "overmap_pregenerated_path" );
+    clear_avatar();
+    clear_map();
+    clear_overmaps();
 }

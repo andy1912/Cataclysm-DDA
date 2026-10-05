@@ -5,7 +5,7 @@
     "name": "Sài Gòn 2000s",
     "authors": [ "ducpham1912" ],
     "maintainers": [ "ducpham1912" ],
-    "description": "Total conversion: the Cataclysm begins in Hồ Chí Minh City (Sài Gòn) during the dry season of 2004.  Shophouse streets, hẻm alleys, wet markets and canals replace New England; motorbikes, street food, tropical heat and monsoon rain replace everything else.",
+    "description": "Total conversion: the Cataclysm begins in Hồ Chí Minh City (Sài Gòn) during the dry season of 2004.  Shophouse streets, hẻm alleys, wet markets and canals replace New England; motorbikes, street food, tropical heat and monsoon rain replace everything else.  Two maps: Vietmap (a generated Saigon, 2004) or the real city of 2009 (map data © OpenStreetMap contributors, ODbL).",
     "category": "total_conversion",
     "dependencies": [ "dda" ],
     "conflicts": [
