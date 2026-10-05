@@ -214,13 +214,51 @@ def land( terrain, corr ):
     return rail
 
 
+def divided_segments( ways ):
+    """Segments ( way id, index ) that are one carriageway of a divided road: a one-way segment with
+    a same-named one-way segment within DIVIDED_M running the other way.  Only the carriageway
+    heading east (or south) is kept, so the road is drawn once, not as two parallel lines."""
+    cell = 60.0                                            # metres per hash cell
+    hashed = {}
+    segs = []
+    for e in ways:
+        t = e['tags']
+        if t.get( 'oneway' ) != 'yes':
+            continue
+        name = nfc( t.get( 'name' ) ) or t.get( 'highway' )
+        g = e['geometry']
+        for i, ( a, b ) in enumerate( zip( g, g[1:] ) ):
+            ax, ay = a['lon'] * C.M_PER_DEG_LON, -a['lat'] * C.M_PER_DEG_LAT
+            bx, by = b['lon'] * C.M_PER_DEG_LON, -b['lat'] * C.M_PER_DEG_LAT
+            n = math.hypot( bx - ax, by - ay )
+            if n < 1:
+                continue
+            seg = ( e['id'], i, name, ( ax + bx ) / 2, ( ay + by ) / 2, ( bx - ax ) / n, ( by - ay ) / n )
+            segs.append( seg )
+            hashed.setdefault( ( int( seg[3] // cell ), int( seg[4] // cell ) ), [] ).append( seg )
+    drop = set()
+    for wid, i, name, mx, my, dx, dy in segs:
+        cx, cy = int( mx // cell ), int( my // cell )
+        twin = any( o[2] == name and o[0] != wid and o[5] * dx + o[6] * dy < -0.8 and
+                    math.hypot( o[3] - mx, o[4] - my ) < DIVIDED_M
+                    for gx in ( cx - 1, cx, cx + 1 ) for gy in ( cy - 1, cy, cy + 1 ) for o in hashed.get( ( gx, gy ), [] ) )
+        if twin and not ( dx > 0.2 or ( abs( dx ) <= 0.2 and dy > 0 ) ):
+            drop.add( ( wid, i ) )
+    return drop
+
+
+DIVIDED_M = 45
+
+
 def roads( terrain, corr ):
     conn = {}
     klass = {}
     bridge = set()
     rank = { 'boulevard': 3, 'main_street': 2, 'street': 1 }
     used = skipped = 0
-    for e in load( 'roads' ):
+    ways = load( 'roads' )
+    divided = divided_segments( ways )
+    for e in ways:
         t = e.get( 'tags', {} )
         hw = t.get( 'highway', '' ).replace( '_link', '' )
         name = nfc( t.get( 'name' ) )
@@ -247,14 +285,29 @@ def roads( terrain, corr ):
             continue
         used += 1
         is_bridge = t.get( 'bridge' ) not in ( None, 'no' ) or t.get( 'layer', '0' ) not in ( '0', '-1', '-2' )
-        path = walk( e['geometry'] )
-        for a, b in zip( path, path[1:] ):
-            for d, ( dx, dy ) in DIRS.items():
-                if ( a[0] + dx, a[1] + dy ) == b:
-                    if inside( a ):
-                        conn.setdefault( a, set() ).add( d )
-                    if inside( b ):
-                        conn.setdefault( b, set() ).add( OPP[d] )
+        # walk each run of kept segments (one carriageway of a divided road is left out)
+        g = e['geometry']
+        runs, run = [], [ g[0] ]
+        for i in range( len( g ) - 1 ):
+            if ( e['id'], i ) in divided:
+                if len( run ) > 1:
+                    runs.append( run )
+                run = [ g[i + 1] ]
+            else:
+                run.append( g[i + 1] )
+        if len( run ) > 1:
+            runs.append( run )
+        path = []
+        for r in runs:
+            steps = walk( r )
+            path.extend( steps )
+            for a, b in zip( steps, steps[1:] ):
+                for d, ( dx, dy ) in DIRS.items():
+                    if ( a[0] + dx, a[1] + dy ) == b:
+                        if inside( a ):
+                            conn.setdefault( a, set() ).add( d )
+                        if inside( b ):
+                            conn.setdefault( b, set() ).add( OPP[d] )
         for p in path:
             if inside( p ):
                 conn.setdefault( p, set() )
@@ -279,8 +332,9 @@ def roads( terrain, corr ):
                 dropped += 1
     # flyovers and interchange ramps over dry land are plain road on the overmap
     bridge = { p for p in bridge if p in conn and terrain[p[1]][p[0]] in ( 'river', 'lake', 'canal' ) }
-    print( 'roads: %d ways used, %d removed by the 2009 corrections, %d tiles (%d bridges), %d bank tiles given to water'
-           % ( used, skipped, len( conn ), len( bridge ), dropped ) )
+    print( 'roads: %d ways used, %d removed by the 2009 corrections, %d one-way segments left out as the second '
+           'carriageway, %d tiles (%d bridges), %d bank tiles given to water'
+           % ( used, skipped, len( divided ), len( conn ), len( bridge ), dropped ) )
     return conn, klass, bridge
 
 

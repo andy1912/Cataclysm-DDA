@@ -6,14 +6,16 @@
     "Long Thành",
     "Cầu Ba Son",
     "Cầu Thủ Thiêm 2",
-    "Vành đai 2"
+    "Vành đai 2",
+    "Võ Chí Công"
   ],
   "drop_road_names_why": {
     "Mai Chí Thọ": "the East-West avenue through Thủ Thiêm opened in 2011",
     "Phạm Văn Đồng": "the Gò Vấp - Thủ Đức avenue opened in 2013",
     "Long Thành": "the HCMC - Long Thành - Dầu Giây expressway opened in 2015",
     "Cầu Ba Son / Cầu Thủ Thiêm 2": "the Ba Son bridge opened in 2022",
-    "Vành đai 2": "ring road 2 sections were built after 2010"
+    "Vành đai 2": "ring road 2 sections were built after 2010",
+    "Võ Chí Công": "the ring road 2 section through Phú Hữu opened after 2015"
   },
   "drop_way_ids": [],
   "zones": [
