@@ -108,6 +108,6 @@
   {
     "type": "vehicle_group",
     "id": "sgn_vg_coach",
-    "vehicles": [ [ "bus", 100 ] ]
+    "vehicles": [ [ "sgn_veh_xe_buyt", 70 ], [ "sgn_veh_xe_16_cho", 30 ] ]
   }
 ]

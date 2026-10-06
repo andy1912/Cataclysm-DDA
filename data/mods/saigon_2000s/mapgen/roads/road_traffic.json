@@ -8,7 +8,11 @@
       [ "sgn_veh_xe_tay_ga", 20 ],
       [ "sgn_veh_xe_dap", 10 ],
       [ "sgn_veh_ba_gac_may", 10 ],
-      [ "sgn_veh_xich_lo", 5 ]
+      [ "sgn_veh_xich_lo", 5 ],
+      [ "sgn_veh_taxi", 4 ],
+      [ "sgn_veh_xe_hoi", 3 ],
+      [ "sgn_veh_xe_tai_nhe", 2 ],
+      [ "sgn_veh_xe_16_cho", 1 ]
     ]
   },
   {

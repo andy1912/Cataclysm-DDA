@@ -117,5 +117,36 @@
     "id": "sgn_veh_xe_dap",
     "copy-from": "bicycle",
     "name": "Bicycle (xe đạp)"
+  },
+  {
+    "//": "L-loc5: the four-wheelers of 2009 Saigon traffic, a tenth of the street at most.",
+    "type": "vehicle",
+    "id": "sgn_veh_taxi",
+    "copy-from": "car_sedan",
+    "name": "Taxi (white sedan, green stripe)"
+  },
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_xe_hoi",
+    "copy-from": "car_hatch",
+    "name": "Small car (xe hơi)"
+  },
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_xe_16_cho",
+    "copy-from": "van_full-size",
+    "name": "16-seat minibus (xe 16 chỗ)"
+  },
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_xe_tai_nhe",
+    "copy-from": "van_cargo",
+    "name": "Light truck (xe tải nhẹ)"
+  },
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_xe_buyt",
+    "copy-from": "bus",
+    "name": "City bus (xe buýt)"
   }
 ]

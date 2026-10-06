@@ -114,6 +114,25 @@ def main():
     used = set( re.findall( r'["\'](?:group|item|items|death_drops|contents-group|container-group)["\']\s*:\s*["\']([\w-]+)["\']',
                             mod ) )
     # an id that is also a real item is that item ("item": "pants" on a laundry line), not dda's group
+    # the mod's vehicles copied from dda ones carry their parents' glovebox and trunk groups
+    vehicles = {}
+    for f in glob.glob( 'data/json/vehicles/**/*.json', recursive=True ) + mod_files:
+        try:
+            data = json.load( open( f ) )
+        except ValueError:
+            continue
+        for o in data if isinstance( data, list ) else []:
+            if isinstance( o, dict ) and o.get( 'type' ) == 'vehicle':
+                vehicles[o.get( 'id' ) or o.get( 'abstract' )] = o
+    for o in list( vehicles.values() ):
+        if not str( o.get( 'id', '' ) ).startswith( 'sgn_' ):
+            continue
+        v, hops = o, 0
+        while v is not None and hops < 6:
+            for it in v.get( 'items', [] ):
+                g = it.get( 'item_groups' ) or []
+                used.update( [ g ] if isinstance( g, str ) else g )
+            v, hops = vehicles.get( v.get( 'copy-from' ) ), hops + 1
     roots = sorted( g for g in groups if g in used and g not in items )
     reach, per_root = set(), {}
     for r in roots:

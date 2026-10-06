@@ -460,5 +460,241 @@
         8
       ]
     ]
+  },
+  {
+    "type": "item_group",
+    "id": "fast_food",
+    "subtype": "distribution",
+    "//": "L-loc5: what is left in a Saigon car or on a dashboard: takeaway bánh mì and xôi, iced coffee in a bag, not American fast food (dda's group: pizza boxes, peanut-butter sandwiches, mayonnaise)",
+    "items": [
+      [
+        "sgn_banh_mi_thit",
+        25
+      ],
+      [
+        "sgn_xoi",
+        15
+      ],
+      [
+        "sgn_banh_bao",
+        10
+      ],
+      [
+        "sgn_goi_cuon",
+        8
+      ],
+      [
+        "sgn_ca_phe_sua_da",
+        15
+      ],
+      [
+        "sgn_tra_da",
+        10
+      ],
+      [
+        "sgn_nuoc_mia",
+        5
+      ],
+      [
+        "water_clean",
+        10
+      ],
+      [
+        "chopsticks",
+        3
+      ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "snacks",
+    "subtype": "distribution",
+    "//": "L-loc5: Saigon snacks: dried beef and squid, peanuts, rice paper, instant noodles (dda's: pemmican, granola, maple syrup)",
+    "items": [
+      [
+        "sgn_kho_bo",
+        15
+      ],
+      [
+        "sgn_kho_muc",
+        10
+      ],
+      [
+        "peanut_shelled",
+        15
+      ],
+      [
+        "sgn_banh_trang",
+        10
+      ],
+      [
+        "sgn_mi_goi",
+        15
+      ],
+      [
+        "sgn_banh_bao",
+        5
+      ],
+      [
+        "tea_raw",
+        8
+      ],
+      [
+        "coffee_raw",
+        5
+      ],
+      [
+        "water_clean",
+        10
+      ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "bus_common",
+    "subtype": "distribution",
+    "//": "L-loc5: what passengers left on a Saigon bus: raincoats, conical hats, school things, comics, a wuxia novel (dda's: American novels)",
+    "items": [
+      [
+        "sgn_ao_mua_canh_doi",
+        15
+      ],
+      [
+        "sgn_non_la",
+        10
+      ],
+      [
+        "sgn_truyen_meo_may",
+        8
+      ],
+      [
+        "sgn_book_wuxia",
+        6
+      ],
+      [
+        "sgn_banh_mi_thit",
+        8
+      ],
+      [
+        "water_clean",
+        10
+      ],
+      [
+        "bag_plastic",
+        15
+      ],
+      [
+        "backpack_small",
+        6
+      ],
+      [
+        "umbrella",
+        6
+      ],
+      [
+        "sgn_dep_to_ong",
+        6
+      ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "car_kit",
+    "subtype": "distribution",
+    "//": "L-loc5: the trunk of a Saigon taxi or family car in 2009 (dda's group reaches 1,500 items, guns and American gear among them)",
+    "items": [
+      [
+        "jumper_cable",
+        15
+      ],
+      [
+        "hand_pump",
+        10
+      ],
+      [
+        "jack_small",
+        10
+      ],
+      [
+        "flashlight",
+        10
+      ],
+      [
+        "tarp",
+        5
+      ],
+      [
+        "rope_6",
+        5
+      ],
+      [
+        "sgn_ao_mua_canh_doi",
+        20
+      ],
+      [
+        "sgn_can_nhua",
+        10
+      ],
+      [
+        "water_clean",
+        10
+      ],
+      [
+        "bag_plastic",
+        5
+      ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "car_misc",
+    "subtype": "distribution",
+    "//": "L-loc5: the glovebox and dashboard of a Saigon car in 2009",
+    "items": [
+      [
+        "sgn_ban_do_tphcm",
+        15
+      ],
+      [
+        "sunglasses",
+        10
+      ],
+      [
+        "cell_phone",
+        8
+      ],
+      [
+        "sgn_vcd_phim_bo",
+        10
+      ],
+      [
+        "sgn_bang_cassette",
+        8
+      ],
+      [
+        "sgn_non_bao_hiem",
+        10
+      ],
+      [
+        "umbrella",
+        10
+      ],
+      [
+        "napkin",
+        10
+      ],
+      [
+        "water_clean",
+        10
+      ],
+      [
+        "sgn_lich_bloc",
+        4
+      ],
+      [
+        "incense",
+        5
+      ]
+    ]
   }
 ]

@@ -55,7 +55,10 @@ def main():
     out = [ { 'type': 'vehicle_group', 'id': GROUP,
               '//': 'Saigon street traffic for the road/bridge nested chunks.',
               'vehicles': [ [ 'sgn_veh_underbone', 55 ], [ 'sgn_veh_xe_tay_ga', 20 ], [ 'sgn_veh_xe_dap', 10 ],
-                            [ 'sgn_veh_ba_gac_may', 10 ], [ 'sgn_veh_xich_lo', 5 ] ] } ]
+                            [ 'sgn_veh_ba_gac_may', 10 ], [ 'sgn_veh_xich_lo', 5 ],
+                            # L-loc5: a few taxis, cars, minibuses and light trucks, as in 2009
+                            [ 'sgn_veh_taxi', 4 ], [ 'sgn_veh_xe_hoi', 3 ], [ 'sgn_veh_xe_tai_nhe', 2 ],
+                            [ 'sgn_veh_xe_16_cho', 1 ] ] } ]
     for o in chunks:
         copy = transform( o, local_ids )
         copy['nested_mapgen_id'] = rename( o['nested_mapgen_id'] )
