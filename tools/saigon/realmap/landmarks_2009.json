@@ -155,6 +155,30 @@
       "lat": 10.77583,
       "lon": 106.7015,
       "source": "wiki (Rex Hotel)"
+    },
+    {
+      "id": "sgn_lm_vinh_nghiem",
+      "lat": 10.79036,
+      "lon": 106.68229,
+      "source": "osm (Chùa Vĩnh Nghiêm)"
+    },
+    {
+      "id": "sgn_lm_lang_ong",
+      "lat": 10.8016,
+      "lon": 106.69701,
+      "source": "osm (Lăng Ông Bà Chiểu)"
+    },
+    {
+      "id": "sgn_lm_thong_nhat",
+      "lat": 10.760703,
+      "lon": 106.663331,
+      "source": "wiki (Thống Nhất Stadium)"
+    },
+    {
+      "id": "sgn_lm_an_dong",
+      "lat": 10.75811,
+      "lon": 106.67218,
+      "source": "osm (Chợ An Đông)"
     }
   ]
 }

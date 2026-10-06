@@ -654,3 +654,50 @@ def rex( c ):
     c.rect( 13, 3, 18, 5, rgb( '#e8c040' ) )                      # the crown
     c.px( 14, 2, rgb( '#e8c040' ) )
     c.px( 17, 2, rgb( '#e8c040' ) )
+
+
+# --- L-loc6 landmarks -----------------------------------------------------------------------------
+@composite( 'sgn_lm_vinh_nghiem', 3, 3 )
+def vinh_nghiem( c ):
+    # the gate, the paved yard, the main hall's tiled roof, the slim seven-storey tower
+    c.rect( 0, 0, 47, 47, rgb( '#c8805a' ) )
+    c.rect( 15, 1, 32, 4, TERRACOTTA )                            # the gate
+    tile_roof( c, 9, 9, 35, 22, TERRACOTTA )
+    tile_roof( c, 9, 26, 35, 33, CLAY, ridge=False )              # the monks' rooms
+    c.rect( 38, 19, 43, 24, rgb( '#e8d0a0' ) )                    # the tower from above
+    c.rect( 39, 20, 42, 23, TERRACOTTA )
+    c.px( 40, 21, rgb( '#e8c040' ) )
+    for x, y in ( ( 4, 5 ), ( 43, 5 ), ( 4, 42 ), ( 43, 42 ) ):
+        c.ellipse( x, y, 1.8, 1.8, TREE )
+
+
+@composite( 'sgn_lm_lang_ong', 2, 3 )
+def lang_ong( c ):
+    # a walled garden: the worship hall's green-tiled roof, the tomb enclosure behind
+    c.rect( 0, 0, 31, 47, PARK )
+    c.rect( 0, 1, 31, 1, rgb( '#c84a30' ) )
+    c.rect( 13, 1, 18, 1, rgb( '#e8c040' ) )                      # the gate
+    tile_roof( c, 6, 14, 25, 28, GLAZE )
+    walls( c, 10, 32, 21, 42, rgb( '#c8805a' ), rgb( '#8a8478' ) )
+    c.rect( 13, 36, 18, 39, rgb( '#d8d4cc' ) )                    # the tombs
+
+
+@composite( 'sgn_lm_thong_nhat', 4, 4 )
+def thong_nhat( c ):
+    # the pitch inside a red track, stands round it, the covered main stand along the north
+    c.rect( 2, 3, 61, 61, rgb( '#8a8a90' ) )
+    c.rect( 10, 13, 53, 51, rgb( '#c85a3a' ) )                    # the track
+    c.rect( 14, 17, 49, 47, GRASS )
+    c.line( 31, 17, 31, 47, WHITE )
+    c.ellipse( 31.5, 32, 4, 4, GRASS )
+    c.rect( 4, 4, 59, 11, rgb( '#d8d4cc' ) )                      # the main stand's roof
+
+
+@composite( 'sgn_lm_an_dong', 2, 2 )
+def an_dong( c ):
+    # the big flat-roofed market block, stalls' awnings round its doors
+    walls( c, 2, 3, 29, 29, rgb( '#d8d0c0' ), rgb( '#8a8478' ) )
+    for x in range( 5, 28, 4 ):
+        c.line( x, 4, x, 28, rgb( '#c4bcac' ) )
+    for i, x in enumerate( range( 4, 28, 3 ) ):
+        c.px( x, 1, rgb( ( '#d83a3a', '#2a6ab0', '#e8c040', '#3a9a3a' )[i % 4] ) )

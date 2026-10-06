@@ -87,6 +87,13 @@ LOCAL = {
                      '@': 't_concrete', '*': 't_grass', '`': 't_railroad_track_small' },
         'furniture': { '(': 'f_sgn_chau_kieng', ')': 'f_sgn_thuyen_thien_nga', '@': 'f_sgn_vong_quay',
                        '*': 'f_boulder_large' } },
+    'sgn_lm_lang_ong': {
+        'terrain': { '*': 't_sgn_gach_tau' }, 'furniture': { '*': 'f_sgn_mo' } },
+    'sgn_lm_thong_nhat': {
+        'terrain': { '@': 't_dirt', '`': 't_pavement_y', '(': 't_concrete', '3': 't_concrete' },
+        'furniture': { '(': 'f_bench' } },
+    'sgn_lm_vinh_nghiem': {
+        'furniture': { '5': 'f_bed' }, 'items': { '5': { 'item': 'sgn_temple', 'chance': 30 } } },
     'sgn_lm_nha_rong': {
         'terrain': { '$': 't_floor_waxed', '~': 't_water_dp' },
         'furniture': { '$': 'f_displaycase' } },
@@ -1274,6 +1281,162 @@ def rex():
     return levels
 
 
+# --- 25. Chùa Vĩnh Nghiêm (L-loc6) -------------------------------------------------------------
+def vinh_nghiem():
+    # the Japanese-built pagoda of 1964 on Nam Kỳ Khởi Nghĩa: the three-door gate, a paved yard,
+    # the main hall with the Buddha, the bell house, the monks' rooms, and the seven-storey
+    # Quan Âm tower in the side garden
+    z0 = Level( 3, 3, 'o' )
+    z0.rect( 0, 0, 71, 1, 'S' )
+    z0.rect( 2, 2, 69, 2, '#' )
+    z0.box( 30, 2, 41, 7, '#', 'o' )                   # the tam quan gate
+    for x in ( 33, 35, 37 ):
+        z0.at( x, 2, '+' )
+    z0.at( 35, 7, '+' )
+    for x, y in ( ( 8, 10 ), ( 62, 10 ), ( 8, 64 ), ( 62, 64 ), ( 20, 30 ), ( 50, 30 ) ):
+        z0.at( x, y, '9' )
+    z0.box( 18, 18, 53, 45, 'O', 'n' )                 # the main hall, red columns
+    for x in range( 31, 41 ):
+        z0.at( x, 18, '+' if x % 2 else 'O' )
+    z0.rect( 26, 38, 45, 38, 'E' )                     # the altar
+    z0.at( 35, 41, 'F' )                               # the Buddha
+    for x in ( 24, 30, 40, 46 ):
+        z0.at( x, 34, 'U' )                            # incense urns
+    for y in range( 24, 33, 3 ):
+        z0.rect( 26, y, 45, y, 'h' )                   # incense coils hung in rows
+    z0.box( 4, 20, 13, 29, '#', 'n' )                  # the bell house
+    z0.at( 13, 24, '+' )
+    z0.at( 8, 24, 'K' )
+    z0.box( 18, 52, 53, 66, '#', '.' )                 # the monks' rooms
+    for x in range( 22, 52, 6 ):
+        z0.rect( x + 4, 53, x + 4, 65, '#' )
+        z0.at( x + 1, 52, '+' )
+        z0.at( x + 1, 60, '5' )
+    z0.box( 58, 40, 66, 48, '#', 'n' )                 # the tower's ground floor
+    z0.at( 62, 40, '+' )
+    z0.at( 63, 46, 'F' )
+    levels = { 0: z0 }
+    for z in range( 1, 7 ):                            # the tower climbs alone
+        lv = Level( 3, 3, ' ' )
+        if z == 1:
+            lv.rect( 18, 18, 53, 45, 'l' )             # tiled roofs over the halls
+            lv.rect( 4, 20, 13, 29, 'l' )
+            lv.rect( 18, 52, 53, 66, 'l' )
+        lv.box( 58, 40, 66, 48, '#', 'n' )
+        for y in ( 43, 45 ):
+            lv.at( 58, y, 'w' )
+            lv.at( 66, y, 'w' )
+        lv.at( 63, 46, 'F' )
+        levels[z] = lv
+    stairs = ( ( 60, 42 ), ( 64, 42 ) )
+    for z in range( 0, 6 ):
+        x, y = stairs[z % 2]
+        levels[z].at( x, y, '<' )
+        levels[z + 1].at( x, y, '>' )
+    levels[7] = Level( 3, 3, ' ' )
+    levels[7].rect( 58, 40, 66, 48, 'l' )
+    return levels
+
+
+# --- 26. Lăng Ông Bà Chiểu (L-loc6) ------------------------------------------------------------
+def lang_ong():
+    # the shrine and tomb of Marshal Lê Văn Duyệt in Bình Thạnh: the gate, a garden court, the
+    # worship hall with its lions and altar, and behind it the walled tomb under the trees
+    z0 = Level( 2, 3, 'g' )
+    z0.rect( 0, 0, 47, 1, 'S' )
+    z0.rect( 1, 2, 46, 2, '#' )
+    z0.rect( 1, 2, 1, 70, '#' )
+    z0.rect( 46, 2, 46, 70, '#' )
+    z0.rect( 1, 70, 46, 70, '#' )
+    z0.rect( 20, 2, 27, 2, 'o' )                       # the gate
+    z0.rect( 22, 3, 25, 20, 'o' )
+    z0.at( 21, 4, 'L' )
+    z0.at( 26, 4, 'L' )
+    for x, y in ( ( 6, 8 ), ( 40, 8 ), ( 6, 30 ), ( 41, 30 ), ( 10, 58 ), ( 37, 58 ) ):
+        z0.at( x, y, 'T' )
+    z0.box( 10, 21, 37, 42, 'O', 'n' )                 # the worship hall
+    for x in range( 21, 27 ):
+        z0.at( x, 21, '+' if x % 2 else 'O' )
+    z0.rect( 15, 36, 32, 36, 'E' )
+    z0.at( 23, 39, 'F' )
+    for x in ( 16, 31 ):
+        z0.at( x, 32, 'U' )
+    for y in range( 25, 32, 3 ):
+        z0.rect( 15, y, 32, y, 'h' )
+    z0.rect( 16, 48, 31, 64, '#' )                     # the tomb's enclosure
+    z0.rect( 17, 49, 30, 63, 'o' )
+    z0.rect( 23, 48, 24, 48, 'o' )
+    z0.rect( 20, 54, 27, 59, '*' )                     # the twin tombs
+    z0.at( 23, 51, 'J' )                               # the stone screen
+    z1 = roof_over( z0, INDOOR, 'l' )
+    return { 0: z0, 1: z1 }
+
+
+# --- 27. Sân vận động Thống Nhất (L-loc6) ------------------------------------------------------
+def thong_nhat():
+    # the city stadium: ticket windows at the gates, a red track round the pitch, the covered
+    # main stand on one side and open terraces on the others
+    z0 = Level( 4, 4, ',' )
+    z0.rect( 0, 0, 95, 1, 'S' )
+    z0.box( 4, 6, 91, 91, 'C', ',' )
+    for x in ( 44, 45, 46, 47, 48, 49, 50, 51 ):
+        z0.at( x, 6, ',' )                             # the main gate
+    for x in range( 38, 44 ):
+        z0.at( x, 4, '3' )                             # ticket windows
+    z0.rect( 16, 20, 79, 77, '@' )                     # the track
+    z0.rect( 22, 26, 73, 71, 'g' )                     # the pitch
+    z0.rect( 47, 26, 48, 71, '`' )                     # halfway line
+    z0.rect( 22, 26, 73, 26, '`' )
+    z0.rect( 22, 71, 73, 71, '`' )
+    z0.rect( 22, 26, 22, 71, '`' )
+    z0.rect( 73, 26, 73, 71, '`' )
+    for x in ( 42, 53 ):
+        z0.rect( x, 26, x, 28, '|' )                   # goalposts, roughly
+        z0.rect( x, 69, x, 71, '|' )
+    for y in range( 9, 18, 2 ):                        # the covered main stand, north
+        z0.rect( 10, y, 85, y, '4' )
+    z0.box( 8, 8, 87, 18, 'C', ':' )
+    for x in range( 20, 80, 12 ):
+        z0.at( x, 18, '+' )
+    for y in range( 81, 89, 2 ):                       # open terraces
+        z0.rect( 10, y, 85, y, '(' )
+    for x in range( 7, 14, 2 ):
+        z0.rect( x, 22, x, 76, '(' )
+        z0.rect( 95 - x - 7, 22, 95 - x - 7, 76, '(' )
+    z1 = Level( 4, 4, ' ' )
+    z1.rect( 8, 8, 87, 18, '_' )
+    return { 0: z0, 1: z1 }
+
+
+# --- 28. Chợ An Đông (L-loc6) ------------------------------------------------------------------
+def an_dong():
+    # the four-storey market of Chợ Lớn's edge: gold and jewellery at the doors, fabric and
+    # clothing wholesale on every floor above, stairwells at the corners
+    def hall( z ):
+        lv = Level( 2, 2, ',' if z == 0 else ' ' )
+        if z == 0:
+            lv.rect( 0, 0, 47, 1, 'S' )
+        lv.box( 2, 3, 45, 45, 'C', '.' )
+        for x in range( 4, 44, 3 ):
+            lv.at( x, 3, 'W' if z else ( 'D' if 20 <= x <= 27 else 'W' ) )
+        for y in range( 8, 42, 3 ):
+            if z == 0:
+                lv.rect( 6, y, 18, y, 'v' if y < 14 else 'y' )
+                lv.rect( 29, y, 41, y, 'v' if y < 14 else 'y' )
+            else:
+                lv.rect( 6, y, 18, y, 'y' if z % 2 else '!' )
+                lv.rect( 29, y, 41, y, '!' if z % 2 else 'y' )
+        return lv
+    levels = { z: hall( z ) for z in range( 4 ) }
+    stairs = ( ( 4, 6 ), ( 43, 43 ) )
+    for z in range( 3 ):
+        x, y = stairs[z % 2]
+        levels[z].at( x, y, '<' )
+        levels[z + 1].at( x, y, '>' )
+    levels[4] = roof_over( levels[3], INDOOR )
+    return levels
+
+
 LANDMARKS = {
     # id: ( builder, w, h, name, symbol colour, monsters per OMT-ish, items per symbol )
     'sgn_lm_ben_thanh': ( ben_thanh, 3, 3, 'Chợ Bến Thành', 'yellow' ),
@@ -1301,6 +1464,11 @@ LANDMARKS = {
     'sgn_lm_cho_tan_dinh': ( cho_tan_dinh, 2, 2, 'Chợ Tân Định', 'yellow' ),
     'sgn_lm_nha_rong': ( nha_rong, 2, 2, 'Bến Nhà Rồng', 'light_green' ),
     'sgn_lm_rex': ( rex, 2, 2, 'Khách sạn Rex', 'yellow' ),
+    # L-loc6
+    'sgn_lm_vinh_nghiem': ( vinh_nghiem, 3, 3, 'Chùa Vĩnh Nghiêm', 'light_red' ),
+    'sgn_lm_lang_ong': ( lang_ong, 2, 3, 'Lăng Ông Bà Chiểu', 'light_red' ),
+    'sgn_lm_thong_nhat': ( thong_nhat, 4, 4, 'Sân vận động Thống Nhất', 'light_green' ),
+    'sgn_lm_an_dong': ( an_dong, 2, 2, 'Chợ An Đông', 'yellow' ),
 }
 
 

@@ -68,6 +68,9 @@ TEST_CASE( "saigon_district1_landmarks", "[mapgen][saigon]" )
         // L-loc3: Nhà thờ Tân Định, Chợ Tân Định, Bến Nhà Rồng, Khách sạn Rex
         { "sgn_lm_tan_dinh", 2, 2, 0, 4 }, { "sgn_lm_cho_tan_dinh", 2, 2, 0, 1 },
         { "sgn_lm_nha_rong", 2, 2, 0, 2 }, { "sgn_lm_rex", 2, 2, 0, 5 },
+        // L-loc6: Chùa Vĩnh Nghiêm, Lăng Ông, Sân vận động Thống Nhất, Chợ An Đông
+        { "sgn_lm_vinh_nghiem", 3, 3, 0, 7 }, { "sgn_lm_lang_ong", 2, 3, 0, 1 },
+        { "sgn_lm_thong_nhat", 4, 4, 0, 1 }, { "sgn_lm_an_dong", 2, 2, 0, 4 },
         // P2 everyday places (tools/saigon/gen_places.py), same piece naming
         { "sgn_pl_cay_xang", 1, 1, 0, 1 }, { "sgn_pl_coopmart", 2, 2, 0, 1 }, { "sgn_pl_benh_vien", 2, 2, 0, 2 },
         { "sgn_pl_cong_an", 1, 1, 0, 1 }, { "sgn_pl_nghia_trang", 2, 2, 0, 1 }, { "sgn_pl_nha_sach", 1, 1, 0, 1 },
