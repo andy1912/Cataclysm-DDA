@@ -324,6 +324,96 @@
     "looks_like": "sgn_pl_xe_may_00"
   },
   {
+    "type": "overmap_terrain",
+    "id": "sgn_pl_cong_vien_00",
+    "copy-from": "generic_city_building",
+    "name": "công viên",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pl_cong_vien_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "công viên (roof)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_pl_cong_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pl_cong_vien_ho_00",
+    "copy-from": "generic_city_building",
+    "name": "công viên (hồ sen)",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pl_cong_vien_ho_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "công viên (hồ sen) (roof)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_pl_cong_vien_ho_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pl_cong_vien_the_duc_00",
+    "copy-from": "generic_city_building",
+    "name": "công viên (sân tập)",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pl_cong_vien_the_duc_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "công viên (sân tập) (roof)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_pl_cong_vien_the_duc_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pl_kho_00",
+    "copy-from": "generic_city_building",
+    "name": "kho hàng",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pl_kho_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "kho hàng (roof)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_pl_kho_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pl_kho_cang_00",
+    "copy-from": "generic_city_building",
+    "name": "bãi container",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pl_kho_cang_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "bãi container (roof)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_pl_kho_cang_00"
+  },
+  {
     "type": "city_building",
     "id": "sgn_pl_cay_xang",
     "locations": [
@@ -722,6 +812,166 @@
           1
         ],
         "overmap": "sgn_pl_xe_may_00_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_pl_cong_vien",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON"
+    ],
+    "city_sizes": [
+      4,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_pl_cong_vien_00_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_pl_cong_vien_00_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_pl_cong_vien_ho",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON"
+    ],
+    "city_sizes": [
+      4,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_pl_cong_vien_ho_00_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_pl_cong_vien_ho_00_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_pl_cong_vien_the_duc",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON"
+    ],
+    "city_sizes": [
+      4,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_pl_cong_vien_the_duc_00_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_pl_cong_vien_the_duc_00_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_pl_kho",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON"
+    ],
+    "city_sizes": [
+      4,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_pl_kho_00_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_pl_kho_00_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_pl_kho_cang",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON"
+    ],
+    "city_sizes": [
+      4,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_pl_kho_cang_00_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_pl_kho_cang_00_z1_north"
       }
     ]
   }

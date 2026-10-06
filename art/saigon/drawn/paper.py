@@ -200,3 +200,56 @@ def catechism( c ):
     c.line( cx, y0 + 2, cx, y1 - 1, rgb( '#e8c040' ) )
     c.line( cx - 2, y0 + 4, cx + 2, y0 + 4, rgb( '#e8c040' ) )
     finish( c )
+
+
+# --- L-loc2: the Vietnamese books that replaced dda's American ones --------------------------
+@sprite( 'sgn_kinh_thanh', 20, 20 )
+def kinh_thanh( c ):
+    # a thick black Bible, a gold cross, ribbons hanging out of the pages
+    x0, y0, x1, y1 = book( c, rgb( '#2a2a30' ), thick=4 )
+    cx = ( x0 + x1 ) // 2
+    c.line( cx, y0 + 2, cx, y1 - 3, rgb( '#e2c25a' ) )
+    c.line( cx - 2, y0 + 4, cx + 2, y0 + 4, rgb( '#e2c25a' ) )
+    c.line( x1 - 2, y1, x1 - 2, y1 + 2, rgb( '#c83030' ) )
+    finish( c )
+
+
+@sprite( 'sgn_sach_kinh', 20, 20 )
+def sach_kinh( c ):
+    # a small worn prayer book with a rosary laid over it
+    x0, y0, x1, y1 = book( c, rgb( '#5a2a3a' ), thick=2, x0=5, y0=6, w=10, h=10 )
+    for i in range( 6 ):
+        c.px( x0 + 1 + i, y0 + 2 + ( i % 2 ), rgb( '#e8e0d0' ) )
+    c.line( x0 + 6, y0 + 3, x0 + 6, y1 - 1, rgb( '#e8e0d0' ) )
+    c.px( x0 + 6, y1 - 1, rgb( '#e2c25a' ) )
+    finish( c )
+
+
+@sprite( 'sgn_guidebook_vn', 20, 20 )
+def guidebook_vn( c ):
+    # a fat blue travel guide, a red flag-and-star badge, coloured page tabs
+    x0, y0, x1, y1 = book( c, rgb( '#2a6ab0' ), thick=5 )
+    c.rect( x0 + 2, y0 + 2, x0 + 5, y0 + 4, rgb( '#d83030' ) )
+    c.px( x0 + 3, y0 + 3, rgb( '#f2c232' ) )
+    for i, col in enumerate( ( '#f2c232', '#3a9a3a', '#e86a9a' ) ):
+        c.px( x1 + 1, y0 + 3 + 3 * i, rgb( col ) )
+    finish( c )
+
+
+@sprite( 'sgn_sgk_ngu_van', 20, 20 )
+def sgk_ngu_van( c ):
+    # a thin school textbook, pale green cover with a printed title band
+    x0, y0, x1, y1 = book( c, rgb( '#8ac08a' ), thick=1 )
+    c.rect( x0 + 1, y0 + 2, x1 - 1, y0 + 4, rgb( '#f4f0e2' ) )
+    c.line( x0 + 2, y0 + 3, x1 - 2, y0 + 3, INK )
+    finish( c )
+
+
+@sprite( 'sgn_so_tay_so_cuu', 20, 20 )
+def so_tay_so_cuu( c ):
+    # a white handbook with the red cross
+    x0, y0, x1, y1 = book( c, rgb( '#ece8e0' ), thick=2 )
+    cx, cy = ( x0 + x1 ) // 2, ( y0 + y1 ) // 2
+    c.rect( cx - 1, cy - 3, cx + 1, cy + 3, rgb( '#d02828' ) )
+    c.rect( cx - 3, cy - 1, cx + 3, cy + 1, rgb( '#d02828' ) )
+    finish( c )

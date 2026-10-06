@@ -1606,5 +1606,739 @@
         "sgn_lm"
       ]
     }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [
+      [
+        "sgn_pl_cong_vien_00"
+      ]
+    ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "g||||||||||oo||||||||||g",
+        "g|gggggggggooggggggggg|g",
+        "g|ggTggggggoogugTggggg|g",
+        "g|ggggggTg(oo(gggggggg|g",
+        "g|g***gggggooggg[][]gg|g",
+        "g|g***gggggoogg***gTgg|g",
+        "g|gggggggg(oo(g*[]gggg|g",
+        "g|gggTgggooooooggggggg|g",
+        "g|gg(gg(goooooog(gg(gg|g",
+        "gooooooooooZooooooooooog",
+        "goooooooooooooooooooooog",
+        "g|gg(gg(goooooog(gg(gg|g",
+        "g|gggg***oooooogggTggg|g",
+        "g|gggg***g(oo(gggggggg|g",
+        "g|ggTggggggooggggggggg|g",
+        "g|gggggggggooggggTgggg|g",
+        "g|gggggggg(oo(gggggggg|g",
+        "g|gggggTgggoogg***gggg|g",
+        "g|gggggggggoogg***ggTg|g",
+        "g|gggggggggooggggggggg|g",
+        "g||||||||||oo||||||||||g",
+        "gggggggggggggggggggggggg"
+      ],
+      "palettes": [
+        "sgn_lm"
+      ],
+      "flags": [
+        "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN",
+        "ERASE_TRAP_BEFORE_PLACING_TERRAIN",
+        "ALLOW_TERRAIN_UNDER_ITEMS"
+      ],
+      "place_monster": [
+        {
+          "group": "sgn_GROUP_SAIGON_AWAKE",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            6,
+            23
+          ],
+          "chance": 35
+        },
+        {
+          "group": "sgn_GROUP_ZOMBIE_DORMANT",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            6,
+            23
+          ],
+          "chance": 40,
+          "repeat": [
+            1,
+            3
+          ]
+        }
+      ],
+      "terrain": {
+        "(": "t_sgn_gach_tau",
+        "*": "t_grass",
+        "$": "t_sgn_hoa_sen",
+        "@": "t_pavement",
+        "u": "t_sgn_gach_tau",
+        "`": "t_pavement_y",
+        "\\": "t_monkey_bars"
+      },
+      "furniture": {
+        "(": "f_bench",
+        "*": "f_sgn_van_tho"
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [
+      [
+        "sgn_pl_cong_vien_00_z1"
+      ]
+    ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [
+        "sgn_lm"
+      ],
+      "terrain": {
+        "(": "t_sgn_gach_tau",
+        "*": "t_grass",
+        "$": "t_sgn_hoa_sen",
+        "@": "t_pavement",
+        "u": "t_sgn_gach_tau",
+        "`": "t_pavement_y",
+        "\\": "t_monkey_bars"
+      },
+      "furniture": {
+        "(": "f_bench",
+        "*": "f_sgn_van_tho"
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [
+      [
+        "sgn_pl_cong_vien_ho_00"
+      ]
+    ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "g||||||||||oo||||||||||g",
+        "g|g9gggggggooggggggg9g|g",
+        "g|ggggg9gggooggggggggg|g",
+        "g|gggggggggooggggggggg|g",
+        "g|ggggg~~~|oo|~~~ggggg|g",
+        "g|gg(g~~~~|oo|~~~~g(gg|g",
+        "g|ggg~~~$$|oo|$$~~~ggg|g",
+        "g|gg~~~$$$|oo|$$$~~~gg|g",
+        "g|gg~~$$$$|oo|$$$$~~gg|g",
+        "goooooooooooooooooooooog",
+        "goooooooooooooooooooooog",
+        "g|gg~~$$$$|oo|$$$$~~gg|g",
+        "g|gg~~~$$$|oo|$$$~~~gg|g",
+        "g|ggg~~~$$|oo|$$~~~ggg|g",
+        "g|gggg~~~~|oo|~~~~gggg|g",
+        "g|gg(gg~~~|oo|~~~gg(gg|g",
+        "g|gggggggggooggggggggg|g",
+        "g|gggggggggooggggggggg|g",
+        "g|g9gggggggoogggg9gg9g|g",
+        "g|gggggggggooggggggggg|g",
+        "g||||||||||oo||||||||||g",
+        "gggggggggggggggggggggggg"
+      ],
+      "palettes": [
+        "sgn_lm"
+      ],
+      "flags": [
+        "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN",
+        "ERASE_TRAP_BEFORE_PLACING_TERRAIN",
+        "ALLOW_TERRAIN_UNDER_ITEMS"
+      ],
+      "place_monster": [
+        {
+          "group": "sgn_GROUP_SAIGON_AWAKE",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            6,
+            23
+          ],
+          "chance": 35
+        },
+        {
+          "group": "sgn_GROUP_ZOMBIE_DORMANT",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            6,
+            23
+          ],
+          "chance": 40,
+          "repeat": [
+            1,
+            3
+          ]
+        }
+      ],
+      "terrain": {
+        "(": "t_sgn_gach_tau",
+        "*": "t_grass",
+        "$": "t_sgn_hoa_sen",
+        "@": "t_pavement",
+        "u": "t_sgn_gach_tau",
+        "`": "t_pavement_y",
+        "\\": "t_monkey_bars"
+      },
+      "furniture": {
+        "(": "f_bench",
+        "*": "f_sgn_van_tho"
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [
+      [
+        "sgn_pl_cong_vien_ho_00_z1"
+      ]
+    ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [
+        "sgn_lm"
+      ],
+      "terrain": {
+        "(": "t_sgn_gach_tau",
+        "*": "t_grass",
+        "$": "t_sgn_hoa_sen",
+        "@": "t_pavement",
+        "u": "t_sgn_gach_tau",
+        "`": "t_pavement_y",
+        "\\": "t_monkey_bars"
+      },
+      "furniture": {
+        "(": "f_bench",
+        "*": "f_sgn_van_tho"
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [
+      [
+        "sgn_pl_cong_vien_the_duc_00"
+      ]
+    ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "g||||||||||oo||||||||||g",
+        "g|gggggggggggggggggggg|g",
+        "g|gg````````````````gg|g",
+        "g|gg`@@@@@@``@@@@@@`gg|g",
+        "g|gg`@@@@@@``@@@@@@`gg|g",
+        "g|gg`@@@@@@``@@@@@@`gg|g",
+        "g|gg`@@@@@@``@@@@@@`gg|g",
+        "g|gg`@@@@@@``@@@@@@`gg|g",
+        "g|gg`@@@@@@``@@@@@@`gg|g",
+        "gogg````````````````ggog",
+        "gogggggggggoogggggggggog",
+        "g|gggggggggooggggggggg|g",
+        "g|gTgggggggoogggggggTg|g",
+        "g|ggg\\gg\\ggoog\\gg\\gggg|g",
+        "g|gggggggggooggggggggg|g",
+        "g|ggg(gg(ggoogg(gg(ggg|g",
+        "g|gggggggggooggggggggg|g",
+        "g|ggggggTggoogggTggggg|g",
+        "g|gTgggggggoogggggggTg|g",
+        "g|gggggggggooggggggggg|g",
+        "g||||||||||oo||||||||||g",
+        "gggggggggggggggggggggggg"
+      ],
+      "palettes": [
+        "sgn_lm"
+      ],
+      "flags": [
+        "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN",
+        "ERASE_TRAP_BEFORE_PLACING_TERRAIN",
+        "ALLOW_TERRAIN_UNDER_ITEMS"
+      ],
+      "place_monster": [
+        {
+          "group": "sgn_GROUP_SAIGON_AWAKE",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            6,
+            23
+          ],
+          "chance": 35
+        },
+        {
+          "group": "sgn_GROUP_ZOMBIE_DORMANT",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            6,
+            23
+          ],
+          "chance": 40,
+          "repeat": [
+            1,
+            3
+          ]
+        }
+      ],
+      "terrain": {
+        "(": "t_sgn_gach_tau",
+        "*": "t_grass",
+        "$": "t_sgn_hoa_sen",
+        "@": "t_pavement",
+        "u": "t_sgn_gach_tau",
+        "`": "t_pavement_y",
+        "\\": "t_monkey_bars"
+      },
+      "furniture": {
+        "(": "f_bench",
+        "*": "f_sgn_van_tho"
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [
+      [
+        "sgn_pl_cong_vien_the_duc_00_z1"
+      ]
+    ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [
+        "sgn_lm"
+      ],
+      "terrain": {
+        "(": "t_sgn_gach_tau",
+        "*": "t_grass",
+        "$": "t_sgn_hoa_sen",
+        "@": "t_pavement",
+        "u": "t_sgn_gach_tau",
+        "`": "t_pavement_y",
+        "\\": "t_monkey_bars"
+      },
+      "furniture": {
+        "(": "f_bench",
+        "*": "f_sgn_van_tho"
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [
+      [
+        "sgn_pl_kho_00"
+      ]
+    ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",////////;;;;;;////////,",
+        ",/::::::::::::::::::::/,",
+        ",/::::::::::::::::::::/,",
+        ",/:BBBBBB::::::BBBBBB:/,",
+        ",/::::::::::::::::::::/,",
+        ",/::::::::::::::::::::/,",
+        ",/:BBBBBB::::::BBBBBB:/,",
+        ",/::::::::::::::::::::/,",
+        ",/::::::::::::::::::::/,",
+        ",/:BBBBBB::::::BBBBBB:/,",
+        ",/::::::::::::::::::::/,",
+        ",/::::::::::::::::::::/,",
+        ",/::::::::::::CCCCCCCC/,",
+        ",/:$:$:$:$:$::C......C/,",
+        ",/::::::::::::+...Q..C/,",
+        ",/:$:$:$:$:$::C...c..C/,",
+        ",/::::::::::::C.[....C/,",
+        ",/::::::::::::CCCCCCCC/,",
+        ",//////////////////////,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,"
+      ],
+      "palettes": [
+        "sgn_lm"
+      ],
+      "flags": [
+        "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN",
+        "ERASE_TRAP_BEFORE_PLACING_TERRAIN",
+        "ALLOW_TERRAIN_UNDER_ITEMS"
+      ],
+      "place_monster": [
+        {
+          "group": "sgn_GROUP_SAIGON_AWAKE",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            6,
+            23
+          ],
+          "chance": 35
+        },
+        {
+          "group": "sgn_GROUP_ZOMBIE_DORMANT",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            6,
+            23
+          ],
+          "chance": 40,
+          "repeat": [
+            1,
+            3
+          ]
+        }
+      ],
+      "terrain": {
+        "/": "t_wall_metal",
+        ";": "t_door_metal_c",
+        "$": "t_thconc_floor"
+      },
+      "furniture": {
+        "$": "f_crate_c"
+      },
+      "items": {
+        "$": {
+          "item": "sgn_kho_goods",
+          "chance": 70,
+          "repeat": [
+            1,
+            3
+          ]
+        }
+      },
+      "place_vehicles": [
+        {
+          "vehicle": "sgn_vg_street_traffic",
+          "x": 12,
+          "y": 2,
+          "rotation": 0,
+          "chance": 30
+        }
+      ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [
+      [
+        "sgn_pl_kho_00_z1"
+      ]
+    ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " _______________ ______ ",
+        " ______________________ ",
+        " ______________________ ",
+        "                        "
+      ],
+      "palettes": [
+        "sgn_lm"
+      ],
+      "terrain": {
+        "/": "t_wall_metal",
+        ";": "t_door_metal_c",
+        "$": "t_thconc_floor"
+      },
+      "furniture": {
+        "$": "f_crate_c"
+      },
+      "items": {
+        "$": {
+          "item": "sgn_kho_goods",
+          "chance": 70,
+          "repeat": [
+            1,
+            3
+          ]
+        }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [
+      [
+        "sgn_pl_kho_cang_00"
+      ]
+    ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "IIIIIIIIII,,,,IIIIIIIIII",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,/////////,,/////////,I",
+        "I,/:::::::/,,/:::::::/,I",
+        "I,/$:$:$::;,,/$:$:$::;,I",
+        "I,/:::::::/,,/:::::::/,I",
+        "I,/////////,,/////////,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,/////////,,/////////,I",
+        "I,/:::::::/,,/:::::::/,I",
+        "I,/$:$:$::;,,/$:$:$::;,I",
+        "I,/:::::::/,,/:::::::/,I",
+        "I,/////////,,/////////,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "IIIIIIIIIIIIIIIIIIIIIIII"
+      ],
+      "palettes": [
+        "sgn_lm"
+      ],
+      "flags": [
+        "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN",
+        "ERASE_TRAP_BEFORE_PLACING_TERRAIN",
+        "ALLOW_TERRAIN_UNDER_ITEMS"
+      ],
+      "place_monster": [
+        {
+          "group": "sgn_GROUP_SAIGON_AWAKE",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            6,
+            23
+          ],
+          "chance": 35
+        },
+        {
+          "group": "sgn_GROUP_ZOMBIE_DORMANT",
+          "x": [
+            0,
+            23
+          ],
+          "y": [
+            6,
+            23
+          ],
+          "chance": 40,
+          "repeat": [
+            1,
+            3
+          ]
+        }
+      ],
+      "terrain": {
+        "/": "t_wall_metal",
+        ";": "t_door_metal_c",
+        "$": "t_thconc_floor"
+      },
+      "furniture": {
+        "$": "f_crate_c"
+      },
+      "items": {
+        "$": {
+          "item": "sgn_kho_goods",
+          "chance": 70,
+          "repeat": [
+            1,
+            3
+          ]
+        }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [
+      [
+        "sgn_pl_kho_cang_00_z1"
+      ]
+    ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "  _________  _________  ",
+        "  _________  _________  ",
+        "  _________  _________  ",
+        "  _________  _________  ",
+        "  _________  _________  ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "  _________  _________  ",
+        "  _________  _________  ",
+        "  _________  _________  ",
+        "  _________  _________  ",
+        "  _________  _________  ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [
+        "sgn_lm"
+      ],
+      "terrain": {
+        "/": "t_wall_metal",
+        ";": "t_door_metal_c",
+        "$": "t_thconc_floor"
+      },
+      "furniture": {
+        "$": "f_crate_c"
+      },
+      "items": {
+        "$": {
+          "item": "sgn_kho_goods",
+          "chance": 70,
+          "repeat": [
+            1,
+            3
+          ]
+        }
+      }
+    }
   }
 ]

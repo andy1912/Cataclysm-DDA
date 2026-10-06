@@ -3735,6 +3735,582 @@
     "looks_like": "sgn_lm_san_bay_00"
   },
   {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_00",
+    "copy-from": "generic_city_building",
+    "name": "Nhà thờ Tân Định",
+    "sym": "&",
+    "color": "pink",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_10",
+    "copy-from": "generic_city_building",
+    "name": "Nhà thờ Tân Định",
+    "sym": "&",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_01",
+    "copy-from": "generic_city_building",
+    "name": "Nhà thờ Tân Định",
+    "sym": "&",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_11",
+    "copy-from": "generic_city_building",
+    "name": "Nhà thờ Tân Định",
+    "sym": "&",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_01_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_11_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_00_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_10_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_01_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_11_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_00_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_10_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_01_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_11_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_00_z4",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_10_z4",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_01_z4",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_tan_dinh_11_z4",
+    "copy-from": "generic_city_building_roof",
+    "name": "Nhà thờ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "pink",
+    "looks_like": "sgn_lm_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_cho_tan_dinh_00",
+    "copy-from": "generic_city_building",
+    "name": "Chợ Tân Định",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_cho_tan_dinh_10",
+    "copy-from": "generic_city_building",
+    "name": "Chợ Tân Định",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_lm_cho_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_cho_tan_dinh_01",
+    "copy-from": "generic_city_building",
+    "name": "Chợ Tân Định",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_lm_cho_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_cho_tan_dinh_11",
+    "copy-from": "generic_city_building",
+    "name": "Chợ Tân Định",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_lm_cho_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_cho_tan_dinh_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_cho_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_cho_tan_dinh_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_cho_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_cho_tan_dinh_01_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_cho_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_cho_tan_dinh_11_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Chợ Tân Định (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_cho_tan_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_nha_rong_00",
+    "copy-from": "generic_city_building",
+    "name": "Bến Nhà Rồng",
+    "sym": "&",
+    "color": "light_green",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_nha_rong_10",
+    "copy-from": "generic_city_building",
+    "name": "Bến Nhà Rồng",
+    "sym": "&",
+    "color": "light_green",
+    "looks_like": "sgn_lm_nha_rong_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_nha_rong_01",
+    "copy-from": "generic_city_building",
+    "name": "Bến Nhà Rồng",
+    "sym": "&",
+    "color": "light_green",
+    "looks_like": "sgn_lm_nha_rong_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_nha_rong_11",
+    "copy-from": "generic_city_building",
+    "name": "Bến Nhà Rồng",
+    "sym": "&",
+    "color": "light_green",
+    "looks_like": "sgn_lm_nha_rong_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_nha_rong_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến Nhà Rồng (upper floor)",
+    "sym": "#",
+    "color": "light_green",
+    "looks_like": "sgn_lm_nha_rong_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_nha_rong_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến Nhà Rồng (upper floor)",
+    "sym": "#",
+    "color": "light_green",
+    "looks_like": "sgn_lm_nha_rong_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_nha_rong_01_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến Nhà Rồng (upper floor)",
+    "sym": "#",
+    "color": "light_green",
+    "looks_like": "sgn_lm_nha_rong_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_nha_rong_11_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến Nhà Rồng (upper floor)",
+    "sym": "#",
+    "color": "light_green",
+    "looks_like": "sgn_lm_nha_rong_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_nha_rong_00_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến Nhà Rồng (upper floor)",
+    "sym": "#",
+    "color": "light_green",
+    "looks_like": "sgn_lm_nha_rong_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_nha_rong_10_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến Nhà Rồng (upper floor)",
+    "sym": "#",
+    "color": "light_green",
+    "looks_like": "sgn_lm_nha_rong_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_nha_rong_01_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến Nhà Rồng (upper floor)",
+    "sym": "#",
+    "color": "light_green",
+    "looks_like": "sgn_lm_nha_rong_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_nha_rong_11_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Bến Nhà Rồng (upper floor)",
+    "sym": "#",
+    "color": "light_green",
+    "looks_like": "sgn_lm_nha_rong_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_00",
+    "copy-from": "generic_city_building",
+    "name": "Khách sạn Rex",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_10",
+    "copy-from": "generic_city_building",
+    "name": "Khách sạn Rex",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_01",
+    "copy-from": "generic_city_building",
+    "name": "Khách sạn Rex",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_11",
+    "copy-from": "generic_city_building",
+    "name": "Khách sạn Rex",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_01_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_11_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_00_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_10_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_01_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_11_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_00_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_10_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_01_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_11_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_00_z4",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_10_z4",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_01_z4",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_11_z4",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_00_z5",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_10_z5",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_01_z5",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_lm_rex_11_z5",
+    "copy-from": "generic_city_building_roof",
+    "name": "Khách sạn Rex (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_lm_rex_00"
+  },
+  {
     "type": "city_building",
     "id": "sgn_lm_ben_thanh",
     "locations": [
@@ -7351,6 +7927,586 @@
           1
         ],
         "overmap": "sgn_lm_san_bay_21_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_tan_dinh",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_tan_dinh_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_tan_dinh_10_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_tan_dinh_01_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_tan_dinh_11_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_tan_dinh_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_tan_dinh_10_z1_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_tan_dinh_01_z1_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_tan_dinh_11_z1_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          2
+        ],
+        "overmap": "sgn_lm_tan_dinh_00_z2_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          2
+        ],
+        "overmap": "sgn_lm_tan_dinh_10_z2_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          2
+        ],
+        "overmap": "sgn_lm_tan_dinh_01_z2_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          2
+        ],
+        "overmap": "sgn_lm_tan_dinh_11_z2_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          3
+        ],
+        "overmap": "sgn_lm_tan_dinh_00_z3_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          3
+        ],
+        "overmap": "sgn_lm_tan_dinh_10_z3_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          3
+        ],
+        "overmap": "sgn_lm_tan_dinh_01_z3_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          3
+        ],
+        "overmap": "sgn_lm_tan_dinh_11_z3_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          4
+        ],
+        "overmap": "sgn_lm_tan_dinh_00_z4_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          4
+        ],
+        "overmap": "sgn_lm_tan_dinh_10_z4_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          4
+        ],
+        "overmap": "sgn_lm_tan_dinh_01_z4_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          4
+        ],
+        "overmap": "sgn_lm_tan_dinh_11_z4_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_cho_tan_dinh",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_cho_tan_dinh_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_cho_tan_dinh_10_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_cho_tan_dinh_01_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_cho_tan_dinh_11_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_cho_tan_dinh_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_cho_tan_dinh_10_z1_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_cho_tan_dinh_01_z1_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_cho_tan_dinh_11_z1_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_nha_rong",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_nha_rong_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_nha_rong_10_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_nha_rong_01_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_nha_rong_11_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_nha_rong_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_nha_rong_10_z1_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_nha_rong_01_z1_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_nha_rong_11_z1_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          2
+        ],
+        "overmap": "sgn_lm_nha_rong_00_z2_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          2
+        ],
+        "overmap": "sgn_lm_nha_rong_10_z2_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          2
+        ],
+        "overmap": "sgn_lm_nha_rong_01_z2_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          2
+        ],
+        "overmap": "sgn_lm_nha_rong_11_z2_north"
+      }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_lm_rex",
+    "locations": [
+      "land"
+    ],
+    "flags": [
+      "SAIGON",
+      "OVERMAP_UNIQUE"
+    ],
+    "city_sizes": [
+      6,
+      -1
+    ],
+    "overmaps": [
+      {
+        "point": [
+          0,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_rex_00_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          0
+        ],
+        "overmap": "sgn_lm_rex_10_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_rex_01_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "overmap": "sgn_lm_rex_11_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_rex_00_z1_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          1
+        ],
+        "overmap": "sgn_lm_rex_10_z1_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_rex_01_z1_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "overmap": "sgn_lm_rex_11_z1_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          2
+        ],
+        "overmap": "sgn_lm_rex_00_z2_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          2
+        ],
+        "overmap": "sgn_lm_rex_10_z2_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          2
+        ],
+        "overmap": "sgn_lm_rex_01_z2_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          2
+        ],
+        "overmap": "sgn_lm_rex_11_z2_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          3
+        ],
+        "overmap": "sgn_lm_rex_00_z3_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          3
+        ],
+        "overmap": "sgn_lm_rex_10_z3_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          3
+        ],
+        "overmap": "sgn_lm_rex_01_z3_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          3
+        ],
+        "overmap": "sgn_lm_rex_11_z3_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          4
+        ],
+        "overmap": "sgn_lm_rex_00_z4_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          4
+        ],
+        "overmap": "sgn_lm_rex_10_z4_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          4
+        ],
+        "overmap": "sgn_lm_rex_01_z4_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          4
+        ],
+        "overmap": "sgn_lm_rex_11_z4_north"
+      },
+      {
+        "point": [
+          0,
+          0,
+          5
+        ],
+        "overmap": "sgn_lm_rex_00_z5_north"
+      },
+      {
+        "point": [
+          1,
+          0,
+          5
+        ],
+        "overmap": "sgn_lm_rex_10_z5_north"
+      },
+      {
+        "point": [
+          0,
+          1,
+          5
+        ],
+        "overmap": "sgn_lm_rex_01_z5_north"
+      },
+      {
+        "point": [
+          1,
+          1,
+          5
+        ],
+        "overmap": "sgn_lm_rex_11_z5_north"
       }
     ]
   }

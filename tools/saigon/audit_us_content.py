@@ -87,10 +87,28 @@ def entry( e, groups, items, seen, out ):
                 entry( sub, groups, items, seen, out )
 
 
+# L-loc2: dda items whose names pass the word list but are out of place in 2009 Saigon loot
+OUT_OF_PLACE = {
+    'mre_beef': 'American army ration (Saigon: lương khô)',
+    'mre_veggy': 'American army ration (Saigon: lương khô)',
+    'holybook_bible1': 'English King James Bible (Saigon parishes: Kinh Thánh)',
+    'holybook_catechism': 'English catechism (Saigon parishes: sách kinh nguyện)',
+    'guidebook': "dda's in-joke guide (Saigon: backpacker's guide to Vietnam)",
+    'textbook_speech': 'American textbook (Saigon schools: Ngữ văn)',
+    'textbook_firstaid': 'American textbook (Saigon: Red Cross first-aid handbook)',
+    'corset': 'not worn on Saigon streets', 'corset_waist': 'not worn on Saigon streets',
+    'long_undertop': 'thermal underwear in the tropics', 'long_underpants': 'thermal underwear in the tropics',
+    'thermal_shirt': 'thermal underwear in the tropics',
+    'engineering_robotics_kit': "dda's American gadget group", 'engineering_makerspace_kit': "dda's American gadget group",
+    'engineering_engine_kit': "dda's American gadget group",
+}
+
+
 def main():
     mod_files = glob.glob( 'data/mods/saigon_2000s/**/*.json', recursive=True )
     groups, items = load( glob.glob( 'data/json/**/*.json', recursive=True ) + mod_files )
-    mod = ' '.join( open( f ).read() for f in mod_files ) + open( 'tools/saigon/gen_saigon_landmarks.py' ).read()
+    mod = ' '.join( open( f ).read() for f in mod_files ) + open( 'tools/saigon/gen_saigon_landmarks.py' ).read() + \
+        open( 'tools/saigon/gen_places.py' ).read()
     # a group counts only where it is used as loot: after "group" / "item" / "death_drops" /
     # "contents-group" (JSON) or 'item' (the landmark generator), not as a terrain or season name
     used = set( re.findall( r'["\'](?:group|item|items|death_drops|contents-group|container-group)["\']\s*:\s*["\']([\w-]+)["\']',
@@ -117,6 +135,8 @@ def main():
         m = US.search( text )
         if m:
             hits.append( ( i, m.group( 0 ), text ) )
+        elif i in OUT_OF_PLACE:
+            hits.append( ( i, 'out of place', OUT_OF_PLACE[i] ) )
     print( '%d flagged (%d allowed exceptions)' % ( len( hits ), len( ALLOWED ) ) )
     for i, word, text in hits:
         print( '  %-32s [%s] %s' % ( i, word, text[:120] ) )

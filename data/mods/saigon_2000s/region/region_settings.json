@@ -47,6 +47,10 @@
       [ "sgn_lm_thao_cam_vien", 100 ],
       [ "sgn_lm_dam_sen", 100 ],
       [ "sgn_lm_suoi_tien", 100 ],
+      [ "sgn_lm_tan_dinh", 120 ],
+      [ "sgn_lm_cho_tan_dinh", 120 ],
+      [ "sgn_lm_nha_rong", 100 ],
+      [ "sgn_lm_rex", 120 ],
       [ "sgn_pl_cay_xang", 10 ],
       [ "sgn_pl_coopmart", 4 ],
       [ "sgn_pl_benh_vien", 3 ],
@@ -54,7 +58,16 @@
       [ "sgn_pl_nha_sach", 5 ],
       [ "sgn_pl_xe_may", 5 ]
     ],
-    "parks": [ [ "sgn_chua_1", 100 ], [ "sgn_pl_nghia_trang", 6 ], [ "sgn_kenh_row_1", 40 ], [ "sgn_truong_1", 40 ], [ "sgn_nha_tho_1", 25 ] ],
+    "parks": [
+      [ "sgn_chua_1", 100 ],
+      [ "sgn_pl_nghia_trang", 6 ],
+      [ "sgn_kenh_row_1", 40 ],
+      [ "sgn_truong_1", 40 ],
+      [ "sgn_nha_tho_1", 25 ],
+      [ "sgn_pl_cong_vien", 30 ],
+      [ "sgn_pl_cong_vien_ho", 15 ],
+      [ "sgn_pl_cong_vien_the_duc", 15 ]
+    ],
     "name_snippet": "<sgn_city_name>"
   },
   {

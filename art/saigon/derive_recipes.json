@@ -1588,5 +1588,77 @@
       { "op": "tint", "rgb": [ 122, 74, 40 ], "strength": 0.3 }
     ],
     "//": "V2 dép quai hậu: brown strap sandals."
+  },
+  {
+    "target": "jacket_army",
+    "source": "jacket_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "helmet_army",
+    "source": "helmet_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "overlay_male_worn_jacket_army",
+    "source": "overlay_male_worn_jacket_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "overlay_male_worn_pants_army",
+    "source": "overlay_male_worn_pants_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "overlay_male_worn_helmet_army",
+    "source": "overlay_male_worn_helmet_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "overlay_female_worn_jacket_army",
+    "source": "overlay_female_worn_jacket_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "overlay_female_worn_pants_army",
+    "source": "overlay_female_worn_pants_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "overlay_female_worn_helmet_army",
+    "source": "overlay_female_worn_helmet_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
   }
 ]

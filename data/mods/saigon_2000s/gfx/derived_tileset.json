@@ -8224,6 +8224,10 @@
         "fg": 1012
        }
       ]
+     },
+     {
+      "id": "jacket_army",
+      "fg": 1028
      }
     ]
    },
@@ -9394,6 +9398,10 @@
      {
       "id": "sgn_khan_quang_do",
       "fg": 1218
+     },
+     {
+      "id": "helmet_army",
+      "fg": 1219
      }
     ]
    },
@@ -9575,6 +9583,30 @@
      {
       "id": "overlay_worn_sgn_dep_quai_hau",
       "fg": 1274
+     },
+     {
+      "id": "overlay_male_worn_jacket_army",
+      "fg": 1275
+     },
+     {
+      "id": "overlay_male_worn_pants_army",
+      "fg": 1276
+     },
+     {
+      "id": "overlay_male_worn_helmet_army",
+      "fg": 1277
+     },
+     {
+      "id": "overlay_female_worn_jacket_army",
+      "fg": 1278
+     },
+     {
+      "id": "overlay_female_worn_pants_army",
+      "fg": 1279
+     },
+     {
+      "id": "overlay_female_worn_helmet_army",
+      "fg": 1280
      }
     ]
    }

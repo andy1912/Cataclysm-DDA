@@ -139,5 +139,33 @@
     "id": "sgn_vg_new_motorbikes",
     "//": "P2 motorbike dealer: the showroom's new bikes.",
     "vehicles": [ [ "sgn_veh_underbone", 70 ], [ "sgn_veh_xe_tay_ga", 30 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_kho_goods",
+    "subtype": "distribution",
+    "//": "L-loc1 kho hàng and the port's containers: what a Saigon wholesaler stocked in 2009.",
+    "items": [
+      { "item": "dry_rice", "prob": 20, "count": [ 2, 6 ] },
+      { "item": "sugar", "prob": 8, "count": [ 1, 3 ] },
+      { "item": "salt", "prob": 6, "count": [ 1, 3 ] },
+      { "item": "material_cement", "prob": 8 },
+      { "item": "fertilizer", "prob": 6 },
+      { "item": "can_tuna", "prob": 6, "count": [ 2, 8 ] },
+      { "item": "soap", "prob": 5, "count": [ 2, 6 ] },
+      { "item": "detergent", "prob": 5 },
+      { "item": "sgn_thung_xop", "prob": 8 },
+      { "item": "sgn_can_nhua", "prob": 6 },
+      { "item": "sgn_non_la", "prob": 5, "count": [ 2, 6 ] },
+      { "item": "sgn_dep_to_ong", "prob": 5, "count": [ 2, 6 ] },
+      { "item": "sgn_ao_mua_canh_doi", "prob": 5, "count": [ 1, 4 ] },
+      { "item": "wheel_motorbike", "prob": 4 },
+      { "item": "tarp", "prob": 4 },
+      { "item": "jerrycan", "prob": 3 },
+      { "item": "bucket", "prob": 3 },
+      { "item": "sheet_metal_small", "prob": 3 },
+      { "item": "pipe", "prob": 3 },
+      { "item": "nail", "prob": 3, "count": [ 10, 40 ] }
+    ]
   }
 ]

@@ -6,6 +6,7 @@
             the end tiles of such runs) and lands on a road at both ends, along its axis
   hẻm       every hẻm network has a way in: a block touching a road or a canal (a hẻm block
             opens its alley mouths only towards those and other hẻm blocks)
+  local     no dda park or warehouse (American layouts and loot): the mod's công viên and kho
 
   python3 tools/saigon/realmap/check_realmap.py [FOLDER]      (default: the mod's realmap_2009)
 
@@ -88,16 +89,28 @@ def check_hem( tiles ):
     return nets, problems
 
 
+# dda terrain that would put an American building on the real map (L-loc1 replaced them)
+NOT_SAIGON = ( 'park', 'warehouse' )
+
+
+def check_localized( tiles ):
+    bad = [ ( p, t ) for p, t in tiles.items() if t.split( '_' )[0] in NOT_SAIGON and
+            ( t in NOT_SAIGON or t.rsplit( '_', 1 )[0] in NOT_SAIGON ) ]
+    return [ 'dda %s at %s' % ( t, p ) for p, t in bad[:5] ] + ( [ '... %d tiles in all' % len( bad ) ] if len( bad ) > 5 else [] )
+
+
 def main():
     folder = sys.argv[1] if len( sys.argv ) > 1 else os.path.join( HERE, '..', '..', '..', 'data', 'mods',
                                                                     'saigon_2000s', 'realmap_2009' )
     tiles = load( folder )
     runs, bp = check_bridges( tiles )
     nets, hp = check_hem( tiles )
-    print( 'bridges: %d runs, %d problems; hẻm: %d networks, %d without a way in' % ( runs, len( bp ), nets, len( hp ) ) )
-    for line in ( bp + hp )[:20]:
+    lp = check_localized( tiles )
+    print( 'bridges: %d runs, %d problems; hẻm: %d networks, %d without a way in; dda American buildings: %s'
+           % ( runs, len( bp ), nets, len( hp ), 'none' if not lp else lp[-1] ) )
+    for line in ( bp + hp + lp )[:20]:
         print( '  ' + line )
-    sys.exit( 1 if bp or hp else 0 )
+    sys.exit( 1 if bp or hp or lp else 0 )
 
 
 if __name__ == '__main__':

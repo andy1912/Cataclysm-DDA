@@ -23,7 +23,7 @@
       { "item": "sgn_ban_do_tphcm", "prob": 15 },
       { "item": "money_twenty", "prob": 20, "count": [ 1, 5 ] },
       { "item": "money_hundred", "prob": 5 },
-      { "item": "guidebook", "prob": 20 },
+      { "item": "sgn_guidebook_vn", "prob": 20 },
       { "item": "backpack_hiking", "prob": 10 },
       { "item": "wallet_travel", "prob": 10 },
       { "item": "camera", "prob": 8 },

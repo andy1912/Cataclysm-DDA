@@ -34,6 +34,7 @@ struct landmark {
     int h;
     int zmin;
     int zmax;
+    bool open_air = false;      // a park: no doors or rooms to check
 };
 } // namespace
 
@@ -64,10 +65,16 @@ TEST_CASE( "saigon_district1_landmarks", "[mapgen][saigon]" )
         { "sgn_lm_thao_cam_vien", 4, 4, 0, 1 }, { "sgn_lm_dam_sen", 4, 4, 0, 1 }, { "sgn_lm_suoi_tien", 4, 4, 0, 1 },
         // R12: Tân Sơn Nhất's terminal (real map only)
         { "sgn_lm_san_bay", 3, 2, 0, 1 },
+        // L-loc3: Nhà thờ Tân Định, Chợ Tân Định, Bến Nhà Rồng, Khách sạn Rex
+        { "sgn_lm_tan_dinh", 2, 2, 0, 4 }, { "sgn_lm_cho_tan_dinh", 2, 2, 0, 1 },
+        { "sgn_lm_nha_rong", 2, 2, 0, 2 }, { "sgn_lm_rex", 2, 2, 0, 5 },
         // P2 everyday places (tools/saigon/gen_places.py), same piece naming
         { "sgn_pl_cay_xang", 1, 1, 0, 1 }, { "sgn_pl_coopmart", 2, 2, 0, 1 }, { "sgn_pl_benh_vien", 2, 2, 0, 2 },
         { "sgn_pl_cong_an", 1, 1, 0, 1 }, { "sgn_pl_nghia_trang", 2, 2, 0, 1 }, { "sgn_pl_nha_sach", 1, 1, 0, 1 },
         { "sgn_pl_xe_may", 1, 1, 0, 1 },
+        // L-loc1 parks, warehouse and container yard
+        { "sgn_pl_cong_vien", 1, 1, 0, 1, true }, { "sgn_pl_cong_vien_ho", 1, 1, 0, 1, true },
+        { "sgn_pl_cong_vien_the_duc", 1, 1, 0, 1, true }, { "sgn_pl_kho", 1, 1, 0, 1 }, { "sgn_pl_kho_cang", 1, 1, 0, 1 },
     };
     const ter_str_id open_air( "t_open_air" );
     const ter_str_id up( "t_stairs_up" );
@@ -148,11 +155,13 @@ TEST_CASE( "saigon_district1_landmarks", "[mapgen][saigon]" )
                 }
             }
         }
-        CHECK( doors > 0 );
         CHECK( doors_reached == doors );
         CAPTURE( indoor, roofed, first_unroofed );
-        CHECK( indoor > 0 );
         CHECK( roofed == indoor );
+        if( !l.open_air ) {
+            CHECK( doors > 0 );
+            CHECK( indoor > 0 );
+        }
     }
 }
 

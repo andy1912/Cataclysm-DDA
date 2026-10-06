@@ -9,6 +9,7 @@ import math
 import re
 
 SEARCH = 3
+LANDMARK_RADIUS = 3            # a place this close to a landmark is that landmark
 DIRS = [ ( 0, -1 ), ( 1, 0 ), ( 0, 1 ), ( -1, 0 ) ]          # the side a building faces: n e s w
 WATER = ( 'river', 'canal', 'lake' )
 KIND = {
@@ -43,8 +44,14 @@ def free( world, terrain, road_tiles, tiles, W, H ):
 def place( world, terrain, road_tiles, buildings, places, W, H ):
     placed = {}
     missed = {}
+    represented = 0
     for p in places:
         kind = p['kind']
+        # the real Bến Thành, Đức Bà, Thiên Hậu ... are in the data too: their landmark stands for them
+        if any( abs( p['tile'][0] - t[0] ) <= LANDMARK_RADIUS and abs( p['tile'][1] - t[1] ) <= LANDMARK_RADIUS
+                for t in world.landmark_tiles ):
+            represented += 1
+            continue
         if kind == 'supermarket' and not CHAINS_2009.search( p.get( 'name', '' ) ):
             continue
         parts = buildings[KIND[kind]]
@@ -78,5 +85,6 @@ def place( world, terrain, road_tiles, buildings, places, W, H ):
             if all( terrain[q][p] == 'cemetery' for p, q in tiles ) and free( world, terrain, road_tiles, tiles, W, H ):
                 world.place( parts, x, y, ( x // 2 + y // 2 ) % 4 )
                 placed['cemetery'] = placed.get( 'cemetery', 0 ) + 1
-    return [ 'places: ' + ', '.join( '%s %d' % kv for kv in sorted( placed.items() ) ) +
+    return [ 'places: %d already stood for by a landmark; ' % represented +
+             ', '.join( '%s %d' % kv for kv in sorted( placed.items() ) ) +
              ( '; no room for ' + ', '.join( '%s %d' % kv for kv in sorted( missed.items() ) ) if missed else '' ) ]

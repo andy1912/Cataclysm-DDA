@@ -191,3 +191,15 @@ def can_sardine( c ):
     c.px( 7, 10, rgb( '#1a1a1a' ) )
     c.ring( 14, 9, 1.4, 1, rgb( '#e8e8ec' ), 1 )                        # ring pull
     finish( c )
+
+
+@sprite( 'sgn_luong_kho', 20, 20 )
+def luong_kho( c ):
+    # a foil-wrapped brick of army ration biscuit, one end torn open
+    c.rect( 4, 8, 15, 14, rgb( '#c8ccd0' ) )
+    c.rect( 4, 8, 15, 9, rgb( '#e8ecf0' ) )
+    c.rect( 6, 10, 13, 12, rgb( '#3a6a3a' ) )                         # the green label
+    c.px( 9, 11, rgb( '#f2c232' ) )
+    c.rect( 13, 8, 15, 14, rgb( '#e0c890' ) )                         # the biscuit showing
+    c.line( 14, 9, 14, 13, rgb( '#c8a868' ) )
+    finish( c )

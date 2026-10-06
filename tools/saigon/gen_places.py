@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Generate everyday Saigon places that every city has more than one of (unit P2):
 the petrol station, the Co.op Mart supermarket, the district hospital, the ward police
-station, the cemetery, the bookstore and the motorbike dealer.
+station, the cemetery, the bookstore and the motorbike dealer; L-loc1 adds the city park
+(three kinds) and the warehouse and port container yard, in place of dda's American park and
+warehouse.
 
 Built with the landmark generator's tools (gen_saigon_landmarks.py: Level grids, roofs,
 vehicles, animals, the shared sgn_lm palette).  Each place adds its own symbols as mapgen
@@ -194,6 +196,147 @@ def xe_may():
     return { 0: z0, 1: z1 }
 
 
+# --- Công viên: three kinds of city park (L-loc1) ----------------------------------------------
+def park_frame( z0 ):
+    # the sidewalk and a low railing all round, gaps for the paths
+    z0.rect( 0, 0, 23, 1, 'S' )
+    for x in range( 1, 23 ):
+        z0.at( x, 2, '|' )
+        z0.at( x, 22, '|' )
+    for y in range( 2, 23 ):
+        z0.at( 1, y, '|' )
+        z0.at( 22, y, '|' )
+    for x in ( 11, 12 ):
+        z0.at( x, 2, 'o' )
+        z0.at( x, 22, 'o' )
+    for y in ( 11, 12 ):
+        z0.at( 1, y, 'o' )
+        z0.at( 22, y, 'o' )
+
+
+def cong_vien():
+    # a shady square like Tao Đàn's corners: gạch tàu cross paths, old tamarind and sao trees,
+    # stone benches, flower beds, a statue in the middle, a café cóc of low stools by the gate
+    z0 = Level( 1, 1, 'g' )
+    park_frame( z0 )
+    z0.rect( 11, 3, 12, 21, 'o' )
+    z0.rect( 2, 11, 21, 12, 'o' )
+    z0.box( 9, 9, 14, 14, 'o', 'o' )
+    z0.at( 11, 11, 'Z' )
+    for x, y in ( ( 4, 4 ), ( 8, 5 ), ( 16, 4 ), ( 19, 7 ), ( 4, 16 ), ( 7, 19 ), ( 17, 17 ), ( 20, 20 ), ( 5, 9 ), ( 18, 14 ) ):
+        z0.at( x, y, 'T' if ( x + y ) % 3 else '9' )
+    for x in ( 4, 7, 16, 19 ):                         # benches along the cross path
+        z0.at( x, 10, '(' )
+        z0.at( x, 13, '(' )
+    for y in ( 5, 8, 15, 18 ):
+        z0.at( 10, y, '(' )
+        z0.at( 13, y, '(' )
+    for x, y in ( ( 3, 6 ), ( 15, 7 ), ( 6, 14 ), ( 15, 19 ) ):   # flower beds
+        z0.rect( x, y, x + 2, y + 1, '*' )
+    z0.at( 14, 4, 'u' )                                # the café cóc by the north gate
+    for x, y in ( ( 16, 6 ), ( 18, 6 ), ( 16, 8 ) ):
+        z0.at( x, y, '[' )
+        z0.at( x + 1, y, ']' )
+    z1 = Level( 1, 1, ' ' )
+    return { 0: z0, 1: z1 }
+
+
+def cong_vien_ho():
+    # a lotus pond with a bridge across, benches and trees around it
+    z0 = Level( 1, 1, 'g' )
+    park_frame( z0 )
+    z0.ellipse( 12, 12, 8.5, 6.5, '~' )
+    z0.ellipse( 12, 12, 6.5, 4.5, '$' )
+    z0.rect( 11, 3, 12, 21, 'o' )                      # the bridge, north to south
+    z0.rect( 2, 11, 21, 12, 'o' )
+    for x in ( 10, 13 ):
+        for y in range( 6, 19 ):
+            if z0.get( x, y ) in '~$':
+                z0.at( x, y, '|' )
+    for x, y in ( ( 3, 3 ), ( 20, 3 ), ( 3, 20 ), ( 20, 20 ), ( 7, 4 ), ( 17, 20 ) ):
+        z0.at( x, y, '9' )
+    for x, y in ( ( 4, 7 ), ( 19, 7 ), ( 4, 17 ), ( 19, 17 ) ):
+        z0.at( x, y, '(' )
+    z1 = Level( 1, 1, ' ' )
+    return { 0: z0, 1: z1 }
+
+
+def cong_vien_the_duc():
+    # the morning-exercise yard: a đá cầu court, exercise bars, benches under the trees
+    z0 = Level( 1, 1, 'g' )
+    park_frame( z0 )
+    z0.rect( 4, 4, 19, 11, '@' )                       # the court
+    z0.rect( 4, 4, 19, 4, '`' )
+    z0.rect( 4, 11, 19, 11, '`' )
+    z0.rect( 4, 4, 4, 11, '`' )
+    z0.rect( 19, 4, 19, 11, '`' )
+    z0.rect( 11, 4, 12, 11, '`' )                      # the net line
+    for x in range( 5, 19, 3 ):                        # exercise bars and a pull-up frame
+        z0.at( x, 15, '\\' )
+    z0.rect( 11, 12, 12, 21, 'o' )
+    for x, y in ( ( 3, 14 ), ( 20, 14 ), ( 3, 20 ), ( 20, 20 ), ( 8, 19 ), ( 16, 19 ) ):
+        z0.at( x, y, 'T' )
+    for x in ( 5, 8, 15, 18 ):
+        z0.at( x, 17, '(' )
+    z1 = Level( 1, 1, ' ' )
+    return { 0: z0, 1: z1 }
+
+
+# --- Kho hàng: a warehouse shed and a port container yard (L-loc1) -----------------------------
+def kho():
+    # a corrugated-iron shed off a side street: a rolling door, stacks of rice and cement
+    # sacks, crates of plastic goods and bike parts, the owner's tiny office with a tea table
+    z0 = Level( 1, 1, ',' )
+    z0.rect( 0, 0, 23, 1, 'S' )
+    z0.box( 1, 4, 22, 22, '/', ':' )
+    for x in range( 9, 15 ):
+        z0.at( x, 4, ';' )                             # the rolling door
+    for y in ( 7, 10, 13 ):                            # sack stacks
+        z0.rect( 3, y, 8, y, 'B' )
+        z0.rect( 15, y, 20, y, 'B' )
+    for x in range( 3, 13, 2 ):                        # crates
+        z0.at( x, 17, '$' )
+        z0.at( x, 19, '$' )
+    z0.box( 14, 16, 21, 21, 'C', '.' )                 # the office
+    z0.at( 14, 18, '+' )
+    z0.at( 18, 18, 'Q' )
+    z0.at( 18, 19, 'c' )
+    z0.at( 16, 20, '[' )
+    z0.vehicle( 12, 2, 'sgn_vg_street_traffic', 0, 30 )
+    z1 = roof_over( z0, INDOOR | set( '/;B$' ), '_' )
+    return { 0: z0, 1: z1 }
+
+
+def kho_cang():
+    # the port's container yard: a fenced lot of stacked containers, some doors forced open
+    z0 = Level( 1, 1, ',' )
+    z0.rect( 0, 0, 23, 1, 'S' )
+    for x in range( 0, 24 ):
+        z0.at( x, 2, 'I' )
+        z0.at( x, 23, 'I' )
+    for y in range( 2, 24 ):
+        z0.at( 0, y, 'I' )
+        z0.at( 23, y, 'I' )
+    for x in range( 10, 14 ):
+        z0.at( x, 2, ',' )                             # the gate, chained open
+    for x0 in ( 2, 13 ):                               # four containers, 9 x 4 each
+        for y0 in ( 5, 14 ):
+            z0.box( x0, y0, x0 + 8, y0 + 4, '/', ':' )
+            z0.at( x0 + 8, y0 + 2, ';' )
+            for x in range( x0 + 1, x0 + 7, 2 ):
+                z0.at( x, y0 + 2, '$' )
+    z1 = roof_over( z0, set( '/;:$' ), '_' )
+    return { 0: z0, 1: z1 }
+
+PARK_LOCAL = { 'terrain': { '(': 't_sgn_gach_tau', '*': 't_grass', '$': 't_sgn_hoa_sen', '@': 't_pavement',
+                            'u': 't_sgn_gach_tau',
+                            '`': 't_pavement_y', '\\': 't_monkey_bars' },
+               'furniture': { '(': 'f_bench', '*': 'f_sgn_van_tho' } }
+KHO_LOCAL = { 'terrain': { '/': 't_wall_metal', ';': 't_door_metal_c', '$': 't_thconc_floor' },
+              'furniture': { '$': 'f_crate_c' },
+              'items': { '$': { 'item': 'sgn_kho_goods', 'chance': 70, 'repeat': [ 1, 3 ] } } }
+
+
 PLACES = {
     # id: ( builder, w, h, name, colour, weight, pool, extra flags, local symbols )
     'sgn_pl_cay_xang': ( cay_xang, 1, 1, 'cây xăng', 'red', 10, 'shops', [],
@@ -223,6 +366,13 @@ PLACES = {
                            'items': { '$': { 'item': 'sgn_bookstore', 'chance': 70, 'repeat': [ 1, 3 ] } } } ),
     'sgn_pl_xe_may': ( xe_may, 1, 1, 'cửa hàng xe máy', 'light_cyan', 5, 'shops', [],
                        {} ),
+    # L-loc1: the city's own parks and warehouses, in place of dda's American ones
+    'sgn_pl_cong_vien': ( cong_vien, 1, 1, 'công viên', 'green', 30, 'parks', [], PARK_LOCAL ),
+    'sgn_pl_cong_vien_ho': ( cong_vien_ho, 1, 1, 'công viên (hồ sen)', 'green', 15, 'parks', [], PARK_LOCAL ),
+    'sgn_pl_cong_vien_the_duc': ( cong_vien_the_duc, 1, 1, 'công viên (sân tập)', 'green', 15, 'parks', [],
+                                  PARK_LOCAL ),
+    'sgn_pl_kho': ( kho, 1, 1, 'kho hàng', 'light_gray', 6, 'shops', [], KHO_LOCAL ),
+    'sgn_pl_kho_cang': ( kho_cang, 1, 1, 'bãi container', 'light_gray', 0, 'shops', [], KHO_LOCAL ),
 }
 
 

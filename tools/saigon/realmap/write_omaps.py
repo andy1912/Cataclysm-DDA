@@ -15,7 +15,8 @@ v1 (unit R2b):
   blocks     tiles facing a street become nhà ống (5 storeys + roof) turned to face it; tiles
              inside blocks become hẻm blocks, or fields where streets are sparse (R3); farmland
              along main roads gets village shophouses
-  land use   parks, warehouses, fields, marsh; airport and cemeteries are open ground until R4
+  land use   the mod's parks (công viên) and warehouses / port container yards (kho), fields,
+             marsh; cemeteries get nghĩa trang (R4)
   districts  the 2009 districts as named cities (districts_2009.json): overmap labels and hordes
   landmarks  the 19 landmarks on their real sites (R5, place_landmarks.py, landmarks_2009.json)
   places     fuel, markets, pagodas, churches, schools, hospitals, police, supermarkets of 2009 and
@@ -402,6 +403,7 @@ class World:
         self.oms = { ( x, y ): Overmap( x + ORIGIN_OM[0], y + ORIGIN_OM[1] ) for x in range( cols ) for y in range( rows ) }
         self.used = set()
         self.landmarks = []            # ( id, the tiles just outside its front ), set by place_landmarks
+        self.landmark_tiles = set()
 
     def set( self, x, y, z, ter ):
         self.oms[( x // OM, y // OM )].set( x % OM, y % OM, z, ter )
@@ -422,10 +424,10 @@ class World:
                 self.used.add( ( x + dx, y + dy ) )
 
 
-PREVIEW = [ ( 'sgn_lm_', ( 255, 0, 255 ) ), ( 'sgn_sb_runway', ( 40, 40, 46 ) ), ( 'sgn_sb_', ( 120, 122, 130 ) ), ( 'sgn_duong_sat', ( 20, 20, 20 ) ), ( 'sgn_pl_', ( 0, 200, 220 ) ), ( 'sgn_cho', ( 255, 127, 0 ) ),
+PREVIEW = [ ( 'sgn_pl_cong_vien', ( 63, 165, 72 ) ), ( 'sgn_pl_kho', ( 150, 150, 150 ) ), ( 'sgn_lm_', ( 255, 0, 255 ) ), ( 'sgn_sb_runway', ( 40, 40, 46 ) ), ( 'sgn_sb_', ( 120, 122, 130 ) ), ( 'sgn_duong_sat', ( 20, 20, 20 ) ), ( 'sgn_pl_', ( 0, 200, 220 ) ), ( 'sgn_cho', ( 255, 127, 0 ) ),
             ( 'sgn_chua', ( 192, 0, 0 ) ), ( 'sgn_nha_tho', ( 255, 176, 200 ) ), ( 'sgn_truong', ( 0, 80, 255 ) ), ( 'road', ( 70, 70, 70 ) ), ( 'bridge', ( 155, 63, 200 ) ),
             ( 'lake', ( 31, 79, 176 ) ), ( 'sgn_nh_', ( 232, 150, 60 ) ), ( 'sgn_hem', ( 230, 200, 154 ) ),
-            ( 'park', ( 63, 165, 72 ) ), ( 'warehouse', ( 150, 150, 150 ) ), ( 'forest_water', ( 122, 184, 160 ) ),
+            ( 'park', ( 63, 165, 72 ) ), ( 'warehouse', ( 150, 150, 150 ) ),  ( 'forest_water', ( 122, 184, 160 ) ),
             ( 'field', ( 242, 237, 220 ) ) ]
 
 
@@ -514,7 +516,7 @@ def main():
         rails += 1
 
     # ---- water and land use; farmland along a main road is left for the village shophouses below
-    LAND = { 'park': 'park', 'industrial': 'warehouse', 'farmland': 'field', 'marsh': 'forest_water',
+    LAND = { 'farmland': 'field', 'marsh': 'forest_water',
              'cemetery': 'field', 'government': 'field', 'open': 'field',
              'runway': 'sgn_sb_runway', 'taxiway': 'sgn_sb_taxiway', 'apron': 'sgn_sb_apron' }
     UNROTATED = ( 'field', 'forest_water', 'sgn_sb_runway', 'sgn_sb_taxiway', 'sgn_sb_apron' )
@@ -539,6 +541,18 @@ def main():
                 world.used.add( ( x, y ) )
             elif t == 'farmland' and best_street( x, y, 2 ) and rng.random() < 0.6:
                 continue
+            elif t in ( 'park', 'industrial' ):
+                # the city's own parks and warehouses (gen_places.py), facing a street if one is next
+                # to them; industrial land by the water is a port's container yard
+                if t == 'park':
+                    pid = rng.choice( [ 'sgn_pl_cong_vien', 'sgn_pl_cong_vien', 'sgn_pl_cong_vien_ho',
+                                        'sgn_pl_cong_vien_the_duc' ] )
+                else:
+                    by_water = any( 0 <= x + dx < W and 0 <= y + dy < H and terrain[y + dy][x + dx] in WATER
+                                    for dx in range( -2, 3 ) for dy in range( -2, 3 ) )
+                    pid = 'sgn_pl_kho_cang' if by_water else 'sgn_pl_kho'
+                street = best_street( x, y )
+                world.place( bld[pid], x, y, FACING[street[1]] if street else rng.randrange( 4 ) )
             elif t in LAND:
                 ter = LAND[t]
                 world.set( x, y, 0, ter if ter in UNROTATED else ter + '_' + ROT[rng.randrange( 4 )] )

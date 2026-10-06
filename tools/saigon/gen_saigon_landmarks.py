@@ -87,6 +87,9 @@ LOCAL = {
                      '@': 't_concrete', '*': 't_grass', '`': 't_railroad_track_small' },
         'furniture': { '(': 'f_sgn_chau_kieng', ')': 'f_sgn_thuyen_thien_nga', '@': 'f_sgn_vong_quay',
                        '*': 'f_boulder_large' } },
+    'sgn_lm_nha_rong': {
+        'terrain': { '$': 't_floor_waxed', '~': 't_water_dp' },
+        'furniture': { '$': 'f_displaycase' } },
     'sgn_lm_san_bay': {
         'terrain': { '@': 't_pavement', '`': 't_pavement_y' },
         'furniture': { 'B': 'f_counter' },          # the bag belts behind check-in, not rice sacks
@@ -1085,6 +1088,192 @@ def san_bay():
     return { 0: z0, 1: z1 }
 
 
+# --- 21. Nhà thờ Tân Định (L-loc3) -------------------------------------------------------------
+def tan_dinh():
+    # the pink church of 1876 on Hai Bà Trưng: a forecourt and gate, the square bell tower over
+    # the door, a nave of pink columns and pews, the altar, and the Virgin Mary's grotto
+    z0 = Level( 2, 2, ',' )
+    z0.rect( 0, 0, 47, 1, 'S' )
+    z0.rect( 2, 2, 45, 2, '|' )
+    z0.rect( 21, 2, 26, 2, ',' )                       # the gate
+    z0.box( 10, 8, 37, 45, 'H', '.' )                  # the pink nave
+    z0.box( 19, 8, 28, 15, 'H', '.' )                  # the tower over the porch
+    for x in ( 23, 24 ):
+        z0.at( x, 8, '+' )
+        z0.at( x, 15, '+' )
+    for y in range( 18, 44, 4 ):
+        z0.at( 10, y, 'w' )
+        z0.at( 37, y, 'w' )
+    for y in range( 18, 41, 4 ):                       # columns either side of the aisle
+        z0.at( 15, y, 'P' )
+        z0.at( 32, y, 'P' )
+    for y in range( 17, 39, 2 ):                       # pews
+        z0.rect( 17, y, 22, y, 'b' )
+        z0.rect( 25, y, 30, y, 'b' )
+    z0.rect( 19, 41, 28, 41, 'a' )                     # the altar
+    z0.at( 23, 43, 'Z' )
+    z0.rect( 39, 20, 46, 30, 'g' )                     # the grotto in the side garden
+    z0.at( 42, 24, 'Z' )
+    for x, y in ( ( 40, 27 ), ( 43, 27 ), ( 45, 22 ) ):
+        z0.at( x, y, 'G' )
+    for x, y in ( ( 4, 10 ), ( 5, 30 ), ( 42, 10 ), ( 43, 38 ) ):
+        z0.at( x, y, 'T' )
+    levels = { 0: z0 }
+    for z in ( 1, 2, 3 ):
+        lv = Level( 2, 2, ' ' )
+        if z == 1:
+            lv.rect( 10, 8, 37, 45, '_' )              # the nave roof
+        if z < 3:
+            lv.box( 19, 8, 28, 15, 'H', '.' )          # the tower climbs on
+            for x in ( 19, 28 ):
+                lv.at( x, 11, 'w' )
+        else:
+            lv.rect( 19, 8, 28, 15, '|' )              # the belfry, open, a railing round it
+            lv.rect( 20, 9, 27, 14, '_' )
+        levels[z] = lv
+    levels[0].at( 20, 10, '<' )
+    levels[1].at( 20, 10, '>' )
+    levels[1].at( 26, 13, '<' )
+    levels[2].at( 26, 13, '>' )
+    levels[2].at( 20, 10, '<' )
+    levels[3].at( 20, 10, '>' )
+    levels[4] = Level( 2, 2, ' ' )
+    levels[4].rect( 20, 9, 27, 14, '_' )               # the belfry's roof and the spire stub
+    return levels
+
+
+# --- 22. Chợ Tân Định (L-loc3) -----------------------------------------------------------------
+def cho_tan_dinh():
+    # the 1926 market hall, famous for fabric: bolts of cloth down the middle aisles, produce and
+    # fish along one side, a row of food stalls with stools at the back
+    z0 = Level( 2, 2, ',' )
+    z0.rect( 0, 0, 47, 1, 'S' )
+    z0.box( 2, 4, 45, 45, 'C', ':' )
+    for x in range( 4, 44, 4 ):
+        z0.at( x, 4, 'W' )
+    for x in range( 21, 27 ):
+        z0.at( x, 4, 'D' )
+    for x in ( 2, 45 ):
+        for y in ( 23, 24 ):
+            z0.at( x, y, 'D' )
+    for y in range( 8, 34, 3 ):                        # cloth stalls, two double rows
+        z0.rect( 8, y, 18, y, 'y' )
+        z0.rect( 29, y, 39, y, 'y' )
+    for y in range( 8, 34, 2 ):                        # produce and fish along the walls
+        z0.at( 4, y, 'q' )
+        z0.at( 43, y, 'm' )
+    for x in range( 6, 42, 4 ):                        # the food row at the back
+        z0.at( x, 38, 'u' )
+        z0.at( x, 40, 's' )
+        z0.at( x + 1, 40, 's' )
+    z1 = roof_over( z0, INDOOR )
+    return { 0: z0, 1: z1 }
+
+
+# --- 23. Bến Nhà Rồng (L-loc3) -----------------------------------------------------------------
+def nha_rong():
+    # the customs house of 1863 on the river, the Dragon House for the two glazed dragons on its
+    # roof: a garden, a columned porch, exhibition rooms of glass cases on two floors, the quay
+    z0 = Level( 2, 2, 'g' )
+    z0.rect( 0, 0, 47, 1, 'S' )
+    z0.rect( 22, 2, 25, 9, ',' )                       # the drive
+    for x, y in ( ( 5, 4 ), ( 12, 6 ), ( 35, 5 ), ( 42, 4 ) ):
+        z0.at( x, y, 'T' )
+    z0.box( 8, 10, 39, 33, 'C', '^' )
+    for x in range( 12, 37, 4 ):
+        z0.at( x, 11, 'O' )                            # the red porch columns
+    for x in ( 23, 24 ):
+        z0.at( x, 10, 'D' )
+    for x in range( 10, 39, 4 ):
+        z0.at( x, 33, 'W' )
+    z0.rect( 9, 20, 38, 20, 'C' )                      # two halls
+    for x in ( 16, 31 ):
+        z0.at( x, 20, '+' )
+    for x in range( 11, 37, 4 ):                       # glass cases
+        z0.at( x, 15, '$' )
+        z0.at( x, 25, '$' )
+        z0.at( x, 29, '$' )
+    z0.at( 37, 13, '<' )
+    z0.rect( 0, 34, 47, 40, ',' )                      # the quay
+    for x in range( 4, 47, 8 ):
+        z0.at( x, 40, 'X' )                            # bollards
+    z0.rect( 0, 41, 47, 47, '~' )
+    z1 = Level( 2, 2, ' ' )
+    z1.box( 8, 10, 39, 33, 'C', '^' )
+    for x in range( 10, 39, 4 ):
+        z1.at( x, 10, 'W' )
+        z1.at( x, 33, 'W' )
+    for x in range( 11, 37, 4 ):
+        z1.at( x, 18, '$' )
+        z1.at( x, 26, '$' )
+    z1.at( 37, 13, '>' )
+    z2 = Level( 2, 2, ' ' )
+    z2.rect( 8, 10, 39, 33, 'N' )                      # the green glazed roof
+    for x in ( 9, 38 ):
+        z2.at( x, 21, 'J' )                            # the two dragons at the ridge ends
+    return { 0: z0, 1: z1, 2: z2 }
+
+
+# --- 24. Khách sạn Rex (L-loc3) ----------------------------------------------------------------
+def rex():
+    # the hotel on the corner of Nguyễn Huệ and Lê Lợi: a lobby and restaurant, four floors of
+    # rooms, and the rooftop garden bar under the crown, the place to watch the city from
+    def floor():
+        lv = Level( 2, 2, ' ' )
+        lv.box( 3, 4, 44, 43, 'C', '=' )
+        lv.rect( 4, 22, 43, 25, '.' )                  # the corridor
+        for x in range( 4, 44, 8 ):                    # rooms either side
+            lv.rect( x + 7, 5, x + 7, 21, 'C' )
+            lv.rect( x + 7, 26, x + 7, 42, 'C' )
+            lv.at( x + 3, 21, '+' )
+            lv.at( x + 3, 26, '+' )
+            lv.at( x + 2, 8, '5' )
+            lv.at( x + 2, 38, '5' )
+            lv.at( x + 5, 10, 't' )
+            lv.at( x + 5, 36, 't' )
+            lv.at( x + 3, 4, 'w' )
+            lv.at( x + 3, 43, 'w' )
+        return lv
+    z0 = Level( 2, 2, ',' )
+    z0.rect( 0, 0, 47, 1, 'S' )
+    z0.box( 3, 4, 44, 43, 'C', '^' )
+    for x in range( 5, 43, 2 ):
+        z0.at( x, 4, 'Y' )
+    for x in range( 22, 26 ):
+        z0.at( x, 4, 'D' )
+    z0.rect( 8, 9, 16, 9, 'j' )                        # reception
+    for x, y in ( ( 28, 9 ), ( 34, 9 ), ( 28, 14 ), ( 34, 14 ) ):
+        z0.at( x, y, 't' )
+        z0.at( x + 1, y, 'c' )
+    z0.rect( 4, 24, 43, 24, 'C' )                      # the restaurant at the back
+    z0.at( 23, 24, '+' )
+    for x in range( 7, 42, 6 ):
+        for y in ( 29, 35 ):
+            z0.at( x, y, 't' )
+            z0.at( x, y + 1, 'c' )
+    z0.at( 41, 20, 'A' )                               # the lobby piano
+    levels = { 0: z0 }
+    for z in range( 1, 5 ):
+        levels[z] = floor()
+    roof = Level( 2, 2, ' ' )
+    roof.rect( 3, 4, 44, 43, '_' )
+    roof.box( 3, 4, 44, 43, '|', '_' )                 # the parapet railing
+    for x, y in ( ( 10, 12 ), ( 18, 12 ), ( 10, 30 ), ( 18, 30 ), ( 30, 30 ) ):
+        roof.at( x, y, 't' )
+        roof.at( x + 1, y, 'c' )
+    roof.rect( 28, 10, 38, 10, 'j' )                   # the bar
+    roof.at( 23, 6, 'Z' )                              # the crown
+    for x, y in ( ( 6, 8 ), ( 40, 40 ), ( 6, 40 ) ):
+        roof.at( x, y, 'T' )
+    levels[5] = roof
+    stairs = ( ( 41, 6 ), ( 41, 8 ) )
+    for z in range( 0, 5 ):
+        x, y = stairs[z % 2]
+        levels[z].at( x, y, '<' )
+        levels[z + 1].at( x, y, '>' )
+    return levels
+
+
 LANDMARKS = {
     # id: ( builder, w, h, name, symbol colour, monsters per OMT-ish, items per symbol )
     'sgn_lm_ben_thanh': ( ben_thanh, 3, 3, 'Chợ Bến Thành', 'yellow' ),
@@ -1107,6 +1296,11 @@ LANDMARKS = {
     'sgn_lm_dam_sen': ( dam_sen, 4, 4, 'Công viên Đầm Sen', 'light_cyan' ),
     'sgn_lm_suoi_tien': ( suoi_tien, 4, 4, 'Khu du lịch Suối Tiên', 'light_red' ),
     'sgn_lm_san_bay': ( san_bay, 3, 2, 'Sân bay Tân Sơn Nhất', 'light_cyan' ),
+    # L-loc3
+    'sgn_lm_tan_dinh': ( tan_dinh, 2, 2, 'Nhà thờ Tân Định', 'pink' ),
+    'sgn_lm_cho_tan_dinh': ( cho_tan_dinh, 2, 2, 'Chợ Tân Định', 'yellow' ),
+    'sgn_lm_nha_rong': ( nha_rong, 2, 2, 'Bến Nhà Rồng', 'light_green' ),
+    'sgn_lm_rex': ( rex, 2, 2, 'Khách sạn Rex', 'yellow' ),
 }
 
 
@@ -1163,7 +1357,7 @@ def palette():
             '4': { 'item': 'sgn_train_station', 'chance': 25 },
             '!': { 'item': 'sgn_mall_fashion', 'chance': 50, 'repeat': [ 1, 2 ] },
             '%': { 'item': 'sgn_shoes', 'chance': 50 },
-            '&': { 'item': 'electronics', 'chance': 40 },
+            '&': { 'item': 'sgn_electronics', 'chance': 40 },
             '5': { 'item': 'sgn_tourist', 'chance': 30 },
             'i': { 'item': 'sgn_tourist', 'chance': 45, 'repeat': [ 1, 2 ] } } }
 

@@ -1,5 +1,5 @@
 {
-  "about": "Where each of the mod's 19 landmarks (city_building sgn_lm_*) stands on the real map: the anchor is the middle of the real site. write_omaps.py centres the landmark's footprint on it, then tries small shifts and the four facings and keeps the one that covers no major road and puts the front on the most street. Sources: 'wiki' = the English Wikipedia article's coordinates; 'osm' = the OpenStreetMap feature of that name in the extract; 'approx' = from memory, checked against the 2000s tourist map. 'facing' fixes the side the entrance faces where the street count would pick the wrong one.",
+  "about": "Where each of the mod's landmarks (city_building sgn_lm_*) stands on the real map: the anchor is the middle of the real site. write_omaps.py centres the landmark's footprint on it, then tries small shifts and the four facings and keeps the one that covers no major road and puts the front on the most street. Sources: 'wiki' = the English Wikipedia article's coordinates; 'osm' = the OpenStreetMap feature of that name in the extract; 'approx' = from memory, checked against the 2000s tourist map. 'facing' fixes the side the entrance faces where the street count would pick the wrong one.",
   "landmarks": [
     {
       "id": "sgn_lm_ben_thanh",
@@ -131,6 +131,30 @@
       "source": "approx (the international terminal of 2007, south of the aprons; checked against the OSM aprons)",
       "facing": "south",
       "facing_why": "the curb and car park are on the city side, south; the apron faces the runways to the north"
+    },
+    {
+      "id": "sgn_lm_tan_dinh",
+      "lat": 10.78835,
+      "lon": 106.69066,
+      "source": "osm (Nhà thờ Tân Định)"
+    },
+    {
+      "id": "sgn_lm_cho_tan_dinh",
+      "lat": 10.7899,
+      "lon": 106.69005,
+      "source": "osm (Chợ Tân Định)"
+    },
+    {
+      "id": "sgn_lm_nha_rong",
+      "lat": 10.76824,
+      "lon": 106.70659,
+      "source": "osm (Khu Di tích Bến Nhà Rồng)"
+    },
+    {
+      "id": "sgn_lm_rex",
+      "lat": 10.77583,
+      "lon": 106.7015,
+      "source": "wiki (Rex Hotel)"
     }
   ]
 }

@@ -557,3 +557,100 @@ def sb_apron( c ):
     c.rect( 0, 0, 15, 15, shade( TARMAC, 1.15 ) )
     c.line( 0, 0, 15, 0, MARK_Y )
     c.line( 8, 2, 8, 15, MARK_Y )
+
+
+# --- L-loc1: city parks, warehouse, container yard ----------------------------------------------
+def park_base( c ):
+    c.rect( 0, 0, 15, 15, PARK )
+    c.line( 7, 0, 7, 15, rgb( '#c8805a' ) )                       # gạch tàu paths
+    c.line( 0, 7, 15, 7, rgb( '#c8805a' ) )
+
+
+@composite( 'sgn_pl_cong_vien', 1, 1 )
+def cong_vien( c ):
+    park_base( c )
+    for x, y in ( ( 3, 3 ), ( 11, 3 ), ( 3, 11 ), ( 11, 11 ) ):
+        c.ellipse( x + 0.5, y + 0.5, 2.2, 2.2, TREE )
+    c.rect( 6, 6, 8, 8, WHITE )                                   # the statue
+
+
+@composite( 'sgn_pl_cong_vien_ho', 1, 1 )
+def cong_vien_ho( c ):
+    park_base( c )
+    c.ellipse( 7.5, 7.5, 5.5, 4.2, WATER )
+    for x, y in ( ( 5, 6 ), ( 9, 9 ), ( 10, 5 ) ):
+        c.px( x, y, rgb( '#e86a9a' ) )                             # lotus
+    c.line( 7, 2, 7, 13, rgb( '#c8805a' ) )                       # the bridge
+
+
+@composite( 'sgn_pl_cong_vien_the_duc', 1, 1 )
+def cong_vien_the_duc( c ):
+    park_base( c )
+    c.rect( 2, 2, 13, 6, rgb( '#8a8a90' ) )                       # the court
+    c.line( 7, 2, 7, 6, rgb( '#e8c040' ) )
+    for x in ( 3, 7, 11 ):
+        c.px( x, 10, rgb( '#c0c0c8' ) )                           # exercise bars
+
+
+@composite( 'sgn_pl_kho', 1, 1 )
+def kho( c ):
+    c.rect( 0, 0, 15, 2, PAVE )
+    walls( c, 1, 3, 14, 14, rgb( '#9aa4ae' ), rgb( '#6a747e' ) )   # corrugated roof
+    for y in range( 5, 14, 2 ):
+        c.line( 2, y, 13, y, rgb( '#8a949e' ) )
+
+
+@composite( 'sgn_pl_kho_cang', 1, 1 )
+def kho_cang( c ):
+    c.rect( 0, 0, 15, 15, rgb( '#5c5e64' ) )
+    for i, ( x, y ) in enumerate( ( ( 1, 3 ), ( 9, 3 ), ( 1, 9 ), ( 9, 9 ) ) ):
+        c.rect( x, y, x + 5, y + 3, rgb( ( '#c84a30', '#2a6ab0', '#3a9a5a', '#e8a030' )[i] ) )
+
+
+# --- L-loc3 landmarks -----------------------------------------------------------------------------
+PINK = rgb( '#e88aa8' )
+
+
+@composite( 'sgn_lm_tan_dinh', 2, 2 )
+def tan_dinh( c ):
+    # the pink church: a long pink nave, the square tower over the door, the grotto garden
+    c.rect( 2, 3, 29, 4, PAVE )
+    walls( c, 7, 6, 24, 29, rgb( '#f4b8c8' ), PINK )
+    walls( c, 12, 5, 19, 11, rgb( '#f8d0dc' ), shade( PINK, 0.8 ) )
+    c.line( 15, 6, 15, 10, rgb( '#f4f0e8' ) )                     # the cross on the tower
+    c.line( 13, 8, 17, 8, rgb( '#f4f0e8' ) )
+    c.rect( 26, 13, 30, 19, GRASS )
+    c.px( 28, 16, WHITE )
+
+
+@composite( 'sgn_lm_cho_tan_dinh', 2, 2 )
+def cho_tan_dinh( c ):
+    # the market hall roof, bolts of colourful cloth showing at the doors
+    walls( c, 1, 3, 30, 30, rgb( '#d8c8a0' ), shade( OCHRE, 0.7 ) )
+    for x in range( 4, 28, 4 ):
+        c.line( x, 4, x, 29, rgb( '#c4b48c' ) )                   # roof ridges
+    for i, x in enumerate( range( 6, 26, 4 ) ):
+        c.rect( x, 1, x + 1, 2, rgb( ( '#d83a3a', '#2a6ab0', '#e8c040', '#3a9a3a', '#c060c0' )[i % 5] ) )
+
+
+@composite( 'sgn_lm_nha_rong', 2, 2 )
+def nha_rong( c ):
+    # the Dragon House: cream walls, the green glazed roof with a dragon at each end, the quay
+    c.rect( 0, 0, 31, 22, PARK )
+    walls( c, 5, 6, 26, 21, rgb( '#2e8a6a' ), CREAM )
+    c.line( 6, 13, 25, 13, rgb( '#5ab89a' ) )                     # the roof ridge
+    c.px( 6, 13, rgb( '#e8c040' ) )
+    c.px( 25, 13, rgb( '#e8c040' ) )
+    c.rect( 0, 23, 31, 26, PAVE )
+    c.rect( 0, 27, 31, 31, WATER )
+
+
+@composite( 'sgn_lm_rex', 2, 2 )
+def rex( c ):
+    # the hotel's flat roof garden, the gold crown at the front edge
+    walls( c, 2, 3, 29, 29, rgb( '#d8d4cc' ), rgb( '#8a8478' ) )
+    for x, y in ( ( 6, 8 ), ( 24, 24 ), ( 6, 24 ) ):
+        c.ellipse( x, y, 1.6, 1.6, TREE )
+    c.rect( 13, 3, 18, 5, rgb( '#e8c040' ) )                      # the crown
+    c.px( 14, 2, rgb( '#e8c040' ) )
+    c.px( 17, 2, rgb( '#e8c040' ) )
