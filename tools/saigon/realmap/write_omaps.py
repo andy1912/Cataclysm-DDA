@@ -531,6 +531,18 @@ def main():
                 if best is None or score > best[0]:
                     best = ( score, d )
         return best
+    # a park is mostly shady squares, with one lotus pond near its middle and, if it is big, one
+    # exercise yard (picking each tile at random gave a big park a patchwork of little ponds)
+    park_kind = {}
+    for part in groups( { ( x, y ) for y in range( H ) for x in range( W )
+                          if terrain[y][x] == 'park' and ( x, y ) not in world.used } ):
+        cx = sum( p[0] for p in part ) / len( part )
+        cy = sum( p[1] for p in part ) / len( part )
+        ranked = sorted( part, key=lambda p: ( p[0] - cx ) ** 2 + ( p[1] - cy ) ** 2 )
+        if len( part ) >= 4:
+            park_kind[ranked[0]] = 'sgn_pl_cong_vien_ho'
+        if len( part ) >= 8:
+            park_kind[ranked[len( ranked ) // 2]] = 'sgn_pl_cong_vien_the_duc'
     for y in range( H ):
         for x in range( W ):
             if ( x, y ) in world.used:
@@ -545,8 +557,7 @@ def main():
                 # the city's own parks and warehouses (gen_places.py), facing a street if one is next
                 # to them; industrial land by the water is a port's container yard
                 if t == 'park':
-                    pid = rng.choice( [ 'sgn_pl_cong_vien', 'sgn_pl_cong_vien', 'sgn_pl_cong_vien_ho',
-                                        'sgn_pl_cong_vien_the_duc' ] )
+                    pid = park_kind.get( ( x, y ), 'sgn_pl_cong_vien' )
                 else:
                     by_water = any( 0 <= x + dx < W and 0 <= y + dy < H and terrain[y + dy][x + dx] in WATER
                                     for dx in range( -2, 3 ) for dy in range( -2, 3 ) )
