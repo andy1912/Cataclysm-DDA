@@ -11605,6 +11605,11 @@ const scenario *get_scenario()
 {
     return g->scen;
 }
+bool start_new_game_for_tests()
+{
+    return g->start_game();
+}
+
 void set_scenario( const scenario *new_scenario )
 {
     g->scen = new_scenario;

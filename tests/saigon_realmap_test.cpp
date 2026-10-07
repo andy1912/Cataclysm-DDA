@@ -17,6 +17,7 @@
 #include "global_vars.h"
 #include "map.h"
 #include "map_helpers.h"
+#include "mapbuffer.h"
 #include "math_parser_diag_value.h"
 #include "omdata.h"
 #include "overmap.h"
@@ -26,6 +27,7 @@
 #include "player_helpers.h"
 #include "scenario.h"
 #include "start_location.h"
+#include "stats_tracker.h"
 #include "worldfactory.h"
 #include "type_id.h"
 
@@ -128,15 +130,10 @@ TEST_CASE( "saigon_realmap_reads_dda_single_layer_maps", "[overmap][saigon]" )
 // adds the bridge decks; Bến Thành stands on its site; a new game's start location is found there;
 // and the map generates without errors at Tân Sơn Nhất's terminal and runway, at Bến Thành, on a
 // bridge over the Saigon River and on the railway.
-TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
+// An overmap (0, 0) saved earlier in this test run (any test whose turns autosave) would be
+// loaded instead of the pregenerated file.
+static void remove_saved_origin_overmap()
 {
-    const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
-    if( !oter_str_id( "sgn_nh_solo_z5_south" ).is_valid() || !file_exist( file.get_unrelative_path() ) ) {
-        WARN( "saigon_2000s or its real map is not present; skipping" );
-        return;
-    }
-    // an overmap (0, 0) saved earlier in this test run (any test whose turns autosave) would be
-    // loaded instead of the pregenerated file
     for( const cata_path &saved : {
              PATH_INFO::current_dimension_save_path() / zzip_overmap_directory /
              ( overmapbuffer::terrain_filename( point_abs_om() ) + std::string( zzip_suffix ) ),
@@ -146,6 +143,18 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
             remove_file( saved.get_unrelative_path().u8string() );
         }
     }
+}
+
+TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
+{
+    const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
+    if( !oter_str_id( "sgn_nh_solo_z5_south" ).is_valid() || !file_exist( file.get_unrelative_path() ) ) {
+        WARN( "saigon_2000s or its real map is not present; skipping" );
+        return;
+    }
+    // an overmap (0, 0) saved earlier in this test run (any test whose turns autosave) would be
+    // loaded instead of the pregenerated file
+    remove_saved_origin_overmap();
     // choose the map first: clearing places the player at the origin, which loads overmap (0, 0)
     get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
     clear_avatar();
@@ -526,3 +535,105 @@ TEST_CASE( "saigon_realmap_2009_routes", "[saigon]" )
     clear_overmaps();
 }
 
+// A2: the way a player reaches the real map.  Character creation picks "Sài Gòn, 2009" and a
+// start; "New game" runs game::start_game, which fixes the world's map from the scenario, finds
+// the start, builds the reality bubble and places the player.  The other real-map tests set the
+// map themselves, and the QA load opens a saved game, so a break anywhere on this path (the
+// scenario hidden from the picker, its map choice dropped, a start that can't be found) went
+// unseen until a player tried it.
+TEST_CASE( "saigon_new_game_realmap_2009", "[saigon]" )
+{
+    const string_id<scenario> scen( "sgn_saigon_2009" );
+    const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
+    if( !scen.is_valid() || !file_exist( file.get_unrelative_path() ) ) {
+        WARN( "saigon_2000s or its real map is not present; skipping" );
+        return;
+    }
+    const scenario *before = get_scenario();
+    // offered in character creation (RF4)
+    CHECK_FALSE( scen->scen_is_blacklisted() );
+    const std::vector<std::string> starts = {
+        "sgn_sloc_nha_ong", "sgn_sloc_nha_ong_shuttered", "sgn_sloc_hem", "sgn_sloc_cho",
+        "sgn_sloc_ga_sai_gon", "sgn_sloc_san_bay"
+    };
+    CHECK( scen->start_location_count() == static_cast<int>( starts.size() ) );
+    for( const std::string &sloc : starts ) {
+        CAPTURE( sloc );
+        CHECK( scen->allowed_start( start_location_id( sloc ) ) );
+    }
+    // a new world: no map chosen yet, nothing generated or saved
+    get_globals().remove_global_value( "overmap_pregenerated_path" );
+    get_globals().remove_global_value( "overmap_outside_region" );
+    clear_avatar();
+    clear_map();
+    clear_overmaps();
+    remove_saved_origin_overmap();
+    overmap_buffer.clear();
+    MAPBUFFER.clear();
+    get_stats().clear();
+    set_scenario( &scen.obj() );
+    avatar &u = get_avatar();
+    // a fresh character has no id yet; start_game gives it one
+    u.setID( character_id(), true );
+    u.random_start_location = false;
+    u.start_location = start_location_id( starts.front() );
+    // "New game" (game::start_game runs once per process: player ids, starting scores)
+    REQUIRE( start_new_game_for_tests() );
+    // the scenario chose the real map for this world
+    const diag_value *path = get_globals().maybe_get_global_value( "overmap_pregenerated_path" );
+    REQUIRE( path != nullptr );
+    CHECK( path->str() == "saigon_2000s/realmap_2009" );
+    // and it is the real 2009 city, not a generated one: its districts, and Bến Thành market
+    // within 5 tiles of its site (as in saigon_realmap_2009_loads)
+    std::set<std::string> districts;
+    for( const city &c : overmap_buffer.get( point_abs_om() ).cities ) {
+        districts.insert( c.name );
+    }
+    CHECK( districts.count( "Quận 1" ) == 1 );
+    int market = 0;
+    for( int dx = -5; dx <= 5; dx++ ) {
+        for( int dy = -5; dy <= 5; dy++ ) {
+            market += overmap_buffer.ter( tripoint_abs_omt( 158 + dx, 161 + dy, 0 ) ).id().str().rfind(
+                          "sgn_lm_ben_thanh", 0 ) == 0;
+        }
+    }
+    CHECK( market == 9 );
+    // the player stands on the real map (overmaps -1..3 x -2..1), on a Saigon tile, on their
+    // feet; every other start of the scenario, placed the way start_game places one, too
+    for( const std::string &sloc : starts ) {
+        CAPTURE( sloc );
+        if( sloc != starts.front() ) {
+            // the creatures of the last start would be left outside the newly loaded map
+            clear_npcs();
+            clear_creatures();
+            const start_location &start = start_location_id( sloc ).obj();
+            const std::pair<tripoint_abs_omt, std::unordered_map<std::string, std::string>> found =
+                        start.find_player_initial_location( point_abs_om() );
+            REQUIRE_FALSE( found.first.is_invalid() );
+            start.set_parameters( found.first, found.second );
+            start.prepare_map( found.first );
+            tripoint_abs_sm lev = project_to<coords::sm>( found.first );
+            lev -= point( HALF_MAPSIZE, HALF_MAPSIZE );
+            g->load_map( lev );
+            start.place_player( u, found.first );
+        }
+        const point_abs_om om = project_to<coords::om>( u.pos_abs_omt().xy() );
+        CAPTURE( om.to_string() );
+        CHECK( om.x() >= -1 );
+        CHECK( om.x() <= 3 );
+        CHECK( om.y() >= -2 );
+        CHECK( om.y() <= 1 );
+        CHECK( overmap_buffer.ter( u.pos_abs_omt() ).id().str().rfind( "sgn_", 0 ) == 0 );
+        CHECK( get_map().passable( u.pos_bub() ) );
+    }
+    // back to a default world: drop this one first (a fresh map), then the player and the map
+    clear_npcs();
+    clear_creatures();
+    set_scenario( before );
+    get_stats().clear();
+    get_globals().remove_global_value( "overmap_pregenerated_path" );
+    get_globals().remove_global_value( "overmap_outside_region" );
+    clear_overmaps();
+    clear_avatar();
+    clear_map();
+}
