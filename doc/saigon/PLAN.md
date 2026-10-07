@@ -96,3 +96,112 @@ Architecture (to be confirmed by domain 4): a total-conversion mod that depends 
 ## Notes
 - The brief's "/loop" means the bounded analyst↔critic rounds, not the recurring `/loop` skill.
 - Pushing to GitHub or opening a PR happens only when the user asks.
+
+---
+
+## Update 2026-10-07: review and next plan (appended; nothing above is changed)
+
+### Where things stand
+- Pass 1 and most follow-on tracks are done. The ledger `doc/saigon/PROGRESS.md` has 145 done units:
+  - G art, V/P content, L landmarks;
+  - the R real map of 2009 from OpenStreetMap (ODbL);
+  - L-loc localization;
+  - RF4 (the 2009 scenario was hidden from character creation) and L-loc7 (delta wildlife).
+- [PR andy1912/Cataclysm-DDA#1](https://github.com/andy1912/Cataclysm-DDA/pull/1) brings the branch `saigon/pass1-vertical-slice` into the fork's `master`. It is open, MERGEABLE/CLEAN, with 164 commits and 1,034 files. Auto-fix is on.
+- Gates are green: `[saigon]` passes with 26 cases / 7,578 assertions, `check_mod.sh` is clean, `qa_game_load.sh` LOADED.
+
+### Decisions recorded (user, 2026-10-07)
+- **The project is standalone.** Updates flow only **from** CleverRaven upstream **into** this fork, after a check. Nothing is ever proposed or pushed back to CleverRaven.
+- **First priority: playable and verified.**
+- **The control problem from the first playtest is the mouse.** A click does not land on the tile under the pointer.
+- **Plan documents are appended to, never rewritten.** This record goes at the end of `doc/saigon/PLAN.md` as well.
+
+### Review findings (ranked)
+1. **Mouse clicks land on the wrong tile (tiles build, macOS).**
+   - The user's config: `FULLSCREEN windowedbl`, `RENDERER software`, `SCALING_FACTOR 1`, SDL3, Retina display.
+   - Clicks go through `window_to_display_buffer_coords` / `convert_event_to_display_buffer_coords` (`src/sdltiles.cpp:~1100–1160`) via `SDL_RenderCoordinatesFromWindow`.
+   - The fork has not touched that file, so this is upstream SDL3 behaviour. None of the 87 newer upstream commits on `sdltiles.cpp` mention the mouse.
+   - Likely suspects:
+     - window points vs backing pixels (Retina density 2);
+     - the logical presentation not being set on the software renderer;
+     - the mouse → map tile step in `cata_tiles` (zoom, sidebar offset).
+2. **Nothing tests the real way a player reaches the real map** (new game → `sgn_saigon_2009` → `game::start_game` → on the real map). That gap let RF4 through.
+   - `qa_game_load.sh` opens a ready-made save.
+   - The tests set the map global themselves.
+   - `saigon_new_game_start_locations` (`tests/saigon_mapgen_test.cpp:698`) covers only the Vietmap starts.
+3. **The fork lags upstream.**
+   - The branch base is `fe6a10c2b1` (Sep 28). The fork's `master` already carries 87 newer upstream commits (SDL/GPU renderer and input-loop changes among them).
+   - The fork's engine edits sit in busy files: `src/overmap.cpp`, `savegame.cpp`, `scenario.{h,cpp}`, `game.cpp`, `weather_gen.{h,cpp}`, `overmapbuffer.cpp`.
+   - The `upstream` remote still has a push URL.
+4. **The `vi` translation hasn't started.** `lang/extract_json_strings.py` has never run on the mod.
+5. **Content reviews B2.R–B9.R are still "todo".** Only B4b/B9b were peer-reviewed.
+6. **Art gaps:**
+   - the redescribed delta fish, frogs and turtle still use dda sprites;
+   - the cobra wears the rattlesnake sprite;
+   - H1 (hand art) is still todo.
+7. **Smaller items:** R6b port/shipyard, PERF pass 2 (skip unchanged overmaps on save), I-B8a/I-B8b2, B4c heat index, the megacity decision.
+
+### Next units (in order; same working rules as above)
+**Phase A: playable and verified**
+- **A0 Plan record.** Append this update to `doc/saigon/PLAN.md` (nothing removed) and add ledger rows for the units below.
+- **A1 Mouse fix.**
+  1. Add debug logging (behind a debug-log check, removed or kept quiet afterwards) in `convert_event_to_display_buffer_coords`. Log:
+     - the raw window point;
+     - the converted point;
+     - window size in points and in pixels (`SDL_GetWindowSize` / `SDL_GetWindowSizeInPixels`);
+     - the renderer output size;
+     - the tile the game picks.
+  2. The user clicks four marked spots in a QA world (via `qa_game_load.sh`'s throwaway userdir) and reports where the cursor highlight lands. I read the log; I can't capture the screen.
+  3. Fix the mapping in `src/sdltiles.cpp`. Expected shapes of fix:
+     - scale by pixel density;
+     - or set `SDL_SetRenderLogicalPresentation` consistently;
+     - or correct the tile offset.
+  4. Add a unit test where the mapping can be computed headless.
+  5. Recheck with the user on both `windowedbl` and windowed, and on `software` and `metal`/`gpu` renderers.
+- **A2 New-game test for 2009.** Add `saigon_new_game_realmap_2009` in `tests/saigon_realmap_test.cpp`, reusing the `saigon_new_game_start_locations` pattern and `sgn_clear_map_and_reset_player`.
+  - Pick `sgn_saigon_2009` as character creation does.
+  - Run the `game::start_game` start path for each of its `allowed_locs`.
+  - Assert the player stands on a passable tile inside the real map (overmaps −1..3 × −2..1) at that start's terrain.
+  - The test must fail if the scenario's map choice is dropped.
+- **A3 Guided playtest V1 (with the user).**
+  - New world → "Sài Gòn, 2009" → each start.
+  - Click-to-move and click-to-examine (verifies A1).
+  - Walk into a hẻm, ride the motorbike over a bridge, take the ferry, fish, visit three landmarks.
+  - Screenshots by the user go into `doc/saigon/art/`. Close ledger row V1 and record any new findings as units.
+
+**Phase B: upstream intake (one way: CleverRaven → this fork)**
+- **B0.** Make the remote fetch-only: `git remote set-url --push upstream no_push`. This is a local git config change and reversible.
+- **B1 Intake check.**
+  - `git fetch upstream`.
+  - Write `doc/saigon/UPSTREAM_INTAKE.md` (appended each time): the incoming commit range, the files that overlap the fork's engine edits and the mod's dda dependencies (JSON ids the mod copies from or overrides), and the risks.
+  - The user approves the intake before merging.
+- **B2 Merge.**
+  - On a branch `saigon/upstream-intake-YYYYMMDD`, merge `upstream/master` (merge, never rebase or force-push).
+  - Resolve conflicts, keeping the fork's behaviour.
+  - Rebuild curses, tiles and tests. Run all gates, plus `cata_test` without mods for the touched engine areas.
+  - Merge into the fork's main line and push to `origin` only.
+  - Repeat B1–B2 per intake.
+
+**Phase C: Vietnamese translation**
+- **C1.** Run `lang/extract_json_strings.py` on `data/mods/saigon_2000s`, fix its failures, and add it to `check_mod.sh`.
+- **C2.** Write a `vi` `.po` for the mod's strings in chunks: names, then descriptions, snippets and dialogue. Check it with a `LOCALIZE=1` build.
+- **C3.** Add `doc/saigon/GLOSSARY.md` for the Vietnamese terms used in the English text.
+
+**Phase D: content and art polish**
+- **D1.** Derive recipes for the snakehead, tilapia, pangasius, walking catfish, swamp eel, cobra and rùa ba gờ sprites. Add a contact sheet.
+- **D2.** R6b port and shipyard corrections on the real map.
+- **D3.** One content review `doc/saigon/review/B_content_review.md` (authenticity, mechanics, JSON) closes B2.R–B9.R. Fixes become units.
+
+**Phase E: later**
+- PERF pass 2.
+- B4c heat index, if the playtest shows a need.
+- I-B8a/I-B8b2.
+- The megacity decision.
+
+### Verification for every unit
+- `tests/cata_test --mods=dda,saigon_2000s "[saigon]"` passes. Each new test fails before its fix.
+- `tools/saigon/check_mod.sh` is clean.
+- `tools/saigon/qa_game_load.sh` shows LOADED after any engine or gfx change.
+- A1 is verified by the user's clicks.
+- B2 also runs the unmodded `cata_test` areas around the merged engine files.
+- No push except to `origin` (andy1912/Cataclysm-DDA). Nothing goes to CleverRaven.
