@@ -8228,6 +8228,30 @@
      {
       "id": "jacket_army",
       "fg": 1028
+     },
+     {
+      "id": "sgn_mon_co",
+      "fg": [
+       {
+        "weight": 20,
+        "sprite": 1029
+       },
+       {
+        "weight": 10,
+        "sprite": 1030
+       }
+      ],
+      "bg": 1031
+     },
+     {
+      "id": "mon_robin",
+      "fg": 1032,
+      "bg": 1033
+     },
+     {
+      "id": "sgn_mon_cu_gay",
+      "fg": 1034,
+      "bg": 1035
      }
     ]
    },

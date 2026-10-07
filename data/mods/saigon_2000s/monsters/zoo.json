@@ -16,7 +16,7 @@
     "armor": { "bash": 6, "cut": 6, "stab": 4 },
     "aggression": -10,
     "morale": 90,
-    "extend": { "flags": [ "DESTROYS", "PUSH_MON" ] },
+    "extend": { "flags": [ "DESTROYS", "PUSH_MON", "NO_BREED" ] },
     "delete": { "flags": [ "PET_MOUNTABLE" ] }
   },
   {
@@ -38,7 +38,8 @@
     "morale": 60,
     "vision_day": 20,
     "harvest": "animal_large_noskin",
-    "default_faction": "turtle_small_predator"
+    "default_faction": "turtle_small_predator",
+    "extend": { "flags": [ "NO_BREED" ] }
   },
   {
     "type": "MONSTER",
@@ -72,6 +73,7 @@
     "aggression": 10,
     "morale": 50,
     "special_attacks": [  ],
-    "attack_effs": [  ]
+    "attack_effs": [  ],
+    "extend": { "flags": [ "NO_BREED" ] }
   }
 ]

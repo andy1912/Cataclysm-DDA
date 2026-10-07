@@ -1660,5 +1660,31 @@
       { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
     ],
     "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "sgn_mon_co",
+    "source": "mon_cormorant",
+    "ops": [
+      { "op": "recolor", "hue": [ 0, 360 ], "min_sat": 0.0, "max_val": 0.6, "to_hue": null, "sat_set": 0.03, "val_mul": 2.8, "val_add": 0.3 }
+    ],
+    "//": "L-loc7: cò trắng (little egret), the cormorant whitened."
+  },
+  {
+    "target": "mon_robin",
+    "source": "mon_robin",
+    "ops": [
+      { "op": "recolor", "hue": [ 5, 55 ], "min_sat": 0.35, "to_hue": 25, "sat_mul": 0.55, "val_mul": 0.42 },
+      { "op": "tint", "rgb": [ 92, 64, 44 ], "strength": 0.3 }
+    ],
+    "//": "L-loc7: mon_robin is redescribed as the common myna (sáo): dark brown, not an orange breast."
+  },
+  {
+    "target": "sgn_mon_cu_gay",
+    "source": "mon_pigeon",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.2, "val_mul": 1.05 },
+      { "op": "tint", "rgb": [ 150, 118, 96 ], "strength": 0.6 }
+    ],
+    "//": "L-loc7: cu gáy (spotted dove), the pigeon in soft brown."
   }
 ]

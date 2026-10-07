@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """B10: list dda items that Saigon content can spawn and that read as American.
+L-loc7: the same for the animals Saigon's worlds can spawn (fauna()).
 
 Collects every item_group the saigon_2000s mod references (mapgen, monster drops,
 professions, the landmark generator), walks those groups recursively through dda's
@@ -9,9 +10,10 @@ institutions, US sports, US brands and holidays).
 
 Exits 1 when anything is flagged (check_mod.sh runs it).  Deliberate exceptions live in ALLOWED.
 Run from the repo root:  python3 tools/saigon/audit_us_content.py [--all]
-(--all also prints how many items each referenced group reaches)
+(--all also prints how many items each referenced group reaches, and every reachable animal)
 """
 import glob
+import gzip
 import json
 import re
 import sys
@@ -104,6 +106,110 @@ OUT_OF_PLACE = {
 }
 
 
+# L-loc7: animals.  The engine spawns GROUP_FISH when you fish and GROUP_RIVER along rivers and
+# lakes; every overmap terrain's "spawns" group spawns on it; the mod's mapgen places its own.
+# North American wildlife (by id) or a description that places an animal in North America is
+# flagged; the mod redescribes dda species that have a close Vietnamese relative (wildlife.json).
+HARDCODED_GROUPS = [ 'GROUP_FISH', 'GROUP_RIVER' ]
+NA_FAUNA = re.compile( r"moose|zoose|reindeer|zeindeer|deer|zeer|elk\b|bobcat|cougar|zougar|coyote|wolf\b|fox_|raccoon|"
+                       r"opossum|skunk|groundhog|chipmunk|beaver|muskrat|_mink\b|porcupine|lemming|turkey\b|goose_canadian|"
+                       r"bear\b|bear_|zombear|bluejay|cardinal|chickadee|waxwing|hummingbird|trout|salmon|walleye|pike\b|"
+                       r"perch|bass\b|sunfish|redbreast|warmouth|muskellunge|sucker|fallfish|burbot|sturgeon|whitefish|"
+                       r"gar_|pickerel|kokanee|copperhead|rattlesnake|wormsnake|snapping|skink|weasel|hare\b|wild_rabbit|"
+                       r"leo_|peeper|freedom_|gray_frog|wood_frog|mink_frog|spade_|ferret|raven|woodpecker|coot\b|"
+                       r"duck\b|lynx|marten|vole" )
+# deliberate: animals that are American but really live in the delta
+ALLOWED_FAUNA = { 'mon_bullfrog_frog': 'ếch Mỹ: introduced, farmed in the delta since the 1990s' }
+NA_TEXT = re.compile( r"North America|New England|American|U\.S\.|Canad|Appalach|Maine\b|Great Lakes", re.I )
+
+
+def fauna():
+    mod_files = glob.glob( 'data/mods/saigon_2000s/**/*.json', recursive=True )
+    groups, mons, oters, redescribed = {}, {}, {}, set()
+    for path in glob.glob( 'data/json/**/*.json', recursive=True ) + mod_files:
+        try:
+            data = json.load( open( path ) )
+        except ValueError:
+            continue
+        for o in data if isinstance( data, list ) else [ data ]:
+            if not isinstance( o, dict ):
+                continue
+            t = o.get( 'type' )
+            if t == 'monstergroup' and 'id' in o:
+                old = groups.get( o['id'] )
+                if old and not o.get( 'override' ):        # a group without "override" extends
+                    o = dict( old, monsters=old.get( 'monsters', [] ) + o.get( 'monsters', [] ) )
+                groups[o['id']] = o
+            elif t == 'MONSTER' and 'id' in o:
+                parent = mons.get( o.get( 'copy-from' ) ) if o.get( 'copy-from' ) != o['id'] else mons.get( o['id'] )
+                merged = dict( parent or {}, **o )
+                merged['flags'] = list( o.get( 'flags', ( parent or {} ).get( 'flags', [] ) ) ) + \
+                    ( o.get( 'extend' ) or {} ).get( 'flags', [] )
+                mons[o['id']] = merged
+                if path.startswith( 'data/mods/' ) and 'description' in o:
+                    redescribed.add( o['id'] )
+            elif t == 'overmap_terrain' and 'spawns' in o:
+                for i in o['id'] if isinstance( o.get( 'id' ), list ) else [ o['id'] ] if 'id' in o else []:
+                    oters[i] = o['spawns']['group']
+    # terrains: the real map's, the mod's own, and dda's generated wilderness (forest, field, swamp)
+    terrains = set()
+    for f in glob.glob( 'data/mods/saigon_2000s/realmap_2009/*.omap.gz' ):
+        for level in json.load( gzip.open( f ) ):
+            for t, _ in level['layers']:
+                terrains.add( t )
+                terrains.add( re.sub( r'_(north|south|east|west)$', '', t ) )
+    terrains |= { o for o, g in oters.items() if o.startswith( 'sgn_' ) or g in ( 'GROUP_FOREST', 'GROUP_SWAMP' ) }
+    roots = set( HARDCODED_GROUPS ) | { oters[t] for t in terrains if t in oters }
+    text = ' '.join( open( f ).read() for f in glob.glob( 'data/mods/saigon_2000s/mapgen/**/*.json', recursive=True ) )
+    text += open( 'tools/saigon/gen_saigon_landmarks.py' ).read() + open( 'tools/saigon/gen_places.py' ).read()
+    found = set( re.findall( r'["\'](?:group|monster)["\']\s*:\s*["\']([\w-]+)["\']', text ) )
+    roots |= found & set( groups )
+    start = found & set( mons )
+    reach, seen, todo = set(), set(), list( roots )
+    todo += [ ( 'm', m ) for m in start ]
+    while todo:
+        x = todo.pop()
+        if isinstance( x, tuple ):
+            m = x[1]
+            if m in reach or m not in mons:
+                continue
+            reach.add( m )
+            o = mons[m]
+            up = o.get( 'upgrades' ) or {}
+            if up.get( 'into' ):
+                todo.append( ( 'm', up['into'] ) )
+            if up.get( 'into_group' ):
+                todo.append( up['into_group'] )
+            bt = {} if 'NO_BREED' in o['flags'] else ( o.get( 'reproduction' ) or {} ).get( 'baby_type' ) or {}
+            if bt.get( 'baby_monster' ):
+                todo.append( ( 'm', bt['baby_monster'] ) )
+            if bt.get( 'baby_monster_group' ):
+                todo.append( bt['baby_monster_group'] )
+            continue
+        if x in seen or x not in groups:
+            continue
+        seen.add( x )
+        for e in groups[x].get( 'monsters', [] ):
+            todo.append( e['group'] if 'group' in e else ( 'm', e.get( 'monster' ) ) )
+    print( '%d spawn groups reach %d animals and monsters' % ( len( seen ), len( reach ) ) )
+    hits = []
+    for m in sorted( reach ):
+        o = mons[m]
+        desc = tr( o.get( 'name' ) ) + ' | ' + tr( o.get( 'description' ) )
+        if '--all' in sys.argv:
+            print( '    %-34s %s' % ( m, desc[:90] ) )
+        if m.startswith( 'sgn_' ) or m in ALLOWED_FAUNA:
+            continue
+        # an animal the mod redescribes is judged by its new text, not by dda's id
+        hit = ( NA_FAUNA.search( m ) if m not in redescribed else None ) or NA_TEXT.search( desc )
+        if hit:
+            hits.append( ( m, hit.group( 0 ), desc ) )
+    print( '%d North American animals' % len( hits ) )
+    for m, word, desc in hits:
+        print( '  %-32s [%s] %s' % ( m, word, desc[:110] ) )
+    return len( hits )
+
+
 def main():
     mod_files = glob.glob( 'data/mods/saigon_2000s/**/*.json', recursive=True )
     groups, items = load( glob.glob( 'data/json/**/*.json', recursive=True ) + mod_files )
@@ -159,7 +265,8 @@ def main():
     print( '%d flagged (%d allowed exceptions)' % ( len( hits ), len( ALLOWED ) ) )
     for i, word, text in hits:
         print( '  %-32s [%s] %s' % ( i, word, text[:120] ) )
-    return 1 if hits else 0
+    animals = fauna()
+    return 1 if hits or animals else 0
 
 
 if __name__ == '__main__':
