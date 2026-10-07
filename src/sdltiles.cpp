@@ -40,6 +40,7 @@
 #include "color_loader.h"
 #include "cursesport.h"
 #include "debug.h"
+#include "display_buffer_coords.h"
 #include "filesystem.h"
 #include "flag.h"
 #include "font_loader.h"
@@ -1117,16 +1118,35 @@ SDL_Point window_to_display_buffer_coords( SDL_Point window_pt )
         static_cast<int>( static_cast<int64_t>( window_pt.y - dstrect.y ) * buf_h / dstrect.h )
     };
 #else
-    // Use the SDL provided translation of scaling and casting for SDL3 builds
+    // SDL turns window points into render (drawable pixel) coordinates; then undo the
+    // integer-scaled blit of the display buffer into those pixels (see
+    // display_buffer_from_render).
+    point render_pt( window_pt.x, window_pt.y );
     if( renderer ) {
         float rx = 0.0f;
         float ry = 0.0f;
         if( SDL_RenderCoordinatesFromWindow( renderer.get(),
                                              static_cast<float>( window_pt.x ), static_cast<float>( window_pt.y ), &rx, &ry ) ) {
-            return SDL_Point{ static_cast<int>( rx ), static_cast<int>( ry ) };
+            render_pt = point( static_cast<int>( rx ), static_cast<int>( ry ) );
         }
     }
-    return window_pt;
+    const SDL_Rect dst = get_display_buffer_render_rect();
+    const point buf_pt = display_buffer_from_render( render_pt, point( dst.x, dst.y ),
+                         point( dst.w, dst.h ), point( buf_w, buf_h ) );
+    static bool logged = false;
+    if( !logged ) {
+        logged = true;
+        int ww = 0;
+        int wh = 0;
+        SDL_GetWindowSize( ::window.get(), &ww, &wh );
+        const point drawable = compute_drawable_dims();
+        DebugLog( D_INFO, DC_ALL ) << "mouse mapping: window " << ww << "x" << wh << " pt, drawable "
+                                   << drawable.x << "x" << drawable.y << " px, buffer " << buf_w << "x" << buf_h
+                                   << ", blit " << dst.w << "x" << dst.h << " at " << dst.x << "," << dst.y
+                                   << "; window " << window_pt.x << "," << window_pt.y << " -> render "
+                                   << render_pt.x << "," << render_pt.y << " -> buffer " << buf_pt.x << "," << buf_pt.y;
+    }
+    return SDL_Point{ buf_pt.x, buf_pt.y };
 #endif
 }
 
