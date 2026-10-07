@@ -234,6 +234,12 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     // and it reveals a wide neighbourhood at the start (a getter that returned bool cut every
     // scenario's radius to 1)
     CHECK( string_id<scenario>( "sgn_saigon_2009" )->get_distance_initial_visibility() == 40 );
+    // and character creation offers it: the mod's scenario whitelist hid every scenario it did not
+    // name, and it named only Vietmap's
+    for( const char *scen : { "sgn_saigon_2004", "sgn_saigon_2009" } ) {
+        CAPTURE( scen );
+        CHECK_FALSE( string_id<scenario>( scen )->scen_is_blacklisted() );
+    }
     // Tân Sơn Nhất (overmap (-1, -1)): runways and the terminal (gen_san_bay.py, sgn_lm_san_bay)
     overmap &airport = overmap_buffer.get( point_abs_om( -1, -1 ) );
     int runway = 0;

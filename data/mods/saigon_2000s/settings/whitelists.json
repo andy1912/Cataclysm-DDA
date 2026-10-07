@@ -2,8 +2,8 @@
   {
     "type": "SCENARIO_BLACKLIST",
     "subtype": "whitelist",
-    "//": "B10a: only the Saigon scenario.",
-    "scenarios": [ "sgn_saigon_2004" ]
+    "//": "B10a: only the Saigon scenarios (Vietmap 2004, the real map of 2009).",
+    "scenarios": [ "sgn_saigon_2004", "sgn_saigon_2009" ]
   },
   {
     "type": "profession_blacklist",
