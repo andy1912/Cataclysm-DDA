@@ -1,0 +1,299 @@
+[
+  {
+    "type": "npc_class",
+    "id": "sgn_class_monk",
+    "name": "pagoda monk",
+    "job_description": "I keep the altar at this chùa.  The bells still ring at the hour, though few come now.",
+    "common": false,
+    "skills": [
+      { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "firstaid", "bonus": { "rng": [ 0, 2 ] } },
+      { "skill": "survival", "bonus": { "rng": [ 1, 3 ] } }
+    ],
+    "worn_override": "sgn_npc_monk_worn",
+    "carry_override": "sgn_npc_monk_carry",
+    "weapon_override": "sgn_npc_monk_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_priest",
+    "name": "parish priest",
+    "job_description": "I have buried more people from this parish than I have married.",
+    "common": false,
+    "skills": [
+      { "skill": "speech", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "firstaid", "bonus": { "rng": [ 1, 3 ] } }
+    ],
+    "worn_override": "sgn_npc_priest_worn",
+    "carry_override": "sgn_npc_priest_carry",
+    "weapon_override": "sgn_npc_priest_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_postal_clerk",
+    "name": "postal clerk",
+    "job_description": "Sorting mail for a city that has stopped writing to each other.",
+    "common": false,
+    "skills": [
+      { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "computer", "bonus": { "rng": [ 0, 2 ] } }
+    ],
+    "worn_override": "sgn_npc_postal_clerk_worn",
+    "carry_override": "sgn_npc_postal_clerk_carry",
+    "weapon_override": "sgn_npc_postal_clerk_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_civil_servant",
+    "name": "civil servant",
+    "job_description": "I file the paperwork.  There is a great deal of paperwork now.",
+    "common": false,
+    "skills": [
+      { "skill": "speech", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "computer", "bonus": { "rng": [ 1, 3 ] } }
+    ],
+    "worn_override": "sgn_npc_civil_servant_worn",
+    "carry_override": "sgn_npc_civil_servant_carry",
+    "weapon_override": "sgn_npc_civil_servant_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_guard",
+    "//": "N3: a security guard at a landmark or a công an phường.  The sidearm arrives with N4; until then a baton only.",
+    "name": "security guard",
+    "job_description": "I stand at the door and tell myself it still means something.",
+    "common": false,
+    "skills": [
+      { "skill": "bashing", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 1, 3 ] } }
+    ],
+    "worn_override": "sgn_npc_guard_worn",
+    "carry_override": "sgn_npc_guard_carry",
+    "weapon_override": "sgn_npc_guard_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_doctor",
+    "name": "district doctor",
+    "job_description": "I have run out of the things that actually help.  Everything else I do anyway.",
+    "common": false,
+    "skills": [
+      { "skill": "firstaid", "bonus": { "rng": [ 4, 6 ] } },
+      { "skill": "chemistry", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "speech", "bonus": { "rng": [ 0, 2 ] } }
+    ],
+    "proficiencies": [ "prof_wound_care", "prof_wound_care_expert", "prof_physiology", "prof_intro_biology" ],
+    "shopkeeper_item_group": "sgn_npc_doctor_sells",
+    "worn_override": "sgn_npc_doctor_worn",
+    "carry_override": "sgn_npc_doctor_carry",
+    "weapon_override": "sgn_npc_doctor_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_nurse",
+    "name": "nurse",
+    "job_description": "Forty beds, one doctor, and the wards are all full.",
+    "common": false,
+    "skills": [
+      { "skill": "firstaid", "bonus": { "rng": [ 3, 5 ] } },
+      { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } }
+    ],
+    "proficiencies": [ "prof_wound_care", "prof_intro_biology" ],
+    "worn_override": "sgn_npc_nurse_worn",
+    "carry_override": "sgn_npc_nurse_carry",
+    "weapon_override": "sgn_npc_nurse_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_shopkeeper",
+    "//": "N3: a counter at the nhà sách, Co.op Mart, a tiệm vàng or a cửa hàng xe máy.",
+    "name": "shopkeeper",
+    "job_description": "I still keep the books, and I still open in the morning.  After that it is mostly waiting.",
+    "common": false,
+    "skills": [
+      { "skill": "speech", "bonus": { "rng": [ 4, 6 ] } }
+    ],
+    "shopkeeper_item_group": "sgn_npc_shopkeeper_sells",
+    "worn_override": "sgn_npc_shopkeeper_worn",
+    "carry_override": "sgn_npc_shopkeeper_carry",
+    "weapon_override": "sgn_npc_shopkeeper_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_craftsman",
+    "//": "N3: a shophouse trade — barber, tailor, electronics repair, photocopy, bakery, quán nhậu, thuốc bắc.",
+    "name": "shophouse craftsman",
+    "job_description": "I have a shop the size of a room and a trade that took twenty years to learn.",
+    "common": false,
+    "skills": [
+      { "skill": "mechanics", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "fabrication", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "cooking", "bonus": { "rng": [ 0, 2 ] } }
+    ],
+    "worn_override": "sgn_npc_craftsman_worn",
+    "carry_override": "sgn_npc_craftsman_carry",
+    "weapon_override": "sgn_npc_craftsman_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_mechanic",
+    "name": "motorbike mechanic",
+    "job_description": "I can get anything running except the one thing anyone really wants back.",
+    "common": false,
+    "skills": [
+      { "skill": "mechanics", "bonus": { "rng": [ 3, 5 ] } },
+      { "skill": "fabrication", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "electronics", "bonus": { "rng": [ 0, 2 ] } }
+    ],
+    "worn_override": "sgn_npc_mechanic_worn",
+    "carry_override": "sgn_npc_mechanic_carry",
+    "weapon_override": "sgn_npc_mechanic_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_petrol_attendant",
+    "name": "filling-station attendant",
+    "job_description": "Four pumps and a shutter I cannot close on my own.",
+    "common": false,
+    "skills": [
+      { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "mechanics", "bonus": { "rng": [ 0, 2 ] } }
+    ],
+    "worn_override": "sgn_npc_petrol_attendant_worn",
+    "carry_override": "sgn_npc_petrol_attendant_carry",
+    "weapon_override": "sgn_npc_petrol_attendant_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_caretaker",
+    "//": "N3: the nghia trang and the parks — sweeps the paths, tends the tombs and the planters.",
+    "name": "caretaker",
+    "job_description": "Somebody still has to sweep the path and pull the weeds.  So it is me.",
+    "common": false,
+    "skills": [
+      { "skill": "survival", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "fabrication", "bonus": { "rng": [ 0, 2 ] } }
+    ],
+    "worn_override": "sgn_npc_caretaker_worn",
+    "carry_override": "sgn_npc_caretaker_carry",
+    "weapon_override": "sgn_npc_caretaker_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_park_elder",
+    "name": "regular at the park",
+    "job_description": "Every evening at five o'clock, same bench, same crowd, same exercises.",
+    "common": false,
+    "skills": [
+      { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } }
+    ],
+    "worn_override": "sgn_npc_park_elder_worn",
+    "carry_override": "sgn_npc_park_elder_carry",
+    "weapon_override": "sgn_npc_park_elder_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_transport_clerk",
+    "//": "N3: Ga Sai Gon, Bến xe Miền Đông, Tân Sơn Nhất — the ticket counter and the platform.",
+    "name": "transport clerk",
+    "job_description": "The schedule is a rumour, but people still come to ask.",
+    "common": false,
+    "skills": [
+      { "skill": "speech", "bonus": { "rng": [ 3, 5 ] } }
+    ],
+    "worn_override": "sgn_npc_transport_clerk_worn",
+    "carry_override": "sgn_npc_transport_clerk_carry",
+    "weapon_override": "sgn_npc_transport_clerk_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_office_worker",
+    "name": "office worker",
+    "job_description": "Eleven floors of glass and one floor of people who still come in.",
+    "common": false,
+    "skills": [
+      { "skill": "computer", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "speech", "bonus": { "rng": [ 0, 2 ] } }
+    ],
+    "worn_override": "sgn_npc_office_worker_worn",
+    "carry_override": "sgn_npc_office_worker_carry",
+    "weapon_override": "sgn_npc_office_worker_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_dock_worker",
+    "//": "N3: kho hàng, bãi container, cảng — sacks, crates and the long tail by the water.",
+    "name": "dock worker",
+    "job_description": "We unloaded by hand for twenty years.  Now we move what is left.",
+    "common": false,
+    "skills": [
+      { "skill": "fabrication", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "driving", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "swimming", "bonus": { "rng": [ 1, 3 ] } }
+    ],
+    "worn_override": "sgn_npc_dock_worker_worn",
+    "carry_override": "sgn_npc_dock_worker_carry",
+    "weapon_override": "sgn_npc_dock_worker_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_backpacker",
+    "name": "backpacker",
+    "job_description": "I came for three weeks in 2003 and never quite worked out how to leave.",
+    "common": false,
+    "skills": [
+      { "skill": "survival", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "speech", "bonus": { "rng": [ 2, 4 ] } }
+    ],
+    "worn_override": "sgn_npc_backpacker_worn",
+    "carry_override": "sgn_npc_backpacker_carry",
+    "weapon_override": "sgn_npc_backpacker_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_fisherman",
+    "name": "Can Gio fisherman",
+    "job_description": "The river is the same river.  Everything else about it is not.",
+    "common": false,
+    "skills": [
+      { "skill": "swimming", "bonus": { "rng": [ 3, 5 ] } },
+      { "skill": "survival", "bonus": { "rng": [ 3, 5 ] } },
+      { "skill": "cooking", "bonus": { "rng": [ 1, 3 ] } }
+    ],
+    "worn_override": "sgn_npc_fisherman_worn",
+    "carry_override": "sgn_npc_fisherman_carry",
+    "weapon_override": "sgn_npc_fisherman_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_veteran",
+    "//": "N3: an older civilian whose war ended thirty years ago.  He has kept the medal and the habits.",
+    "name": "elderly veteran",
+    "job_description": "I have been hungry before, in a different way.",
+    "common": false,
+    "skills": [
+      { "skill": "melee", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "survival", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "gun", "bonus": { "rng": [ 1, 3 ] } }
+    ],
+    "worn_override": "sgn_npc_veteran_worn",
+    "carry_override": "sgn_npc_veteran_carry",
+    "weapon_override": "sgn_npc_veteran_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_student",
+    "name": "student",
+    "job_description": "The exam is in three weeks.  It has been in three weeks for a while now.",
+    "common": false,
+    "skills": [
+      { "skill": "computer", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "speech", "bonus": { "rng": [ 0, 2 ] } }
+    ],
+    "worn_override": "sgn_npc_student_worn",
+    "carry_override": "sgn_npc_student_carry",
+    "weapon_override": "sgn_npc_student_weapon"
+  }
+]

@@ -59,6 +59,14 @@ if [[ " ${mods[*]} " == *" saigon_2000s "* ]]; then
         head -20 "$ud/audit_us_content.txt"
         fail=1
     fi
+    # N3: every "item"/"item_group" the mod names must exist in dda or the mod.
+    # The engine is silent about a bad id and the loot audit reads it as an item
+    # id, so the mistake would otherwise hide until --check-mods.
+    if ! python3 tools/saigon/check_refs.py > "$ud/check_refs.txt" 2>&1; then
+        echo "FAIL: unresolved item/item_group references (tools/saigon/check_refs.py):"
+        grep -v 'all resolve' "$ud/check_refs.txt" | head -20
+        fail=1
+    fi
     # the real map must be walkable: straight, ramped bridges and a way into every hẻm network
     if ! python3 tools/saigon/realmap/check_realmap.py > "$ud/check_realmap.txt" 2>&1; then
         echo "FAIL: real map (tools/saigon/realmap/check_realmap.py):"

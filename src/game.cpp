@@ -4438,7 +4438,10 @@ template Character *game::critter_by_id<Character>( const character_id & );
 template npc *game::critter_by_id<npc>( const character_id & );
 template Creature *game::critter_by_id<Creature>( const character_id & );
 
-static bool can_place_monster( const monster &mon, const tripoint_bub_ms &p )
+// Is this square free of any living creature?  Split out of can_place_monster so
+// that the "forced" placement path can keep the occupancy rule while dropping the
+// terrain and sight rules; see place_critter_around.
+static bool can_place_creature( const tripoint_bub_ms &p )
 {
     creature_tracker &creatures = get_creature_tracker();
     if( const monster *const critter = creatures.creature_at<monster>( p ) ) {
@@ -4450,6 +4453,14 @@ static bool can_place_monster( const monster &mon, const tripoint_bub_ms &p )
     // Although monsters can sometimes exist on the same place as a Character (e.g. ridden horse),
     // it is usually wrong. So don't allow it.
     if( creatures.creature_at<Character>( p ) ) {
+        return false;
+    }
+    return true;
+}
+
+static bool can_place_monster( const monster &mon, const tripoint_bub_ms &p )
+{
+    if( !can_place_creature( p ) ) {
         return false;
     }
     return mon.will_move_to( p ) && mon.know_danger_at( p );
@@ -4534,7 +4545,13 @@ monster *game::place_critter_around( const shared_ptr_fast<monster> &mon,
     map &here = get_map();
 
     std::optional<tripoint_bub_ms> where;
-    if( forced || can_place_monster( *mon, center ) ) {
+    // "forced" means "ignore terrain and sight", not "ignore that the tile is
+    // already taken".  A horde node whose square holds another creature still has
+    // to go somewhere else, or creature_tracker::add logs "there's already a
+    // monster at" and the creature is dropped.  overmapbuffer::spawn_monster
+    // places horde monsters forced, and the tile may already have been filled by
+    // map::spawn_monsters in the same update_map.
+    if( can_place_creature( center ) && ( forced || can_place_monster( *mon, center ) ) ) {
         where = center;
     }
 
