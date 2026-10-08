@@ -9,7 +9,10 @@
       { "skill": "speech", "bonus": { "rng": [ 3, 5 ] } },
       { "skill": "cooking", "bonus": { "rng": [ 2, 4 ] } },
       { "skill": "cutting", "bonus": { "rng": [ 1, 3 ] } }
-    ]
+    ],
+    "worn_override": "sgn_npc_vendor_worn",
+    "carry_override": "sgn_npc_vendor_carry",
+    "weapon_override": "sgn_npc_vendor_weapon"
   },
   {
     "type": "npc_class",
@@ -21,7 +24,10 @@
       { "skill": "driving", "bonus": { "rng": [ 4, 6 ] } },
       { "skill": "mechanics", "bonus": { "rng": [ 1, 3 ] } },
       { "skill": "survival", "bonus": { "rng": [ 1, 2 ] } }
-    ]
+    ],
+    "worn_override": "sgn_npc_xe_om_worn",
+    "carry_override": "sgn_npc_xe_om_carry",
+    "weapon_override": "sgn_npc_xe_om_weapon"
   },
   {
     "type": "npc",

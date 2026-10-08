@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """B10: list dda items that Saigon content can spawn and that read as American.
-L-loc7: the same for the animals Saigon's worlds can spawn (fauna()).
+L-loc7: the same for the animals Saigon's worlds can spawn (fauna()); N0: for its people (npcs()).
 
 Collects every item_group the saigon_2000s mod references (mapgen, monster drops,
 professions, the landmark generator), walks those groups recursively through dda's
@@ -210,6 +210,72 @@ def fauna():
     return len( hits )
 
 
+# N0: people.  A random NPC (game::perhaps_add_random_npc, and the starting NPC) is classless:
+# Character::randomize gives it a profession the scenario allows (Saigon's, settings/whitelists.json),
+# then npc::starting_inv_passtime dresses and arms it from the item groups NC_NONE_<what> and
+# NC_NONE_HARDENED_<what> (npc.cpp random_item_from); it gets one mission from the ORIGIN_ANY_NPC pool
+# (a starting NPC: ORIGIN_OPENER_NPC; ORIGIN_SECONDARY missions are follow-ups only their own NPCs
+# offer).  An npc_class's "common" only adds a hobby background; nothing picks classes at random.
+# So: the wanderer groups reach no firearm and nothing American, dda's missions are out of those
+# pools, and every Saigon class dresses and arms its people from Saigon item groups (firearms only
+# for GUN_CLASSES: 2009 Saigon civilians had none).
+GUN_CLASSES = { 'sgn_class_cong_an', 'sgn_class_veteran' }
+WANDERER_PREFIXES = ( 'NC_NONE_', 'NC_NONE_HARDENED_' )
+RANDOM_ORIGINS = ( 'ORIGIN_ANY_NPC', 'ORIGIN_OPENER_NPC' )
+
+
+def npcs():
+    mod_files = glob.glob( 'data/mods/saigon_2000s/**/*.json', recursive=True )
+    paths = glob.glob( 'data/json/**/*.json', recursive=True ) + mod_files
+    groups, items = load( paths )
+    classes, missions = {}, {}
+    for path in paths:
+        try:
+            data = json.load( open( path ) )
+        except ValueError:
+            continue
+        for o in data if isinstance( data, list ) else [ data ]:
+            if not isinstance( o, dict ) or 'id' not in o:
+                continue
+            table = { 'npc_class': classes, 'mission_definition': missions }.get( o.get( 'type' ) )
+            if table is not None:
+                parent = table.get( o.get( 'copy-from' ) ) if o.get( 'copy-from' ) else None
+                table[o['id']] = dict( parent or {}, **o )
+    hits = []
+
+    def check_gear( who, group, guns_ok ):
+        out = set()
+        walk( group, groups, items, set(), out )
+        for i in sorted( out ):
+            it = items.get( i ) or {}
+            text = tr( it.get( 'name' ) ) + ' | ' + tr( it.get( 'description' ) )
+            gun = it.get( 'type' ) == 'GUN' or 'GUN' in ( it.get( 'subtypes' ) or [] )
+            if gun and not guns_ok:
+                hits.append( ( who, 'firearm', i ) )
+            elif not i.startswith( 'sgn_' ) and ( US.search( text ) or i in OUT_OF_PLACE ):
+                hits.append( ( who, 'gear', i ) )
+    wanderer = sorted( g for g in groups if g.startswith( WANDERER_PREFIXES ) )
+    for g in wanderer:
+        check_gear( g, g, False )
+    for mid, o in sorted( missions.items() ):
+        pool = [ x for x in o.get( 'origins' ) or [] if x in RANDOM_ORIGINS ]
+        if pool and not mid.startswith( 'MISSION_SGN_' ):
+            hits.append( ( mid, 'random mission', tr( o.get( 'name' ) ) ) )
+    for cid, o in sorted( classes.items() ):
+        if not cid.startswith( 'sgn_' ):
+            continue
+        for key in ( 'worn_override', 'carry_override', 'weapon_override' ):
+            if not o.get( key ):
+                hits.append( ( cid, 'no ' + key, "dda's default gear" ) )
+            else:
+                check_gear( cid, o[key], cid in GUN_CLASSES )
+    print( '%d wanderer gear groups, %d Saigon NPC classes, %d missions; %d problems' % (
+        len( wanderer ), sum( c.startswith( 'sgn_' ) for c in classes ), len( missions ), len( hits ) ) )
+    for what, why, detail in hits:
+        print( '  %-36s [%s] %s' % ( what, why, detail[:90] ) )
+    return len( hits )
+
+
 def main():
     mod_files = glob.glob( 'data/mods/saigon_2000s/**/*.json', recursive=True )
     groups, items = load( glob.glob( 'data/json/**/*.json', recursive=True ) + mod_files )
@@ -266,7 +332,8 @@ def main():
     for i, word, text in hits:
         print( '  %-32s [%s] %s' % ( i, word, text[:120] ) )
     animals = fauna()
-    return 1 if hits or animals else 0
+    people = npcs()
+    return 1 if hits or animals or people else 0
 
 
 if __name__ == '__main__':

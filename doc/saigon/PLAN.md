@@ -205,3 +205,87 @@ Architecture (to be confirmed by domain 4): a total-conversion mod that depends 
 - A1 is verified by the user's clicks.
 - B2 also runs the unmodded `cata_test` areas around the merged engine files.
 - No push except to `origin` (andy1912/Cataclysm-DDA). Nothing goes to CleverRaven.
+
+---
+
+## Update 2026-10-08: Saigon NPCs, their inventory and missions (appended; nothing above is changed)
+
+### Context
+The user shared an outside evaluation ("vanilla NPCs are not missing from the Saigon mod") and asked for a plan to enrich Saigon's NPC lists, inventory and missions. Units A0–A2 are committed. A3 (the user's mouse check) runs in parallel; the user chose to start the NPC work now.
+
+### What the evaluation got right and wrong (checked against the code)
+**Wrong, or already done:**
+- `ITEM_BLACKLIST` and `MONSTER_BLACKLIST` exist (`src/init.cpp:317,449`), and dda mods use them.
+- The region already has `highways`, `forest_trails` and railroads off and `map_extras: no_map_extras` (B8g-2).
+- Overmap specials are whitelisted to `SAIGON`, so dda's refugee center, labs and evac shelters are not placed.
+- Zombie cops and soldiers are not reachable (the L-loc7 audit lists every reachable monster).
+- Street traffic is Saigon's (L-loc5).
+
+**Right, and the real gaps:**
+1. **Random wanderers are dda's.** `game::perhaps_add_random_npc` (`src/game.cpp:10440`) picks `npc_class::random_common()` (`src/npc_class.cpp:363`) from every class with `"common": true`, which is the default. dda has 20 such classes: cowboy, bounty hunter, moonshiner, hunter, soldier, farmer, thug, lab mutant, robofac intercoms… The mod's two classes are `common: false`.
+2. **Names are American.** NPC names expand `<male_full_name>` / `<female_full_name>` (`data/json/snippets/names.json`), built from `data/names/en.json`. Mod snippets *append* weighted entries to a category (`src/text_snippets.cpp:37–82`).
+3. **Missions are American.** Each random NPC gets one mission from the `ORIGIN_ANY_NPC` pool. dda's pool: find an American flag, corporate accounts, patient records, a weather log, a holy symbol, software, an inhaler; kill a Jabberwock (`forest_thick`); kill Zombie Mom (`house`); cattail jelly. The terrain targets barely exist on the real map.
+4. **Gear is dda's.** The two mod classes have no `worn_override` / `carry_override` / `weapon_override`, so they get dda's default clothes and skill-based weapons (American guns included). The mod has no firearms.
+5. **There are only 2 Saigon NPCs** (cô Ba, chú Tư in the chợ) and 1 mission.
+
+### Decisions (user, 2026-10-08)
+- Random NPCs are Vietnamese, plus a rare backpacker or expat (about 3%).
+- Firearms: only công an and the army veteran, rarely (a fictionalised K54-style sidearm). Everyone else carries melee weapons and tools.
+- Start now, alongside A3.
+
+### Units (same working rules; each ends green and is committed)
+- **N0 NPC audit.** Add an `npcs()` section to `tools/saigon/audit_us_content.py`, next to `fauna()`, so `check_mod.sh` fails on any regression. It fails on:
+  - a non-`sgn_` class that is still `common`;
+  - a non-`sgn_` mission left in the `ORIGIN_ANY_NPC` / `ORIGIN_SECONDARY` pools;
+  - class gear groups that reach flagged items (reusing `walk()` / `entry()`).
+  - Baseline expected: 20 classes and 10 missions flagged.
+- **N1 Turn off dda's wanderers and missions.**
+  - In `data/mods/saigon_2000s/npcs/vanilla_off.json`, add same-id `copy-from` overrides (the pattern of `monsters/wildlife.json`): each of the 20 common dda `npc_class` gets `"common": false`, and each pool mission gets `"origins": []`.
+  - If `npc_class` or `mission_definition` copy-from does not take, fall back to a small engine seam guarded by a test.
+- **N2 Vietnamese names** (`snippets/names.json`), written family name first:
+  - `<sgn_family_name>`: Nguyễn, Trần, Lê, Phạm, Huỳnh, Võ, Phan, Trương, Đặng, Bùi, Đỗ, Hồ, Ngô, Dương, Lý…
+  - middle names (Văn, Thị, Ngọc, Minh, Thanh, Hoàng, Hữu…) and given names, split by gender;
+  - southern birth-order nicknames (anh Hai, chị Ba, Tư, Năm, Sáu, Út).
+  - They're appended to `<male_full_name>` / `<female_full_name>` with weights that leave dda's English entries at about 3%.
+- **N3 Saigon NPC classes (common).** In `npcs/classes.json`, matching the 12 professions plus the street, about 12 classes:
+  - xe ôm, street vendor, market trader, student, công an phường, nurse, construction worker, fisherman, mechanic, monk, army veteran, and a rare backpacker/expat;
+  - each with `common_spawn_weight`, skills, stat bonuses, traits, and `worn_override` / `carry_override` / `weapon_override` from new `sgn_npc_*` item groups (`itemgroups/npc_gear.json`) built from existing mod items (nón lá, áo mưa, dép, rựa, dao, ống tuýp, phone, VND wallet, food).
+  - The two existing classes get gear overrides too.
+- **N4 Firearms for công an and veterans.**
+  - A fictionalised K54-style pistol (`items/gear/sidearm.json`, `copy-from` a dda 7.62×25 or 9×18 pistol plus its ammo and magazine, renamed) appears only in the công an and veteran weapon groups, at a low chance.
+  - The item audit allow-list records why.
+- **N5 Saigon missions** (`npcs/missions.json`). About 10 `ORIGIN_ANY_NPC` missions using existing goals (`MGOAL_FIND_ITEM`, `MGOAL_GO_TO_TYPE` on `sgn_*` / `sgn_lm_*` terrains, `MGOAL_KILL_MONSTER_TYPE`, `MGOAL_RECRUIT_NPC`). Examples:
+  - medicine from a nhà thuốc; the family altar photo; rice sacks from a kho;
+  - a motorbike part; a message to the monks at Vĩnh Nghiêm;
+  - a student trapped at a trường; clearing the market of the fevered dead;
+  - water during the dry season; escort to Ga Sài Gòn / Tân Sơn Nhất.
+  - New items are added where needed (e.g. `sgn_anh_tho` altar photo).
+- **N6 People at places.** NPC templates placed by the landmark and place generators (`tools/saigon/gen_saigon_landmarks.py`, `gen_places.py` via their NPC placement, as `sgn_npc_co_ba` is placed in the chợ):
+  - a monk (Vĩnh Nghiêm), a ward police officer (UBND), a nurse (hospital), a stranded backpacker (Tân Sơn Nhất), a ticket clerk (Ga Sài Gòn), a xe ôm (Bến Thành).
+  - Each has a short `talk_topic` and offers one N5 mission.
+  - Shopkeepers trade in VND (`items/currency.json`).
+- **N7 Dialogue flavour.** Saigon greeting and small-talk snippets for the classes, plus a background topic per class (where they were when the sốt lạ began). Translation-ready (feeds T1/T2).
+
+### Tests (each fails before its unit)
+- `tests/saigon_npc_test.cpp`, `saigon_random_npcs`: with the mod loaded, 300× `npc_class::random_common()` plus `npc::randomize`. Checks:
+  - every class is `sgn_`;
+  - ≥ 90% of names use a Vietnamese family name;
+  - no firearm outside the công an / veteran classes;
+  - a random NPC's mission comes from the Saigon pool.
+- `saigon_npc_missions_place`: each N5 mission finds its target on the 2009 real map (reuse the `saigon_new_game_realmap_2009` setup).
+- N6: the landmark structure test also checks each placed NPC is spawned and talkable.
+
+### Verification
+- `tools/saigon/check_mod.sh` is clean, including the N0 NPC audit at 0 flagged.
+- `tests/cata_test --mods=dda,saigon_2000s "[saigon]"` passes.
+- `tools/saigon/qa_game_load.sh` LOADED.
+- In-game spot check with the user: debug-spawn a few random NPCs (debug menu "spawn NPC"), read their names, gear and offered mission.
+- Append this record to `doc/saigon/PLAN.md` and add ledger rows N0–N7 (append-only). Push only when asked.
+
+### Correction 2026-10-08 (N1, appended)
+Nothing in the engine picks NPC classes at random: `npc_class::random_common()` has no callers, and `"common"` only adds a hobby background (`npc::randomize`). A random wanderer (`game::perhaps_add_random_npc`, and the starting NPC) is classless (`NC_NONE`):
+- `Character::randomize` gives it a profession the scenario allows. That is already Saigon's, through the whitelist.
+- `npc::starting_inv_passtime` dresses and arms it from the item groups `NC_NONE_<what>` / `NC_NONE_HARDENED_<what>`.
+
+So N1 overrides those 40 groups with Saigon gear and no firearms, plus the 14 random-pool missions, instead of the class `common` flags. N3's Saigon classes serve the people placed at landmarks and places (N6), where a class is chosen explicitly.
+
