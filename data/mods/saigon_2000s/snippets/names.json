@@ -3,14 +3,25 @@
     "type": "snippet",
     "category": "<male_full_name>",
     "override": true,
-    "//": "Vietnamese order: family, middle, given.",
-    "text": [ { "text": "<sgn_family_name> <sgn_male_middle_name> <sgn_male_given_name>" } ]
+    "//": "Vietnamese order: family, middle, given.  Defining this category in the mod takes the place of dda's English patterns (measured: 0 English names in 58 random NPCs), so the last entry brings back dda's English names on purpose, about 3 % of people: the odd backpacker or expat (N2).",
+    "text": [
+      { "text": "<sgn_family_name> <sgn_male_middle_name> <sgn_male_given_name>", "weight": 5800 },
+      { "text": "<sgn_family_name> <sgn_male_middle_name> <sgn_male_given_name> ('<sgn_nick_name>')", "weight": 667 },
+      { "text": "<male_given_name> <family_name>", "weight": 200 }
+    ]
   },
   {
     "type": "snippet",
     "category": "<female_full_name>",
     "override": true,
-    "text": [ { "text": "<sgn_family_name> <sgn_female_middle_name> <sgn_female_given_name>" } ]
+    "text": [
+      { "text": "<sgn_family_name> <sgn_female_middle_name> <sgn_female_given_name>", "weight": 5800 },
+      {
+        "text": "<sgn_family_name> <sgn_female_middle_name> <sgn_female_given_name> ('<sgn_nick_name>')",
+        "weight": 667
+      },
+      { "text": "<female_given_name> <family_name>", "weight": 200 }
+    ]
   },
   {
     "type": "snippet",
@@ -134,6 +145,30 @@
       "Oanh",
       "Xuân",
       "Dung"
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<sgn_nick_name>",
+    "//": "Southern birth-order names (the eldest child is Hai, then Ba, Tư ...; the youngest Út) and everyday nicknames.",
+    "text": [
+      "Hai",
+      "Ba",
+      "Tư",
+      "Năm",
+      "Sáu",
+      "Bảy",
+      "Tám",
+      "Chín",
+      "Mười",
+      "Út",
+      "Bé",
+      "Tí",
+      "Tèo",
+      "Bờm",
+      "Mập",
+      "Đen",
+      "Sún"
     ]
   }
 ]
