@@ -86,6 +86,40 @@ TEST_CASE( "saigon_random_npcs", "[saigon]" )
     }
 }
 
+// N5: npcs/vanilla_off.json took dda's fourteen ORIGIN_OPENER_NPC and ten ORIGIN_ANY_NPC
+// missions out of the pools in N1, which left every random NPC with nothing to offer.  The
+// check above only proves the pools hold no American missions; it happily passes on an empty
+// pool, which is how that went unnoticed.  So assert they are actually filled.
+TEST_CASE( "saigon_npc_mission_pools", "[saigon]" )
+{
+    const string_id<scenario> saigon( "sgn_saigon_2009" );
+    if( !saigon.is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    // the guarantor at the start location draws from OPENER (game.cpp: the starting NPC), every
+    // other civilian on the street draws from ANY_NPC, so both have to be non-empty or the game
+    // opens with no one to talk to
+    int opener = 0;
+    int any_npc = 0;
+    for( const mission_type &t : mission_type::get_all() ) {
+        if( test_only( t.id.str() ) ) {
+            continue;       // TEST_DATA's missions are not in the pool a player sees
+        }
+        for( const mission_origin origin : t.origins ) {
+            if( origin == ORIGIN_OPENER_NPC ) {
+                CAPTURE( t.id.str() );
+                opener++;
+            } else if( origin == ORIGIN_ANY_NPC ) {
+                CAPTURE( t.id.str() );
+                any_npc++;
+            }
+        }
+    }
+    CHECK( opener >= 2 );
+    CHECK( any_npc >= 5 );
+}
+
 // N6: the people who hold a place.  gen_saigon_landmarks.py's STAFF table and gen_places.py's
 // builders put an npc template (npcs/places.json) into the mapgen with place_npcs, so a
 // landmark is not an abandoned shell.  check_refs.py asserts that every one of the mod's
