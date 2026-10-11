@@ -43,6 +43,8 @@ def cay_xang():
         z0.at( 17, y, '$' )
     z0.vehicle( 2, 13, 'sgn_vg_sidewalk_parked', 90, 60 )
     z0.vehicle( 21, 13, 'sgn_vg_sidewalk_parked', 90, 40 )
+    z0.npc( 8, 18, lm.npc_id( 'sgn_class_petrol_attendant' ) )  # behind the till in the kiosk
+    z0.npc( 12, 7, lm.npc_id( 'sgn_class_vendor' ) )            # under the canopy
     z1 = roof_over( z0, INDOOR )
     return { 0: z0, 1: z1 }
 
@@ -65,6 +67,10 @@ def coopmart():
         z0.rect( 26, y, 42, y, '@' )
     z0.rect( 4, 43, 43, 43, '$' )                      # the fridges
     z0.at( 44, 30, '+' )                               # stock room door
+    for x in range( 8, 41, 5 ):                        # a clerk behind each till
+        z0.npc( x, 8, lm.npc_id( 'sgn_class_shopkeeper' ) )
+    z0.npc( 12, 25, lm.npc_id( 'sgn_class_vendor' ) )           # down the food aisle
+    z0.npc( 30, 33, lm.npc_id( 'sgn_class_caretaker' ) )        # restocking the goods aisle
     z1 = roof_over( z0, INDOOR )
     return { 0: z0, 1: z1 }
 
@@ -95,6 +101,10 @@ def benh_vien():
         z0.at( 17, y, '$' )                            # pharmacy shelves
     z0.rect( 26, 37, 28, 38, 't' )                     # operating table
     z0.at( 24, 24, '<' )
+    z0.npc( 23, 11, lm.npc_id( 'sgn_class_doctor' ) )           # behind the registration desk
+    z0.npc( 20, 16, lm.npc_id( 'sgn_class_nurse' ) )            # in the east ward
+    z0.npc( 27, 20, lm.npc_id( 'sgn_class_nurse' ) )
+    z0.npc( 19, 36, lm.npc_id( 'sgn_class_doctor' ) )           # the pharmacy, south side
     z1 = Level( 2, 2, ' ' )
     z1.box( 2, 6, 45, 45, 'C', '.' )
     for x in range( 4, 44, 3 ):
@@ -127,6 +137,8 @@ def cong_an():
     z0.rect( 13, 15, 20, 20, ')' )                     # the holding cell: bars
     z0.rect( 14, 16, 19, 19, '.' )
     z0.at( 16, 15, ';' )                               # cell door
+    z0.npc( 11, 9, lm.npc_id( 'sgn_class_guard' ) )             # behind the front desk
+    z0.npc( 12, 13, lm.npc_id( 'sgn_class_guard' ) )            # the corridor by the offices
     z1 = roof_over( z0, INDOOR )
     return { 0: z0, 1: z1 }
 
@@ -154,6 +166,8 @@ def nghia_trang():
                 z0.at( x, y, '*' )
     for x, y in ( ( 3, 4 ), ( 20, 24 ), ( 44, 20 ), ( 27, 40 ), ( 10, 44 ) ):
         z0.at( x, y, 'T' )
+    z0.npc( 23, 20, lm.npc_id( 'sgn_class_caretaker' ) )        # the main path
+    z0.npc( 33, 7, lm.npc_id( 'sgn_class_caretaker' ) )         # tending the miếu shrine
     z1 = roof_over( z0, INDOOR, 'l' )
     return { 0: z0, 1: z1 }
 
@@ -172,6 +186,8 @@ def nha_sach():
     for y in range( 10, 20, 3 ):
         z0.rect( 4, y, 9, y, '$' )
         z0.rect( 14, y, 19, y, '$' )
+    z0.npc( 6, 8, lm.npc_id( 'sgn_class_shopkeeper' ) )         # behind the stationery counter
+    z0.npc( 16, 14, lm.npc_id( 'sgn_class_student' ) )          # in the stacks
     z1 = roof_over( z0, INDOOR )
     return { 0: z0, 1: z1 }
 
@@ -192,6 +208,8 @@ def xe_may():
     z0.rect( 13, 15, 20, 15, 'C' )                     # service bay
     z0.at( 16, 15, '+' )
     z0.rect( 14, 18, 19, 18, 'j' )
+    z0.npc( 6, 15, lm.npc_id( 'sgn_class_mechanic' ) )          # at the sales counter
+    z0.npc( 16, 17, lm.npc_id( 'sgn_class_mechanic' ) )         # in the service bay
     z1 = roof_over( z0, INDOOR )
     return { 0: z0, 1: z1 }
 
@@ -237,6 +255,9 @@ def cong_vien():
     for x, y in ( ( 16, 6 ), ( 18, 6 ), ( 16, 8 ) ):
         z0.at( x, y, '[' )
         z0.at( x + 1, y, ']' )
+    z0.npc( 11, 7, lm.npc_id( 'sgn_class_park_elder' ) )        # the north path
+    z0.npc( 7, 11, lm.npc_id( 'sgn_class_park_elder' ) )        # by the west arm
+    z0.npc( 18, 6, lm.npc_id( 'sgn_class_vendor' ) )            # selling cà phê at the café cóc
     z1 = Level( 1, 1, ' ' )
     return { 0: z0, 1: z1 }
 
@@ -257,6 +278,8 @@ def cong_vien_ho():
         z0.at( x, y, '9' )
     for x, y in ( ( 4, 7 ), ( 19, 7 ), ( 4, 17 ), ( 19, 17 ) ):
         z0.at( x, y, '(' )
+    z0.npc( 11, 17, lm.npc_id( 'sgn_class_park_elder' ) )       # on the bridge
+    z0.npc( 4, 17, lm.npc_id( 'sgn_class_caretaker' ) )         # feeding the fish
     z1 = Level( 1, 1, ' ' )
     return { 0: z0, 1: z1 }
 
@@ -278,6 +301,8 @@ def cong_vien_the_duc():
         z0.at( x, y, 'T' )
     for x in ( 5, 8, 15, 18 ):
         z0.at( x, 17, '(' )
+    z0.npc( 7, 7, lm.npc_id( 'sgn_class_park_elder' ) )         # morning đá cầu
+    z0.npc( 16, 8, lm.npc_id( 'sgn_class_park_elder' ) )
     z1 = Level( 1, 1, ' ' )
     return { 0: z0, 1: z1 }
 
@@ -303,6 +328,8 @@ def kho():
     z0.at( 18, 19, 'c' )
     z0.at( 16, 20, '[' )
     z0.vehicle( 12, 2, 'sgn_vg_street_traffic', 0, 30 )
+    z0.npc( 18, 20, lm.npc_id( 'sgn_class_shopkeeper' ) )       # the owner's office
+    z0.npc( 10, 15, lm.npc_id( 'sgn_class_dock_worker' ) )      # on the shed floor
     z1 = roof_over( z0, INDOOR | set( '/;B$' ), '_' )
     return { 0: z0, 1: z1 }
 
@@ -325,6 +352,8 @@ def kho_cang():
             z0.at( x0 + 8, y0 + 2, ';' )
             for x in range( x0 + 1, x0 + 7, 2 ):
                 z0.at( x, y0 + 2, '$' )
+    z0.npc( 11, 8, lm.npc_id( 'sgn_class_dock_worker' ) )       # the lane between the stacks
+    z0.npc( 11, 16, lm.npc_id( 'sgn_class_dock_worker' ) )
     z1 = roof_over( z0, set( '/;:$' ), '_' )
     return { 0: z0, 1: z1 }
 
@@ -397,6 +426,8 @@ def generate():
             if lv.vehicles:
                 obj['place_vehicles'] = [ { 'vehicle': g, 'x': x, 'y': y, 'rotation': r, 'chance': ch }
                                           for x, y, g, r, ch in lv.vehicles ]
+            if lv.npcs:
+                obj['place_npcs'] = [ { 'class': w, 'x': x, 'y': y } for x, y, w in lv.npcs ]
             mapgens.append( { 'type': 'mapgen', 'om_terrain': grid, 'object': obj } )
             for y in range( h ):
                 for x in range( w ):

@@ -1,12 +1,20 @@
 #include <memory>
 #include <set>
 #include <string>
+#include <utility>
+#include <vector>
 
 #include "cata_catch.h"
+#include "creature_tracker.h"
 #include "item.h"
 #include "memory_fast.h"
+#include "map.h"
+#include "map_helpers.h"
 #include "mission.h"
 #include "npc.h"
+#include "omdata.h"
+#include "overmapbuffer.h"
+#include "player_helpers.h"
 #include "profession.h"
 #include "scenario.h"
 #include "type_id.h"
@@ -76,4 +84,33 @@ TEST_CASE( "saigon_random_npcs", "[saigon]" )
             }
         }
     }
+}
+
+// N6: the people who hold a place.  gen_saigon_landmarks.py's STAFF table and gen_places.py's
+// builders put an npc template (npcs/places.json) into the mapgen with place_npcs, so a
+// landmark is not an abandoned shell.  check_refs.py asserts that every one of the mod's
+// buildings names at least one such template; this generates the cheapest of them for real and
+// counts who showed up.  Mapgen-placed NPCs are held on the overmap, not in the loaded map's
+// submaps - map::place_npc ends in overmapbuffer::insert_npc - so that is where they are.
+TEST_CASE( "saigon_place_spawns_people", "[mapgen][saigon]" )
+{
+    if( !oter_str_id( "sgn_pl_cong_an_00_north" ).is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    clear_overmaps();
+    clear_avatar();
+    clear_map();
+    const tripoint_abs_omt base( 20, 30, 0 );
+    overmap_buffer.ter_set( base, oter_str_id( "sgn_pl_cong_an_00_north" ).id() );
+    rng_set_engine_seed( 3 );
+    get_map().load( project_to<coords::sm>( base ), false );
+    const point_abs_om om = project_to<coords::om>( base.xy() );
+    int people = 0;
+    for( const shared_ptr_fast<npc> &who : overmap_buffer.get( om ).get_npcs() ) {
+        if( project_to<coords::om>( who->pos_abs_omt().xy() ) == om ) {
+            people++;
+        }
+    }
+    CHECK( people >= 2 );
 }

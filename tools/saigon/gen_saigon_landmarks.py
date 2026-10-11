@@ -28,9 +28,22 @@ class Level:
         self.g = [ [ fill ] * self.w for _ in range( self.h ) ]
         self.vehicles = []      # ( x, y, vehicle_group, rotation, chance ); keep each inside one map tile
         self.monsters = []      # place_monster entries for specific animals; ranges inside one map tile
+        self.npcs = []          # ( x, y, npc id ); the people who hold the place (N6)
 
     def vehicle( self, x, y, group, rotation, chance ):
         self.vehicles.append( ( x, y, group, rotation, chance ) )
+
+    def npc( self, x, y, who ):
+        """Place an npc (template id) on this level (N6).
+
+        place_npcs wants a `type: "npc"` template, not an npc_class, and it has no
+        chance key: whoever is listed is there.  Unlike place_monster there is no
+        one-map-tile-per-range rule here, since NPCs live in submap storage and the
+        engine nudges a spawn off a wall.  Keep each one inside a single map tile
+        all the same, so unloading and reloading one tile of a multi-tile landmark
+        never duplicates a person.
+        """
+        self.npcs.append( ( x, y, who ) )
 
     def monster( self, x0, y0, x1, y1, mon, chance=100, repeat=None ):
         assert x0 // 24 == x1 // 24 and y0 // 24 == y1 // 24, ( 'monster range crosses a map tile', x0, y0, x1, y1 )
@@ -890,7 +903,9 @@ def thao_cam_vien():
     lv.monster( 8, 74, 22, 87, 'mon_tiger', 80, [ 1, 2 ] )
     lv.box( 30, 64, 44, 88, 'I', 'g' )                 # bears
     lv.at( 36, 82, '*' )
-    lv.monster( 32, 74, 42, 87, 'mon_bear', 70 )
+    # every other enclosure here is 80-90 with a count; the bear pen was chance 70 and a
+    # single animal, so it stood empty often enough for saigon_zoo_animals to miss it
+    lv.monster( 32, 74, 42, 87, 'mon_bear', 90, [ 1, 2 ] )
     lv.box( 50, 64, 72, 92, 'I', 'f' )                 # the elephant yard
     for x in ( 54, 58, 62 ):
         lv.at( x, 66, ';' )
@@ -1437,6 +1452,128 @@ def an_dong():
     return levels
 
 
+# --- N6: the people who hold each landmark -------------------------------------------------------
+# ( z, x, y, npc_class, chance ).  The classes are in data/mods/saigon_2000s/npcs/classes.json.
+# check_staff() refuses to generate unless every entry lands on a walkable tile, so moving a wall
+# in a builder cannot quietly leave somebody standing inside it.
+STAFF = {
+    'sgn_lm_ben_thanh': [
+        ( 0, 11, 34, 'sgn_class_vendor' ), ( 0, 17, 34, 'sgn_class_vendor' ),
+        ( 0, 23, 34, 'sgn_class_vendor' ), ( 0, 47, 34, 'sgn_class_vendor' ),
+        ( 0, 53, 34, 'sgn_class_vendor' ), ( 0, 35, 32, 'sgn_class_vendor' ),
+        ( 0, 36, 40, 'sgn_class_vendor' ) ],
+    'sgn_lm_duc_ba': [
+        ( 0, 23, 58, 'sgn_class_priest' ), ( 0, 23, 35, 'sgn_class_park_elder' ),
+        ( 0, 24, 45, 'sgn_class_caretaker' ) ],
+    'sgn_lm_buu_dien': [
+        ( 0, 12, 13, 'sgn_class_postal_clerk' ), ( 0, 19, 13, 'sgn_class_postal_clerk' ),
+        ( 0, 26, 13, 'sgn_class_postal_clerk' ), ( 0, 47, 13, 'sgn_class_postal_clerk' ),
+        ( 0, 54, 13, 'sgn_class_postal_clerk' ) ],
+    'sgn_lm_nha_hat': [
+        ( 0, 23, 11, 'sgn_class_craftsman' ), ( 0, 23, 35, 'sgn_class_park_elder' ) ],
+    'sgn_lm_ubnd_tp': [
+        ( 0, 30, 16, 'sgn_class_civil_servant' ), ( 0, 36, 16, 'sgn_class_civil_servant' ),
+        ( 0, 42, 16, 'sgn_class_civil_servant' ), ( 0, 30, 25, 'sgn_class_guard' ) ],
+    'sgn_lm_dinh_doc_lap': [
+        ( 0, 36, 39, 'sgn_class_guard' ), ( 0, 24, 46, 'sgn_class_civil_servant' ),
+        ( 0, 48, 46, 'sgn_class_civil_servant' ) ],
+    'sgn_lm_thien_hau': [
+        ( 0, 23, 4, 'sgn_class_monk' ), ( 0, 20, 24, 'sgn_class_monk' ),
+        ( 0, 20, 38, 'sgn_class_monk' ) ],
+    'sgn_lm_ngoc_hoang': [
+        ( 0, 23, 10, 'sgn_class_monk' ), ( 0, 20, 36, 'sgn_class_monk' ),
+        ( 0, 38, 36, 'sgn_class_caretaker' ) ],
+    'sgn_lm_binh_tay': [
+        ( 0, 12, 13, 'sgn_class_vendor' ), ( 0, 22, 13, 'sgn_class_vendor' ),
+        ( 0, 55, 29, 'sgn_class_vendor' ), ( 0, 30, 35, 'sgn_class_vendor' ) ],
+    'sgn_lm_ga_sai_gon': [
+        ( 0, 12, 10, 'sgn_class_transport_clerk' ), ( 0, 20, 10, 'sgn_class_transport_clerk' ),
+        ( 0, 28, 10, 'sgn_class_transport_clerk' ), ( 0, 20, 27, 'sgn_class_vendor' ) ],
+    'sgn_lm_ben_xe_md': [
+        ( 0, 11, 7, 'sgn_class_transport_clerk' ), ( 0, 19, 7, 'sgn_class_transport_clerk' ),
+        ( 0, 27, 7, 'sgn_class_transport_clerk' ), ( 0, 20, 23, 'sgn_class_transport_clerk' ) ],
+    'sgn_lm_tao_dan': [
+        ( 0, 35, 20, 'sgn_class_park_elder' ), ( 0, 20, 35, 'sgn_class_park_elder' ),
+        ( 0, 43, 12, 'sgn_class_vendor' ) ],
+    'sgn_lm_ho_con_rua': [
+        ( 0, 12, 4, 'sgn_class_park_elder' ), ( 0, 19, 21, 'sgn_class_vendor' ) ],
+    'sgn_lm_stc': [
+        ( 0, 10, 10, 'sgn_class_office_worker' ), ( 1, 10, 12, 'sgn_class_office_worker' ),
+        ( 4, 10, 12, 'sgn_class_office_worker' ) ],
+    'sgn_lm_diamond': [
+        ( 0, 23, 20, 'sgn_class_shopkeeper' ), ( 2, 26, 13, 'sgn_class_vendor' ) ],
+    'sgn_lm_thao_cam_vien': [
+        ( 0, 40, 5, 'sgn_class_caretaker' ), ( 0, 47, 20, 'sgn_class_park_elder' ),
+        ( 0, 20, 41, 'sgn_class_park_elder' ), ( 0, 68, 15, 'sgn_class_monk' ) ],
+    'sgn_lm_dam_sen': [
+        ( 0, 47, 20, 'sgn_class_caretaker' ), ( 0, 47, 24, 'sgn_class_park_elder' ) ],
+    'sgn_lm_suoi_tien': [
+        ( 0, 47, 20, 'sgn_class_caretaker' ), ( 0, 47, 24, 'sgn_class_park_elder' ) ],
+    'sgn_lm_san_bay': [
+        ( 0, 10, 18, 'sgn_class_transport_clerk' ), ( 0, 34, 18, 'sgn_class_transport_clerk' ),
+        ( 0, 58, 18, 'sgn_class_transport_clerk' ), ( 0, 40, 15, 'sgn_class_vendor' ) ],
+    'sgn_lm_tan_dinh': [
+        ( 0, 23, 38, 'sgn_class_priest' ), ( 0, 23, 26, 'sgn_class_caretaker' ) ],
+    'sgn_lm_cho_tan_dinh': [
+        ( 0, 12, 36, 'sgn_class_vendor' ), ( 0, 34, 36, 'sgn_class_vendor' ) ],
+    'sgn_lm_nha_rong': [
+        ( 0, 23, 13, 'sgn_class_dock_worker' ), ( 0, 23, 37, 'sgn_class_dock_worker' ) ],
+    'sgn_lm_rex': [
+        ( 0, 12, 11, 'sgn_class_shopkeeper' ), ( 0, 23, 28, 'sgn_class_vendor' ),
+        ( 5, 33, 12, 'sgn_class_backpacker' ) ],
+    'sgn_lm_vinh_nghiem': [
+        ( 0, 35, 14, 'sgn_class_monk' ), ( 0, 28, 22, 'sgn_class_monk' ),
+        ( 0, 8, 26, 'sgn_class_monk' ) ],
+    'sgn_lm_lang_ong': [
+        ( 0, 23, 10, 'sgn_class_caretaker' ), ( 0, 23, 34, 'sgn_class_monk' ) ],
+    'sgn_lm_thong_nhat': [
+        ( 0, 47, 5, 'sgn_class_transport_clerk' ), ( 0, 47, 20, 'sgn_class_park_elder' ) ],
+    'sgn_lm_an_dong': [
+        ( 0, 8, 6, 'sgn_class_vendor' ), ( 0, 39, 6, 'sgn_class_vendor' ) ],
+}
+
+# Bùi Viện is twelve lots of bar, travel agent and guesthouse, one person each.
+STAFF['sgn_lm_bui_vien'] = [
+    ( 0, 6 * k + 4, 10, 'sgn_class_vendor' if k % 3 == 0 else 'sgn_class_shopkeeper' )
+    for k in range( 12 )
+] + [ ( 0, 14, 4, 'sgn_class_backpacker' ), ( 0, 44, 4, 'sgn_class_backpacker' ),
+      ( 0, 65, 4, 'sgn_class_vendor' ) ]
+
+# Tiles a person may stand on: interior floor, tiled path, paving, grass, the stadium track and
+# a roof terrace (Rex's garden bar is on the roof).
+STAND = set( '.:=^on2S,g@_' )
+
+
+def npc_id( cls ):
+    """The npc template that stands for an npc_class.
+
+    place_npcs names a `type: "npc"` template, not an npc_class, so STAFF names the
+    class (which carries the gear) and the template it maps to is the same word with
+    the prefix swapped.  Both live in data/mods/saigon_2000s/npcs/.
+    """
+    assert cls.startswith( 'sgn_class_' ), cls
+    return 'sgn_npc_' + cls[len( 'sgn_class_' ):]
+
+
+def staff( lid ):
+    """STAFF entries as ( z, x, y, npc template )."""
+    for z, x, y, cls in STAFF.get( lid, [] ):
+        yield z, x, y, npc_id( cls )
+
+
+def check_staff( lid, levels ):
+    """Every person in STAFF must land on a walkable tile, on a level that exists."""
+    bad = []
+    for z, x, y, who in staff( lid ):
+        if z not in levels:
+            bad.append( '%s: z%d has no level' % ( who, z ) )
+            continue
+        ch = levels[z].get( x, y )
+        if ch not in STAND:
+            bad.append( '%s at z%d (%d,%d) stands on %r' % ( who, z, x, y, ch ) )
+    return bad
+
+
 LANDMARKS = {
     # id: ( builder, w, h, name, symbol colour, monsters per OMT-ish, items per symbol )
     'sgn_lm_ben_thanh': ( ben_thanh, 3, 3, 'Chợ Bến Thành', 'yellow' ),
@@ -1542,6 +1679,11 @@ def generate():
     mapgens, terrains, buildings = [], [], []
     for lid, ( build, w, h, name, colour ) in LANDMARKS.items():
         levels = build()
+        bad = check_staff( lid, levels )
+        if bad:
+            raise SystemExit( '%s: %s' % ( lid, '; '.join( bad ) ) )
+        for z, x, y, who in staff( lid ):
+            levels[z].npc( x, y, who )
         overmaps = []
         for z, lv in sorted( levels.items() ):
             rows = lv.rows()
@@ -1561,6 +1703,8 @@ def generate():
             if lv.vehicles:
                 obj['place_vehicles'] = [ { 'vehicle': g, 'x': x, 'y': y, 'rotation': r, 'chance': ch }
                                           for x, y, g, r, ch in lv.vehicles ]
+            if lv.npcs:
+                obj['place_npcs'] = [ { 'class': w, 'x': x, 'y': y } for x, y, w in lv.npcs ]
             mapgens.append( { 'type': 'mapgen', 'om_terrain': grid, 'object': obj } )
             for y in range( h ):
                 for x in range( w ):

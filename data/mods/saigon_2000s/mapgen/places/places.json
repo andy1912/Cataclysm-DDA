@@ -109,6 +109,18 @@
           "rotation": 90,
           "chance": 40
         }
+      ],
+      "place_npcs": [
+        {
+          "class": "sgn_npc_petrol_attendant",
+          "x": 8,
+          "y": 18
+        },
+        {
+          "class": "sgn_npc_vendor",
+          "x": 12,
+          "y": 7
+        }
       ]
     }
   },
@@ -395,7 +407,54 @@
             3
           ]
         }
-      }
+      },
+      "place_npcs": [
+        {
+          "class": "sgn_npc_shopkeeper",
+          "x": 8,
+          "y": 8
+        },
+        {
+          "class": "sgn_npc_shopkeeper",
+          "x": 13,
+          "y": 8
+        },
+        {
+          "class": "sgn_npc_shopkeeper",
+          "x": 18,
+          "y": 8
+        },
+        {
+          "class": "sgn_npc_shopkeeper",
+          "x": 23,
+          "y": 8
+        },
+        {
+          "class": "sgn_npc_shopkeeper",
+          "x": 28,
+          "y": 8
+        },
+        {
+          "class": "sgn_npc_shopkeeper",
+          "x": 33,
+          "y": 8
+        },
+        {
+          "class": "sgn_npc_shopkeeper",
+          "x": 38,
+          "y": 8
+        },
+        {
+          "class": "sgn_npc_vendor",
+          "x": 12,
+          "y": 25
+        },
+        {
+          "class": "sgn_npc_caretaker",
+          "x": 30,
+          "y": 33
+        }
+      ]
     }
   },
   {
@@ -710,7 +769,29 @@
             3
           ]
         }
-      }
+      },
+      "place_npcs": [
+        {
+          "class": "sgn_npc_doctor",
+          "x": 23,
+          "y": 11
+        },
+        {
+          "class": "sgn_npc_nurse",
+          "x": 20,
+          "y": 16
+        },
+        {
+          "class": "sgn_npc_nurse",
+          "x": 27,
+          "y": 20
+        },
+        {
+          "class": "sgn_npc_doctor",
+          "x": 19,
+          "y": 36
+        }
+      ]
     }
   },
   {
@@ -985,7 +1066,19 @@
             2
           ]
         }
-      }
+      },
+      "place_npcs": [
+        {
+          "class": "sgn_npc_guard",
+          "x": 11,
+          "y": 9
+        },
+        {
+          "class": "sgn_npc_guard",
+          "x": 12,
+          "y": 13
+        }
+      ]
     }
   },
   {
@@ -1237,7 +1330,19 @@
       },
       "furniture": {
         "*": "f_sgn_mo"
-      }
+      },
+      "place_npcs": [
+        {
+          "class": "sgn_npc_caretaker",
+          "x": 23,
+          "y": 20
+        },
+        {
+          "class": "sgn_npc_caretaker",
+          "x": 33,
+          "y": 7
+        }
+      ]
     }
   },
   {
@@ -1403,7 +1508,19 @@
             3
           ]
         }
-      }
+      },
+      "place_npcs": [
+        {
+          "class": "sgn_npc_shopkeeper",
+          "x": 6,
+          "y": 8
+        },
+        {
+          "class": "sgn_npc_student",
+          "x": 16,
+          "y": 14
+        }
+      ]
     }
   },
   {
@@ -1564,6 +1681,18 @@
           "rotation": 90,
           "chance": 80
         }
+      ],
+      "place_npcs": [
+        {
+          "class": "sgn_npc_mechanic",
+          "x": 6,
+          "y": 15
+        },
+        {
+          "class": "sgn_npc_mechanic",
+          "x": 16,
+          "y": 17
+        }
       ]
     }
   },
@@ -1692,7 +1821,24 @@
       "furniture": {
         "(": "f_bench",
         "*": "f_sgn_van_tho"
-      }
+      },
+      "place_npcs": [
+        {
+          "class": "sgn_npc_park_elder",
+          "x": 11,
+          "y": 7
+        },
+        {
+          "class": "sgn_npc_park_elder",
+          "x": 7,
+          "y": 11
+        },
+        {
+          "class": "sgn_npc_vendor",
+          "x": 18,
+          "y": 6
+        }
+      ]
     }
   },
   {
@@ -1833,7 +1979,19 @@
       "furniture": {
         "(": "f_bench",
         "*": "f_sgn_van_tho"
-      }
+      },
+      "place_npcs": [
+        {
+          "class": "sgn_npc_park_elder",
+          "x": 11,
+          "y": 17
+        },
+        {
+          "class": "sgn_npc_caretaker",
+          "x": 4,
+          "y": 17
+        }
+      ]
     }
   },
   {
@@ -1974,7 +2132,19 @@
       "furniture": {
         "(": "f_bench",
         "*": "f_sgn_van_tho"
-      }
+      },
+      "place_npcs": [
+        {
+          "class": "sgn_npc_park_elder",
+          "x": 7,
+          "y": 7
+        },
+        {
+          "class": "sgn_npc_park_elder",
+          "x": 16,
+          "y": 8
+        }
+      ]
     }
   },
   {
@@ -2129,6 +2299,18 @@
           "rotation": 0,
           "chance": 30
         }
+      ],
+      "place_npcs": [
+        {
+          "class": "sgn_npc_shopkeeper",
+          "x": 18,
+          "y": 20
+        },
+        {
+          "class": "sgn_npc_dock_worker",
+          "x": 10,
+          "y": 15
+        }
       ]
     }
   },
@@ -2280,7 +2462,19 @@
             3
           ]
         }
-      }
+      },
+      "place_npcs": [
+        {
+          "class": "sgn_npc_dock_worker",
+          "x": 11,
+          "y": 8
+        },
+        {
+          "class": "sgn_npc_dock_worker",
+          "x": 11,
+          "y": 16
+        }
+      ]
     }
   },
   {

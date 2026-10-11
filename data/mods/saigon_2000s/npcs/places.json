@@ -1,0 +1,211 @@
+[
+  {
+    "type": "npc",
+    "id": "sgn_npc_vendor",
+    "//": "N6: the generic market or street stallholder, placed by place_npcs in chợ, hẻm, the shophouse lots and every market landmark. Cô Ba is a particular one of these, with her own talk topics.",
+    "name_suffix": "vendor",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_vendor",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_monk",
+    "//": "N6: a chùa. The awt (nuns) and the lay volunteers who sweep and cook.",
+    "name_suffix": "monk",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_monk",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_priest",
+    "//": "N6: a nhà thờ. Fr Peter of Đức Bà and the mụ of Tân Định are two of these.",
+    "name_suffix": "priest",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_priest",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_postal_clerk",
+    "//": "N6: behind a counter in the Bưu điện.",
+    "name_suffix": "postal clerk",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_postal_clerk",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_civil_servant",
+    "//": "N6: an office in the UBND TP, a ward office or the palace.",
+    "name_suffix": "civil servant",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_civil_servant",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_guard",
+    "//": "N6: a ward policeman's station, a landmark doorway. Carries a baton and a motorbike U-lock; the sidearm is N4.",
+    "name_suffix": "guard",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_guard",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_doctor",
+    "//": "N6: a ward of the bệnh viện quận or a clinic behind a shophouse. Keeps what is left on the counter.",
+    "name_suffix": "doctor",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_doctor",
+    "mission": "SHOPKEEP",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_nurse",
+    "//": "N6: a ward of the bệnh viện quận.",
+    "name_suffix": "nurse",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_nurse",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_shopkeeper",
+    "//": "N6: a counter in a nhà sách, Co.op Mart, a tiệm vàng or a department store. Sells what the shop still has.",
+    "name_suffix": "shopkeeper",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_shopkeeper",
+    "mission": "SHOPKEEP",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_craftsman",
+    "//": "N6: a shophouse trade — barber, tailor, electronics repair, photocopy, bakery, quán nhậu.",
+    "name_suffix": "tradesman",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_craftsman",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_mechanic",
+    "//": "N6: a cửa hàng xe máy. Why the good ones are still here is not his fault.",
+    "name_suffix": "mechanic",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_mechanic",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_petrol_attendant",
+    "//": "N6: under the forecourt canopy of a cây xăng, in a uniform borrowed from the công an.",
+    "name_suffix": "filling-station attendant",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_petrol_attendant",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_caretaker",
+    "//": "N6: sweeps the nghĩa trang, tends the planters of a công viên, or keeps a shed's office.",
+    "name_suffix": "caretaker",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_caretaker",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_park_elder",
+    "//": "N6: the công viên regular, five o'clock exercise and a plastic stool afterwards.",
+    "name_suffix": "regular at the park",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_park_elder",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_transport_clerk",
+    "//": "N6: Ga Sài Gòn, Bến xe Miền Đông or Tân Sơn Nhất, at a window or on a platform.",
+    "name_suffix": "transport clerk",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_transport_clerk",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_office_worker",
+    "//": "N6: an office floor of the STC or a mall.",
+    "name_suffix": "office worker",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_office_worker",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_dock_worker",
+    "//": "N6: a kho hàng, a bãi container or the quay at Bến Nhà Rồng.",
+    "name_suffix": "dock worker",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_dock_worker",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_backpacker",
+    "//": "N6: Phố Tây Bùi Viện and the guesthouses above it, three weeks in 2003 and never quite leaving.",
+    "name_suffix": "backpacker",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_backpacker",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_student",
+    "//": "N6: a trường or a university hall. The exam was already three weeks away.",
+    "name_suffix": "student",
+    "attitude": 0,
+    "chat": "TALK_DONE",
+    "class": "sgn_class_student",
+    "mission": "GUARD",
+    "faction": "no_faction"
+  }
+]
