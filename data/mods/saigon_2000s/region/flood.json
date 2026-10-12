@@ -1,0 +1,116 @@
+[
+  {
+    "type": "terrain",
+    "id": "t_sgn_ngap_duong",
+    "copy-from": "t_pavement",
+    "looks_like": "t_water_murky",
+    "name": "flooded road",
+    "description": "The road has disappeared under a sheet of brown floodwater, warm as a bath and carrying plastic bags, leaves and worse.  It is knee-deep in the dips.  Motorbikes used to push through it with their engines screaming; you will have to wade.",
+    "color": "brown",
+    "move_cost": 4,
+    "extend": { "flags": [ "SHALLOW_WATER", "NO_SCENT" ] },
+    "liquid_source": { "id": "water_murky", "min_temp": 2.2 }
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_ngap_le",
+    "copy-from": "t_sidewalk",
+    "looks_like": "t_water_murky",
+    "name": "flooded sidewalk",
+    "description": "Floodwater laps over the sidewalk tiles and into the shopfronts, ankle-deep and murky.",
+    "color": "brown",
+    "move_cost": 3,
+    "extend": { "flags": [ "SHALLOW_WATER", "NO_SCENT" ] },
+    "liquid_source": { "id": "water_murky", "min_temp": 2.2 }
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_ngap_hem",
+    "copy-from": "t_sgn_hem_xi_mang",
+    "looks_like": "t_water_murky",
+    "name": "flooded alley",
+    "description": "The hẻm has turned into a narrow brown canal, the drain in its middle overflowing.  Doorsteps built a hand higher than the alley are all that keep the water out of the houses.",
+    "color": "brown",
+    "move_cost": 4,
+    "extend": { "flags": [ "SHALLOW_WATER", "NO_SCENT" ] },
+    "liquid_source": { "id": "water_murky", "min_temp": 2.2 }
+  },
+  {
+    "type": "ter_furn_transform",
+    "id": "sgn_tft_flood",
+    "//": "Wet-season street flooding (G30): roads and alleys go under almost at once (4:1 per rainy check), the raised sidewalks stay patchy (2:3).",
+    "terrain": [
+      {
+        "result": [ [ "t_sgn_ngap_duong", 4 ], [ "t_pavement", 1 ] ],
+        "valid_terrain": [ "t_pavement", "t_pavement_y" ],
+        "message": "",
+        "message_good": false
+      },
+      {
+        "result": [ [ "t_sgn_ngap_le", 2 ], [ "t_sidewalk", 3 ] ],
+        "valid_terrain": [ "t_sidewalk" ],
+        "message": "",
+        "message_good": false
+      },
+      {
+        "result": [ [ "t_sgn_ngap_hem", 4 ], [ "t_sgn_hem_xi_mang", 1 ] ],
+        "valid_terrain": [ "t_sgn_hem_xi_mang" ],
+        "message": "",
+        "message_good": false
+      }
+    ]
+  },
+  {
+    "type": "ter_furn_transform",
+    "id": "sgn_tft_drain",
+    "//": "The flood drains away once the rain stops.",
+    "terrain": [
+      { "result": "t_pavement", "valid_terrain": [ "t_sgn_ngap_duong" ], "message": "", "message_good": true },
+      { "result": "t_sidewalk", "valid_terrain": [ "t_sgn_ngap_le" ], "message": "", "message_good": true },
+      { "result": "t_sgn_hem_xi_mang", "valid_terrain": [ "t_sgn_ngap_hem" ], "message": "", "message_good": true }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "sgn_eoc_flood",
+    "recurrence": [ "20 minutes", "40 minutes" ],
+    "//": "G30: in the wet season (sgn_wet(), region/weather.json) heavy rain floods the streets around the player.",
+    "condition": {
+      "and": [
+        { "math": [ "sgn_wet() == 1" ] },
+        { "or": [ { "is_weather": "rain" }, { "is_weather": "thunder" }, { "is_weather": "lightning" } ] }
+      ]
+    },
+    "effect": [
+      { "u_transform_radius": 24, "ter_furn_transform": "sgn_tft_flood" },
+      {
+        "if": { "math": [ "sgn_flooding == 0" ] },
+        "then": [
+          { "u_message": "Brown water is rising in the street.  The drains can't keep up with the rain.", "type": "warning" },
+          { "math": [ "sgn_flooding = 1" ] }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "sgn_eoc_drain",
+    "recurrence": [ "50 minutes", "1 hours 30 minutes" ],
+    "//": "G30: once the rain stops the floodwater drains away.",
+    "condition": {
+      "and": [
+        { "math": [ "sgn_flooding == 1" ] },
+        {
+          "not": {
+            "or": [ { "is_weather": "rain" }, { "is_weather": "thunder" }, { "is_weather": "lightning" }, { "is_weather": "drizzle" } ]
+          }
+        }
+      ]
+    },
+    "effect": [
+      { "u_transform_radius": 30, "ter_furn_transform": "sgn_tft_drain" },
+      { "u_message": "The floodwater is draining away, leaving a film of mud and rubbish.", "type": "info" },
+      { "math": [ "sgn_flooding = 0" ] }
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "type": "ITEM",
+    "id": "sgn_ung_cao_su",
+    "copy-from": "boots_rubber",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str_sp": "rubber flood boots" },
+    "description": "Ủng cao su: tall black rubber boots, the kind market porters and street sweepers wear through the wet season.  The floodwater stays outside, and so do whatever is floating in it.",
+    "color": "dark_gray"
+  }
+]

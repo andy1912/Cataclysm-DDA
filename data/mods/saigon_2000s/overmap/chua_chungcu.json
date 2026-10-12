@@ -1,0 +1,95 @@
+[
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_chua",
+    "copy-from": "generic_city_building",
+    "name": "chùa",
+    "sym": "P",
+    "color": "yellow",
+    "looks_like": "church"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_chua_roof",
+    "copy-from": "generic_city_building_roof",
+    "name": "chùa roof",
+    "sym": "P",
+    "color": "yellow",
+    "looks_like": "church"
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_chua_1",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "sgn_chua_north" }, { "point": [ 0, 0, 1 ], "overmap": "sgn_chua_roof_north" } ]
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_chungcu_z0",
+    "copy-from": "generic_city_building",
+    "name": "chung cư",
+    "sym": "A",
+    "color": "light_gray",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_chungcu_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "chung cư",
+    "sym": "A",
+    "color": "light_gray",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_chungcu_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "chung cư",
+    "sym": "A",
+    "color": "light_gray",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_chungcu_z3",
+    "copy-from": "generic_city_building_roof",
+    "name": "chung cư",
+    "sym": "A",
+    "color": "light_gray",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_chungcu_z4",
+    "copy-from": "generic_city_building_roof",
+    "name": "chung cư",
+    "sym": "A",
+    "color": "light_gray",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_chungcu_z5",
+    "copy-from": "generic_city_building_roof",
+    "name": "chung cư roof",
+    "sym": "A",
+    "color": "light_gray",
+    "looks_like": "house"
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_chungcu_1",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_chungcu_z0_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_chungcu_z1_north" },
+      { "point": [ 0, 0, 2 ], "overmap": "sgn_chungcu_z2_north" },
+      { "point": [ 0, 0, 3 ], "overmap": "sgn_chungcu_z3_north" },
+      { "point": [ 0, 0, 4 ], "overmap": "sgn_chungcu_z4_north" },
+      { "point": [ 0, 0, 5 ], "overmap": "sgn_chungcu_z5_north" }
+    ]
+  }
+]

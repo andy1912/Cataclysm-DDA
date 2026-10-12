@@ -1,0 +1,44 @@
+[
+  {
+    "type": "start_location",
+    "id": "sgn_sloc_nha_ong",
+    "name": "Nhà ống (shophouse home)",
+    "terrain": [ { "om_terrain": "sgn_nh_solo_z0", "om_terrain_match_type": "TYPE" } ]
+  },
+  {
+    "type": "start_location",
+    "id": "sgn_sloc_nha_ong_shuttered",
+    "name": "Nhà ống, iron gate pulled shut",
+    "terrain": [ { "om_terrain": "sgn_nh_solo_z0", "om_terrain_match_type": "TYPE" } ],
+    "flags": [ "BOARDED" ]
+  },
+  {
+    "type": "start_location",
+    "id": "sgn_sloc_cho",
+    "name": "Chợ (wet market stall)",
+    "terrain": [
+      { "om_terrain": "sgn_cho_nw", "om_terrain_match_type": "TYPE" },
+      { "om_terrain": "sgn_cho_se", "om_terrain_match_type": "TYPE" }
+    ]
+  },
+  {
+    "type": "start_location",
+    "id": "sgn_sloc_hem",
+    "name": "Hẻm (a home deep in the alleys)",
+    "terrain": [ { "om_terrain": "sgn_hem_block", "om_terrain_match_type": "TYPE" } ]
+  },
+  {
+    "type": "start_location",
+    "id": "sgn_sloc_ga_sai_gon",
+    "name": "Ga Sài Gòn (the station hall, waiting for a train that never came)",
+    "//": "Real map only: the station stands at its real site near the start.",
+    "terrain": [ { "om_terrain": "sgn_lm_ga_sai_gon_10", "om_terrain_match_type": "TYPE" } ]
+  },
+  {
+    "type": "start_location",
+    "id": "sgn_sloc_san_bay",
+    "name": "Tân Sơn Nhất (stranded in the departures hall)",
+    "//": "Real map only: the international terminal (gen_saigon_landmarks.py sgn_lm_san_bay).",
+    "terrain": [ { "om_terrain": "sgn_lm_san_bay_10", "om_terrain_match_type": "TYPE" } ]
+  }
+]

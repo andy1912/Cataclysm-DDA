@@ -1,0 +1,16 @@
+{
+ "fg": [
+  {
+   "weight": 1,
+   "sprite": "@f_sgn_bang_hieu"
+  },
+  {
+   "weight": 1,
+   "sprite": "@f_sgn_bang_hieu__blue"
+  },
+  {
+   "weight": 1,
+   "sprite": "@f_sgn_bang_hieu__green"
+  }
+ ]
+}

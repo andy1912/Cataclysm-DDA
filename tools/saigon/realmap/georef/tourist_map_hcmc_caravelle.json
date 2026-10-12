@@ -1,0 +1,111 @@
+{
+  "image": "tools/saigon/realmap/source/tourist_map_hcmc_caravelle.png",
+  "note": "Pixel positions read off the map's icons; coordinates from the English Wikipedia articles of each place.",
+  "points": [
+    {
+      "name": "Chợ Bến Thành",
+      "px": [
+        1210,
+        928
+      ],
+      "lat": 10.77252,
+      "lon": 106.69802
+    },
+    {
+      "name": "Nhà thờ Đức Bà",
+      "px": [
+        1237,
+        778
+      ],
+      "lat": 10.77972,
+      "lon": 106.69917
+    },
+    {
+      "name": "Dinh Độc Lập",
+      "px": [
+        1155,
+        822
+      ],
+      "lat": 10.77694,
+      "lon": 106.69528
+    },
+    {
+      "name": "Ga Sài Gòn",
+      "px": [
+        820,
+        712
+      ],
+      "lat": 10.7822,
+      "lon": 106.677
+    },
+    {
+      "name": "Nhà thờ Tân Định",
+      "px": [
+        1055,
+        620
+      ],
+      "lat": 10.7884,
+      "lon": 106.6907
+    },
+    {
+      "name": "Nhà hát Thành phố",
+      "px": [
+        1310,
+        840
+      ],
+      "lat": 10.7767,
+      "lon": 106.70322
+    },
+    {
+      "name": "Sân vận động Thống Nhất",
+      "px": [
+        522,
+        1158
+      ],
+      "lat": 10.760703,
+      "lon": 106.663331
+    },
+    {
+      "name": "Thảo Cầm Viên",
+      "px": [
+        1370,
+        617
+      ],
+      "lat": 10.78806,
+      "lon": 106.70472
+    }
+  ],
+  "ignore_note": "title box, hotel logos, the hotel callout, the legend, the airliner drawing ([x0, y0, x1, y1] pixels)",
+  "ignore": [
+    [
+      1662,
+      0,
+      2000,
+      480
+    ],
+    [
+      0,
+      952,
+      248,
+      1320
+    ],
+    [
+      1448,
+      768,
+      1586,
+      892
+    ],
+    [
+      1778,
+      888,
+      2000,
+      1212
+    ],
+    [
+      20,
+      40,
+      395,
+      150
+    ]
+  ]
+}

@@ -1,0 +1,83 @@
+[
+  {
+    "type": "item_group",
+    "id": "sgn_npc_vendor_worn",
+    "//": "N3: what a market vendor (cô Ba's class) wears and carries; no dda default gear.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_ba_ba", "prob": 60 }, { "item": "sgn_do_bo", "prob": 40 } ] },
+      {
+        "distribution": [ { "item": "sgn_non_la", "prob": 60 }, { "item": "sgn_non_ket", "prob": 20 }, { "item": "sgn_khan_ran", "prob": 20 } ]
+      },
+      { "distribution": [ { "item": "sgn_dep_to_ong", "prob": 50 }, { "item": "sgn_dep_lao", "prob": 50 } ] },
+      { "item": "sgn_ong_tay_chong_nang", "prob": 40 },
+      { "item": "sgn_khau_trang", "prob": 50 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_vendor_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_ro_nhua", "prob": 70 },
+      { "item": "sgn_ve_so", "prob": 30 },
+      {
+        "distribution": [ { "item": "sgn_xoi" }, { "item": "sgn_banh_mi_thit" }, { "item": "sgn_banh_bao" }, { "item": "sgn_kho_muc" } ]
+      },
+      { "item": "sgn_tra_da", "prob": 40 },
+      { "item": "sgn_dien_thoai", "prob": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_vendor_weapon",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_dao_rua", "prob": 30 },
+      { "item": "knife_folding", "prob": 20 },
+      { "item": "umbrella", "prob": 20 },
+      { "item": "broom", "prob": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_xe_om_worn",
+    "//": "N3: a xe ôm driver (chú Tư's class): helmet, sun jacket, slacks, sandals.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_non_bao_hiem", "prob": 80 }, { "item": "sgn_non_ket", "prob": 20 } ] },
+      { "distribution": [ { "item": "sgn_ao_khoac_chong_nang", "prob": 60 }, { "item": "sgn_ao_thun", "prob": 40 } ] },
+      { "item": "sgn_quan_tay" },
+      { "distribution": [ { "item": "sgn_dep_lao", "prob": 70 }, { "item": "sgn_dep_quai_hau", "prob": 30 } ] },
+      { "item": "sgn_khau_trang", "prob": 60 },
+      { "item": "sgn_ao_mua_canh_doi", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_xe_om_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_thuoc_la", "prob": 70 },
+      { "item": "lighter", "prob": 60 },
+      { "item": "sgn_dien_thoai", "prob": 50 },
+      { "item": "sgn_bo_va_xe", "prob": 30 },
+      { "item": "sgn_khoa_chu_u", "prob": 30 },
+      { "item": "sgn_ca_phe_sua_da", "prob": 30 },
+      { "item": "sgn_ban_do_tphcm", "prob": 10 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_xe_om_weapon",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "wrench", "prob": 30 },
+      { "item": "sgn_khoa_chu_u", "prob": 30 },
+      { "item": "pipe", "prob": 25 },
+      { "item": "knife_folding", "prob": 15 }
+    ]
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_underbone",
+    "name": "Underbone motorbike (110cc)",
+    "blueprint": [ "o#o" ],
+    "parts": [
+      {
+        "x": 1,
+        "y": 0,
+        "parts": [ "xlframe#vertical", "wheel_mount_light_steerable", "wheel_motorbike", "motorcycle_headlight", "basketsm" ]
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "parts": [ "frame#vertical_2", "saddle#motor", "controls", "controls_electronic", "horn_car", "motorcycle_kickstand" ]
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "parts": [ "sgn_engine_110cc", "alternator_motorbike", "battery_motorbike_small", { "part": "sgn_tank_4l", "fuel": "gasoline" } ]
+      },
+      {
+        "x": -1,
+        "y": 0,
+        "parts": [ "xlframe#vertical", "wheel_mount_light", "wheel_motorbike#rear", "muffler", "sgn_pillion" ]
+      }
+    ]
+  },
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_xe_tay_ga",
+    "copy-from": "scooter",
+    "name": "Automatic scooter (xe tay ga)"
+  },
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_ba_gac_may",
+    "name": "Xe ba gác máy (motor cargo tricycle)",
+    "parts": [
+      {
+        "x": 2,
+        "y": 0,
+        "parts": [ "xlframe#vertical", "wheel_mount_light_steerable", "wheel_motorbike", "motorcycle_headlight" ]
+      },
+      {
+        "x": 1,
+        "y": 0,
+        "parts": [
+          "frame#vertical_2",
+          "saddle#motor",
+          "controls",
+          "controls_electronic",
+          "horn_car",
+          "engine_1cyl_large",
+          "alternator_motorbike",
+          "battery_motorbike",
+          { "part": "tank_small", "fuel": "gasoline" },
+          "muffler"
+        ]
+      },
+      { "x": 0, "y": 0, "parts": [ "frame#cross", "sgn_ba_gac_bed" ] },
+      { "x": 0, "y": -1, "parts": [ "frame#cross", "sgn_ba_gac_bed" ] },
+      { "x": 0, "y": 1, "parts": [ "frame#cross", "sgn_ba_gac_bed" ] },
+      { "x": -1, "y": 0, "parts": [ "frame#cross", "sgn_ba_gac_bed" ] },
+      { "x": -1, "y": -1, "parts": [ "frame#cross", "sgn_ba_gac_bed", "wheel_mount_medium", "wheel" ] },
+      { "x": -1, "y": 1, "parts": [ "frame#cross", "sgn_ba_gac_bed", "wheel_mount_medium", "wheel" ] }
+    ]
+  },
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_xich_lo",
+    "name": "Xích lô (pedal cyclo)",
+    "parts": [
+      { "x": 1, "y": 0, "parts": [ "xlframe#vertical", "wheel_mount_light_steerable", "wheel_bicycle", "sgn_xich_lo_seat" ] },
+      { "x": 0, "y": 0, "parts": [ "xlframe#vertical" ] },
+      {
+        "x": -1,
+        "y": 0,
+        "parts": [ "xlframe#vertical_2", "wheel_mount_light", "wheel_bicycle#rear", "saddle#pedal", "foot_pedals", "horn_bicycle" ]
+      }
+    ]
+  },
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_xuong",
+    "name": "Xuồng (rowing boat)",
+    "parts": [
+      { "x": 1, "y": 0, "parts": [ "frame_wood#horizontal_front", "boat_board", "seat_wood", "sgn_oars" ] },
+      { "x": 0, "y": 0, "parts": [ "frame_wood#vertical", "boat_board", "wood box" ] },
+      { "x": -1, "y": 0, "parts": [ "frame_wood#horizontal_rear", "boat_board", "seat_wood", "hand_paddles" ] }
+    ]
+  },
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_ghe",
+    "name": "Ghe (long-tail cargo boat)",
+    "parts": [
+      { "x": 2, "y": 0, "parts": [ "frame_wood#nw", "boat_board" ] },
+      { "x": 2, "y": 1, "parts": [ "frame_wood#ne", "boat_board" ] },
+      { "x": 1, "y": 0, "parts": [ "frame_wood#cross", "boat_board", "wood box" ] },
+      { "x": 1, "y": 1, "parts": [ "frame_wood#cross", "boat_board", "wood box" ] },
+      { "x": 0, "y": 0, "parts": [ "frame_wood#cross", "boat_board", "cargo_space", "roof_wood" ] },
+      { "x": 0, "y": 1, "parts": [ "frame_wood#cross", "boat_board", "cargo_space", "roof_wood" ] },
+      { "x": -1, "y": 0, "parts": [ "frame_wood#cross", "boat_board", "cargo_space" ] },
+      { "x": -1, "y": 1, "parts": [ "frame_wood#cross", "boat_board", "cargo_space" ] },
+      { "x": -2, "y": 0, "parts": [ "frame_wood#sw", "boat_board", "sgn_longtail", "muffler" ] },
+      {
+        "x": -2,
+        "y": 1,
+        "parts": [ "frame_wood#se", "boat_board", "seat_wood", "controls", { "part": "tank_small", "fuel": "gasoline" } ]
+      }
+    ]
+  },
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_xe_dap",
+    "copy-from": "bicycle",
+    "name": "Bicycle (xe đạp)"
+  },
+  {
+    "//": "L-loc5: the four-wheelers of 2009 Saigon traffic, a tenth of the street at most.",
+    "type": "vehicle",
+    "id": "sgn_veh_taxi",
+    "copy-from": "car_sedan",
+    "name": "Taxi (white sedan, green stripe)"
+  },
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_xe_hoi",
+    "copy-from": "car_hatch",
+    "name": "Small car (xe hơi)"
+  },
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_xe_16_cho",
+    "copy-from": "van_full-size",
+    "name": "16-seat minibus (xe 16 chỗ)"
+  },
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_xe_tai_nhe",
+    "copy-from": "van_cargo",
+    "name": "Light truck (xe tải nhẹ)"
+  },
+  {
+    "type": "vehicle",
+    "id": "sgn_veh_xe_buyt",
+    "copy-from": "bus",
+    "name": "City bus (xe buýt)"
+  }
+]

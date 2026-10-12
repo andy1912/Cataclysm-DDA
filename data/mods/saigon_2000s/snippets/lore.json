@@ -1,0 +1,124 @@
+[
+  {
+    "type": "snippet",
+    "category": "sgn_intro",
+    "text": [
+      {
+        "id": "sgn_intro_1",
+        "text": "You wake before dawn, soaked in sweat.  The power went out again in the night and the ceiling fan is still.  For the first time in your life the street below is quiet: no motorbike horns, no broom scraping the sidewalk, no vendor calling out bánh mì.  Somewhere down the hẻm, a metal gate rattles, and keeps rattling, as if someone is leaning against it and cannot stop."
+      },
+      {
+        "id": "sgn_intro_2",
+        "text": "The last broadcast on the loa phường was three days ago: stay indoors, boil your water, report fevers to the ward office.  Since then only the rain gutters have spoken.  You have a little rice, a little water, and a city of alleys between you and anyone who might still be alive."
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_loa_phuong",
+    "//": "Ward loudspeaker announcements, heard from speaker poles and read on notices.",
+    "text": [
+      {
+        "id": "sgn_loa_1",
+        "text": "Attention residents of the ward.  In accordance with the instructions of the city People's Committee, all households must report any person with a high fever to the ward health station immediately.  Do not keep or slaughter poultry at home.  Wash your hands with soap."
+      },
+      {
+        "id": "sgn_loa_2",
+        "text": "Attention residents.  The market will remain closed until further notice for disinfection.  Residents are asked not to gather on the sidewalks and not to sell food on the street.  The militia will patrol the hẻm tonight."
+      },
+      {
+        "id": "sgn_loa_3",
+        "text": "Notice.  Families who have a relative taken to the district hospital are asked not to go to the hospital gate.  Information will be announced on this speaker.  Please remain calm and trust the authorities."
+      },
+      {
+        "id": "sgn_loa_4",
+        "text": "Attention.  All residents of the ward must stay indoors and lock their gates.  Do not open the door to sick people, even family members.  I repeat, do not open the door to–  (the rest of the recording is static and shouting)"
+      },
+      {
+        "id": "sgn_loa_5",
+        "text": "Evacuation notice.  Residents who are healthy should gather at the ward People's Committee building at six o'clock with identity papers and three days of food.  Buses will take residents out of the city.  Motorbikes are not allowed on the bridges."
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_radio",
+    "//": "Fictional city radio station broadcasts.",
+    "text": [
+      {
+        "id": "sgn_radio_1",
+        "text": "…this is the city radio station.  The Ministry of Health confirms that the new strain has spread to several southern provinces.  People are asked not to travel to the Mekong Delta.  Schools in the city will close from Monday…"
+      },
+      {
+        "id": "sgn_radio_2",
+        "text": "…traffic news.  All lanes on the bridges to District 2 are blocked.  The ferry at Thủ Thiêm has stopped running.  Drivers are asked to turn back and return home.  Do not try to cross the river…"
+      },
+      {
+        "id": "sgn_radio_3",
+        "text": "…a message to listeners in Chợ Lớn: the merchants' association has opened its warehouse to healthy residents.  Bring rice and bring water.  Do not bring anyone who has been bitten…"
+      },
+      {
+        "id": "sgn_radio_4",
+        "text": "…if you can hear this, the evacuation point at the stadium is no longer safe.  Go north toward Củ Chi, or west toward the river.  Stay off the main roads at night.  May the ancestors protect you…"
+      },
+      {
+        "id": "sgn_radio_5",
+        "text": "(A tape loops a folk song from the 1960s, over and over.  Every few minutes someone breathes close to the microphone, but says nothing.)"
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_newspaper",
+    "//": "Front pages of the fictional daily \"Tin Nhanh Sài Gòn\".",
+    "text": [
+      {
+        "id": "sgn_news_1",
+        "text": "TIN NHANH SÀI GÒN.  STRANGE FEVER: CITY RAISES ALERT LEVEL.  Poultry markets closed; health officials urge calm.  Page 3: How to disinfect your home with lime and chlorine."
+      },
+      {
+        "id": "sgn_news_2",
+        "text": "TIN NHANH SÀI GÒN.  HOSPITALS OVERLOADED, CITIZENS ASKED TO TREAT MILD FEVERS AT HOME.  Page 5: Price of rice doubles at Bình Tây market.  Page 8: Football, the national team match postponed."
+      },
+      {
+        "id": "sgn_news_3",
+        "text": "TIN NHANH SÀI GÒN, SPECIAL EDITION.  CURFEW FROM 6 PM.  Violent patients reported in Districts 5 and 8.  Families are asked not to hold funerals at home."
+      },
+      {
+        "id": "sgn_news_4",
+        "text": "A single sheet, printed on one side only: \"THE CITY IS NOT FALLEN.  Healthy residents: go to the People's Committee buildings.  Do not approach the sick.  Do not approach the dead.\""
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_note",
+    "//": "Handwritten notes found in homes, stalls and alleys.",
+    "text": [
+      {
+        "id": "sgn_note_1",
+        "text": "Con ơi, Mẹ went to find Ba at the hospital.  The rice is in the blue bucket.  Do not open the gate for anyone.  If Mẹ is not back by Sunday, go to Aunt Sáu in Bình Thạnh."
+      },
+      {
+        "id": "sgn_note_2",
+        "text": "Uncle Tư, I took the Wave and two cans of gasoline.  I'll pay you back when this is over.  –Hùng"
+      },
+      {
+        "id": "sgn_note_3",
+        "text": "Written on the shutter in marker: \"THIS HOUSE IS EMPTY.  NO FOOD.  NO GOLD.\"  Underneath, in smaller letters: \"Grandmother is upstairs.  Do not go up.\""
+      },
+      {
+        "id": "sgn_note_4",
+        "text": "A list on the back of a lottery ticket: rice 10 kg, fish sauce, candles, 2 lighters, mosquito coils, water filter, medicine for Bà's blood pressure.  Everything is crossed out except the medicine."
+      },
+      {
+        "id": "sgn_note_5",
+        "text": "Tacked to the altar beside the incense: \"We have gone to the pagoda.  The monks are taking in anyone who is not sick.  Follow the canal north, not the street.\""
+      },
+      {
+        "id": "sgn_note_6",
+        "text": "Market stall ledger, last page: \"Tuesday: sold nothing.  Wednesday: Chị Ba's husband bit the fish seller.  Thursday: closing the stall.  Taking the ice to the pagoda.\""
+      }
+    ]
+  }
+]

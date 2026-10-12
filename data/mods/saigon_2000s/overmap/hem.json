@@ -1,0 +1,30 @@
+[
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_hem_block",
+    "copy-from": "generic_city_building",
+    "name": "hẻm",
+    "sym": "%",
+    "color": "brown",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_hem_block_roof",
+    "copy-from": "generic_city_building_roof",
+    "name": "hẻm rooftops",
+    "sym": "%",
+    "color": "brown",
+    "looks_like": "house"
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_hem_block_1",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_hem_block_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_hem_block_roof_north" }
+    ]
+  }
+]

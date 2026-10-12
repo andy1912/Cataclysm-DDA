@@ -1,0 +1,746 @@
+[
+  {
+    "type": "item_group",
+    "id": "sgn_npc_monk_worn",
+    "//": "N3: the áo bà ba of a chùa; the head is shaved, so no hat.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_ba_ba", "prob": 80 }, { "item": "sgn_ao_thun", "prob": 20 } ] },
+      { "item": "sgn_do_bo" },
+      { "distribution": [ { "item": "sgn_dep_to_ong", "prob": 70 }, { "item": "null", "prob": 30 } ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_monk_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_book_sutra", "prob": 70 },
+      { "item": "sgn_nen", "prob": 50 },
+      { "item": "incense", "prob": 60 },
+      { "item": "sgn_ly_nhua", "prob": 30 },
+      { "item": "sgn_banh_chung", "prob": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_monk_weapon",
+    "//": "N3: a monk carries no weapon; the walking staff is the most he owns.",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "stick", "prob": 40 },
+      { "item": "null", "prob": 60 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_priest_worn",
+    "//": "N3: white áo dài, the ordinary dress of a parish priest's house.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_dai_trang", "prob": 80 }, { "item": "sgn_ao_thun", "prob": 20 } ] },
+      { "distribution": [ { "item": "sgn_quan_tay", "prob": 70 }, { "item": "pants", "prob": 30 } ] },
+      { "distribution": [ { "item": "sgn_dep_lao", "prob": 60 }, { "item": "leathersandals", "prob": 40 } ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_priest_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_kinh_thanh", "prob": 60 },
+      { "item": "sgn_sach_kinh", "prob": 40 },
+      { "item": "sgn_nen", "prob": 40 },
+      { "item": "sgn_so_tay_so_cuu", "prob": 20 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_priest_weapon",
+    "subtype": "distribution",
+    "entries": [ { "item": "null", "prob": 100 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_postal_clerk_worn",
+    "//": "N3: a Bưu điện counter clerk in office shirts, 2004 cotton not polyester.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_thun", "prob": 70 }, { "item": "sgn_ao_dai_trang", "prob": 30 } ] },
+      { "distribution": [ { "item": "sgn_quan_tay", "prob": 80 }, { "item": "pants", "prob": 20 } ] },
+      { "distribution": [ { "item": "sgn_dep_lao", "prob": 60 }, { "item": "sneakers", "prob": 40 } ] },
+      { "item": "sgn_khan_ran", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_postal_clerk_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_dien_thoai", "prob": 40 },
+      { "item": "paper", "prob": 50, "count": [ 2, 6 ] },
+      { "item": "pen", "prob": 60 },
+      { "item": "sgn_newspaper", "prob": 40 },
+      { "item": "sgn_ca_phe_sua_da", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_postal_clerk_weapon",
+    "subtype": "distribution",
+    "entries": [ { "item": "null", "prob": 100 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_civil_servant_worn",
+    "//": "N3: an UBND or ward-office clerk.  The white shirt is the office uniform; the áo dài is for the desk of the day.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_trang_hoc_sinh", "prob": 50 }, { "item": "sgn_ao_dai_trang", "prob": 30 },
+                         { "item": "sgn_ao_thun", "prob": 20 } ] },
+      { "distribution": [ { "item": "sgn_quan_tay", "prob": 80 }, { "item": "pants", "prob": 20 } ] },
+      { "distribution": [ { "item": "sgn_dep_lao", "prob": 60 }, { "item": "sneakers", "prob": 40 } ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_civil_servant_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_ward_notice", "prob": 40 },
+      { "item": "file", "prob": 50 },
+      { "item": "paper", "prob": 50 },
+      { "item": "sgn_lich_bloc", "prob": 40 },
+      { "item": "sgn_dien_thoai", "prob": 30 },
+      { "item": "sgn_banh_mi_thit", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_civil_servant_weapon",
+    "subtype": "distribution",
+    "entries": [ { "item": "null", "prob": 100 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_guard_worn",
+    "//": "N3: a security guard or ward policeman.  công an khaki; the private guards at STC and the mall are the same shirt with different trousers.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_cong_an", "prob": 80 }, { "item": "sgn_ao_thun", "prob": 20 } ] },
+      { "item": "sgn_quan_cong_an" },
+      { "distribution": [ { "item": "sgn_dep_quai_hau", "prob": 50 }, { "item": "sgn_dep_to_ong", "prob": 50 } ] },
+      { "item": "sgn_non_bao_hiem", "prob": 40 },
+      { "item": "sgn_khau_trang", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_guard_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "two_way_radio", "prob": 50 },
+      { "item": "sgn_dien_thoai", "prob": 30 },
+      { "item": "whistle", "prob": 40 },
+      { "item": "sgn_banh_mi_thit", "prob": 50 },
+      { "item": "sgn_luong_kho", "prob": 40 },
+      { "item": "sgn_tra_da", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_guard_weapon",
+    "//": "N4: the trọng and the U-lock as before, and for one guard in five the service pistol.  A phường policeman on the beat carried a club and a whistle, not a gun, but the district office kept one in a drawer and a guard off the desk is the man holding it.  A weapon_override yields one item (npc::starting_weapon -> item_group::item_from -> create_single), and a class with a carry_override never reaches starting_inv_ammo, so the pistol spawns loaded instead: \"charges\" makes the group seat its default magazine, sgn_mag_9x18, with eight rounds.  No spare magazine.",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_sung_9x18", "prob": 25, "charges": 8 },
+      { "item": "baton", "prob": 50 },
+      { "item": "sgn_khoa_chu_u", "prob": 25 },
+      { "item": "null", "prob": 25 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_doctor_worn",
+    "//": "N3: the white coat over whatever a district hospital actually let you wear under it.",
+    "subtype": "collection",
+    "entries": [
+      { "item": "sgn_ao_dai_trang", "prob": 50 },
+      { "distribution": [ { "item": "sgn_quan_tay", "prob": 70 }, { "item": "pants", "prob": 30 } ] },
+      { "distribution": [ { "item": "sgn_dep_quai_hau", "prob": 50 }, { "item": "sneakers", "prob": 50 } ] },
+      { "item": "sgn_khau_trang", "prob": 60 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_doctor_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_book_nursing", "prob": 30 },
+      { "item": "sgn_so_tay_so_cuu", "prob": 40 },
+      { "item": "sgn_oresol", "prob": 50, "count": [ 1, 3 ] },
+      { "item": "aspirin", "prob": 40, "count": [ 1, 6 ] },
+      { "item": "sgn_khau_trang", "prob": 60 },
+      { "item": "sgn_ca_phe_sua_da", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_doctor_weapon",
+    "subtype": "distribution",
+    "entries": [ { "item": "null", "prob": 100 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_doctor_sells",
+    "//": "N3: what a ward pharmacy or a district clinic still has on the counter.",
+    "subtype": "distribution",
+    "items": [
+      [ "sgn_so_tay_so_cuu", 40 ],
+      [ "sgn_book_nursing", 30 ],
+      [ "sgn_oresol", 60 ],
+      [ "sgn_thuoc_bac", 50 ],
+      [ "aspirin", 60 ],
+      [ "bandages", 70 ],
+      [ "sgn_khau_trang", 70 ],
+      [ "sgn_chai_nuoc_mam", 20 ],
+      [ "sgn_banh_trang", 20 ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_nurse_worn",
+    "//": "N3: scrubs in a district hospital are whatever the ward washed last.",
+    "subtype": "collection",
+    "entries": [
+      { "item": "sgn_ao_thun", "prob": 60 },
+      { "distribution": [ { "item": "sgn_quan_tay", "prob": 70 }, { "item": "pants", "prob": 30 } ] },
+      { "distribution": [ { "item": "sgn_dep_quai_hau", "prob": 60 }, { "item": "sneakers", "prob": 40 } ] },
+      { "item": "sgn_khau_trang", "prob": 70 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_nurse_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "bandages", "prob": 80, "count": [ 1, 4 ] },
+      { "item": "sgn_oresol", "prob": 50 },
+      { "item": "sgn_khau_trang", "prob": 70 },
+      { "item": "sgn_binh_thuy", "prob": 30 },
+      { "item": "sgn_com_tam", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_nurse_weapon",
+    "subtype": "distribution",
+    "entries": [ { "item": "null", "prob": 100 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_shopkeeper_worn",
+    "//": "N3: a counter in a nhà sách, a Co.op Mart or a tiệm vàng.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_thun", "prob": 60 }, { "item": "sgn_ao_ba_ba", "prob": 20 },
+                         { "item": "sgn_ao_dai_mau", "prob": 20 } ] },
+      { "distribution": [ { "item": "sgn_quan_tay", "prob": 70 }, { "item": "pants", "prob": 30 } ] },
+      { "distribution": [ { "item": "sgn_dep_lao", "prob": 50 }, { "item": "sneakers", "prob": 50 } ] },
+      { "item": "sgn_non_ket", "prob": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_shopkeeper_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_thuoc_la", "prob": 50 },
+      { "item": "lighter", "prob": 60 },
+      { "item": "sgn_dien_thoai", "prob": 40 },
+      { "item": "sgn_ly_nhua", "prob": 40 },
+      { "item": "sgn_ca_phe_sua_da", "prob": 40 },
+      { "item": "sgn_banh_mi_thit", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_shopkeeper_weapon",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_dao_rua", "prob": 25 },
+      { "item": "knife_folding", "prob": 25 },
+      { "item": "null", "prob": 50 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_shopkeeper_sells",
+    "//": "N3: a small shop counter's stock — the shop's own goods plus what dda's shopkeepers carried.",
+    "subtype": "distribution",
+    "items": [
+      [ "sgn_mi_goi", 60 ],
+      [ "sgn_banh_mi_thit", 50 ],
+      [ "sgn_xoi", 40 ],
+      [ "sgn_ca_phe_sua_da", 50 ],
+      [ "sgn_tra_da", 50 ],
+      [ "sgn_bia_hoi", 30 ],
+      [ "sgn_sua_dac", 30 ],
+      [ "sgn_banh_trang", 30 ],
+      [ "sgn_nuoc_mam", 30 ],
+      [ "cig", 40 ],
+      [ "lighter", 50 ],
+      [ "sgn_ly_nhua", 50 ],
+      [ "battery", 40 ],
+      [ "sgn_dong_10k", 50 ],
+      [ "sgn_dong_50k", 30 ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_craftsman_worn",
+    "//": "N3: a shophouse trade, 2000s southern.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_thun", "prob": 60 }, { "item": "sgn_ao_ba_ba", "prob": 40 } ] },
+      { "distribution": [ { "item": "sgn_quan_tay", "prob": 80 }, { "item": "pants", "prob": 20 } ] },
+      { "distribution": [ { "item": "sgn_dep_to_ong", "prob": 50 }, { "item": "sgn_dep_lao", "prob": 50 } ] },
+      { "item": "sgn_khan_ran", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_craftsman_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_thuoc_la", "prob": 60 },
+      { "item": "lighter", "prob": 70 },
+      { "item": "wrench", "prob": 40 },
+      { "item": "hammer", "prob": 30 },
+      { "item": "sgn_thuoc_bac", "prob": 30, "count": [ 1, 3 ] },
+      { "item": "sgn_dien_thoai", "prob": 40 },
+      { "item": "sgn_banh_mi_thit", "prob": 50 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_craftsman_weapon",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_dao_rua", "prob": 35 },
+      { "item": "sgn_xa_beng", "prob": 25 },
+      { "item": "pipe", "prob": 25 },
+      { "item": "knife_folding", "prob": 15 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_mechanic_worn",
+    "//": "N3: the greasy work clothes of a cửa hàng xe máy.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_thun", "prob": 60 }, { "item": "sgn_ao_khoac_chong_nang", "prob": 40 } ] },
+      { "distribution": [ { "item": "sgn_quan_tay", "prob": 60 }, { "item": "jeans", "prob": 40 } ] },
+      { "distribution": [ { "item": "sgn_dep_to_ong", "prob": 60 }, { "item": "sgn_dep_quai_hau", "prob": 40 } ] },
+      { "item": "sgn_khau_trang", "prob": 40 },
+      { "item": "gloves_work", "prob": 50 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_mechanic_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_bo_va_xe", "prob": 80 },
+      { "item": "wrench", "prob": 80 },
+      { "item": "hammer", "prob": 60 },
+      { "item": "screwdriver", "prob": 60 },
+      { "item": "sgn_khoa_chu_u", "prob": 50 },
+      { "item": "sgn_book_moto_repair", "prob": 40 },
+      { "item": "sgn_thuoc_la", "prob": 60 },
+      { "item": "sgn_bia_hoi", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_mechanic_weapon",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_xa_beng", "prob": 40 },
+      { "item": "wrench", "prob": 40 },
+      { "item": "sgn_dao_rua", "prob": 20 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_petrol_attendant_worn",
+    "//": "N3: the station's own shirt; the dark green and orange of a Petrolimex-style forecourt.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_cong_an", "prob": 30 }, { "item": "sgn_ao_thun", "prob": 70 } ] },
+      { "distribution": [ { "item": "sgn_quan_cong_an", "prob": 40 }, { "item": "sgn_quan_tay", "prob": 60 } ] },
+      { "distribution": [ { "item": "sgn_dep_to_ong", "prob": 60 }, { "item": "sneakers", "prob": 40 } ] },
+      { "item": "sgn_khan_ran", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_petrol_attendant_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_thuoc_la", "prob": 80 },
+      { "item": "lighter", "prob": 80 },
+      { "item": "sgn_dien_thoai", "prob": 40 },
+      { "item": "sgn_banh_mi_thit", "prob": 60 },
+      { "item": "sgn_tra_da", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_petrol_attendant_weapon",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_khoa_chu_u", "prob": 40 },
+      { "item": "null", "prob": 60 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_caretaker_worn",
+    "//": "N3: the nghĩa trang and công viên sweeper.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_ba_ba", "prob": 60 }, { "item": "sgn_ao_thun", "prob": 40 } ] },
+      { "distribution": [ { "item": "sgn_quan_tay", "prob": 70 }, { "item": "pants", "prob": 30 } ] },
+      { "distribution": [ { "item": "sgn_dep_to_ong", "prob": 70 }, { "item": "sgn_dep_quai_hau", "prob": 30 } ] },
+      { "item": "sgn_non_la", "prob": 50 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_caretaker_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_choi_cha", "prob": 80 },
+      { "item": "sgn_thuoc_la", "prob": 60 },
+      { "item": "sgn_banh_mi_thit", "prob": 60 },
+      { "item": "sgn_ly_nhua", "prob": 40 },
+      { "item": "sgn_thuoc_bac", "prob": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_caretaker_weapon",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_choi_cha", "prob": 40 },
+      { "item": "stick", "prob": 30 },
+      { "item": "null", "prob": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_park_elder_worn",
+    "//": "N3: the công viên regular — áo bà ba, sandals, and a cap or a nón lá.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_ba_ba", "prob": 70 }, { "item": "sgn_ao_thun", "prob": 30 } ] },
+      { "distribution": [ { "item": "sgn_quan_tay", "prob": 80 }, { "item": "pants", "prob": 20 } ] },
+      { "distribution": [ { "item": "sgn_dep_lao", "prob": 60 }, { "item": "sgn_dep_to_ong", "prob": 40 } ] },
+      { "distribution": [ { "item": "sgn_non_la", "prob": 50 }, { "item": "sgn_non_ket", "prob": 30 },
+                         { "item": "null", "prob": 20 } ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_park_elder_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_thuoc_la", "prob": 60 },
+      { "item": "sgn_chai_nuoc_mam", "prob": 50 },
+      { "item": "sgn_tra_da", "prob": 50 },
+      { "item": "sgn_lich_bloc", "prob": 40 },
+      { "item": "sgn_ve_so", "prob": 40 },
+      { "item": "cane", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_park_elder_weapon",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "cane", "prob": 40 },
+      { "item": "null", "prob": 60 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_transport_clerk_worn",
+    "//": "N3: Ga Sài Gòn, bến xe Miền Đông, Tân Sơn Nhất.  Railways wear a peaked cap; the buses and the airport do not.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_cong_an", "prob": 60 }, { "item": "sgn_ao_thun", "prob": 40 } ] },
+      { "distribution": [ { "item": "sgn_quan_cong_an", "prob": 50 }, { "item": "sgn_quan_tay", "prob": 50 } ] },
+      { "distribution": [ { "item": "sgn_dep_quai_hau", "prob": 50 }, { "item": "sneakers", "prob": 50 } ] },
+      { "item": "sgn_non_bao_hiem", "prob": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_transport_clerk_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "paper", "prob": 60 },
+      { "item": "pen", "prob": 70 },
+      { "item": "sgn_dien_thoai", "prob": 40 },
+      { "item": "sgn_thuoc_la", "prob": 50 },
+      { "item": "sgn_banh_mi_thit", "prob": 60 },
+      { "item": "sgn_bia_hoi", "prob": 40 },
+      { "item": "sgn_ly_nhua", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_transport_clerk_weapon",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_khoa_chu_u", "prob": 30 },
+      { "item": "baton", "prob": 30 },
+      { "item": "null", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_office_worker_worn",
+    "//": "N3: STC, Diamond Plaza, the offices of Bến Thành's upper floors.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_thun", "prob": 60 }, { "item": "sgn_ao_khoac_chong_nang", "prob": 40 } ] },
+      { "distribution": [ { "item": "sgn_quan_tay", "prob": 70 }, { "item": "pants", "prob": 30 } ] },
+      { "distribution": [ { "item": "sneakers", "prob": 50 }, { "item": "leathersandals", "prob": 50 } ] },
+      { "item": "sgn_non_ket", "prob": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_office_worker_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_dien_thoai", "prob": 60 },
+      { "item": "cell_phone", "prob": 40 },
+      { "item": "file", "prob": 40 },
+      { "item": "paper", "prob": 40 },
+      { "item": "sgn_vcd_phim_bo", "prob": 20 },
+      { "item": "sgn_ca_phe_sua_da", "prob": 50 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_office_worker_weapon",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_dao_rua", "prob": 20 },
+      { "item": "null", "prob": 80 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_dock_worker_worn",
+    "//": "N3: kho hàng, bãi container, the cảng sheds.  Nothing here is dry or clean by end of shift.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_thun", "prob": 70 }, { "item": "sgn_ao_ba_ba", "prob": 30 } ] },
+      { "distribution": [ { "item": "sgn_quan_tay", "prob": 60 }, { "item": "pants_cargo", "prob": 40 } ] },
+      { "distribution": [ { "item": "sgn_dep_to_ong", "prob": 60 }, { "item": "sgn_ung_cao_su", "prob": 40 } ] },
+      { "item": "sgn_non_la", "prob": 30 },
+      { "item": "gloves_work", "prob": 50 },
+      { "item": "sgn_ao_mua_canh_doi", "prob": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_dock_worker_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_thuoc_la", "prob": 70 },
+      { "item": "lighter", "prob": 70 },
+      { "item": "sgn_banh_mi_thit", "prob": 60 },
+      { "item": "sgn_bia_hoi", "prob": 50 },
+      { "item": "sgn_dien_thoai", "prob": 40 },
+      { "item": "sgn_ly_nhua", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_dock_worker_weapon",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_dao_rua", "prob": 50 },
+      { "item": "pipe", "prob": 30 },
+      { "item": "sgn_xa_beng", "prob": 20 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_backpacker_worn",
+    "//": "N3: Phố Tây Bùi Viện, and the guesthouse rooms above it.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "tshirt", "prob": 60 }, { "item": "sgn_ao_thun", "prob": 40 } ] },
+      { "distribution": [ { "item": "shorts", "prob": 50 }, { "item": "sgn_quan_tay", "prob": 50 } ] },
+      { "distribution": [ { "item": "sneakers", "prob": 70 }, { "item": "leathersandals", "prob": 30 } ] },
+      { "item": "sgn_ao_khoac_chong_nang", "prob": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_backpacker_carry",
+    "subtype": "collection",
+    "entries": [
+      { "item": "backpack", "prob": 90 },
+      { "item": "sgn_guidebook_vn", "prob": 70 },
+      { "item": "sgn_ban_do_tphcm", "prob": 50 },
+      { "item": "sgn_ho_chieu", "prob": 40 },
+      { "item": "sgn_dien_thoai", "prob": 40 },
+      { "item": "water_clean", "prob": 60 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_backpacker_weapon",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "knife_folding", "prob": 40 },
+      { "item": "sgn_dao_rua", "prob": 20 },
+      { "item": "null", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_fisherman_worn",
+    "//": "N3: the Cần Giờ river people, and anyone working a boat in the delta.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_thun", "prob": 60 }, { "item": "sgn_ao_ba_ba", "prob": 40 } ] },
+      { "distribution": [ { "item": "shorts", "prob": 70 }, { "item": "sgn_quan_tay", "prob": 30 } ] },
+      { "distribution": [ { "item": "sgn_dep_to_ong", "prob": 80 }, { "item": "null", "prob": 20 } ] },
+      { "item": "sgn_non_la", "prob": 60 },
+      { "item": "sgn_khan_ran", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_fisherman_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_can_cau_tre", "prob": 60 },
+      { "item": "sgn_luoi_chai", "prob": 40 },
+      { "item": "sgn_dao_rua", "prob": 50 },
+      { "item": "sgn_ca_phe_sua_da", "prob": 40 },
+      { "item": "sgn_ly_nhua", "prob": 40 },
+      { "item": "sgn_thuoc_la", "prob": 60 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_fisherman_weapon",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_dao_rua", "prob": 60 },
+      { "item": "stick", "prob": 20 },
+      { "item": "null", "prob": 20 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_veteran_worn",
+    "//": "N3: the war ended thirty years ago; the uniform and the medal are of that war, not this one.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_khoac_chong_nang", "prob": 60 }, { "item": "sgn_ao_ba_ba", "prob": 40 } ] },
+      { "distribution": [ { "item": "sgn_quan_tay", "prob": 60 }, { "item": "pants_cargo", "prob": 40 } ] },
+      { "distribution": [ { "item": "sgn_dep_quai_hau", "prob": 60 }, { "item": "sgn_ung_cao_su", "prob": 40 } ] },
+      { "item": "sgn_non_coi", "prob": 40 },
+      { "item": "sgn_khan_ran", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_veteran_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_thuoc_la", "prob": 70 },
+      { "item": "lighter", "prob": 70 },
+      { "item": "sgn_dao_rua", "prob": 40 },
+      { "item": "sgn_ruou_de", "prob": 50 },
+      { "item": "sgn_thuoc_bac", "prob": 40 },
+      { "item": "sgn_so_tay_so_cuu", "prob": 30 },
+      { "item": "sgn_banh_mi_thit", "prob": 60 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_veteran_weapon",
+    "//": "N4 decides this one: no sidearm.  The war ended thirty years ago and what he still owns is a 1975 service knife and a length of pipe, which is what he has always had.  The pistol belongs to the công an, and only to the công an.",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_dao_rua", "prob": 50 },
+      { "item": "pipe", "prob": 30 },
+      { "item": "null", "prob": 20 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_student_worn",
+    "//": "N3: a student at a trường or a university dormitory.",
+    "subtype": "collection",
+    "entries": [
+      { "distribution": [ { "item": "sgn_ao_thun", "prob": 70 }, { "item": "tshirt", "prob": 30 } ] },
+      { "distribution": [ { "item": "sgn_quan_tay", "prob": 70 }, { "item": "jeans", "prob": 30 } ] },
+      { "distribution": [ { "item": "sneakers", "prob": 80 }, { "item": "sgn_dep_lao", "prob": 20 } ] },
+      { "item": "backpack_small", "prob": 50 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_student_carry",
+    "subtype": "collection",
+    "entries": [
+      { "group": "sgn_wallet" },
+      { "item": "sgn_sgk_ngu_van", "prob": 60 },
+      { "item": "sgn_so_tay_so_cuu", "prob": 30 },
+      { "item": "pencil", "prob": 60 },
+      { "item": "pen", "prob": 80 },
+      { "item": "sgn_dien_thoai", "prob": 50 },
+      { "item": "sgn_truyen_meo_may", "prob": 40 },
+      { "item": "sgn_banh_mi_thit", "prob": 50 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_npc_student_weapon",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_dao_rua", "prob": 20 },
+      { "item": "null", "prob": 80 }
+    ]
+  }
+]

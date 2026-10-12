@@ -1,0 +1,127 @@
+[
+  {
+    "id": "sgn_non_la",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "straw_hat",
+    "name": { "str_sp": "nón lá" },
+    "description": "A conical hat of dried palm leaves stitched over bamboo rings, with a cloth chin strap.  Its wide brim keeps the sun out of your eyes and the rain off your face, but it will not keep the rest of you dry.",
+    "flags": [ "VARSIZE", "SUN_GLASSES", "WATER_FRIENDLY" ],
+    "price": "1 USD",
+    "price_postapoc": "50 cent"
+  },
+  {
+    "id": "sgn_non_bao_hiem",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "helmet_bike",
+    "name": { "str_sp": "nón bảo hiểm" },
+    "description": "A thin plastic motorbike half-helmet with a snap chin strap, the kind sold on every street corner after the helmet law was first discussed.  It is more for the traffic police than for your skull.",
+    "price": "3 USD",
+    "price_postapoc": "2 USD"
+  },
+  {
+    "id": "sgn_ao_mua_canh_doi",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "poncho",
+    "name": { "str": "bat-wing rain poncho" },
+    "description": "An áo mưa cánh dơi: a huge sheet of thin plastic with a hood and sleeves, cut wide enough to drape over you and the motorbike handlebars.  It keeps the monsoon off, and it is stifling.",
+    "material": [ "plastic" ],
+    "flags": [ "BELTED", "OVERSIZE", "RAINPROOF", "ALLOWS_WING_ARMS", "NO_WING_GLIDING" ],
+    "price": "1 USD",
+    "price_postapoc": "2 USD"
+  },
+  {
+    "id": "sgn_dep_to_ong",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "flip_flops",
+    "name": { "str_sp": "dép tổ ong" },
+    "description": "Cheap molded foam sandals, white or blue, perforated with a honeycomb of holes.  Worn by everyone from grandmothers to construction workers.  They dry in minutes and protect you from almost nothing.",
+    "price": "50 cent",
+    "price_postapoc": "25 cent"
+  },
+  {
+    "id": "sgn_ao_ba_ba",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "longshirt",
+    "name": { "str_sp": "áo bà ba" },
+    "description": "A loose, collarless southern shirt of thin cotton with two front pockets.  Cool in the heat and quick to dry.",
+    "flags": [ "VARSIZE", "WATER_FRIENDLY" ],
+    "price": "4 USD",
+    "price_postapoc": "1 USD"
+  },
+  {
+    "id": "sgn_ong_tay_chong_nang",
+    "type": "ITEM",
+    "subtypes": [ "ARMOR" ],
+    "copy-from": "arm_warmers",
+    "name": { "str_sp": "sun sleeves" },
+    "description": "Long cotton sleeves with thumb loops, worn by motorbike riders to keep the sun off their arms.  In a city without air conditioning, anything that blocks the sun is worth wearing.",
+    "price": "50 cent",
+    "price_postapoc": "50 cent"
+  },
+  {
+    "id": "sgn_dao_rua",
+    "type": "ITEM",
+    "subtypes": [ "TOOL" ],
+    "copy-from": "machete",
+    "name": { "str": "dao rựa" },
+    "description": "A heavy, square-tipped chopping blade with a wooden handle, used to split coconuts, clear brush and hack bamboo.  Every rural household owns one, and many city ones do too.",
+    "price": "4 USD",
+    "price_postapoc": "10 USD"
+  },
+  {
+    "id": "sgn_bep_ga_mini",
+    "type": "ITEM",
+    "subtypes": [ "TOOL" ],
+    "copy-from": "esbit_stove",
+    "name": { "str": "mini gas stove" },
+    "description": "A suitcase-sized single-burner stove that runs on a slim butane canister slotted into its side.  Street vendors cook everything on these, from phở broth to grilled pork.",
+    "weight": "1500 g",
+    "volume": "4 L",
+    "material": [ "steel" ],
+    "price": "12 USD",
+    "price_postapoc": "20 USD",
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE",
+        "rigid": true,
+        "airtight": true,
+        "watertight": true,
+        "ammo_restriction": { "butane": 250 }
+      }
+    ],
+    "tool_ammo": [ "butane" ],
+    "charges_per_use": 1,
+    "qualities": [ [ "HOTPLATE", 2 ] ]
+  },
+  {
+    "id": "sgn_thung_xop",
+    "type": "ITEM",
+    "name": { "str": "styrofoam cooler" },
+    "symbol": "0",
+    "color": "white",
+    "description": "A thùng xốp: a big white polystyrene box with a lid, used by market vendors to keep fish and ice.  The thick foam walls slow down how fast its contents warm up in the heat.",
+    "weight": "400 g",
+    "volume": "25 L",
+    "longest_side": "60 cm",
+    "material": [ "styrofoam" ],
+    "price": "1 USD",
+    "price_postapoc": "3 USD",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "rigid": true,
+        "watertight": true,
+        "max_contains_volume": "22 L",
+        "max_contains_weight": "30 kg",
+        "insulation": 4,
+        "moves": 200
+      }
+    ],
+    "looks_like": "styrofoam_cup"
+  }
+]

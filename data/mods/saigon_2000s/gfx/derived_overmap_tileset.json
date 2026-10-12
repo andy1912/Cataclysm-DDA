@@ -1,0 +1,147 @@
+[
+ {
+  "type": "mod_tileset",
+  "compatibility": [
+   "Larwick Overmap"
+  ],
+  "tiles-new": [
+   {
+    "file": "gfx/derived_om_0_16x16.png",
+    "sprite_width": 16,
+    "sprite_height": 16,
+    "sprite_offset_x": 0,
+    "sprite_offset_y": 0,
+    "tiles": [
+     {
+      "id": "sgn_nh_solo_z0",
+      "fg": 0
+     },
+     {
+      "id": "sgn_nh_solo_z1",
+      "fg": 0
+     },
+     {
+      "id": "sgn_nh_solo_z2",
+      "fg": 0
+     },
+     {
+      "id": "sgn_nh_solo_z3",
+      "fg": 1
+     },
+     {
+      "id": "sgn_nh_solo_z4",
+      "fg": 1
+     },
+     {
+      "id": "sgn_nh_solo_z5",
+      "fg": 1
+     },
+     {
+      "id": "sgn_hem_block",
+      "fg": 2
+     },
+     {
+      "id": "sgn_hem_block_roof",
+      "fg": 3
+     },
+     {
+      "id": "sgn_cho_nw",
+      "fg": 4
+     },
+     {
+      "id": "sgn_cho_ne",
+      "fg": 4
+     },
+     {
+      "id": "sgn_cho_sw",
+      "fg": 4
+     },
+     {
+      "id": "sgn_cho_se",
+      "fg": 4
+     },
+     {
+      "id": "sgn_cho_roof_nw",
+      "fg": 5
+     },
+     {
+      "id": "sgn_cho_roof_ne",
+      "fg": 5
+     },
+     {
+      "id": "sgn_cho_roof_sw",
+      "fg": 5
+     },
+     {
+      "id": "sgn_cho_roof_se",
+      "fg": 5
+     },
+     {
+      "id": "sgn_chua",
+      "fg": 6
+     },
+     {
+      "id": "sgn_chua_roof",
+      "fg": 7
+     },
+     {
+      "id": "sgn_chungcu_z0",
+      "fg": 8
+     },
+     {
+      "id": "sgn_chungcu_z1",
+      "fg": 8
+     },
+     {
+      "id": "sgn_chungcu_z2",
+      "fg": 8
+     },
+     {
+      "id": "sgn_chungcu_z3",
+      "fg": 8
+     },
+     {
+      "id": "sgn_chungcu_z4",
+      "fg": 8
+     },
+     {
+      "id": "sgn_chungcu_z5",
+      "fg": 9
+     },
+     {
+      "id": "sgn_kenh",
+      "fg": 10
+     },
+     {
+      "id": "sgn_kenh_roof",
+      "fg": 10
+     },
+     {
+      "id": "sgn_nha_tho",
+      "fg": 11
+     },
+     {
+      "id": "sgn_nha_tho_roof",
+      "fg": 12
+     },
+     {
+      "id": "sgn_ubnd",
+      "fg": 13
+     },
+     {
+      "id": "sgn_ubnd_roof",
+      "fg": 14
+     },
+     {
+      "id": "sgn_truong",
+      "fg": 15
+     },
+     {
+      "id": "sgn_truong_roof",
+      "fg": 16
+     }
+    ]
+   }
+  ]
+ }
+]

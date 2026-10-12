@@ -1,0 +1,126 @@
+[
+  {
+    "//": "N4: the one firearm in the mod.  The công an of a phường in 2004 did not patrol armed in the ordinary way - a beat policeman carried a trọng (club) and a whistle - but the district offices and the border units did hold service pistols, and a good many công an bought one.  This is the pattern the northern arsenals had been building since the 1960s: a blowback-operated double-action-only 9x18mm pistol, all steel, fixed barrel, brown bakelite grips.  Every part of it is described rather than named, because the content bible's rule is no trademarks; the 9x18mm cartridge and the mechanism are common knowledge, the maker's name is not ours to print.",
+    "type": "ITEM",
+    "id": "sgn_sung_9x18",
+    "copy-from": "gun_base_handgun_semi",
+    "subtypes": [ "GUN" ],
+    "name": { "str": "công an service pistol" },
+    "description": "A service pistol in the 9x18mm cartridge, the pattern the district offices carried for thirty years.  The slide and frame are blued steel, the grips brown bakelite, and there is no safety to fumble with: the hammer simply falls when the trigger is pulled, so the shot goes where the muzzle points.  Eight rounds in the magazine.  The sling loop at the base of the grip is worn smooth and the finish is gone thin at the muzzle.",
+    "//name": "no str_pl: the plural of 'pistol' auto-generates, and translation.cpp rejects an explicit one that matches",
+    "looks_like": "makarov",
+    "weight": "730 g",
+    "volume": "346 ml",
+    "longest_side": "196 mm",
+    "barrel_length": "94 mm",
+    "price": "250 USD",
+    "price_postapoc": "22 USD",
+    "material": [ "steel", "plastic" ],
+    "//ammo": "ammo lists ammunition_type ids, not magazines; the magazine is only named in pocket_data below",
+    "ammo": [ "9x18" ],
+    "dispersion": 480,
+    "min_cycle_recoil": 270,
+    "weapon_category": [ "AUTOMATIC_PISTOLS" ],
+    "valid_mod_locations": [ [ "barrel", 1 ], [ "mechanism", 2 ], [ "sights mount", 1 ], [ "stock mount", 1 ] ],
+    "pocket_data": [ { "magazine_well": "250 ml", "pocket_type": "MAGAZINE_WELL", "item_restriction": [ "sgn_mag_9x18" ] } ]
+  },
+  {
+    "//": "N4: the magazine for the above, made at the same arsenal and not an import.  Eight rounds of 9x18mm, which is what the whole pattern takes; the ten- and twelve-round magazines belong to the later design and will not fit.  looks_like points at the existing pocket pistol magazine sprite so the mod needs no new art for this (D1).",
+    "type": "ITEM",
+    "id": "sgn_mag_9x18",
+    "looks_like": "makarovmag",
+    "subtypes": [ "MAGAZINE" ],
+    "name": { "str": "8-round 9x18mm magazine" },
+    "description": "An eight-round magazine for the công an service pistol.  Steel, with a floorplate that has been dented once and never straightened.",
+    "weight": "32 g",
+    "volume": "34 ml",
+    "longest_side": "10 cm",
+    "price": "23 USD",
+    "price_postapoc": "1 USD",
+    "material": [ "steel" ],
+    "symbol": "#",
+    "color": "light_gray",
+    "ammo_type": [ "9x18" ],
+    "flags": [ "MAG_COMPACT" ],
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "9x18": 8 } } ]
+  },
+  {
+    "type": "ITEM",
+    "id": "9x18mm",
+    "copy-from": "9x18mm",
+    "//": "N4: the service pistol loads dda's 9x18mm ammunition, and dda names the cartridge after the Soviet pistol (\"9x18mm Makarov FMJ\").  The mod's rule is no product names, so the rounds and casings the player sees are renamed after the cartridge alone; their stats are dda's.",
+    "name": { "str_sp": "9x18mm FMJ" },
+    "description": "9x18mm ammunition with a 93gr steel core FMJ bullet.  The 9x18mm round was very common in the Eastern Bloc during the 20th century and remained in Russian military service into the 21st."
+  },
+  {
+    "type": "ITEM",
+    "id": "9x18mmP2",
+    "copy-from": "9x18mmP2",
+    "name": { "str_sp": "9x18mm JHP" },
+    "description": "9x18mm SP-7 ammunition.  The 9x18mm round was very common in the Eastern Bloc during the 20th century and remained in Russian military service into the 21st."
+  },
+  {
+    "type": "ITEM",
+    "id": "9x18mmfmj",
+    "copy-from": "9x18mmfmj",
+    "name": { "str_sp": "9x18mm AP" },
+    "description": "9x18mm RG028 ammunition.  The RG028 round uses a bullet with a hardened steel core to improve armor penetration."
+  },
+  {
+    "type": "ITEM",
+    "id": "bp_9x18mm",
+    "copy-from": "bp_9x18mm",
+    "name": { "str_sp": "9x18mm FMJ, black powder" }
+  },
+  {
+    "type": "ITEM",
+    "id": "bp_9x18mmfmj",
+    "copy-from": "bp_9x18mmfmj",
+    "name": { "str_sp": "9x18mm AP, black powder" }
+  },
+  {
+    "type": "ITEM",
+    "id": "reloaded_9x18mm",
+    "copy-from": "reloaded_9x18mm",
+    "name": { "str_sp": "9x18mm FMJ, reloaded" }
+  },
+  {
+    "type": "ITEM",
+    "id": "reloaded_9x18mmP2",
+    "copy-from": "reloaded_9x18mmP2",
+    "name": { "str_sp": "9x18mm +P+, reloaded" },
+    "description": "An old Soviet-era 9x18mm pistol cartridge.  This one has been hand-reloaded to generate higher internal pressure, boosting flight stability and damage."
+  },
+  {
+    "type": "ITEM",
+    "id": "reloaded_9x18mmfmj",
+    "copy-from": "reloaded_9x18mmfmj",
+    "name": { "str_sp": "9x18mm AP, reloaded" }
+  },
+  {
+    "type": "ITEM",
+    "id": "matchhead_9x18mmfmj",
+    "copy-from": "matchhead_9x18mmfmj",
+    "name": { "str_sp": "9x18mm AP, matchhead powder" }
+  },
+  {
+    "type": "ITEM",
+    "id": "matchhead_9x18mm",
+    "copy-from": "matchhead_9x18mm",
+    "name": { "str_sp": "9x18mm FMJ, matchhead powder" }
+  },
+  {
+    "type": "ITEM",
+    "id": "9x18mm_casing",
+    "copy-from": "9x18mm_casing",
+    "name": { "str": "9x18mm casing" },
+    "description": "An empty casing from a 9x18mm round."
+  },
+  {
+    "type": "ITEM",
+    "id": "unprimed_9x18mm_casing",
+    "copy-from": "unprimed_9x18mm_casing",
+    "name": { "str": "primerless 9x18mm casing" },
+    "description": "An empty casing from a 9x18mm round, with its primer removed."
+  }
+]

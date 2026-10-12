@@ -1,0 +1,52 @@
+[
+  {
+    "id": "sgn_luong_kho",
+    "copy-from": "crackers",
+    "type": "ITEM",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str_sp": "lương khô" },
+    "description": "A brick of army compressed ration biscuit in a plain foil wrapper, the kind every Vietnamese soldier, student on a field trip and flood-relief volunteer has chewed through: dense, faintly sweet, and dry enough to need half a bottle of water.  It keeps for years.",
+    "color": "yellow",
+    "spoils_in": "1460 days"
+  },
+  {
+    "id": "sgn_kinh_thanh",
+    "copy-from": "holybook_bible1",
+    "type": "ITEM",
+    "subtypes": [ "BOOK" ],
+    "name": { "str": "Kinh Thánh", "str_pl": "copies of Kinh Thánh" },
+    "description": "A thick Vietnamese Catholic Bible with a cracked black cover, the parish's translation, its thin pages marked with ribbons and a palm leaf from last year's Palm Sunday.  Somebody wrote the family's baptism dates on the flyleaf."
+  },
+  {
+    "id": "sgn_sach_kinh",
+    "copy-from": "holybook_catechism",
+    "type": "ITEM",
+    "subtypes": [ "BOOK" ],
+    "name": { "str": "sách kinh nguyện", "str_pl": "copies of sách kinh nguyện" },
+    "description": "A small, much-thumbed Vietnamese prayer book: morning and evening prayers, the rosary, the Stations of the Cross, hymns for Christmas and Easter.  Old women at the 5 a.m. Mass know every page by heart."
+  },
+  {
+    "id": "sgn_guidebook_vn",
+    "copy-from": "guidebook",
+    "type": "ITEM",
+    "subtypes": [ "BOOK" ],
+    "name": { "str": "backpacker's guide to Vietnam", "str_pl": "backpacker's guides to Vietnam" },
+    "description": "A fat, dog-eared travel guide to Vietnam, 2008 edition, its spine broken at the Saigon chapter: cheap rooms on Phạm Ngũ Lão, how to cross the road (slowly, never stop), bus times to Mũi Né and the Mekong Delta, and a phrasebook in the back.  Someone has underlined \"bao nhiêu tiền?\" twice."
+  },
+  {
+    "id": "sgn_sgk_ngu_van",
+    "copy-from": "textbook_speech",
+    "type": "ITEM",
+    "subtypes": [ "BOOK" ],
+    "name": { "str": "Ngữ văn textbook" },
+    "description": "A high-school literature textbook from the Ministry of Education: poems, essays and model speeches, the exercises on how to argue a point already filled in by its previous owner in purple ink."
+  },
+  {
+    "id": "sgn_so_tay_so_cuu",
+    "copy-from": "textbook_firstaid",
+    "type": "ITEM",
+    "subtypes": [ "BOOK" ],
+    "name": { "str": "Red Cross first-aid handbook" },
+    "description": "A Vietnamese Red Cross first-aid handbook for schools and wards, with line drawings of bandaging, the recovery position, treating burns from the kitchen stove and motorbike-crash injuries."
+  }
+]

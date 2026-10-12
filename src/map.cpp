@@ -4957,7 +4957,7 @@ void map::drop_bash_results( const map_data_common_t &ter_furn, const tripoint_b
             if( sub_uncraft_components.empty() ) {
                 // if no subcomponents, just straight drop 100% of item count
                 spawn_items_or_charges( here, p, it_qty.first->id, it_qty.second );
-                add_msg_debug( debugmode::DF_MAP, "type 1, plain item: %s, %s pcs.",
+                add_msg_debug( debugmode::DF_MAP, "type 1, plain item: %s, %d pcs.",
                                it_qty.first->id.c_str(), it_qty.second );
             } else {
                 // if subcomponents, drop a bit of subcomponents and a bit of components
@@ -4965,12 +4965,12 @@ void map::drop_bash_results( const map_data_common_t &ter_furn, const tripoint_b
                 for( const item_comp &sub_comp : sub_uncraft_components ) {
                     const int qty_or_charges_comp =  sub_comp.count * std::round( it_qty.second * broken_qty );
                     spawn_items_or_charges( here, p, sub_comp.type, qty_or_charges_comp );
-                    add_msg_debug( debugmode::DF_MAP, "type 2, subcomponent: %s, %s pcs.",
+                    add_msg_debug( debugmode::DF_MAP, "type 2, subcomponent: %s, %d pcs.",
                                    sub_comp.type->id.c_str(), qty_or_charges_comp );
                 }
                 const int qty_or_charges = std::round( it_qty.second * ( 1 - broken_qty ) );
                 spawn_items_or_charges( here, p, it_qty.first->id, qty_or_charges );
-                add_msg_debug( debugmode::DF_MAP, "type 3, component: %s, %s pcs.",
+                add_msg_debug( debugmode::DF_MAP, "type 3, component: %s, %d pcs.",
                                it_qty.first->id.c_str(), qty_or_charges ) ;
             }
         }

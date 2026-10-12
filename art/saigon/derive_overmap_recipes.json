@@ -1,0 +1,631 @@
+[
+  {
+    "//": "nhà ống rows: pastel façades",
+    "target": "sgn_nh_solo_z0",
+    "source": "house_w_1",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.55,
+        "val_mul": 1.15
+      }
+    ]
+  },
+  {
+    "target": "sgn_nh_solo_z1",
+    "source": "house_w_1",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.55,
+        "val_mul": 1.15
+      }
+    ]
+  },
+  {
+    "target": "sgn_nh_solo_z2",
+    "source": "house_w_1",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.55,
+        "val_mul": 1.15
+      }
+    ]
+  },
+  {
+    "target": "sgn_nh_solo_z3",
+    "source": "house_w_1_roof",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.3,
+        "val_mul": 0.85
+      }
+    ]
+  },
+  {
+    "target": "sgn_nh_solo_z4",
+    "source": "house_w_1_roof",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.3,
+        "val_mul": 0.85
+      }
+    ]
+  },
+  {
+    "target": "sgn_nh_solo_z5",
+    "source": "house_w_1_roof",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.3,
+        "val_mul": 0.85
+      }
+    ]
+  },
+  {
+    "//": "hẻm blocks: dense terracotta",
+    "target": "sgn_hem_block",
+    "source": "house_w_1",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 16,
+        "sat_set": 0.6,
+        "val_mul": 0.95
+      }
+    ]
+  },
+  {
+    "target": "sgn_hem_block_roof",
+    "source": "house_w_1_roof",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 16,
+        "sat_set": 0.35,
+        "val_mul": 0.8
+      }
+    ]
+  },
+  {
+    "//": "chợ: market hall in orange",
+    "target": "sgn_cho_nw",
+    "source": "s_grocery",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 28,
+        "sat_set": 0.85,
+        "val_mul": 1.1
+      }
+    ]
+  },
+  {
+    "target": "sgn_cho_ne",
+    "source": "s_grocery",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 28,
+        "sat_set": 0.85,
+        "val_mul": 1.1
+      }
+    ]
+  },
+  {
+    "target": "sgn_cho_sw",
+    "source": "s_grocery",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 28,
+        "sat_set": 0.85,
+        "val_mul": 1.1
+      }
+    ]
+  },
+  {
+    "target": "sgn_cho_se",
+    "source": "s_grocery",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 28,
+        "sat_set": 0.85,
+        "val_mul": 1.1
+      }
+    ]
+  },
+  {
+    "target": "sgn_cho_roof_nw",
+    "source": "s_garage_roof",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 28,
+        "sat_set": 0.3,
+        "val_mul": 0.85
+      }
+    ]
+  },
+  {
+    "target": "sgn_cho_roof_ne",
+    "source": "s_garage_roof",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 28,
+        "sat_set": 0.3,
+        "val_mul": 0.85
+      }
+    ]
+  },
+  {
+    "target": "sgn_cho_roof_sw",
+    "source": "s_garage_roof",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 28,
+        "sat_set": 0.3,
+        "val_mul": 0.85
+      }
+    ]
+  },
+  {
+    "target": "sgn_cho_roof_se",
+    "source": "s_garage_roof",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 28,
+        "sat_set": 0.3,
+        "val_mul": 0.85
+      }
+    ]
+  },
+  {
+    "//": "chùa: red and gold pagoda",
+    "target": "sgn_chua",
+    "source": "church",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 2,
+        "sat_set": 0.75,
+        "val_mul": 1.1
+      }
+    ]
+  },
+  {
+    "target": "sgn_chua_roof",
+    "source": "house_w_1_roof",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 2,
+        "sat_set": 0.5,
+        "val_mul": 0.9
+      }
+    ]
+  },
+  {
+    "//": "chung cư: grey walk-up blocks",
+    "target": "sgn_chungcu_z0",
+    "source": "apartments_con_tower_000",
+    "ops": [
+      {
+        "op": "desaturate",
+        "sat_mul": 0.05,
+        "val_mul": 1.1
+      }
+    ]
+  },
+  {
+    "target": "sgn_chungcu_z1",
+    "source": "apartments_con_tower_000",
+    "ops": [
+      {
+        "op": "desaturate",
+        "sat_mul": 0.05,
+        "val_mul": 1.1
+      }
+    ]
+  },
+  {
+    "target": "sgn_chungcu_z2",
+    "source": "apartments_con_tower_000",
+    "ops": [
+      {
+        "op": "desaturate",
+        "sat_mul": 0.05,
+        "val_mul": 1.1
+      }
+    ]
+  },
+  {
+    "target": "sgn_chungcu_z3",
+    "source": "apartments_con_tower_000",
+    "ops": [
+      {
+        "op": "desaturate",
+        "sat_mul": 0.05,
+        "val_mul": 1.1
+      }
+    ]
+  },
+  {
+    "target": "sgn_chungcu_z4",
+    "source": "apartments_con_tower_000",
+    "ops": [
+      {
+        "op": "desaturate",
+        "sat_mul": 0.05,
+        "val_mul": 1.1
+      }
+    ]
+  },
+  {
+    "target": "sgn_chungcu_z5",
+    "source": "house_w_1_roof",
+    "ops": [
+      {
+        "op": "desaturate",
+        "sat_mul": 0.05,
+        "val_mul": 1.1
+      }
+    ]
+  },
+  {
+    "target": "sgn_kenh",
+    "source": "river_center",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          150,
+          260
+        ],
+        "min_sat": 0.0,
+        "to_hue": 78,
+        "sat_set": 0.4,
+        "val_mul": 0.85
+      }
+    ],
+    "//": "Kênh: murky green canal (B8f)."
+  },
+  {
+    "target": "sgn_kenh_roof",
+    "source": "river_center",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          150,
+          260
+        ],
+        "min_sat": 0.0,
+        "to_hue": 78,
+        "sat_set": 0.4,
+        "val_mul": 0.85
+      }
+    ],
+    "//": "Kênh: murky green canal (B8f)."
+  },
+  {
+    "target": "sgn_nha_tho",
+    "source": "church",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.12,
+        "to_hue": 345,
+        "sat_set": 0.45,
+        "val_mul": 1.1
+      }
+    ],
+    "//": "G29 nhà thờ: pink church."
+  },
+  {
+    "target": "sgn_nha_tho_roof",
+    "source": "church_roof",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.12,
+        "to_hue": 8,
+        "sat_set": 0.55,
+        "val_mul": 1.1
+      }
+    ],
+    "//": "G29 nhà thờ roof: terracotta."
+  },
+  {
+    "target": "sgn_ubnd",
+    "source": "police",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.12,
+        "to_hue": 48,
+        "sat_set": 0.6,
+        "val_mul": 1.1
+      }
+    ],
+    "//": "G29 UBND phường: yellow government building."
+  },
+  {
+    "target": "sgn_ubnd_roof",
+    "source": "police_roof",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.12,
+        "to_hue": 48,
+        "sat_set": 0.35,
+        "val_mul": 1.1
+      }
+    ],
+    "//": "G29 UBND roof."
+  },
+  {
+    "target": "sgn_truong",
+    "source": "school_1_5",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.12,
+        "to_hue": 205,
+        "sat_set": 0.45,
+        "val_mul": 1.1
+      }
+    ],
+    "//": "G29 trường học: blue school."
+  },
+  {
+    "target": "sgn_truong_roof",
+    "source": "school_1_5",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.12,
+        "to_hue": 8,
+        "sat_set": 0.5,
+        "val_mul": 1.1
+      }
+    ],
+    "//": "G29 trường roof: terracotta."
+  },
+  {
+    "target": "sgn_lm_ben_thanh_00",
+    "source": "cs_market_small",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.12,
+        "to_hue": 48,
+        "sat_set": 0.6,
+        "val_mul": 1.1
+      }
+    ],
+    "//": "L1 Chợ Bến Thành: yellow market hall."
+  },
+  {
+    "target": "sgn_lm_duc_ba_00",
+    "source": "cathedral_1_NW",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.12,
+        "to_hue": 8,
+        "sat_set": 0.65,
+        "val_mul": 0.95
+      }
+    ],
+    "//": "L1 Nhà thờ Đức Bà: red-brick cathedral."
+  },
+  {
+    "target": "sgn_lm_buu_dien_00",
+    "source": "post_office",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.12,
+        "to_hue": 44,
+        "sat_set": 0.55,
+        "val_mul": 1.1
+      }
+    ],
+    "//": "L1 Bưu điện: ochre post office."
+  },
+  {
+    "target": "sgn_lm_nha_hat_00",
+    "source": "movietheater_1_0",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.12,
+        "to_hue": 40,
+        "sat_set": 0.2,
+        "val_mul": 1.2
+      }
+    ],
+    "//": "L1 Nhà hát: cream theatre."
+  },
+  {
+    "target": "sgn_lm_ubnd_tp_00",
+    "source": "town_hall_0_0_0",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.12,
+        "to_hue": 50,
+        "sat_set": 0.6,
+        "val_mul": 1.1
+      }
+    ],
+    "//": "L1 UBND Thành phố: yellow city hall."
+  },
+  {
+    "target": "sgn_lm_dinh_doc_lap_00",
+    "source": "mansion_white_no_sidewalk",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.12,
+        "to_hue": 120,
+        "sat_set": 0.15,
+        "val_mul": 1.15
+      }
+    ],
+    "//": "L1 Dinh Độc Lập: white palace on its lawn."
+  }
+]

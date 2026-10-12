@@ -1,0 +1,87 @@
+[
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_ANTIBIOTICS",
+    "copy-from": "MISSION_GET_ANTIBIOTICS",
+    "//": "N1: dda's random NPC and starting-NPC missions (an American flag, corporate accounts, a weather log, the Jabberwock, Zombie Mom, cattail jelly ...) leave the random pools; Saigon's are in npcs/missions.json.",
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_FLAG",
+    "copy-from": "MISSION_GET_FLAG",
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_HOLY_SYMBOL",
+    "copy-from": "MISSION_GET_HOLY_SYMBOL",
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_INHALER",
+    "copy-from": "MISSION_GET_INHALER",
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_RECORD_ACCOUNTING",
+    "copy-from": "MISSION_GET_RECORD_ACCOUNTING",
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_RECORD_PATIENT",
+    "copy-from": "MISSION_GET_RECORD_PATIENT",
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_RECORD_WEATHER",
+    "copy-from": "MISSION_GET_RECORD_WEATHER",
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_SOFTWARE",
+    "copy-from": "MISSION_GET_SOFTWARE",
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_KILL_JABBERWOCK",
+    "copy-from": "MISSION_KILL_JABBERWOCK",
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_KILL_ZOMBIE_MOM",
+    "copy-from": "MISSION_KILL_ZOMBIE_MOM",
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_LEARN_ABOUT_CATTAIL_JELLY",
+    "copy-from": "MISSION_LEARN_ABOUT_CATTAIL_JELLY",
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_PROVE_YOU_ARE_A_SURVIVOR",
+    "copy-from": "MISSION_PROVE_YOU_ARE_A_SURVIVOR",
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_PYROMANIAC",
+    "copy-from": "MISSION_PYROMANIAC",
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_RESCUE_DOG",
+    "copy-from": "MISSION_RESCUE_DOG",
+    "origins": [  ]
+  }
+]
