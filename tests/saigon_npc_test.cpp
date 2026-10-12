@@ -8,6 +8,7 @@
 #include "creature_tracker.h"
 #include "item.h"
 #include "item_group.h"
+#include "item_location.h"
 #include "memory_fast.h"
 #include "map.h"
 #include "map_helpers.h"
@@ -182,7 +183,25 @@ TEST_CASE( "saigon_only_the_guard_is_armed", "[saigon]" )
     // and the guard's group really does hand him one, or this test would pass vacuously
     CHECK( item_group::group_contains_item(
                item_group_id( "sgn_npc_guard_weapon" ), pistol ) );
-    // the magazine travels with it: a guard with an empty pistol is worse than one with a club
-    CHECK( item_group::group_contains_item(
-               item_group_id( "sgn_npc_guard_weapon" ), itype_id( "sgn_mag_9x18" ) ) );
+    // and it is loaded: a guard with an empty pistol is worse than one with a club.  A
+    // weapon_override yields one item and a class with a carry_override never reaches
+    // starting_inv_ammo, so the group's "charges" seats a loaded magazine; check that on real
+    // guards.  One in five is armed, so 60 tries miss with odds of about 1 in 600,000.
+    bool armed_guard = false;
+    for( int i = 0; i < 60 && !armed_guard; i++ ) {
+        shared_ptr_fast<npc> guard = make_shared_fast<npc>();
+        guard->normalize();
+        guard->randomize( npc_class_id( "sgn_class_guard" ) );
+        const item_location held = guard->get_wielded_item();
+        if( !held || held->typeId() != pistol ) {
+            continue;
+        }
+        armed_guard = true;
+        CHECK( held->magazine_current() != nullptr );
+        if( held->magazine_current() != nullptr ) {
+            CHECK( held->magazine_current()->typeId() == itype_id( "sgn_mag_9x18" ) );
+        }
+        CHECK( held->ammo_remaining() == 8 );
+    }
+    CHECK( armed_guard );
 }

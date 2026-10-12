@@ -155,15 +155,13 @@
   {
     "type": "item_group",
     "id": "sgn_npc_guard_weapon",
-    "//": "N4: the trọng and the U-lock as before, and for one guard in five the service pistol with its magazine.  A phường policeman on the beat carried a club and a whistle, not a gun, but the district office kept one in a drawer and a guard off the desk is the man holding it.  The pistol and its magazine are a nested collection so they are taken together or not at all - \"item\" takes one id in this dda, so there is no list form to pair them with.",
+    "//": "N4: the trọng and the U-lock as before, and for one guard in five the service pistol.  A phường policeman on the beat carried a club and a whistle, not a gun, but the district office kept one in a drawer and a guard off the desk is the man holding it.  A weapon_override yields one item (npc::starting_weapon -> item_group::item_from -> create_single), and a class with a carry_override never reaches starting_inv_ammo, so the pistol spawns loaded instead: \"charges\" makes the group seat its default magazine, sgn_mag_9x18, with eight rounds.  No spare magazine.",
     "subtype": "distribution",
     "entries": [
-      { "distribution": [
-        { "collection": [ { "item": "sgn_sung_9x18" }, { "item": "sgn_mag_9x18" } ], "prob": 25 },
-        { "item": "baton", "prob": 50 },
-        { "item": "sgn_khoa_chu_u", "prob": 25 },
-        { "item": "null", "prob": 25 }
-      ] }
+      { "item": "sgn_sung_9x18", "prob": 25, "charges": 8 },
+      { "item": "baton", "prob": 50 },
+      { "item": "sgn_khoa_chu_u", "prob": 25 },
+      { "item": "null", "prob": 25 }
     ]
   },
   {
