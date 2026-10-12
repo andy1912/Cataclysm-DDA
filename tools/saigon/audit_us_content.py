@@ -228,8 +228,20 @@ def fauna():
 # flagged by a rule that could not be satisfied.  Adding a class here owes CONTENT_BIBLE.md a
 # sentence saying why that person is armed.
 GUN_CLASSES = { 'sgn_class_guard' }
-# the firearms the mod defines; only a GUN_CLASSES group may reach one
-GUN_ITEMS = { 'sgn_sung_9x18', 'sgn_mag_9x18' }
+
+
+def firearm_ids( items ):
+    """Every firearm and gun magazine loaded, dda's included, so a gun added later (or a dda one
+    reaching mod loot) is covered without anyone remembering to list it."""
+    out = set()
+    for i, o in items.items():
+        kinds = { o.get( 'type' ) } | set( o.get( 'subtypes' ) or [] )
+        ammo = o.get( 'ammo_type' ) or []
+        ammo = [ ammo ] if isinstance( ammo, str ) else ammo
+        # battery cells are MAGAZINE items too; they are not ammunition
+        if 'GUN' in kinds or ( 'MAGAZINE' in kinds and ammo and 'battery' not in ammo ):
+            out.add( i )
+    return out
 WANDERER_PREFIXES = ( 'NC_NONE_', 'NC_NONE_HARDENED_' )
 RANDOM_ORIGINS = ( 'ORIGIN_ANY_NPC', 'ORIGIN_OPENER_NPC' )
 
@@ -372,13 +384,14 @@ def firearms_escape( roots, groups, items ):
             if isinstance( o, dict ) and o.get( 'type' ) == 'npc_class' \
                     and o.get( 'id' ) in GUN_CLASSES and o.get( 'weapon_override' ):
                 allowed_groups.add( o['weapon_override'] )
+    guns = firearm_ids( items )
     bad = []
     for r in roots:
         if r in allowed_groups:
             continue
         out = set()
         walk( r, groups, items, set(), out )
-        for i in sorted( out & GUN_ITEMS ):
+        for i in sorted( out & guns ):
             bad.append( ( r, i ) )
     return bad
 
