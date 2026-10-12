@@ -15,6 +15,8 @@
 #include "mission.h"
 #include "npc.h"
 #include "npc_class.h"
+#include "npctalk.h"
+#include "dialogue.h"
 #include "omdata.h"
 #include "overmapbuffer.h"
 #include "player_helpers.h"
@@ -204,4 +206,37 @@ TEST_CASE( "saigon_only_the_guard_is_armed", "[saigon]" )
         CHECK( held->ammo_remaining() == 8 );
     }
     CHECK( armed_guard );
+}
+
+// N7: the people of Quận 1 have something to say.  N6 left all nineteen staff templates on
+// chat TALK_DONE, which is only a bye message, so talking to the monk or the postal clerk got
+// you nothing; worse, the doctor and the shopkeeper were given mission SHOPKEEP and could not be
+// traded with at all, because a shop is reached by chaining the first topic to TALK_MISSION_LIST
+// and TALK_DONE chains nowhere.  This checks the wiring, which is where that bug lives.
+TEST_CASE( "saigon_staff_have_voices", "[saigon]" )
+{
+    if( !npc_template_id( "sgn_npc_monk" ).is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    for( const auto &pair : npc_template::get_npc_templates() ) {
+        const npc_template_id &id = pair.first;
+        const npc_template &t = pair.second;
+        if( id.str().rfind( "sgn_npc_", 0 ) != 0 ) {
+            continue;
+        }
+        CAPTURE( id.str() );
+        const std::string &first = t.guy.chatbin.first_topic;
+        // TALK_DONE only ends the conversation, so a staff member on it has nothing to say
+        CHECK( first != "TALK_DONE" );
+        const json_talk_topic *topic = get_talk_topic( first );
+        REQUIRE( topic != nullptr );
+        // and if it runs a shop, the stock has to be reachable.  A SHOPKEEP mission offers no
+        // shop of its own: the player has to be shown a response leading to TALK_MISSION_LIST,
+        // which is where the shop is listed, so require it directly off the first topic rather
+        // than two hops away, which is what a real conversation does.
+        if( t.guy.mission == npc_mission::NPC_MISSION_SHOPKEEP ) {
+            CHECK( topic->get_directly_reachable_topics( true ).count( "TALK_MISSION_LIST" ) > 0 );
+        }
+    }
 }
