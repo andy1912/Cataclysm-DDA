@@ -155,12 +155,15 @@
   {
     "type": "item_group",
     "id": "sgn_npc_guard_weapon",
-    "//": "N3: baton and U-lock only.  N4 adds the sidearm.",
+    "//": "N4: the trọng and the U-lock as before, and for one guard in five the service pistol with its magazine.  A phường policeman on the beat carried a club and a whistle, not a gun, but the district office kept one in a drawer and a guard off the desk is the man holding it.  The pistol and its magazine are a nested collection so they are taken together or not at all - \"item\" takes one id in this dda, so there is no list form to pair them with.",
     "subtype": "distribution",
     "entries": [
-      { "item": "baton", "prob": 50 },
-      { "item": "sgn_khoa_chu_u", "prob": 25 },
-      { "item": "null", "prob": 25 }
+      { "distribution": [
+        { "collection": [ { "item": "sgn_sung_9x18" }, { "item": "sgn_mag_9x18" } ], "prob": 25 },
+        { "item": "baton", "prob": 50 },
+        { "item": "sgn_khoa_chu_u", "prob": 25 },
+        { "item": "null", "prob": 25 }
+      ] }
     ]
   },
   {
@@ -698,7 +701,7 @@
   {
     "type": "item_group",
     "id": "sgn_npc_veteran_weapon",
-    "//": "N3: the service knife of 1975, not a modern one.  N4 decides whether anyone in Saigon carries a sidearm besides the guards.",
+    "//": "N4 decides this one: no sidearm.  The war ended thirty years ago and what he still owns is a 1975 service knife and a length of pipe, which is what he has always had.  The pistol belongs to the công an, and only to the công an.",
     "subtype": "distribution",
     "entries": [
       { "item": "sgn_dao_rua", "prob": 50 },

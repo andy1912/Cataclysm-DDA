@@ -7,11 +7,13 @@
 #include "cata_catch.h"
 #include "creature_tracker.h"
 #include "item.h"
+#include "item_group.h"
 #include "memory_fast.h"
 #include "map.h"
 #include "map_helpers.h"
 #include "mission.h"
 #include "npc.h"
+#include "npc_class.h"
 #include "omdata.h"
 #include "overmapbuffer.h"
 #include "player_helpers.h"
@@ -147,4 +149,40 @@ TEST_CASE( "saigon_place_spawns_people", "[mapgen][saigon]" )
         }
     }
     CHECK( people >= 2 );
+}
+
+// N4: the mod has exactly one firearm, sgn_sung_9x18, and exactly one class may carry it.
+// 2009 Saigon civilians carried no guns; a ward policeman kept a service pistol in a desk
+// drawer, and a guard away from the desk is the man holding it.  audit_us_content.py proves the
+// same thing across the mod's loot groups as well (that the pistol reaches nothing else), so
+// this covers the other half: that it reaches somebody, and that it is only ever him.
+// Adding a gun to any other sgn_* class fails here and in the audit.
+TEST_CASE( "saigon_only_the_guard_is_armed", "[saigon]" )
+{
+    if( !npc_class_id( "sgn_class_guard" ).is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    REQUIRE( itype_id( "sgn_sung_9x18" ).is_valid() );
+    const itype_id pistol( "sgn_sung_9x18" );
+    std::set<npc_class_id> armed;
+    for( const npc_class &c : npc_class::get_all() ) {
+        if( c.id.str().rfind( "sgn_", 0 ) != 0 || !c.weapon_override.is_valid() ) {
+            continue;
+        }
+        if( item_group::group_contains_item( c.weapon_override, pistol ) ) {
+            CAPTURE( c.id.str() );
+            armed.insert( c.id );
+        }
+    }
+    for( const npc_class_id &who : armed ) {
+        CAPTURE( who.str() );
+        CHECK( who == npc_class_id( "sgn_class_guard" ) );
+    }
+    // and the guard's group really does hand him one, or this test would pass vacuously
+    CHECK( item_group::group_contains_item(
+               item_group_id( "sgn_npc_guard_weapon" ), pistol ) );
+    // the magazine travels with it: a guard with an empty pistol is worse than one with a club
+    CHECK( item_group::group_contains_item(
+               item_group_id( "sgn_npc_guard_weapon" ), itype_id( "sgn_mag_9x18" ) ) );
 }

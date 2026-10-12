@@ -76,8 +76,11 @@ def entry( e, groups, items, seen, out ):
     if not isinstance( e, dict ):
         return
     if 'item' in e:
-        out.add( e['item'] )
-    if 'group' in e:
+        # "item" is one id: add_entry reads it with get_string, so a list here is a data error
+        # the game rejects, not a way to take several items at once
+        if isinstance( e['item'], str ):
+            out.add( e['item'] )
+    if 'group' in e and isinstance( e['group'], str ):
         walk( e['group'], groups, items, seen, out )
     for k in ( 'contents-item', 'contents-group', 'container-item', 'container-group' ):
         v = e.get( k )
@@ -219,12 +222,21 @@ def fauna():
 # So: the wanderer groups reach no firearm and nothing American, dda's missions are out of those
 # pools, and every Saigon class dresses and arms its people from Saigon item groups (firearms only
 # for GUN_CLASSES: 2009 Saigon civilians had none).
-GUN_CLASSES = { 'sgn_class_cong_an', 'sgn_class_veteran' }
+# N4: the mod has exactly one firearm, sgn_sung_9x18, and it may be held by exactly one class.
+# This set used to name sgn_class_cong_an, which N3 renamed to sgn_class_guard, so the exemption
+# had been pointing at a class that no longer existed - and a guard carrying a gun would have been
+# flagged by a rule that could not be satisfied.  Adding a class here owes CONTENT_BIBLE.md a
+# sentence saying why that person is armed.
+GUN_CLASSES = { 'sgn_class_guard' }
+# the firearms the mod defines; only a GUN_CLASSES group may reach one
+GUN_ITEMS = { 'sgn_sung_9x18', 'sgn_mag_9x18' }
 WANDERER_PREFIXES = ( 'NC_NONE_', 'NC_NONE_HARDENED_' )
 RANDOM_ORIGINS = ( 'ORIGIN_ANY_NPC', 'ORIGIN_OPENER_NPC' )
 
 
 def npcs():
+    # every group the mod uses as loot must be listed, so N4 can prove the pistol stays inside
+    # the guard's hands and reaches nobody else - not a shophouse, not a corpse, not the world
     mod_files = glob.glob( 'data/mods/saigon_2000s/**/*.json', recursive=True )
     paths = glob.glob( 'data/json/**/*.json', recursive=True ) + mod_files
     groups, items = load( paths )
@@ -331,9 +343,44 @@ def main():
     print( '%d flagged (%d allowed exceptions)' % ( len( hits ), len( ALLOWED ) ) )
     for i, word, text in hits:
         print( '  %-32s [%s] %s' % ( i, word, text[:120] ) )
+    leaked = firearms_escape( roots, groups, items )
+    if leaked:
+        for root, item in leaked:
+            print( '  %-32s [gun leak] reaches %s, which only a %s may carry' % (
+                root, item, ' or '.join( sorted( GUN_CLASSES ) ) ) )
     animals = fauna()
     people = npcs()
-    return 1 if hits or animals or people else 0
+    return 1 if hits or animals or people or leaked else 0
+
+
+def firearms_escape( roots, groups, items ):
+    """N4: the mod's own firearms must be reachable only through a GUN_CLASSES weapon group.
+
+    Every group the mod places as loot is a root here, so anything a shophouse, a corpse, a
+    landmark or a mapgen tile can spawn is in `roots`.  A guard's weapon_override is one of
+    those too, which is the point: the pistol has to come out of a guard and from nowhere
+    else.  Removing the class from GUN_CLASSES, or adding the pistol to a loot group, trips
+    this.
+    """
+    allowed_groups = set()
+    for f in glob.glob( 'data/mods/saigon_2000s/npcs/*.json' ):
+        try:
+            data = json.load( open( f ) )
+        except ValueError:
+            continue
+        for o in data if isinstance( data, list ) else [ data ]:
+            if isinstance( o, dict ) and o.get( 'type' ) == 'npc_class' \
+                    and o.get( 'id' ) in GUN_CLASSES and o.get( 'weapon_override' ):
+                allowed_groups.add( o['weapon_override'] )
+    bad = []
+    for r in roots:
+        if r in allowed_groups:
+            continue
+        out = set()
+        walk( r, groups, items, set(), out )
+        for i in sorted( out & GUN_ITEMS ):
+            bad.append( ( r, i ) )
+    return bad
 
 
 if __name__ == '__main__':
