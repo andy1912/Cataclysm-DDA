@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 
+#include "achievement.h"
 #include "avatar.h"
 #include "cata_catch.h"
 #include "city.h"
@@ -130,17 +131,33 @@ TEST_CASE( "saigon_realmap_reads_dda_single_layer_maps", "[overmap][saigon]" )
 // adds the bridge decks; Bến Thành stands on its site; a new game's start location is found there;
 // and the map generates without errors at Tân Sơn Nhất's terminal and runway, at Bến Thành, on a
 // bridge over the Saigon River and on the railway.
-// An overmap (0, 0) saved earlier in this test run (any test whose turns autosave) would be
-// loaded instead of the pregenerated file.
-static void remove_saved_origin_overmap()
+// An overmap saved earlier in this test run (any test whose turns autosave) would be loaded
+// instead of the pregenerated file.
+static void remove_saved_overmap( const point_abs_om &om )
 {
     for( const cata_path &saved : {
              PATH_INFO::current_dimension_save_path() / zzip_overmap_directory /
-             ( overmapbuffer::terrain_filename( point_abs_om() ) + std::string( zzip_suffix ) ),
-             PATH_INFO::current_dimension_save_path() / overmapbuffer::terrain_filename( point_abs_om() )
+             ( overmapbuffer::terrain_filename( om ) + std::string( zzip_suffix ) ),
+             PATH_INFO::current_dimension_save_path() / overmapbuffer::terrain_filename( om )
          } ) {
         if( file_exist( saved ) ) {
             remove_file( saved.get_unrelative_path().u8string() );
+        }
+    }
+}
+
+static void remove_saved_origin_overmap()
+{
+    remove_saved_overmap( point_abs_om() );
+}
+
+// Every overmap a 2009 game touches - the real map (-1..3 x -2..1) and the countryside a ring
+// around it - so a new world never reloads an earlier game's saved overmap and its people.
+static void remove_saved_realmap_overmaps()
+{
+    for( int x = -3; x <= 5; x++ ) {
+        for( int y = -4; y <= 3; y++ ) {
+            remove_saved_overmap( point_abs_om( x, y ) );
         }
     }
 }
@@ -561,16 +578,20 @@ TEST_CASE( "saigon_new_game_realmap_2009", "[saigon]" )
         CAPTURE( sloc );
         CHECK( scen->allowed_start( start_location_id( sloc ) ) );
     }
-    // a new world: no map chosen yet, nothing generated or saved
-    get_globals().remove_global_value( "overmap_pregenerated_path" );
-    get_globals().remove_global_value( "overmap_outside_region" );
+    // a new world: nothing generated or saved, then no map chosen.  The old world is cleared
+    // first, while a map is still chosen, so the reset itself generates no procedural overmaps
+    clear_npcs();
+    clear_creatures();
     clear_avatar();
     clear_map();
     clear_overmaps();
-    remove_saved_origin_overmap();
+    get_globals().remove_global_value( "overmap_pregenerated_path" );
+    get_globals().remove_global_value( "overmap_outside_region" );
+    remove_saved_realmap_overmaps();
     overmap_buffer.clear();
     MAPBUFFER.clear();
     get_stats().clear();
+    get_achievements().clear();
     set_scenario( &scen.obj() );
     avatar &u = get_avatar();
     // a fresh character has no id yet; start_game gives it one
@@ -599,7 +620,10 @@ TEST_CASE( "saigon_new_game_realmap_2009", "[saigon]" )
     }
     CHECK( market == 9 );
     // the player stands on the real map (overmaps -1..3 x -2..1), on a Saigon tile, on their
-    // feet; every other start of the scenario, placed the way start_game places one, too
+    // feet; every other start of the scenario, placed the way start_game places one, too.
+    // QA2: reloading the bubble at these far-off sites used to crash at random (SIGSEGV in
+    // map::do_vehicle_caching): map::loadn freed vehicles wrecked to no parts but left them in
+    // the level caches.  This loop is what found it, so it stays.
     for( const std::string &sloc : starts ) {
         CAPTURE( sloc );
         if( sloc != starts.front() ) {
@@ -631,6 +655,7 @@ TEST_CASE( "saigon_new_game_realmap_2009", "[saigon]" )
     clear_creatures();
     set_scenario( before );
     get_stats().clear();
+    get_achievements().clear();
     get_globals().remove_global_value( "overmap_pregenerated_path" );
     get_globals().remove_global_value( "overmap_outside_region" );
     clear_overmaps();

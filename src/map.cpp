@@ -593,6 +593,46 @@ bool map::place_vehicle( std::unique_ptr<vehicle> &&new_vehicle )
     return collision;
 }
 
+// Saigon fork (QA2): the vehicles the loaded submaps own are the truth.  While map::load runs
+// loadn submap by submap, generating one submap can free a vehicle an earlier one had already put
+// in a level cache's vehicle_list (a wreck merging with a car next to it, a car wrecked down to
+// no parts), and rebuild_vehicle_level_caches then walked the freed pointer (SIGSEGV at game
+// start or on a long jump of the reality bubble).  Rebuild the lists from the submaps instead.
+void map::resync_vehicle_lists_from_submaps()
+{
+    std::set<vehicle *> owned;
+    for( int gridz = -OVERMAP_DEPTH; gridz <= OVERMAP_HEIGHT; gridz++ ) {
+        level_cache *ch = get_cache_lazy( gridz );
+        if( ch != nullptr ) {
+            ch->vehicle_list.clear();
+            ch->zone_vehicles.clear();
+        }
+    }
+    const int minz = zlevels ? -OVERMAP_DEPTH : abs_sub.z();
+    const int maxz = zlevels ? OVERMAP_HEIGHT : abs_sub.z();
+    for( int gridz = minz; gridz <= maxz; gridz++ ) {
+        for( int gridx = 0; gridx < my_MAPSIZE; gridx++ ) {
+            for( int gridy = 0; gridy < my_MAPSIZE; gridy++ ) {
+                submap *const sm = get_submap_at_grid( tripoint_rel_sm( gridx, gridy, gridz ) );
+                if( sm == nullptr ) {
+                    continue;
+                }
+                for( const auto &veh : sm->vehicles ) {
+                    level_cache &ch = get_cache( gridz );
+                    ch.vehicle_list.insert( veh.get() );
+                    if( !veh->loot_zones.empty() ) {
+                        ch.zone_vehicles.insert( veh.get() );
+                    }
+                    owned.insert( veh.get() );
+                }
+            }
+        }
+    }
+    for( auto it = dirty_vehicle_list.begin(); it != dirty_vehicle_list.end(); ) {
+        it = owned.count( *it ) ? std::next( it ) : dirty_vehicle_list.erase( it );
+    }
+}
+
 void map::rebuild_vehicle_level_caches()
 {
     clear_vehicle_level_caches();
@@ -8851,6 +8891,7 @@ void map::load( const tripoint_abs_sm &w, const bool update_vehicle,
             }
         }
     }
+    resync_vehicle_lists_from_submaps();
     rebuild_vehicle_level_caches();
 
     if( !explosion_handler::explosion_processing_active() ) {
@@ -9357,7 +9398,11 @@ void map::loadn( const point_bub_sm &grid, bool update_vehicles )
                 if( veh->tracking_on ) {
                     overmap_buffer.remove_vehicle( veh );
                 }
-                dirty_vehicle_list.erase( veh );
+                // Saigon fork (QA2): drop it from every level cache, not just the dirty list.  A
+                // vehicle wrecked down to no parts during mapgen was already in a cache's
+                // vehicle_list; erasing it here freed it, and the next build_map_cache walked the
+                // dangling pointer in do_vehicle_caching (SIGSEGV at game start).
+                remove_vehicle_from_cache( veh, -OVERMAP_DEPTH, OVERMAP_HEIGHT );
                 iter = veh_vec.erase( iter );
             }
         }

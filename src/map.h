@@ -870,6 +870,8 @@ class map
         void reset_vehicles_sm_pos();
         // clears and build vehicle level caches
         void rebuild_vehicle_level_caches();
+        // Saigon fork (QA2): level caches' vehicle lists rebuilt from the loaded submaps
+        void resync_vehicle_lists_from_submaps();
         void clear_vehicle_list( int zlev );
         void update_vehicle_list( const submap *to, int zlev );
         //Returns true if vehicle zones are dirty and need to be recached
