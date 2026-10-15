@@ -11,6 +11,7 @@
 #include "rng.h"
 
 enum class bp_type;
+template <typename E> struct enum_traits;
 
 void wound_type::load( const JsonObject &jo, const std::string_view & )
 {
@@ -27,7 +28,10 @@ void wound_type::load( const JsonObject &jo, const std::string_view & )
     optional( jo, was_loaded, "limb_scores", limb_scores );
     optional( jo, was_loaded, "limit", limit, 0 );
 
+    optional( jo, was_loaded, "mod_values", mod_values );
+    optional( jo, was_loaded, "periodic_message", periodic_message );
     optional( jo, was_loaded, "wound_progression", wound_progression );
+    optional( jo, was_loaded, "progress_timer", progress_timer );
     optional( jo, was_loaded, "whitelist_bp_with_flag", whitelist_bp_with_flag );
     optional( jo, was_loaded, "whitelist_body_part_types", whitelist_body_part_types );
     optional( jo, was_loaded, "blacklist_bp_with_flag", blacklist_bp_with_flag );
@@ -37,7 +41,8 @@ void wound_type::load( const JsonObject &jo, const std::string_view & )
 wound::wound( wound_type_id wd ) :
     type( wd ),
     healing_time( wd->evaluate_healing_time() ),
-    pain( wd->evaluate_pain() )
+    pain( wd->evaluate_pain() ),
+    wound_progress_timer( wd->evaluate_progress_timer() )
 {}
 
 namespace
@@ -175,6 +180,30 @@ void wound_fix::finalize_all()
     wound_fix_factory.finalize();
 }
 
+template<>
+struct enum_traits<wound_mod_value_type> {
+    static constexpr wound_mod_value_type last = wound_mod_value_type::LAST;
+};
+
+namespace io
+{
+template<>
+std::string enum_to_string<wound_mod_value_type>( wound_mod_value_type data )
+{
+    switch( data ) {
+            // *INDENT-OFF*
+        case wound_mod_value_type::PAIN: return "PAIN";
+        case wound_mod_value_type::BLEED: return "BLEED";
+        case wound_mod_value_type::VITAMIN: return "VITAMIN";
+
+            // *INDENT-ON*
+        case wound_mod_value_type::LAST:
+            break;
+    }
+    cata_fatal( "Invalid character_stat" );
+}
+} // namespace io
+
 void wound_fix::finalize()
 {
     const auto range = reqs_temp_storage.equal_range( id );
@@ -211,6 +240,27 @@ void wound_proficiency::deserialize( const JsonObject &jo )
     mandatory( jo, false, "proficiency", prof );
     optional( jo, false, "time_save", time_save, 1.f );
     optional( jo, false, "is_mandatory", is_mandatory, false );
+}
+
+void wound_type_progress_timer::deserialize( const JsonObject &jo )
+{
+    mandatory( jo, false, "id", id );
+    mandatory( jo, false, "time", time );
+    optional( jo, false, "message", message );
+}
+
+void wound_mod_values::deserialize( const JsonObject &jo )
+{
+    mandatory( jo, false, "type", type );
+    mandatory( jo, false, "rate", rate );
+    optional( jo, false, "vitamin_id", vitamin );
+    optional( jo, false, "amount", amount );
+}
+
+void wound_periodic_message::deserialize( const JsonObject &jo )
+{
+    mandatory( jo, false, "message", message );
+    mandatory( jo, false, "rate", rate );
 }
 
 void wound_fix::load( const JsonObject &jo, const std::string_view & )
@@ -270,9 +320,10 @@ bool wound_type::allowed_on_bodypart( bodypart_str_id bp_id ) const
     }
 
     // has no flag we want
-    if( !bp_id->has_flag( whitelist_bp_with_flag ) &&
-        !whitelist_bp_with_flag.is_empty() ) {
-        return false;
+    for( const json_character_flag &bp_flag : whitelist_bp_with_flag ) {
+        if( !bp_id->has_flag( bp_flag ) ) {
+            return false;
+        }
     }
 
     // has type we do not want
@@ -283,8 +334,10 @@ bool wound_type::allowed_on_bodypart( bodypart_str_id bp_id ) const
     }
 
     // has flag we do not want
-    if( bp_id->has_flag( blacklist_bp_with_flag ) ) {
-        return false;
+    for( const json_character_flag &bp_flag : blacklist_bp_with_flag ) {
+        if( bp_id->has_flag( bp_flag ) ) {
+            return false;
+        }
     }
 
     return true;
@@ -300,6 +353,21 @@ time_duration wound_type::evaluate_healing_time() const
     return rng( healing_time_.first, healing_time_.second );
 }
 
+std::optional<std::pair<wound_type_id, time_duration>> wound_type::evaluate_progress_timer() const
+{
+    if( progress_timer.has_value() ) {
+        return std::make_pair( progress_timer->id, rng( progress_timer->time.first,
+                               progress_timer->time.second ) );
+    } else {
+        return std::nullopt;
+    }
+}
+
+std::string wound_type::get_progress_timer_message() const
+{
+    return progress_timer->message.translated();
+}
+
 int wound_type::get_limit() const
 {
     return limit;
@@ -308,6 +376,16 @@ int wound_type::get_limit() const
 std::vector<wound_limb_score> wound_type::get_limb_scores() const
 {
     return limb_scores;
+}
+
+std::vector<wound_mod_values> wound_type::get_modify_values() const
+{
+    return mod_values;
+}
+
+std::optional<wound_periodic_message> wound_type::get_periodic_message() const
+{
+    return periodic_message;
 }
 
 std::string wound_type::get_name() const
@@ -326,6 +404,7 @@ void wound::serialize( JsonOut &jsout ) const
     jsout.member( "type", type );
     jsout.member( "healing_time", healing_time );
     jsout.member( "healing_progress", healing_progress );
+    jsout.member( "wound_progress_timer", wound_progress_timer );
     jsout.member( "pain", pain );
     jsout.end_object();
 }
@@ -335,6 +414,7 @@ void wound::deserialize( const JsonObject &jsin )
     jsin.read( "type", type );
     jsin.read( "healing_time", healing_time );
     jsin.read( "healing_progress", healing_progress );
+    jsin.read( "wound_progress_timer", wound_progress_timer );
     jsin.read( "pain", pain );
 }
 
@@ -353,8 +433,20 @@ time_duration wound::get_healing_time() const
     return healing_time;
 }
 
-bool wound::update_wound( const time_duration time_passed )
+time_duration wound::get_healing_progress() const
+{
+    return healing_progress;
+}
+
+wound_update_ret wound::update_wound( const time_duration time_passed )
 {
     healing_progress += time_passed;
-    return healing_progress >= healing_time;
+
+    if( wound_progress_timer && wound_progress_timer->second <= healing_progress ) {
+        return wound_update_ret::ADVANCE;
+    } else if( healing_progress >= healing_time ) {
+        return wound_update_ret::REMOVE;
+    }
+
+    return wound_update_ret::DO_NOTHING;
 }
