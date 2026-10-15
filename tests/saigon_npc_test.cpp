@@ -67,7 +67,7 @@ TEST_CASE( "saigon_random_npcs", "[saigon]" )
         CHECK( guy->prof->ident().str().rfind( "sgn_", 0 ) == 0 );
         int guns = 0;
         std::string gun;
-        guy->visit_items( [&guns, &gun]( const item * it, item * ) {
+        guy->visit_items( [&guns, &gun]( const item_location & it ) {
             if( it->is_gun() ) {
                 guns++;
                 gun = it->typeId().str();
