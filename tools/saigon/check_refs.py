@@ -171,7 +171,39 @@ def main( argv ):
             print( '%s: place_npcs names no such npc: %s' % ( path, ', '.join( missing_npc ) ) )
         if empty:
             print( '%s: N6, these buildings put nobody inside: %s' % ( path, ', '.join( empty ) ) )
+    bad += check_vitamins()
     return 1 if bad else 0
+
+
+def check_vitamins():
+    """A food's "vitamins" must name vitamins that exist: the engine only notices a bad id
+    when the item spawns (nước mắm named fish_allergen, which dda never had, and the suite
+    logged it at random)."""
+    known = set()
+    for path in glob.glob( 'data/json/**/*.json', recursive=True ) + \
+            glob.glob( 'data/mods/saigon_2000s/**/*.json', recursive=True ):
+        try:
+            data = json.load( open( path ) )
+        except ValueError:
+            continue
+        for o in data if isinstance( data, list ) else [ data ]:
+            if isinstance( o, dict ) and o.get( 'type' ) == 'vitamin':
+                known.add( o.get( 'id' ) )
+    bad = 0
+    for path in sorted( glob.glob( 'data/mods/saigon_2000s/**/*.json', recursive=True ) ):
+        try:
+            data = json.load( open( path ) )
+        except ValueError:
+            continue
+        for o in data if isinstance( data, list ) else [ data ]:
+            if not isinstance( o, dict ):
+                continue
+            listed = ( o.get( 'vitamins' ) or [] ) + ( ( o.get( 'extend' ) or {} ).get( 'vitamins' ) or [] )
+            unknown = [ v[0] for v in listed if isinstance( v, list ) and v and v[0] not in known ]
+            if unknown:
+                print( '%s: %s names no such vitamin: %s' % ( path, o.get( 'id' ), ', '.join( unknown ) ) )
+                bad += 1
+    return bad
 
 
 if __name__ == '__main__':

@@ -20,7 +20,7 @@
     "flags": [ "NO_AUTO_CONSUME", "INEDIBLE" ],
     "price": "1 USD",
     "price_postapoc": "3 USD",
-    "vitamins": [ [ "iron", 1 ], [ "fish_allergen", 1 ] ],
+    "vitamins": [ [ "iron", 1 ], [ "meat_allergen", 1 ] ],
     "looks_like": "soysauce"
   },
   {
