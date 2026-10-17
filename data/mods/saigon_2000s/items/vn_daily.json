@@ -1,0 +1,447 @@
+[
+  {
+    "type": "ITEM",
+    "id": "sgn_dieu_cay",
+    "copy-from": "pipe_tobacco",
+    "subtypes": [ "TOOL" ],
+    "//": "W4: works as a SMOKE_PIPE for thuốc lào or any pipe tobacco.",
+    "name": { "str_sp": "điếu cày" },
+    "description": "A bamboo water pipe as long as a forearm: a thick section of bamboo with water sloshing in the bottom and a small bowl jutting from the side.  You pack a pinch of thuốc lào in the bowl, hold a flame to it and draw hard, and the smoke bubbles up through the water with a deep gurgle.  Men smoke it squatting by the quán nước at the corner, passing it from hand to hand between glasses of trà đá.  Heavy enough to crack a head in a pinch.",
+    "weight": "650 g",
+    "volume": "1250 ml",
+    "longest_side": "60 cm",
+    "price": "3 USD",
+    "price_postapoc": "1 USD",
+    "material": [ "wood" ],
+    "color": "yellow",
+    "looks_like": "pipe_water",
+    "to_hit": { "grip": "solid", "length": "long", "surface": "any", "balance": "uneven" },
+    "melee_damage": { "bash": 5 }
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_thuoc_lao",
+    "copy-from": "tobacco",
+    "subtypes": [ "COMESTIBLE" ],
+    "//": "W4: stronger than rolling tobacco; needs a pipe (điếu cày) and a flame.",
+    "name": { "str_sp": "thuốc lào" },
+    "description": "Coarse, dark, sticky shreds of strong rustic tobacco from the north, sold by weight in a twist of paper at the tạp hóa.  It is smoked only through a water pipe, one pinch at a time, and a single deep pull makes the head spin, the ears ring and the eyes water.  Old smokers swear it clears the mind; newcomers cough until they sit down.",
+    "price": "10 cent",
+    "price_postapoc": "30 cent",
+    "color": "dark_gray",
+    "stim": 3,
+    "healthy": -3,
+    "fun": 6,
+    "addiction_potential": 60,
+    "addiction_type": "nicotine",
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You draw a long, gurgling pull of thuốc lào.  Your head spins and you cough hard.",
+      "effects": [ { "id": "cig", "duration": 400 } ],
+      "stat_adjustments": { "hunger": -3, "thirst": 2 },
+      "fields_produced": { "fd_cigsmoke": 2 },
+      "charges_needed": { "fire": 1 },
+      "tools_needed": { "apparatus": -1 },
+      "moves": 200
+    }
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_chieu_coi",
+    "//": "W4: SLEEP_AID, so it makes a bare floor more comfortable to sleep on.",
+    "name": { "str": "sedge sleeping mat" },
+    "description": "A chiếu cói: a mat woven from dyed sedge in red and green stripes, rolled up by day and spread on the tiled floor at night.  It is cool to lie on in the heat, and half of Saigon sleeps on one rather than on a mattress.  Put it down where you want to sleep.",
+    "weight": "1400 g",
+    "volume": "6 L",
+    "longest_side": "160 cm",
+    "price": "4 USD",
+    "price_postapoc": "1 USD",
+    "material": [ "dry_plant" ],
+    "symbol": "=",
+    "color": "light_red",
+    "looks_like": "grass_sheet",
+    "category": "other",
+    "flags": [ "SLEEP_AID" ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_quat_nan",
+    "copy-from": "leather_bellow",
+    "subtypes": [ "TOOL" ],
+    "//": "W4: WINNOW 1 like the bellow: fan a charcoal stove, winnow rice.",
+    "name": { "str": "bamboo hand fan" },
+    "description": "A quạt nan: a round fan of thin split bamboo woven tight around a wooden handle.  Grandmothers fan themselves and the baby through the afternoon power cuts, and every street cook fans the honeycomb briquette stove with one until the coals glow.  It will also winnow chaff from rice.",
+    "weight": "90 g",
+    "volume": "400 ml",
+    "longest_side": "40 cm",
+    "price": "50 cent",
+    "price_postapoc": "25 cent",
+    "material": [ "wood" ],
+    "symbol": ";",
+    "color": "yellow"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_bao_bo",
+    "copy-from": "bag_canvas",
+    "name": { "str": "jute sack" },
+    "description": "A bao bố: a coarse brown jute sack of the kind rice, coffee beans and dried cassava arrive in at the wholesale market, still stencilled with a cooperative's faded number.  It holds fifty kilos, scratches your back, and gets reused for everything until it falls apart.",
+    "weight": "600 g",
+    "volume": "1500 ml",
+    "price": "40 cent",
+    "price_postapoc": "50 cent",
+    "color": "brown",
+    "pocket_data": [ { "pocket_type": "CONTAINER", "max_contains_volume": "40 L", "max_contains_weight": "50 kg", "moves": 400 } ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_gio_coi",
+    "copy-from": "straw_basket",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "sedge shopping bag" },
+    "description": "A giỏ cói: an open market bag of woven sedge with two rope handles, carried on the forearm to the chợ every morning.  Greens stick out of the top, the fish goes in a plastic bag at the bottom.",
+    "weight": "200 g",
+    "volume": "12 L",
+    "price": "1 USD",
+    "price_postapoc": "50 cent",
+    "material": [ "dry_plant" ],
+    "color": "brown",
+    "looks_like": "straw_basket",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "rigid": true,
+        "max_contains_volume": "11 L",
+        "max_contains_weight": "6 kg",
+        "max_item_length": "45 cm",
+        "moves": 250
+      }
+    ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ong_nho",
+    "name": { "str": "brass spittoon" },
+    "description": "An ống nhổ: a squat brass spittoon with a wide funnel mouth, kept beside the plank bed of an old man who smokes thuốc lào and the old woman who chewed betel before him.  It has been polished every Tết for forty years.  It still holds water, if you can bring yourself to drink from it.",
+    "weight": "900 g",
+    "volume": "1500 ml",
+    "longest_side": "18 cm",
+    "price": "8 USD",
+    "price_postapoc": "1 USD",
+    "material": [ "brass" ],
+    "symbol": "u",
+    "color": "yellow",
+    "looks_like": "bowl_clay",
+    "category": "container",
+    "to_hit": { "grip": "bad", "length": "hand", "surface": "any", "balance": "clumsy" },
+    "melee_damage": { "bash": 4 },
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "watertight": true,
+        "rigid": true,
+        "open_container": true,
+        "max_contains_volume": "1 L",
+        "max_contains_weight": "2 kg"
+      }
+    ],
+    "qualities": [ [ "CONTAIN", 1 ] ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_hop_cu_la",
+    "copy-from": "nic_pouch_can",
+    "name": { "str": "small balm tin" },
+    "description": "A flat round tin the size of a coin purse with a lid that screws down tight, printed with a red lotus and a line of tiny characters nobody reads.",
+    "weight": "10 g",
+    "volume": "30 ml",
+    "material": [ "tin" ],
+    "color": "red",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "rigid": true,
+        "watertight": true,
+        "max_contains_volume": "20 ml",
+        "max_contains_weight": "40 g"
+      }
+    ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_dau_cu_la",
+    "copy-from": "aspirin",
+    "subtypes": [ "COMESTIBLE" ],
+    "//": "W4: a mild painkiller rubbed on, not swallowed.",
+    "name": { "str_sp": "dầu cù là" },
+    "description": "A dab of red camphor-and-menthol balm from a little tin.  Rubbed into an aching back, a bruise or a mosquito bite it burns, then cools, then dulls the pain for a while.  Grandmothers sell it from glass cases at the bus station along with chewing gum and lottery tickets.",
+    "weight": "2 g",
+    "volume": "1 ml",
+    "price": "10 cent",
+    "price_postapoc": "40 cent",
+    "color": "light_red",
+    "container": "sgn_hop_cu_la",
+    "healthy": 0,
+    "vitamins": [  ],
+    "flags": [ "NO_INGEST", "NO_TEMP" ],
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You rub %s into the sore spot.  It burns, then cools.",
+      "effects": [ { "id": "pkill1_generic", "duration": 3600 } ],
+      "moves": 150
+    }
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ca_men",
+    "copy-from": "lunchbox",
+    "name": { "str_sp": "cà mèn" },
+    "description": "A stacked aluminium lunch tin: three round pots clipped one above the other into a frame with a carrying handle.  Rice in the bottom, braised fish in the middle, canh soup in the top, sealed under a lid that does not leak.  Factory workers and schoolchildren carried one every day.",
+    "weight": "450 g",
+    "volume": "2500 ml",
+    "longest_side": "22 cm",
+    "price": "3 USD",
+    "price_postapoc": "1 USD",
+    "material": [ "aluminum" ],
+    "color": "light_gray",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "watertight": true,
+        "rigid": true,
+        "max_contains_volume": "650 ml",
+        "max_contains_weight": "2 kg"
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "watertight": true,
+        "rigid": true,
+        "max_contains_volume": "650 ml",
+        "max_contains_weight": "2 kg"
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "watertight": true,
+        "rigid": true,
+        "max_contains_volume": "650 ml",
+        "max_contains_weight": "2 kg"
+      }
+    ],
+    "qualities": [ [ "CONTAIN", 1 ] ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_gao_dua",
+    "copy-from": "bowl_coconut",
+    "name": { "str_sp": "gáo dừa" },
+    "description": "Half a coconut shell scraped clean and polished with use, with a bamboo handle pushed through two holes below the rim.  It lives on the lid of the lu nước, for scooping water to wash your face, your feet or the rice.",
+    "weight": "120 g",
+    "volume": "600 ml",
+    "longest_side": "35 cm",
+    "price": "30 cent",
+    "price_postapoc": "25 cent",
+    "material": [ "wood" ],
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "watertight": true,
+        "rigid": true,
+        "open_container": true,
+        "max_contains_volume": "400 ml",
+        "max_contains_weight": "2 kg"
+      }
+    ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ro_tre",
+    "copy-from": "sieve_primitive",
+    "//": "W4: SIEVE, STRAIN and WINNOW like a wicker sieve, and a small container.",
+    "name": { "str": "bamboo draining basket" },
+    "description": "A rổ: a shallow round basket of split bamboo with a wide open weave.  You wash herbs and rau muống in it under the tap, rinse rice in it, and leave it on the counter to drip.",
+    "weight": "250 g",
+    "volume": "3 L",
+    "longest_side": "40 cm",
+    "price": "1 USD",
+    "price_postapoc": "25 cent",
+    "material": [ "wood" ],
+    "color": "yellow",
+    "category": "container",
+    "qualities": [ [ "SIEVE", 1 ], [ "STRAIN", 1 ], [ "WINNOW", 1 ] ],
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "rigid": true,
+        "max_contains_volume": "2500 ml",
+        "max_contains_weight": "3 kg",
+        "moves": 150
+      }
+    ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_mam_nhom",
+    "name": { "str": "aluminium tray" },
+    "description": "A mâm: a big round tray of beaten aluminium with a low rim.  The family meal is set out on it on the floor, the rice pot beside it and everyone sitting around, and on the death anniversary it carries the offerings to the altar.",
+    "weight": "800 g",
+    "volume": "5 L",
+    "longest_side": "60 cm",
+    "price": "4 USD",
+    "price_postapoc": "50 cent",
+    "material": [ "aluminum" ],
+    "symbol": "o",
+    "color": "light_gray",
+    "looks_like": "pan",
+    "category": "container",
+    "to_hit": { "grip": "bad", "length": "hand", "surface": "any", "balance": "clumsy" },
+    "melee_damage": { "bash": 4 },
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "rigid": true,
+        "max_contains_volume": "4500 ml",
+        "max_contains_weight": "8 kg",
+        "moves": 150
+      }
+    ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_dua_bep",
+    "copy-from": "chopsticks",
+    "name": { "str": "pair of cooking chopsticks", "str_pl": "pairs of cooking chopsticks" },
+    "description": "Đũa bếp: a pair of long bamboo chopsticks, scorched black at the tips, for turning fish in hot oil and fishing noodles out of the pot without burning your fingers.",
+    "weight": "30 g",
+    "volume": "60 ml",
+    "longest_side": "40 cm",
+    "price": "20 cent",
+    "color": "brown"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_chen_su",
+    "copy-from": "ceramic_bowl",
+    "name": { "str": "porcelain rice bowl" },
+    "description": "A chén: a small white porcelain rice bowl painted with a blue band of chrysanthemums, the same as the ones in every kitchen cupboard in the city.  You hold it close to your chin and shovel the rice in with chopsticks.",
+    "weight": "180 g",
+    "volume": "350 ml",
+    "longest_side": "11 cm",
+    "price": "50 cent",
+    "price_postapoc": "10 cent",
+    "material": [ "porcelain" ],
+    "color": "white",
+    "pocket_data": [
+      {
+        "max_contains_volume": "250 ml",
+        "max_contains_weight": "1 kg",
+        "watertight": true,
+        "open_container": true,
+        "rigid": true
+      }
+    ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_am_tra",
+    "copy-from": "clay_teapot",
+    "name": { "str": "Bát Tràng teapot" },
+    "description": "A small round teapot in crackled brown glaze from the Bát Tràng kilns, part of a set with four thimble-sized cups on a matching tray.  Hot tea from it is offered to every guest before anything is said.",
+    "weight": "350 g",
+    "volume": "600 ml",
+    "price": "5 USD",
+    "price_postapoc": "25 cent",
+    "material": [ "ceramic" ],
+    "pocket_data": [ { "max_contains_volume": "450 ml", "max_contains_weight": "2 kg", "watertight": true, "rigid": true } ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_tra_bao_loc",
+    "copy-from": "tea_green_raw",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str_sp": "Bảo Lộc green tea" },
+    "description": "Rolled, dark green tea leaves from the plantations of Bảo Lộc in the highlands, in a plain plastic bag with a handwritten label.  Steeped strong and bitter, it is what fills the teapot in every home and the big jug of trà đá at every street café.",
+    "price": "20 cent",
+    "price_postapoc": "10 cent"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_coi_da",
+    "copy-from": "mortar_pestle",
+    "subtypes": [ "TOOL" ],
+    "name": { "str_sp": "cối đá" },
+    "description": "A heavy little mortar of rough grey granite with a stone pestle, for pounding garlic and chillies into nước chấm, lemongrass for grilling and peppercorns for the braising pot.  It sits on the kitchen floor and sounds like a clock every evening.",
+    "weight": "2200 g",
+    "price": "3 USD",
+    "price_postapoc": "50 cent"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_cmnd",
+    "copy-from": "card_plastic_abstract",
+    "name": { "str_sp": "chứng minh nhân dân" },
+    "description": "A national identity card: laminated pale blue paper with a black-and-white photo, the holder's name, birthplace and permanent address, two fingerprints on the back, and under \"identifying marks\" a note such as \"mole 2 cm above the left eyebrow\".  Nobody went anywhere without it.  Nobody will ask to see it again.",
+    "weight": "3 g",
+    "price": "0 cent",
+    "price_postapoc": "0 cent",
+    "material": [ "paper", "plastic" ],
+    "color": "light_blue",
+    "category": "other"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_so_ho_khau",
+    "name": { "str_sp": "sổ hộ khẩu" },
+    "description": "A household registration book: a stiff-covered booklet stamped by the ward police, listing everyone registered at this address by name, birth date, occupation and relationship to the head of the household.  Without it no school place, no marriage, no business licence.  The family kept it wrapped in plastic in the altar drawer.",
+    "weight": "60 g",
+    "volume": "60 ml",
+    "price": "0 cent",
+    "price_postapoc": "0 cent",
+    "material": [ "paper" ],
+    "symbol": "?",
+    "color": "brown",
+    "looks_like": "sgn_ho_chieu",
+    "category": "other"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ve_xe_buyt",
+    "name": { "str": "bus ticket" },
+    "description": "A small pink paper ticket for a city bus, 2,000 đồng, torn from the conductor's pad as you climbed aboard.  The route number is stamped on the back.  The buses stand empty at the depot now.",
+    "weight": "1 g",
+    "volume": "1 ml",
+    "price": "10 cent",
+    "price_postapoc": "0 cent",
+    "material": [ "paper" ],
+    "symbol": "?",
+    "color": "pink",
+    "looks_like": "sgn_ve_so",
+    "category": "other",
+    "flags": [ "BANK_NOTE_SHAPED" ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_the_cao",
+    "copy-from": "card_plastic_abstract",
+    "name": { "str": "phone top-up card" },
+    "description": "A thẻ cào: a prepaid card for a mobile network, worth 100,000 đồng of airtime.  Scratch off the silver strip with a coin, dial *100*, the twelve-digit code and the hash key.  The network is down, but traders still take it as small change.",
+    "weight": "2 g",
+    "price": "5 USD",
+    "price_postapoc": "25 cent",
+    "material": [ "paper" ],
+    "color": "light_green",
+    "category": "other"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_cavet_xe",
+    "copy-from": "card_plastic_abstract",
+    "name": { "str": "motorbike registration card" },
+    "description": "A cà vẹt: the laminated registration card for a motorbike, with the plate number, frame and engine numbers and the owner's name.  Half the bikes in the city change hands on a handwritten receipt and are ridden with the previous owner's card in the wallet.",
+    "weight": "3 g",
+    "price": "0 cent",
+    "price_postapoc": "0 cent",
+    "material": [ "paper", "plastic" ],
+    "color": "white",
+    "category": "other"
+  }
+]
