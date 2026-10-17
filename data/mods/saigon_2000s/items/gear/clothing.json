@@ -4,7 +4,7 @@
     "id": "sgn_ao_dai_trang",
     "copy-from": "dress",
     "subtypes": [ "ARMOR" ],
-    "name": { "str": "white áo dài" },
+    "name": { "str_sp": "white áo dài" },
     "description": "The white silk áo dài of a high-school girl: a long fitted tunic split to the waist over loose white trousers.  Every morning the streets filled with them, flowing behind bicycles.",
     "color": "white"
   },
@@ -13,7 +13,7 @@
     "id": "sgn_ao_dai_mau",
     "copy-from": "dress",
     "subtypes": [ "ARMOR" ],
-    "name": { "str": "red áo dài" },
+    "name": { "str_sp": "red áo dài" },
     "description": "A festive red silk áo dài embroidered with gold phoenixes, worn for Tết and weddings over white trousers.",
     "color": "red"
   },

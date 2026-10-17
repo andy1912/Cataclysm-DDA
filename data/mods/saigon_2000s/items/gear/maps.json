@@ -4,7 +4,7 @@
     "copy-from": "abstractmap",
     "type": "ITEM",
     "looks_like": "touristmap",
-    "name": { "str": "bản đồ TP.HCM" },
+    "name": { "str_sp": "bản đồ TP.HCM" },
     "description": "A folded tourist map of Hồ Chí Minh City, 2009 edition, handed out free at hotel reception desks: the districts in pastel colours, the main streets labelled, little drawings of the cathedral, the market and the opera house, and the airport in one corner.  Reading it will add the streets, bridges, the railway, markets, hospitals, petrol stations, temples and churches, and the landmarks to your map.",
     "color": "light_cyan",
     "use_action": {

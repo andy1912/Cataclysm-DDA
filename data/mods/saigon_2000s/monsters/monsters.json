@@ -29,7 +29,7 @@
     "id": "sgn_mon_zombie_sot",
     "type": "MONSTER",
     "copy-from": "mon_zombie",
-    "name": { "str": "fevered dead" },
+    "name": { "str_sp": "fevered dead" },
     "description": "One of the first to fall to the sốt lạ: still in a hospital gown, a paper mask hanging from one ear, skin flushed and burning hot to the touch.  It died recently enough to move quickly.",
     "relative": { "speed": 15, "hp": -15 },
     "death_drops": "sgn_drops_sot"

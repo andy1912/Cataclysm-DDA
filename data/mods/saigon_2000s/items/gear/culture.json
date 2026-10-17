@@ -47,12 +47,30 @@
     "color": "red",
     "time": "5 m",
     "snippet_category": [
-      { "id": "sgn_lich_1", "text": "The page reads: \"Ăn quả nhớ kẻ trồng cây\": when you eat the fruit, remember who planted the tree." },
-      { "id": "sgn_lich_2", "text": "The page reads: \"Một cây làm chẳng nên non, ba cây chụm lại nên hòn núi cao\": one tree is not a forest; three together make a high mountain." },
-      { "id": "sgn_lich_3", "text": "The page reads: \"Có công mài sắt, có ngày nên kim\": grind an iron bar long enough and one day it becomes a needle." },
-      { "id": "sgn_lich_4", "text": "The page reads: \"Bán anh em xa, mua láng giềng gần\": sell the distant brother, buy the near neighbour." },
-      { "id": "sgn_lich_5", "text": "The page reads: \"Lá lành đùm lá rách\": the whole leaf wraps the torn one." },
-      { "id": "sgn_lich_6", "text": "The page reads: \"Uống nước nhớ nguồn\": when you drink the water, remember its source." }
+      {
+        "id": "sgn_lich_1",
+        "text": "The page reads: \"Ăn quả nhớ kẻ trồng cây\": when you eat the fruit, remember who planted the tree."
+      },
+      {
+        "id": "sgn_lich_2",
+        "text": "The page reads: \"Một cây làm chẳng nên non, ba cây chụm lại nên hòn núi cao\": one tree is not a forest; three together make a high mountain."
+      },
+      {
+        "id": "sgn_lich_3",
+        "text": "The page reads: \"Có công mài sắt, có ngày nên kim\": grind an iron bar long enough and one day it becomes a needle."
+      },
+      {
+        "id": "sgn_lich_4",
+        "text": "The page reads: \"Bán anh em xa, mua láng giềng gần\": sell the distant brother, buy the near neighbour."
+      },
+      {
+        "id": "sgn_lich_5",
+        "text": "The page reads: \"Lá lành đùm lá rách\": the whole leaf wraps the torn one."
+      },
+      {
+        "id": "sgn_lich_6",
+        "text": "The page reads: \"Uống nước nhớ nguồn\": when you drink the water, remember its source."
+      }
     ]
   },
   {
@@ -95,7 +113,7 @@
     "type": "ITEM",
     "subtypes": [ "COMESTIBLE" ],
     "id": "sgn_banh_trung_thu",
-    "name": { "str": "bánh trung thu" },
+    "name": { "str_sp": "bánh trung thu" },
     "description": "A Mid-Autumn mooncake: a dense golden pastry stamped with a pattern, filled with lotus-seed paste, salted egg yolk and lạp xưởng.  Heavy, sweet, and made to keep.",
     "symbol": "%",
     "comestible_type": "FOOD",

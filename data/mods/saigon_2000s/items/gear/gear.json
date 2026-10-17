@@ -68,7 +68,7 @@
     "type": "ITEM",
     "subtypes": [ "TOOL" ],
     "copy-from": "machete",
-    "name": { "str": "dao rựa" },
+    "name": { "str_sp": "dao rựa" },
     "description": "A heavy, square-tipped chopping blade with a wooden handle, used to split coconuts, clear brush and hack bamboo.  Every rural household owns one, and many city ones do too.",
     "price": "4 USD",
     "price_postapoc": "10 USD"

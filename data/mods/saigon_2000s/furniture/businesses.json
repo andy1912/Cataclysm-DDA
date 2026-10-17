@@ -57,7 +57,11 @@
       "str_max": 40,
       "sound": "crunch!",
       "sound_fail": "thud.",
-      "items": [ { "item": "scrap", "count": [ 2, 6 ] }, { "item": "plastic_chunk", "count": [ 4, 12 ] }, { "item": "e_scrap", "count": [ 1, 4 ] } ]
+      "items": [
+        { "item": "scrap", "count": [ 2, 6 ] },
+        { "item": "plastic_chunk", "count": [ 4, 12 ] },
+        { "item": "e_scrap", "count": [ 1, 4 ] }
+      ]
     }
   },
   {
@@ -73,7 +77,7 @@
     "type": "ITEM",
     "subtypes": [ "COMESTIBLE" ],
     "id": "sgn_thuoc_bac",
-    "name": { "str": "packet of thuốc bắc" },
+    "name": { "str": "packet of thuốc bắc", "str_pl": "packets of thuốc bắc" },
     "description": "A newspaper packet of dried roots, bark, jujubes and liquorice weighed out by the herbalist, to be simmered for hours into a black, bitter tonic.  It will not cure anything serious, but people swore by it.",
     "symbol": "!",
     "comestible_type": "MED",
@@ -140,7 +144,11 @@
     "id": "sgn_herbalist",
     "subtype": "distribution",
     "//": "P1 tiệm thuốc bắc.",
-    "items": [ { "item": "sgn_thuoc_bac", "prob": 60, "count": [ 1, 4 ] }, { "item": "sgn_dau_gio", "prob": 20 }, { "item": "tea_raw", "prob": 15 } ]
+    "items": [
+      { "item": "sgn_thuoc_bac", "prob": 60, "count": [ 1, 4 ] },
+      { "item": "sgn_dau_gio", "prob": 20 },
+      { "item": "tea_raw", "prob": 15 }
+    ]
   },
   {
     "type": "item_group",
