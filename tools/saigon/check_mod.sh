@@ -67,6 +67,18 @@ if [[ " ${mods[*]} " == *" saigon_2000s "* ]]; then
         grep -v 'all resolve' "$ud/check_refs.txt" | head -20
         fail=1
     fi
+    # T1: every translatable string in the mod extracts cleanly (the vi .po path)
+    if ! tools/saigon/check_strings.sh > "$ud/check_strings.txt" 2>&1; then
+        echo "FAIL: string extraction (tools/saigon/check_strings.sh):"
+        head -20 "$ud/check_strings.txt"
+        fail=1
+    fi
+    # S1: the original game's files stay untouched outside the documented engine patches
+    if ! tools/saigon/check_separation.sh > "$ud/check_separation.txt" 2>&1; then
+        echo "FAIL: fork changes outside the mod (tools/saigon/check_separation.sh):"
+        head -20 "$ud/check_separation.txt"
+        fail=1
+    fi
     # the real map must be walkable: straight, ramped bridges and a way into every hẻm network
     if ! python3 tools/saigon/realmap/check_realmap.py > "$ud/check_realmap.txt" 2>&1; then
         echo "FAIL: real map (tools/saigon/realmap/check_realmap.py):"
