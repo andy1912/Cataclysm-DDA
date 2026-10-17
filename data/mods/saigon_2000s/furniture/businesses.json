@@ -136,7 +136,8 @@
       { "item": "e_scrap", "prob": 30, "count": [ 1, 5 ] },
       { "item": "cable", "prob": 25, "count": [ 1, 4 ] },
       { "item": "battery", "prob": 15 },
-      { "item": "sgn_book_tv_repair", "prob": 5 }
+      { "item": "sgn_book_tv_repair", "prob": 5 },
+      { "item": "hammer", "prob": 10 }
     ]
   },
   {
@@ -162,7 +163,8 @@
       { "item": "sgn_dien_thoai", "prob": 20 },
       { "item": "sgn_radio_cassette", "prob": 10 },
       { "item": "sgn_non_bao_hiem", "prob": 10 },
-      { "group": "sgn_dong_notes", "prob": 20, "count": [ 2, 6 ] }
+      { "group": "sgn_dong_notes", "prob": 20, "count": [ 2, 6 ] },
+      { "group": "sgn_weapons_melee_rare", "prob": 5 }
     ]
   },
   {

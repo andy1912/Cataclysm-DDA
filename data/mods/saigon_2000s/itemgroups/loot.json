@@ -84,8 +84,8 @@
   {
     "type": "item_group",
     "id": "sgn_shophouse_kitchen",
-    "subtype": "distribution",
-    "entries": [ { "item": "sgn_binh_thuy", "prob": 20 }, { "item": "sgn_noi_dat", "prob": 12 }, { "item": "sgn_thot_go_me", "prob": 15 }, { "item": "sgn_am_nhom", "prob": 15 }, { "item": "sgn_long_ban", "prob": 12 }, { "item": "sgn_choi_cha", "prob": 8 },  { "item": "sgn_mam_tom", "prob": 10 }, { "item": "sgn_lap_xuong", "prob": 10, "count": [ 1, 4 ] }, { "item": "sgn_kho_bo", "prob": 6 }, 
+    "subtype": "collection",
+    "entries": [ { "prob": 100, "distribution": [ { "item": "sgn_binh_thuy", "prob": 20 }, { "item": "sgn_noi_dat", "prob": 12 }, { "item": "sgn_thot_go_me", "prob": 15 }, { "item": "sgn_am_nhom", "prob": 15 }, { "item": "sgn_long_ban", "prob": 12 }, { "item": "sgn_choi_cha", "prob": 8 },  { "item": "sgn_mam_tom", "prob": 10 }, { "item": "sgn_lap_xuong", "prob": 10, "count": [ 1, 4 ] }, { "item": "sgn_kho_bo", "prob": 6 }, 
       { "item": "dry_rice", "prob": 40 },
       { "item": "sgn_nuoc_mam", "prob": 40, "container-item": "sgn_chai_nuoc_mam" },
       { "item": "sgn_mi_goi", "prob": 50 },
@@ -112,14 +112,17 @@
       { "item": "sgn_sua_dac", "prob": 20 },
       { "item": "sgn_binh_gas", "prob": 10 },
       { "item": "sgn_can_nhua", "prob": 10 }
+    ] },
+      { "group": "sgn_loot_kitchen_blade", "prob": 30 },
+      { "group": "sgn_vn_daily_kitchen", "prob": 40 }
     ],
-    "//": "Kitchen and pantry of a nhà ống home."
+    "//": "Kitchen and pantry of a nhà ống home: one thing from the shelves, and (W2) often the dao phay every Vietnamese kitchen chops with."
   },
   {
     "type": "item_group",
     "id": "sgn_shophouse_living",
-    "subtype": "distribution",
-    "entries": [ { "item": "sgn_truyen_meo_may", "prob": 10 }, { "item": "sgn_vcd_phim_bo", "prob": 8 }, { "item": "sgn_bang_cassette", "prob": 8 }, { "item": "sgn_lich_bloc", "prob": 15 }, { "item": "sgn_bao_li_xi", "prob": 6 }, { "item": "sgn_long_den_ong_sao", "prob": 4 }, { "item": "sgn_vang_ma", "prob": 6 },  { "item": "sgn_non_coi", "prob": 5 }, { "item": "sgn_do_bo", "prob": 12 }, { "item": "sgn_khan_ran", "prob": 6 }, { "item": "sgn_dep_quai_hau", "prob": 8 }, { "item": "sgn_khoa_chu_u", "prob": 6 }, { "item": "sgn_can_cau_tre", "prob": 3 }, 
+    "subtype": "collection",
+    "entries": [ { "prob": 100, "distribution": [ { "item": "sgn_truyen_meo_may", "prob": 10 }, { "item": "sgn_vcd_phim_bo", "prob": 8 }, { "item": "sgn_bang_cassette", "prob": 8 }, { "item": "sgn_lich_bloc", "prob": 15 }, { "item": "sgn_bao_li_xi", "prob": 6 }, { "item": "sgn_long_den_ong_sao", "prob": 4 }, { "item": "sgn_vang_ma", "prob": 6 },  { "item": "sgn_non_coi", "prob": 5 }, { "item": "sgn_do_bo", "prob": 12 }, { "item": "sgn_khan_ran", "prob": 6 }, { "item": "sgn_dep_quai_hau", "prob": 8 }, { "item": "sgn_khoa_chu_u", "prob": 6 }, { "item": "sgn_can_cau_tre", "prob": 3 }, 
       { "item": "sgn_book_almanac", "prob": 10 },
       { "item": "sgn_karaoke_songbook", "prob": 6 },
       { "item": "sgn_book_wuxia", "prob": 15 },
@@ -160,8 +163,11 @@
       { "item": "sgn_ao_trang_hoc_sinh", "prob": 8 },
       { "item": "sgn_khan_quang_do", "prob": 6 },
       { "item": "sgn_ung_cao_su", "prob": 10 }
+    ] },
+      { "group": "sgn_loot_home_weapon", "prob": 10 },
+      { "group": "sgn_vn_daily_home", "prob": 35 }
     ],
-    "//": "Living room, altar and bedrooms of a nhà ống home."
+    "//": "Living room, altar and bedrooms of a nhà ống home: one thing from the room, and (W2) sometimes what the family kept behind the door."
   },
   {
     "type": "item_group",
@@ -183,9 +189,10 @@
       { "item": "sgn_banh_trang", "prob": 30, "count": [ 2, 10 ] },
       { "item": "sgn_ro_nhua", "prob": 30 },
       { "item": "sgn_thau_nhua", "prob": 20 },
-      { "item": "sgn_quang_ganh", "prob": 10 }
+      { "item": "sgn_quang_ganh", "prob": 10 },
+      { "item": "sgn_dao_rua", "prob": 10 }
     ],
-    "//": "Wet-market produce stall."
+    "//": "Wet-market produce stall (W2: the dao rựa that opens the coconuts)."
   },
   {
     "type": "item_group",
@@ -195,8 +202,9 @@
       { "item": "fish", "prob": 50 },
       { "item": "meat", "prob": 40 },
       { "item": "sgn_thung_xop", "prob": 20 },
-      { "item": "sgn_dao_rua", "prob": 8 },
-      { "item": "knife_cleaver", "prob": 12 },
+      { "item": "sgn_dao_rua", "prob": 12 },
+      { "item": "knife_cleaver", "prob": 30 },
+      { "item": "knife_huge", "variant": "knife_butcher", "prob": 15 },
       { "item": "salt", "prob": 15 },
       { "item": "sgn_kho_muc", "prob": 30 },
       { "item": "sgn_tom_kho", "prob": 30 },
@@ -274,7 +282,10 @@
       { "item": "gasoline", "prob": 10, "container-item": "jerrycan", "charges": [ 1000, 10000 ] },
       { "item": "sgn_non_bao_hiem", "prob": 15 },
       { "item": "sgn_ao_mua_canh_doi", "prob": 10 },
-      { "item": "sgn_xa_beng", "prob": 20 }
+      { "item": "sgn_xa_beng", "prob": 25 },
+      { "item": "hammer", "prob": 15 },
+      { "item": "lug_wrench", "prob": 15 },
+      { "item": "pipe", "prob": 10 }
     ],
     "//": "Sidewalk motorbike repair shop."
   },
@@ -283,6 +294,7 @@
     "id": "sgn_pharmacy",
     "subtype": "distribution",
     "entries": [
+      { "group": "sgn_vn_daily_hop_cu_la", "prob": 15 },
       { "item": "aspirin", "prob": 30 },
       { "item": "adhesive_bandages", "prob": 30 },
       { "item": "disinfectant", "prob": 20 },
@@ -396,7 +408,8 @@
       { "item": "pen", "prob": 20 },
       { "item": "sgn_khan_quang_do", "prob": 15 },
       { "item": "sgn_ao_trang_hoc_sinh", "prob": 8 },
-      { "item": "sgn_xoi", "prob": 8 }
+      { "item": "sgn_xoi", "prob": 8 },
+      { "group": "sgn_loot_school_toys", "prob": 20 }
     ]
   },
   {
@@ -453,7 +466,7 @@
     "type": "item_group",
     "id": "sgn_temple",
     "subtype": "distribution",
-    "//": "L2 Chợ Lớn temples (Thiên Hậu, Ngọc Hoàng): altars, offerings and the donation box.",
+    "//": "L2 Chợ Lớn temples (Thiên Hậu, Ngọc Hoàng): altars, offerings and the donation box; W2: now and then one of the ceremonial arms from the guardians' rack.",
     "items": [ { "item": "sgn_vang_ma", "prob": 25 }, { "item": "sgn_bao_li_xi", "prob": 8 }, 
       { "item": "incense", "prob": 45, "count": [ 1, 3 ] },
       { "item": "sgn_nen", "prob": 40, "count": [ 1, 4 ] },
@@ -464,7 +477,8 @@
       { "item": "matches", "prob": 10 },
       { "item": "lighter", "prob": 5 },
       { "item": "tea_raw", "prob": 10 },
-      { "item": "sgn_banh_chung", "prob": 5 }
+      { "item": "sgn_banh_chung", "prob": 5 },
+      { "group": "sgn_weapons_melee_rare", "prob": 5 }
     ]
   },
   {
@@ -472,7 +486,7 @@
     "id": "sgn_cho_wholesale",
     "subtype": "distribution",
     "//": "L2 Chợ Bình Tây wholesale stalls: dry goods by the sack and the carton.",
-    "items": [ { "item": "sgn_banh_trung_thu", "prob": 10 }, { "item": "sgn_vang_ma", "prob": 10 },  { "item": "sgn_kho_bo", "prob": 12, "count": [ 2, 8 ] }, { "item": "sgn_lap_xuong", "prob": 15, "count": [ 4, 12 ] }, { "item": "sgn_mam_tom", "prob": 10 }, 
+    "items": [ { "group": "sgn_vn_daily_shop", "prob": 20 }, { "item": "sgn_banh_trung_thu", "prob": 10 }, { "item": "sgn_vang_ma", "prob": 10 },  { "item": "sgn_kho_bo", "prob": 12, "count": [ 2, 8 ] }, { "item": "sgn_lap_xuong", "prob": 15, "count": [ 4, 12 ] }, { "item": "sgn_mam_tom", "prob": 10 }, 
       { "item": "dry_rice", "prob": 40, "count": [ 5, 20 ] },
       { "item": "sgn_mi_goi", "prob": 25, "count": [ 5, 20 ] },
       { "item": "sugar", "prob": 15 },
@@ -486,7 +500,98 @@
       { "item": "sgn_nuoc_mam", "prob": 20 },
       { "item": "noodles_fast", "prob": 10 },
       { "item": "sgn_thau_nhua", "prob": 10 },
-      { "item": "sgn_ro_nhua", "prob": 10 }
+      { "item": "sgn_ro_nhua", "prob": 10 },
+      { "group": "sgn_loot_hardware", "prob": 25 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_loot_kitchen_blade",
+    "subtype": "distribution",
+    "//": "W2: the blade of a Saigon kitchen.  The dao phay (cleaver) chops everything; a long knife, a heavy pan, or a local blade (W1).",
+    "items": [
+      { "item": "knife_cleaver", "prob": 45 },
+      { "item": "knife_large", "prob": 15 },
+      { "item": "pan", "prob": 10 },
+      { "group": "sgn_weapons_melee_common", "prob": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_loot_home_weapon",
+    "subtype": "distribution",
+    "//": "W2: what a family kept behind the door or under the bed: a bamboo stick or a pole, the motorbike U-lock, a hammer, a dao rựa; now and then a boy's slingshot.",
+    "items": [
+      { "group": "sgn_weapons_melee_common", "prob": 45 },
+      { "item": "sgn_khoa_chu_u", "prob": 15 },
+      { "item": "hammer", "prob": 10 },
+      { "item": "sgn_dao_rua", "prob": 8 },
+      { "item": "pipe", "prob": 5 },
+      { "item": "cane", "prob": 5 },
+      { "group": "sgn_weapons_ranged_primitive", "prob": 6 },
+      { "group": "sgn_weapons_melee_rare", "prob": 3 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_loot_hardware",
+    "subtype": "distribution",
+    "//": "W2: a chợ hardware and dao kéo stall, or a workshop bench: blades, farm tools and hand tools sold or used as tools.",
+    "items": [
+      { "item": "sgn_dao_rua", "prob": 15 },
+      { "item": "knife_cleaver", "prob": 15 },
+      { "item": "knife_large", "prob": 8 },
+      { "item": "machete", "prob": 5 },
+      { "item": "hoe", "prob": 8 },
+      { "item": "shovel", "prob": 8 },
+      { "item": "sickle", "prob": 6 },
+      { "item": "hammer", "prob": 12 },
+      { "item": "hatchet", "prob": 4 },
+      { "item": "sgn_xa_beng", "prob": 6 },
+      { "group": "sgn_weapons_melee_common", "prob": 15 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_loot_building_tools",
+    "subtype": "distribution",
+    "//": "W2: a construction site or a kho: hammers, rebar and pipe offcuts, shovels, a crowbar, planks, now and then a sledgehammer or a pick.",
+    "items": [
+      { "item": "hammer", "prob": 20 },
+      { "item": "rebar", "prob": 20, "count": [ 1, 4 ] },
+      { "item": "pipe", "prob": 15, "count": [ 1, 3 ] },
+      { "item": "shovel", "prob": 15 },
+      { "item": "sgn_xa_beng", "prob": 10 },
+      { "item": "2x4", "prob": 10, "count": [ 1, 4 ] },
+      { "item": "hammer_sledge", "prob": 5 },
+      { "item": "pickaxe", "prob": 3 },
+      { "group": "sgn_weapons_melee_common", "prob": 5 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_loot_country_tools",
+    "subtype": "distribution",
+    "//": "W2: the edge of town, the canal shacks and the rice fields: hoes, dao rựa and sickles, a shovel; a boy's slingshot and its pebbles.",
+    "items": [
+      { "item": "hoe", "prob": 20 },
+      { "item": "sgn_dao_rua", "prob": 20 },
+      { "item": "sickle", "prob": 15 },
+      { "item": "shovel", "prob": 10 },
+      { "item": "machete", "prob": 5 },
+      { "group": "sgn_weapons_melee_common", "prob": 15 },
+      { "group": "sgn_weapons_ranged_primitive", "prob": 10 },
+      { "group": "sgn_weapons_ammo_primitive", "prob": 5 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_loot_school_toys",
+    "subtype": "distribution",
+    "//": "W2: what a teacher's drawer took off the pupils: slingshots (ná thun) and bags of marbles (bi).",
+    "items": [
+      { "group": "sgn_weapons_ranged_primitive", "prob": 45 },
+      { "group": "sgn_weapons_ammo_primitive", "prob": 55 }
     ]
   }
 ]

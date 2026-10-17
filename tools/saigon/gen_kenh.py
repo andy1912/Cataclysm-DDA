@@ -54,7 +54,9 @@ def palette():
             'k': { 'item': 'sgn_shophouse_kitchen', 'chance': 40 },
             'b': { 'item': 'sgn_shophouse_living', 'chance': 30 },
             'A': { 'item': 'sgn_pagoda', 'chance': 30 },
-            't': { 'item': 'sgn_cho_stall_meat_fish', 'chance': 20 } },
+            't': { 'item': 'sgn_cho_stall_meat_fish', 'chance': 20 },
+            # W2: canal people kept a hoe or a dao rựa for the bank garden, and the boys a slingshot
+            'c': { 'item': 'sgn_loot_country_tools', 'chance': 20 } },
         # water spinach gathered from the canal, left on the landings
         'item': { 'd': { 'item': 'sgn_rau_muong', 'chance': 25 } } }
 

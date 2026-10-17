@@ -45,7 +45,8 @@
     "entries": [
       { "group": "default_zombie_death_drops" },
       { "item": "sgn_non_bao_hiem", "prob": 90 },
-      { "item": "sgn_ao_mua_canh_doi", "prob": 25 }
+      { "item": "sgn_ao_mua_canh_doi", "prob": 25 },
+      { "item": "sgn_khoa_chu_u", "prob": 8 }
     ]
   },
   {
@@ -55,6 +56,7 @@
     "entries": [
       { "group": "default_zombie_death_drops" },
       { "item": "sgn_dao_rua", "prob": 10 },
+      { "item": "knife_cleaver", "prob": 8 },
       { "group": "sgn_dong_notes", "prob": 60, "count": [ 1, 6 ] }
     ]
   },

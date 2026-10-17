@@ -20,7 +20,8 @@
       { "item": "cig", "prob": 15, "count": [ 1, 10 ] },
       { "item": "lighter", "prob": 15 },
       { "item": "sgn_ao_mua_canh_doi", "prob": 10 },
-      { "item": "sgn_khoa_chu_u", "prob": 5 }
+      { "item": "sgn_khoa_chu_u", "prob": 5 },
+      { "item": "lug_wrench", "prob": 6 }
     ]
   },
   {
@@ -61,7 +62,10 @@
       { "item": "sgn_choi_cha", "prob": 6 },
       { "item": "sgn_khau_trang", "prob": 10 },
       { "item": "sgn_nen", "prob": 10 },
-      { "item": "flashlight", "prob": 6 }
+      { "item": "flashlight", "prob": 6 },
+      { "item": "knife_cleaver", "prob": 4 },
+      { "item": "knife_large", "prob": 3 },
+      { "item": "hammer", "prob": 3 }
     ]
   },
   {
@@ -92,7 +96,9 @@
       { "item": "aspirin", "prob": 15 },
       { "item": "sgn_oresol", "prob": 20, "count": [ 1, 4 ] },
       { "item": "sgn_khau_trang", "prob": 20, "count": [ 1, 4 ] },
-      { "item": "sgn_book_nursing", "prob": 3 }
+      { "item": "sgn_book_nursing", "prob": 3 },
+      { "item": "crutches", "prob": 4 },
+      { "item": "cane", "prob": 3 }
     ]
   },
   {
@@ -165,7 +171,8 @@
       { "item": "bucket", "prob": 3 },
       { "item": "sheet_metal_small", "prob": 3 },
       { "item": "pipe", "prob": 3 },
-      { "item": "nail", "prob": 3, "count": [ 10, 40 ] }
+      { "item": "nail", "prob": 3, "count": [ 10, 40 ] },
+      { "group": "sgn_loot_building_tools", "prob": 15 }
     ]
   }
 ]

@@ -9,6 +9,7 @@
       { "item": "towel", "prob": 70, "damage": [ 1, 4 ] },
       { "item": "sgn_ro_nhua", "prob": 30 },
       { "item": "sgn_quang_ganh", "prob": 10 },
+      { "group": "sgn_weapons_melee_common", "prob": 6 },
       { "item": "sgn_thuoc_la", "prob": 40, "count": [ 1, 8 ] },
       { "group": "sgn_dong_notes", "prob": 50, "count": [ 1, 4 ] }
     ]
@@ -26,6 +27,8 @@
       { "item": "sgn_sgk_ngu_van", "prob": 30 },
       { "item": "sgn_truyen_meo_may", "prob": 20 },
       { "item": "pencil", "prob": 30 },
+      { "group": "sgn_weapons_ranged_primitive", "prob": 6 },
+      { "group": "sgn_weapons_ammo_primitive", "prob": 10 },
       { "item": "sgn_dong_10k", "prob": 20, "count": [ 1, 2 ] }
     ]
   },
@@ -78,8 +81,10 @@
       { "group": "default_zombie_death_drops" },
       { "item": "hat_hard", "prob": 85, "damage": [ 1, 3 ] },
       { "item": "gloves_work", "prob": 40, "damage": [ 1, 3 ] },
-      { "item": "hammer", "prob": 15 },
-      { "item": "rebar", "prob": 10 },
+      { "item": "hammer", "prob": 25 },
+      { "item": "rebar", "prob": 15 },
+      { "item": "shovel", "prob": 5 },
+      { "item": "sgn_xa_beng", "prob": 4 },
       { "item": "sgn_thuoc_la", "prob": 40, "count": [ 1, 8 ] },
       { "item": "sgn_book_construction", "prob": 2 }
     ]

@@ -3,7 +3,7 @@
     "type": "item_group",
     "subtype": "collection",
     "id": "default_zombie_death_drops",
-    "//": "B10: overrides dda's.  Same shape (clothes always, pocket or bag items ~80 %, a wallet 30 %), but the wallet is a Saigon one with đồng and maybe a chỉ of gold instead of US dollar bills and coins, and the 1 % US postman / plumber kits are gone.",
+    "//": "B10: overrides dda's.  Same shape (clothes always, pocket or bag items ~80 %, a wallet 30 %), but the wallet is a Saigon one with đồng and maybe a chỉ of gold instead of US dollar bills and coins, and the 1 % US postman / plumber kits are gone.  W2: one in thirty still holds what they grabbed to fight with; W4: often their papers (CMND, cà vẹt), a bus ticket or a top-up card.",
     "entries": [
       {
         "group": "sgn_wallet",
@@ -28,7 +28,9 @@
           }
         ],
         "prob": 99
-      }
+      },
+      { "group": "sgn_weapons_melee_common", "prob": 3 },
+      { "group": "sgn_vn_daily_pocket", "prob": 40 }
     ]
   },
   {

@@ -218,7 +218,8 @@ def chungcu_palette():
             'C': { 'item': 'sgn_street_cart', 'chance': 30 },
             'k': { 'item': 'sgn_shophouse_kitchen', 'chance': 50 },
             'd': { 'item': 'sgn_shophouse_living', 'chance': 50 },
-            'b': { 'item': 'sgn_shophouse_living', 'chance': 20 },
+            # W2: and under the bed, what the flat kept to defend its door on the open corridor
+            'b': [ { 'item': 'sgn_shophouse_living', 'chance': 20 }, { 'item': 'sgn_loot_home_weapon', 'chance': 15 } ],
             'A': { 'item': 'sgn_pagoda', 'chance': 20 } } }
 
 

@@ -101,7 +101,8 @@ def palette():
             'C': 'f_stool', 'S': 'f_sgn_ban_tho', 'l': 'f_sgn_day_phoi' },
         'items': {
             'k': { 'item': 'sgn_shophouse_kitchen', 'chance': 50 },
-            'b': { 'item': 'sgn_shophouse_living', 'chance': 35 },
+            # W2: and under the bed, what a hẻm family kept to defend the door
+            'b': [ { 'item': 'sgn_shophouse_living', 'chance': 35 }, { 'item': 'sgn_loot_home_weapon', 'chance': 20 } ],
             'A': { 'item': 'sgn_pagoda', 'chance': 25 },
             'T': { 'item': 'sgn_cafe', 'chance': 40 },
             'S': { 'item': 'sgn_pagoda', 'chance': 70, 'repeat': [ 1, 3 ] } } }

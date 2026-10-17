@@ -1579,7 +1579,7 @@
   {
     "type": "mapgen",
     "nested_mapgen_id": "sgn_mx_mo_ruong_plot",
-    "//": "Tiled family tombs, the fresh mound of a fever victim buried in a hurry.",
+    "//": "Tiled family tombs, the fresh mound of a fever victim buried in a hurry; W2: the hoe or shovel that dug it is often left beside it.",
     "object": {
       "mapgensize": [ 7, 7 ],
       "rows": [
@@ -1593,7 +1593,7 @@
       ],
       "furniture": { "M": "f_sgn_mo" },
       "terrain": { "t": "t_dirtmound" },
-      "items": { "o": { "item": "sgn_mx_offerings", "chance": 40 } },
+      "items": { "o": { "item": "sgn_mx_offerings", "chance": 40 }, "t": { "item": "sgn_loot_country_tools", "chance": 50 } },
       "place_monster": [ { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": 4, "y": 3, "chance": 40 } ],
       "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
     }
