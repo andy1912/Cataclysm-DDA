@@ -10,7 +10,8 @@ Writes OUT_PREFIX.grid.json:
   roads     {"x,y": [connections "nesw" string, class, bridge?]} built from the ways themselves, so two
             parallel streets in neighbouring tiles do not merge into one
   rail      the North-South railway tiles
-  places    fuel, markets, pagodas, churches, temples, schools, hospitals, police, supermarkets
+  places    fuel, markets, pagodas, churches, temples, schools, hospitals, police, supermarkets;
+            W3: district police headquarters (police_hq) and army sites (military, from land use)
 and OUT_PREFIX.preview.png (1 px per tile) plus OUT_PREFIX.core.png (D1-D5 at 3 px per tile).
 
 Data © OpenStreetMap contributors, ODbL 1.0 (see tools/saigon/realmap/osm/README.md).
@@ -358,8 +359,45 @@ PLACE_KIND = [
 ]
 
 
+# W3: the district police headquarters among the police (a ward post is everything else), and the
+# army's compounds from the land use: one guard post per military site that is a barracks, a
+# command or a unit, not a hospital, a school, a company, a shipyard or an office
+POLICE_HQ = re.compile( r'^(công an|trụ sở công an) (quận|huyện|thành phố)|cảnh sát cơ động', re.I )
+NOT_A_POST = re.compile( r'bệnh viện|trường|đại học|công ty|xưởng|văn phòng|ban cơ yếu|bãi tập', re.I )
+MILITARY_SPACING = 8            # tiles: one post for a compound mapped as several pieces
+
+
+def centre( e ):
+    if e['type'] == 'node':
+        return e['lat'], e['lon']
+    if 'bounds' in e:
+        b = e['bounds']
+        return ( b['minlat'] + b['maxlat'] ) / 2, ( b['minlon'] + b['maxlon'] ) / 2
+    if e.get( 'geometry' ):
+        return ( sum( p['lat'] for p in e['geometry'] ) / len( e['geometry'] ),
+                 sum( p['lon'] for p in e['geometry'] ) / len( e['geometry'] ) )
+    return None
+
+
+def military( corr ):
+    out = []
+    for e in load( 'land' ):
+        t = e.get( 'tags', {} )
+        if t.get( 'landuse' ) != 'military' or e['id'] in corr['drop_ids'] or NOT_A_POST.search( nfc( t.get( 'name', '' ) ) ):
+            continue
+        c = centre( e )
+        if not c:
+            continue
+        x, y = ( int( v ) for v in C.latlon_to_tile( *c ) )
+        if inside( ( x, y ) ) and not any( abs( x - q['tile'][0] ) < MILITARY_SPACING and
+                                           abs( y - q['tile'][1] ) < MILITARY_SPACING for q in out ):
+            out.append( { 'kind': 'military', 'tile': [ x, y ], 'name': nfc( t.get( 'name', '' ) ) } )
+    return out
+
+
 def places( corr ):
     out = []
+    hq_names = set()
     for e in load( 'places' ):
         t = e.get( 'tags', {} )
         if e['id'] in corr['drop_ids']:
@@ -367,6 +405,11 @@ def places( corr ):
         kind = next( ( k for f, k in PLACE_KIND if f( t ) ), None )
         if not kind:
             continue
+        if kind == 'police' and POLICE_HQ.search( nfc( t.get( 'name', '' ) ) ):
+            if nfc( t['name'] ).lower() in hq_names:
+                continue            # one headquarters per name (Thủ Đức is mapped twice)
+            hq_names.add( nfc( t['name'] ).lower() )
+            kind = 'police_hq'
         if e['type'] == 'node':
             lat, lon = e['lat'], e['lon']
         elif 'bounds' in e:
@@ -380,7 +423,7 @@ def places( corr ):
         x, y = C.latlon_to_tile( lat, lon )
         if inside( ( int( x ), int( y ) ) ):
             out.append( { 'kind': kind, 'tile': [ int( x ), int( y ) ], 'name': nfc( t.get( 'name', '' ) ) } )
-    return out
+    return out + military( corr )
 
 
 def main():

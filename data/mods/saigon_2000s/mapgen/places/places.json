@@ -1047,6 +1047,30 @@
             1,
             3
           ]
+        },
+        {
+          "monster": "sgn_mon_zombie_cong_an",
+          "x": [
+            3,
+            20
+          ],
+          "y": [
+            9,
+            13
+          ],
+          "chance": 50
+        },
+        {
+          "monster": "pseudo_dormant_sgn_mon_zombie_cong_an_quan",
+          "x": [
+            14,
+            19
+          ],
+          "y": [
+            16,
+            19
+          ],
+          "chance": 30
         }
       ],
       "terrain": {

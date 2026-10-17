@@ -133,3 +133,33 @@ Gameplay goals:
 Top: Co.op Mart, district hospital, cemetery. Bottom: petrol station, ward police station, motorbike
 dealer. Every place passes the structure test (doors reachable, indoors roofed, stairs paired), and every
 new item has its own sprite.
+
+## 12. Firearms (2026-10 policy)
+
+The user changed the firearm rule in 2026-10 (unit W3): the map had too few guns. **Civilians and random
+NPCs still carry none**, and only the guard class may hold one (the công an service pistol). Firearms
+now also exist as **loot at police and army sites**, so a player can reach them by going there, past
+their dead.
+
+| Firearm (described, never named) | Cartridge (dda ammo) | Where |
+|---|---|---|
+| công an service pistol (N4) | 9x18mm | district police armory, army racks (rare), the guard class |
+| folding-stock assault rifle, 30-round magazine | 7.62x39mm | army guard posts; district armory (rare) |
+| semi-automatic carbine with folding bayonet, stripper clips | 7.62x39mm | army guard posts |
+| pump-action riot shotgun | 12 gauge | district police armory |
+| side-by-side shotgun | 12 gauge | border and militia racks (rare) |
+| militia submachine gun, 35-round magazine | 7.62x25mm | district police armory |
+
+- **Sites.** The district police headquarters (trụ sở công an quận: holding cells, the riot unit's
+  lockers, a locked armory of gun safes) is one per city; ward police posts (đồn công an phường) are
+  more common than before but still hold no guns. Army guard posts (đồn quân sự: a walled compound,
+  a sandbagged gate post, barracks, a locked armory, a truck) stand on the city outskirts and in the
+  countryside, and on the real map on OpenStreetMap's military sites.
+- **Guards.** District police, riot police and soldier zombies in period uniforms (khaki-yellow
+  công an, dark blue riot unit, olive army with the nón cối); some lie dormant in the cells and bunks.
+  Their drops hold a gun only rarely.
+- **Ammunition names.** dda names some cartridges after pistols (Makarov, Tokarev); the mod names
+  them by the cartridge alone.
+- **Audit.** `tools/saigon/audit_us_content.py` lists the police and army loot groups that may reach a
+  firearm (`POLICE_ARMY_GUN_GROUPS`); any other loot that reaches one fails. Slingshots and crossbows
+  (flag `PRIMITIVE_RANGED_WEAPON`) are not firearms for this rule.

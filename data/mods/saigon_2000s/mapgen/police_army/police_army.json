@@ -1,0 +1,385 @@
+[
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_pa_cong_an_quan_00", "sgn_pa_cong_an_quan_10" ] ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS",
+        ",IIIIIIIIIIIIIIIIIIIIIGGGGIIIIIIIIIIIIIIIIIIIII,",
+        ",,gg,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,gg,,",
+        ",,gg,,,,,,F,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,gg,,",
+        ",,gg,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,gg,,",
+        ",,gg,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,gg,,",
+        ",,##w##w##w##w##w##w##w++w##w##w##w##w##w##w##,,",
+        ",,#x..........#..................#...........#,,",
+        ",,#x..........#..................#.R.R.R.R.R.#,,",
+        ",,#.d...d..d..#...jjjjjjjjjjjj...#...........#,,",
+        ",,#.c...c..c..#..................#...........#,,",
+        ",,#...........+..................+...........#,,",
+        ",,#...........#..bbbbb...........#...........#,,",
+        ",,#...........#..................#...........#,,",
+        ",,########+####..................#CCCCCLCCCCC#,,",
+        ",,#...........#..................#...........#,,",
+        ",,#HHhHHHHHhHH#..................#..A.A.A.A.M#,,",
+        ",,#.....H.....#..................#..........M#,,",
+        ",,#.....H.....#.........<........#..........M#,,",
+        ",,#.....H.....#..................#..A.A.A.A.M#,,",
+        ",,#.....H.....#..................#...........#,,",
+        ",,############################################,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"
+      ],
+      "palettes": [ "sgn_lm" ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "monster": "sgn_mon_zombie_cong_an_quan", "x": [ 2, 23 ], "y": [ 3, 21 ], "chance": 70, "repeat": [ 1, 2 ] },
+        {
+          "monster": "sgn_mon_zombie_cong_an_quan",
+          "x": [ 26, 45 ],
+          "y": [ 3, 14 ],
+          "chance": 60,
+          "repeat": [ 1, 2 ]
+        },
+        { "monster": "sgn_mon_zombie_co_dong", "x": [ 34, 44 ], "y": [ 10, 13 ], "chance": 50 },
+        {
+          "monster": "pseudo_dormant_sgn_mon_zombie_cong_an_quan",
+          "x": [ 4, 13 ],
+          "y": [ 18, 21 ],
+          "chance": 70,
+          "repeat": [ 1, 2 ]
+        },
+        { "monster": "pseudo_dormant_sgn_mon_zombie_co_dong", "x": [ 34, 43 ], "y": [ 16, 21 ], "chance": 40 }
+      ],
+      "terrain": {
+        "A": "t_thconc_floor",
+        "L": "t_door_metal_locked",
+        "R": "t_sgn_gach_men",
+        "M": "t_thconc_floor",
+        "N": "t_thconc_floor",
+        "H": "t_bars",
+        "h": "t_door_bar_c",
+        "G": "t_chaingate_c",
+        "F": "t_concrete",
+        "J": "t_dirt",
+        "K": "t_dirt"
+      },
+      "furniture": {
+        "A": "f_gunsafe_ml",
+        "L": "f_null",
+        "R": "f_locker",
+        "M": "f_rack",
+        "N": "f_bunkbed",
+        "h": "f_null",
+        "G": "f_null",
+        "F": "f_flagpole",
+        "J": "f_sandbag_half",
+        "K": "f_table"
+      },
+      "items": {
+        "A": { "item": "sgn_pa_armory_police", "chance": 80 },
+        "M": { "item": "sgn_pa_ammo_police", "chance": 70, "repeat": [ 1, 2 ] },
+        "R": { "item": "sgn_pa_riot_gear", "chance": 70 }
+      },
+      "place_vehicles": [
+        { "vehicle": "sgn_vg_pa_police", "x": 34, "y": 4, "rotation": 0, "chance": 70 },
+        { "vehicle": "sgn_vg_sidewalk_parked", "x": 6, "y": 5, "rotation": 0, "chance": 60 }
+      ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_pa_cong_an_quan_00_z1", "sgn_pa_cong_an_quan_10_z1" ] ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "  ##w##w##w##w##w##w##w##w##w##w##w##w##w##w##  ",
+        "  #...........#..................#...........#  ",
+        "  #...........#..................#...........#  ",
+        "  #.N..N..N...#..................#...........#  ",
+        "  #...........#..................#.d...d...d.#  ",
+        "  #...........#..................#.c...c...c.#  ",
+        "  #...........#..................#...........#  ",
+        "  #...........+..................+...........#  ",
+        "  #...........#..................#...........#  ",
+        "  #...........#..................#...........#  ",
+        "  #...........#..................#...........#  ",
+        "  #...........#..................#.xxxxxxxxx.#  ",
+        "  #.N..N..N...#.........>........#...........#  ",
+        "  #...........#..................#...........#  ",
+        "  #...........#..................#...........#  ",
+        "  ############################################  ",
+        "                                                "
+      ],
+      "palettes": [ "sgn_lm" ],
+      "place_monster": [
+        {
+          "monster": "pseudo_dormant_sgn_mon_zombie_cong_an_quan",
+          "x": [ 3, 13 ],
+          "y": [ 8, 21 ],
+          "chance": 60,
+          "repeat": [ 1, 2 ]
+        },
+        { "monster": "sgn_mon_zombie_cong_an_quan", "x": [ 34, 44 ], "y": [ 8, 21 ], "chance": 40 }
+      ],
+      "terrain": {
+        "A": "t_thconc_floor",
+        "L": "t_door_metal_locked",
+        "R": "t_sgn_gach_men",
+        "M": "t_thconc_floor",
+        "N": "t_thconc_floor",
+        "H": "t_bars",
+        "h": "t_door_bar_c",
+        "G": "t_chaingate_c",
+        "F": "t_concrete",
+        "J": "t_dirt",
+        "K": "t_dirt"
+      },
+      "furniture": {
+        "A": "f_gunsafe_ml",
+        "L": "f_null",
+        "R": "f_locker",
+        "M": "f_rack",
+        "N": "f_bunkbed",
+        "h": "f_null",
+        "G": "f_null",
+        "F": "f_flagpole",
+        "J": "f_sandbag_half",
+        "K": "f_table"
+      },
+      "items": {
+        "A": { "item": "sgn_pa_armory_police", "chance": 80 },
+        "M": { "item": "sgn_pa_ammo_police", "chance": 70, "repeat": [ 1, 2 ] },
+        "R": { "item": "sgn_pa_riot_gear", "chance": 70 }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_pa_cong_an_quan_00_z2", "sgn_pa_cong_an_quan_10_z2" ] ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "  ____________________________________________  ",
+        "  ____________________________________________  ",
+        "  ____________________________________________  ",
+        "  ____________________________________________  ",
+        "  ____________________________________________  ",
+        "  ____________________________________________  ",
+        "  ____________________________________________  ",
+        "  ____________________________________________  ",
+        "  ____________________________________________  ",
+        "  ____________________________________________  ",
+        "  ____________________________________________  ",
+        "  ____________________________________________  ",
+        "  ____________________________________________  ",
+        "  ____________________________________________  ",
+        "  ____________________________________________  ",
+        "  ____________________________________________  ",
+        "                                                "
+      ],
+      "palettes": [ "sgn_lm" ],
+      "terrain": {
+        "A": "t_thconc_floor",
+        "L": "t_door_metal_locked",
+        "R": "t_sgn_gach_men",
+        "M": "t_thconc_floor",
+        "N": "t_thconc_floor",
+        "H": "t_bars",
+        "h": "t_door_bar_c",
+        "G": "t_chaingate_c",
+        "F": "t_concrete",
+        "J": "t_dirt",
+        "K": "t_dirt"
+      },
+      "furniture": {
+        "A": "f_gunsafe_ml",
+        "L": "f_null",
+        "R": "f_locker",
+        "M": "f_rack",
+        "N": "f_bunkbed",
+        "h": "f_null",
+        "G": "f_null",
+        "F": "f_flagpole",
+        "J": "f_sandbag_half",
+        "K": "f_table"
+      },
+      "items": {
+        "A": { "item": "sgn_pa_armory_police", "chance": 80 },
+        "M": { "item": "sgn_pa_ammo_police", "chance": 70, "repeat": [ 1, 2 ] },
+        "R": { "item": "sgn_pa_riot_gear", "chance": 70 }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_pa_don_quan_su_00", "sgn_pa_don_quan_su_10" ] ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        ",,,,,,,,,,,,,,,,JJJJ,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,J,K,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,J,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+        "CCCCCCCCCCCCCCCCCCCCCGGGGGGCCCCCCCCCCCCCCCCCCCCC",
+        "Cgggggggggggggggggggg,,,,,,ggggggggggggggggggggC",
+        "Cgggggggggggggggggggg,,,,,,ggggggggggggggggggggC",
+        "CggTggggggggggggggggg,,,,,,gggggggggggggggggTggC",
+        "Cgggggggggggggggggggg,,,,,,ggggggggggggggggggggC",
+        "Cgggggggggggggggggggg,,,F,,ggggggggggggggggggggC",
+        "Cgggggggggggggggggggg,,,,,,ggggggggggggggggggggC",
+        "CggTggggggggggggggggg,,,,,,gggggggggggggggggTggC",
+        "Cgggggggggggggggggggg,,,,,,ggggggggggggggggggggC",
+        "Cg##w##w##w+#w##w####ggggggg##w##w##+##w##w###gC",
+        "Cg#:::::::::::::::::#ggggggg#::::::::::::::::#gC",
+        "Cg#:N::N::N::N::N:::#ggggggg#::d:::d::::d::::#gC",
+        "Cg#:::::::::::::::::#ggggggg#::c:::c::::c::::#gC",
+        "Cg#:::::::::::::::::#ggggggg#::::::::::::::::#gC",
+        "Cg#:::::::::::::::::#ggggggg#CCCCCCCLCCCCCCCC#gC",
+        "Cg#:::::::::::::::::#ggggggg#::::::::::::::::#gC",
+        "Cg#:::::::::::::::::#ggggggg#::A:A:A:A:A:A:::#gC",
+        "Cg#:N::N::N::N::N:::#ggggggg#::::::::::::::::#gC",
+        "Cg#:::::::::::::::::#ggggggg#:MMMMMM:::::::::#gC",
+        "Cg###################ggggggg##################gC",
+        "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"
+      ],
+      "palettes": [ "sgn_lm" ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "monster": "sgn_mon_zombie_bo_doi", "x": [ 2, 20 ], "y": [ 4, 11 ], "chance": 60, "repeat": [ 1, 2 ] },
+        { "monster": "sgn_mon_zombie_bo_doi", "x": [ 27, 46 ], "y": [ 4, 11 ], "chance": 60, "repeat": [ 1, 2 ] },
+        {
+          "monster": "pseudo_dormant_sgn_mon_zombie_bo_doi",
+          "x": [ 3, 19 ],
+          "y": [ 15, 19 ],
+          "chance": 80,
+          "repeat": [ 1, 3 ]
+        },
+        { "monster": "sgn_mon_zombie_bo_doi", "x": [ 29, 44 ], "y": [ 13, 16 ], "chance": 40 },
+        { "monster": "pseudo_dormant_sgn_mon_zombie_bo_doi", "x": [ 29, 44 ], "y": [ 18, 21 ], "chance": 40 }
+      ],
+      "terrain": {
+        "A": "t_thconc_floor",
+        "L": "t_door_metal_locked",
+        "R": "t_sgn_gach_men",
+        "M": "t_thconc_floor",
+        "N": "t_thconc_floor",
+        "H": "t_bars",
+        "h": "t_door_bar_c",
+        "G": "t_chaingate_c",
+        "F": "t_concrete",
+        "J": "t_dirt",
+        "K": "t_dirt"
+      },
+      "furniture": {
+        "A": "f_gunsafe_ml",
+        "L": "f_null",
+        "R": "f_locker",
+        "M": "f_rack",
+        "N": "f_bunkbed",
+        "h": "f_null",
+        "G": "f_null",
+        "F": "f_flagpole",
+        "J": "f_sandbag_half",
+        "K": "f_table"
+      },
+      "items": {
+        "A": { "item": "sgn_pa_armory_army", "chance": 80 },
+        "M": { "item": "sgn_pa_ammo_army", "chance": 70, "repeat": [ 1, 2 ] },
+        "N": { "item": "sgn_pa_army_barracks", "chance": 40 },
+        "K": { "item": "sgn_pa_guard_post", "chance": 70 }
+      },
+      "place_vehicles": [ { "vehicle": "sgn_vg_pa_army_truck", "x": 14, "y": 7, "rotation": 0, "chance": 80 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_pa_don_quan_su_00_z1", "sgn_pa_don_quan_su_10_z1" ] ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "                                                ",
+        "  ___________________       __________________  ",
+        "  ___________________       __________________  ",
+        "  ___________________       __________________  ",
+        "  ___________________       __________________  ",
+        "  ___________________       __________________  ",
+        "  ___________________       __________________  ",
+        "  ___________________       __________________  ",
+        "  ___________________       __________________  ",
+        "  ___________________       __________________  ",
+        "  ___________________       __________________  ",
+        "  ___________________       __________________  ",
+        "                                                "
+      ],
+      "palettes": [ "sgn_lm" ],
+      "terrain": {
+        "A": "t_thconc_floor",
+        "L": "t_door_metal_locked",
+        "R": "t_sgn_gach_men",
+        "M": "t_thconc_floor",
+        "N": "t_thconc_floor",
+        "H": "t_bars",
+        "h": "t_door_bar_c",
+        "G": "t_chaingate_c",
+        "F": "t_concrete",
+        "J": "t_dirt",
+        "K": "t_dirt"
+      },
+      "furniture": {
+        "A": "f_gunsafe_ml",
+        "L": "f_null",
+        "R": "f_locker",
+        "M": "f_rack",
+        "N": "f_bunkbed",
+        "h": "f_null",
+        "G": "f_null",
+        "F": "f_flagpole",
+        "J": "f_sandbag_half",
+        "K": "f_table"
+      },
+      "items": {
+        "A": { "item": "sgn_pa_armory_army", "chance": 80 },
+        "M": { "item": "sgn_pa_ammo_army", "chance": 70, "repeat": [ 1, 2 ] },
+        "N": { "item": "sgn_pa_army_barracks", "chance": 40 },
+        "K": { "item": "sgn_pa_guard_post", "chance": 70 }
+      }
+    }
+  },
+  {
+    "type": "vehicle_group",
+    "id": "sgn_vg_pa_army_truck",
+    "//": "W3: the army post's truck.  The mod's light truck: a copy of a dda truck would bring dda's glovebox loot (tools, a nail gun) into the audit.",
+    "vehicles": [ [ "sgn_veh_xe_tai_nhe", 100 ] ]
+  },
+  {
+    "type": "vehicle_group",
+    "id": "sgn_vg_pa_police",
+    "//": "W3: the district police yard: the duty pickup or the officers' motorbikes.",
+    "vehicles": [ [ "sgn_veh_xe_tai_nhe", 40 ], [ "sgn_veh_underbone", 60 ] ]
+  }
+]

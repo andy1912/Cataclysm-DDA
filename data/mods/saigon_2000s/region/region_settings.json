@@ -58,7 +58,8 @@
       [ "sgn_pl_cay_xang", 10 ],
       [ "sgn_pl_coopmart", 4 ],
       [ "sgn_pl_benh_vien", 3 ],
-      [ "sgn_pl_cong_an", 5 ],
+      [ "sgn_pl_cong_an", 12 ],
+      [ "sgn_pa_cong_an_quan", 3 ],
       [ "sgn_pl_nha_sach", 5 ],
       [ "sgn_pl_xe_may", 5 ]
     ],

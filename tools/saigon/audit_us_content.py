@@ -230,11 +230,53 @@ def fauna():
 GUN_CLASSES = { 'sgn_class_guard' }
 
 
+# W3 (2026-10 policy change, from the user): the map had too few firearms.  Civilians and random
+# NPCs still carry none (GUN_CLASSES above is unchanged: only the guard), but firearms now exist as
+# LOOT at police and army sites (mapgen/police_army/, itemgroups/police_army.json), so a player can
+# reach them by going there.  These loot roots, and only these, may reach a firearm or a gun
+# magazine; every other root the mod uses as loot still fails firearms_escape().  The nested gun
+# lists are here too (any group the mod names counts as a root), but a group outside this set that
+# names one of them reaches its guns and is flagged, so listing them opens nothing else.
+POLICE_ARMY_GUN_GROUPS = {
+    'sgn_pa_guns_police',          # nested: the district armory's gun list
+    'sgn_pa_guns_army',            # nested: the army rack's gun list
+    'sgn_pa_mags_police',          # nested: police magazines and rounds
+    'sgn_pa_mags_army',            # nested: army magazines and rounds
+    'sgn_pa_armory_police',        # the district police headquarters' locked armory cupboards
+    'sgn_pa_ammo_police',          # its ammunition shelf (magazines count as firearms here)
+    'sgn_pa_armory_army',          # an army guard post's rifle rack
+    'sgn_pa_ammo_army',            # its ammunition shelf
+    'sgn_drops_pa_cong_an_quan',   # district police zombie: rarely a service pistol
+    'sgn_drops_pa_co_dong',        # riot police zombie: rarely the pump shotgun
+    'sgn_drops_pa_bo_doi',         # soldier zombie: rarely his rifle and a magazine
+}
+
+
+def primitive_ranged( i, items ):
+    """W1/W3: slingshots and crossbows are GUN items in dda's data but are not firearms for the
+    policy.  An item is exempt when it, or anything up its copy-from chain, carries the flag
+    PRIMITIVE_RANGED_WEAPON (in "flags" or "extend": {"flags"})."""
+    seen = set()
+    while i in items and i not in seen:
+        seen.add( i )
+        o = items[i]
+        flags = list( o.get( 'flags' ) or [] ) + list( ( o.get( 'extend' ) or {} ).get( 'flags' ) or [] )
+        if 'PRIMITIVE_RANGED_WEAPON' in flags:
+            return True
+        if 'PRIMITIVE_RANGED_WEAPON' in ( ( o.get( 'delete' ) or {} ).get( 'flags' ) or [] ):
+            return False
+        i = o.get( 'copy-from' )
+    return False
+
+
 def firearm_ids( items ):
     """Every firearm and gun magazine loaded, dda's included, so a gun added later (or a dda one
-    reaching mod loot) is covered without anyone remembering to list it."""
+    reaching mod loot) is covered without anyone remembering to list it.  Primitive ranged
+    weapons (slingshots, crossbows: primitive_ranged()) are not firearms."""
     out = set()
     for i, o in items.items():
+        if primitive_ranged( i, items ):
+            continue
         kinds = { o.get( 'type' ) } | set( o.get( 'subtypes' ) or [] )
         ammo = o.get( 'ammo_type' ) or []
         ammo = [ ammo ] if isinstance( ammo, str ) else ammo
@@ -273,7 +315,8 @@ def npcs():
         for i in sorted( out ):
             it = items.get( i ) or {}
             text = tr( it.get( 'name' ) ) + ' | ' + tr( it.get( 'description' ) )
-            gun = it.get( 'type' ) == 'GUN' or 'GUN' in ( it.get( 'subtypes' ) or [] )
+            gun = ( it.get( 'type' ) == 'GUN' or 'GUN' in ( it.get( 'subtypes' ) or [] ) ) and \
+                not primitive_ranged( i, items )
             if gun and not guns_ok:
                 hits.append( ( who, 'firearm', i ) )
             elif not i.startswith( 'sgn_' ) and ( US.search( text ) or i in OUT_OF_PLACE ):
@@ -358,7 +401,7 @@ def main():
     leaked = firearms_escape( roots, groups, items )
     if leaked:
         for root, item in leaked:
-            print( '  %-32s [gun leak] reaches %s, which only a %s may carry' % (
+            print( '  %-32s [gun leak] reaches %s, which only a %s or the police/army loot may carry' % (
                 root, item, ' or '.join( sorted( GUN_CLASSES ) ) ) )
     animals = fauna()
     people = npcs()
@@ -366,7 +409,8 @@ def main():
 
 
 def firearms_escape( roots, groups, items ):
-    """N4: the mod's own firearms must be reachable only through a GUN_CLASSES weapon group.
+    """N4: the mod's own firearms must be reachable only through a GUN_CLASSES weapon group,
+    and (W3, 2026-10 policy) through the police and army loot roots in POLICE_ARMY_GUN_GROUPS.
 
     Every group the mod places as loot is a root here, so anything a shophouse, a corpse, a
     landmark or a mapgen tile can spawn is in `roots`.  A guard's weapon_override is one of
@@ -387,7 +431,7 @@ def firearms_escape( roots, groups, items ):
     guns = firearm_ids( items )
     bad = []
     for r in roots:
-        if r in allowed_groups:
+        if r in allowed_groups or r in POLICE_ARMY_GUN_GROUPS:
             continue
         out = set()
         walk( r, groups, items, set(), out )

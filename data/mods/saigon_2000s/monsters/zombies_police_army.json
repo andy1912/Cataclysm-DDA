@@ -1,0 +1,85 @@
+[
+  {
+    "//": "W3: the dead who guard the district police headquarters and the army posts (mapgen/police_army/).  Their uniforms are Saigon's (content bible §10); their death drops are in itemgroups/police_army.json and are the only zombie drops that may hold a firearm, rarely.  None of them upgrades: dda's soldier and police upgrade lines end in American specialists.  All are GEN_DORMANT, so pseudo_dormant_<id> exists for the ones lying still in the barracks and the cells.",
+    "id": "sgn_mon_zombie_cong_an_quan",
+    "type": "MONSTER",
+    "copy-from": "mon_zombie_cop",
+    "looks_like": "mon_zombie_cop",
+    "name": { "str": "district police zombie" },
+    "description": "A dead officer of the district công an in a khaki-yellow uniform with red collar tabs, the peaked cap gone and a pistol belt still buckled at the waist.  It moves with a heavy, deliberate tread, as if it were still walking the corridors of the headquarters.",
+    "color": "yellow",
+    "armor": { "bash": 3, "cut": 3, "stab": 3, "bullet": 2, "electric": 2 },
+    "death_drops": "sgn_drops_pa_cong_an_quan",
+    "upgrades": false,
+    "extend": { "flags": [ "GEN_DORMANT" ] }
+  },
+  {
+    "id": "sgn_mon_zombie_co_dong",
+    "type": "MONSTER",
+    "copy-from": "mon_zombie_cop",
+    "looks_like": "mon_zombie_cop",
+    "name": { "str": "riot police zombie" },
+    "description": "A dead officer of the riot unit in a dark blue uniform under a soft armour vest, a scratched riot helmet strapped under its chin.  The visor is down and fogged from the inside.  Blows skid off the helmet and the vest; aim for the legs or the throat.",
+    "color": "blue",
+    "hp": 100,
+    "armor": { "bash": 8, "cut": 10, "stab": 8, "bullet": 10, "electric": 2 },
+    "death_drops": "sgn_drops_pa_co_dong",
+    "upgrades": false,
+    "extend": { "flags": [ "GEN_DORMANT" ] }
+  },
+  {
+    "id": "sgn_mon_zombie_bo_doi",
+    "type": "MONSTER",
+    "copy-from": "mon_zombie",
+    "looks_like": "mon_zombie_soldier",
+    "name": { "str": "soldier zombie" },
+    "description": "A dead conscript of the guard post in an olive-green uniform and canvas boots, the nón cối pith helmet hanging down its back on its strap.  It wears no armour; the army of 2004 issued none to a sentry.  It is young, fit and fast, and it still holds itself like someone on parade.",
+    "color": "green",
+    "hp": 90,
+    "speed": 90,
+    "melee_skill": 5,
+    "melee_dice_sides": 5,
+    "vision_day": 30,
+    "armor": { "bash": 2, "cut": 2, "stab": 2, "bullet": 1, "electric": 2 },
+    "death_drops": "sgn_drops_pa_bo_doi",
+    "upgrades": false,
+    "extend": { "flags": [ "GEN_DORMANT" ] }
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_PA_POLICE",
+    "//": "W3: the awake dead of a district police headquarters.",
+    "default": "sgn_mon_zombie_cong_an_quan",
+    "monsters": [
+      { "monster": "sgn_mon_zombie_cong_an_quan", "weight": 60 },
+      { "monster": "sgn_mon_zombie_cong_an", "weight": 20 },
+      { "monster": "sgn_mon_zombie_co_dong", "weight": 15 },
+      { "monster": "mon_zombie", "weight": 25 }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_PA_POLICE_DORMANT",
+    "//": "W3: the ones lying still in the cells and the offices until something wakes them.",
+    "default": "pseudo_dormant_sgn_mon_zombie_cong_an_quan",
+    "monsters": [
+      { "monster": "pseudo_dormant_sgn_mon_zombie_cong_an_quan", "weight": 70 },
+      { "monster": "pseudo_dormant_sgn_mon_zombie_co_dong", "weight": 20 },
+      { "monster": "mon_pseudo_dormant_zombie", "weight": 30 }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_PA_ARMY",
+    "//": "W3: the awake dead of an army guard post.",
+    "default": "sgn_mon_zombie_bo_doi",
+    "monsters": [ { "monster": "sgn_mon_zombie_bo_doi", "weight": 90 }, { "monster": "mon_zombie", "weight": 10 } ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_PA_ARMY_DORMANT",
+    "//": "W3: the soldiers still on their bunks.",
+    "default": "pseudo_dormant_sgn_mon_zombie_bo_doi",
+    "monsters": [ { "monster": "pseudo_dormant_sgn_mon_zombie_bo_doi", "weight": 100 } ]
+  }
+]

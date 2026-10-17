@@ -139,6 +139,9 @@ def cong_an():
     z0.at( 16, 15, ';' )                               # cell door
     z0.npc( 11, 9, lm.npc_id( 'sgn_class_guard' ) )             # behind the front desk
     z0.npc( 12, 13, lm.npc_id( 'sgn_class_guard' ) )            # the corridor by the offices
+    # W3: the ward's own dead: a policeman on his feet in the office, one still in the cell
+    z0.monster( 3, 9, 20, 13, 'sgn_mon_zombie_cong_an', 50 )
+    z0.monster( 14, 16, 19, 19, 'pseudo_dormant_sgn_mon_zombie_cong_an_quan', 30 )
     z1 = roof_over( z0, INDOOR )
     return { 0: z0, 1: z1 }
 
@@ -384,7 +387,8 @@ PLACES = {
                             'furniture': { '(': 'f_bed', '$': 'f_rack' },
                             'items': { '(': { 'item': 'sgn_hospital', 'chance': 25 },
                                        '$': { 'item': 'sgn_hospital', 'chance': 70, 'repeat': [ 1, 3 ] } } } ),
-    'sgn_pl_cong_an': ( cong_an, 1, 1, 'đồn công an phường', 'yellow', 5, 'shops', [],
+    # W3: weight 5 -> 12 (region_settings.json), so a megacity overmap has about thirty ward posts
+    'sgn_pl_cong_an': ( cong_an, 1, 1, 'đồn công an phường', 'yellow', 12, 'shops', [],
                         { 'terrain': { '$': 't_sgn_gach_men', ')': 't_bars', ';': 't_door_bar_c' },
                           'furniture': { '$': 'f_locker' },
                           'items': { '$': { 'item': 'sgn_police_station', 'chance': 60, 'repeat': [ 1, 2 ] } } } ),

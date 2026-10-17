@@ -1,0 +1,136 @@
+[
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pa_cong_an_quan_00",
+    "copy-from": "generic_city_building",
+    "name": "trụ sở công an quận",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_pl_cong_an_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pa_cong_an_quan_10",
+    "copy-from": "generic_city_building",
+    "name": "trụ sở công an quận",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_pa_cong_an_quan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pa_cong_an_quan_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "trụ sở công an quận (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_pa_cong_an_quan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pa_cong_an_quan_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "trụ sở công an quận (upper floor)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_pa_cong_an_quan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pa_cong_an_quan_00_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "trụ sở công an quận (roof)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_pa_cong_an_quan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pa_cong_an_quan_10_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "trụ sở công an quận (roof)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_pa_cong_an_quan_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pa_don_quan_su_00",
+    "copy-from": "generic_city_building",
+    "name": "đồn quân sự",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_pl_kho_cang_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pa_don_quan_su_10",
+    "copy-from": "generic_city_building",
+    "name": "đồn quân sự",
+    "sym": "&",
+    "color": "green",
+    "looks_like": "sgn_pa_don_quan_su_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pa_don_quan_su_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "đồn quân sự (roof)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_pa_don_quan_su_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_pa_don_quan_su_10_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "đồn quân sự (roof)",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_pa_don_quan_su_00"
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_pa_cong_an_quan",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON", "CITY_UNIQUE" ],
+    "city_sizes": [ 4, -1 ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_pa_cong_an_quan_00_north" },
+      { "point": [ 1, 0, 0 ], "overmap": "sgn_pa_cong_an_quan_10_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_pa_cong_an_quan_00_z1_north" },
+      { "point": [ 1, 0, 1 ], "overmap": "sgn_pa_cong_an_quan_10_z1_north" },
+      { "point": [ 0, 0, 2 ], "overmap": "sgn_pa_cong_an_quan_00_z2_north" },
+      { "point": [ 1, 0, 2 ], "overmap": "sgn_pa_cong_an_quan_10_z2_north" }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_pa_don_quan_su",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_pa_don_quan_su_00_north" },
+      { "point": [ 1, 0, 0 ], "overmap": "sgn_pa_don_quan_su_10_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_pa_don_quan_su_00_z1_north" },
+      { "point": [ 1, 0, 1 ], "overmap": "sgn_pa_don_quan_su_10_z1_north" }
+    ]
+  },
+  {
+    "type": "overmap_special",
+    "id": "sgn_pa_don_quan_su_ngoai_o",
+    "//": "W3: an army guard post on the edge of the city or out in the fields, one to three per overmap where there is room (city_distance 2+).",
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_pa_don_quan_su_00_north" },
+      { "point": [ 1, 0, 0 ], "overmap": "sgn_pa_don_quan_su_10_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_pa_don_quan_su_00_z1_north" },
+      { "point": [ 1, 0, 1 ], "overmap": "sgn_pa_don_quan_su_10_z1_north" }
+    ],
+    "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road", "connection": "local_road" } ],
+    "locations": [ "land" ],
+    "city_distance": [ 2, -1 ],
+    "occurrences": [ 1, 3 ],
+    "flags": [ "SAIGON" ]
+  }
+]

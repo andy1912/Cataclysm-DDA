@@ -9,6 +9,9 @@ import math
 import re
 
 SEARCH = 3
+# W3: a military compound is mapped as one big area whose centre is often deep inside it, far
+# from any street; its guard post may stand anywhere up to its gate
+SEARCH_KIND = { 'military': 8 }
 LANDMARK_RADIUS = 3            # a place this close to a landmark is that landmark
 DIRS = [ ( 0, -1 ), ( 1, 0 ), ( 0, 1 ), ( -1, 0 ) ]          # the side a building faces: n e s w
 WATER = ( 'river', 'canal', 'lake' )
@@ -16,6 +19,8 @@ KIND = {
     'fuel': 'sgn_pl_cay_xang', 'market': 'sgn_cho_1', 'pagoda': 'sgn_chua_1', 'church': 'sgn_nha_tho_1',
     'school': 'sgn_truong_1', 'hospital': 'sgn_pl_benh_vien', 'police': 'sgn_pl_cong_an',
     'supermarket': 'sgn_pl_coopmart',
+    # W3: the district police headquarters and an army guard post on each OSM military site
+    'police_hq': 'sgn_pa_cong_an_quan', 'military': 'sgn_pa_don_quan_su',
 }
 CHAINS_2009 = re.compile( r'co\.?\s?op|big ?c|maximark|metro|citimart|lotte', re.I )
 
@@ -57,10 +62,11 @@ def place( world, terrain, road_tiles, buildings, places, W, H ):
         parts = buildings[KIND[kind]]
         ax, ay = p['tile']
         best = None
+        reach = SEARCH_KIND.get( kind, SEARCH )
         for r in range( 4 ):
             w, h = size( parts, r )
-            for oy in range( -SEARCH, SEARCH + 1 ):
-                for ox in range( -SEARCH, SEARCH + 1 ):
+            for oy in range( -reach, reach + 1 ):
+                for ox in range( -reach, reach + 1 ):
                     x0, y0 = ax - w // 2 + ox, ay - h // 2 + oy
                     tiles = [ ( x, y ) for y in range( y0, y0 + h ) for x in range( x0, x0 + w ) ]
                     if not free( world, terrain, road_tiles, tiles, W, H ):

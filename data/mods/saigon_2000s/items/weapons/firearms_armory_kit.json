@@ -1,0 +1,56 @@
+[
+  {
+    "//": "W3: what else the armories of the district police and the army posts held, besides the guns (firearms_police_army.json).  dda has no shield at all, so the district police's riot shield is the mod's own.",
+    "type": "ITEM",
+    "id": "sgn_khien_chong_bao_dong",
+    "subtypes": [ "ARMOR" ],
+    "category": "armor",
+    "name": { "str": "riot shield" },
+    "description": "A tall, curved shield of thick clear plastic with a padded arm strap and a handle at the back, from the district police's riot unit.  Strapped on the left arm it covers you from chin to knee against teeth and nails, but you need that hand for nothing else.  The words CẢNH SÁT are stencilled across it in white.",
+    "weight": "3500 g",
+    "volume": "12 L",
+    "longest_side": "100 cm",
+    "price": "80 USD",
+    "price_postapoc": "8 USD",
+    "material": [ "plastic" ],
+    "symbol": "[",
+    "color": "light_cyan",
+    "looks_like": "armor_riot_arm",
+    "material_thickness": 5,
+    "flags": [ "OUTER", "BLOCK_WHILE_WORN", "STURDY", "RESTRICT_HANDS" ],
+    "armor": [
+      {
+        "material": [ { "type": "plastic", "covered_by_mat": 100, "thickness": 5 } ],
+        "covers": [ "arm_l", "hand_l" ],
+        "coverage": 95,
+        "encumbrance": 30
+      },
+      {
+        "material": [ { "type": "plastic", "covered_by_mat": 100, "thickness": 5 } ],
+        "covers": [ "torso" ],
+        "coverage": 55,
+        "encumbrance": 10
+      }
+    ]
+  },
+  {
+    "//": "W3: dda's soft armour vest carries a trademark in its name; this is the same vest as the district police's special units wore it.",
+    "type": "ITEM",
+    "id": "sgn_ao_giap_mem",
+    "copy-from": "kevlar",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "soft body-armour vest" },
+    "description": "A dark blue vest of layered aramid fabric with velcro shoulders, worn under the uniform shirt by the district police's special units.  It will stop a pistol round or a knife and spread a bite into a bruise.",
+    "color": "blue"
+  },
+  {
+    "//": "W3: the soldiers of 2004 wore an olive-green uniform shirt with shoulder boards and the nón cối (household_2.json) or a soft cap.  A long-sleeved shirt base: dda's pocket shirt carries colour variants that would rename it.",
+    "type": "ITEM",
+    "id": "sgn_ao_bo_doi",
+    "copy-from": "longshirt",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "olive army uniform shirt" },
+    "description": "The olive-green shirt of a soldier's everyday uniform, with two buttoned chest pockets, green shoulder boards and the sleeves rolled to the elbow.  The cloth is thick and hot and it never quite dries in the wet season.",
+    "color": "green"
+  }
+]
