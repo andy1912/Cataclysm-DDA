@@ -1,0 +1,131 @@
+[
+  {
+    "type": "item_group",
+    "id": "sgn_drops_khuan_vac",
+    "subtype": "collection",
+    "//": "E2: a market porter: the neck towel, a basket or a shoulder pole, cigarettes, the day's pay.",
+    "entries": [
+      { "group": "default_zombie_death_drops" },
+      { "item": "towel", "prob": 70, "damage": [ 1, 4 ] },
+      { "item": "sgn_ro_nhua", "prob": 30 },
+      { "item": "sgn_quang_ganh", "prob": 10 },
+      { "item": "sgn_thuoc_la", "prob": 40, "count": [ 1, 8 ] },
+      { "group": "sgn_dong_notes", "prob": 50, "count": [ 1, 4 ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_drops_hoc_sinh",
+    "subtype": "collection",
+    "//": "E2: a primary-school pupil: white shirt, red scarf, a textbook, a comic, pocket money.",
+    "entries": [
+      { "item": "sgn_ao_trang_hoc_sinh", "prob": 95, "damage": [ 1, 4 ] },
+      { "item": "sgn_quan_tay", "prob": 80, "damage": [ 1, 4 ] },
+      { "item": "sgn_khan_quang_do", "prob": 70 },
+      { "item": "sgn_dep_quai_hau", "prob": 60 },
+      { "item": "sgn_sgk_ngu_van", "prob": 30 },
+      { "item": "sgn_truyen_meo_may", "prob": 20 },
+      { "item": "pencil", "prob": 30 },
+      { "item": "sgn_dong_10k", "prob": 20, "count": [ 1, 2 ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_drops_dam_mua",
+    "subtype": "collection",
+    "//": "E2: caught in the flood: poncho, rubber boots or foam sandals, a drowned phone.",
+    "entries": [
+      { "group": "default_zombie_death_drops" },
+      { "item": "sgn_ao_mua_canh_doi", "prob": 80, "damage": [ 1, 4 ] },
+      { "item": "sgn_ung_cao_su", "prob": 25 },
+      { "item": "sgn_dep_to_ong", "prob": 40 },
+      { "item": "cell_phone", "prob": 10 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_drops_phinh_kenh",
+    "subtype": "collection",
+    "//": "E2: a canal bloater bursts: dda's boomer gore, the rags it drowned in, and whatever was in its pockets.",
+    "entries": [
+      { "group": "default_zombie_death_drops" },
+      { "group": "explode_zed" },
+      { "item": "sgn_dep_to_ong", "prob": 30 },
+      { "item": "bottle_plastic_small", "prob": 20 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_drops_benh_nhan",
+    "subtype": "collection",
+    "//": "E2: a fever ward patient: mask, drip bag, a few pills and oresol sachets from the bedside.",
+    "entries": [
+      { "item": "sgn_khau_trang", "prob": 70 },
+      { "item": "bag_iv", "prob": 40 },
+      { "item": "bandages", "prob": 20, "count": [ 1, 3 ] },
+      { "item": "aspirin", "prob": 25, "count": [ 1, 6 ] },
+      { "item": "sgn_oresol", "prob": 30, "count": [ 1, 3 ] },
+      { "item": "sgn_dep_to_ong", "prob": 40 },
+      { "group": "sgn_dong_notes", "prob": 15, "count": [ 1, 2 ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_drops_tho_ho",
+    "subtype": "collection",
+    "//": "E2: a construction worker: hard hat, work gloves, a hammer or a length of rebar, cheap cigarettes.",
+    "entries": [
+      { "group": "default_zombie_death_drops" },
+      { "item": "hat_hard", "prob": 85, "damage": [ 1, 3 ] },
+      { "item": "gloves_work", "prob": 40, "damage": [ 1, 3 ] },
+      { "item": "hammer", "prob": 15 },
+      { "item": "rebar", "prob": 10 },
+      { "item": "sgn_thuoc_la", "prob": 40, "count": [ 1, 8 ] },
+      { "item": "sgn_book_construction", "prob": 2 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_drops_su",
+    "subtype": "collection",
+    "//": "E2: a monk: robe, prayer beads, incense, a sutra booklet.  No wallet.",
+    "entries": [
+      { "item": "robe", "prob": 95, "damage": [ 1, 4 ] },
+      { "item": "bead_necklace", "prob": 60 },
+      { "item": "sgn_dep_to_ong", "prob": 50 },
+      { "item": "incense", "prob": 40, "count": [ 1, 10 ] },
+      { "item": "sgn_book_sutra", "prob": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_drops_dam_cuoi",
+    "subtype": "collection",
+    "//": "E2: a wedding guest: party clothes, a red envelope of money for the couple, sometimes a chỉ of gold.",
+    "entries": [
+      { "group": "default_zombie_death_drops" },
+      {
+        "distribution": [ { "item": "sgn_ao_dai_mau", "prob": 60, "damage": [ 1, 4 ] }, { "item": "suit", "prob": 40, "damage": [ 1, 4 ] } ],
+        "prob": 70
+      },
+      { "item": "sgn_bao_li_xi", "prob": 50 },
+      { "group": "sgn_dong_notes", "prob": 50, "count": [ 2, 6 ] },
+      { "item": "sgn_vang_chi", "prob": 8 },
+      { "item": "cell_phone", "prob": 15 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_drops_dam_tang",
+    "subtype": "collection",
+    "//": "E2: a funeral mourner: plain white clothes, votive paper, incense and altar candles.",
+    "entries": [
+      { "item": "sgn_ao_ba_ba", "prob": 80, "damage": [ 1, 4 ] },
+      { "item": "sgn_quan_tay", "prob": 60, "damage": [ 1, 4 ] },
+      { "item": "sgn_vang_ma", "prob": 40 },
+      { "item": "incense", "prob": 40, "count": [ 1, 10 ] },
+      { "item": "sgn_nen", "prob": 30, "count": [ 1, 2 ] },
+      { "group": "sgn_dong_notes", "prob": 20, "count": [ 1, 2 ] }
+    ]
+  }
+]
