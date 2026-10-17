@@ -1,0 +1,226 @@
+[
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_GIANG_HO",
+    "//": "E1: a gang member.  Hostile: most players will only hear this if they talk before the fight.",
+    "dynamic_line": [
+      "*taps the mã tấu against the gate, slowly.*  \"Phí qua đường.  Toll.  Gold, or you turn around.\"",
+      "\"This street belongs to anh Hai now.  You want to walk on it, you pay anh Hai.\"",
+      "*spits.*  \"Đi chỗ khác.  Go somewhere else, while you still have both hands.\""
+    ],
+    "responses": [
+      {
+        "text": "[2 chỉ of gold] Here.  Let me pass.",
+        "condition": { "u_has_items": { "item": "sgn_vang_chi", "count": 2 } },
+        "effect": [ { "u_consume_item": "sgn_vang_chi", "count": 2 } ],
+        "topic": "TALK_SGN_GIANG_HO_PAID"
+      },
+      { "text": "I'm going.", "topic": "TALK_DONE" },
+      { "text": "Make me.", "effect": "hostile", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_GIANG_HO_PAID",
+    "dynamic_line": "*weighs the gold in his palm and laughs.*  \"Ngoan.  Good.  Now walk, and do not come back tomorrow without more.\"",
+    "responses": [ { "text": "…", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_DAI_CA",
+    "//": "E1: the đại ca.",
+    "dynamic_line": "*does not get up, and there is a machete on the table between you.*  \"The ward sent you?  The ward owes me money.  Everybody in this phường owes me money.  Sit down, and we will talk about what you owe me.\"",
+    "responses": [
+      { "text": "Nobody owes you anything any more.", "effect": "hostile", "topic": "TALK_DONE" },
+      { "text": "I'm leaving.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_HOI_CUA",
+    "//": "E1: a looter.",
+    "dynamic_line": [
+      "*pulls the face mask up.*  \"It's empty.  There's nothing left in here.  Go.\"",
+      "\"We got here first.  Find your own nhà thuốc.\"",
+      "*grips the crowbar a little tighter.*  \"You want pills, you bring gold.  Otherwise, out.\""
+    ],
+    "responses": [
+      { "text": "I'm going.", "topic": "TALK_DONE" },
+      { "text": "That medicine isn't yours.", "effect": "hostile", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_HOI_CUA_DAU",
+    "//": "E1: the pharmacist's nephew.",
+    "dynamic_line": "\"It was my uncle's shop.  He is dead, so it is my shop, and what is in the van outside my shop is in my shop.  The hospital can pay like everybody else.\"",
+    "responses": [
+      { "text": "People are dying in that hospital.", "topic": "TALK_SGN_HOI_CUA_DAU_2" },
+      { "text": "I'm leaving.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_HOI_CUA_DAU_2",
+    "dynamic_line": "\"People are dying everywhere.  At least the ones who die here die rich.\"  *he nods at the others, and they stand up.*",
+    "responses": [ { "text": "…", "effect": "hostile", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_LOC",
+    "//": "E1 companion: Lộc, 22, xe ôm from Bình Thạnh, who owed the gang for his motorbike.",
+    "dynamic_line": {
+      "compare_string": [ "yes", { "u_val": "sgn_dai_ca_dead" } ],
+      "yes": "*is sitting on the kerb with his helmet still on, as if he might have to leave at any moment.*  \"Anh Hai is dead?  Really dead?  Then nobody is looking for me.  That is… I do not know what to do with that.\"",
+      "no": "*is sitting on the kerb with his helmet still on, as if he might have to leave at any moment.*  \"You are not one of anh Hai's boys.  Good.  If you are going somewhere, I know a shorter way.\""
+    },
+    "responses": [
+      { "text": "Who are you?", "topic": "TALK_SGN_LOC_WHO" },
+      {
+        "text": "Come with me.  You know the streets; I need that.",
+        "condition": { "compare_string": [ "yes", { "u_val": "sgn_dai_ca_dead" } ] },
+        "topic": "TALK_SGN_LOC_YES",
+        "effect": "follow"
+      },
+      {
+        "text": "Come with me.  You know the streets; I need that.",
+        "condition": { "not": { "compare_string": [ "yes", { "u_val": "sgn_dai_ca_dead" } ] } },
+        "trial": { "type": "PERSUADE", "difficulty": 3 },
+        "success": { "topic": "TALK_SGN_LOC_YES", "effect": "follow" },
+        "failure": { "topic": "TALK_SGN_LOC_NO" }
+      },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_LOC_WHO",
+    "dynamic_line": "\"Lộc.  Xe ôm, Bình Thạnh side, the corner by the bridge.  I borrowed eight million from anh Hai for a 110cc underbone, thirty per cent a month, and I paid on time for a year.  Then the fever came, nobody wanted a ride, and his boys came for the bike and wrote my name on the list.  I have slept in a different house every night since.  I know every hẻm from here to Gò Vấp because I have hidden in most of them.\"",
+    "responses": [ { "text": "Let's talk about something else.", "topic": "TALK_SGN_LOC" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_LOC_YES",
+    "dynamic_line": "\"Được.  OK.  I go in front, you go behind, and when I say run, you run.\"",
+    "responses": [ { "text": "…", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_LOC_NO",
+    "dynamic_line": "\"No offence, anh.  While anh Hai is alive, anybody I walk with gets his name on the list too.\"",
+    "responses": [ { "text": "…", "topic": "TALK_SGN_LOC" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_NGOC_ANH",
+    "//": "E1 companion: Ngọc Anh, 20, second-year student at the medical college's nursing school, from Bến Tre.",
+    "dynamic_line": "*has a blood-pressure cuff round her neck like a scarf, and a kitchen knife she is clearly not comfortable holding.*  \"If you are bitten, show me now, not later.  If you are not bitten, then hello.\"",
+    "responses": [
+      { "text": "Who are you?", "topic": "TALK_SGN_NGOC_ANH_WHO" },
+      {
+        "text": "The doctor at the bệnh viện sent me.  Come with me.",
+        "condition": { "compare_string": [ "yes", { "u_val": "sgn_bv_trust" } ] },
+        "topic": "TALK_SGN_NGOC_ANH_YES",
+        "effect": "follow"
+      },
+      {
+        "text": "Come with me.  I could use someone who knows medicine.",
+        "trial": { "type": "PERSUADE", "difficulty": 4 },
+        "success": { "topic": "TALK_SGN_NGOC_ANH_YES", "effect": "follow" },
+        "failure": { "topic": "TALK_SGN_NGOC_ANH_NO" }
+      },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_NGOC_ANH_WHO",
+    "dynamic_line": "\"Ngọc Anh.  Second year, nursing, at the trường trung cấp y tế.  I am from Bến Tre; I rent a room here from cô Bảy on the second floor.  I was on nights at the bệnh viện quận when they brought the first ones in.  We were told it was a new cúm gà, bird flu, and to wear two masks.  Then the ones who died on the ward sat up.  I came back here to check on cô Bảy, and the stairs filled up behind me.\"",
+    "responses": [ { "text": "Let's talk about something else.", "topic": "TALK_SGN_NGOC_ANH" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_NGOC_ANH_YES",
+    "dynamic_line": "\"Cô Bảy says go, she has her daughter.  Wait - let me take the bandages.  All right.  I will clean whatever you break.\"",
+    "responses": [ { "text": "…", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_NGOC_ANH_NO",
+    "dynamic_line": "\"I am sorry.  I do not know you, and cô Bảy cannot do the stairs alone.\"",
+    "responses": [ { "text": "…", "topic": "TALK_SGN_NGOC_ANH" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_HUNG",
+    "//": "E1 companion: Hùng, 34, thợ hồ from Quảng Ngãi; the gang caught him and kept him to carry and lift.",
+    "dynamic_line": "*is sitting against the wall with his wrists rubbed raw.*  \"You are not with them?  Then get me out of here before they come back with the rice.\"",
+    "responses": [
+      { "text": "Who are you?", "topic": "TALK_SGN_HUNG_WHO" },
+      { "text": "Come on.  You're coming with me.", "topic": "TALK_SGN_HUNG_YES", "effect": "follow" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_HUNG_WHO",
+    "dynamic_line": "\"Hùng.  Thợ hồ.  I come down from Quảng Ngãi every dry season: seven months pouring concrete in Sài Gòn, home for Tết with the money.  This year it was a hotel on a side street off Nguyễn Huệ, three floors up and no roof yet.  We slept on the site in a lán made of tarpaulin.  When the site boss stopped coming, the others went home on the last bus.  I stayed for my wages.  Then those men found me on the street and decided a man who can carry a sack of cement can carry their beer.\"",
+    "responses": [ { "text": "Let's talk about something else.", "topic": "TALK_SGN_HUNG" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_HUNG_YES",
+    "dynamic_line": "\"Cảm ơn anh.  Cảm ơn.  I can build a wall, mix mortar, and carry more than you.  Tell me what needs lifting.\"",
+    "responses": [ { "text": "…", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_CHU_SAU",
+    "//": "E1 companion: chú Sáu, 58, drove army trucks 1979-1990, then the chợ's ba gác for fifteen years.",
+    "dynamic_line": "*smokes his own cigarette and does not offer you one.*  \"You came up with the rice?  Good.  I brought the last load this morning.  Now there is nothing to carry and nowhere to carry it.\"",
+    "responses": [
+      { "text": "Who are you?", "topic": "TALK_SGN_CHU_SAU_WHO" },
+      {
+        "text": "Tell me about the army trucks.",
+        "topic": "TALK_SGN_CHU_SAU_TRUCKS",
+        "effect": { "u_add_var": "sgn_chu_sau_trucks", "value": "yes" }
+      },
+      {
+        "text": "Come with me, chú.  There is plenty to carry out there.",
+        "condition": { "compare_string": [ "yes", { "u_val": "sgn_chu_sau_trucks" } ] },
+        "topic": "TALK_SGN_CHU_SAU_YES",
+        "effect": "follow"
+      },
+      {
+        "text": "Come with me, chú.  There is plenty to carry out there.",
+        "condition": { "not": { "compare_string": [ "yes", { "u_val": "sgn_chu_sau_trucks" } ] } },
+        "topic": "TALK_SGN_CHU_SAU_NO"
+      },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_CHU_SAU_WHO",
+    "dynamic_line": "\"Sáu.  Lái xe.  Eleven years in the army driving trucks, the big Soviet-built ones, up and down to the border and back.  Then fifteen years driving the ba gác for the chợ, fish at four in the morning, ice at five, rice at six.  I have never been in an accident.  Not one.  Write that down somewhere.\"",
+    "responses": [ { "text": "Let's talk about something else.", "topic": "TALK_SGN_CHU_SAU" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_CHU_SAU_TRUCKS",
+    "dynamic_line": "*for the first time, he looks at you properly.*  \"Six tonnes, no power steering, a gearbox you had to argue with.  We drove at night with the lights off, along roads that were mostly holes.  You learn to hear the road.  You learn that a truck is only as good as the man who checked the oil.  Young people now, they ride a 110 and think they can drive.  Hm.  You listened.  That is something.\"",
+    "responses": [ { "text": "Let's talk about something else.", "topic": "TALK_SGN_CHU_SAU" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_CHU_SAU_NO",
+    "dynamic_line": "\"Không.  No.  I do not know you.  I do not get in a stranger's vehicle and I do not let strangers in mine.\"",
+    "responses": [ { "text": "…", "topic": "TALK_SGN_CHU_SAU" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_CHU_SAU_YES",
+    "dynamic_line": "\"Được.  But I drive.  You can shoot your mouth off about directions and I will ignore you, the way I ignored every officer I ever had.\"",
+    "responses": [ { "text": "…", "topic": "TALK_DONE" } ]
+  }
+]

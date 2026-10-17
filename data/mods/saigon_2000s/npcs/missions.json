@@ -51,8 +51,8 @@
   {
     "id": "MISSION_SGN_SO_TAY_SO_CUU",
     "type": "mission_definition",
-    "name": { "str": "Sổ tay số điện thoại" },
-    "description": "Find a family's <color_yellow>notebook of phone numbers</color> and bring it back.",
+    "name": { "str": "Sổ tay của mẹ" },
+    "description": "Find a family's <color_yellow>Red Cross first-aid handbook</color>, with the phone numbers written in its back pages, and bring it back.",
     "goal": "MGOAL_FIND_ITEM",
     "item": "sgn_so_tay_so_cuu",
     "count": 1,
@@ -62,13 +62,13 @@
     "origins": [ "ORIGIN_ANY_NPC" ],
     "dialogue": {
       "describe": "Are you from this phường?  You have the accent.  Good, I need someone from here.",
-      "offer": "My mother kept one notebook.  Everything written in it, every number in Quận 1 and half of Quận 3, in her handwriting.  It was on the altar when we left and it is not there now.  <color_yellow>Find the notebook</color> and I will tell you what names are in it that are not yet dead.",
+      "offer": "My mother kept one book, the Red Cross sổ tay sơ cứu the ward handed out, and she wrote every number she knew in the back pages - every number in Quận 1 and half of Quận 3, in her handwriting.  It was on the altar when we left and it is not there now.  <color_yellow>Find a first-aid handbook like hers</color> and I will tell you what names are in it that are not yet dead.",
       "accepted": "The altar, con, behind the incense.  Somebody will have taken it for the paper.",
-      "rejected": "Số tay mà.  Fine.  I will wait until the phones come back on.",
-      "advice": "Nó ống vàng, it is the yellow one, about the size of a prayer book.  Half the people in this phường had one on a shelf next to the altar, not on it.",
-      "inquire": "The yellow notebook, con.  Have you found it?",
-      "success": "That is hers.  Look - there is my mother's number on the first page and she is dead.  But here, this one is the pharmacist on Hàm Nghi, he has not answered in two days.  Go and knock, and if he answers, tell him we are alive.",
-      "success_lie": "That is not her book.",
+      "rejected": "Sổ tay mà.  Fine.  I will wait until the phones come back on.",
+      "advice": "Cuốn sổ tay sơ cứu, the little Red Cross one, about the size of a prayer book.  The ward gave one to every household, and half the people in this phường kept theirs on a shelf next to the altar, not on it.",
+      "inquire": "The handbook, con.  Have you found it?",
+      "success": "That is the one.  Look - in the back, the same numbers she wrote in hers, the whole ward copied them from the loa phường.  There is my mother's number on the first page and she is dead.  But here, this one is the pharmacist on Hàm Nghi, he has not answered in two days.  Go and knock, and if he answers, tell him we are alive.",
+      "success_lie": "That is not a sổ tay sơ cứu.",
       "failure": "Two days.  Two days and I have not even tried to go back.  I am the one who is late."
     }
   },
@@ -76,7 +76,7 @@
     "id": "MISSION_SGN_VANG_CHI",
     "type": "mission_definition",
     "name": { "str": "Vàng của tiệm" },
-    "description": "Recover <color_yellow>twenty chi of gold</color> from the shop before anyone else does.",
+    "description": "Recover <color_yellow>twenty chỉ of gold</color> from the shop before anyone else does.",
     "goal": "MGOAL_FIND_ITEM",
     "item": "sgn_vang_chi",
     "count": 20,
@@ -86,12 +86,12 @@
     "origins": [ "ORIGIN_ANY_NPC" ],
     "dialogue": {
       "describe": "You are standing in the doorway of a tiệm vàng with the gate still down.  Say something, or I will start shouting.",
-      "offer": "The gold is in the safe at the back of the shop.  The keys are on my father's belt and my father is upstairs.  <color_yellow>Bring me twenty chi of it</color> - one chi each for my sister and the two next door, and the rest to buy a boat out of Bến Nhà Rồng.  I will write you a receipt.  My father kept the receipts in a tin under the counter, and I have the tin, and there is no name written in it that is not my father's.",
+      "offer": "The gold is in the safe at the back of the shop.  The keys are on my father's belt and my father is upstairs.  <color_yellow>Bring me twenty chỉ of it</color> - one chỉ each for my sister and the two next door, and the rest to buy a boat out of Bến Nhà Rồng.  I will write you a receipt.  My father kept the receipts in a tin under the counter, and I have the tin, and there is no name written in it that is not my father's.",
       "accepted": "The safe is behind the counter.  It is not a good safe.",
       "rejected": "Then close the gate on your way out.  Please.  I cannot say that to many people.",
       "advice": "It is gold, con.  So it is in every shop, every hẻm, every locket.  Anyone with a radio in their mouth will have found some by now.  You may have to take what they found.",
-      "inquire": "Twenty chi.  Have you been to the shop yet?",
-      "success": "You went in there.  Look at you.  Here - take three chi as well, you will need something soft to sleep on.",
+      "inquire": "Twenty chỉ.  Have you been to the shop yet?",
+      "success": "You went in there.  Look at you.  Here - take three chỉ as well, you will need something soft to sleep on.",
       "success_lie": "That is not gold.",
       "failure": "Someone got there first, or something did.  Either way I am not coming home tonight."
     }
@@ -174,7 +174,7 @@
     "name": { "str": "Kinh của bà ngoại" },
     "description": "Bring back a <color_yellow>prayer book</color> from the house on the corner where somebody died.",
     "goal": "MGOAL_FIND_ITEM",
-    "item": "sgn_kinh_thanh",
+    "item": "sgn_sach_kinh",
     "count": 1,
     "difficulty": 1,
     "value": 0,
@@ -187,7 +187,7 @@
       "rejected": "No.  Of course not.  Everyone has their own grandmother.",
       "advice": "Blue door.  And con - if you cannot get it, do not go in.  Come back and tell me you could not, that is all right.",
       "inquire": "The prayer book, con.  Did you go to the blue door?",
-      "success": "Bà ấy đứa quá khỏi (passed away, the southern way of saying it).  The book is warm; it was in her hand.  I will burn it with her, that is what we do.  And I will remember that you went in there.",
+      "success": "Bà mất rồi.  The book is warm; it was in her hand.  I will put it back in her hands, with her rosary, when we can bury her.  And I will remember that you went in there.",
       "success_lie": "That is not her book.  I would know the corner of it.",
       "failure": "You did not go.  Thank you for not going, that is all."
     }
@@ -195,15 +195,10 @@
   {
     "id": "MISSION_SGN_THAO_DUOC",
     "type": "mission_definition",
-    "name": { "str": "Thuốc lá của thầy" },
-    "description": "Bring <color_yellow>thirty leaves of thuốc lá</color> to the herbalist and raise your <color_yellow>survival</color> skill to 1.",
+    "name": { "str": "Lá thuốc của thầy" },
+    "description": "Bring <color_yellow>ten stalks of ngải cứu (mugwort)</color> to the herbalist and raise your <color_yellow>survival</color> skill to 1.",
     "goal": "MGOAL_CONDITION",
-    "goal_condition": {
-      "and": [
-        { "u_has_items": { "item": "sgn_thuoc_la", "count": 30 } },
-        { "math": [ "u_skill('survival') >= 1" ] }
-      ]
-    },
+    "goal_condition": { "and": [ { "u_has_items": { "item": "mugwort", "count": 10 } }, { "math": [ "u_skill('survival') >= 1" ] } ] },
     "difficulty": 1,
     "value": 0,
     "has_generic_rewards": false,
@@ -214,13 +209,13 @@
     },
     "dialogue": {
       "describe": "You would look like a person who is not sleeping.  Sit down, then.  You want to learn to do this yourself.",
-      "offer": "Everyone comes to the thầy and the thầy is seventy and has nine people in the back room.  So you will do it instead.  <color_yellow>Bring me thirty leaves of thuốc lá</color> from the gardens, and while you are picking, learn to tell the leaf from its neighbour.  If you know which one is which you cannot poison somebody by accident.  That is the whole lesson.",
+      "offer": "Everyone comes to the thầy and the thầy is seventy and has nine people in the back room.  So you will do it instead.  <color_yellow>Bring me ten stalks of ngải cứu</color> - mugwort, lá thuốc, for the fevers and the bad stomachs - from the gardens, and while you are picking, learn to tell the leaf from its neighbour.  If you know which one is which you cannot poison somebody by accident.  That is the whole lesson.",
       "accepted": "Not the ones with the white flower.  Those are the ones that will put you in the ground.",
       "rejected": "Then go carefully and eat what you are sure about.  That is the thầy's advice too.",
       "advice": "They grow where nobody is standing on them.  A park, an old garden, anywhere with a wall that has gone back to itself.",
-      "inquire": "Thirty leaves, and you have to be able to tell them apart.  Do not lie to me about the second part.",
+      "inquire": "Ten stalks of ngải cứu, and you have to be able to tell it from its neighbours.  Do not lie to me about the second part.",
       "success": "Giỏi.  Now you know which is which.  That is worth more than anything I could have sold you, and I have sold a great deal.",
-      "success_lie": "You have thirty leaves and you still cannot tell them apart.  Come back when you can.",
+      "success_lie": "You have ten stalks and you still cannot tell them apart.  Come back when you can.",
       "failure": "You did not learn it.  Nobody learns it first time.  The thầy says so every single day."
     }
   },
@@ -230,7 +225,9 @@
     "name": { "str": "Đi làm, rồi quay lại" },
     "description": "Survive <color_yellow>seven days</color>, then come back to the person who sent you out.",
     "goal": "MGOAL_CONDITION",
-    "goal_condition": { "math": [ "time_since('cataclysm', 'unit':'days') >= 7" ] },
+    "goal_condition": { "math": [ "time_since(u_sgn_chinh_phuc_t, 'unit':'days') >= 7" ] },
+    "//goal": "B9-2: seven days from acceptance (the game starts about 4.3 days after the cataclysm, so time_since('cataclysm') completed it in under three).",
+    "start": { "effect": { "math": [ "u_sgn_chinh_phuc_t = time('now')" ] } },
     "difficulty": 1,
     "value": 0,
     "has_generic_rewards": false,

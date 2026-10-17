@@ -1,0 +1,196 @@
+[
+  {
+    "type": "faction",
+    "id": "sgn_phuong",
+    "//": "E1: what is left of the ward: the công an phường, the dân phòng with their armbands, and the clerks of the UBND who still keep the lists.  Staff templates sgn_npc_guard and sgn_npc_civil_servant.",
+    "name": "Ward công an and dân phòng",
+    "likes_u": 10,
+    "respects_u": 10,
+    "known_by_u": true,
+    "size": 30,
+    "power": 60,
+    "fac_food_supply": [ [ 0, { "calories": 115200, "vitamins": {  } } ] ],
+    "wealth": 2000000,
+    "relations": {
+      "sgn_phuong": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": true,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": true,
+        "knows your voice": true
+      },
+      "sgn_cho": { "watch your back": true, "lets you in": true, "knows your voice": true },
+      "sgn_benh_vien": { "watch your back": true, "guard your stuff": true, "lets you in": true, "knows your voice": true },
+      "sgn_chua": { "watch your back": true, "knows your voice": true },
+      "sgn_giang_ho": { "kill on sight": true },
+      "sgn_hoi_cua": { "kill on sight": true },
+      "no_faction": { "knows your voice": true }
+    },
+    "description": "The ward office, the ward police post and the volunteers who used to direct traffic outside the school.  They hold the UBND building and the công an post, they still write everybody's name down, and they are the only people in the district allowed to carry a pistol, which in practice means one man in five has one and nobody has many bullets."
+  },
+  {
+    "type": "faction",
+    "id": "sgn_cho",
+    "//": "E1: the tiểu thương of the chợ and the shop counters.  They save in gold, so their currency is the chỉ; the đồng still buys a little at their stalls (price_rules), at about a third of what it bought before.",
+    "name": "The chợ traders",
+    "likes_u": 15,
+    "respects_u": 5,
+    "known_by_u": true,
+    "size": 60,
+    "power": 50,
+    "fac_food_supply": [ [ 0, { "calories": 2700000, "vitamins": {  } } ] ],
+    "wealth": 10000000,
+    "currency": "sgn_vang_chi",
+    "price_rules": [
+      { "item": "sgn_dong_10k", "price": 25, "fixed_adj": 0 },
+      { "item": "sgn_dong_50k", "price": 125, "fixed_adj": 0 },
+      { "item": "sgn_dong_100k", "price": 250, "fixed_adj": 0 },
+      { "item": "sgn_vang_luong", "fixed_adj": 0 }
+    ],
+    "relations": {
+      "sgn_cho": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": true,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": true,
+        "knows your voice": true
+      },
+      "sgn_phuong": { "watch your back": true, "lets you in": true, "knows your voice": true },
+      "sgn_benh_vien": { "lets you in": true, "knows your voice": true },
+      "sgn_chua": { "watch your back": true, "share my stuff": true, "lets you in": true, "knows your voice": true },
+      "sgn_giang_ho": { "kill on sight": true },
+      "sgn_hoi_cua": { "kill on sight": true },
+      "no_faction": { "knows your voice": true }
+    },
+    "description": "Fish women, rice sellers, the woman with the tiệm tạp hóa and the xe ôm who sells petrol by the bottle.  They opened at four in the morning for twenty years and they are not going to stop because the customers are dead.  They trade in gold; a đồng note still buys something at their stalls, but not what it used to."
+  },
+  {
+    "type": "faction",
+    "id": "sgn_chua",
+    "//": "E1: a chùa that has taken people in.  Staff template sgn_npc_monk.",
+    "name": "The pagoda community",
+    "likes_u": 20,
+    "respects_u": 10,
+    "known_by_u": true,
+    "size": 40,
+    "power": 20,
+    "fac_food_supply": [ [ 0, { "calories": 1152000, "vitamins": {  } } ] ],
+    "wealth": 500000,
+    "relations": {
+      "sgn_chua": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": true,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": true,
+        "knows your voice": true
+      },
+      "sgn_phuong": { "lets you in": true, "knows your voice": true },
+      "sgn_cho": { "share my stuff": true, "lets you in": true, "knows your voice": true },
+      "sgn_benh_vien": { "share my stuff": true, "lets you in": true, "knows your voice": true },
+      "sgn_giang_ho": { "knows your voice": true },
+      "no_faction": { "lets you in": true, "knows your voice": true }
+    },
+    "description": "The nuns, the monks and the lay volunteers who cook the vegetarian rice, and the sixty or seventy people sleeping on mats in the main hall.  The pagoda gate is shut at dusk and opened at dawn and nobody is turned away who can show their arms have no bites.  They have no weapons worth the name and they will not take any."
+  },
+  {
+    "type": "faction",
+    "id": "sgn_benh_vien",
+    "//": "E1: the doctors and nurses who stayed at the bệnh viện quận.  Staff templates sgn_npc_doctor (the pharmacy counter) and sgn_npc_nurse.",
+    "name": "District hospital staff",
+    "likes_u": 10,
+    "respects_u": 15,
+    "known_by_u": true,
+    "size": 15,
+    "power": 30,
+    "fac_food_supply": [ [ 0, { "calories": 115200, "vitamins": {  } } ] ],
+    "wealth": 10000000,
+    "currency": "sgn_vang_chi",
+    "price_rules": [
+      { "item": "sgn_dong_10k", "price": 25, "fixed_adj": 0 },
+      { "item": "sgn_dong_50k", "price": 125, "fixed_adj": 0 },
+      { "item": "sgn_dong_100k", "price": 250, "fixed_adj": 0 },
+      { "group": "sgn_npc_benh_vien_needs", "premium": 2 }
+    ],
+    "relations": {
+      "sgn_benh_vien": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": true,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": true,
+        "knows your voice": true
+      },
+      "sgn_phuong": { "watch your back": true, "lets you in": true, "knows your voice": true },
+      "sgn_cho": { "lets you in": true, "knows your voice": true },
+      "sgn_chua": { "share my stuff": true, "knows your voice": true },
+      "sgn_hoi_cua": { "kill on sight": true },
+      "no_faction": { "knows your voice": true }
+    },
+    "description": "A doctor who has not slept, four nurses, two orderlies and a pharmacy counter with less on it every day.  They are short of antibiotics, saline and hands, and they pay twice the going rate for medicine, in đồng or in gold."
+  },
+  {
+    "type": "faction",
+    "id": "sgn_giang_ho",
+    "//": "E1: a street gang (giang hồ) that has taken a row of nhà ống.  Melee only: mã tấu, ống tuýp, dao rựa.  Templates sgn_npc_giang_ho and sgn_npc_dai_ca; overmap special sgn_people_giang_ho.",
+    "name": "Giang hồ of the dãy phố",
+    "likes_u": -50,
+    "respects_u": -10,
+    "known_by_u": false,
+    "size": 12,
+    "power": 40,
+    "fac_food_supply": [ [ 0, { "calories": 576000, "vitamins": {  } } ] ],
+    "wealth": 3000000,
+    "relations": {
+      "sgn_giang_ho": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": true,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": true,
+        "knows your voice": true
+      },
+      "your_followers": { "kill on sight": true },
+      "sgn_phuong": { "kill on sight": true },
+      "sgn_cho": { "kill on sight": true },
+      "sgn_hoi_cua": { "kill on sight": true }
+    },
+    "description": "Before the fever they lent money at thirty per cent a month to xe ôm drivers and market women and collected with a machete in the evening.  When the công an stopped coming they took the row of nhà ống they used to collect from, barred the gates, and now they collect from anybody who walks past it."
+  },
+  {
+    "type": "faction",
+    "id": "sgn_hoi_cua",
+    "//": "E1: people who go through the shops while the owners are dead or gone.  Templates sgn_npc_hoi_cua and sgn_npc_hoi_cua_dau; overmap special sgn_people_nha_thuoc.",
+    "name": "Looters",
+    "likes_u": -30,
+    "respects_u": -10,
+    "known_by_u": false,
+    "size": 10,
+    "power": 15,
+    "fac_food_supply": [ [ 0, { "calories": 115200, "vitamins": {  } } ] ],
+    "wealth": 1000000,
+    "relations": {
+      "sgn_hoi_cua": {
+        "kill on sight": false,
+        "watch your back": true,
+        "share my stuff": false,
+        "guard your stuff": true,
+        "lets you in": true,
+        "defends your space": true,
+        "knows your voice": true
+      },
+      "your_followers": { "kill on sight": true },
+      "sgn_phuong": { "kill on sight": true },
+      "sgn_benh_vien": { "kill on sight": true },
+      "sgn_giang_ho": { "kill on sight": true }
+    },
+    "description": "Not a gang: strangers who found each other in the same broken nhà thuốc and agreed not to fight over it.  They sell pills from the back of a motorbike to anybody with gold, and they do not let anybody else through the door."
+  }
+]

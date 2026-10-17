@@ -1,0 +1,265 @@
+[
+  {
+    "id": "MISSION_SGN_PHUONG_DONG_CHI",
+    "//": "E1 chain 1 (the ward, sgn_phuong), step 1 of 3, offered by sgn_npc_guard: lay three dead colleagues to rest.  Follows up with MISSION_SGN_PHUONG_DAI_CA.",
+    "type": "mission_definition",
+    "name": { "str": "Đồng chí" },
+    "description": "Put down <color_yellow>three of the ward's policemen</color> who died of the fever and got up again.",
+    "goal": "MGOAL_KILL_MONSTER_TYPE",
+    "monster_type": "sgn_mon_zombie_cong_an",
+    "monster_kill_goal": 3,
+    "difficulty": 3,
+    "value": 0,
+    "has_generic_rewards": false,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_SGN_PHUONG_DAI_CA",
+    "end": {
+      "effect": [
+        { "u_spawn_item": "sgn_mi_goi", "count": 6 },
+        { "u_spawn_item": "sgn_dong_100k", "count": 5 },
+        { "u_add_var": "sgn_phuong_trust", "value": "yes" }
+      ]
+    },
+    "dialogue": {
+      "describe": "There is something the post needs done, and none of us can do it.",
+      "offer": "Three of ours went out on the quarantine drive on Monday and came back on Wednesday, if you understand me.  They are still walking the beat in their uniforms.  People see the khaki and go up to them for help.  <color_yellow>Put them down, three of them</color>, so nobody else walks up to a uniform and gets bitten.  We cannot do it.  We ate with them.",
+      "accepted": "Cảm ơn.  Look at the shoulder boards, not the faces.",
+      "rejected": "I understand.  It is not a thing to ask a stranger.",
+      "advice": "They keep to the main streets and the market, where they were posted.  The khaki is easy to see from a distance.  Go for the legs first.",
+      "inquire": "Our colleagues - is it done?",
+      "success": "Then they can rest.  Here: rations from the ward store and what is left of this month's allowance.  The đồng is not worth much, but the chợ still takes it.",
+      "success_lie": "No.  I would have heard.",
+      "failure": "Then they will keep walking.  I will tell people to stay away from anybody in khaki, including me."
+    }
+  },
+  {
+    "id": "MISSION_SGN_PHUONG_DAI_CA",
+    "//": "E1 chain 1, step 2 of 3: the gang boss at the barred nhà ống row (overmap special sgn_people_giang_ho; placed if none exists).  Follows up with MISSION_SGN_PHUONG_LOC.",
+    "type": "mission_definition",
+    "name": { "str": "Đại ca của dãy phố" },
+    "description": "Kill the <color_yellow>đại ca</color> whose gang has barred a row of nhà ống and robs everybody who walks past it.",
+    "goal": "MGOAL_ASSASSINATE",
+    "difficulty": 6,
+    "value": 0,
+    "has_generic_rewards": false,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_SGN_PHUONG_LOC",
+    "start": {
+      "assign_mission_target": { "om_terrain": "sgn_people_giang_ho_z0", "om_special": "sgn_people_giang_ho", "reveal_radius": 1, "random": false },
+      "update_mapgen": { "place_npcs": [ { "class": "sgn_npc_dai_ca", "x": 4, "y": 12, "target": true } ] }
+    },
+    "end": { "effect": [ { "u_spawn_item": "sgn_vang_chi", "count": 3 }, { "u_add_var": "sgn_dai_ca_dead", "value": "yes" } ] },
+    "dialogue": {
+      "describe": "The ward has a problem the ward cannot write down.",
+      "offer": "There is a man who lent money to half the xe ôm in this phường at thirty per cent a month and collected with a mã tấu.  When we stopped patrolling, his boys barred the gates of a row of nhà ống on the main street and now they take a toll from anybody who walks past it, and the girls who cannot pay.  We have six men and one pistol.  He has a dozen and machetes.  <color_yellow>Kill the đại ca</color> and the rest will scatter; they are only brave together.",
+      "accepted": "The row with the road barriers on the pavement.  He sits in the front room on the left with his back to the altar.  He thinks it protects him.",
+      "rejected": "Then we will keep the children inside, and wait.",
+      "advice": "The gates are cửa sắt kéo, and the whole street hears them open.  Go round the back, through the alley; the back doors are wood.",
+      "inquire": "The đại ca.  Is he still collecting?",
+      "success": "Then that row of houses belongs to the people who used to live in it.  This is from the ward's safe; the chairman said to give it to whoever did this, and not to ask how.",
+      "success_lie": "His boys were selling cigarettes on the corner this morning.  He is alive.",
+      "failure": "He will come for the post next.  We know it.  We will be ready, or we will not."
+    }
+  },
+  {
+    "id": "MISSION_SGN_PHUONG_LOC",
+    "//": "E1 chain 1, step 3 of 3: recruit Lộc (sgn_npc_loc), a xe ôm who has been hiding from the gang; he waits on the pavement of a nhà ống row (rows 0-1 of sgn_nh_solo_z0 are always sidewalk).",
+    "type": "mission_definition",
+    "name": { "str": "Thằng Lộc" },
+    "description": "Find <color_yellow>Lộc</color>, a young xe ôm who has been hiding from the gang, and take him with you.",
+    "goal": "MGOAL_RECRUIT_NPC",
+    "difficulty": 2,
+    "value": 0,
+    "has_generic_rewards": false,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "start": {
+      "assign_mission_target": { "om_terrain": "sgn_nh_solo_z0", "reveal_radius": 1, "random": true, "search_range": 20, "min_distance": 3 },
+      "update_mapgen": { "place_npcs": [ { "class": "sgn_npc_loc", "x": 12, "y": 1, "target": true } ] }
+    },
+    "end": { "effect": [ { "u_spawn_item": "sgn_ban_do_tphcm" } ] },
+    "dialogue": {
+      "describe": "There is a boy who has been sleeping in a different house every night for a week.",
+      "offer": "Lộc, a xe ôm, twenty-two.  He borrowed for his bike from the đại ca and could not pay when the fares stopped, so they put his name on a list.  With the đại ca dead he can come out, but he has nowhere to come out to.  He knows every hẻm in three districts.  <color_yellow>Find him and take him with you</color>; he will be more use to you than to us.",
+      "accepted": "He is somewhere on the main street, in the nhà ống row on the map.  Tell him the post sent you.",
+      "rejected": "Then he will keep hiding.  He is good at it.",
+      "advice": "He will be outside, near the road, where he can run.  Xe ôm do not like to be indoors.",
+      "inquire": "Did you find Lộc?",
+      "success": "Good.  Keep him off the main roads and he will keep you off them too.  Take the post's map; he can read it for you.",
+      "success_lie": "He is not with you.",
+      "failure": "Then we lost him too."
+    }
+  },
+  {
+    "id": "MISSION_SGN_BV_KHANG_SINH",
+    "//": "E1 chain 2 (the district hospital, sgn_benh_vien), step 1 of 3, offered by sgn_npc_doctor.  Follows up with MISSION_SGN_BV_NHA_THUOC.",
+    "type": "mission_definition",
+    "name": { "str": "Kháng sinh" },
+    "description": "Bring the hospital <color_yellow>ten doses of antibiotics</color>.",
+    "goal": "MGOAL_FIND_ITEM",
+    "item": "antibiotics",
+    "count": 10,
+    "difficulty": 3,
+    "value": 0,
+    "has_generic_rewards": false,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_SGN_BV_NHA_THUOC",
+    "end": { "effect": [ { "u_spawn_item": "bandages", "count": 4 }, { "u_spawn_item": "sgn_vang_chi", "count": 1 } ] },
+    "dialogue": {
+      "describe": "The fever is not what is killing most of them.",
+      "offer": "The fever weakens them and then the chest infections take them, the old ones and the babies.  Pneumonia I can treat, if I have the drugs.  I do not have the drugs.  <color_yellow>Bring me ten doses of antibiotics</color> - any kind, I will sort them out.",
+      "accepted": "Every nhà thuốc in the district had them behind the counter without a prescription.  It was a scandal, before.  Now it is the only thing that will save us.",
+      "rejected": "Then I will choose who gets what I have, which is the worst part of this work.",
+      "advice": "Nhà thuốc, the clinics behind the shophouses, family medicine tins by the altar.  Check the looters too; they took everything off the shelves and they do not know what most of it is.",
+      "inquire": "The antibiotics?",
+      "success": "Ten.  That is three children through the week.  Take these bandages and the gold; a patient's family paid me with it and I have nothing to spend it on.",
+      "success_lie": "That is not antibiotics.  I am a doctor.",
+      "failure": "We lost four in the night.  It is nobody's fault, and I will think about it anyway."
+    }
+  },
+  {
+    "id": "MISSION_SGN_BV_NHA_THUOC",
+    "//": "E1 chain 2, step 2 of 3: the looters' leader at the looted nhà thuốc (overmap special sgn_people_nha_thuoc; placed if none exists).  Follows up with MISSION_SGN_BV_NGOC_ANH.",
+    "type": "mission_definition",
+    "name": { "str": "Nhà thuốc bị cướp" },
+    "description": "Kill the <color_yellow>pharmacist's nephew</color>, who is holding the hospital's last delivery of medicine in a looted nhà thuốc.",
+    "goal": "MGOAL_ASSASSINATE",
+    "difficulty": 5,
+    "value": 0,
+    "has_generic_rewards": false,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_SGN_BV_NGOC_ANH",
+    "start": {
+      "assign_mission_target": { "om_terrain": "sgn_people_nha_thuoc_z0", "om_special": "sgn_people_nha_thuoc", "reveal_radius": 1, "random": false },
+      "update_mapgen": { "place_npcs": [ { "class": "sgn_npc_hoi_cua_dau", "x": 6, "y": 13, "target": true } ] }
+    },
+    "end": {
+      "effect": [
+        { "u_spawn_item": "saline", "count": 2 },
+        { "u_spawn_item": "sgn_vang_chi", "count": 2 },
+        { "u_add_var": "sgn_bv_trust", "value": "yes" }
+      ]
+    },
+    "dialogue": {
+      "describe": "Our last delivery never arrived.  We know where it went.",
+      "offer": "The pharmacist on the main street was a friend of this hospital for twenty years.  When he got sick his nephew took the keys, and when our last delivery van broke down outside the shop, the nephew and his friends unloaded it into the back room and locked it.  Now they sell our saline from a motorbike for gold.  <color_yellow>He will not give it back.  Make it so he does not need to.</color>  The stock is in the locked room at the back of the shop.",
+      "accepted": "I took an oath about harm.  I am trying very hard not to think about it.",
+      "rejected": "No.  You are right.  I should not have asked.",
+      "advice": "The shopfront glass is smashed and the gate is half open; they want people to think there is nothing left inside.  There are three or four of them, with crowbars and pipes.",
+      "inquire": "The nhà thuốc?",
+      "success": "Then what is in that back room comes here, where it belongs.  Take these two bags of saline and the gold: you will need them before we do.",
+      "success_lie": "They sold saline at the chợ again this morning.",
+      "failure": "Then people will buy their own medicine back from him for gold, until he runs out of it or they run out of gold."
+    }
+  },
+  {
+    "id": "MISSION_SGN_BV_NGOC_ANH",
+    "//": "E1 chain 2, step 3 of 3: recruit Ngọc Anh (sgn_npc_ngoc_anh), a nursing student sheltering in a chung cư (the ground-floor corridor at 11,13 of sgn_chungcu_z0 is always floor).",
+    "type": "mission_definition",
+    "name": { "str": "Ngọc Anh" },
+    "description": "Find <color_yellow>Ngọc Anh</color>, a nursing student sheltering in an old chung cư, and take her with you.",
+    "goal": "MGOAL_RECRUIT_NPC",
+    "difficulty": 2,
+    "value": 0,
+    "has_generic_rewards": false,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "start": {
+      "assign_mission_target": { "om_terrain": "sgn_chungcu_z0", "reveal_radius": 1, "random": true, "search_range": 25 },
+      "update_mapgen": { "place_npcs": [ { "class": "sgn_npc_ngoc_anh", "x": 11, "y": 13, "target": true } ] }
+    },
+    "end": { "effect": [ { "u_spawn_item": "sgn_book_nursing" } ] },
+    "dialogue": {
+      "describe": "One of my students did not come back to the ward.",
+      "offer": "Ngọc Anh, second year at the nursing school.  She was on the night shift when it started and went home to check on her landlady, in one of the old chung cư, and the stairs filled up behind her.  She is good: she can set a drip and she does not faint.  I cannot spare anybody to bring her back here, and honestly, she is safer with you than in this building.  <color_yellow>Find her and take her with you.</color>",
+      "accepted": "Tell her Bác sĩ sent you and that she is excused from the exam.",
+      "rejected": "Then I hope the landlady has rice.",
+      "advice": "The old chung cư, the one marked on your map.  The ground-floor corridor, by the stairs.  She will not have gone up; she is not a fool.",
+      "inquire": "Ngọc Anh?",
+      "success": "Good.  Take her textbook too; she left it here, and she will want to finish it.",
+      "success_lie": "You have not seen her.",
+      "failure": "I will not tell her mother.  I do not know where her mother is."
+    }
+  },
+  {
+    "id": "MISSION_SGN_CHO_CAN_NUOC",
+    "//": "E1 chain 3 (the chợ traders, sgn_cho), step 1 of 3, offered by sgn_npc_vendor.  Follows up with MISSION_SGN_CHO_CHUA.",
+    "type": "mission_definition",
+    "name": { "str": "Can nước" },
+    "description": "Bring a market vendor <color_yellow>three plastic water cans</color>.",
+    "goal": "MGOAL_FIND_ITEM",
+    "item": "sgn_can_nhua",
+    "count": 3,
+    "difficulty": 1,
+    "value": 0,
+    "has_generic_rewards": false,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_SGN_CHO_CHUA",
+    "end": { "effect": [ { "u_spawn_item": "sgn_dong_100k", "count": 10 } ] },
+    "dialogue": {
+      "describe": "You want to make some money?  Not much money.",
+      "offer": "The rice I have, three sacks of it.  The water I do not have, because the tap stopped on Thursday and the canal will kill you.  The chùa down the road has a well and seventy people sleeping in the hall.  So: rice to the chùa, water back.  For that I need cans.  <color_yellow>Bring me three plastic water cans</color>, the blue twenty-litre ones, and I will pay you in đồng.  Yes, đồng.  At my stall it is still money.",
+      "accepted": "Every shophouse kitchen has one, every motorbike shop, every quán.  Do not bring me one that had petrol in it.",
+      "rejected": "Fine.  I will carry the water in my hands, then.",
+      "advice": "Kitchens, the back of a quán, the motorbike repair shops.  People carried everything in those.",
+      "inquire": "The cans?",
+      "success": "Good, good, they are clean.  Here, a million đồng.  Spend it here; you will get rice for it, and do not let anybody tell you a note is worth nothing.",
+      "success_lie": "That is two.  I can count.",
+      "failure": "Then I will think of something else.  I always do."
+    }
+  },
+  {
+    "id": "MISSION_SGN_CHO_CHUA",
+    "//": "E1 chain 3, step 2 of 3: an escort.  The vendor follows you to the nearest chùa (MGOAL_GO_TO_TYPE: talk to her when you both stand on a sgn_chua tile), and stays there.  Follows up with MISSION_SGN_CHO_CHU_SAU.",
+    "type": "mission_definition",
+    "name": { "str": "Gạo lên chùa" },
+    "description": "Walk the vendor and her rice to the <color_yellow>chùa</color>, where people are sheltering, and talk to her when you are there.",
+    "goal": "MGOAL_GO_TO_TYPE",
+    "destination": "sgn_chua",
+    "difficulty": 3,
+    "value": 0,
+    "has_generic_rewards": false,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "followup": "MISSION_SGN_CHO_CHU_SAU",
+    "start": { "effect": "follow_only", "assign_mission_target": { "om_terrain": "sgn_chua", "reveal_radius": 1, "random": false } },
+    "end": {
+      "effect": [ "stop_following", { "u_spawn_item": "sgn_vang_chi", "count": 2 }, { "u_spawn_item": "sgn_banh_chung", "count": 2 } ]
+    },
+    "dialogue": {
+      "describe": "Now the hard part.",
+      "offer": "Three sacks of rice and two old women, me and the one at the pagoda gate.  The chùa is not far, but the street is.  <color_yellow>Walk me there</color>, stay close, and when we are inside the gate, tell me.  I will not look behind me the whole way, so you do it.",
+      "accepted": "Đi.  Slowly.  I am sixty-one.",
+      "rejected": "Then I will go at four in the morning, which is when I always went to work.  They are slower then.  Maybe.",
+      "advice": "Stay off the main road, walk the hẻm.  If something comes, I will stand still and you will do whatever it is you do.",
+      "inquire": "Are we there?  I cannot see the gate.",
+      "success": "Mô Phật.  We are here.  This is for you, from the stall: gold, and two bánh chưng I was keeping for Tết.  I do not think there will be a Tết this year.",
+      "success_lie": "This is not the chùa.  I have lived here sixty years.",
+      "failure": "Then the rice stays at the stall, and the rats eat it."
+    }
+  },
+  {
+    "id": "MISSION_SGN_CHO_CHU_SAU",
+    "//": "E1 chain 3, step 3 of 3: recruit chú Sáu (sgn_npc_chu_sau), who drives the chợ's ba gác; he waits in the courtyard of the chùa the escort ended at (8,7 of sgn_chua is always courtyard).",
+    "type": "mission_definition",
+    "name": { "str": "Chú Sáu xe ba gác" },
+    "description": "Talk <color_yellow>chú Sáu</color>, the chợ's ba gác driver, into coming with you.",
+    "goal": "MGOAL_RECRUIT_NPC",
+    "difficulty": 2,
+    "value": 0,
+    "has_generic_rewards": false,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "start": {
+      "assign_mission_target": { "om_terrain": "sgn_chua", "reveal_radius": 1, "random": false, "origin_npc": true },
+      "update_mapgen": { "place_npcs": [ { "class": "sgn_npc_chu_sau", "x": 8, "y": 7, "target": true } ] }
+    },
+    "dialogue": {
+      "describe": "There is one more thing.  Not for me.",
+      "offer": "Chú Sáu drove trucks for the army for eleven years and the chợ's ba gác for fifteen.  He brought the last load up here this morning and now he is sitting in the courtyard smoking, with nothing to drive and nowhere to drive it.  A man like that dies of sitting.  <color_yellow>Ask him to go with you.</color>  He will say no the first time.",
+      "accepted": "In the courtyard, by the incense burner.  Do not offer him a cigarette; he has his own and he will be insulted.",
+      "rejected": "Then he will sit there until he is old, which will not take long.",
+      "advice": "Ask him about the trucks.  Everybody who asks him about the trucks gets an hour, and then he likes them.",
+      "inquire": "Did he say yes?  He always says no first.",
+      "success": "Good.  Bring him back sometimes.  The pagoda will be here, and so will I.",
+      "success_lie": "He is still in the courtyard.  I can see him from here.",
+      "failure": "Ah well.  He was always stubborn."
+    }
+  }
+]

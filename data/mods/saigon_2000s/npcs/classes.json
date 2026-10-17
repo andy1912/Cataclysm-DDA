@@ -20,10 +20,7 @@
     "name": "parish priest",
     "job_description": "I have buried more people from this parish than I have married.",
     "common": false,
-    "skills": [
-      { "skill": "speech", "bonus": { "rng": [ 2, 4 ] } },
-      { "skill": "firstaid", "bonus": { "rng": [ 1, 3 ] } }
-    ],
+    "skills": [ { "skill": "speech", "bonus": { "rng": [ 2, 4 ] } }, { "skill": "firstaid", "bonus": { "rng": [ 1, 3 ] } } ],
     "worn_override": "sgn_npc_priest_worn",
     "carry_override": "sgn_npc_priest_carry",
     "weapon_override": "sgn_npc_priest_weapon"
@@ -34,10 +31,7 @@
     "name": "postal clerk",
     "job_description": "Sorting mail for a city that has stopped writing to each other.",
     "common": false,
-    "skills": [
-      { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } },
-      { "skill": "computer", "bonus": { "rng": [ 0, 2 ] } }
-    ],
+    "skills": [ { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } }, { "skill": "computer", "bonus": { "rng": [ 0, 2 ] } } ],
     "worn_override": "sgn_npc_postal_clerk_worn",
     "carry_override": "sgn_npc_postal_clerk_carry",
     "weapon_override": "sgn_npc_postal_clerk_weapon"
@@ -48,10 +42,7 @@
     "name": "civil servant",
     "job_description": "I file the paperwork.  There is a great deal of paperwork now.",
     "common": false,
-    "skills": [
-      { "skill": "speech", "bonus": { "rng": [ 2, 4 ] } },
-      { "skill": "computer", "bonus": { "rng": [ 1, 3 ] } }
-    ],
+    "skills": [ { "skill": "speech", "bonus": { "rng": [ 2, 4 ] } }, { "skill": "computer", "bonus": { "rng": [ 1, 3 ] } } ],
     "worn_override": "sgn_npc_civil_servant_worn",
     "carry_override": "sgn_npc_civil_servant_carry",
     "weapon_override": "sgn_npc_civil_servant_weapon"
@@ -95,10 +86,7 @@
     "name": "nurse",
     "job_description": "Forty beds, one doctor, and the wards are all full.",
     "common": false,
-    "skills": [
-      { "skill": "firstaid", "bonus": { "rng": [ 3, 5 ] } },
-      { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } }
-    ],
+    "skills": [ { "skill": "firstaid", "bonus": { "rng": [ 3, 5 ] } }, { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } } ],
     "proficiencies": [ "prof_wound_care", "prof_intro_biology" ],
     "worn_override": "sgn_npc_nurse_worn",
     "carry_override": "sgn_npc_nurse_carry",
@@ -111,9 +99,7 @@
     "name": "shopkeeper",
     "job_description": "I still keep the books, and I still open in the morning.  After that it is mostly waiting.",
     "common": false,
-    "skills": [
-      { "skill": "speech", "bonus": { "rng": [ 4, 6 ] } }
-    ],
+    "skills": [ { "skill": "speech", "bonus": { "rng": [ 4, 6 ] } } ],
     "shopkeeper_item_group": "sgn_npc_shopkeeper_sells",
     "worn_override": "sgn_npc_shopkeeper_worn",
     "carry_override": "sgn_npc_shopkeeper_carry",
@@ -157,10 +143,7 @@
     "name": "filling-station attendant",
     "job_description": "Four pumps and a shutter I cannot close on my own.",
     "common": false,
-    "skills": [
-      { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } },
-      { "skill": "mechanics", "bonus": { "rng": [ 0, 2 ] } }
-    ],
+    "skills": [ { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } }, { "skill": "mechanics", "bonus": { "rng": [ 0, 2 ] } } ],
     "worn_override": "sgn_npc_petrol_attendant_worn",
     "carry_override": "sgn_npc_petrol_attendant_carry",
     "weapon_override": "sgn_npc_petrol_attendant_weapon"
@@ -172,10 +155,7 @@
     "name": "caretaker",
     "job_description": "Somebody still has to sweep the path and pull the weeds.  So it is me.",
     "common": false,
-    "skills": [
-      { "skill": "survival", "bonus": { "rng": [ 1, 3 ] } },
-      { "skill": "fabrication", "bonus": { "rng": [ 0, 2 ] } }
-    ],
+    "skills": [ { "skill": "survival", "bonus": { "rng": [ 1, 3 ] } }, { "skill": "fabrication", "bonus": { "rng": [ 0, 2 ] } } ],
     "worn_override": "sgn_npc_caretaker_worn",
     "carry_override": "sgn_npc_caretaker_carry",
     "weapon_override": "sgn_npc_caretaker_weapon"
@@ -186,9 +166,7 @@
     "name": "regular at the park",
     "job_description": "Every evening at five o'clock, same bench, same crowd, same exercises.",
     "common": false,
-    "skills": [
-      { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } }
-    ],
+    "skills": [ { "skill": "speech", "bonus": { "rng": [ 1, 3 ] } } ],
     "worn_override": "sgn_npc_park_elder_worn",
     "carry_override": "sgn_npc_park_elder_carry",
     "weapon_override": "sgn_npc_park_elder_weapon"
@@ -200,9 +178,7 @@
     "name": "transport clerk",
     "job_description": "The schedule is a rumour, but people still come to ask.",
     "common": false,
-    "skills": [
-      { "skill": "speech", "bonus": { "rng": [ 3, 5 ] } }
-    ],
+    "skills": [ { "skill": "speech", "bonus": { "rng": [ 3, 5 ] } } ],
     "worn_override": "sgn_npc_transport_clerk_worn",
     "carry_override": "sgn_npc_transport_clerk_carry",
     "weapon_override": "sgn_npc_transport_clerk_weapon"
@@ -213,10 +189,7 @@
     "name": "office worker",
     "job_description": "Eleven floors of glass and one floor of people who still come in.",
     "common": false,
-    "skills": [
-      { "skill": "computer", "bonus": { "rng": [ 2, 4 ] } },
-      { "skill": "speech", "bonus": { "rng": [ 0, 2 ] } }
-    ],
+    "skills": [ { "skill": "computer", "bonus": { "rng": [ 2, 4 ] } }, { "skill": "speech", "bonus": { "rng": [ 0, 2 ] } } ],
     "worn_override": "sgn_npc_office_worker_worn",
     "carry_override": "sgn_npc_office_worker_carry",
     "weapon_override": "sgn_npc_office_worker_weapon"
@@ -243,10 +216,7 @@
     "name": "backpacker",
     "job_description": "I came for three weeks in 2003 and never quite worked out how to leave.",
     "common": false,
-    "skills": [
-      { "skill": "survival", "bonus": { "rng": [ 1, 3 ] } },
-      { "skill": "speech", "bonus": { "rng": [ 2, 4 ] } }
-    ],
+    "skills": [ { "skill": "survival", "bonus": { "rng": [ 1, 3 ] } }, { "skill": "speech", "bonus": { "rng": [ 2, 4 ] } } ],
     "worn_override": "sgn_npc_backpacker_worn",
     "carry_override": "sgn_npc_backpacker_carry",
     "weapon_override": "sgn_npc_backpacker_weapon"
@@ -254,7 +224,7 @@
   {
     "type": "npc_class",
     "id": "sgn_class_fisherman",
-    "name": "Can Gio fisherman",
+    "name": "Cần Giờ fisherman",
     "job_description": "The river is the same river.  Everything else about it is not.",
     "common": false,
     "skills": [
@@ -288,10 +258,7 @@
     "name": "student",
     "job_description": "The exam is in three weeks.  It has been in three weeks for a while now.",
     "common": false,
-    "skills": [
-      { "skill": "computer", "bonus": { "rng": [ 1, 3 ] } },
-      { "skill": "speech", "bonus": { "rng": [ 0, 2 ] } }
-    ],
+    "skills": [ { "skill": "computer", "bonus": { "rng": [ 1, 3 ] } }, { "skill": "speech", "bonus": { "rng": [ 0, 2 ] } } ],
     "worn_override": "sgn_npc_student_worn",
     "carry_override": "sgn_npc_student_carry",
     "weapon_override": "sgn_npc_student_weapon"

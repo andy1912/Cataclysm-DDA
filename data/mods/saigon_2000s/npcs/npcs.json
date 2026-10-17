@@ -12,7 +12,10 @@
     ],
     "worn_override": "sgn_npc_vendor_worn",
     "carry_override": "sgn_npc_vendor_carry",
-    "weapon_override": "sgn_npc_vendor_weapon"
+    "weapon_override": "sgn_npc_vendor_weapon",
+    "//shop": "E1: every stallholder of this class trades from sgn_npc_vendor_sells, priced by the sgn_cho faction (gold, and the đồng at about a third of its old value).",
+    "shopkeeper_item_group": "sgn_npc_vendor_sells",
+    "restock_interval": "4 days"
   },
   {
     "type": "npc_class",
@@ -40,7 +43,7 @@
     "mission": "GUARD",
     "chat": "TALK_SGN_CO_BA",
     "mission_offered": "MISSION_SGN_MEDICINE_BA_NAM",
-    "faction": "no_faction"
+    "faction": "sgn_cho"
   },
   {
     "type": "npc",
@@ -48,11 +51,12 @@
     "name_unique": "Chú Tư",
     "name_suffix": "xe ôm driver",
     "gender": "male",
-    "class": "sgn_class_xe_om",
+    "class": "sgn_class_xe_om_xang",
+    "//class": "E1: chú Tư sells xăng lẻ by the bottle (npcs/people_classes.json), priced by the sgn_cho faction.",
     "attitude": 0,
     "mission": "GUARD",
     "chat": "TALK_SGN_CHU_TU",
-    "faction": "no_faction"
+    "faction": "sgn_cho"
   },
   {
     "type": "talk_topic",
@@ -81,6 +85,11 @@
         "effect": { "u_add_var": "sgn_met_co_ba", "value": "yes" },
         "topic": "TALK_MISSION_LIST"
       },
+      {
+        "text": "What do you have on the stall?",
+        "effect": [ { "u_add_var": "sgn_met_co_ba", "value": "yes" }, "start_trade" ],
+        "topic": "TALK_SGN_CO_BA"
+      },
       { "text": "I have to go.", "topic": "TALK_DONE" }
     ]
   },
@@ -105,7 +114,10 @@
       "Don't ride at night.  You can't see them in the alleys until they're on you.",
       "I carried a bride to her wedding on this bike once.  The groom paid double.  I wonder where they are now."
     ],
-    "responses": [ { "text": "Thanks, Chú.", "topic": "TALK_DONE" } ]
+    "responses": [
+      { "text": "Sell me some xăng, chú.", "effect": "start_trade", "topic": "TALK_SGN_CHU_TU" },
+      { "text": "Thanks, Chú.", "topic": "TALK_DONE" }
+    ]
   },
   {
     "id": "MISSION_SGN_MEDICINE_BA_NAM",
