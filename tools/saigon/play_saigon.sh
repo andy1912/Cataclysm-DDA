@@ -8,7 +8,7 @@
 # - CATA_DISABLE_SPRITE_SHADERS=1: shaders are built as SPIR-V, which Metal cannot use,
 #   so sprites draw from pre-baked atlases instead (doc/c++/COMPILING.md, SDL builds).
 set -eu
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/../.."
 mkdir -p config
 if [ ! -f config/user-default-mods.json ]; then
     cat > config/user-default-mods.json <<'EOF'

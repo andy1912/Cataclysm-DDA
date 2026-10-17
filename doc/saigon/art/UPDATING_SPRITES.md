@@ -49,7 +49,7 @@ The `overmap` set (`derive_sprites.py overmap`, recipes in `art/saigon/derive_ov
    - connecting walls need the multitile keys from `doc/TILESET.md`.
 5. **Build:** `python3 tools/saigon/art/build_sprites.py` packs hand-drawn and code-drawn art into `data/mods/saigon_2000s/gfx/` (`saigon_<w>x<h>.png` + `mod_tileset.json`). The tool is pure Python, with no Pillow needed.
 6. **Review and validate:** `python3 tools/saigon/art/contact_sheet.py OUT.png <id> ...` shows the original next to the Saigon version, or use `--files a.png b.png`. Then run `python3 tools/saigon/art/validate_tileset.py` and `tools/saigon/check_mod.sh`.
-7. **See it in game:** run `./play_saigon.sh` and create a **new world**, because mod tilesets load with a world.
+7. **See it in game:** run `tools/saigon/play_saigon.sh` and create a **new world**, because mod tilesets load with a world.
 8. **Commit** the program or PNG, the generated PNGs and the packed sheets. Original art copied into a sprite, such as the grass under trees, is named in the program's docstring (`STYLE_GUIDE.md` §7).
 
 **3D route.** When Blender is available, `tools/saigon/art/render_sprites.py` renders into the same `art/saigon/tiles/` folder, and step 5 onward is unchanged. The isometric set (R3) will get its own `tiles_iso/` folder and a `Ultica_iso` compatibility entry.

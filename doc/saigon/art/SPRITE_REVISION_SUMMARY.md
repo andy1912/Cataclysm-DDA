@@ -106,4 +106,4 @@ The packer (`tools/saigon/art/build_sprites.py`) accepts every UltimateCataclysm
 | Re-run the recolour recipes | `python3 tools/saigon/art/derive_sprites.py` |
 | Check the packed tilesets | `python3 tools/saigon/art/validate_tileset.py` |
 | Regenerate the full list and manifest | `python3 tools/saigon/art_manifest.py` |
-| Play (graphics, Saigon preselected) | `./play_saigon.sh`, then create a **new world** |
+| Play (graphics, Saigon preselected) | `tools/saigon/play_saigon.sh`, then create a **new world** |

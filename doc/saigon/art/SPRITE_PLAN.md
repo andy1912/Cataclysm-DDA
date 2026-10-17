@@ -16,7 +16,7 @@ Most entries need **new game content as well as a sprite**. Where an entry says 
 | Connected and rotating sprites | Walls, fences and floors that connect need `multitile` with all subtiles: `center`, `corner`, `edge`, `t_connection`, `end_piece`, `unconnected` (+`broken`/`open` where they apply). Rotating furniture needs 4 facings or `"rotates": true`. Vehicle parts always set `"rotates": true`. |
 | Route | **D** = code-drawn (`art/saigon/drawn/`), **R** = derived recolour, **H** = hand art recommended. Characters and organic shapes go to H; a D placeholder ships until H exists. |
 | Gates per unit | `draw_sprites.py`, `build_sprites.py`, `validate_tileset.py` (0 problems), `check_mod.sh`, `[saigon]` tests, a `[saigon_scene]` render of the affected area viewed before committing, then `revision_list.py`. |
-| In-game check | Load a **new world** with `./play_saigon.sh` and look at: a shophouse front, a tree, a parked motorbike turning, an item on the floor and the character in a nón lá. This closes R9 in the review. |
+| In-game check | Load a **new world** with `tools/saigon/play_saigon.sh` and look at: a shophouse front, a tree, a parked motorbike turning, an item on the floor and the character in a nón lá. This closes R9 in the review. |
 
 ## 1. Fix-ups from the review (do first)
 | Unit | Work | Count | Route |
