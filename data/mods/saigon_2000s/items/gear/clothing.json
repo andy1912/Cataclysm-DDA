@@ -106,5 +106,15 @@
     "name": { "str": "red scarf" },
     "description": "Khăn quàng đỏ: the red triangular neckerchief of the Young Pioneers, knotted at the throat of every primary-school child.",
     "color": "red"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ao_y_ta",
+    "copy-from": "coat_lab",
+    "subtypes": [ "ARMOR" ],
+    "//": "D-fix / review B3-4: the nurse's kit.  A Vietnamese hospital nurse in the 2000s wore the white áo blouse over street clothes; dda's lab coat is the same garment.",
+    "name": { "str": "nurse's white blouse" },
+    "description": "Áo blouse trắng: the knee-length white coat every Saigon hospital nurse wears over street clothes, with the hospital's name stitched in blue above the breast pocket and a pen clipped in it.  Long sleeves, two deep pockets, and a fever ward's worth of stains that will not wash out.",
+    "color": "white"
   }
 ]

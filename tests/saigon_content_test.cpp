@@ -94,6 +94,26 @@ static bool is_firearm( const item &it )
 // nothing new turns up, what those items take apart into or turn into when used (a coconut
 // splits into bowls, a torch lights).  Pseudo tools (fire, a stove's heat) come from terrain and
 // furniture.  dda's groups count too: a component found only in dda loot is still found.
+// D-fix (doc/saigon/DIFFICULTY.md, lever 1): the best bash, cut or stab an item deals in melee,
+// counting what it turns into (the công an's expandable baton is weak until it is snapped open).
+static int best_melee_damage( const itype_id &id, int depth = 0 )
+{
+    static const damage_type_id dt_bash( "bash" );
+    static const damage_type_id dt_cut( "cut" );
+    static const damage_type_id dt_stab( "stab" );
+    const item it( id );
+    int best = std::max( { it.damage_melee( dt_bash ), it.damage_melee( dt_cut ), it.damage_melee( dt_stab ) } );
+    if( depth == 0 ) {
+        for( const std::pair<const std::string, use_function> &use : id->use_methods ) {
+            const iuse_transform *tr = dynamic_cast<const iuse_transform *>( use.second.get_actor_ptr() );
+            if( tr != nullptr && !tr->transform.target.is_null() ) {
+                best = std::max( best, best_melee_damage( tr->transform.target, 1 ) );
+            }
+        }
+    }
+    return best;
+}
+
 static const std::set<itype_id> &obtainable_items()
 {
     static std::set<itype_id> out;
@@ -267,6 +287,23 @@ TEST_CASE( "saigon_profession_kits", "[saigon][saigon_content]" )
                         }
                     }
                     CHECK( saigon >= 1 );
+                    // D-fix (doc/saigon/DIFFICULTY.md, lever 1): every profession starts able to
+                    // fight back.  Six of twelve used to start bare-handed; the weakest kit weapon
+                    // now is the mechanic's wrench (bash 7).
+                    int weapon = 0;
+                    std::string weapon_id;
+                    for( const item &top : kit ) {
+                        top.visit_items( [&]( const item * it, item * ) {
+                            const int dmg = best_melee_damage( it->typeId() );
+                            if( dmg > weapon ) {
+                                weapon = dmg;
+                                weapon_id = it->typeId().str();
+                            }
+                            return VisitResponse::NEXT;
+                        } );
+                    }
+                    CAPTURE( weapon_id );
+                    CHECK( weapon >= 7 );
                 }
             }
             // a starting vehicle is a Saigon one

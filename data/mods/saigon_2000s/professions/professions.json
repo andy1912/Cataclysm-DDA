@@ -3,21 +3,23 @@
     "type": "profession",
     "id": "sgn_survivor",
     "name": "Survivor",
-    "description": "Nothing about your life before prepared you for this: a job, a family, a rented room, a motorbike payment.  You have survived five days of the end of the world, which is more than most of the city can say.",
+    "description": "Nothing about your life before prepared you for this: a job, a family, a rented room, a motorbike payment.  You have survived the first night of the end of the world, which is more than most of the city can say.  The kitchen chopper you grabbed in the dark is still in your hand.",
     "npc_background": "BG_survival_story_EVACUEE",
     "points": 0,
     "items": {
       "both": {
         "entries": [
-          { "item": "tshirt" },
+          { "item": "sgn_ao_thun" },
           { "item": "pants_cargo" },
-          { "item": "sgn_dep_to_ong" },
+          { "item": "socks" },
+          { "item": "sneakers" },
+          { "item": "sgn_dao_phay" },
           { "group": "charged_cell_phone" },
           { "group": "sgn_wallet" }
         ]
       },
-      "male": { "entries": [ { "item": "boxer_shorts" } ] },
-      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+      "male": { "entries": [ { "item": "boxer_shorts" }, { "item": "jacket_light" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" }, { "item": "sgn_ao_khoac_chong_nang" } ] }
     }
   },
   {
@@ -35,16 +37,17 @@
         "entries": [
           { "item": "tshirt" },
           { "item": "pants_cargo" },
-          { "item": "sgn_dep_to_ong" },
+          { "item": "sgn_dep_quai_hau" },
           { "item": "sgn_non_bao_hiem" },
+          { "item": "sgn_khoa_chu_u" },
           { "item": "sgn_ao_mua_canh_doi", "custom-flags": [ "no_auto_equip" ] },
           { "item": "sgn_newspaper" },
           { "group": "charged_cell_phone" },
           { "group": "sgn_wallet" }
         ]
       },
-      "male": { "entries": [ { "item": "boxer_shorts" } ] },
-      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+      "male": { "entries": [ { "item": "boxer_shorts" }, { "item": "jacket_light" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" }, { "item": "sgn_ao_khoac_chong_nang" } ] }
     }
   },
   {
@@ -59,7 +62,7 @@
     "items": {
       "both": {
         "entries": [
-          { "item": "tshirt" },
+          { "item": "sgn_ao_ba_ba" },
           { "item": "pants_cargo" },
           { "item": "sgn_dep_to_ong" },
           { "item": "sgn_non_la" },
@@ -70,12 +73,15 @@
           { "item": "bowl_plastic", "count": 2 },
           { "item": "knife_cleaver" },
           { "item": "rice_cooked", "count": 2 },
+          { "item": "sgn_nuoc_mam" },
+          { "item": "sgn_banh_mi_bread", "count": 4 },
           { "group": "sgn_wallet" }
         ]
       },
       "male": { "entries": [ { "item": "boxer_shorts" } ] },
       "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
-    }
+    },
+    "recipes": [ "sgn_pho_bo", "sgn_com_tam", "sgn_che" ]
   },
   {
     "type": "profession",
@@ -88,12 +94,13 @@
     "items": {
       "both": {
         "entries": [
-          { "item": "longshirt" },
+          { "item": "sgn_ao_ba_ba" },
           { "item": "pants_cargo" },
-          { "item": "sgn_dep_to_ong" },
+          { "item": "sgn_dep_quai_hau" },
           { "item": "sgn_non_la" },
+          { "item": "sgn_dao_bau" },
           { "item": "backpack" },
-          { "item": "jerrycan" },
+          { "item": "sgn_ro_nhua" },
           { "item": "wristwatch" },
           { "group": "charged_cell_phone" },
           { "group": "sgn_wallet" },
@@ -108,7 +115,7 @@
     "type": "profession",
     "id": "sgn_student",
     "name": "University student",
-    "description": "You came up from the provinces to study in the city, renting a bed in a crowded room at the end of a hẻm and cycling to lectures.  You spent more nights in the internet café than in the library.  Your family is three hundred kilometers away, and the phone lines are dead.",
+    "description": "You came up from the provinces to study in the city, renting a bed in a crowded room at the end of a hẻm and cycling to lectures.  You spent more nights in the internet café than in the library, and Sunday mornings swinging a côn nhị khúc in the university Vovinam club.  Your family is three hundred kilometers away, and the phone lines are dead.",
     "npc_background": "BG_survival_story_TEENAGER",
     "points": 0,
     "skills": [ { "name": "computer", "level": 2 }, { "name": "firstaid", "level": 1 } ],
@@ -120,7 +127,9 @@
         "entries": [
           { "item": "tshirt" },
           { "item": "jeans" },
-          { "item": "sgn_dep_to_ong" },
+          { "item": "socks" },
+          { "item": "sneakers" },
+          { "item": "sgn_con_nhi_khuc" },
           { "item": "backpack" },
           { "item": "sgn_sgk_ngu_van" },
           { "item": "howto_computer" },
@@ -129,15 +138,15 @@
           { "group": "sgn_wallet" }
         ]
       },
-      "male": { "entries": [ { "item": "boxer_shorts" } ] },
-      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+      "male": { "entries": [ { "item": "boxer_shorts" }, { "item": "jacket_light" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" }, { "item": "sgn_ao_khoac_chong_nang" } ] }
     }
   },
   {
     "type": "profession",
     "id": "sgn_cong_an",
     "name": "Ward police officer",
-    "description": "As a công an phường you spent your days settling neighbors' disputes, checking household registrations, and directing traffic around funerals.  When the fever came you enforced the quarantine door to door.  You never fired your service weapon; you are not even sure it was issued with enough ammunition.",
+    "description": "As a công an phường you spent your days settling neighbors' disputes, checking household registrations, and directing traffic around funerals.  When the fever came you enforced the quarantine door to door.  You were never issued a gun; the district office kept the only one in a drawer.",
     "npc_background": "BG_survival_story_POLICE",
     "points": 3,
     "skills": [ { "name": "melee", "level": 2 }, { "name": "bashing", "level": 2 }, { "name": "speech", "level": 1 } ],
@@ -145,8 +154,8 @@
     "items": {
       "both": {
         "entries": [
-          { "item": "longshirt" },
-          { "item": "pants_cargo" },
+          { "item": "sgn_ao_cong_an" },
+          { "item": "sgn_quan_cong_an" },
           { "item": "socks" },
           { "item": "boots" },
           { "item": "police_belt" },
@@ -166,7 +175,7 @@
     "type": "profession",
     "id": "sgn_nurse",
     "name": "Hospital nurse",
-    "description": "You worked the fever ward at a district hospital until the doors were chained from the inside.  You have seen what the sốt lạ does in its last hours, and you know better than anyone that the dead do not stay in their beds.",
+    "description": "You worked the fever ward at a district hospital until the doors were chained from the inside, and you got out with a length of steel pipe wrenched off a bed frame.  You have seen what the sốt lạ does in its last hours, and you know better than anyone that the dead do not stay in their beds.",
     "npc_background": "BG_survival_story_MEDICAL",
     "points": 3,
     "skills": [ { "name": "firstaid", "level": 4 } ],
@@ -174,12 +183,14 @@
     "items": {
       "both": {
         "entries": [
-          { "item": "longshirt" },
+          { "item": "sgn_ao_thun" },
+          { "item": "sgn_ao_y_ta" },
           { "item": "pants_cargo" },
           { "item": "socks" },
           { "item": "sneakers" },
+          { "item": "pipe" },
           { "item": "gloves_medical", "count": 2 },
-          { "item": "mask_dust", "count": 3 },
+          { "item": "sgn_khau_trang", "count": 3 },
           { "item": "adhesive_bandages", "count": 6 },
           { "item": "disinfectant" },
           { "item": "aspirin", "count": 10 },
@@ -238,9 +249,9 @@
           { "item": "shorts" },
           { "item": "sgn_dep_to_ong" },
           { "item": "sgn_non_la" },
-          { "item": "net" },
-          { "item": "fishing_rod_basic" },
-          { "item": "knife_folding" },
+          { "item": "sgn_luoi_chai" },
+          { "item": "sgn_can_cau_tre" },
+          { "item": "sgn_dao_rua" },
           { "item": "lighter", "charges": 100 },
           { "group": "sgn_wallet" }
         ]
@@ -269,6 +280,7 @@
           { "item": "screwdriver" },
           { "item": "pliers" },
           { "item": "jumper_cable" },
+          { "item": "sgn_bo_va_xe" },
           { "item": "tool_belt" },
           { "group": "sgn_wallet" }
         ]
@@ -281,7 +293,7 @@
     "type": "profession",
     "id": "sgn_monk",
     "name": "Buddhist monk",
-    "description": "You entered the pagoda as a boy and have kept its precepts ever since: no meat, no violence, no attachment.  When the sick came to the pagoda gate, the abbot opened it.  You alone walked out again.  Your vows have never been harder to keep.",
+    "description": "You entered the pagoda as a boy and have kept its precepts ever since: no meat, no violence, no attachment.  When the sick came to the pagoda gate, the abbot opened it.  You alone walked out again, carrying the côn from the rack where the novices practised võ in the yard.  Your vows have never been harder to keep.",
     "npc_background": "BG_survival_story_RURAL",
     "points": 0,
     "skills": [ { "name": "firstaid", "level": 1 }, { "name": "speech", "level": 2 } ],
@@ -290,9 +302,11 @@
       "both": {
         "entries": [
           { "item": "robe" },
-          { "item": "sgn_dep_to_ong" },
+          { "item": "sgn_dep_quai_hau" },
+          { "item": "sgn_con_tam_vong" },
           { "item": "bead_necklace" },
           { "item": "incense", "count": 5 },
+          { "item": "sgn_book_sutra" },
           { "item": "matches" },
           { "group": "sgn_wallet" }
         ]
