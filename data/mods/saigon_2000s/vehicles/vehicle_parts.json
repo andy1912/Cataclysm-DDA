@@ -65,9 +65,13 @@
     "type": "vehicle_part",
     "id": "sgn_longtail",
     "copy-from": "engine_1cyl_large",
+    "item": "sgn_longtail_engine_item",
     "name": { "str": "long-tail engine" },
+    "//": "B6 review: long-tails ran 8-13 hp engines (~10 kW), not dda's 21 kW large single.",
+    "power": "9700 W",
+    "energy_consumption": "24250 W",
     "extend": { "flags": [ "PROTRUSION" ] },
-    "description": "A car or pump engine bolted to a pivot on the stern, driving a propeller on the end of a long shaft.  Loud, crude and able to push a loaded boat through a weed-choked canal."
+    "description": "A small engine bolted to a pivot on the stern, driving a propeller on the end of a long shaft.  Loud, crude and able to push a loaded boat through a weed-choked canal."
   },
   {
     "type": "vehicle_part",

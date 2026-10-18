@@ -509,7 +509,9 @@
         "                        ",
         "                        "
       ],
-      "place_vehicles": [ { "vehicle": "sgn_veh_xe_16_cho", "x": [ 10, 13 ], "y": [ 10, 13 ], "rotation": [ 30, 120, 210, 300 ], "status": 1 } ],
+      "place_vehicles": [
+        { "vehicle": "sgn_veh_xe_cuu_thuong", "x": [ 10, 13 ], "y": [ 10, 13 ], "rotation": [ 30, 120, 210, 300 ], "status": 1 }
+      ],
       "place_furniture": [ { "furn": "f_IV_pole", "x": [ 7, 16 ], "y": [ 7, 16 ], "repeat": [ 1, 2 ] } ],
       "place_items": [ { "item": "sgn_hospital", "x": [ 6, 17 ], "y": [ 6, 17 ], "chance": 80, "repeat": [ 2, 4 ] } ],
       "place_item": [ { "item": "bag_iv", "x": [ 6, 17 ], "y": [ 6, 17 ], "chance": 50 } ],
