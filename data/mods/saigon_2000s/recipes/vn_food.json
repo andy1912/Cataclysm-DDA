@@ -329,7 +329,7 @@
     "components": [
       [ [ "meat_red_raw", 2, "LIST" ] ],
       [ [ "eggs_bird", 2, "LIST" ] ],
-      [ [ "sgn_nuoc_dua", 1 ], [ "coconut", 1 ], [ "water_clean", 2 ], [ "water", 2 ] ],
+      [ [ "sgn_nuoc_dua", 2 ], [ "coconut", 1 ], [ "water_clean", 2 ], [ "water", 2 ] ],
       [ [ "sgn_nuoc_mam", 2 ] ],
       [ [ "sugar_standard", 1, "LIST" ] ]
     ],
