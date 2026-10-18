@@ -79,6 +79,27 @@ if [[ " ${mods[*]} " == *" saigon_2000s "* ]]; then
         head -20 "$ud/check_separation.txt"
         fail=1
     fi
+    # the playtest mod (data/mods/saigon_playtest) replaces the profession whitelist, since the
+    # engine keeps only one; its copy must hold every profession the main mod whitelists
+    if ! python3 - > "$ud/check_playtest.txt" 2>&1 <<'PY'
+import json, sys
+def wl(path):
+    for o in json.load(open(path)):
+        if o.get("type") == "profession_blacklist" and o.get("subtype") == "whitelist":
+            return set(o["professions"])
+    return set()
+main = wl("data/mods/saigon_2000s/settings/whitelists.json")
+pt = wl("data/mods/saigon_playtest/profession.json")
+missing = sorted(main - pt)
+if missing:
+    print("missing from the playtest whitelist:", ", ".join(missing))
+    sys.exit(1)
+PY
+    then
+        echo "FAIL: playtest whitelist out of date (data/mods/saigon_playtest/profession.json):"
+        head -5 "$ud/check_playtest.txt"
+        fail=1
+    fi
     # the real map must be walkable: straight, ramped bridges and a way into every hẻm network
     if ! python3 tools/saigon/realmap/check_realmap.py > "$ud/check_realmap.txt" 2>&1; then
         echo "FAIL: real map (tools/saigon/realmap/check_realmap.py):"

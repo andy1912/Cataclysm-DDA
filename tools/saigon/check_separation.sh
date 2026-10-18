@@ -54,7 +54,7 @@ n_engine=0
 while IFS= read -r p; do
     [ -z "$p" ] && continue
     case "$p" in
-        data/mods/saigon_2000s/*|tools/saigon/*|art/saigon/*|doc/saigon/*|tests/saigon_*)
+        data/mods/saigon_2000s/*|data/mods/saigon_playtest/*|tools/saigon/*|art/saigon/*|doc/saigon/*|tests/saigon_*)
             n_fork=$((n_fork + 1)); continue ;;
     esac
     if printf '%s\n' "$allowed" | grep -qxF -- "$p"; then
