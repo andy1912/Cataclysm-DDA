@@ -1,0 +1,77 @@
+[
+  {
+    "type": "snippet",
+    "category": "sgn_intro",
+    "//": "V3: more nhà ống wake-ups, shown by SGN_EOC_intro when the start is a shophouse (adds to the category in lore.json).",
+    "text": [
+      {
+        "id": "sgn_intro_v3_nha_ong_1",
+        "text": "You wake on the bamboo mat on the floor of the front room, where it was coolest.  Light comes through the gaps in the shutters in stripes.  Out in the street a motorbike lies on its side where it fell three nights ago, and nobody has come to pick it up."
+      },
+      {
+        "id": "sgn_intro_v3_nha_ong_2",
+        "text": "The house is narrow and deep, and from the kitchen at the back you can hear the whole street: nothing.  The electric candles on the altar went dark with the power.  Your phone has no signal and one last unread message: \"Đừng ra đường.  Don't go out.\""
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_intro_v3_cho",
+    "//": "V3: intro for the chợ start (sgn_sloc_cho).",
+    "text": [
+      {
+        "id": "sgn_intro_v3_cho_1",
+        "text": "You wake on flattened cardboard behind your stall, where you meant to sleep for an hour.  The market hall is dim and humid and smells of melted ice and fish going bad.  Between the stalls something in a rubber apron shuffles slowly from one end of the aisle to the other, and back."
+      },
+      {
+        "id": "sgn_intro_v3_cho_2",
+        "text": "The shutters at the market gates are down and the hall is a cave of empty stalls.  Your ice has melted into a pool around your feet.  Somewhere in the dry goods aisle someone is moaning, and the sound carries under the tin roof."
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_intro_v3_hem",
+    "//": "V3: intro for the hẻm start (sgn_sloc_hem).",
+    "text": [
+      {
+        "id": "sgn_intro_v3_hem_1",
+        "text": "You wake in the back room of a house so deep in the hẻm that the sun never reaches its floor.  The alley outside is just wide enough for one motorbike, and every gate along it is shut.  A neighbour's caged songbird is still singing.  Nobody has fed it for days."
+      },
+      {
+        "id": "sgn_intro_v3_hem_2",
+        "text": "The hẻm smells of drains and old incense.  Laundry still hangs on the lines across the alley, dry as paper.  You have known every turn of these alleys since you were a child, and today any of them could hide someone who used to say good morning."
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_intro_v3_ga",
+    "//": "V3: intro for the Ga Sài Gòn start (sgn_sloc_ga_sai_gon).",
+    "text": [
+      {
+        "id": "sgn_intro_v3_ga_1",
+        "text": "You wake on a bench in the station hall with your bag under your head.  The departure board still shows the night express to Hà Nội: delayed, then cancelled.  The other passengers who were waiting with you are gone, or standing very still down by the platforms."
+      },
+      {
+        "id": "sgn_intro_v3_ga_2",
+        "text": "The station hall echoes.  The ticket windows are shuttered, a bánh mì cart lies overturned by the doors, and a family's luggage, tied up with string, has been left behind.  The train you were waiting for never came, and the city beyond the forecourt has gone quiet."
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_intro_v3_san_bay",
+    "//": "V3: intro for the Tân Sơn Nhất start (sgn_sloc_san_bay).",
+    "text": [
+      {
+        "id": "sgn_intro_v3_san_bay_1",
+        "text": "You wake on the floor of the departures hall among rows of plastic seats and luggage trolleys.  Every flight on the board says CANCELLED.  Through the glass, planes stand at the gates with their doors shut, and out on the apron something in a high-visibility vest walks in circles."
+      },
+      {
+        "id": "sgn_intro_v3_san_bay_2",
+        "text": "The departures hall is dim and the escalators have stopped.  You slept by the window where the last flight out was meant to board.  A stranded crowd once filled this place.  Now only their suitcases are left, and a few of the crowd, standing among the check-in desks, swaying."
+      }
+    ]
+  }
+]

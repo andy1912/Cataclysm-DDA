@@ -1,0 +1,90 @@
+[
+  {
+    "type": "snippet",
+    "category": "sgn_altar_v3_look",
+    "//": "V3: examining a family altar (f_sgn_ban_tho), SGN_EOC_v3_altar.",
+    "text": [
+      {
+        "id": "sgn_altar_v3_look_1",
+        "text": "The photographs on the altar watch the door: a grandfather in a high-collared tunic, a grandmother with her hair in a bun, a young man in a school portrait.  The bananas on the plate have gone black.  The incense bowl is full of cold red stubs."
+      },
+      {
+        "id": "sgn_altar_v3_look_2",
+        "text": "Someone left in a hurry and still stopped to do this: a fresh glass of water and three oranges on the altar, and the electric candles switched on, though the power has long gone."
+      },
+      {
+        "id": "sgn_altar_v3_look_3",
+        "text": "Behind the photographs stands an old ancestor tablet carved with Chinese characters, its gold paint rubbed thin by decades of dusting.  A wall calendar beside it has the death anniversaries circled in red; the next one was in January."
+      },
+      {
+        "id": "sgn_altar_v3_look_4",
+        "text": "Under the incense bowl is a little card listing the family's đám giỗ, the death-day feasts, in a careful hand.  Beside the last name on the list, the date has been left blank."
+      },
+      {
+        "id": "sgn_altar_v3_look_5",
+        "text": "The altar has been knocked crooked and one photograph lies face down.  You stand it up again: an old woman, smiling at someone outside the frame."
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_altar_v3_than_tai",
+    "//": "V3: examining a Thần Tài shrine (f_sgn_ban_tho_than_tai).",
+    "text": [
+      {
+        "id": "sgn_altar_v3_than_tai_1",
+        "text": "Ông Địa grins up at you from the shrine, belly out, fan in hand.  The can of beer beside him is unopened.  The shop owner never got the year of luck he paid for."
+      },
+      {
+        "id": "sgn_altar_v3_than_tai_2",
+        "text": "The paper money in the shrine is stacked neatly, a billion đồng in hell notes.  Someone has added a real five-hundred-đồng note, folded into a triangle."
+      },
+      {
+        "id": "sgn_altar_v3_than_tai_3",
+        "text": "The incense cup at Thần Tài's feet is full of stubs.  Every morning at opening time someone lit three sticks here and asked for good business.  The shop behind you is dark."
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_altar_v3_incense",
+    "//": "V3: lighting incense at a family altar; comes with the morale_sgn_remember bonus.",
+    "text": [
+      {
+        "id": "sgn_altar_v3_incense_1",
+        "text": "You light a stick of incense, raise it to your forehead three times and set it in the bowl.  The smoke curls up past the photographs.  You remember them: your own family's altar, your grandmother's hands, the smell of Tết mornings."
+      },
+      {
+        "id": "sgn_altar_v3_incense_2",
+        "text": "You light the incense and stand a while in silence.  You think of the people you have lost these last days, and of the ones you have no news of yet.  For a moment the house is very quiet, and that is all right."
+      },
+      {
+        "id": "sgn_altar_v3_incense_3",
+        "text": "The incense catches and you plant it among the cold stubs.  \"Please look after them,\" you say, not sure whose ancestors you are speaking to, and it does not seem to matter."
+      },
+      {
+        "id": "sgn_altar_v3_incense_4",
+        "text": "You light the incense and bow.  The smoke smells like every pagoda and every death anniversary of your childhood.  You remember them, and for a moment the weight on your chest eases."
+      },
+      {
+        "id": "sgn_altar_v3_incense_5",
+        "text": "You light a stick and bow three times, the way you were taught as a child.  It is a small thing, done properly, in a city where nothing else is."
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_altar_v3_than_tai_incense",
+    "//": "V3: lighting incense at a Thần Tài shrine.",
+    "text": [
+      {
+        "id": "sgn_altar_v3_than_tai_incense_1",
+        "text": "You light a stick for Thần Tài and Ông Địa and wedge it into the cup.  If there is any luck left in this city, you could use some."
+      },
+      {
+        "id": "sgn_altar_v3_than_tai_incense_2",
+        "text": "You light the incense and bow to the little clay gods.  It feels a little silly, and a little better."
+      }
+    ]
+  }
+]

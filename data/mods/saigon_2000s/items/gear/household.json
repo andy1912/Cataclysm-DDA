@@ -43,9 +43,17 @@
     "id": "sgn_radio_cassette",
     "copy-from": "radio",
     "subtypes": [ "TOOL" ],
-    "name": { "str": "cassette radio (off)", "str_pl": "cassette radios (off)" },
-    "description": "A silver radio-cassette player with twin speakers and a carrying handle, still holding a tape of cải lương opera.  Using it turns on the radio.",
-    "color": "light_gray"
+    "name": { "str": "cassette radio" },
+    "description": "A silver radio-cassette player with twin speakers and a carrying handle, still holding a tape of cải lương opera.  Use it to tune in whatever is still on the air, or to play the tape.  Each use drains a little of the battery.",
+    "color": "light_gray",
+    "//": "V3: dda's radio picks up only overmap radio towers, which the city does not have; this one plays the mod's broadcasts instead, changing with the days since the cataclysm (eoc/v3_city_voice.json).",
+    "use_action": {
+      "type": "effect_on_conditions",
+      "menu_text": "Switch on",
+      "description": "Tune in whatever is still on the air, or play the tape.",
+      "effect_on_conditions": [ "SGN_EOC_v3_radio_use" ],
+      "consume": true
+    }
   },
   {
     "type": "ITEM",

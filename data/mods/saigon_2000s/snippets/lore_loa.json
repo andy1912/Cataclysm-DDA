@@ -1,0 +1,98 @@
+[
+  {
+    "type": "snippet",
+    "category": "sgn_loa_v3_early",
+    "//": "V3: the loa phường in the first week after the cataclysm (days 0-7): the ward's recorded notices, still run by the timer.  Played by SGN_EOC_v3_loa_examine, SGN_EOC_v3_loa_broadcast and the intro.",
+    "text": [
+      {
+        "id": "sgn_loa_v3_early_1",
+        "text": "\"Kính thưa bà con, attention, residents of the ward.  To stop the spread of the strange fever, every household must boil its drinking water and wash hands with soap before meals.  Anyone with a high fever, a cough or a bite wound must report to the ward health station at once.  Do not hide sick relatives at home.\""
+      },
+      {
+        "id": "sgn_loa_v3_early_2",
+        "text": "\"Notice from the ward People's Committee.  Residents are asked to stay at home and go out only to buy food.  Schools, cafés and karaoke shops are closed until further notice.  The leader of each tổ dân phố will visit every household to take temperatures.  Please cooperate.\""
+      },
+      {
+        "id": "sgn_loa_v3_early_3",
+        "text": "\"Attention.  Do not touch, wash or dress the body of anyone who has died of the fever.  Do not hold funerals at home.  Inform the ward health station and the team will collect the body.  Families will be told the date of the cremation.\""
+      },
+      {
+        "id": "sgn_loa_v3_early_4",
+        "text": "\"Attention, residents.  The tap water will be cut for several hours each day.  Fill your jars and tanks now, and boil everything you drink.  Do not drink from the canal.  Do not buy poultry or eggs from street sellers.\""
+      },
+      {
+        "id": "sgn_loa_v3_early_5",
+        "text": "\"This is the ward broadcasting station.  The ward health station beside the market is open day and night.  Anyone who has been bitten or scratched by a sick person must come in at once, even if the wound is small.  Do not wait.  Do not treat it yourself with herbs.\""
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_loa_v3_evac",
+    "//": "V3: the loa phường in the second week (days 8-14): live voices from the ward office, curfew and evacuation points.",
+    "text": [
+      {
+        "id": "sgn_loa_v3_evac_1",
+        "text": "(A man's voice, live and hoarse.)  \"This is the ward office.  A curfew is in force from five in the afternoon until six in the morning.  Anyone in the street after dark will be treated as sick.  Lock your gates.  Turn off your lights.\""
+      },
+      {
+        "id": "sgn_loa_v3_evac_2",
+        "text": "(A woman, live, reading fast from a sheet of paper.)  \"Evacuation points for this ward: the yard of the primary school, and the ward People's Committee building.  Buses will come at seven in the morning.  Bring identity papers, the household registration book and food for three days.  No motorbikes.  No animals.\""
+      },
+      {
+        "id": "sgn_loa_v3_evac_3",
+        "text": "(Live.)  \"The evacuation point at the school is closed.  I repeat, the school is closed, do not go to the school.  Go to the People's Committee building by the back hẻm, not the main road.  The main road is not safe.\""
+      },
+      {
+        "id": "sgn_loa_v3_evac_4",
+        "text": "(Live, an old man's voice.)  \"Anyone still in the ward who can hear this: the militia have gone to the bridge.  There is nobody at the office except me.  There is rice in the office storeroom.  Come by day, come quietly, and knock three times.\""
+      },
+      {
+        "id": "sgn_loa_v3_evac_5",
+        "text": "(Someone breathing hard, very close to the microphone.)  \"The buses are not coming.  I am sorry.  Stay inside.  If they get into the house, go up to the roof; the stairs are narrow, one person can hold the stairs.  Do not come here.\""
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_loa_v3_loop",
+    "//": "V3: the loa phường in weeks three and four (days 15-29): nobody at the office, a stretched tape on the timer.",
+    "text": [
+      {
+        "id": "sgn_loa_v3_loop_1",
+        "text": "(The tape has stretched, and the voice drags low and slow.)  \"…all households must boil… their drinking water… report fevers to the… ward health…\"  (A click, and it begins again.)"
+      },
+      {
+        "id": "sgn_loa_v3_loop_2",
+        "text": "(A loop spliced so badly that two notices run into each other.)  \"…the market will remain closed for disin– buses will take residents out of the– for disin– buses will take…\""
+      },
+      {
+        "id": "sgn_loa_v3_loop_3",
+        "text": "(The morning exercise music that played at six every day before the fever, cheerful and tinny: one, two, three, four, stretch.  It plays to the empty street, all the way through, and stops.)"
+      },
+      {
+        "id": "sgn_loa_v3_loop_4",
+        "text": "(Only the opening chime, and a woman's voice saying \"Kính thưa bà con…\", and then nothing, again and again, as if the rest of the tape had been cut away.)"
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_loa_v3_silent",
+    "//": "V3: examining a loa phường from day 30 on: the speakers have gone quiet.",
+    "text": [
+      {
+        "id": "sgn_loa_v3_silent_1",
+        "text": "The horns are silent.  At the foot of the pole the steel box that held the ward's amplifier and battery hangs open and empty, its wires cut clean with pliers.  Someone wanted the battery more than the news."
+      },
+      {
+        "id": "sgn_loa_v3_silent_2",
+        "text": "The horns are silent.  A pigeon has nested in one of them.  You wait for a while anyway, the way everyone used to wait for the six o'clock notice, but nothing comes."
+      },
+      {
+        "id": "sgn_loa_v3_silent_3",
+        "text": "The horns are silent, and a cable hangs from them into the street, chewed through.  Someone has written on the pole in marker: \"NOBODY IS COMING.  STOP LISTENING.\""
+      }
+    ]
+  }
+]
