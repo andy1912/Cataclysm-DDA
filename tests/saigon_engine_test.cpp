@@ -7,6 +7,7 @@
 #include "avatar.h"
 #include "calendar.h"
 #include "cata_catch.h"
+#include "character_creator_ui.h"
 #include "coordinates.h"
 #include "creature_tracker.h"
 #include "filesystem.h"
@@ -29,6 +30,7 @@
 #include "path_info.h"
 #include "player_helpers.h"
 #include "point.h"
+#include "skill.h"
 #include "type_id.h"
 #include "units.h"
 #include "vehicle.h"
@@ -242,4 +244,29 @@ TEST_CASE( "saigon_engine_realmap_edge_road_exits", "[saigon][saigon_engine]" )
     }
     CHECK( exits > 0 );
     sgn_leave_world();
+}
+
+// newcharacter.cpp (PT1): character_creator_callback::select writes the active menu's index into
+// the current tab's slot.  When the tab changed while another tab's menu was still being queried
+// (the trait-variant menu is one way), the skills slot got a trait index and draw_skills read
+// sorted_skills past its end: the playtest's SIGSEGV in character creation.  The getters now
+// treat an index past the list as nothing selected.
+TEST_CASE( "saigon_engine_creator_selection_out_of_range", "[saigon][saigon_engine]" )
+{
+    character_creator_uistate ui;
+    ui.selected_scenario_index = 3;
+    ui.selected_profession_index = 3;
+    ui.selected_hobby_index = 3;
+    ui.selected_trait_index = 3;
+    ui.selected_skill_index = 80;
+    CHECK( ui.get_selected_scenario() == nullptr );
+    CHECK( ui.get_selected_profession().is_null() );
+    CHECK( ui.get_selected_hobby().is_null() );
+    CHECK( ui.get_selected_trait().is_null() );
+    CHECK( ui.get_selected_skill().is_null() );
+    // and an index inside the list still selects
+    ui.recalc_skill_list();
+    REQUIRE( !ui.sorted_skills.empty() );
+    ui.selected_skill_index = 0;
+    CHECK( ui.get_selected_skill() == ui.sorted_skills[0]->ident() );
 }

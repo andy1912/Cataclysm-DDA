@@ -132,6 +132,22 @@ Four separate changes:
   perf and scene-dump tests).
 - **Marker:** none; the comment explains it (QA1, commit 578413b837).
 
+## src/newcharacter.cpp
+
+1. **Character-creator selection bounds** (PT1): `character_creator_uistate::get_selected_*`
+   return nothing selected when the stored index is past its list, and the skills confirm path
+   skips a null skill. Why: `character_creator_callback::select` writes the active menu's index
+   into the current tab's slot; a tab switched while another tab's menu was still being queried
+   (seen with the trait-variant menu) left the skills slot holding a trait index, and
+   `draw_skills` read `sorted_skills` past its end (SIGSEGV in the playtest, 2026-10-18).
+   Upstream bug. Test: `saigon_engine_creator_selection_out_of_range`. Marker: "Saigon fork (PT1)".
+2. **Load past achievements before the creator opens** (PT1): `avatar::create` calls
+   `get_past_achievements()` before `character_creator_ui::display()`. Why: `scenario::can_pick`
+   reads them while the scenario list is built inside the ImGui frame; the first load there opens
+   a "please wait" popup mid-frame and aborts on ImGui's window-stack assert (SIGABRT in the
+   playtest, twice). Upstream bug (the code carries a TODO about it). Test: none headless (needs
+   the ImGui window); verified by the playtest. Marker: "Saigon fork (PT1)".
+
 ## src/overmap.cpp
 
 - **What:** (1) in `overmap::generate`, a non-empty `overmap_pregenerated_path` global var
@@ -255,6 +271,7 @@ src/main.cpp
 src/map.cpp
 src/map.h
 src/map_helpers.cpp
+src/newcharacter.cpp
 src/overmap.cpp
 src/overmap.h
 src/overmap_worldgen.cpp

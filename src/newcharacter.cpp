@@ -57,6 +57,7 @@
 #include "output.h"
 #include "overmap_ui.h"
 #include "overmapbuffer.h"
+#include "past_achievements_info.h"
 #include "path_info.h"
 #include "pimpl.h"
 #include "player_difficulty.h"
@@ -840,6 +841,10 @@ bool avatar::create( character_type type, const std::string &tempname )
         } else {
             cc_uistate.set_initial_tab( CHARCREATOR_SCENARIO );
         }
+        // Saigon fork (PT1): scenario::can_pick reads past achievements while the creator draws
+        // its lists; loading them there opens a "please wait" popup in the middle of the ImGui
+        // frame and aborts on ImGui's window-stack assert.  Load them before the window exists.
+        get_past_achievements();
         character_creator_ui ccui;
         cc_uistate.generation_type = type;
         ccui.display();
@@ -3319,7 +3324,10 @@ void character_creator_uistate::set_initial_tab( character_creator_tab first_tab
 
 const scenario *character_creator_uistate::get_selected_scenario()
 {
-    if( selected_scenario_index < 0 ) {
+    // Saigon fork (PT1): select() writes the active menu's index into the current tab's slot, and
+    // a tab switched while another tab's menu was still being queried leaves it past the end
+    if( selected_scenario_index < 0 ||
+        static_cast<size_t>( selected_scenario_index ) >= sorted_scenarios.size() ) {
         return nullptr;
     }
     return sorted_scenarios[selected_scenario_index];
@@ -3327,7 +3335,8 @@ const scenario *character_creator_uistate::get_selected_scenario()
 
 profession_id character_creator_uistate::get_selected_profession()
 {
-    if( selected_profession_index < 0 ) {
+    if( selected_profession_index < 0 ||
+        static_cast<size_t>( selected_profession_index ) >= sorted_professions.size() ) {
         return profession_id::NULL_ID();
     }
     return sorted_professions[selected_profession_index];
@@ -3335,7 +3344,8 @@ profession_id character_creator_uistate::get_selected_profession()
 
 profession_id character_creator_uistate::get_selected_hobby()
 {
-    if( selected_hobby_index < 0 ) {
+    if( selected_hobby_index < 0 ||
+        static_cast<size_t>( selected_hobby_index ) >= sorted_hobbies.size() ) {
         return profession_id::NULL_ID();
     }
     return sorted_hobbies[selected_hobby_index];
@@ -3343,7 +3353,8 @@ profession_id character_creator_uistate::get_selected_hobby()
 
 trait_id character_creator_uistate::get_selected_trait()
 {
-    if( selected_trait_index < 0 ) {
+    if( selected_trait_index < 0 ||
+        static_cast<size_t>( selected_trait_index ) >= sorted_traits.size() ) {
         return trait_id::NULL_ID();
     }
     return sorted_traits[selected_trait_index];
@@ -3351,7 +3362,8 @@ trait_id character_creator_uistate::get_selected_trait()
 
 skill_id character_creator_uistate::get_selected_skill()
 {
-    if( selected_skill_index < 0 ) {
+    if( selected_skill_index < 0 ||
+        static_cast<size_t>( selected_skill_index ) >= sorted_skills.size() ) {
         return skill_id::NULL_ID();
     }
     return sorted_skills[selected_skill_index]->ident();
@@ -3879,6 +3891,9 @@ void character_creator_callback::confirm( uilist *menu )
         case CHARCREATOR_SKILLS: {
             select( menu );
             const skill_id skill_queried = cc_uistate.get_selected_skill();
+            if( skill_queried.is_null() ) {
+                break;
+            }
             int previous_skill_level = u.get_skill_level( skill_queried );
             number_input_popup<int> skill_query( 0, previous_skill_level,
                                                  string_format( _( "Set new %s skill level (between %d and %d):" ),
