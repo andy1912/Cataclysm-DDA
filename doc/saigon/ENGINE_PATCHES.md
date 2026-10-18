@@ -197,6 +197,17 @@ Four separate changes:
 - **Marker:** "Saigon fork: a pregenerated overmap set ..." and "Saigon fork: the region for
   overmaps beyond the pregenerated set".
 
+## src/vehicle.cpp
+
+- **What:** format-string fix in `vehicle::coeff_air_drag()`'s drag debug message
+  (`"veh %:"` -> `"veh %s:"`).
+- **Why:** the malformed specifier logs "invalid format specifier" every time a vehicle's air
+  drag is computed, which fails any suite that treats logged errors as failures. This is an
+  upstream bug (still present at upstream/master f2230146c9) that the F1-V vehicle tests exposed.
+- **Test:** `saigon_road_vehicles_drive_and_steer` and `saigon_boats_float_and_motor` (no logged
+  errors).
+- **Marker:** none (format-only change).
+
 ## src/weather_gen.cpp
 
 - **What:** optional 12-value monthly curves (`monthly_temperature`, `monthly_humidity`,
@@ -251,6 +262,7 @@ src/savegame.cpp
 src/scenario.cpp
 src/scenario.h
 src/sdltiles.cpp
+src/vehicle.cpp
 src/weather_gen.cpp
 src/weather_gen.h
 src/zzip.cpp

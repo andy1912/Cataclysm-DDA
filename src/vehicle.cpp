@@ -4681,7 +4681,7 @@ double vehicle::coeff_air_drag() const
     for( drag_column &dc : drag ) {
         // even as m_debug you rarely want to see this
         add_msg_debug( debugmode::DF_VEHICLE_DRAG,
-                       "veh %: pro %d, hboard %d, fboard %d, shield %d, seat %d, roof %d, aisle %d, turret %d, panel %d, exposed %d, last %d\n",
+                       "veh %s: pro %d, hboard %d, fboard %d, shield %d, seat %d, roof %d, aisle %d, turret %d, panel %d, exposed %d, last %d\n",
                        name, dc.pro, dc.hboard, dc.fboard, dc.shield, dc.seat, dc.roof, dc.aisle, dc.turret, dc.panel,
                        dc.exposed, dc.last );
 
