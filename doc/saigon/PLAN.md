@@ -439,3 +439,24 @@ Same working rules as before: small units, one commit each, gates green, ledger 
 - Every new string extracts (T1).
 - New places pass the structure test.
 - Phase X content goes into F3-style playtests as it lands.
+
+---
+
+## Update 2026-10-19: art and sound as downloadable packs (appended; nothing above is changed)
+
+### Decision (user, 2026-10-19)
+The Saigon graphics and, later, the Saigon sound will both be revised and offered as downloads.
+
+### Where things stand
+- **Graphics:** the mod's sprites live inside the mod (`data/mods/saigon_2000s/gfx`, 984 KB): mod tilesets for UltimateCataclysm and the Larwick Overmap, derived and drawn by the G/D units, sources in `art/saigon/`. With any other tileset they are not loaded (the log says "not compatible", which is harmless). H1, the hand-art pass, is still open.
+- **Sound:** the game now builds with sound (`SOUND=1`, SDL3_mixer 3.2.4; see `doc/saigon/SOUND_PLAN.md`). CC-Sounds (CC-BY-SA-4.0) is installed locally in `./sound/`, which is gitignored and never committed. The Saigon pack (SND1–SND5) is not started.
+
+### The plan
+- **DL1 Saigon tileset pack.** After H1 and the art revisions, publish the sprites as a download attached to a GitHub Release on the fork (andy1912/Cataclysm-DDA), named by version (`saigon-tiles-<version>.zip`).
+  - The user chooses the form: a mod tileset overlay (as now, needs UltimateCataclysm), or a full standalone tileset.
+  - The mod keeps a small built-in set so the game is complete without the download.
+  - Credits and licences go in the pack: derived work from CC-BY-SA tilesets stays CC-BY-SA.
+- **DL2 Saigon soundpack.** Units SND1–SND5 build `sound/Saigon/`: CC-Sounds plus Saigon variants and overrides, under CC-BY-SA with per-file credits (sourcing rules in SOUND_PLAN.md). It is published as a Release download (`saigon-sound-<version>.zip`), not committed: audio is large and the base pack is third-party.
+- **DL3 Packaging script.** `tools/saigon/package_assets.sh` builds both zips from their sources, writes a manifest (file list, sizes, sha256, licences), and checks every file has a credit line. It uploads nothing; the user attaches the zips to a Release.
+- **DL4 Install guide.** A section in the player docs: unzip the tileset into `gfx/`, unzip the soundpack into `sound/`, select both in Options, restart.
+- **Release builds (S2–S5)** ship the code and mod only, without the playtest mod. They link to the two downloads.
