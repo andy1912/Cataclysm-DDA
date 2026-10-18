@@ -1,0 +1,116 @@
+[
+  {
+    "type": "weather_generator",
+    "id": "sgn_weather",
+    "copy-from": "default",
+    "//": "Saigon (B4b): monthly climate curves replace the hardcoded New England seasonal sinusoid.  Approximate HCMC normals (UNVERIFIED against a station record): April-peak ~29 C, December low ~26 C, wet-season humidity 79-85%, canal water 27-30 C.  Pressure keeps the dda formula around base_pressure 1009 so the cloudy (P < 1010) coupling of B4a is unchanged.  B4b step 8 re-tune (peer review F1): wet any-hour 87, dry 80, rain afternoon 84, thunder afternoon 85 with humidity_noise 8.",
+    "base_temperature": 27.5,
+    "base_humidity": 72.0,
+    "base_pressure": 1009.0,
+    "base_wind": 4.5,
+    "base_wind_distrib_peaks": 30,
+    "base_wind_season_variation": 0,
+    "weather_black_list": [ "flurries", "snowing", "snowstorm" ],
+    "monthly_temperature": [ 26.0, 26.8, 28.0, 29.2, 28.8, 27.8, 27.4, 27.4, 27.2, 27.0, 26.6, 25.9 ],
+    "monthly_humidity": [ 72, 70, 70, 72, 79, 82, 83, 83, 85, 84, 80, 76 ],
+    "monthly_water_temperature": [ 27.0, 27.0, 28.0, 29.5, 30.0, 29.5, 29.0, 29.0, 29.0, 28.5, 28.0, 27.5 ],
+    "daily_magnitude": 4.5,
+    "noise_magnitude": 1.5,
+    "humidity_noise": 8.0
+  },
+  {
+    "type": "jmath_function",
+    "id": "sgn_doy",
+    "num_args": 0,
+    "//": "Day of year; turn 0 is the spring equinox (~Mar 21).  Assumes the default SEASON_LENGTH of 91 days, which the mod must not change.",
+    "return": "time('now', 'unit':'days') % 364"
+  },
+  {
+    "type": "jmath_function",
+    "id": "sgn_wet",
+    "num_args": 0,
+    "//": "1 during the wet season, May 1 (doy 41) to Nov 30 (doy 252).",
+    "return": "(sgn_doy() >= 41) * (sgn_doy() < 253)"
+  },
+  {
+    "type": "jmath_function",
+    "id": "sgn_afternoon",
+    "num_args": 0,
+    "return": "(time_since('midnight', 'unit':'hours') >= 13) * (time_since('midnight', 'unit':'hours') < 19)"
+  },
+  {
+    "id": "light_drizzle",
+    "type": "weather_type",
+    "copy-from": "light_drizzle",
+    "//": "Root of the rain chain: dry season almost never rains; wet-season afternoons do.",
+    "condition": {
+      "or": [
+        {
+          "and": [
+            { "math": [ "sgn_wet() == 1" ] },
+            { "math": [ "sgn_afternoon() == 1" ] },
+            { "math": [ "weather('humidity') >= 78" ] }
+          ]
+        },
+        { "and": [ { "math": [ "sgn_wet() == 1" ] }, { "math": [ "weather('humidity') >= 87" ] } ] },
+        { "and": [ { "math": [ "sgn_wet() == 0" ] }, { "math": [ "weather('humidity') >= 80" ] } ] }
+      ]
+    }
+  },
+  {
+    "id": "drizzle",
+    "type": "weather_type",
+    "copy-from": "drizzle",
+    "condition": {
+      "or": [
+        {
+          "and": [
+            { "math": [ "sgn_wet() == 1" ] },
+            { "math": [ "sgn_afternoon() == 1" ] },
+            { "math": [ "weather('humidity') >= 82" ] }
+          ]
+        },
+        { "math": [ "weather('humidity') >= 97" ] },
+        { "math": [ "weather('pressure') < 1000" ] }
+      ]
+    }
+  },
+  {
+    "id": "rain",
+    "type": "weather_type",
+    "copy-from": "rain",
+    "condition": {
+      "or": [
+        {
+          "and": [
+            { "math": [ "sgn_wet() == 1" ] },
+            { "math": [ "sgn_afternoon() == 1" ] },
+            { "math": [ "weather('humidity') >= 84" ] }
+          ]
+        },
+        { "math": [ "weather('humidity') >= 98" ] },
+        { "math": [ "weather('pressure') < 993" ] }
+      ]
+    }
+  },
+  {
+    "id": "thunder",
+    "type": "weather_type",
+    "copy-from": "thunder",
+    "//": "Monsoon afternoon thunderstorms; once chosen they last a while.",
+    "duration_min": "40 m",
+    "duration_max": "2 h",
+    "condition": {
+      "or": [
+        {
+          "and": [
+            { "math": [ "sgn_wet() == 1" ] },
+            { "math": [ "sgn_afternoon() == 1" ] },
+            { "math": [ "weather('humidity') >= 85" ] }
+          ]
+        },
+        { "math": [ "weather('pressure') < 996" ] }
+      ]
+    }
+  }
+]

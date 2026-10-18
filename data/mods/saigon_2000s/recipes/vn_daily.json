@@ -1,0 +1,26 @@
+[
+  {
+    "type": "recipe",
+    "result": "sgn_gao_dua",
+    "activity_level": "LIGHT_EXERCISE",
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_CONTAINERS",
+    "skill_used": "fabrication",
+    "difficulty": 1,
+    "time": "20 m",
+    "autolearn": true,
+    "//": "W4: half a coconut shell (from cracking a coconut) and a stick for the handle.",
+    "qualities": [ { "id": "CUT", "level": 2 } ],
+    "components": [ [ [ "bowl_coconut", 1 ] ], [ [ "stick", 1 ] ] ]
+  },
+  {
+    "type": "recipe",
+    "result": "tea_green",
+    "id_suffix": "sgn_bao_loc",
+    "copy-from": "abstract_tea",
+    "category": "CC_FOOD",
+    "subcategory": "CSC_FOOD_DRINKS",
+    "//": "W4: brew Bảo Lộc tea like any green tea.",
+    "components": [ [ [ "sgn_tra_bao_loc", 1 ] ], [ [ "water", 1 ], [ "water_clean", 1 ] ] ]
+  }
+]

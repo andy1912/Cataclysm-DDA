@@ -1,0 +1,80 @@
+[
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_people_giang_ho_z0",
+    "//": "E1: a row of three nhà ống held by a giang hồ gang.  Pictured as an ordinary nhà ống row (no new art).",
+    "copy-from": "generic_city_building",
+    "name": "barred nhà ống row",
+    "sym": "^",
+    "color": "light_red",
+    "looks_like": "sgn_nh_solo_z0"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_people_giang_ho_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "barred nhà ống row, upper floor",
+    "sym": "#",
+    "color": "red",
+    "looks_like": "sgn_nh_solo_z1"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_people_giang_ho_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "barred nhà ống row, rooftops",
+    "sym": "#",
+    "color": "red",
+    "looks_like": "sgn_nh_solo_z3"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_people_nha_thuoc_z0",
+    "//": "E1: a nhà thuốc and the shophouse beside it, broken into and held by looters.",
+    "copy-from": "generic_city_building",
+    "name": "looted nhà thuốc",
+    "sym": "^",
+    "color": "light_green",
+    "looks_like": "sgn_nh_solo_z0"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_people_nha_thuoc_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "looted nhà thuốc roof",
+    "sym": "#",
+    "color": "green",
+    "looks_like": "sgn_nh_solo_z3"
+  },
+  {
+    "type": "overmap_special",
+    "id": "sgn_people_giang_ho",
+    "//": "E1: rare (about one overmap in three), inside the city: city_distance min -1 lets it sit at distance 0, i.e. within a city's radius; only on the field gaps left among the city's buildings ('land').  MISSION_SGN_PHUONG_DAI_CA places one if none exists.",
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_people_giang_ho_z0_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_people_giang_ho_z1_north" },
+      { "point": [ 0, 0, 2 ], "overmap": "sgn_people_giang_ho_z2_north" }
+    ],
+    "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road", "connection": "local_road" } ],
+    "locations": [ "land" ],
+    "city_distance": [ -1, 3 ],
+    "city_sizes": [ 4, -1 ],
+    "occurrences": [ 35, 100 ],
+    "flags": [ "SAIGON", "OVERMAP_UNIQUE", "URBAN" ]
+  },
+  {
+    "type": "overmap_special",
+    "id": "sgn_people_nha_thuoc",
+    "//": "E1: rare (about one overmap in two), inside the city.  MISSION_SGN_BV_NHA_THUOC places one if none exists.",
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_people_nha_thuoc_z0_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_people_nha_thuoc_z1_north" }
+    ],
+    "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road", "connection": "local_road" } ],
+    "locations": [ "land" ],
+    "city_distance": [ -1, 3 ],
+    "city_sizes": [ 4, -1 ],
+    "occurrences": [ 50, 100 ],
+    "flags": [ "SAIGON", "OVERMAP_UNIQUE", "URBAN" ]
+  }
+]

@@ -1,0 +1,702 @@
+[
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "default_zombie_death_drops",
+    "//": "B10: overrides dda's.  Same shape (clothes always, pocket or bag items ~80 %, a wallet 30 %), but the wallet is a Saigon one with đồng and maybe a chỉ of gold instead of US dollar bills and coins, and the 1 % US postman / plumber kits are gone.  W2: one in thirty still holds what they grabbed to fight with; W4: often their papers (CMND, cà vẹt), a bus ticket or a top-up card.",
+    "entries": [
+      {
+        "group": "sgn_wallet",
+        "damage": [
+          1,
+          4
+        ],
+        "prob": 30
+      },
+      {
+        "group": "default_zombie_clothes"
+      },
+      {
+        "distribution": [
+          {
+            "group": "default_zombie_items",
+            "prob": 80
+          },
+          {
+            "group": "default_zombie_items_pockets",
+            "prob": 20
+          }
+        ],
+        "prob": 99
+      },
+      { "group": "sgn_weapons_melee_common", "prob": 3 },
+      { "group": "sgn_vn_daily_pocket", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "sgn_office_desk",
+    "//": "B10: office desks in the Trade Center and the travel agents.  dda's SUS_office_desk minus the New England newspaper and the American cookbook.",
+    "entries": [
+      {
+        "group": "used_laptops",
+        "prob": 40
+      },
+      {
+        "item": "file",
+        "count": [
+          1,
+          8
+        ],
+        "prob": 50
+      },
+      {
+        "item": "paper",
+        "count": [
+          2,
+          9
+        ],
+        "prob": 60
+      },
+      {
+        "group": "pens",
+        "count": [
+          1,
+          6
+        ],
+        "prob": 90,
+        "charges": [
+          0,
+          100
+        ]
+      },
+      {
+        "item": "rubber_band",
+        "count": [
+          1,
+          10
+        ],
+        "prob": 30
+      },
+      {
+        "item": "stapler",
+        "prob": 30
+      },
+      {
+        "item": "cell_phone",
+        "prob": 15
+      },
+      {
+        "item": "sgn_newspaper",
+        "prob": 30
+      },
+      {
+        "item": "sgn_ca_phe_bot",
+        "prob": 20
+      },
+      {
+        "group": "sgn_dong_notes",
+        "prob": 20,
+        "count": [
+          1,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_shoes",
+    "subtype": "distribution",
+    "//": "B10: Diamond Plaza shoe shops: city footwear of 2004, not dda's moccasins, western boots and clown shoes.",
+    "items": [
+      [
+        "sneakers",
+        100
+      ],
+      [
+        "lowtops",
+        80
+      ],
+      [
+        "flip_flops",
+        60
+      ],
+      [
+        "sgn_dep_to_ong",
+        40
+      ],
+      [
+        "sgn_dep_lao",
+        40
+      ],
+      [
+        "leathersandals",
+        80
+      ],
+      [
+        "heels",
+        80
+      ],
+      [
+        "dress_shoes",
+        50
+      ],
+      [
+        "boots_rubber",
+        15
+      ],
+      [
+        "sgn_ung_cao_su",
+        10
+      ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "distribution",
+    "id": "default_zombie_items",
+    "//": "B10: overrides dda's.  What a Saigon zombie had on them: a small bag or pocket things.  No guns: Vietnamese civilians did not carry them, unlike the US everyday-carry pistols dda puts on every zombie.",
+    "entries": [
+      {
+        "group": "small_bags",
+        "damage": [
+          1,
+          4
+        ],
+        "contents-group": "sgn_zombie_bag",
+        "prob": 12
+      },
+      {
+        "group": "default_zombie_items_pockets",
+        "prob": 40
+      },
+      {
+        "item": "sgn_ao_mua_canh_doi",
+        "prob": 8
+      },
+      {
+        "item": "null",
+        "prob": 40
+      }
+    ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "default_zombie_items_pockets",
+    "//": "B10: overrides dda's.  Pocket things of 2004 Saigon: lighter and cigarettes, a Nokia-era phone, lottery tickets, a face mask, a folding knife now and then.",
+    "entries": [
+      {
+        "distribution": [
+          {
+            "item": "pockknife",
+            "prob": 60
+          },
+          {
+            "item": "knife_folding",
+            "prob": 40
+          }
+        ],
+        "prob": 5
+      },
+      {
+        "item": "lighter",
+        "prob": 20
+      },
+      {
+        "item": "cig",
+        "count": [
+          1,
+          6
+        ],
+        "prob": 20
+      },
+      {
+        "item": "cell_phone",
+        "prob": 10
+      },
+      {
+        "item": "sgn_ve_so",
+        "count": [
+          1,
+          4
+        ],
+        "prob": 10
+      },
+      {
+        "item": "sgn_khau_trang",
+        "prob": 15
+      },
+      {
+        "item": "aspirin",
+        "count": [
+          1,
+          4
+        ],
+        "prob": 5
+      },
+      {
+        "item": "hairpin",
+        "prob": 5
+      },
+      {
+        "group": "sgn_dong_notes",
+        "count": [
+          1,
+          3
+        ],
+        "prob": 15
+      }
+    ]
+  },
+  {
+    "type": "item_group",
+    "subtype": "collection",
+    "id": "sgn_zombie_bag",
+    "//": "B10: what was in a Saigon zombie's bag.",
+    "entries": [
+      {
+        "item": "sgn_truyen_meo_may",
+        "prob": 4
+      },
+      {
+        "item": "sgn_bao_li_xi",
+        "prob": 3
+      },
+      {
+        "item": "sgn_bang_cassette",
+        "prob": 3
+      },
+      {
+        "item": "sgn_ao_mua_canh_doi",
+        "prob": 25
+      },
+      {
+        "item": "sgn_mi_goi",
+        "count": [
+          1,
+          3
+        ],
+        "prob": 20
+      },
+      {
+        "item": "sgn_banh_mi_thit",
+        "prob": 10
+      },
+      {
+        "item": "bottle_plastic_small",
+        "prob": 20
+      },
+      {
+        "item": "sgn_newspaper",
+        "prob": 15
+      },
+      {
+        "item": "sgn_book_wuxia",
+        "prob": 8
+      },
+      {
+        "item": "sgn_karaoke_songbook",
+        "prob": 3
+      },
+      {
+        "item": "toothbrush_plain",
+        "prob": 10
+      },
+      {
+        "item": "sgn_khau_trang",
+        "prob": 15
+      },
+      {
+        "group": "sgn_dong_notes",
+        "count": [
+          1,
+          4
+        ],
+        "prob": 20
+      }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "female_underwear_top",
+    "subtype": "distribution",
+    "//": "L-loc2: dda's corsets are out of place on a hot Saigon street",
+    "items": [
+      [
+        "binder_top",
+        1
+      ],
+      {
+        "group": "female_underwear_top_child",
+        "prob": 190
+      }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "female_underwear_bottom",
+    "subtype": "distribution",
+    "//": "L-loc2: without dda's American-flag Independence Day variants",
+    "items": [
+      [
+        "panties",
+        70
+      ],
+      [
+        "boy_shorts",
+        50
+      ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "male_underwear_top",
+    "subtype": "distribution",
+    "//": "L-loc2: the áo ba lỗ undershirt and tank top of the tropics; no thermal or compression wear",
+    "items": [
+      [
+        "undershirt",
+        60
+      ],
+      [
+        "tank_top",
+        60
+      ],
+      [
+        "binder_top",
+        2
+      ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "male_underwear_bottom",
+    "subtype": "distribution",
+    "//": "L-loc2: without long underwear or dda's American-flag Independence Day variants",
+    "items": [
+      [
+        "boxer_shorts",
+        70
+      ],
+      [
+        "briefs",
+        40
+      ],
+      [
+        "boxer_briefs",
+        30
+      ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_electronics",
+    "subtype": "distribution",
+    "//": "L-loc2: a Saigon phone and electronics shop of 2009, in place of dda's American gadget group (STEM kits, e-ink tablets, RC cars)",
+    "items": [
+      [
+        "cell_phone",
+        20
+      ],
+      [
+        "radio",
+        10
+      ],
+      [
+        "battery",
+        15
+      ],
+      [
+        "light_battery_cell",
+        15
+      ],
+      [
+        "cable",
+        10
+      ],
+      [
+        "e_scrap",
+        10
+      ],
+      [
+        "memory_card",
+        8
+      ],
+      [
+        "usb_drive_older",
+        8
+      ],
+      [
+        "camera",
+        4
+      ],
+      [
+        "laptop",
+        2
+      ],
+      [
+        "soldering_iron",
+        3
+      ],
+      [
+        "multimeter",
+        3
+      ],
+      [
+        "two_way_radio",
+        2
+      ],
+      [
+        "small_lcd_screen",
+        4
+      ],
+      [
+        "sgn_vcd_phim_bo",
+        10
+      ],
+      [
+        "sgn_bang_cassette",
+        8
+      ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "fast_food",
+    "subtype": "distribution",
+    "//": "L-loc5: what is left in a Saigon car or on a dashboard: takeaway bánh mì and xôi, iced coffee in a bag, not American fast food (dda's group: pizza boxes, peanut-butter sandwiches, mayonnaise)",
+    "items": [
+      [
+        "sgn_banh_mi_thit",
+        25
+      ],
+      [
+        "sgn_xoi",
+        15
+      ],
+      [
+        "sgn_banh_bao",
+        10
+      ],
+      [
+        "sgn_goi_cuon",
+        8
+      ],
+      [
+        "sgn_ca_phe_sua_da",
+        15
+      ],
+      [
+        "sgn_tra_da",
+        10
+      ],
+      [
+        "sgn_nuoc_mia",
+        5
+      ],
+      [
+        "water_clean",
+        10
+      ],
+      [
+        "chopsticks",
+        3
+      ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "snacks",
+    "subtype": "distribution",
+    "//": "L-loc5: Saigon snacks: dried beef and squid, peanuts, rice paper, instant noodles (dda's: pemmican, granola, maple syrup)",
+    "items": [
+      [
+        "sgn_kho_bo",
+        15
+      ],
+      [
+        "sgn_kho_muc",
+        10
+      ],
+      [
+        "peanut_shelled",
+        15
+      ],
+      [
+        "sgn_banh_trang",
+        10
+      ],
+      [
+        "sgn_mi_goi",
+        15
+      ],
+      [
+        "sgn_banh_bao",
+        5
+      ],
+      [
+        "tea_raw",
+        8
+      ],
+      [
+        "coffee_raw",
+        5
+      ],
+      [
+        "water_clean",
+        10
+      ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "bus_common",
+    "subtype": "distribution",
+    "//": "L-loc5: what passengers left on a Saigon bus: raincoats, conical hats, school things, comics, a wuxia novel (dda's: American novels)",
+    "items": [
+      [
+        "sgn_ao_mua_canh_doi",
+        15
+      ],
+      [
+        "sgn_non_la",
+        10
+      ],
+      [
+        "sgn_truyen_meo_may",
+        8
+      ],
+      [
+        "sgn_book_wuxia",
+        6
+      ],
+      [
+        "sgn_banh_mi_thit",
+        8
+      ],
+      [
+        "water_clean",
+        10
+      ],
+      [
+        "bag_plastic",
+        15
+      ],
+      [
+        "backpack_small",
+        6
+      ],
+      [
+        "umbrella",
+        6
+      ],
+      [
+        "sgn_dep_to_ong",
+        6
+      ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "car_kit",
+    "subtype": "distribution",
+    "//": "L-loc5: the trunk of a Saigon taxi or family car in 2009 (dda's group reaches 1,500 items, guns and American gear among them)",
+    "items": [
+      [
+        "jumper_cable",
+        15
+      ],
+      [
+        "hand_pump",
+        10
+      ],
+      [
+        "jack_small",
+        10
+      ],
+      [
+        "flashlight",
+        10
+      ],
+      [
+        "tarp",
+        5
+      ],
+      [
+        "rope_6",
+        5
+      ],
+      [
+        "sgn_ao_mua_canh_doi",
+        20
+      ],
+      [
+        "sgn_can_nhua",
+        10
+      ],
+      [
+        "water_clean",
+        10
+      ],
+      [
+        "bag_plastic",
+        5
+      ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "car_misc",
+    "subtype": "distribution",
+    "//": "L-loc5: the glovebox and dashboard of a Saigon car in 2009",
+    "items": [
+      [
+        "sgn_ban_do_tphcm",
+        15
+      ],
+      [
+        "sunglasses",
+        10
+      ],
+      [
+        "cell_phone",
+        8
+      ],
+      [
+        "sgn_vcd_phim_bo",
+        10
+      ],
+      [
+        "sgn_bang_cassette",
+        8
+      ],
+      [
+        "sgn_non_bao_hiem",
+        10
+      ],
+      [
+        "umbrella",
+        10
+      ],
+      [
+        "napkin",
+        10
+      ],
+      [
+        "water_clean",
+        10
+      ],
+      [
+        "sgn_lich_bloc",
+        4
+      ],
+      [
+        "incense",
+        5
+      ]
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_ben_pha",
+    "copy-from": "lake_shore_dock_small",
+    "name": "bến phà (ferry landing)",
+    "sym": "d",
+    "color": "light_cyan",
+    "looks_like": "lake_shore_dock_small"
+  }
+]

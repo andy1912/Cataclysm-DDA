@@ -1,0 +1,61 @@
+[
+  {
+    "type": "mapgen",
+    "om_terrain": [
+      "sgn_ben_pha"
+    ],
+    "weight": 100,
+    "//": "Real map: a ferry landing on the Saigon River (phà Thủ Thiêm ran from Bến Bạch Đằng until the tunnel opened in 2011). dda's small dock, with the river boats tied up.",
+    "object": {
+      "predecessor_mapgen": "lake_shore",
+      "rows": [
+        "           dd           ",
+        "           dd           ",
+        "           dd           ",
+        "           dd           ",
+        "           dd           ",
+        "           dd           ",
+        "           dd           ",
+        "           dd           ",
+        "           dd           ",
+        "           dd           ",
+        "           dd           ",
+        "           dd           ",
+        "           dd           ",
+        "           dd           ",
+        "           dd           ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [
+        "ERASE_ALL_BEFORE_PLACING_TERRAIN"
+      ],
+      "palettes": [
+        "dock_small"
+      ],
+      "place_vehicles": [
+        {
+          "vehicle": "sgn_veh_ghe",
+          "x": 8,
+          "y": 6,
+          "rotation": 270,
+          "chance": 90
+        },
+        {
+          "vehicle": "sgn_veh_xuong",
+          "x": 15,
+          "y": 6,
+          "rotation": 270,
+          "chance": 70
+        }
+      ]
+    }
+  }
+]

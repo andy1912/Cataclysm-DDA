@@ -3753,12 +3753,6 @@ std::unique_ptr<activity_actor> ebooksave_activity_actor::deserialize( JsonValue
 
     JsonObject data = jsin.get_object();
     data.read( "books", actor.books );
-    if( data.has_member( "book" ) ) {
-        // legacy compatibility: in 0.G, this activity only handled one book each
-        item_location book;
-        data.read( "book", book );
-        actor.books.push_back( book );
-    }
     data.read( "ereader", actor.ereader );
     data.read( "handled_books", actor.handled_books );
     data.read( "turns_left_on_current_book", actor.turns_left_on_current_book );
@@ -6050,9 +6044,19 @@ void close_tile_activity_actor::finish( player_activity &act, Character &who )
     }
 
     if( close_success == close_tile_result::CLOSE_VEHICLE ) {
-        optional_vpart_position vp = here.veh_at( closep );
-        // There is a vehicle part here; see if it has anything that can be closed
+        // vehicle might have moved since start(): close what's on the tile now, if anything
+        const optional_vpart_position vp = here.veh_at( closep );
+        if( !vp ) {
+            act.set_to_null();
+            return;
+        }
         vehicle *const veh = &vp->vehicle();
+        closed_vehicle_part = veh->next_part_to_close( vp->part_index(),
+                              veh_pointer_or_null( here.veh_at( who.pos_bub() ) ) != veh );
+        if( closed_vehicle_part < 0 ) {
+            act.set_to_null();
+            return;
+        }
         who.add_msg_if_player( _( "You close the %1$s's %2$s." ), veh->name,
                                veh->part( closed_vehicle_part ).name() );
         // close vehicle part

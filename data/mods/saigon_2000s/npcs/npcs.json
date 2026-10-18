@@ -1,0 +1,157 @@
+[
+  {
+    "type": "npc_class",
+    "id": "sgn_class_vendor",
+    "name": "market vendor",
+    "job_description": "I sold fish at this chợ for twenty-two years.  I still know everyone who comes through here, alive or not.",
+    "common": false,
+    "skills": [
+      { "skill": "speech", "bonus": { "rng": [ 3, 5 ] } },
+      { "skill": "cooking", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "cutting", "bonus": { "rng": [ 1, 3 ] } }
+    ],
+    "worn_override": "sgn_npc_vendor_worn",
+    "carry_override": "sgn_npc_vendor_carry",
+    "weapon_override": "sgn_npc_vendor_weapon",
+    "//shop": "E1: every stallholder of this class trades from sgn_npc_vendor_sells, priced by the sgn_cho faction (gold, and the đồng at about a third of its old value).",
+    "shopkeeper_item_group": "sgn_npc_vendor_sells",
+    "restock_interval": "4 days"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_xe_om",
+    "name": "xe ôm driver",
+    "job_description": "Thirty years carrying people around this city on the back of my bike.  I know every hẻm.",
+    "common": false,
+    "skills": [
+      { "skill": "driving", "bonus": { "rng": [ 4, 6 ] } },
+      { "skill": "mechanics", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "survival", "bonus": { "rng": [ 1, 2 ] } }
+    ],
+    "worn_override": "sgn_npc_xe_om_worn",
+    "carry_override": "sgn_npc_xe_om_carry",
+    "weapon_override": "sgn_npc_xe_om_weapon"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_co_ba",
+    "name_unique": "Cô Ba",
+    "name_suffix": "fish seller",
+    "gender": "female",
+    "class": "sgn_class_vendor",
+    "attitude": 0,
+    "mission": "GUARD",
+    "chat": "TALK_SGN_CO_BA",
+    "mission_offered": "MISSION_SGN_MEDICINE_BA_NAM",
+    "faction": "sgn_cho"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_chu_tu",
+    "name_unique": "Chú Tư",
+    "name_suffix": "xe ôm driver",
+    "gender": "male",
+    "class": "sgn_class_xe_om_xang",
+    "//class": "E1: chú Tư sells xăng lẻ by the bottle (npcs/people_classes.json), priced by the sgn_cho faction.",
+    "attitude": 0,
+    "mission": "GUARD",
+    "chat": "TALK_SGN_CHU_TU",
+    "faction": "sgn_cho"
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_CO_BA",
+    "dynamic_line": {
+      "compare_string": [ "yes", { "u_val": "sgn_met_co_ba" } ],
+      "yes": [
+        "Con đó hả?  Come in, come in, close the gate behind you.",
+        "You're still alive.  Good.  Sit down, it's cooler by the ice."
+      ],
+      "no": "Stop right there!  Show me your hands… no bite marks?  Okay.  Okay.  I'm Ba.  Everyone here calls me Cô Ba."
+    },
+    "responses": [
+      {
+        "text": "What happened to the market?",
+        "effect": { "u_add_var": "sgn_met_co_ba", "value": "yes" },
+        "topic": "TALK_SGN_CO_BA_MARKET"
+      },
+      {
+        "text": "Who else is here?",
+        "effect": { "u_add_var": "sgn_met_co_ba", "value": "yes" },
+        "topic": "TALK_SGN_CO_BA_WHO"
+      },
+      {
+        "text": "Is there anything I can do for you?",
+        "effect": { "u_add_var": "sgn_met_co_ba", "value": "yes" },
+        "topic": "TALK_MISSION_LIST"
+      },
+      {
+        "text": "What do you have on the stall?",
+        "effect": [ { "u_add_var": "sgn_met_co_ba", "value": "yes" }, "start_trade" ],
+        "topic": "TALK_SGN_CO_BA"
+      },
+      { "text": "I have to go.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_CO_BA_MARKET",
+    "dynamic_line": "The ward closed the chợ for disinfection, then the người bệnh came.  The fish stalls went first, everyone pressed together in the wet hall.  I dragged what I could from the ice store into the office and barred the door.  Without ice, the fish rotted in a day.  Now the whole hall stinks and the smell brings more of them.",
+    "responses": [ { "text": "Let's talk about something else.", "topic": "TALK_SGN_CO_BA" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_CO_BA_WHO",
+    "dynamic_line": "Just me and Chú Tư.  He drove xe ôm on the corner for thirty years and refused to leave his bike.  My mother, Bà Năm, is upstairs in our nhà ống three streets over.  Her heart is weak; the doctor told her to take an aspirin every day, and she has none left.",
+    "responses": [ { "text": "Let's talk about something else.", "topic": "TALK_SGN_CO_BA" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_CHU_TU",
+    "dynamic_line": [
+      "Hẻm 42 is blocked with a fallen power pole, take the canal path.",
+      "Gas?  Siphon it from the bikes in the parking lots, every one has a few liters.",
+      "Don't ride at night.  You can't see them in the alleys until they're on you.",
+      "I carried a bride to her wedding on this bike once.  The groom paid double.  I wonder where they are now."
+    ],
+    "responses": [
+      { "text": "Sell me some xăng, chú.", "effect": "start_trade", "topic": "TALK_SGN_CHU_TU" },
+      { "text": "Thanks, Chú.", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "id": "MISSION_SGN_MEDICINE_BA_NAM",
+    "type": "mission_definition",
+    "name": "Medicine for Bà Năm",
+    "description": "Bring Cô Ba ten pills of aspirin for her mother.",
+    "goal": "MGOAL_FIND_ITEM",
+    "difficulty": 2,
+    "value": 0,
+    "item": "aspirin",
+    "count": 10,
+    "origins": [ "ORIGIN_SECONDARY" ],
+    "dialogue": {
+      "describe": "My mother needs medicine.",
+      "offer": "The nhà thuốc on the main street had shelves of it before the looting.  Bring me ten aspirin for Bà Năm and I will give you gold.  Real gold, not đồng.",
+      "accepted": "Cảm ơn con.  Be careful in the hẻm.",
+      "rejected": "I understand.  Everyone has their own family to worry about.",
+      "advice": "Try a nhà thuốc on the main street, or the families in the hẻm.  Everyone keeps medicine in a tin by the altar.",
+      "inquire": "Did you find the medicine?",
+      "success": "Trời ơi, thank you.  Take this, my mother would want you to have it.",
+      "success_lie": "These… these are not what I asked for.",
+      "failure": "Then we will pray at the altar and hope."
+    },
+    "end": { "effect": [ { "u_spawn_item": "sgn_vang_chi", "count": 2 } ] }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_cho_npcs",
+    "object": {
+      "mapgensize": [ 8, 8 ],
+      "place_npcs": [
+        { "class": "sgn_npc_co_ba", "x": 3, "y": 2, "unique_id": "sgn_unique_co_ba" },
+        { "class": "sgn_npc_chu_tu", "x": 5, "y": 3, "unique_id": "sgn_unique_chu_tu" }
+      ]
+    }
+  }
+]

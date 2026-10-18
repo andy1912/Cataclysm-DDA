@@ -1,0 +1,101 @@
+[
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_ANTIBIOTICS",
+    "copy-from": "MISSION_GET_ANTIBIOTICS",
+    "//I18N": false,
+    "//": "N1: dda's random NPC and starting-NPC missions (an American flag, corporate accounts, a weather log, the Jabberwock, Zombie Mom, cattail jelly ...) leave the random pools; Saigon's are in npcs/missions.json.",
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_FLAG",
+    "copy-from": "MISSION_GET_FLAG",
+    "//I18N": false,
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_HOLY_SYMBOL",
+    "copy-from": "MISSION_GET_HOLY_SYMBOL",
+    "//I18N": false,
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_INHALER",
+    "copy-from": "MISSION_GET_INHALER",
+    "//I18N": false,
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_RECORD_ACCOUNTING",
+    "copy-from": "MISSION_GET_RECORD_ACCOUNTING",
+    "//I18N": false,
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_RECORD_PATIENT",
+    "copy-from": "MISSION_GET_RECORD_PATIENT",
+    "//I18N": false,
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_RECORD_WEATHER",
+    "copy-from": "MISSION_GET_RECORD_WEATHER",
+    "//I18N": false,
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_GET_SOFTWARE",
+    "copy-from": "MISSION_GET_SOFTWARE",
+    "//I18N": false,
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_KILL_JABBERWOCK",
+    "copy-from": "MISSION_KILL_JABBERWOCK",
+    "//I18N": false,
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_KILL_ZOMBIE_MOM",
+    "copy-from": "MISSION_KILL_ZOMBIE_MOM",
+    "//I18N": false,
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_LEARN_ABOUT_CATTAIL_JELLY",
+    "copy-from": "MISSION_LEARN_ABOUT_CATTAIL_JELLY",
+    "//I18N": false,
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_PROVE_YOU_ARE_A_SURVIVOR",
+    "copy-from": "MISSION_PROVE_YOU_ARE_A_SURVIVOR",
+    "//I18N": false,
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_PYROMANIAC",
+    "copy-from": "MISSION_PYROMANIAC",
+    "//I18N": false,
+    "origins": [  ]
+  },
+  {
+    "type": "mission_definition",
+    "id": "MISSION_RESCUE_DOG",
+    "copy-from": "MISSION_RESCUE_DOG",
+    "//I18N": false,
+    "origins": [  ]
+  }
+]

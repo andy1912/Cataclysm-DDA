@@ -1,0 +1,347 @@
+[
+  {
+    "id": "sgn_mon_zombie_khuan_vac",
+    "type": "MONSTER",
+    "copy-from": "mon_zombie_grabber",
+    "looks_like": "mon_zombie_grabber",
+    "name": { "str": "porter zombie" },
+    "description": "A dead cửu vạn from the wholesale market, shoulders knotted from years of carrying rice sacks two at a time.  A frayed towel is still wound around its neck as padding.  It does not bite first: it takes hold, hoists, and hauls, the way it once hauled sacks to the trucks.",
+    "//": "E2: market porter.  Grabber behaviour with a harder grip, and it drags what it holds; callused and padded, so a little bash armor.",
+    "hp": 105,
+    "speed": 75,
+    "color": "brown",
+    "melee_dice": 2,
+    "melee_dice_sides": 4,
+    "grab_strength": 70,
+    "special_attacks": [
+      { "id": "grab_drag", "cooldown": 4 },
+      { "id": "drag_followup" },
+      { "id": "bite_humanoid", "cooldown": 6 },
+      { "id": "scratch_humanoid" }
+    ],
+    "armor": { "bash": 2, "cut": 1, "electric": 1 },
+    "death_drops": "sgn_drops_khuan_vac",
+    "upgrades": { "half_life": 120, "into_group": "GROUP_ZOMBIE_GRAB" },
+    "extend": { "flags": [ "GEN_DORMANT" ] }
+  },
+  {
+    "id": "sgn_mon_zombie_hoc_sinh",
+    "type": "MONSTER",
+    "copy-from": "mon_zombie_child",
+    "looks_like": "mon_zombie_child",
+    "name": { "str": "schoolchild zombie" },
+    "description": "A small body in a white school shirt and a red scarf knotted at the throat, the name of a primary school embroidered on the pocket.  It darts between parked motorbikes far faster than the grown dead, and it is light enough to knock over, if you can bring yourself to.",
+    "//": "E2: fast and fragile.  Faster than dda's zombie child, fewer hit points, a weaker bite, sharper eyes and a little dodge.",
+    "hp": 28,
+    "speed": 95,
+    "color": "white",
+    "melee_dice": 1,
+    "melee_dice_sides": 3,
+    "dodge": 2,
+    "vision_day": 40,
+    "death_drops": "sgn_drops_hoc_sinh",
+    "upgrades": { "half_life": 140, "into_group": "GROUP_CHILD_ZOMBIE_UPGRADE" }
+  },
+  {
+    "id": "sgn_mon_zombie_dam_mua",
+    "type": "MONSTER",
+    "copy-from": "mon_zombie_swimmer_base",
+    "looks_like": "mon_zombie_swimmer_base",
+    "name": { "str": "rain-soaked zombie" },
+    "description": "It came up out of a flooded street, still in a bat-wing poncho that streams water at every step.  Its skin is white and puckered like a washerwoman's fingers and its flesh has drunk so much water that it is heavy, slow and hard to set alight.  In the water it is quicker than you are.",
+    "//": "E2: the flooded streets of the rainy season.  Swims well, slow on land, waterlogged (more hit points, fire barely takes), no electric resistance.",
+    "hp": 90,
+    "speed": 65,
+    "color": "light_blue",
+    "melee_dice": 2,
+    "melee_dice_sides": 3,
+    "melee_damage": [ { "damage_type": "cut", "amount": 0 } ],
+    "armor": { "bash": 1, "heat": 8, "electric": 0 },
+    "death_drops": "sgn_drops_dam_mua",
+    "upgrades": { "half_life": 168, "into": "sgn_mon_zombie_phinh_kenh" },
+    "extend": { "move_skills": { "swim": 7 }, "flags": [ "GEN_DORMANT" ] }
+  },
+  {
+    "id": "sgn_mon_zombie_phinh_kenh",
+    "type": "MONSTER",
+    "copy-from": "mon_boomer",
+    "looks_like": "mon_boomer",
+    "name": { "str": "canal bloater" },
+    "description": "A body that floated for days in the black water of the canal before it got up again.  It is swollen tight as a drum, grey-green, and the stench reaches you long before it does.  It spits the canal back up at anything near, and when it bursts it bursts.",
+    "//": "E2: heavy bloated canal corpse.  Boomer behaviour (bile, bursts on death), more hit points, slower, swims, and reeks like a decayed zombie.",
+    "hp": 70,
+    "speed": 45,
+    "color": "light_green",
+    "melee_dice_sides": 3,
+    "armor": { "bash": 3, "electric": 1 },
+    "emit_fields": [ { "emit_id": "emit_nauseating_smell", "delay": "1 s" } ],
+    "death_drops": "sgn_drops_phinh_kenh",
+    "upgrades": { "half_life": 200, "into": "mon_boomer_huge" },
+    "extend": { "move_skills": { "swim": 5 } }
+  },
+  {
+    "id": "sgn_mon_zombie_benh_nhan",
+    "type": "MONSTER",
+    "copy-from": "mon_zombie",
+    "looks_like": "mon_zombie_medical",
+    "name": { "str": "IV-pole patient" },
+    "description": "A fever patient from an overflowing ward, in a striped hospital gown, the drip line still taped into one arm.  It drags its steel IV stand behind it on screeching castors and, when it reaches you, swings the whole thing like a club.",
+    "//": "E2: hospital patient.  Slow, but its blows are heavy bashes and a staggering swing from the IV stand.",
+    "hp": 75,
+    "speed": 50,
+    "color": "light_cyan",
+    "melee_skill": 3,
+    "melee_dice": 2,
+    "melee_dice_sides": 6,
+    "special_attacks": [
+      { "id": "staggering_blow", "cooldown": 12 },
+      { "id": "grab", "cooldown": 4 },
+      { "id": "bite_humanoid", "cooldown": 5 },
+      { "id": "scratch_humanoid" }
+    ],
+    "death_drops": "sgn_drops_benh_nhan",
+    "upgrades": { "half_life": 120, "into_group": "sgn_GROUP_UPGRADE_SOT" },
+    "extend": { "flags": [ "GEN_DORMANT" ] }
+  },
+  {
+    "id": "sgn_mon_zombie_tho_ho",
+    "type": "MONSTER",
+    "copy-from": "mon_zombie_miner",
+    "looks_like": "mon_zombie_miner",
+    "name": { "str": "hard-hat zombie" },
+    "description": "A dead thợ hồ from a half-built shophouse, grey with dried cement to the elbows, a yellow hard hat still on its head.  Years of hauling bricks up bamboo scaffolding left it broad and solid, and it hits like a mallet.",
+    "//": "E2: construction worker.  Helmeted (head weak point covered), tougher body, heavy bash blows; evolves into dda's bruiser line.",
+    "hp": 100,
+    "speed": 75,
+    "color": "yellow",
+    "melee_skill": 4,
+    "melee_dice": 2,
+    "melee_dice_sides": 5,
+    "vision_day": 30,
+    "vision_night": 3,
+    "armor": { "bash": 3, "cut": 2, "stab": 1, "electric": 1 },
+    "death_drops": "sgn_drops_tho_ho",
+    "upgrades": { "half_life": 140, "into": "mon_zombie_bruiser" },
+    "extend": { "flags": [ "GEN_DORMANT" ] }
+  },
+  {
+    "id": "sgn_mon_zombie_su",
+    "type": "MONSTER",
+    "copy-from": "mon_zombie",
+    "looks_like": "mon_zombie",
+    "name": { "str": "monk zombie" },
+    "description": "A dead monk in a brown robe, head shaved, walking with the same unhurried steadiness he had in life.  It does not stumble and it does not groan.  Its lips keep moving, and in the quiet you can hear what they are shaping.",
+    "//": "E2: slow and unsettling.  No stumbling or clumsy blows, accurate, sees better at night, mutters sutras (speech below); may in time become dda's necromancer.",
+    "hp": 95,
+    "speed": 55,
+    "color": "brown",
+    "melee_skill": 6,
+    "dodge": 2,
+    "vision_night": 6,
+    "death_drops": "sgn_drops_su",
+    "upgrades": { "half_life": 240, "into": "mon_zombie_necro" },
+    "delete": { "flags": [ "STUMBLES", "CLUMSY_ATTACKS" ] }
+  },
+  {
+    "id": "sgn_mon_zombie_dam_cuoi",
+    "type": "MONSTER",
+    "copy-from": "mon_zombie",
+    "looks_like": "mon_zombie",
+    "name": { "str": "wedding guest zombie" },
+    "description": "A young guest from a sidewalk wedding, in a pink áo dài or a borrowed suit, a paper rose still pinned on.  The fever took the party in a single night.  It moves quickly, and there is a red lì xì envelope in its pocket.",
+    "//": "E2: young and quick, frail; the wedding tent encounter's guests.",
+    "hp": 65,
+    "speed": 85,
+    "color": "pink",
+    "dodge": 1,
+    "death_drops": "sgn_drops_dam_cuoi",
+    "extend": { "flags": [ "GEN_DORMANT" ] }
+  },
+  {
+    "id": "sgn_mon_zombie_dam_tang",
+    "type": "MONSTER",
+    "copy-from": "mon_zombie",
+    "looks_like": "mon_zombie_rot",
+    "name": { "str": "wailing mourner" },
+    "description": "A mourner in plain white with a white mourning band tied round its head.  Some families hired professional mourners to cry at funerals; this one has not stopped.  Its keening carries down the street, and the dead come to it.",
+    "//": "E2: funeral tent.  Slow and weak, but it wails (SHRIEK) and draws other zombies; becomes a shrieker.",
+    "hp": 60,
+    "speed": 60,
+    "color": "light_gray",
+    "death_drops": "sgn_drops_dam_tang",
+    "upgrades": { "half_life": 120, "into": "mon_zombie_shrieker" },
+    "extend": { "special_attacks": [ [ "SHRIEK", 20 ] ], "flags": [ "GEN_DORMANT" ] }
+  },
+  {
+    "id": "sgn_mon_zombie_mu_dinh",
+    "type": "MONSTER",
+    "copy-from": "mon_zombie_skull",
+    "looks_like": "mon_zombie_skull",
+    "name": { "str": "helmet-fused zombie" },
+    "description": "What a helmeted rider becomes.  The thin plastic shell has split and the skull has grown up through it, so that shards of a cheap motorbike helmet are now set into a cap of grey bone.  The strap has sunk into the jaw.",
+    "//": "E2: evolution of the helmeted zombie (sgn_mon_zombie_xe_om): dda's skull zombie, reflavored.",
+    "death_drops": "sgn_drops_xe_om"
+  },
+  {
+    "type": "speech",
+    "speaker": [ "sgn_mon_zombie_su" ],
+    "sound": "a low, unbroken murmur: \"Nam mô A Di Đà Phật…\"",
+    "volume": 8
+  },
+  {
+    "type": "speech",
+    "speaker": [ "sgn_mon_zombie_su" ],
+    "sound": "the soft, even tock of a wooden fish that isn't there.",
+    "volume": 6
+  },
+  {
+    "type": "speech",
+    "speaker": [ "sgn_mon_zombie_su" ],
+    "sound": "a chant, every syllable in place, in a voice with no breath behind it.",
+    "volume": 8
+  },
+  {
+    "type": "speech",
+    "speaker": [ "sgn_mon_zombie_dam_tang" ],
+    "sound": "a long, rising funeral wail.",
+    "volume": 30
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_UPGRADE_XE_OM",
+    "default": "mon_zombie_tough",
+    "//": "E2: what a helmeted rider evolves into: the helmet-fused skull zombie, or dda's tough, runner, hunter and shrieker forms.  No gun-carrying forms.",
+    "monsters": [
+      { "monster": "sgn_mon_zombie_mu_dinh", "weight": 300 },
+      { "monster": "mon_zombie_tough", "weight": 250 },
+      { "monster": "mon_zombie_runner", "weight": 200 },
+      { "monster": "mon_zombie_hunter", "weight": 100 },
+      { "monster": "mon_zombie_shrieker", "weight": 100 },
+      { "monster": "mon_boomer", "weight": 50 }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_UPGRADE_SOT",
+    "default": "mon_zombie_runner",
+    "//": "E2: what the fever's dead (and its hospital patients) evolve into: quick hunters, acid-veined and screaming forms, a few regenerators.",
+    "monsters": [
+      { "monster": "mon_zombie_runner", "weight": 250 },
+      { "monster": "mon_zombie_hunter", "weight": 250 },
+      { "monster": "mon_zombie_acidic", "weight": 200 },
+      { "monster": "mon_zombie_shrieker", "weight": 150 },
+      { "monster": "mon_skeleton", "weight": 100 },
+      { "monster": "mon_zombie_regenerating", "weight": 50 }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_UPGRADE_VENDOR",
+    "default": "mon_boomer",
+    "//": "E2: what a heavy market zombie evolves into: dda's fat-zombie line (boomers, gasbags, pupae) plus the grip of the market women.",
+    "monsters": [
+      { "monster": "mon_boomer", "weight": 400 },
+      { "monster": "mon_zombie_grabber", "weight": 150 },
+      { "monster": "mon_zombie_pupa", "weight": 120 },
+      { "monster": "mon_zombie_pupa_decoy", "weight": 120 },
+      { "monster": "mon_zombie_gasbag", "weight": 50 }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_MX_PASSENGERS",
+    "default": "mon_zombie",
+    "//": "E2 encounters: who rode the wrecked bus or minibus.",
+    "monsters": [
+      { "monster": "mon_zombie", "weight": 300 },
+      { "monster": "sgn_mon_zombie_sot", "weight": 200 },
+      { "monster": "sgn_mon_zombie_xe_om", "weight": 100 },
+      { "monster": "sgn_mon_zombie_vendor", "weight": 100 },
+      { "monster": "sgn_mon_zombie_hoc_sinh", "weight": 80 },
+      { "monster": "sgn_mon_zombie_khuan_vac", "weight": 60 },
+      { "monster": "sgn_mon_zombie_dam_mua", "weight": 60 }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_MX_MARKET",
+    "default": "sgn_mon_zombie_vendor",
+    "//": "E2 encounters: the ba gác's traders and porters.",
+    "monsters": [
+      { "monster": "sgn_mon_zombie_vendor", "weight": 300 },
+      { "monster": "sgn_mon_zombie_khuan_vac", "weight": 300 },
+      { "monster": "mon_zombie", "weight": 200 },
+      { "monster": "mon_zombie_fat", "weight": 100 }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_MX_FEVER",
+    "default": "sgn_mon_zombie_sot",
+    "//": "E2 encounters: the quarantine checkpoint and the crashed ambulance: fever patients and the officers who held the line.",
+    "monsters": [
+      { "monster": "sgn_mon_zombie_sot", "weight": 400 },
+      { "monster": "sgn_mon_zombie_benh_nhan", "weight": 300 },
+      { "monster": "sgn_mon_zombie_cong_an", "weight": 100 },
+      { "monster": "mon_zombie", "weight": 150 }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_MX_WEDDING",
+    "default": "sgn_mon_zombie_dam_cuoi",
+    "//": "E2 encounters: the wedding party.",
+    "monsters": [
+      { "monster": "sgn_mon_zombie_dam_cuoi", "weight": 700 },
+      { "monster": "mon_zombie", "weight": 200 },
+      { "monster": "sgn_mon_zombie_hoc_sinh", "weight": 100 }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_MX_FUNERAL",
+    "default": "sgn_mon_zombie_dam_tang",
+    "//": "E2 encounters: the funeral: mourners, the monk who came to chant, the family.",
+    "monsters": [
+      { "monster": "sgn_mon_zombie_dam_tang", "weight": 400 },
+      { "monster": "mon_zombie", "weight": 250 },
+      { "monster": "sgn_mon_zombie_sot", "weight": 200 },
+      { "monster": "sgn_mon_zombie_su", "weight": 150 }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_MX_FLOOD",
+    "default": "sgn_mon_zombie_dam_mua",
+    "//": "E2 encounters: the flooded street; bloaters surface after a week.",
+    "monsters": [
+      { "monster": "sgn_mon_zombie_dam_mua", "weight": 600 },
+      { "monster": "sgn_mon_zombie_xe_om", "weight": 150 },
+      { "monster": "mon_zombie", "weight": 100 },
+      { "monster": "sgn_mon_zombie_phinh_kenh", "weight": 150, "starts": "7 days" }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_MX_CRASH",
+    "default": "sgn_mon_zombie_xe_om",
+    "//": "E2 encounters: riders from the motorbike pile-up.",
+    "monsters": [
+      { "monster": "sgn_mon_zombie_xe_om", "weight": 500 },
+      { "monster": "mon_zombie", "weight": 300 },
+      { "monster": "sgn_mon_zombie_sot", "weight": 100 },
+      { "monster": "sgn_mon_zombie_dam_mua", "weight": 100 }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "sgn_GROUP_MX_BURNT",
+    "default": "mon_zombie_scorched",
+    "//": "E2 encounters: the burnt-out food stall.",
+    "monsters": [
+      { "monster": "mon_zombie_scorched", "weight": 500 },
+      { "monster": "sgn_mon_zombie_vendor", "weight": 200 },
+      { "monster": "mon_zombie", "weight": 200 }
+    ]
+  }
+]

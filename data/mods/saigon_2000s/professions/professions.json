@@ -1,0 +1,336 @@
+[
+  {
+    "type": "profession",
+    "id": "sgn_survivor",
+    "name": "Survivor",
+    "description": "Nothing about your life before prepared you for this: a job, a family, a rented room, a motorbike payment.  You have survived five days of the end of the world, which is more than most of the city can say.",
+    "npc_background": "BG_survival_story_EVACUEE",
+    "points": 0,
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "tshirt" },
+          { "item": "pants_cargo" },
+          { "item": "sgn_dep_to_ong" },
+          { "group": "charged_cell_phone" },
+          { "group": "sgn_wallet" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sgn_xe_om",
+    "name": "Xe ôm driver",
+    "description": "For ten years you waited on the same street corner with your motorbike, a spare helmet, and a folded newspaper, carrying anyone anywhere for a few thousand đồng.  You know every hẻm in the district and which ones dead-end.  Your bike is parked outside, if nobody has taken it.",
+    "npc_background": "BG_survival_story_WORKER_SELFEMP",
+    "points": 2,
+    "skills": [ { "name": "driving", "level": 3 }, { "name": "survival", "level": 1 } ],
+    "proficiencies": [ "prof_driver" ],
+    "vehicle": "sgn_veh_underbone",
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "tshirt" },
+          { "item": "pants_cargo" },
+          { "item": "sgn_dep_to_ong" },
+          { "item": "sgn_non_bao_hiem" },
+          { "item": "sgn_ao_mua_canh_doi", "custom-flags": [ "no_auto_equip" ] },
+          { "item": "sgn_newspaper" },
+          { "group": "charged_cell_phone" },
+          { "group": "sgn_wallet" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sgn_street_vendor",
+    "name": "Street-food vendor",
+    "description": "Every morning at four you pushed your cart to the same patch of sidewalk and fed half the ward before they went to work.  You can cook anything over a single burner, and you know how long food keeps in this heat, which is not long.",
+    "npc_background": "BG_survival_story_WORKER_SELFEMP",
+    "points": 2,
+    "skills": [ { "name": "cooking", "level": 3 }, { "name": "speech", "level": 1 } ],
+    "proficiencies": [ "prof_food_prep", "prof_knife_skills" ],
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "tshirt" },
+          { "item": "pants_cargo" },
+          { "item": "sgn_dep_to_ong" },
+          { "item": "sgn_non_la" },
+          { "item": "apron_cotton", "variant": "generic_apron_cotton" },
+          { "item": "sgn_bep_ga_mini", "ammo-item": "butane", "charges": 100 },
+          { "item": "pot" },
+          { "item": "chopsticks" },
+          { "item": "bowl_plastic", "count": 2 },
+          { "item": "knife_cleaver" },
+          { "item": "rice_cooked", "count": 2 },
+          { "group": "sgn_wallet" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sgn_market_trader",
+    "name": "Market trader",
+    "description": "You held the same stall in the chợ for twenty years, and your mother held it before you.  You can haggle over the price of a single chili, spot a counterfeit bill across the aisle, and remember who owes you money.  Now nobody is buying, but everybody still needs something.",
+    "npc_background": "BG_survival_story_WORKER_COMMERCIAL",
+    "points": 2,
+    "skills": [ { "name": "speech", "level": 3 } ],
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "longshirt" },
+          { "item": "pants_cargo" },
+          { "item": "sgn_dep_to_ong" },
+          { "item": "sgn_non_la" },
+          { "item": "backpack" },
+          { "item": "jerrycan" },
+          { "item": "wristwatch" },
+          { "group": "charged_cell_phone" },
+          { "group": "sgn_wallet" },
+          { "item": "sgn_vang_chi", "count": 3 }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sgn_student",
+    "name": "University student",
+    "description": "You came up from the provinces to study in the city, renting a bed in a crowded room at the end of a hẻm and cycling to lectures.  You spent more nights in the internet café than in the library.  Your family is three hundred kilometers away, and the phone lines are dead.",
+    "npc_background": "BG_survival_story_TEENAGER",
+    "points": 0,
+    "skills": [ { "name": "computer", "level": 2 }, { "name": "firstaid", "level": 1 } ],
+    "vehicle": "sgn_veh_xe_dap",
+    "age_lower": 18,
+    "age_upper": 24,
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "tshirt" },
+          { "item": "jeans" },
+          { "item": "sgn_dep_to_ong" },
+          { "item": "backpack" },
+          { "item": "sgn_sgk_ngu_van" },
+          { "item": "howto_computer" },
+          { "item": "story_book" },
+          { "group": "charged_cell_phone" },
+          { "group": "sgn_wallet" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sgn_cong_an",
+    "name": "Ward police officer",
+    "description": "As a công an phường you spent your days settling neighbors' disputes, checking household registrations, and directing traffic around funerals.  When the fever came you enforced the quarantine door to door.  You never fired your service weapon; you are not even sure it was issued with enough ammunition.",
+    "npc_background": "BG_survival_story_POLICE",
+    "points": 3,
+    "skills": [ { "name": "melee", "level": 2 }, { "name": "bashing", "level": 2 }, { "name": "speech", "level": 1 } ],
+    "proficiencies": [ "prof_batons_familiar" ],
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "longshirt" },
+          { "item": "pants_cargo" },
+          { "item": "socks" },
+          { "item": "boots" },
+          { "item": "police_belt" },
+          { "item": "baton" },
+          { "item": "whistle" },
+          { "item": "wristwatch" },
+          { "item": "sgn_non_bao_hiem" },
+          { "group": "charged_two_way_radio" },
+          { "group": "sgn_wallet" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sgn_nurse",
+    "name": "Hospital nurse",
+    "description": "You worked the fever ward at a district hospital until the doors were chained from the inside.  You have seen what the sốt lạ does in its last hours, and you know better than anyone that the dead do not stay in their beds.",
+    "npc_background": "BG_survival_story_MEDICAL",
+    "points": 3,
+    "skills": [ { "name": "firstaid", "level": 4 } ],
+    "proficiencies": [ "prof_wound_care", "prof_physiology" ],
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "longshirt" },
+          { "item": "pants_cargo" },
+          { "item": "socks" },
+          { "item": "sneakers" },
+          { "item": "gloves_medical", "count": 2 },
+          { "item": "mask_dust", "count": 3 },
+          { "item": "adhesive_bandages", "count": 6 },
+          { "item": "disinfectant" },
+          { "item": "aspirin", "count": 10 },
+          { "item": "sgn_book_nursing" },
+          { "item": "wristwatch" },
+          { "group": "charged_cell_phone" },
+          { "group": "sgn_wallet" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sgn_construction",
+    "name": "Construction worker",
+    "description": "You came from the countryside to pour concrete for the new towers going up in District 1, sleeping on the building site between shifts.  You can mix mortar, cut rebar, and climb bamboo scaffolding barefoot.  The tower will never be finished now.",
+    "npc_background": "BG_survival_story_WORKER_COMMERCIAL",
+    "points": 2,
+    "skills": [ { "name": "fabrication", "level": 2 } ],
+    "proficiencies": [ "prof_carpentry_basic", "prof_metalworking" ],
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "tank_top" },
+          { "item": "pants_cargo" },
+          { "item": "socks" },
+          { "item": "boots_steel" },
+          { "item": "hat_hard" },
+          { "item": "gloves_work" },
+          { "item": "hammer" },
+          { "item": "rebar", "count": 2 },
+          { "item": "tape_measure" },
+          { "item": "tool_belt" },
+          { "group": "sgn_wallet" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sgn_fisherman",
+    "name": "Cần Giờ fisherman",
+    "description": "You fished the mangrove channels of Cần Giờ and brought your catch up the river to sell in the city.  You swim better than you walk, you can read the tide, and you know how to live off the water.  Your boat is somewhere on the riverbank, if the current has not taken it.",
+    "npc_background": "BG_survival_story_RURAL",
+    "points": 2,
+    "skills": [ { "name": "survival", "level": 3 }, { "name": "swimming", "level": 3 } ],
+    "proficiencies": [ "prof_fibers", "prof_knives_familiar", "prof_butchering_basic" ],
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "tshirt" },
+          { "item": "shorts" },
+          { "item": "sgn_dep_to_ong" },
+          { "item": "sgn_non_la" },
+          { "item": "net" },
+          { "item": "fishing_rod_basic" },
+          { "item": "knife_folding" },
+          { "item": "lighter", "charges": 100 },
+          { "group": "sgn_wallet" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sgn_mechanic",
+    "name": "Motorbike mechanic",
+    "description": "Your repair shop was a patch of sidewalk, a compressor, and a wall of scavenged parts.  You can rebuild a carburetor with your eyes closed and patch an inner tube in two minutes.  In a city of four million motorbikes, you will never run out of spare parts.",
+    "npc_background": "BG_survival_story_WORKER_SELFEMP",
+    "points": 3,
+    "skills": [ { "name": "mechanics", "level": 4 }, { "name": "driving", "level": 1 } ],
+    "proficiencies": [ "prof_metalworking", "prof_elec_soldering", "prof_driver" ],
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "tank_top" },
+          { "item": "pants_cargo" },
+          { "item": "sgn_dep_to_ong" },
+          { "item": "gloves_work" },
+          { "item": "wrench" },
+          { "item": "screwdriver" },
+          { "item": "pliers" },
+          { "item": "jumper_cable" },
+          { "item": "tool_belt" },
+          { "group": "sgn_wallet" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sgn_monk",
+    "name": "Buddhist monk",
+    "description": "You entered the pagoda as a boy and have kept its precepts ever since: no meat, no violence, no attachment.  When the sick came to the pagoda gate, the abbot opened it.  You alone walked out again.  Your vows have never been harder to keep.",
+    "npc_background": "BG_survival_story_RURAL",
+    "points": 0,
+    "skills": [ { "name": "firstaid", "level": 1 }, { "name": "speech", "level": 2 } ],
+    "traits": [ "VEGETARIAN" ],
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "robe" },
+          { "item": "sgn_dep_to_ong" },
+          { "item": "bead_necklace" },
+          { "item": "incense", "count": 5 },
+          { "item": "matches" },
+          { "group": "sgn_wallet" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  },
+  {
+    "type": "profession",
+    "id": "sgn_veteran",
+    "name": "Elderly veteran",
+    "description": "You are old enough to have carried a rifle in a war that ended thirty years ago, and you have spent every year since trying to forget it.  Your back aches when it rains and your hands shake in the morning, but some things the body never unlearns.",
+    "npc_background": "BG_survival_story_RURAL",
+    "points": 2,
+    "skills": [
+      { "name": "melee", "level": 2 },
+      { "name": "rifle", "level": 2 },
+      { "name": "gun", "level": 1 },
+      { "name": "survival", "level": 2 }
+    ],
+    "traits": [ "BADBACK" ],
+    "age_lower": 55,
+    "items": {
+      "both": {
+        "entries": [
+          { "item": "jacket_army" },
+          { "item": "pants_army" },
+          { "item": "socks" },
+          { "item": "boots" },
+          { "item": "sgn_non_la" },
+          { "item": "glasses_eye" },
+          { "item": "cane" },
+          { "group": "sgn_wallet" }
+        ]
+      },
+      "male": { "entries": [ { "item": "boxer_shorts" } ] },
+      "female": { "entries": [ { "item": "bra" }, { "item": "panties" } ] }
+    }
+  }
+]

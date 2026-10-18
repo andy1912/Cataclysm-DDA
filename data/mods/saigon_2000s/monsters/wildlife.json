@@ -1,0 +1,303 @@
+[
+  {
+    "type": "MONSTER",
+    "id": "mon_crow",
+    "copy-from": "mon_crow",
+    "//": "L-loc7: the delta's wildlife.  dda's spawn groups are North American; the species below that have a close Vietnamese relative living the same way are redescribed in place (same id, so their eggs, young and corpses still work), the rest leave the spawn groups (wildlife_groups.json).  Sprites are dda's.",
+    "name": { "str": "large-billed crow" },
+    "description": "A quạ, glossy black from beak to tail, with a heavy arched bill.  Crows follow the rice harvest and the rubbish heaps; this one watches you with interest, as if you might drop something."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_sparrow",
+    "copy-from": "mon_sparrow",
+    "name": { "str": "tree sparrow" },
+    "description": "A chim sẻ, the small brown sparrow with a chestnut cap and a black spot on each white cheek that nests under every roof tile in the south."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_robin",
+    "copy-from": "mon_robin",
+    "name": { "str": "common myna" },
+    "description": "A sáo, a dark brown starling with a black head, a yellow bill and a bare yellow patch behind each eye.  Bold, loud and clever, it walks rather than hops."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_cormorant",
+    "copy-from": "mon_cormorant",
+    "name": { "str": "little cormorant" },
+    "description": "A cốc đế, a small black diving bird that fishes the rivers and canals, then stands on a stake with its wings spread out to dry."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_moorhen",
+    "copy-from": "mon_moorhen",
+    "name": { "str": "common moorhen" },
+    "description": "A gà nước, a dark water bird with a red shield above its yellow-tipped bill.  It picks its way across water hyacinth on long green toes."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_grebe",
+    "copy-from": "mon_grebe",
+    "name": { "str": "little grebe" },
+    "description": "A le hôi, a small round diving bird of ponds and flooded fields.  It vanishes underwater at the first sign of trouble and comes up somewhere else."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_otter",
+    "copy-from": "mon_otter",
+    "name": { "str": "smooth-coated otter" },
+    "description": "A rái cá, a sleek brown otter of the mangrove creeks and canals, hunting fish in family groups.  The Cần Giờ forest is its home; the empty fish ponds are its larder now."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_boar_wild",
+    "copy-from": "mon_boar_wild",
+    "name": { "str": "wild boar" },
+    "description": "A heo rừng, bristly, dark and short-tempered.  Wild pigs still root in the forest of Củ Chi and the mangroves of Cần Giờ, and farm pigs gone loose have joined them."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_boar_wild_piglet",
+    "copy-from": "mon_boar_wild_piglet",
+    "name": { "str": "wild boar piglet" },
+    "description": "A striped heo rừng piglet.  Where there is one, its mother is not far away."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_gartersnake",
+    "copy-from": "mon_gartersnake",
+    "name": { "str": "checkered keelback" },
+    "description": "A rắn nước, an olive water snake with a black chequer pattern.  It hunts frogs and fish in the rice fields and is quick to bite but harmless."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_gartersnake_baby",
+    "copy-from": "mon_gartersnake_baby",
+    "name": { "str": "checkered keelback snakelet" },
+    "description": "A young rắn nước, no longer than a pencil."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_turtle_painted",
+    "copy-from": "mon_turtle_painted",
+    "name": { "str": "snail-eating turtle" },
+    "description": "A rùa ba gờ, a small dark turtle with three ridges along its shell and pale stripes on its face, at home in ponds, canals and paddies."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_turtle_painted_baby",
+    "copy-from": "mon_turtle_painted_baby",
+    "name": { "str": "snail-eating turtle hatchling" },
+    "description": "A rùa ba gờ hatchling, the size of a coin."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_bullfrog_frog",
+    "copy-from": "mon_bullfrog_frog",
+    "name": { "str": "bullfrog" },
+    "description": "An ếch Mỹ.  American bullfrogs have been farmed in the delta since the 1990s, and the ones that got out of their pens now boom in every canal."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_green_frog",
+    "copy-from": "mon_green_frog",
+    "name": { "str": "rice-field frog" },
+    "description": "An ếch đồng, the fat brown-green frog of the paddies that every child in the delta has caught for dinner."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_green_worm",
+    "copy-from": "mon_green_worm",
+    "name": { "str": "many-legged frog" },
+    "description": "A rice-field frog that has suffered some kind of mutation.  At its hips it has clusters of extra legs, some complete, others ending at the first joint."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_fowler_toad",
+    "copy-from": "mon_fowler_toad",
+    "name": { "str": "Asian toad" },
+    "description": "A cóc nhà, the warty brown toad that comes out on wet nights to eat insects under the street lamps.  The glands behind its eyes ooze a poison that has killed people who ate it."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_fish_bowfin",
+    "copy-from": "mon_fish_bowfin",
+    "name": { "str": "snakehead" },
+    "description": "A cá lóc, a long, mottled, toothy fish that breathes air and can live in a puddle of mud through the dry season.  Grilled in straw, it is a delta classic."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_fish_bluegill",
+    "copy-from": "mon_fish_bluegill",
+    "name": { "str_sp": "tilapia" },
+    "description": "A cá rô phi, a deep-bodied grey fish farmed in every pond in the south.  It has escaped into the canals as well."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_fish_channel_catfish",
+    "copy-from": "mon_fish_channel_catfish",
+    "name": { "str_sp": "pangasius" },
+    "description": "A cá tra, a big pale catfish of the Mekong and its rafts of fish cages.  Exported by the shipload as 'basa'."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_fish_bullhead",
+    "copy-from": "mon_fish_bullhead",
+    "name": { "str_sp": "walking catfish" },
+    "description": "A cá trê, a slippery catfish that breathes air and wriggles across wet ground from one pond to the next."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_fish_pumpkinseed",
+    "copy-from": "mon_fish_pumpkinseed",
+    "name": { "str_sp": "climbing perch" },
+    "description": "A cá rô đồng, a small spiny fish of the paddies, famous for crawling out of the water after rain."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_fish_eel",
+    "copy-from": "mon_fish_eel",
+    "name": { "str": "swamp eel" },
+    "description": "A lươn, a smooth yellow-brown eel that burrows in the mud of rice fields and canals."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_fish_carp",
+    "copy-from": "mon_fish_carp",
+    "name": { "str_sp": "common carp" },
+    "description": "A cá chép, the golden-bronze carp of ponds and temples.  On the 23rd of the twelfth month every family releases one to carry the Kitchen Gods to heaven."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_bear",
+    "copy-from": "mon_bear",
+    "//": "Only Thảo Cầm Viên has bears (and deer and tigers) now; the zoo's animals do not breed into the wild.",
+    "name": { "str": "Asian black bear" },
+    "description": "A gấu ngựa, a black bear with a white crescent on its chest and big round ears.  The zoo took in bears rescued from the bile farms; this one has nothing left to lose.",
+    "extend": { "flags": [ "NO_BREED" ] }
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_bear_cub",
+    "copy-from": "mon_bear_cub",
+    "name": { "str": "Asian black bear cub" },
+    "description": "A young gấu ngựa, its chest crescent still faint.  Its mother is somewhere close."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_deer",
+    "copy-from": "mon_deer",
+    "name": { "str_sp": "sambar deer" },
+    "description": "A nai, a big shaggy brown deer with a dark mane and rough antlers, from the zoo's deer park.  It startles at every sound.",
+    "extend": { "flags": [ "NO_BREED" ] }
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_deer_fawn",
+    "copy-from": "mon_deer_fawn",
+    "name": { "str": "sambar fawn" },
+    "description": "A young nai, still unsteady on its legs."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_tiger",
+    "copy-from": "mon_tiger",
+    "extend": { "flags": [ "NO_BREED" ] }
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_cat_siamese",
+    "copy-from": "mon_cat_siamese",
+    "name": { "str": "Siamese cat" },
+    "description": "A mèo Xiêm, cream with dark ears, face, paws and tail, and loud about everything.  The breed came from next door."
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_mantis_mega",
+    "copy-from": "mon_mantis_mega",
+    "description": "This ferocious cow-sized mantis stalks the rice fields.  It is probably capable of killing a buffalo with its powerful arms."
+  },
+  {
+    "type": "MONSTER",
+    "id": "sgn_mon_ran_ho_mang",
+    "copy-from": "mon_rattlesnake",
+    "looks_like": "mon_rattlesnake",
+    "name": { "str": "monocled cobra" },
+    "description": "A rắn hổ mang, brown with a pale ring on the back of its hood.  It rears up and spreads that hood when you come close; its bite can kill a man in an hour.",
+    "special_attacks": [  ],
+    "reproduction": { "baby_type": { "baby_monster": "sgn_mon_ran_ho_mang_con" }, "baby_count": 10, "baby_timer": 135 }
+  },
+  {
+    "type": "MONSTER",
+    "id": "sgn_mon_ran_ho_mang_con",
+    "copy-from": "mon_rattlesnake_s",
+    "looks_like": "mon_rattlesnake_s",
+    "name": { "str": "monocled cobra snakelet" },
+    "description": "A young rắn hổ mang.  It is already venomous.",
+    "upgrades": { "age_grow": 730, "into": "sgn_mon_ran_ho_mang" }
+  },
+  {
+    "type": "MONSTER",
+    "id": "sgn_mon_chuot_dong",
+    "copy-from": "mon_sewer_rat",
+    "looks_like": "mon_sewer_rat",
+    "name": { "str": "rice-field rat" },
+    "description": "A chuột đồng, a sleek brown rat of the paddies and dykes.  It eats the harvest, and in the delta the harvest eats it back: grilled with lemongrass, it was a market dish."
+  },
+  {
+    "type": "MONSTER",
+    "id": "sgn_mon_cu_gay",
+    "copy-from": "mon_pigeon",
+    "looks_like": "mon_pigeon",
+    "name": { "str": "spotted dove" },
+    "description": "A cu gáy, a soft brown dove with a black collar dotted white.  Its slow 'cu cu gáy' call is the sound of a delta morning."
+  },
+  {
+    "type": "MONSTER",
+    "id": "sgn_mon_co",
+    "copy-from": "mon_cormorant",
+    "looks_like": "mon_cormorant",
+    "name": { "str": "little egret" },
+    "description": "A cò trắng, a slender white heron with black legs and yellow feet, wading the paddies for fish and frogs.  The folk songs are full of it.",
+    "color": "white",
+    "reproduction": { "baby_type": { "baby_egg": "egg_bird_unfert" }, "baby_count": 3, "baby_timer": 40 }
+  },
+  {
+    "type": "ITEM",
+    "id": "egg_crow",
+    "copy-from": "egg_crow",
+    "name": { "str": "crow egg" }
+  },
+  {
+    "type": "ITEM",
+    "id": "egg_robin",
+    "copy-from": "egg_robin",
+    "name": { "str": "myna egg" },
+    "description": "A nutritious egg laid by a myna.  The shell is a glossy pale blue."
+  },
+  {
+    "type": "ITEM",
+    "id": "egg_cormorant",
+    "copy-from": "egg_cormorant",
+    "name": { "str": "cormorant egg" }
+  },
+  {
+    "type": "ITEM",
+    "id": "egg_moorhen",
+    "copy-from": "egg_moorhen",
+    "name": { "str": "moorhen egg" }
+  },
+  {
+    "type": "ITEM",
+    "id": "egg_grebe",
+    "copy-from": "egg_grebe",
+    "name": { "str": "grebe egg" }
+  },
+  {
+    "type": "ITEM",
+    "id": "egg_turtle_painted",
+    "copy-from": "egg_turtle_painted",
+    "name": { "str": "turtle egg" }
+  }
+]

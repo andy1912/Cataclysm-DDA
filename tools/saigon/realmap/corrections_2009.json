@@ -1,0 +1,245 @@
+{
+  "about": "Turns today's OpenStreetMap into Saigon as of late 2009. Every entry gives its reason. Zones are painted before the OSM land use (OSM water and parks still win inside them); drop_roads_inside removes OSM streets lying wholly inside the zone unless named in keep_road_names. drop_minor_streets removes the zone's named side streets (major roads stay). repaint paints the zone's class over today's land use (water stays).",
+  "drop_road_names": [
+    "Mai Chí Thọ",
+    "Phạm Văn Đồng",
+    "Long Thành",
+    "Cầu Ba Son",
+    "Cầu Thủ Thiêm 2",
+    "Vành đai 2",
+    "Võ Chí Công"
+  ],
+  "drop_road_names_why": {
+    "Mai Chí Thọ": "the East-West avenue through Thủ Thiêm opened in 2011",
+    "Phạm Văn Đồng": "the Gò Vấp - Thủ Đức avenue opened in 2013",
+    "Long Thành": "the HCMC - Long Thành - Dầu Giây expressway opened in 2015",
+    "Cầu Ba Son / Cầu Thủ Thiêm 2": "the Ba Son bridge opened in 2022",
+    "Vành đai 2": "ring road 2 sections were built after 2010",
+    "Võ Chí Công": "the ring road 2 section through Phú Hữu opened after 2015"
+  },
+  "drop_way_ids": [],
+  "zones": [
+    {
+      "name": "Thủ Thiêm",
+      "why": "in 2009 the peninsula opposite District 1 was being cleared for the new town: marsh, creeks and a few old lanes; the grid streets came after 2010",
+      "class": "marsh",
+      "drop_roads_inside": true,
+      "keep_road_names": [
+        "Lương Định Của",
+        "Trần Não",
+        "Nguyễn Thị Định"
+      ],
+      "polygon": [
+        [
+          10.7905,
+          106.714
+        ],
+        [
+          10.7885,
+          106.724
+        ],
+        [
+          10.78,
+          106.7335
+        ],
+        [
+          10.77,
+          106.7335
+        ],
+        [
+          10.7635,
+          106.721
+        ],
+        [
+          10.7635,
+          106.714
+        ],
+        [
+          10.766,
+          106.71
+        ],
+        [
+          10.771,
+          106.7081
+        ],
+        [
+          10.775,
+          106.7083
+        ],
+        [
+          10.779,
+          106.7092
+        ],
+        [
+          10.783,
+          106.7114
+        ],
+        [
+          10.788,
+          106.7135
+        ]
+      ],
+      "polygon_note": "west edge along the middle of the river (measured from the OSM water), so District 1's own bank (Tôn Đức Thắng, Bến Bạch Đằng) stays city; the first version reached across the river"
+    },
+    {
+      "name": "Quận 2 east and Quận 9 south",
+      "why": "in 2009 Bình Trưng, Thạnh Mỹ Lợi, Cát Lái and Phú Hữu were rice fields, shrimp ponds and canal villages along a few roads; the side-street grids are 2010s subdivisions",
+      "class": "farmland",
+      "drop_minor_streets": true,
+      "polygon": [
+        [
+          10.805,
+          106.765
+        ],
+        [
+          10.805,
+          106.821
+        ],
+        [
+          10.729,
+          106.821
+        ],
+        [
+          10.729,
+          106.75
+        ],
+        [
+          10.76,
+          106.748
+        ],
+        [
+          10.785,
+          106.758
+        ]
+      ]
+    },
+    {
+      "name": "Quận 9 around Suối Tiên",
+      "why": "east of Xa lộ Hà Nội the High-Tech Park was mostly empty lots in 2009 and the rest fields and villages",
+      "class": "farmland",
+      "drop_minor_streets": true,
+      "polygon": [
+        [
+          10.886,
+          106.79
+        ],
+        [
+          10.886,
+          106.821
+        ],
+        [
+          10.805,
+          106.821
+        ],
+        [
+          10.805,
+          106.79
+        ],
+        [
+          10.84,
+          106.785
+        ]
+      ]
+    },
+    {
+      "name": "Tân Cảng (now Vinhomes Central Park)",
+      "why": "until 2007 the Tân Cảng container port and navy land; in 2009 an emptied port yard. Vinhomes Central Park and Landmark 81 were built 2015-2018",
+      "class": "industrial",
+      "drop_roads_inside": true,
+      "polygon": [
+        [
+          10.7987,
+          106.7185
+        ],
+        [
+          10.7987,
+          106.7266
+        ],
+        [
+          10.7885,
+          106.7266
+        ],
+        [
+          10.7885,
+          106.7185
+        ]
+      ]
+    },
+    {
+      "name": "Ba Son shipyard (now Vinhomes Golden River)",
+      "why": "the Ba Son naval shipyard worked here until 2015; the towers came after",
+      "class": "industrial",
+      "drop_roads_inside": true,
+      "keep_road_names": [
+        "Tôn Đức Thắng"
+      ],
+      "polygon": [
+        [
+          10.788,
+          106.7085
+        ],
+        [
+          10.788,
+          106.714
+        ],
+        [
+          10.782,
+          106.714
+        ],
+        [
+          10.782,
+          106.7085
+        ]
+      ]
+    },
+    {
+      "name": "Đảo Kim Cương",
+      "why": "the Diamond Island towers on the Quận 2 riverbank were built 2011-2018; in 2009 the spit was marsh",
+      "class": "marsh",
+      "drop_roads_inside": true,
+      "polygon": [
+        [
+          10.7808,
+          106.7448
+        ],
+        [
+          10.7808,
+          106.749
+        ],
+        [
+          10.7768,
+          106.749
+        ],
+        [
+          10.7768,
+          106.7448
+        ]
+      ]
+    },
+    {
+      "name": "Khu Công nghệ cao (Saigon Hi-Tech Park)",
+      "why": "set up in 2002, but in 2009 mostly cleared lots with a few plants (Nidec, Jabil; Intel's opened in 2010, Samsung's complex in 2016); the factory blocks and their side streets are later",
+      "class": "open",
+      "repaint": true,
+      "drop_minor_streets": true,
+      "polygon": [
+        [
+          10.8608,
+          106.7839
+        ],
+        [
+          10.8608,
+          106.8261
+        ],
+        [
+          10.8149,
+          106.8261
+        ],
+        [
+          10.8149,
+          106.7839
+        ]
+      ]
+    }
+  ]
+}

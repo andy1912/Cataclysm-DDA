@@ -1,4 +1,6 @@
 #include "game.h"
+#include "global_vars.h"
+#include "math_parser_diag_value.h"
 #include "map_memory.h"
 
 #include <algorithm>
@@ -542,14 +544,25 @@ void game_ui::init_ui()
     TERMX = get_terminal_width();
     TERMY = get_terminal_height();
 
+#if !defined(__ANDROID__)
+    // On Android the grid follows the orientation, so a portrait grid must not
+    // be stored as landscape size
     get_options().get_option( "TERMINAL_X" ).setValue( TERMX * get_scaling_factor() );
     get_options().get_option( "TERMINAL_Y" ).setValue( TERMY * get_scaling_factor() );
     get_options().save();
+#endif
 #else
-    TERMY = getmaxy( catacurses::stdscr );
-    TERMX = getmaxx( catacurses::stdscr );
+    if( test_mode ) {
+        // No curses screen is initialized in test mode (e.g. --check-mods), so
+        // getmaxy/getmaxx report 0 and ensure_term_size would wait forever.
+        TERMY = EVEN_MINIMUM_TERM_HEIGHT;
+        TERMX = EVEN_MINIMUM_TERM_WIDTH;
+    } else {
+        TERMY = getmaxy( catacurses::stdscr );
+        TERMX = getmaxx( catacurses::stdscr );
 
-    ensure_term_size();
+        ensure_term_size();
+    }
 
     // try to make FULL_SCREEN_HEIGHT symmetric according to TERMY
     if( TERMY % 2 ) {
@@ -809,6 +822,13 @@ bool game::start_game()
 
     load_master();
     u.setID( assign_npc_id() ); // should be as soon as possible, but *after* load_master
+
+    // Saigon fork: the first game in a world fixes which map it uses.  A scenario can name a
+    // pregenerated overmap set (e.g. the real-map Saigon); later games keep the world's choice.
+    if( get_globals().maybe_get_global_value( "overmap_pregenerated_path" ) == nullptr ) {
+        get_globals().set_global_value( "overmap_pregenerated_path", scen->overmap_pregenerated_path() );
+        get_globals().set_global_value( "overmap_outside_region", scen->overmap_outside_region() );
+    }
 
     // Make sure the items are added after the calendar is started
     u.add_profession_items();
@@ -1670,7 +1690,7 @@ units::temperature_delta get_heat_radiation( const tripoint_bub_ms &location )
             if( !heat_can_spread ) {
                 continue;
             }
-        } else if( !here.sees( location, dest, -1 ) ) {
+        } else if( !here.sees( location, dest, -1, true, los_trace::physical ) ) {
             continue;
         }
         // Ensure fire_dist >= 1 to avoid divide-by-zero errors.
@@ -1706,7 +1726,7 @@ int get_best_fire( const tripoint_bub_ms &location )
             if( !here.clear_path( dest, location, -1, 1, 100 ) ) {
                 continue;
             }
-        } else if( !here.sees( location, dest, -1 ) ) {
+        } else if( !here.sees( location, dest, -1, true, los_trace::physical ) ) {
             continue;
         }
         if( square_dist( dest, location ) <= 1 ) {
@@ -4422,7 +4442,10 @@ template Character *game::critter_by_id<Character>( const character_id & );
 template npc *game::critter_by_id<npc>( const character_id & );
 template Creature *game::critter_by_id<Creature>( const character_id & );
 
-static bool can_place_monster( const monster &mon, const tripoint_bub_ms &p )
+// Is this square free of any living creature?  Split out of can_place_monster so
+// that the "forced" placement path can keep the occupancy rule while dropping the
+// terrain and sight rules; see place_critter_around.
+static bool can_place_creature( const tripoint_bub_ms &p )
 {
     creature_tracker &creatures = get_creature_tracker();
     if( const monster *const critter = creatures.creature_at<monster>( p ) ) {
@@ -4434,6 +4457,14 @@ static bool can_place_monster( const monster &mon, const tripoint_bub_ms &p )
     // Although monsters can sometimes exist on the same place as a Character (e.g. ridden horse),
     // it is usually wrong. So don't allow it.
     if( creatures.creature_at<Character>( p ) ) {
+        return false;
+    }
+    return true;
+}
+
+static bool can_place_monster( const monster &mon, const tripoint_bub_ms &p )
+{
+    if( !can_place_creature( p ) ) {
         return false;
     }
     return mon.will_move_to( p ) && mon.know_danger_at( p );
@@ -4518,7 +4549,13 @@ monster *game::place_critter_around( const shared_ptr_fast<monster> &mon,
     map &here = get_map();
 
     std::optional<tripoint_bub_ms> where;
-    if( forced || can_place_monster( *mon, center ) ) {
+    // "forced" means "ignore terrain and sight", not "ignore that the tile is
+    // already taken".  A horde node whose square holds another creature still has
+    // to go somewhere else, or creature_tracker::add logs "there's already a
+    // monster at" and the creature is dropped.  overmapbuffer::spawn_monster
+    // places horde monsters forced, and the tile may already have been filled by
+    // map::spawn_monsters in the same update_map.
+    if( can_place_creature( center ) && ( forced || can_place_monster( *mon, center ) ) ) {
         where = center;
     }
 
@@ -5692,24 +5729,17 @@ bool game::warn_player_maybe_anger_local_faction( bool really_bad_offense,
         bool asking_for_public_goods )
 {
     Character &player_character = get_player_character();
-    std::optional<basecamp *> bcp = overmap_buffer.find_camp(
-                                        player_character.pos_abs_omt().xy() );
-    if( !bcp ) {
+    basecamp *actual_camp = basecamp::any_claim_at( player_character.pos_abs_omt() );
+    if( !actual_camp ) {
         return true; // Nobody to piss off
     }
-    basecamp *actual_camp = *bcp;
-    if( actual_camp->get_owner()->limited_area_claim &&
-        player_character.pos_abs_omt() != actual_camp->camp_omt_pos() ) {
-        return true; // outside of claimed area
-    }
+
     if( actual_camp->allowed_access_by( player_character, asking_for_public_goods ) ) {
         return true; // You're allowed to do this anyway
     }
 
-    // The threshold for guaranteed hostility. Don't bother query/modifying relationship if they already hate us
-    // TODO: Make this magic number into a constant
-    if( actual_camp->get_owner()->likes_u < -10 ) {
-        return true;
+    if( actual_camp->get_owner()->guaranteed_hostile() ) {
+        return true; // Already trying to kill you.
     }
 
     // Else there's a camp, and we're doing something we're not supposed to! Time to warn the player.
@@ -6518,6 +6548,7 @@ void game::try_activate_zone_sort_viewport()
     u.zone_sort_viewport.active = true;
     u.zone_sort_viewport.center = bbox.centroid;
     u.zone_sort_viewport.target_zoom = target;
+    u.zone_sort_viewport.saved_zoom = actor->viewport_saved_zoom;
     u.zone_sort_viewport.bbox_min = bbox.min_corner;
     u.zone_sort_viewport.bbox_max = bbox.max_corner;
     if( !test_mode ) {
@@ -11590,6 +11621,11 @@ const scenario *get_scenario()
 {
     return g->scen;
 }
+bool start_new_game_for_tests()
+{
+    return g->start_game();
+}
+
 void set_scenario( const scenario *new_scenario )
 {
     g->scen = new_scenario;

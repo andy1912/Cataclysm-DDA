@@ -1,0 +1,1763 @@
+[
+  {
+    "//": "No winter or autumn in Saigon: every seasonal variant uses its summer art.",
+    "tropical_seasons": [
+      "_season_winter",
+      "_season_autumn"
+    ]
+  },
+  {
+    "//": "Pastel stucco façades instead of red brick (nhà ống, chung cư): brick courses flattened into rendered wall, painted ochre-yellow.",
+    "target": "t_brick_wall",
+    "source": "t_brick_wall",
+    "ops": [
+      {
+        "op": "flatten",
+        "k": 0.18,
+        "min_val": 0.05
+      },
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 44,
+        "sat_set": 0.5,
+        "val_mul": 1.0,
+        "val_add": 0.32
+      }
+    ]
+  },
+  {
+    "//": "Teal rolling shop shutters (cửa cuốn).",
+    "target": "t_rdoor_c",
+    "source": "t_rdoor_c",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          15,
+          60
+        ],
+        "min_sat": 0.2,
+        "to_hue": 172,
+        "sat_mul": 0.9,
+        "val_mul": 1.05
+      }
+    ]
+  },
+  {
+    "//": "Ancestor altar: red lacquer table.",
+    "target": "f_sgn_ban_tho",
+    "source": "f_table",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          10,
+          50
+        ],
+        "min_sat": 0.2,
+        "to_hue": 356,
+        "sat_mul": 1.35,
+        "val_mul": 0.95
+      }
+    ]
+  },
+  {
+    "//": "Red plastic street stool.",
+    "target": "f_stool",
+    "source": "f_stool",
+    "ops": [
+      {
+        "op": "tint",
+        "rgb": [
+          230,
+          40,
+          40
+        ],
+        "strength": 0.85
+      }
+    ]
+  },
+  {
+    "//": "Stainless rooftop water tank (bồn nước inox).",
+    "target": "f_standing_tank",
+    "source": "f_standing_tank",
+    "ops": [
+      {
+        "op": "tint",
+        "rgb": [
+          175,
+          190,
+          205
+        ],
+        "strength": 0.35
+      }
+    ]
+  },
+  {
+    "//": "Ward police zombie: khaki uniform instead of black SWAT armour.",
+    "target": "sgn_mon_zombie_cong_an",
+    "source": "mon_zombie_cop",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "max_val": 0.55,
+        "to_hue": 44,
+        "sat_set": 0.38,
+        "val_mul": 1.6,
+        "val_add": 0.18
+      }
+    ]
+  },
+  {
+    "//": "Fevered dead: pale hospital gown.",
+    "target": "sgn_mon_zombie_sot",
+    "source": "mon_zombie_medical",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          170,
+          250
+        ],
+        "min_sat": 0.15,
+        "to_hue": 195,
+        "sat_mul": 0.35,
+        "val_mul": 1.45
+      },
+      {
+        "op": "recolor",
+        "hue": [
+          15,
+          57
+        ],
+        "min_sat": 0.22,
+        "rows": [
+          9,
+          20
+        ],
+        "to_hue": 25,
+        "sat_set": 0.2,
+        "val_mul": 0.32
+      }
+    ]
+  },
+  {
+    "//": "Market zombie: orange rubber apron, dark trousers.",
+    "target": "sgn_mon_zombie_vendor",
+    "source": "mon_zombie_fat",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          340,
+          20
+        ],
+        "min_sat": 0.55,
+        "to_hue": 26,
+        "sat_mul": 1.0,
+        "val_mul": 1.1
+      },
+      {
+        "op": "recolor",
+        "hue": [
+          80,
+          170
+        ],
+        "min_sat": 0.15,
+        "to_hue": 222,
+        "sat_mul": 0.8,
+        "val_mul": 0.8
+      }
+    ]
+  },
+  {
+    "//": "Helmeted (xe ôm) zombie: red half-helmet on the head.",
+    "target": "sgn_mon_zombie_xe_om",
+    "source": "mon_zombie",
+    "ops": [
+      {
+        "op": "cap",
+        "rows": 3,
+        "rgb": [
+          200,
+          36,
+          36
+        ]
+      },
+      {
+        "op": "recolor",
+        "hue": [
+          15,
+          57
+        ],
+        "min_sat": 0.22,
+        "rows": [
+          9,
+          20
+        ],
+        "to_hue": 25,
+        "sat_set": 0.2,
+        "val_mul": 0.32
+      }
+    ]
+  },
+  {
+    "target": "t_sidewalk",
+    "source": "t_sidewalk",
+    "ops": [
+      {
+        "op": "tint",
+        "rgb": [
+          190,
+          110,
+          90
+        ],
+        "strength": 0.25
+      }
+    ],
+    "//": "Warm red-grey Saigon sidewalk tiles."
+  },
+  {
+    "target": "t_thconc_floor",
+    "source": "t_thconc_floor",
+    "ops": [
+      {
+        "op": "tint",
+        "rgb": [
+          235,
+          205,
+          160
+        ],
+        "strength": 0.35
+      }
+    ],
+    "//": "Cream ceramic floor tiles (gạch) in homes and shops."
+  },
+  {
+    "target": "t_door_c",
+    "source": "t_door_c",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          10,
+          55
+        ],
+        "min_sat": 0.15,
+        "to_hue": 135,
+        "sat_mul": 0.9,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "Green-painted wooden doors."
+  },
+  {
+    "target": "t_window_bars",
+    "source": "t_window_bars",
+    "ops": [
+      {
+        "op": "tint",
+        "rgb": [
+          70,
+          140,
+          105
+        ],
+        "strength": 0.4
+      }
+    ],
+    "//": "Green-painted window grilles."
+  },
+  {
+    "target": "sgn_non_la",
+    "source": "straw_fedora",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 50,
+        "sat_set": 0.32,
+        "val_mul": 1.2,
+        "val_add": 0.05
+      }
+    ],
+    "//": "Nón lá icon: pale palm-leaf straw (shape from the straw fedora until hand art)."
+  },
+  {
+    "target": "overlay_male_worn_sgn_non_la",
+    "source": "overlay_male_worn_straw_hat",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 50,
+        "sat_set": 0.32,
+        "val_mul": 1.2,
+        "val_add": 0.05
+      }
+    ]
+  },
+  {
+    "target": "overlay_female_worn_sgn_non_la",
+    "source": "overlay_female_worn_straw_hat",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 50,
+        "sat_set": 0.32,
+        "val_mul": 1.2,
+        "val_add": 0.05
+      }
+    ]
+  },
+  {
+    "target": "sgn_non_bao_hiem",
+    "source": "helmet_motor",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "max_val": 0.98,
+        "to_hue": 358,
+        "sat_set": 0.7,
+        "val_mul": 1.15
+      }
+    ],
+    "//": "Thin red half-helmet."
+  },
+  {
+    "target": "overlay_male_worn_sgn_non_bao_hiem",
+    "source": "overlay_male_worn_helmet_motor",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "max_val": 0.98,
+        "to_hue": 358,
+        "sat_set": 0.7,
+        "val_mul": 1.15
+      }
+    ]
+  },
+  {
+    "target": "overlay_female_worn_sgn_non_bao_hiem",
+    "source": "overlay_female_worn_helmet_motor",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "max_val": 0.98,
+        "to_hue": 358,
+        "sat_set": 0.7,
+        "val_mul": 1.15
+      }
+    ]
+  },
+  {
+    "target": "sgn_ao_mua_canh_doi",
+    "source": "folding_poncho",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 205,
+        "sat_set": 0.55,
+        "val_mul": 1.25,
+        "val_add": 0.08
+      }
+    ],
+    "//": "Blue plastic bat-wing poncho."
+  },
+  {
+    "target": "overlay_male_worn_sgn_ao_mua_canh_doi",
+    "source": "overlay_male_worn_poncho",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 205,
+        "sat_set": 0.55,
+        "val_mul": 1.25,
+        "val_add": 0.08
+      }
+    ]
+  },
+  {
+    "target": "overlay_female_worn_sgn_ao_mua_canh_doi",
+    "source": "overlay_female_worn_poncho",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 205,
+        "sat_set": 0.55,
+        "val_mul": 1.25,
+        "val_add": 0.08
+      }
+    ]
+  },
+  {
+    "target": "overlay_male_worn_sgn_dep_to_ong",
+    "source": "overlay_male_worn_flip_flops",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 210,
+        "sat_set": 0.25,
+        "val_mul": 1.3,
+        "val_add": 0.15
+      }
+    ],
+    "//": "Pale-blue honeycomb foam sandals."
+  },
+  {
+    "target": "overlay_female_worn_sgn_dep_to_ong",
+    "source": "overlay_female_worn_flip_flops",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 210,
+        "sat_set": 0.25,
+        "val_mul": 1.3,
+        "val_add": 0.15
+      }
+    ]
+  },
+  {
+    "target": "sgn_nuoc_mam",
+    "source": "soup_meat",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 28,
+        "sat_set": 0.8,
+        "val_mul": 1.3
+      }
+    ],
+    "//": "Fish sauce: clear dark amber."
+  },
+  {
+    "target": "sgn_ca_phe_sua_da",
+    "source": "soup_meat",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 25,
+        "sat_set": 0.5,
+        "val_mul": 1.45
+      }
+    ],
+    "//": "Iced milk coffee: tan."
+  },
+  {
+    "target": "sgn_tra_da",
+    "source": "soup_meat",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.55,
+        "val_mul": 1.75
+      }
+    ],
+    "//": "Iced green tea: pale amber."
+  },
+  {
+    "target": "sgn_nuoc_mia",
+    "source": "soup_meat",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 68,
+        "sat_set": 0.38,
+        "val_mul": 1.9
+      }
+    ],
+    "//": "Sugarcane juice: pale yellow-green."
+  },
+  {
+    "target": "sgn_bia_hoi",
+    "source": "soup_meat",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 42,
+        "sat_set": 0.75,
+        "val_mul": 1.85
+      }
+    ],
+    "//": "Draft beer: gold."
+  },
+  {
+    "target": "sgn_che",
+    "source": "soup_meat",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 335,
+        "sat_set": 0.3,
+        "val_mul": 1.95
+      }
+    ],
+    "//": "Chè: milky pink dessert soup."
+  },
+  {
+    "target": "sgn_tuong_ot",
+    "source": "soup_meat",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 4,
+        "sat_set": 0.85,
+        "val_mul": 1.75
+      }
+    ],
+    "//": "Chili sauce: bright red."
+  },
+  {
+    "target": "sgn_ruou_de",
+    "source": "water_clean",
+    "ops": [
+      {
+        "op": "desaturate",
+        "sat_mul": 0.35,
+        "val_mul": 1.05
+      }
+    ],
+    "//": "Rice liquor: clear."
+  },
+  {
+    "target": "f_sofa",
+    "source": "f_sofa",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          180,
+          260
+        ],
+        "min_sat": 0.1,
+        "to_hue": 22,
+        "sat_set": 0.62,
+        "val_mul": 0.85
+      }
+    ],
+    "//": "Wooden salon set (bộ salon gỗ): varnished dark wood instead of blue upholstery."
+  },
+  {
+    "target": "f_bed",
+    "source": "f_bed",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 45,
+        "sat_set": 0.35,
+        "val_mul": 0.98,
+        "max_sat": 0.2
+      }
+    ],
+    "//": "Wooden bed with a woven sedge mat (chiếu) instead of a mattress."
+  },
+  {
+    "target": "f_trashcan",
+    "source": "f_trashcan",
+    "ops": [
+      {
+        "op": "tint",
+        "rgb": [
+          60,
+          170,
+          80
+        ],
+        "strength": 0.8
+      }
+    ],
+    "//": "Green public wheelie bin."
+  },
+  {
+    "target": "f_street_light",
+    "source": "f_street_light",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          60,
+          200
+        ],
+        "min_sat": 0.15,
+        "to_hue": 210,
+        "sat_set": 0.06,
+        "val_mul": 1.25
+      }
+    ],
+    "//": "Galvanised grey street-light pole."
+  },
+  {
+    "target": "overlay_male_worn_sgn_ao_ba_ba",
+    "source": "overlay_male_worn_longshirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 20,
+        "sat_set": 0.4,
+        "val_mul": 0.55
+      }
+    ],
+    "//": "Áo bà ba: dark brown collarless cotton shirt."
+  },
+  {
+    "target": "overlay_female_worn_sgn_ao_ba_ba",
+    "source": "overlay_female_worn_longshirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 20,
+        "sat_set": 0.4,
+        "val_mul": 0.55
+      }
+    ],
+    "//": "Áo bà ba: dark brown collarless cotton shirt."
+  },
+  {
+    "target": "overlay_male_worn_sgn_ong_tay_chong_nang",
+    "source": "overlay_male_worn_arm_warmers",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 205,
+        "sat_set": 0.5,
+        "val_mul": 1.3
+      }
+    ],
+    "//": "Sun sleeves: light blue."
+  },
+  {
+    "target": "overlay_female_worn_sgn_ong_tay_chong_nang",
+    "source": "overlay_female_worn_arm_warmers",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 205,
+        "sat_set": 0.5,
+        "val_mul": 1.3
+      }
+    ],
+    "//": "Sun sleeves: light blue."
+  },
+  {
+    "target": "mon_zombie",
+    "source": "mon_zombie",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          15,
+          57
+        ],
+        "min_sat": 0.22,
+        "rows": [
+          9,
+          20
+        ],
+        "to_hue": 25,
+        "sat_set": 0.2,
+        "val_mul": 0.32
+      }
+    ],
+    "//": "Black hair instead of blond and light brown (32x48 head rows 9-20); clothes stay, t-shirts and jeans were everyday wear in 2000s Saigon."
+  },
+  {
+    "target": "mon_zombie_tough",
+    "source": "mon_zombie_tough",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          15,
+          57
+        ],
+        "min_sat": 0.22,
+        "rows": [
+          9,
+          20
+        ],
+        "to_hue": 25,
+        "sat_set": 0.2,
+        "val_mul": 0.32
+      }
+    ],
+    "//": "Black hair instead of blond and light brown (32x48 head rows 9-20); clothes stay, t-shirts and jeans were everyday wear in 2000s Saigon."
+  },
+  {
+    "target": "mon_zombie_brainless",
+    "source": "mon_zombie_brainless",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          15,
+          57
+        ],
+        "min_sat": 0.22,
+        "rows": [
+          9,
+          20
+        ],
+        "to_hue": 25,
+        "sat_set": 0.2,
+        "val_mul": 0.32
+      }
+    ],
+    "//": "Black hair instead of blond and light brown (32x48 head rows 9-20); clothes stay, t-shirts and jeans were everyday wear in 2000s Saigon."
+  },
+  {
+    "target": "t_concrete_wall",
+    "source": "t_concrete_wall",
+    "ops": [
+      {
+        "op": "flatten",
+        "k": 0.6,
+        "min_val": 0.15
+      },
+      {
+        "op": "tint",
+        "rgb": [
+          240,
+          226,
+          190
+        ],
+        "strength": 0.45
+      }
+    ],
+    "//": "Lime-washed cream concrete (chung cư blocks, ward offices) instead of bare grey."
+  },
+  {
+    "target": "hot_sauce",
+    "source": "soup_meat",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 2,
+        "sat_set": 0.85,
+        "val_mul": 1.55
+      }
+    ],
+    "//": "Hot sauce has no UltimateCataclysm sprite (review R8): a red liquid puddle like tương ớt."
+  },
+  {
+    "target": "sgn_sua_dac",
+    "source": "soup_meat",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.18,
+        "val_mul": 2.1
+      }
+    ],
+    "//": "Condensed milk (a liquid): thick cream-white."
+  },
+  {
+    "target": "overlay_male_worn_sgn_khau_trang",
+    "source": "overlay_male_worn_mask_dust",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 335,
+        "sat_set": 0.35,
+        "val_mul": 1.15
+      }
+    ],
+    "//": "Cloth face mask: pink flowery cotton."
+  },
+  {
+    "target": "overlay_female_worn_sgn_khau_trang",
+    "source": "overlay_female_worn_mask_dust",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 335,
+        "sat_set": 0.35,
+        "val_mul": 1.15
+      }
+    ],
+    "//": "Cloth face mask: pink flowery cotton."
+  },
+  {
+    "target": "overlay_male_worn_sgn_ao_dai_trang",
+    "source": "overlay_male_worn_dress",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 45,
+        "sat_set": 0.05,
+        "val_mul": 1.2,
+        "val_add": 0.35
+      }
+    ],
+    "//": "G26 worn sgn_ao_dai_trang from the dda dress"
+  },
+  {
+    "target": "overlay_female_worn_sgn_ao_dai_trang",
+    "source": "overlay_female_worn_dress",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 45,
+        "sat_set": 0.05,
+        "val_mul": 1.2,
+        "val_add": 0.35
+      }
+    ],
+    "//": "G26 worn sgn_ao_dai_trang from the dda dress"
+  },
+  {
+    "target": "overlay_male_worn_sgn_ao_dai_mau",
+    "source": "overlay_male_worn_dress",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 355,
+        "sat_set": 0.8,
+        "val_mul": 1.05
+      }
+    ],
+    "//": "G26 worn sgn_ao_dai_mau from the dda dress"
+  },
+  {
+    "target": "overlay_female_worn_sgn_ao_dai_mau",
+    "source": "overlay_female_worn_dress",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 355,
+        "sat_set": 0.8,
+        "val_mul": 1.05
+      }
+    ],
+    "//": "G26 worn sgn_ao_dai_mau from the dda dress"
+  },
+  {
+    "target": "overlay_male_worn_sgn_ao_thun",
+    "source": "overlay_male_worn_tshirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.6,
+        "val_mul": 1.1
+      }
+    ],
+    "//": "G26 worn sgn_ao_thun from the dda tshirt"
+  },
+  {
+    "target": "overlay_female_worn_sgn_ao_thun",
+    "source": "overlay_female_worn_tshirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.6,
+        "val_mul": 1.1
+      }
+    ],
+    "//": "G26 worn sgn_ao_thun from the dda tshirt"
+  },
+  {
+    "target": "overlay_male_worn_sgn_quan_tay",
+    "source": "overlay_male_worn_pants",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 220,
+        "sat_set": 0.12,
+        "val_mul": 0.6
+      }
+    ],
+    "//": "G26 worn sgn_quan_tay from the dda pants"
+  },
+  {
+    "target": "overlay_female_worn_sgn_quan_tay",
+    "source": "overlay_female_worn_pants",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 220,
+        "sat_set": 0.12,
+        "val_mul": 0.6
+      }
+    ],
+    "//": "G26 worn sgn_quan_tay from the dda pants"
+  },
+  {
+    "target": "overlay_male_worn_sgn_ao_khoac_chong_nang",
+    "source": "overlay_male_worn_jacket_windbreaker",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 335,
+        "sat_set": 0.32,
+        "val_mul": 1.25,
+        "val_add": 0.1
+      }
+    ],
+    "//": "G26 worn sgn_ao_khoac_chong_nang from the dda jacket_windbreaker"
+  },
+  {
+    "target": "overlay_female_worn_sgn_ao_khoac_chong_nang",
+    "source": "overlay_female_worn_jacket_windbreaker",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 335,
+        "sat_set": 0.32,
+        "val_mul": 1.25,
+        "val_add": 0.1
+      }
+    ],
+    "//": "G26 worn sgn_ao_khoac_chong_nang from the dda jacket_windbreaker"
+  },
+  {
+    "target": "overlay_male_worn_sgn_non_ket",
+    "source": "overlay_male_worn_hat_ball",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 2,
+        "sat_set": 0.75,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 worn sgn_non_ket from the dda hat_ball"
+  },
+  {
+    "target": "overlay_female_worn_sgn_non_ket",
+    "source": "overlay_female_worn_hat_ball",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 2,
+        "sat_set": 0.75,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 worn sgn_non_ket from the dda hat_ball"
+  },
+  {
+    "target": "overlay_male_worn_sgn_dep_lao",
+    "source": "overlay_male_worn_flip_flops",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 28,
+        "sat_set": 0.45,
+        "val_mul": 0.75
+      }
+    ],
+    "//": "G26 worn sgn_dep_lao from the dda flip_flops"
+  },
+  {
+    "target": "overlay_female_worn_sgn_dep_lao",
+    "source": "overlay_female_worn_flip_flops",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 28,
+        "sat_set": 0.45,
+        "val_mul": 0.75
+      }
+    ],
+    "//": "G26 worn sgn_dep_lao from the dda flip_flops"
+  },
+  {
+    "target": "overlay_male_worn_sgn_ao_cong_an",
+    "source": "overlay_male_worn_dress_shirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.55,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 worn sgn_ao_cong_an from the dda dress_shirt"
+  },
+  {
+    "target": "overlay_female_worn_sgn_ao_cong_an",
+    "source": "overlay_female_worn_dress_shirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.55,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 worn sgn_ao_cong_an from the dda dress_shirt"
+  },
+  {
+    "target": "overlay_male_worn_sgn_quan_cong_an",
+    "source": "overlay_male_worn_pants_army",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 90,
+        "sat_set": 0.4,
+        "val_mul": 0.75
+      }
+    ],
+    "//": "G26 worn sgn_quan_cong_an from the dda pants_army"
+  },
+  {
+    "target": "overlay_female_worn_sgn_quan_cong_an",
+    "source": "overlay_female_worn_pants_army",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 90,
+        "sat_set": 0.4,
+        "val_mul": 0.75
+      }
+    ],
+    "//": "G26 worn sgn_quan_cong_an from the dda pants_army"
+  },
+  {
+    "target": "overlay_male_worn_sgn_ao_trang_hoc_sinh",
+    "source": "overlay_male_worn_dress_shirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 210,
+        "sat_set": 0.03,
+        "val_mul": 1.2,
+        "val_add": 0.3
+      }
+    ],
+    "//": "G26 worn sgn_ao_trang_hoc_sinh from the dda dress_shirt"
+  },
+  {
+    "target": "overlay_female_worn_sgn_ao_trang_hoc_sinh",
+    "source": "overlay_female_worn_dress_shirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 210,
+        "sat_set": 0.03,
+        "val_mul": 1.2,
+        "val_add": 0.3
+      }
+    ],
+    "//": "G26 worn sgn_ao_trang_hoc_sinh from the dda dress_shirt"
+  },
+  {
+    "target": "overlay_male_worn_sgn_khan_quang_do",
+    "source": "overlay_male_worn_scarf",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 358,
+        "sat_set": 0.85,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 worn sgn_khan_quang_do from the dda scarf"
+  },
+  {
+    "target": "overlay_female_worn_sgn_khan_quang_do",
+    "source": "overlay_female_worn_scarf",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 358,
+        "sat_set": 0.85,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 worn sgn_khan_quang_do from the dda scarf"
+  },
+  {
+    "target": "sgn_ao_thun",
+    "source": "tshirt",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 48,
+        "sat_set": 0.6,
+        "val_mul": 1.1
+      }
+    ],
+    "//": "G26 icon recoloured from the dda tshirt"
+  },
+  {
+    "target": "sgn_quan_tay",
+    "source": "pants",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 220,
+        "sat_set": 0.12,
+        "val_mul": 0.6
+      }
+    ],
+    "//": "G26 icon recoloured from the dda pants"
+  },
+  {
+    "target": "sgn_non_ket",
+    "source": "hat_ball",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 2,
+        "sat_set": 0.75,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 icon recoloured from the dda hat_ball"
+  },
+  {
+    "target": "sgn_khan_quang_do",
+    "source": "scarf",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 358,
+        "sat_set": 0.85,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "G26 icon recoloured from the dda scarf"
+  },
+  {
+    "target": "sgn_mon_cho_ta",
+    "source": "mon_dog",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "max_val": 0.95,
+        "to_hue": 36,
+        "sat_set": 0.5,
+        "val_mul": 1.15
+      }
+    ],
+    "//": "Chó ta: short yellow-tan coat."
+  },
+  {
+    "target": "sgn_mon_ga_ta",
+    "source": "mon_chicken",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "max_val": 0.98,
+        "to_hue": 18,
+        "sat_set": 0.62,
+        "val_mul": 0.85
+      },
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "rows": [
+          0,
+          12
+        ],
+        "to_hue": 0,
+        "sat_set": 0.85,
+        "val_mul": 1.0
+      }
+    ],
+    "//": "Gà ta: copper body, red comb and wattle."
+  },
+  {
+    "target": "t_water_murky",
+    "source": "t_water_sh",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [
+          150,
+          260
+        ],
+        "min_sat": 0.0,
+        "to_hue": 78,
+        "sat_set": 0.35,
+        "val_mul": 0.8
+      }
+    ],
+    "//": "Canal water (t_water_murky, B8f): murky olive-green instead of clear blue; banks keep their art."
+  },
+  {
+    "target": "t_sgn_tuong_hong",
+    "source": "t_brick_wall",
+    "ops": [
+      {
+        "op": "flatten",
+        "k": 0.18,
+        "min_val": 0.05
+      },
+      {
+        "op": "recolor",
+        "hue": [
+          0,
+          360
+        ],
+        "min_sat": 0.0,
+        "to_hue": 345,
+        "sat_set": 0.38,
+        "val_mul": 1.0,
+        "val_add": 0.34
+      }
+    ],
+    "//": "B8h church walls: candy-pink stucco (Tân Định)."
+  },
+  {
+    "target": "overlay_male_worn_sgn_ung_cao_su",
+    "source": "overlay_male_worn_boots_rubber",
+    "ops": [
+      {
+        "op": "desaturate",
+        "sat_mul": 0.1,
+        "val_mul": 0.45
+      }
+    ],
+    "//": "G30 rubber flood boots: black."
+  },
+  {
+    "target": "overlay_female_worn_sgn_ung_cao_su",
+    "source": "overlay_female_worn_boots_rubber",
+    "ops": [
+      {
+        "op": "desaturate",
+        "sat_mul": 0.1,
+        "val_mul": 0.45
+      }
+    ],
+    "//": "G30 rubber flood boots: black."
+  },
+  {
+    "target": "t_sgn_gach_do",
+    "source": "t_brick_wall",
+    "ops": [],
+    "//": "L1 cathedral: the original red brick, which the mod restyles to stucco under t_brick_wall."
+  },
+  {
+    "target": "t_sgn_kinh_xanh",
+    "source": "t_wall_glass",
+    "ops": [
+      {
+        "op": "recolor",
+        "hue": [ 170, 250 ],
+        "min_sat": 0.08,
+        "to_hue": 176,
+        "sat_mul": 1.9,
+        "val_mul": 0.95
+      }
+    ],
+    "//": "L3: the blue-green tinted curtain wall of the late-nineties towers (Saigon Trade Center, Diamond Plaza)."
+  },
+  {
+    "target": "overlay_female_worn_sgn_non_coi",
+    "source": "overlay_female_worn_hat_hard",
+    "ops": [
+      { "op": "recolor", "hue": [ 0, 360 ], "min_sat": 0.2, "to_hue": 72, "sat_set": 0.5, "val_mul": 0.55 }
+    ],
+    "//": "V2 nón cối: the hard hat recoloured olive green."
+  },
+  {
+    "target": "overlay_female_worn_sgn_do_bo",
+    "source": "overlay_female_worn_jumpsuit",
+    "ops": [
+      { "op": "recolor", "hue": [ 0, 360 ], "to_hue": 340, "sat_set": 0.45, "val_mul": 1.3, "val_add": 0.35 }
+    ],
+    "//": "V2 đồ bộ: flowered rayon pink."
+  },
+  {
+    "target": "overlay_female_worn_sgn_khan_ran",
+    "source": "overlay_female_worn_scarf",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.0, "val_mul": 0.8 }
+    ],
+    "//": "V2 khăn rằn: black and white."
+  },
+  {
+    "target": "overlay_male_worn_sgn_non_coi",
+    "source": "overlay_male_worn_hat_hard",
+    "ops": [
+      { "op": "recolor", "hue": [ 0, 360 ], "min_sat": 0.2, "to_hue": 72, "sat_set": 0.5, "val_mul": 0.55 }
+    ],
+    "//": "V2 nón cối: the hard hat recoloured olive green."
+  },
+  {
+    "target": "overlay_male_worn_sgn_do_bo",
+    "source": "overlay_male_worn_jumpsuit",
+    "ops": [
+      { "op": "recolor", "hue": [ 0, 360 ], "to_hue": 340, "sat_set": 0.45, "val_mul": 1.3, "val_add": 0.35 }
+    ],
+    "//": "V2 đồ bộ: flowered rayon pink."
+  },
+  {
+    "target": "overlay_male_worn_sgn_khan_ran",
+    "source": "overlay_male_worn_scarf",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.0, "val_mul": 0.8 }
+    ],
+    "//": "V2 khăn rằn: black and white."
+  },
+  {
+    "target": "overlay_worn_sgn_dep_quai_hau",
+    "source": "overlay_worn_leathersandals",
+    "ops": [
+      { "op": "tint", "rgb": [ 122, 74, 40 ], "strength": 0.3 }
+    ],
+    "//": "V2 dép quai hậu: brown strap sandals."
+  },
+  {
+    "target": "jacket_army",
+    "source": "jacket_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "helmet_army",
+    "source": "helmet_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "overlay_male_worn_jacket_army",
+    "source": "overlay_male_worn_jacket_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "overlay_male_worn_pants_army",
+    "source": "overlay_male_worn_pants_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "overlay_male_worn_helmet_army",
+    "source": "overlay_male_worn_helmet_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "overlay_female_worn_jacket_army",
+    "source": "overlay_female_worn_jacket_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "overlay_female_worn_pants_army",
+    "source": "overlay_female_worn_pants_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "overlay_female_worn_helmet_army",
+    "source": "overlay_female_worn_helmet_army",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.25, "val_mul": 1.0 },
+      { "op": "tint", "rgb": [ 88, 104, 60 ], "strength": 0.55 }
+    ],
+    "//": "L-loc4: the plain olive of the Vietnamese army uniform, not US camouflage."
+  },
+  {
+    "target": "sgn_mon_co",
+    "source": "mon_cormorant",
+    "ops": [
+      { "op": "recolor", "hue": [ 0, 360 ], "min_sat": 0.0, "max_val": 0.6, "to_hue": null, "sat_set": 0.03, "val_mul": 2.8, "val_add": 0.3 }
+    ],
+    "//": "L-loc7: cò trắng (little egret), the cormorant whitened."
+  },
+  {
+    "target": "mon_robin",
+    "source": "mon_robin",
+    "ops": [
+      { "op": "recolor", "hue": [ 5, 55 ], "min_sat": 0.35, "to_hue": 25, "sat_mul": 0.55, "val_mul": 0.42 },
+      { "op": "tint", "rgb": [ 92, 64, 44 ], "strength": 0.3 }
+    ],
+    "//": "L-loc7: mon_robin is redescribed as the common myna (sáo): dark brown, not an orange breast."
+  },
+  {
+    "target": "sgn_mon_cu_gay",
+    "source": "mon_pigeon",
+    "ops": [
+      { "op": "desaturate", "sat_mul": 0.2, "val_mul": 1.05 },
+      { "op": "tint", "rgb": [ 150, 118, 96 ], "strength": 0.6 }
+    ],
+    "//": "L-loc7: cu gáy (spotted dove), the pigeon in soft brown."
+  },
+  {
+    "target": "mon_fish_bowfin",
+    "source": "mon_fish_medium",
+    "ops": [
+      { "op": "recolor", "hue": [ 190, 240 ], "min_sat": 0.45, "to_hue": 45, "sat_set": 0.5, "val_mul": 0.75, "rows": [ 12, 21 ] }
+    ],
+    "//": "D1: cá lóc (snakehead), the generic medium fish (its looks_like) in dark olive-brown; the splash keeps its blue."
+  },
+  {
+    "target": "mon_fish_carp",
+    "source": "mon_fish_medium",
+    "ops": [
+      { "op": "recolor", "hue": [ 190, 240 ], "min_sat": 0.45, "to_hue": 40, "sat_set": 0.62, "val_mul": 1.45, "rows": [ 12, 21 ] }
+    ],
+    "//": "D1: cá chép (common carp), the generic medium fish in golden bronze."
+  },
+  {
+    "target": "mon_fish_bluegill",
+    "source": "mon_fish_tiny",
+    "ops": [
+      { "op": "recolor", "hue": [ 90, 150 ], "to_hue": 150, "sat_set": 0.08, "val_mul": 0.75 }
+    ],
+    "//": "D1: cá rô phi (tilapia), the generic tiny fish in mid grey instead of green."
+  },
+  {
+    "target": "mon_fish_channel_catfish",
+    "source": "mon_fish_tiny",
+    "ops": [
+      { "op": "recolor", "hue": [ 90, 150 ], "to_hue": 40, "sat_set": 0.07, "val_mul": 1.05 }
+    ],
+    "//": "D1: cá tra (pangasius), the generic tiny fish in pale grey-silver."
+  },
+  {
+    "target": "mon_fish_bullhead",
+    "source": "mon_fish_tiny",
+    "ops": [
+      { "op": "recolor", "hue": [ 90, 150 ], "to_hue": 28, "sat_set": 0.25, "val_mul": 0.6 }
+    ],
+    "//": "D1: cá trê (walking catfish), the generic tiny fish in dark grey-brown."
+  },
+  {
+    "target": "mon_fish_pumpkinseed",
+    "source": "mon_fish_tiny",
+    "ops": [
+      { "op": "recolor", "hue": [ 90, 150 ], "to_hue": 75, "sat_set": 0.3, "val_mul": 0.8 }
+    ],
+    "//": "D1: cá rô đồng (climbing perch), the generic tiny fish in olive green-grey."
+  },
+  {
+    "target": "mon_fish_eel",
+    "source": "mon_fish_eel",
+    "ops": [
+      { "op": "recolor", "hue": [ 30, 100 ], "max_sat": 0.4, "to_hue": 36, "sat_set": 0.52, "val_mul": 1.2 }
+    ],
+    "//": "D1: lươn (swamp eel): yellow-brown instead of grey-green."
+  },
+  {
+    "target": "sgn_mon_ran_ho_mang",
+    "source": "mon_rattlesnake",
+    "ops": [
+      { "op": "recolor", "hue": [ 8, 40 ], "min_sat": 0.25, "to_hue": 42, "sat_mul": 0.75, "val_mul": 0.72 }
+    ],
+    "//": "D1: rắn hổ mang (monocled cobra), the rattlesnake in darker olive-brown, less tan."
+  },
+  {
+    "target": "mon_turtle_painted",
+    "source": "mon_turtle_painted",
+    "ops": [
+      { "op": "recolor", "hue": [ 0, 25 ], "min_sat": 0.45, "to_hue": 45, "sat_set": 0.22, "val_mul": 1.3, "val_add": 0.25 },
+      { "op": "recolor", "hue": [ 50, 180 ], "to_hue": 28, "sat_set": 0.45, "val_mul": 0.95 }
+    ],
+    "//": "D1: rùa ba gờ (snail-eating turtle): dark brown shell, the red markings turned pale cream."
+  }
+]

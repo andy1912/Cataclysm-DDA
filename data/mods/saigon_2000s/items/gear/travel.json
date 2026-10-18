@@ -1,0 +1,83 @@
+[
+  {
+    "type": "ITEM",
+    "id": "sgn_ho_chieu",
+    "name": { "str": "foreign passport" },
+    "description": "A backpacker's passport, the cover sun-faded, a Vietnamese visa stamped inside next to stamps from Bangkok and Phnom Penh.  The photo shows someone tanned and smiling who expected to fly home next week.",
+    "weight": "35 g",
+    "volume": "25 ml",
+    "price": "0 cent",
+    "price_postapoc": "10 cent",
+    "material": [ "paper" ],
+    "symbol": "=",
+    "color": "blue",
+    "flags": [ "BANK_NOTE_SHAPED" ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_tourist",
+    "subtype": "distribution",
+    "//": "L3 Phạm Ngũ Lão – Bùi Viện: guesthouse rooms, bars and travel agents of the backpacker quarter.",
+    "items": [
+      { "item": "sgn_ho_chieu", "prob": 25 },
+      { "item": "sgn_ban_do_tphcm", "prob": 15 },
+      { "item": "money_twenty", "prob": 20, "count": [ 1, 5 ] },
+      { "item": "money_hundred", "prob": 5 },
+      { "item": "sgn_guidebook_vn", "prob": 20 },
+      { "item": "backpack_hiking", "prob": 10 },
+      { "item": "wallet_travel", "prob": 10 },
+      { "item": "camera", "prob": 8 },
+      { "item": "sunglasses", "prob": 15 },
+      { "item": "sunscreen", "prob": 15 },
+      { "item": "beer", "prob": 20, "count": [ 1, 4 ] },
+      { "item": "sgn_bia_hoi", "prob": 15 },
+      { "item": "lighter", "prob": 10 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_train_station",
+    "subtype": "distribution",
+    "//": "L3 Ga Sài Gòn and Bến xe Miền Đông: luggage abandoned in the evacuation crush.",
+    "items": [
+      { "item": "sgn_ban_do_tphcm", "prob": 6 },
+      { "item": "backpack_hiking", "prob": 8 },
+      { "item": "duffelbag", "prob": 10 },
+      { "item": "sgn_banh_mi_thit", "prob": 15 },
+      { "item": "sgn_mi_goi", "prob": 15, "count": [ 1, 4 ] },
+      { "item": "water_clean", "prob": 15 },
+      { "item": "sgn_newspaper", "prob": 15 },
+      { "group": "sgn_dong_notes", "prob": 15, "count": [ 1, 3 ] },
+      { "item": "sgn_non_la", "prob": 10 },
+      { "item": "sgn_ao_mua_canh_doi", "prob": 10 },
+      { "item": "blanket", "prob": 8 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_mall_fashion",
+    "subtype": "distribution",
+    "//": "L3 Diamond Plaza boutiques: tropical city fashion of 2004, not dda's greatcoats and top hats.",
+    "items": [ { "item": "sgn_dep_quai_hau", "prob": 10 }, 
+      { "item": "sgn_ao_dai_mau", "prob": 15 },
+      { "item": "sgn_ao_dai_trang", "prob": 8 },
+      { "item": "sgn_ao_thun", "prob": 25 },
+      { "item": "sgn_quan_tay", "prob": 15 },
+      { "item": "sgn_ao_khoac_chong_nang", "prob": 15 },
+      { "item": "sgn_non_ket", "prob": 10 },
+      { "item": "tshirt", "prob": 20 },
+      { "item": "polo_shirt", "prob": 15 },
+      { "item": "jeans", "prob": 20 },
+      { "item": "skirt", "prob": 12 },
+      { "item": "sundress", "prob": 12 },
+      { "item": "dress", "prob": 8 },
+      { "item": "tank_top", "prob": 10 },
+      { "item": "shorts", "prob": 10 },
+      { "item": "sneakers", "prob": 12 },
+      { "item": "flip_flops", "prob": 10 },
+      { "item": "purse", "prob": 10 },
+      { "item": "sunglasses", "prob": 12 },
+      { "item": "makeup_kit", "prob": 10 }
+    ]
+  }
+]

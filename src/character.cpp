@@ -5980,33 +5980,43 @@ ret_val<crush_tool_type> Character::can_crush_frozen_liquid( item_location const
     } else {
         bool enough_quality = false;
         tool_type = CRUSH_DRILL_OR_HAMMER_AND_SCREW;
-        if( has_quality( qual_DRILL ) ) {
-            enough_quality = true;
-        } else if( has_quality( qual_HAMMER ) && has_quality( qual_SCREW ) ) {
-            int num_hammer_tools = 0;
-            int num_screw_tools = 0;
-            int num_both_tools = 0;
-            for( item_location &tool : const_cast<Character *>( this )->all_items_loc() ) {
-                bool can_hammer = false;
-                bool can_screw = false;
-                if( tool->has_quality_nonrecursive( qual_HAMMER ) ) {
-                    can_hammer = true;
-                    num_hammer_tools++;
-                }
-                if( tool->has_quality_nonrecursive( qual_SCREW ) ) {
-                    can_screw = true;
-                    num_screw_tools++;
-                }
-                if( can_hammer && can_screw ) {
-                    num_both_tools++;
-                }
-            }
-            if( num_hammer_tools > 0 && num_screw_tools > 0 &&
-                // Only one tool that fulfils both requirements: can't hammer itself
-                !( num_hammer_tools == 1 && num_screw_tools == 1 && num_both_tools == 1 ) ) {
+        bool can_hammer = false;
+        bool can_screw = false;
+        bool can_both = false;
+        visit_items(
+        [&]( const item_location & node ) {
+
+            if( node->has_quality_nonrecursive( qual_DRILL ) ) {
                 enough_quality = true;
+                return VisitResponse::ABORT;
             }
+            bool local_hammer = false;
+            bool local_screw = false;
+
+            if( node->has_quality_nonrecursive( qual_HAMMER ) ) {
+                local_hammer = true;
+            }
+            if( node->has_quality_nonrecursive( qual_SCREW ) ) {
+                local_screw = true;
+            }
+            if( local_hammer && local_screw ) {
+                if( can_both ) {
+                    enough_quality = true;
+                    return VisitResponse::ABORT;
+                }
+                can_both = true;
+            } else if( local_hammer ^ local_screw ) {
+                can_hammer = can_hammer || local_hammer;
+                can_screw = can_screw || local_screw;
+            }
+            // Only one tool that fulfils both requirements: can't hammer itself
+            if( ( can_hammer && can_screw ) || ( can_both && ( can_hammer || can_screw ) ) ) {
+                enough_quality = true;
+                return VisitResponse::ABORT;
+            }
+            return VisitResponse::NEXT;
         }
+        );
         success = enough_quality;
     }
     if( success ) {
@@ -6485,11 +6495,13 @@ void Character::echo_pulse()
                        "none", "none" );
     }
     for( tripoint_bub_ms origin : points_in_radius( pos_bub(), pulse_range ) ) {
-        if( here.move_cost( origin ) == 0 && here.sees( pos_bub(), origin, pulse_range, false ) ) {
+        if( here.move_cost( origin ) == 0 &&
+            here.sees( pos_bub(), origin, pulse_range, false, los_trace::physical ) ) {
             sounds::sound( origin, 5, sounds::sound_t::sensory, _( "clack." ), true,
                            "none", "none" );
             // This only counts obstacles which can be moved through, so the echo is pretty quiet.
-        } else if( is_obstacle( origin ) && here.sees( pos_bub(), origin, pulse_range, false ) ) {
+        } else if( is_obstacle( origin ) &&
+                   here.sees( pos_bub(), origin, pulse_range, false, los_trace::physical ) ) {
             sounds::sound( origin, 1, sounds::sound_t::sensory, _( "click." ), true,
                            "none", "none" );
         }
@@ -6501,7 +6513,7 @@ void Character::echo_pulse()
             add_known_trap( origin, tr );
         }
         Creature *critter = get_creature_tracker().creature_at( origin, true );
-        if( critter && here.sees( pos_bub(), origin, pulse_range, false ) ) {
+        if( critter && here.sees( pos_bub(), origin, pulse_range, false, los_trace::physical ) ) {
             switch( critter->get_size() ) {
                 case creature_size::tiny:
                     echo_volume = 1;
@@ -7074,6 +7086,29 @@ void Character::stagger()
     }
 }
 
+int Character::sleep_readiness()
+{
+    int sleepy = get_comfort_at( pos_bub() ).comfort;
+    if( has_addiction( addiction_sleeping_pill ) ) {
+        sleepy -= 4;
+    }
+    sleepy = enchantment_cache->modify_value( enchant_vals::mod::SLEEPY, sleepy );
+    if( get_sleepiness() < sleepiness_levels::TIRED + 1 ) {
+        sleepy -= int( ( sleepiness_levels::TIRED + 1 - get_sleepiness() ) / 4 );
+    } else {
+        sleepy += int( ( get_sleepiness() - sleepiness_levels::TIRED + 1 ) / 16 );
+    }
+    const int current_stim = get_stim();
+    if( current_stim > 0 || !has_trait( trait_INSOMNIA ) ) {
+        sleepy -= 2 * current_stim;
+    } else {
+        // Make it harder for insomniac to get around the trait
+        sleepy -= current_stim;
+    }
+
+    return sleepy;
+}
+
 bool Character::can_sleep()
 {
 
@@ -7097,26 +7132,7 @@ bool Character::can_sleep()
     }
     last_sleep_check = now;
 
-    int sleepy = get_comfort_at( pos_bub() ).comfort;
-    if( has_addiction( addiction_sleeping_pill ) ) {
-        sleepy -= 4;
-    }
-    sleepy = enchantment_cache->modify_value( enchant_vals::mod::SLEEPY, sleepy );
-    if( get_sleepiness() < sleepiness_levels::TIRED + 1 ) {
-        sleepy -= int( ( sleepiness_levels::TIRED + 1 - get_sleepiness() ) / 4 );
-    } else {
-        sleepy += int( ( get_sleepiness() - sleepiness_levels::TIRED + 1 ) / 16 );
-    }
-    const int current_stim = get_stim();
-    if( current_stim > 0 || !has_trait( trait_INSOMNIA ) ) {
-        sleepy -= 2 * current_stim;
-    } else {
-        // Make it harder for insomniac to get around the trait
-        sleepy -= current_stim;
-    }
-
-    sleepy += rng( -8, 8 );
-    bool result = sleepy > 0;
+    const bool result = sleep_readiness() + rng( -8, 8 ) > 0;
 
     if( has_active_bionic( bio_soporific ) ) {
         if( bio_soporific_powered_at_last_sleep_check && !has_power() ) {

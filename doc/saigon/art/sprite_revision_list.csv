@@ -1,0 +1,1980 @@
+tier,category,id,source,size,images,status,fallback
+T1,furniture,f_air_conditioner,dda,32x32,1,keep original,t_machinery_light
+T1,furniture,f_barber_chair,dda,32x32,1,to do (no sprite),
+T1,furniture,f_bed,dda,32x32,16,Saigon art (derived),
+T1,furniture,f_bench,dda,32x32,16,keep original,
+T1,furniture,f_bigmirror,dda,32x64,1,keep original,
+T1,furniture,f_bike_rack,dda,32x32,17,keep original,t_metal_railing
+T1,furniture,f_counter,dda,32x32,16,keep original,
+T1,furniture,f_crate_c,dda,32x64,1,keep original,
+T1,furniture,f_displaycase,dda,32x32,2,keep original,f_rack
+T1,furniture,f_dresser,dda,32x64,4,keep original,
+T1,furniture,f_fridge,dda,32x64,4,keep original,
+T1,furniture,f_oven,dda,32x32,1,Saigon art (drawn),
+T1,furniture,f_rack,dda,32x32,1,keep original,
+T1,furniture,f_region_flower_decorative,dda,32x32,1,keep original,f_region_pseudo
+T1,furniture,f_safe_l,dda,32x32,2,keep original,f_gunsafe_ml
+T1,furniture,f_sgn_ban_da,mod,32x32,1,Saigon art (drawn),f_table
+T1,furniture,f_sgn_ban_inox,mod,32x32,1,Saigon art (drawn),f_table
+T1,furniture,f_sgn_ban_tho,mod,32x32,16,Saigon art (derived),f_table
+T1,furniture,f_sgn_ban_tho_lon,mod,32x32,1,Saigon art (drawn),f_table
+T1,furniture,f_sgn_ban_tho_than_tai,mod,32x32,1,Saigon art (drawn),f_table
+T1,furniture,f_sgn_bang_den,mod,32x32,1,Saigon art (drawn),f_desk
+T1,furniture,f_sgn_bang_gio_tau,mod,32x64,1,Saigon art (drawn),f_desk
+T1,furniture,f_sgn_bang_hieu,mod,32x32,3,Saigon art (drawn),f_sign
+T1,furniture,f_sgn_bao_gao,mod,32x64,1,Saigon art (drawn),f_crate_c
+T1,furniture,f_sgn_bep_nuong,mod,32x32,1,Saigon art (drawn),f_brazier
+T1,furniture,f_sgn_buong_dien_thoai,mod,32x32,1,Saigon art (drawn),f_rack
+T1,furniture,f_sgn_chau_kieng,mod,32x32,1,Saigon art (drawn),f_indoor_plant
+T1,furniture,f_sgn_cot_dien,mod,32x64,1,Saigon art (drawn),f_utility_pole
+T1,furniture,f_sgn_dan_karaoke,mod,32x32,1,Saigon art (drawn),f_speaker_cabinet
+T1,furniture,f_sgn_day_phoi,mod,32x32,1,Saigon art (drawn),f_rack
+T1,furniture,f_sgn_dong_ho,mod,32x32,1,Saigon art (drawn),f_rack
+T1,furniture,f_sgn_du,mod,32x64,1,Saigon art (drawn),f_sign
+T1,furniture,f_sgn_dua_can,mod,32x32,1,Saigon art (drawn),f_dandelion
+T1,furniture,f_sgn_ho_rong,mod,32x32,1,Saigon art (drawn),f_statue
+T1,furniture,f_sgn_ky_lan,mod,32x64,1,Saigon art (drawn),f_statue
+T1,furniture,f_sgn_loa_phuong,mod,32x64,1,Saigon art (drawn),f_utility_pole
+T1,furniture,f_sgn_long_chim,mod,32x64,1,Saigon art (drawn),f_rack
+T1,furniture,f_sgn_lu_huong,mod,32x32,1,Saigon art (drawn),f_brazier
+T1,furniture,f_sgn_lu_nuoc,mod,32x32,1,Saigon art (drawn),f_standing_tank
+T1,furniture,f_sgn_may_may,mod,32x32,1,Saigon art (drawn),f_counter
+T1,furniture,f_sgn_may_net,mod,32x32,1,Saigon art (drawn),f_desk
+T1,furniture,f_sgn_may_photo,mod,32x32,1,Saigon art (drawn),f_counter
+T1,furniture,f_sgn_mo,mod,32x32,1,Saigon art (drawn),f_grave_monument
+T1,furniture,f_sgn_nhang_vong,mod,32x32,1,Saigon art (drawn),f_rack
+T1,furniture,f_sgn_quay_vang,mod,32x32,1,Saigon art (drawn),f_display_rack
+T1,furniture,f_sgn_quay_ve,mod,32x32,1,Saigon art (drawn),f_counter
+T1,furniture,f_sgn_rong_lon,mod,64x64,1,Saigon art (drawn),f_statue
+T1,furniture,f_sgn_su_tu_da,mod,32x64,1,Saigon art (drawn),f_statue
+T1,furniture,f_sgn_thap_rua,mod,32x64,1,Saigon art (drawn),f_statue
+T1,furniture,f_sgn_thuyen_thien_nga,mod,32x32,1,Saigon art (drawn),f_rack
+T1,furniture,f_sgn_tivi_crt,mod,32x32,1,Saigon art (drawn),f_dresser
+T1,furniture,f_sgn_tu_thuoc_bac,mod,32x64,1,Saigon art (drawn),f_cupboard
+T1,furniture,f_sgn_tuong_khong_lo,mod,64x96,1,Saigon art (drawn),f_statue
+T1,furniture,f_sgn_tuong_than,mod,32x64,1,Saigon art (drawn),f_statue
+T1,furniture,f_sgn_van_tho,mod,32x32,1,Saigon art (drawn),f_dandelion
+T1,furniture,f_sgn_vong,mod,32x32,1,Saigon art (drawn),t_leanto
+T1,furniture,f_sgn_vong_quay,mod,96x96,1,Saigon art (drawn),f_utility_pole
+T1,furniture,f_sgn_xau_ho,mod,32x32,1,Saigon art (drawn),f_dandelion
+T1,furniture,f_sgn_xe_banh_mi,mod,32x32,1,Saigon art (drawn),f_display_rack
+T1,furniture,f_sign_stop,dda,32x64,1,keep original,
+T1,furniture,f_sink,dda,32x32,16,keep original,
+T1,furniture,f_sofa,dda,32x32,16,Saigon art (derived),
+T1,furniture,f_standing_tank,dda,32x64,1,Saigon art (derived),
+T1,furniture,f_stool,dda,32x32,1,Saigon art (derived),f_chair
+T1,furniture,f_street_light,dda,32x64,1,Saigon art (derived),f_utility_pole
+T1,furniture,f_table,dda,32x32,16,keep original,
+T1,furniture,f_toilet,dda,32x32,1,Saigon art (drawn),
+T1,furniture,f_traffic_light,dda,32x64,1,keep original,f_utility_pole
+T1,furniture,f_trashcan,dda,32x32,1,Saigon art (derived),
+T1,furniture,f_workbench,dda,32x64,1,keep original,f_counter
+T1,item,adhesive_bandages,dda,20x20,1,keep original,
+T1,item,apron_cotton,dda,20x20,1,keep original,tshirt
+T1,item,aspirin,dda,20x20,1,keep original,
+T1,item,backpack,dda,32x32,1,keep original,ragpouch
+T1,item,baton,dda,32x32,1,keep original,
+T1,item,bead_necklace,dda,32x32,1,keep original,silver_necklace
+T1,item,boots,dda,32x32,1,keep original,sneakers
+T1,item,boots_steel,dda,20x20,1,keep original,shoes_bowling
+T1,item,bowl_plastic,dda,20x20,1,keep original,base_plastic_dish
+T1,item,cane,dda,20x20,1,keep original,
+T1,item,chopsticks,dda,20x20,1,keep original,
+T1,item,disinfectant,dda,32x32,1,keep original,
+T1,item,fishing_rod_basic,dda,32x32,1,keep original,
+T1,item,glasses_eye,dda,20x20,1,keep original,glasses_eye
+T1,item,gloves_medical,dda,20x20,1,keep original,gloves_leather
+T1,item,gloves_work,dda,20x20,1,keep original,gloves_light
+T1,item,hammer,dda,20x20,1,keep original,
+T1,item,hat_hard,dda,32x32,1,keep original,hat_cotton
+T1,item,howto_computer,dda,20x20,1,keep original,manual_gun
+T1,item,incense,dda,20x20,1,Saigon art (drawn),
+T1,item,jacket_army,dda,32x32,1,keep original,coat_rain
+T1,item,jeans,dda,32x32,1,keep original,jeans
+T1,item,jerrycan,dda,32x32,1,keep original,
+T1,item,jumper_cable,dda,20x20,1,keep original,
+T1,item,knife_cleaver,dda,20x20,1,Saigon art (drawn),base_kitchen_knife
+T1,item,knife_folding,dda,20x20,1,keep original,
+T1,item,lighter,dda,20x20,3,keep original,
+T1,item,longshirt,dda,32x32,1,keep original,buttonshirt
+T1,item,mask_dust,dda,32x32,1,keep original,scarf
+T1,item,matches,dda,20x20,1,keep original,
+T1,item,net,dda,20x20,1,keep original,
+T1,item,pants_army,dda,32x32,1,keep original,pants
+T1,item,pants_cargo,dda,32x32,1,keep original,jeans
+T1,item,pliers,dda,20x20,1,keep original,
+T1,item,police_belt,dda,32x32,1,keep original,holster
+T1,item,pot,dda,20x20,1,keep original,base_cookpot
+T1,item,rebar,dda,32x32,1,keep original,
+T1,item,rice_cooked,dda,20x20,1,keep original,dry_rice
+T1,item,robe,dda,32x32,1,keep original,coat_rain
+T1,item,screwdriver,dda,32x32,1,keep original,
+T1,item,sgn_ao_mua_canh_doi,mod,32x32,1,Saigon art (derived),coat_winter
+T1,item,sgn_bep_ga_mini,mod,20x20,1,Saigon art (drawn),esbit_stove
+T1,item,sgn_book_nursing,mod,20x20,1,Saigon art (drawn),radio_book
+T1,item,sgn_dep_to_ong,mod,20x20,1,Saigon art (drawn),sneakers
+T1,item,sgn_newspaper,mod,20x20,1,Saigon art (drawn),newest_newspaper
+T1,item,sgn_non_bao_hiem,mod,20x20,1,Saigon art (derived),hat_cotton
+T1,item,sgn_non_la,mod,20x20,1,Saigon art (drawn),hat_cotton
+T1,item,sgn_vang_chi,mod,20x20,1,Saigon art (drawn),gold_small
+T1,item,shorts,dda,32x32,1,keep original,boxer_briefs
+T1,item,sneakers,dda,32x32,1,keep original,dress_shoes
+T1,item,socks,dda,32x32,1,keep original,socks
+T1,item,story_book,dda,20x20,1,keep original,radio_book
+T1,item,tank_top,dda,32x32,1,keep original,camisole
+T1,item,tape_measure,dda,20x20,1,Saigon art (drawn),
+T1,item,textbook_speech,dda,20x20,1,keep original,textbook_firstaid
+T1,item,tool_belt,dda,32x32,1,keep original,sheath
+T1,item,tshirt,dda,20x20,1,keep original,tank_top
+T1,item,whistle,dda,20x20,1,keep original,
+T1,item,wrench,dda,20x20,1,keep original,
+T1,item,wristwatch,dda,20x20,1,keep original,
+T1,monster,mon_cat,dda,32x32,5,keep original,
+T1,monster,mon_pseudo_dormant_zombie,dda,32x48,6,keep original,mon_zombie
+T1,monster,mon_sewer_rat,dda,32x32,2,keep original,
+T1,monster,mon_zombie,dda,32x48,6,Saigon art (derived),mon_zombie_base
+T1,monster,mon_zombie_fat,dda,32x48,3,keep original,mon_zombie_base
+T1,monster,pseudo_dormant_mon_zombie_brainless,unknown,32x48,3,keep original,mon_zombie_brainless
+T1,monster,pseudo_dormant_mon_zombie_child,unknown,32x32,25,keep original,mon_zombie_child
+T1,monster,pseudo_dormant_mon_zombie_crawler,unknown,32x32,2,keep original,mon_zombie_crawler
+T1,monster,pseudo_dormant_mon_zombie_fat,unknown,32x48,3,keep original,mon_zombie_fat
+T1,monster,pseudo_dormant_mon_zombie_rot,unknown,32x32,2,keep original,mon_zombie_rot
+T1,monster,pseudo_dormant_mon_zombie_tough,unknown,32x48,3,keep original,mon_zombie_tough
+T1,monster,sgn_mon_ca_sau,mod,64x64,1,Saigon art (drawn),mon_turtle_abstract
+T1,monster,sgn_mon_cho_ta,mod,32x32,2,Saigon art (derived),mon_dog
+T1,monster,sgn_mon_ga_ta,mod,32x32,3,Saigon art (derived),mon_bird_flying_base
+T1,monster,sgn_mon_khi,mod,32x32,1,Saigon art (drawn),mon_fox_gray
+T1,monster,sgn_mon_tran,mod,32x32,1,Saigon art (drawn),mon_snake_abstract
+T1,monster,sgn_mon_voi,mod,64x64,1,Saigon art (drawn),mon_moose
+T1,monster,sgn_mon_zombie_cong_an,mod,32x48,2,Saigon art (derived),mon_zombie_base
+T1,monster,sgn_mon_zombie_sot,mod,32x48,3,Saigon art (derived),mon_zombie_base
+T1,monster,sgn_mon_zombie_vendor,mod,32x48,3,Saigon art (derived),mon_zombie_base
+T1,monster,sgn_mon_zombie_xe_om,mod,32x48,6,Saigon art (derived),mon_zombie_base
+T1,overmap_terrain,sgn_cho_ne,mod,16x16,1,Saigon art (derived),grocery
+T1,overmap_terrain,sgn_cho_nw,mod,16x16,1,Saigon art (derived),grocery
+T1,overmap_terrain,sgn_cho_roof_ne,mod,16x16,1,Saigon art (derived),grocery
+T1,overmap_terrain,sgn_cho_roof_nw,mod,16x16,1,Saigon art (derived),grocery
+T1,overmap_terrain,sgn_cho_roof_se,mod,16x16,1,Saigon art (derived),grocery
+T1,overmap_terrain,sgn_cho_roof_sw,mod,16x16,1,Saigon art (derived),grocery
+T1,overmap_terrain,sgn_cho_se,mod,16x16,1,Saigon art (derived),grocery
+T1,overmap_terrain,sgn_cho_sw,mod,16x16,1,Saigon art (derived),grocery
+T1,overmap_terrain,sgn_chua,mod,16x16,1,Saigon art (derived),church
+T1,overmap_terrain,sgn_chua_roof,mod,16x16,1,Saigon art (derived),church
+T1,overmap_terrain,sgn_chungcu_z0,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_chungcu_z1,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_chungcu_z2,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_chungcu_z3,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_chungcu_z4,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_chungcu_z5,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_hem_block,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_hem_block_roof,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_kenh,mod,16x16,1,Saigon art (derived),generic_water
+T1,overmap_terrain,sgn_kenh_roof,mod,16x16,1,Saigon art (derived),generic_water
+T1,overmap_terrain,sgn_lm_ben_thanh_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_thanh_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_00_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_00_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_thanh_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_01_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_01_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_02,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_thanh_02_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_02_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_02_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_thanh_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_10_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_10_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_thanh_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_11_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_11_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_12,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_thanh_12_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_12_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_12_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_20,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_thanh_20_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_20_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_20_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_21,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_thanh_21_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_21_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_21_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_22,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_thanh_22_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_22_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_thanh_22_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_xe_md_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_xe_md_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_xe_md_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_xe_md_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_xe_md_02,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_xe_md_02_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_xe_md_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_xe_md_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_xe_md_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_xe_md_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_xe_md_12,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_xe_md_12_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_xe_md_20,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_xe_md_20_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_xe_md_21,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_xe_md_21_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ben_xe_md_22,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ben_xe_md_22_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_binh_tay_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_00_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_00_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_binh_tay_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_01_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_01_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_02,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_binh_tay_02_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_02_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_02_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_binh_tay_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_10_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_10_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_binh_tay_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_11_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_11_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_12,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_binh_tay_12_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_12_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_12_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_20,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_binh_tay_20_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_20_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_20_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_21,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_binh_tay_21_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_21_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_21_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_22,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_binh_tay_22_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_22_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_binh_tay_22_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_bui_vien_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_bui_vien_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_bui_vien_00_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_bui_vien_00_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_bui_vien_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_bui_vien_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_bui_vien_10_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_bui_vien_10_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_bui_vien_20,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_bui_vien_20_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_bui_vien_20_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_bui_vien_20_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_buu_dien_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_buu_dien_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_buu_dien_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_buu_dien_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_buu_dien_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_buu_dien_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_buu_dien_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_buu_dien_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_buu_dien_20,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_buu_dien_20_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_buu_dien_21,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_buu_dien_21_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_02,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_02_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_03,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_03_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_12,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_12_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_13,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_13_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_20,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_20_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_21,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_21_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_22,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_22_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_23,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_23_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_30,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_30_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_31,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_31_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_32,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_32_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dam_sen_33,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dam_sen_33_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_diamond_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_diamond_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_diamond_00_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_diamond_00_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_diamond_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_diamond_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_diamond_01_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_diamond_01_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_diamond_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_diamond_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_diamond_10_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_diamond_10_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_diamond_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_diamond_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_diamond_11_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_diamond_11_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_00_b,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_00_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_00_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_01_b,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_01_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_01_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_02,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_02_b,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_02_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_02_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_02_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_10_b,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_10_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_10_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_11_b,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_11_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_11_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_12,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_12_b,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_12_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_12_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_12_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_20,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_20_b,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_20_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_20_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_20_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_21,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_21_b,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_21_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_21_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_21_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_22,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_22_b,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_22_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_22_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_dinh_doc_lap_22_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_duc_ba_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_00_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_00_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_00_z4,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_duc_ba_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_01_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_01_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_01_z4,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_02,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_duc_ba_02_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_02_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_02_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_02_z4,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_duc_ba_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_10_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_10_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_10_z4,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_duc_ba_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_11_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_11_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_11_z4,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_12,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_duc_ba_12_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_12_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_12_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_duc_ba_12_z4,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_02,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_02_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_12,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_12_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_20,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_20_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_21,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_21_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_22,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ga_sai_gon_22_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ho_con_rua_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ho_con_rua_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ngoc_hoang_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ngoc_hoang_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ngoc_hoang_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ngoc_hoang_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ngoc_hoang_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ngoc_hoang_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ngoc_hoang_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ngoc_hoang_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_nha_hat_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_nha_hat_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_nha_hat_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_nha_hat_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_nha_hat_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_nha_hat_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_nha_hat_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_nha_hat_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_stc_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_stc_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_stc_00_z10,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_stc_00_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_stc_00_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_stc_00_z4,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_stc_00_z5,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_stc_00_z6,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_stc_00_z7,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_stc_00_z8,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_stc_00_z9,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_02,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_02_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_03,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_03_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_12,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_12_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_13,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_13_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_20,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_20_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_21,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_21_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_22,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_22_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_23,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_23_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_30,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_30_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_31,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_31_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_32,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_32_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_suoi_tien_33,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_suoi_tien_33_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_tao_dan_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_tao_dan_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_tao_dan_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_tao_dan_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_tao_dan_02,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_tao_dan_02_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_tao_dan_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_tao_dan_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_tao_dan_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_tao_dan_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_tao_dan_12,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_tao_dan_12_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_tao_dan_20,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_tao_dan_20_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_tao_dan_21,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_tao_dan_21_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_tao_dan_22,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_tao_dan_22_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_02,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_02_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_03,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_03_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_12,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_12_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_13,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_13_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_20,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_20_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_21,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_21_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_22,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_22_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_23,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_23_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_30,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_30_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_31,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_31_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_32,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_32_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_33,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thao_cam_vien_33_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thien_hau_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thien_hau_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thien_hau_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thien_hau_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thien_hau_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thien_hau_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_thien_hau_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_thien_hau_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ubnd_tp_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_00_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_00_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ubnd_tp_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_01_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_01_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ubnd_tp_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_10_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_10_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ubnd_tp_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_11_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_11_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_20,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ubnd_tp_20_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_20_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_20_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_21,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_lm_ubnd_tp_21_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_21_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_lm_ubnd_tp_21_z3,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_nh_solo_z0,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_nh_solo_z1,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_nh_solo_z2,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_nh_solo_z3,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_nh_solo_z4,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_nh_solo_z5,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_nha_tho,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_nha_tho_roof,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_pl_benh_vien_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_benh_vien_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_benh_vien_00_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_benh_vien_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_benh_vien_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_benh_vien_01_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_benh_vien_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_benh_vien_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_benh_vien_10_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_benh_vien_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_benh_vien_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_benh_vien_11_z2,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_cay_xang_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_cay_xang_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_cong_an_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_cong_an_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_coopmart_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_coopmart_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_coopmart_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_coopmart_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_coopmart_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_coopmart_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_coopmart_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_coopmart_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_nghia_trang_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_nghia_trang_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_nghia_trang_01,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_nghia_trang_01_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_nghia_trang_10,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_nghia_trang_10_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_nghia_trang_11,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_nghia_trang_11_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_nha_sach_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_nha_sach_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_pl_xe_may_00,mod,16x16,1,Saigon art (drawn),house
+T1,overmap_terrain,sgn_pl_xe_may_00_z1,mod,16x16,1,to do,house
+T1,overmap_terrain,sgn_truong,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_truong_roof,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_ubnd,mod,16x16,1,Saigon art (derived),house
+T1,overmap_terrain,sgn_ubnd_roof,mod,16x16,1,Saigon art (derived),house
+T1,terrain,t_brick_wall,dda,32x32,16,Saigon art (derived),t_abstract_wall
+T1,terrain,t_concrete,dda,32x32,16,keep original,t_pavement
+T1,terrain,t_concrete_roof,dda,32x32,6,keep original,t_thconc_floor
+T1,terrain,t_concrete_wall,dda,32x32,16,Saigon art (derived),t_abstract_wall
+T1,terrain,t_dirt,dda,32x32,19,keep original,t_natural_floor_abstract
+T1,terrain,t_door_c,dda,32x32,2,Saigon art (derived),
+T1,terrain,t_grass,dda,32x32,4,keep original,t_natural_floor_abstract
+T1,terrain,t_guardrail,dda,32x32,8,keep original,t_guardrail_bg_dp
+T1,terrain,t_guardrail_hw_air,dda,32x32,8,keep original,t_guardrail_bg_dp
+T1,terrain,t_open_air,dda,32x32,1,keep original,
+T1,terrain,t_pavement,dda,32x32,20,keep original,
+T1,terrain,t_pavement_hw_air,dda,32x32,20,keep original,t_pavement
+T1,terrain,t_pavement_y,dda,32x32,1,keep original,
+T1,terrain,t_pavement_y_hw_air,dda,32x32,1,keep original,t_pavement_y
+T1,terrain,t_railing,dda,32x32,17,keep original,
+T1,terrain,t_ramp_down_high,dda,32x32,1,keep original,
+T1,terrain,t_ramp_down_low,dda,32x32,1,keep original,
+T1,terrain,t_ramp_up_high,dda,32x32,1,keep original,
+T1,terrain,t_ramp_up_low,dda,32x32,1,keep original,
+T1,terrain,t_rdoor_c,dda,32x32,2,Saigon art (derived),t_door_c
+T1,terrain,t_region_grass,dda,32x32,1,keep original,t_region_pseudo
+T1,terrain,t_region_groundcover,dda,32x32,1,keep original,t_region_pseudo
+T1,terrain,t_region_groundcover_urban,dda,32x32,1,keep original,t_region_pseudo
+T1,terrain,t_region_shrub_decorative,dda,32x32,1,keep original,t_region_pseudo
+T1,terrain,t_region_tree,dda,32x32,1,keep original,t_region_pseudo
+T1,terrain,t_sconc_wall_halfway,dda,32x32,16,keep original,t_abstract_wall
+T1,terrain,t_sgn_bo_ke,mod,32x32,1,Saigon art (drawn),t_pavement
+T1,terrain,t_sgn_cot_son,mod,32x64,1,Saigon art (drawn),t_abstract_wall
+T1,terrain,t_sgn_cua_sat_keo_c,mod,32x32,2,Saigon art (drawn),t_door_c
+T1,terrain,t_sgn_cua_sat_keo_o,mod,32x32,2,Saigon art (drawn),t_door_o
+T1,terrain,t_sgn_gach_bong_1,mod,32x32,1,Saigon art (drawn),t_thconc_floor
+T1,terrain,t_sgn_gach_bong_2,mod,32x32,1,Saigon art (drawn),t_thconc_floor
+T1,terrain,t_sgn_gach_bong_3,mod,32x32,1,Saigon art (drawn),t_thconc_floor
+T1,terrain,t_sgn_gach_bong_4,mod,32x32,1,Saigon art (drawn),t_thconc_floor
+T1,terrain,t_sgn_gach_do,mod,32x32,16,Saigon art (derived),t_abstract_wall
+T1,terrain,t_sgn_gach_men,mod,32x32,1,Saigon art (drawn),t_thconc_floor
+T1,terrain,t_sgn_gach_tau,mod,32x32,1,Saigon art (drawn),t_pavement
+T1,terrain,t_sgn_gach_tau_trong,mod,32x32,20,to do,t_pavement
+T1,terrain,t_sgn_hem_xi_mang,mod,32x32,3,Saigon art (drawn),t_pavement
+T1,terrain,t_sgn_hoa_sen,mod,32x32,1,Saigon art (drawn),t_water_sh
+T1,terrain,t_sgn_kinh_xanh,mod,32x32,16,Saigon art (derived),t_window
+T1,terrain,t_sgn_mai_ngoi,mod,32x32,2,Saigon art (drawn),t_pavement
+T1,terrain,t_sgn_mai_ton,mod,32x32,3,Saigon art (drawn),t_scrap_floor
+T1,terrain,t_sgn_ngap_duong,mod,32x32,3,Saigon art (drawn),t_water_sh
+T1,terrain,t_sgn_ngap_hem,mod,32x32,3,Saigon art (drawn),t_water_sh
+T1,terrain,t_sgn_ngap_le,mod,32x32,3,Saigon art (drawn),t_water_sh
+T1,terrain,t_sgn_ngoi_men_xanh,mod,32x32,1,Saigon art (drawn),t_pavement
+T1,terrain,t_sgn_shrub_hoa_giay,mod,32x32,2,Saigon art (drawn),t_shrub_abstract
+T1,terrain,t_sgn_shrub_khoai_mi,mod,32x32,2,Saigon art (drawn),t_shrub_abstract
+T1,terrain,t_sgn_shrub_ngu_sac,mod,32x32,2,Saigon art (drawn),t_shrub_abstract
+T1,terrain,t_sgn_thang_cuon_len,mod,32x32,1,Saigon art (drawn),t_stairs_up
+T1,terrain,t_sgn_thang_cuon_xuong,mod,32x32,1,Saigon art (drawn),t_stairs_down
+T1,terrain,t_sgn_tree_bang,mod,96x96,2,Saigon art (drawn),t_tree_abstract
+T1,terrain,t_sgn_tree_bo_de,mod,96x96,2,Saigon art (drawn),t_tree_abstract
+T1,terrain,t_sgn_tree_chuoi,mod,64x64,2,Saigon art (drawn),t_tree
+T1,terrain,t_sgn_tree_chuoi_harvested,mod,64x64,2,Saigon art (drawn),t_tree_abstract
+T1,terrain,t_sgn_tree_du_du,mod,64x64,2,Saigon art (drawn),t_tree
+T1,terrain,t_sgn_tree_du_du_harvested,mod,64x64,2,Saigon art (drawn),t_tree_abstract
+T1,terrain,t_sgn_tree_dua,mod,96x96,2,Saigon art (drawn),t_tree_abstract
+T1,terrain,t_sgn_tree_dua_harvested,mod,96x96,2,Saigon art (drawn),t_tree
+T1,terrain,t_sgn_tree_me,mod,96x96,2,Saigon art (drawn),t_tree_abstract
+T1,terrain,t_sgn_tree_sao,mod,96x96,2,Saigon art (drawn),t_tree_abstract
+T1,terrain,t_sgn_tree_xoai,mod,96x96,2,Saigon art (drawn),t_tree_abstract
+T1,terrain,t_sgn_tree_xoai_harvested,mod,96x96,2,Saigon art (drawn),t_tree
+T1,terrain,t_sgn_tuong_bong_gio,mod,32x32,1,Saigon art (drawn),t_abstract_wall
+T1,terrain,t_sgn_tuong_hong,mod,32x32,16,Saigon art (derived),t_abstract_wall
+T1,terrain,t_sidewalk,dda,32x32,16,Saigon art (derived),t_pavement
+T1,terrain,t_sidewalk_hw_air,dda,32x32,20,keep original,t_pavement
+T1,terrain,t_sidewalk_ramp_down_high,dda,32x32,1,keep original,
+T1,terrain,t_sidewalk_ramp_down_low,dda,32x32,1,keep original,
+T1,terrain,t_sidewalk_ramp_up_high,dda,32x32,1,keep original,
+T1,terrain,t_sidewalk_ramp_up_low,dda,32x32,1,keep original,
+T1,terrain,t_stairs_down,dda,32x32,1,keep original,
+T1,terrain,t_stairs_up,dda,32x64,1,keep original,
+T1,terrain,t_thconc_floor,dda,32x32,6,Saigon art (derived),
+T1,terrain,t_water_moving_sh,dda,32x32,20,keep original,t_water_sh
+T1,terrain,t_water_sh,dda,32x32,20,keep original,
+T1,terrain,t_window_bars,dda,32x32,1,Saigon art (derived),t_bars
+T1,terrain,t_zebra,dda,32x32,1,keep original,
+T1,vehicle_part,aisle,dda,32x32,16,keep original,t_metal_floor
+T1,vehicle_part,aisle_lights,dda,32x32,1,keep original,
+T1,vehicle_part,alternator_motorbike,dda,32x32,1,keep original,vehicle_alternator
+T1,vehicle_part,alternator_truck,dda,32x32,1,keep original,vehicle_alternator
+T1,vehicle_part,basketsm,dda,32x32,3,keep original,basketsm
+T1,vehicle_part,battery_car,dda,32x32,1,keep original,
+T1,vehicle_part,battery_motorbike,dda,32x32,2,keep original,battery_car
+T1,vehicle_part,battery_motorbike_small,dda,20x20,1,keep original,battery_car
+T1,vehicle_part,beeper,dda,32x32,1,keep original,
+T1,vehicle_part,board,dda,32x48,4,keep original,base_board_abstract
+T1,vehicle_part,boat_board,dda,32x32,17,keep original,t_wall_log
+T1,vehicle_part,box,dda,32x32,3,keep original,f_crate_o
+T1,vehicle_part,cam_control,dda,32x32,1,keep original,
+T1,vehicle_part,cargo_space,dda,32x32,2,keep original,f_crate_o
+T1,vehicle_part,controls,dda,32x32,2,keep original,
+T1,vehicle_part,controls_electronic,dda,32x32,1,keep original,
+T1,vehicle_part,dashboard,dda,32x32,1,keep original,
+T1,vehicle_part,diesel_engine_v12,dda,32x32,1,keep original,engine_combustion
+T1,vehicle_part,diesel_engine_v6,dda,32x32,1,keep original,engine_combustion
+T1,vehicle_part,door,dda,32x64,9,keep original,t_door_metal_c
+T1,vehicle_part,door_opaque,dda,32x64,9,keep original,t_door_metal_c
+T1,vehicle_part,door_sliding,dda,32x32,1,keep original,t_door_metal_c
+T1,vehicle_part,engine_1cyl,dda,32x32,2,keep original,engine_combustion
+T1,vehicle_part,engine_1cyl_large,dda,32x32,1,keep original,engine_combustion
+T1,vehicle_part,engine_steam_small,dda,32x32,1,keep original,engine_combustion
+T1,vehicle_part,foot_pedals,dda,32x32,2,keep original,engine_manual
+T1,vehicle_part,frame,dda,32x32,1,keep original,frame_abstract
+T1,vehicle_part,frame_wood,dda,32x32,2,keep original,frame_abstract
+T1,vehicle_part,fuel_bunker,dda,32x32,1,keep original,tank
+T1,vehicle_part,halfboard,dda,32x32,1,keep original,base_board_abstract
+T1,vehicle_part,hand_paddles,dda,32x32,1,keep original,engine_manual
+T1,vehicle_part,hdboard,dda,32x32,1,keep original,base_board_abstract
+T1,vehicle_part,hddoor,dda,32x32,1,keep original,t_door_metal_c
+T1,vehicle_part,hdframe,dda,32x32,1,keep original,frame_abstract
+T1,vehicle_part,headlight,dda,32x32,1,keep original,
+T1,vehicle_part,horn_bicycle,dda,32x32,1,keep original,
+T1,vehicle_part,horn_car,dda,32x32,1,keep original,
+T1,vehicle_part,inboard_mirror,dda,32x32,1,keep original,
+T1,vehicle_part,integrated_cooler,dda,32x32,1,keep original,mountable_cooler
+T1,vehicle_part,medium_storage_battery,dda,32x32,1,keep original,storage_battery
+T1,vehicle_part,motorcycle_headlight,dda,32x32,1,keep original,
+T1,vehicle_part,motorcycle_kickstand,dda,32x32,1,keep original,
+T1,vehicle_part,mountable_heater,dda,32x32,3,keep original,
+T1,vehicle_part,muffler,dda,32x32,2,keep original,
+T1,vehicle_part,omnicam,dda,32x48,3,keep original,
+T1,vehicle_part,plating_steel,dda,32x32,2,keep original,
+T1,vehicle_part,rail_wheel,dda,32x32,1,keep original,
+T1,vehicle_part,rail_wheel_small_pair,dda,32x32,1,keep original,rail_wheel
+T1,vehicle_part,rail_wheel_steerable,dda,32x32,1,keep original,rail_wheel
+T1,vehicle_part,reinforced_windshield,dda,32x32,5,keep original,t_wall_glass
+T1,vehicle_part,roof,dda,32x32,2,keep original,
+T1,vehicle_part,roof_wood,dda,32x32,1,keep original,
+T1,vehicle_part,saddle,dda,32x32,5,keep original,reclining_seat
+T1,vehicle_part,seat,dda,32x32,1,keep original,seat
+T1,vehicle_part,seat_back,dda,32x32,1,keep original,reclining_seat
+T1,vehicle_part,seat_wood,dda,32x32,5,keep original,reclining_seat
+T1,vehicle_part,seatbelt,dda,32x32,2,keep original,
+T1,vehicle_part,sgn_ba_gac_bed,mod,32x32,1,Saigon art (drawn),f_crate_o
+T1,vehicle_part,sgn_engine_110cc,mod,32x32,1,Saigon art (drawn),engine_combustion
+T1,vehicle_part,sgn_longtail,mod,32x32,1,Saigon art (drawn),engine_combustion
+T1,vehicle_part,sgn_oars,mod,32x32,1,Saigon art (drawn),engine_manual
+T1,vehicle_part,sgn_pillion,mod,32x32,1,Saigon art (drawn),seat
+T1,vehicle_part,sgn_tank_4l,mod,32x32,1,Saigon art (drawn),tank_little
+T1,vehicle_part,sgn_xich_lo_seat,mod,32x32,1,Saigon art (drawn),reclining_seat
+T1,vehicle_part,spring_plate,dda,32x32,1,keep original,
+T1,vehicle_part,stowboard,dda,32x32,1,keep original,base_board_abstract
+T1,vehicle_part,tank,dda,32x32,1,keep original,
+T1,vehicle_part,tank_55gal_drum,dda,32x32,3,keep original,tank_30gal_drum
+T1,vehicle_part,tank_small,dda,32x32,1,keep original,
+T1,vehicle_part,trunk_floor,dda,32x32,2,keep original,t_carpet_red
+T1,vehicle_part,vehicle_alarm,dda,32x32,1,keep original,
+T1,vehicle_part,wheel,dda,32x32,2,keep original,
+T1,vehicle_part,wheel_bicycle,dda,32x32,1,keep original,
+T1,vehicle_part,wheel_motorbike,dda,20x20,1,keep original,wheel
+T1,vehicle_part,wheel_mount_light,dda,32x32,1,keep original,
+T1,vehicle_part,wheel_mount_light_steerable,dda,32x32,1,keep original,wheel_mount_light
+T1,vehicle_part,wheel_mount_medium,dda,32x32,1,keep original,
+T1,vehicle_part,wheel_mount_medium_steerable,dda,32x32,1,keep original,wheel_mount_medium
+T1,vehicle_part,wheel_wide,dda,32x48,3,keep original,wheel
+T1,vehicle_part,windshield,dda,32x48,5,keep original,t_wall_glass
+T1,vehicle_part,wing_mirror,dda,64x64,4,keep original,
+T1,vehicle_part,wood box,dda,32x32,3,keep original,f_crate_o
+T1,vehicle_part,xlframe,dda,32x32,1,keep original,frame_abstract
+T2,item,antibiotics,dda,20x20,1,keep original,
+T2,item,backpack_hiking,dda,32x32,1,keep original,ragpouch
+T2,item,banana,dda,20x20,1,keep original,
+T2,item,bandages,dda,20x20,1,keep original,
+T2,item,battery,dda,20x20,1,keep original,
+T2,item,beer,dda,32x32,1,keep original,water_clean
+T2,item,binoculars,dda,20x20,1,to do (no sprite),
+T2,item,blanket,dda,32x32,1,keep original,towel
+T2,item,boots_rubber,dda,32x32,1,keep original,dress_shoes
+T2,item,bottle_plastic,dda,20x20,1,keep original,
+T2,item,bottle_plastic_small,dda,20x20,1,keep original,bottle_plastic
+T2,item,butane,dda,32x32,1,keep original,
+T2,item,butane_can,dda,32x32,1,keep original,spray_can
+T2,item,cable,dda,20x20,1,keep original,
+T2,item,camera,dda,20x20,1,keep original,abstract_camera
+T2,item,can_sardine,dda,20x20,1,Saigon art (drawn),
+T2,item,candle,dda,20x20,1,keep original,
+T2,item,cell_phone,dda,20x20,1,keep original,
+T2,item,cig,dda,20x20,1,keep original,
+T2,item,coconut,dda,20x20,1,keep original,
+T2,item,coffee_raw,dda,32x32,1,keep original,
+T2,item,con_milk,dda,32x32,1,keep original,
+T2,item,cooking_oil,dda,32x32,1,keep original,
+T2,item,cotton_patchwork,dda,20x20,1,keep original,
+T2,item,detergent,dda,32x32,1,keep original,
+T2,item,diamond_ring,dda,20x20,1,keep original,ring_engagement
+T2,item,dress,dda,20x20,1,keep original,coat_winter
+T2,item,dress_shoes,dda,32x32,1,keep original,shoes_bowling
+T2,item,dry_rice,dda,20x20,1,Saigon art (drawn),
+T2,item,duffelbag,dda,32x32,1,keep original,ragpouch
+T2,item,e_scrap,dda,20x20,1,keep original,
+T2,item,egg_chicken,dda,20x20,1,keep original,
+T2,item,envelope,dda,20x20,1,keep original,paper
+T2,item,file,dda,20x20,1,keep original,
+T2,item,fish,dda,20x20,1,keep original,flesh
+T2,item,flashlight,dda,20x20,1,keep original,
+T2,item,flip_flops,dda,20x20,1,keep original,shoes_bowling
+T2,item,flour,dda,20x20,1,keep original,
+T2,item,gasoline,dda,32x32,1,keep original,
+T2,item,gold_ring,dda,20x20,1,keep original,
+T2,item,gold_watch,dda,20x20,1,keep original,
+T2,item,guidebook,dda,20x20,1,Saigon art (drawn),radio_book
+T2,item,hair_dryer,dda,20x20,1,keep original,
+T2,item,hairbrush,dda,32x32,1,keep original,base_toiletries
+T2,item,hairpin,dda,20x20,1,keep original,
+T2,item,heels,dda,32x32,1,keep original,sneakers
+T2,item,helmet_army,dda,20x20,1,keep original,hat_ball
+T2,item,holy_symbol,dda,32x32,1,keep original,
+T2,item,holybook_bible1,dda,20x20,1,keep original,radio_book
+T2,item,holybook_catechism,dda,20x20,1,Saigon art (drawn),radio_book
+T2,item,laptop,dda,20x20,1,keep original,abstract_laptop
+T2,item,leathersandals,dda,32x32,1,keep original,sneakers
+T2,item,lowtops,dda,20x20,1,keep original,shoes_bowling
+T2,item,makeup_kit,dda,20x20,1,to do (no sprite),hair_dye_kit
+T2,item,mango,dda,32x32,1,keep original,
+T2,item,meat,dda,20x20,1,keep original,flesh
+T2,item,money_hundred,dda,20x20,1,keep original,money_one
+T2,item,money_twenty,dda,20x20,1,keep original,money_one
+T2,item,motor_oil,dda,32x32,1,keep original,
+T2,item,mre_beef,dda,20x20,1,to do (no sprite),mre_beef
+T2,item,mre_veggy,dda,20x20,1,to do (no sprite),mre_beef
+T2,item,noodles_fast,dda,20x20,1,Saigon art (drawn),
+T2,item,papaya,dda,32x32,1,keep original,
+T2,item,paper,dda,20x20,1,keep original,
+T2,item,peanut_shelled,dda,20x20,1,to do (no sprite),
+T2,item,pen,dda,20x20,1,keep original,
+T2,item,pencil,dda,20x20,1,keep original,survival_marker
+T2,item,pockknife,dda,20x20,1,keep original,
+T2,item,polo_shirt,dda,32x32,1,keep original,camisole
+T2,item,processor,dda,20x20,1,Saigon art (drawn),
+T2,item,purse,dda,20x20,1,keep original,ragpouch
+T2,item,radio,dda,32x32,1,keep original,
+T2,item,razor_shaving,dda,32x32,1,keep original,base_toiletries
+T2,item,ring_engagement,dda,20x20,1,keep original,
+T2,item,ring_wedding,dda,20x20,1,Saigon art (drawn),
+T2,item,rubber_band,dda,32x32,1,keep original,string_6
+T2,item,saline,dda,32x32,1,keep original,
+T2,item,salt,dda,20x20,1,keep original,spice
+T2,item,scissors,dda,32x32,1,keep original,
+T2,item,sewing_kit,dda,32x32,1,keep original,
+T2,item,sgn_am_nhom,mod,20x20,1,Saigon art (drawn),base_cookpot
+T2,item,sgn_ao_ba_ba,mod,20x20,1,Saigon art (drawn),dress_shirt
+T2,item,sgn_ao_cong_an,mod,20x20,1,Saigon art (drawn),buttonshirt
+T2,item,sgn_ao_dai_mau,mod,20x20,1,Saigon art (drawn),coat_rain
+T2,item,sgn_ao_dai_trang,mod,20x20,1,Saigon art (drawn),coat_rain
+T2,item,sgn_ao_khoac_chong_nang,mod,20x20,1,Saigon art (drawn),jacket_light
+T2,item,sgn_ao_thun,mod,20x20,1,Saigon art (derived),camisole
+T2,item,sgn_ao_trang_hoc_sinh,mod,20x20,1,Saigon art (drawn),buttonshirt
+T2,item,sgn_bang_cassette,mod,20x20,1,Saigon art (drawn),
+T2,item,sgn_banh_bao,mod,20x20,1,Saigon art (drawn),flatbread
+T2,item,sgn_banh_chung,mod,20x20,1,Saigon art (drawn),dry_rice
+T2,item,sgn_banh_cuon,mod,20x20,1,Saigon art (drawn),dry_rice
+T2,item,sgn_banh_flan,mod,20x20,1,Saigon art (drawn),pudding
+T2,item,sgn_banh_mi_bread,mod,20x20,1,Saigon art (drawn),bread
+T2,item,sgn_banh_mi_thit,mod,20x20,1,Saigon art (drawn),sandwich_t
+T2,item,sgn_banh_pho,mod,20x20,1,Saigon art (drawn),noodles_fast
+T2,item,sgn_banh_trang,mod,20x20,1,Saigon art (drawn),tortilla_corn
+T2,item,sgn_banh_trung_thu,mod,20x20,1,Saigon art (drawn),pie
+T2,item,sgn_banh_xeo,mod,20x20,1,Saigon art (drawn),pancakes
+T2,item,sgn_bao_li_xi,mod,20x20,1,Saigon art (drawn),
+T2,item,sgn_bep_than_to_ong,mod,20x20,1,Saigon art (drawn),brazier
+T2,item,sgn_bia_hoi,mod,32x32,1,Saigon art (derived),water_clean
+T2,item,sgn_bich_nylon,mod,20x20,1,Saigon art (drawn),bottle_plastic
+T2,item,sgn_binh_gas,mod,20x20,1,Saigon art (drawn),medium_propane_tank
+T2,item,sgn_binh_thuy,mod,20x20,1,Saigon art (drawn),bottle_plastic
+T2,item,sgn_bo_bia,mod,20x20,1,Saigon art (drawn),dry_rice
+T2,item,sgn_bo_va_xe,mod,20x20,1,Saigon art (drawn),spare_part
+T2,item,sgn_book_almanac,mod,20x20,1,Saigon art (drawn),radio_book
+T2,item,sgn_book_construction,mod,20x20,1,Saigon art (drawn),radio_book
+T2,item,sgn_book_fishing,mod,20x20,1,Saigon art (drawn),radio_book
+T2,item,sgn_book_moto_repair,mod,20x20,1,Saigon art (drawn),radio_book
+T2,item,sgn_book_southern_cooking,mod,20x20,1,Saigon art (drawn),radio_book
+T2,item,sgn_book_sutra,mod,20x20,1,Saigon art (drawn),radio_book
+T2,item,sgn_book_tailoring,mod,20x20,1,Saigon art (drawn),radio_book
+T2,item,sgn_book_tv_repair,mod,20x20,1,Saigon art (drawn),radio_book
+T2,item,sgn_book_wuxia,mod,20x20,1,Saigon art (drawn),book_fict_soft_pulp_tpl
+T2,item,sgn_bun_bo_hue,mod,20x20,1,Saigon art (drawn),water_clean
+T2,item,sgn_bun_thit_nuong,mod,20x20,1,Saigon art (drawn),water_clean
+T2,item,sgn_ca_phe_bot,mod,20x20,1,Saigon art (drawn),coffee_raw
+T2,item,sgn_ca_phe_sua_da,mod,32x32,1,Saigon art (derived),coffee
+T2,item,sgn_can_cau_tre,mod,20x20,1,Saigon art (drawn),fishing_rod_basic
+T2,item,sgn_can_nhua,mod,20x20,1,Saigon art (drawn),jerrycan
+T2,item,sgn_chai_nuoc_mam,mod,20x20,1,Saigon art (drawn),bottle_plastic
+T2,item,sgn_chao_long,mod,20x20,1,Saigon art (drawn),water_clean
+T2,item,sgn_che,mod,32x32,1,Saigon art (derived),water_clean
+T2,item,sgn_choi_cha,mod,20x20,1,Saigon art (drawn),broom
+T2,item,sgn_com_tam,mod,20x20,1,Saigon art (drawn),dry_rice
+T2,item,sgn_dao_rua,mod,20x20,1,Saigon art (drawn),machete
+T2,item,sgn_dau_gio,mod,20x20,1,Saigon art (drawn),aspirin
+T2,item,sgn_den_dau,mod,20x20,1,Saigon art (drawn),oil_lamp
+T2,item,sgn_dep_lao,mod,20x20,1,Saigon art (drawn),sneakers
+T2,item,sgn_dep_quai_hau,mod,20x20,1,Saigon art (drawn),dress_shoes
+T2,item,sgn_dien_thoai,mod,20x20,1,Saigon art (drawn),cell_phone
+T2,item,sgn_do_bo,mod,20x20,1,Saigon art (drawn),jumpsuit_pocketless
+T2,item,sgn_dong_100k,mod,20x20,1,Saigon art (drawn),money_one
+T2,item,sgn_dong_10k,mod,20x20,1,Saigon art (drawn),money_one
+T2,item,sgn_dong_50k,mod,20x20,1,Saigon art (drawn),money_one
+T2,item,sgn_durian,mod,20x20,1,Saigon art (drawn),mango
+T2,item,sgn_engine_110cc_item,mod,20x20,1,Saigon art (drawn),engine_combustion
+T2,item,sgn_goi_cuon,mod,20x20,1,Saigon art (drawn),dry_rice
+T2,item,sgn_ho_chieu,mod,20x20,1,Saigon art (drawn),
+T2,item,sgn_hot_vit_lon,mod,20x20,1,Saigon art (drawn),egg_chicken
+T2,item,sgn_hu_tieu,mod,20x20,1,Saigon art (drawn),water_clean
+T2,item,sgn_karaoke_songbook,mod,20x20,1,Saigon art (drawn),radio_book
+T2,item,sgn_khan_quang_do,mod,20x20,1,Saigon art (derived),scarf
+T2,item,sgn_khan_ran,mod,20x20,1,Saigon art (drawn),scarf
+T2,item,sgn_khau_trang,mod,20x20,1,Saigon art (drawn),scarf
+T2,item,sgn_kho_bo,mod,20x20,1,Saigon art (drawn),flesh
+T2,item,sgn_kho_muc,mod,20x20,1,Saigon art (drawn),flesh
+T2,item,sgn_khoa_chu_u,mod,20x20,1,Saigon art (drawn),pipe
+T2,item,sgn_lap_xuong,mod,20x20,1,Saigon art (drawn),sausage_raw
+T2,item,sgn_lich_bloc,mod,20x20,1,Saigon art (drawn),paper
+T2,item,sgn_long_ban,mod,20x20,1,Saigon art (drawn),
+T2,item,sgn_long_den_ong_sao,mod,20x20,1,Saigon art (drawn),
+T2,item,sgn_luoi_chai,mod,20x20,1,Saigon art (drawn),net
+T2,item,sgn_ly_nhua,mod,20x20,1,Saigon art (drawn),cup_plastic
+T2,item,sgn_mam_tom,mod,20x20,1,Saigon art (drawn),soysauce
+T2,item,sgn_mi_goi,mod,20x20,1,Saigon art (drawn),noodles_fast
+T2,item,sgn_mit,mod,20x20,1,Saigon art (drawn),mango
+T2,item,sgn_moto_tank_4l,mod,20x20,1,Saigon art (drawn),30l_barrel
+T2,item,sgn_mung,mod,20x20,1,Saigon art (drawn),
+T2,item,sgn_nen,mod,20x20,1,Saigon art (drawn),candle
+T2,item,sgn_noi_com_dien,mod,20x20,1,Saigon art (drawn),hotplate
+T2,item,sgn_noi_dat,mod,20x20,1,Saigon art (drawn),clay_pot
+T2,item,sgn_non_coi,mod,20x20,1,Saigon art (drawn),hat_ball
+T2,item,sgn_non_ket,mod,32x32,1,Saigon art (derived),hat_cotton
+T2,item,sgn_note_handwritten,mod,20x20,1,Saigon art (drawn),newest_newspaper
+T2,item,sgn_nuoc_dua,mod,20x20,1,Saigon art (drawn),coconut
+T2,item,sgn_nuoc_mam,mod,32x32,1,Saigon art (derived),soysauce
+T2,item,sgn_nuoc_mia,mod,32x32,1,Saigon art (derived),juice
+T2,item,sgn_ong_tay_chong_nang,mod,20x20,1,Saigon art (drawn),armguard_larmor
+T2,item,sgn_oresol,mod,20x20,1,Saigon art (drawn),spice
+T2,item,sgn_phin,mod,20x20,1,Saigon art (drawn),
+T2,item,sgn_pho_bo,mod,20x20,1,Saigon art (drawn),water_clean
+T2,item,sgn_quan_cong_an,mod,20x20,1,Saigon art (drawn),jeans
+T2,item,sgn_quan_tay,mod,32x32,1,Saigon art (derived),jeans
+T2,item,sgn_quang_ganh,mod,20x20,1,Saigon art (drawn),ragpouch
+T2,item,sgn_quat_may,mod,20x20,1,Saigon art (drawn),fan
+T2,item,sgn_radio_cassette,mod,20x20,1,Saigon art (drawn),radio
+T2,item,sgn_rau_muong,mod,20x20,1,Saigon art (drawn),spinach
+T2,item,sgn_ro_nhua,mod,20x20,1,Saigon art (drawn),plastic_shopping_bag
+T2,item,sgn_ruou_de,mod,32x32,1,Saigon art (derived),water_clean
+T2,item,sgn_sua_dac,mod,32x32,1,Saigon art (derived),con_milk
+T2,item,sgn_sua_dau_nanh,mod,20x20,1,Saigon art (drawn),milk
+T2,item,sgn_than_to_ong,mod,20x20,1,Saigon art (drawn),charcoal
+T2,item,sgn_thanh_long,mod,20x20,1,Saigon art (drawn),mango
+T2,item,sgn_thau_nhua,mod,20x20,1,Saigon art (drawn),bucket
+T2,item,sgn_thot_go_me,mod,20x20,1,Saigon art (drawn),cutting_board
+T2,item,sgn_thung_xop,mod,20x20,1,Saigon art (drawn),cup_plastic
+T2,item,sgn_thuoc_bac,mod,20x20,1,to do (no sprite),veggy_raw
+T2,item,sgn_thuoc_la,mod,20x20,1,Saigon art (drawn),cig
+T2,item,sgn_tom_kho,mod,20x20,1,Saigon art (drawn),flesh
+T2,item,sgn_tra_da,mod,32x32,1,Saigon art (derived),water_clean
+T2,item,sgn_truyen_meo_may,mod,20x20,1,Saigon art (drawn),mag_glam
+T2,item,sgn_tuong_ot,mod,32x32,1,Saigon art (derived),hot_sauce
+T2,item,sgn_ung_cao_su,mod,20x20,1,Saigon art (drawn),shoes_bowling
+T2,item,sgn_vang_luong,mod,20x20,1,Saigon art (drawn),gold_small
+T2,item,sgn_vang_ma,mod,20x20,1,Saigon art (drawn),paper
+T2,item,sgn_vcd_phim_bo,mod,20x20,1,Saigon art (drawn),
+T2,item,sgn_ve_so,mod,20x20,1,Saigon art (drawn),
+T2,item,sgn_ward_notice,mod,20x20,1,Saigon art (drawn),newest_newspaper
+T2,item,sgn_xa_beng,mod,20x20,1,Saigon art (drawn),crowbar
+T2,item,sgn_xoi,mod,20x20,1,Saigon art (drawn),dry_rice
+T2,item,sheet_cotton,dda,20x20,1,keep original,
+T2,item,silver_necklace,dda,20x20,1,keep original,
+T2,item,skirt,dda,20x20,1,keep original,skirt
+T2,item,soap,dda,20x20,1,keep original,
+T2,item,soldering_iron,dda,20x20,1,keep original,
+T2,item,stapler,dda,20x20,1,keep original,
+T2,item,sugar,dda,32x32,1,keep original,
+T2,item,sundress,dda,32x32,1,keep original,coat_rain
+T2,item,sunglasses,dda,20x20,1,keep original,sunglasses
+T2,item,sunscreen,dda,20x20,1,Saigon art (drawn),
+T2,item,syringe,dda,20x20,1,keep original,
+T2,item,tea_raw,dda,20x20,1,keep original,
+T2,item,textbook_firstaid,dda,20x20,1,keep original,
+T2,item,thermometer,dda,20x20,1,keep original,
+T2,item,thread,dda,32x32,1,keep original,
+T2,item,toothbrush_plain,dda,32x32,1,keep original,base_toiletries
+T2,item,two_way_radio,dda,20x20,1,keep original,
+T2,item,wallet,dda,32x32,1,keep original,bag_canvas
+T2,item,wallet_travel,dda,20x20,1,to do (no sprite),
+T2,item,water_clean,dda,32x32,1,keep original,
+T3,item,10gal_hat,dda,32x32,1,keep original,hat_ball
+T3,item,10mm_casing,dda,32x32,1,keep original,casing
+T3,item,223_casing,dda,32x32,1,keep original,casing
+T3,item,22_casing,dda,32x32,1,keep original,casing
+T3,item,270win_casing,dda,32x32,1,keep original,casing
+T3,item,2x4,dda,32x32,1,keep original,
+T3,item,3006_casing,dda,32x32,1,keep original,casing
+T3,item,300_casing,dda,32x32,1,keep original,casing
+T3,item,300blk_casing,dda,32x32,1,keep original,casing
+T3,item,3030_casing,dda,20x20,1,keep original,casing
+T3,item,303_casing,dda,20x20,1,keep original,casing
+T3,item,308_casing,dda,32x32,1,keep original,casing
+T3,item,30carbine_casing,dda,20x20,1,keep original,casing
+T3,item,32_casing,dda,32x32,1,keep original,casing
+T3,item,338lapua_casing,dda,20x20,1,keep original,casing
+T3,item,357mag_casing,dda,32x32,1,keep original,casing
+T3,item,357sig_casing,dda,32x32,1,keep original,casing
+T3,item,380_casing,dda,32x32,1,keep original,casing
+T3,item,38_casing,dda,32x32,1,keep original,casing
+T3,item,38super_casing,dda,20x20,1,keep original,casing
+T3,item,40_casing,dda,32x32,1,keep original,casing
+T3,item,410shot_hull,dda,32x32,1,keep original,shot_hull
+T3,item,44_casing,dda,32x32,1,keep original,casing
+T3,item,450_casing,dda,20x20,1,keep original,casing
+T3,item,454_casing,dda,32x32,1,keep original,casing
+T3,item,4570_casing,dda,32x32,1,keep original,casing
+T3,item,458wm_casing,dda,20x20,1,keep original,casing
+T3,item,45_casing,dda,32x32,1,keep original,casing
+T3,item,45colt_casing,dda,32x32,1,keep original,casing
+T3,item,460sw_casing,dda,20x20,1,keep original,casing
+T3,item,500_casing,dda,32x32,1,keep original,casing
+T3,item,50ae_casing,dda,20x20,1,keep original,casing
+T3,item,50beowulf_casing,dda,20x20,1,keep original,casing
+T3,item,545_casing,dda,32x32,1,keep original,casing
+T3,item,57mm_casing,dda,32x32,1,keep original,casing
+T3,item,762R_casing,dda,32x32,1,keep original,casing
+T3,item,762_25_casing,dda,32x32,1,keep original,casing
+T3,item,762_51_casing,dda,32x32,1,keep original,casing
+T3,item,762_casing,dda,32x32,1,keep original,casing
+T3,item,77arisaka_casing,dda,20x20,1,keep original,casing
+T3,item,9mm_casing,dda,32x32,1,keep original,casing
+T3,item,9x18mm_casing,dda,32x32,1,keep original,casing
+T3,item,acetaminophen,dda,20x20,1,base tileset gap,
+T3,item,advanced_ecig,dda,20x20,1,base tileset gap,
+T3,item,alexandrite_gold_earring,dda,20x20,1,keep original,gold_ear
+T3,item,alexandrite_platinum_earring,dda,20x20,1,keep original,platinum_ear
+T3,item,alexandrite_silver_earring,dda,20x20,1,keep original,silver_ear
+T3,item,aluminum_stepladder,dda,32x32,1,keep original,stepladder
+T3,item,american_flag,dda,32x32,1,keep original,towel
+T3,item,amethyst_gold_earring,dda,20x20,1,keep original,gold_ear
+T3,item,amethyst_platinum_earring,dda,20x20,1,keep original,platinum_ear
+T3,item,amethyst_silver_earring,dda,20x20,1,keep original,silver_ear
+T3,item,angel_halo_headband,dda,20x20,1,base tileset gap,
+T3,item,angel_wings,dda,32x32,1,keep original,ragpouch
+T3,item,angle_grinder,dda,20x20,1,keep original,
+T3,item,ankle_wallet_pouch,dda,32x32,1,keep original,ragpouch
+T3,item,apple,dda,20x20,1,keep original,
+T3,item,apron_leather,dda,20x20,1,keep original,camisole
+T3,item,aquamarine_gold_earring,dda,20x20,1,keep original,gold_ear
+T3,item,aquamarine_platinum_earring,dda,20x20,1,keep original,platinum_ear
+T3,item,aquamarine_silver_earring,dda,20x20,1,keep original,silver_ear
+T3,item,arm_warmers,dda,20x20,1,keep original,arm_warmers
+T3,item,armguard_hard,dda,20x20,1,keep original,armguard_larmor
+T3,item,armguard_soft,dda,32x32,1,keep original,armguard_larmor
+T3,item,ax,dda,32x32,1,keep original,
+T3,item,b_shorts,dda,32x32,1,keep original,boxer_shorts
+T3,item,back_holster,dda,20x20,1,keep original,sheath
+T3,item,backpack_denim,dda,32x32,1,keep original,ragpouch
+T3,item,backpack_leather,dda,32x32,1,keep original,ragpouch
+T3,item,backpack_small,dda,32x32,1,keep original,ragpouch
+T3,item,bacon,dda,32x32,1,keep original,
+T3,item,bag_canvas_small,dda,32x32,1,keep original,bag_plastic
+T3,item,bag_garbage,dda,32x32,1,keep original,bag_plastic
+T3,item,bag_paper_powder,dda,32x32,1,keep original,bag_canvas
+T3,item,bag_plastic,dda,20x20,1,keep original,bag_plastic
+T3,item,bag_plastic_small,dda,32x32,1,keep original,bag_canvas
+T3,item,bag_zipper_gallon,dda,20x20,1,keep original,bag_plastic
+T3,item,balclava,dda,32x32,1,keep original,hat_ball
+T3,item,balloon,dda,32x32,1,keep original,condom
+T3,item,bandana,dda,20x20,1,keep original,scarf
+T3,item,bandana_head,dda,20x20,1,keep original,scarf
+T3,item,barbecue_sauce,dda,32x32,1,keep original,molasses
+T3,item,barrette,dda,20x20,1,keep original,
+T3,item,basic_papr_belt_off,dda,32x32,1,keep original,leather_belt
+T3,item,basic_papr_helmet,dda,20x20,1,keep original,helmet_motor
+T3,item,bastsandals,dda,32x32,1,keep original,sneakers
+T3,item,bat_anklet,dda,20x20,1,base tileset gap,
+T3,item,battery_car,dda,20x20,1,keep original,
+T3,item,battery_motorbike,dda,20x20,1,keep original,battery_car
+T3,item,bbholster,dda,20x20,1,keep original,sheath
+T3,item,bead_bracelet,dda,20x20,1,keep original,silver_bracelet
+T3,item,beekeeping_gloves,dda,20x20,1,keep original,gloves_light
+T3,item,bench_vise,dda,20x20,1,base tileset gap,
+T3,item,bholster,dda,20x20,1,keep original,sheath
+T3,item,big_pliers,dda,20x20,1,keep original,
+T3,item,bikini_bottom,dda,32x32,1,keep original,boxer_shorts
+T3,item,bikini_top,dda,32x32,1,keep original,tank_top
+T3,item,binder_top,dda,20x20,1,keep original,camisole
+T3,item,black_pen,dda,20x20,1,keep original,pen
+T3,item,blazer,dda,20x20,1,keep original,jacket_windbreaker
+T3,item,blue_pen,dda,20x20,1,keep original,pen
+T3,item,blue_topaz_gold_earring,dda,20x20,1,keep original,gold_ear
+T3,item,blue_topaz_platinum_earring,dda,20x20,1,keep original,platinum_ear
+T3,item,blue_topaz_silver_earring,dda,20x20,1,keep original,silver_ear
+T3,item,boltcutters,dda,20x20,1,keep original,
+T3,item,book_newage_aliens,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
+T3,item,book_newage_beyondveil,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
+T3,item,book_newage_generic,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
+T3,item,book_newage_healcrystals,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
+T3,item,book_newage_horoscopes,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
+T3,item,book_newage_inpsychic,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
+T3,item,book_newage_oilsecrets,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
+T3,item,book_newage_weapcrys,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
+T3,item,book_newage_witchcraftadv,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
+T3,item,book_newage_witchcraftbeg,dda,20x20,1,keep original,book_fict_soft_pulp_tpl
+T3,item,book_nonf_zine_news_anlyst,dda,20x20,1,keep original,flyer
+T3,item,book_ruined,dda,20x20,1,keep original,
+T3,item,boots_combat,dda,32x32,1,keep original,dress_shoes
+T3,item,boots_denim,dda,32x32,1,keep original,dress_shoes
+T3,item,boots_faux_fur,dda,20x20,1,keep original,shoes_bowling
+T3,item,boots_fur,dda,32x32,1,keep original,dress_shoes
+T3,item,boots_hiking,dda,32x32,1,keep original,dress_shoes
+T3,item,boots_western,dda,32x32,1,keep original,dress_shoes
+T3,item,boots_winter,dda,20x20,1,keep original,shoes_bowling
+T3,item,bootsheath,dda,32x32,1,keep original,scabbard
+T3,item,bootstrap,dda,20x20,1,keep original,sheath
+T3,item,bostonchan_wig,dda,20x20,1,base tileset gap,
+T3,item,bottle_glass,dda,20x20,1,keep original,bottle_plastic
+T3,item,bottle_glass_seasoning,dda,20x20,1,keep original,bottle_plastic
+T3,item,bottle_glass_seasoning_small,dda,20x20,1,keep original,bottle_plastic
+T3,item,bottle_plastic_355ml,dda,20x20,1,keep original,bottle_plastic
+T3,item,bottle_plastic_pill_painkiller,dda,20x20,1,keep original,aspirin
+T3,item,bottle_plastic_pill_supplement,dda,20x20,1,keep original,vitamins
+T3,item,bottle_plastic_seasoning,dda,20x20,1,keep original,bottle_plastic
+T3,item,bottle_plastic_seasoning_small,dda,20x20,1,keep original,bottle_plastic
+T3,item,bottle_plastic_small_glue,dda,20x20,1,keep original,bottle_plastic
+T3,item,bottle_plastic_tiny,dda,20x20,1,keep original,bottle_plastic
+T3,item,bottle_plastic_tiny_glue,dda,20x20,1,keep original,bottle_plastic
+T3,item,bow_saw,dda,20x20,1,keep original,
+T3,item,bowhat,dda,32x32,1,keep original,hat_ball
+T3,item,bowl_pewter,dda,20x20,1,keep original,base_tin_dish
+T3,item,box_cigarette,dda,20x20,1,keep original,box_small
+T3,item,box_medium_folded,dda,32x32,1,keep original,
+T3,item,box_small,dda,20x20,1,keep original,
+T3,item,box_snack,dda,20x20,1,keep original,
+T3,item,box_tea,dda,20x20,1,keep original,box_small
+T3,item,boxcutter,dda,20x20,1,keep original,
+T3,item,boxer_briefs,dda,32x32,1,keep original,boxer_shorts
+T3,item,boxer_shorts,dda,32x32,1,keep original,shorts
+T3,item,boy_shorts,dda,32x32,1,keep original,shorts
+T3,item,bra,dda,32x32,1,keep original,tshirt
+T3,item,bracelet_friendship,dda,20x20,1,keep original,silver_bracelet
+T3,item,brandy,dda,32x32,1,keep original,whiskey
+T3,item,brazing_rod_alloy,dda,20x20,1,keep original,
+T3,item,brazing_rod_bronze,dda,20x20,1,keep original,
+T3,item,breeches,dda,32x32,1,keep original,jeans
+T3,item,briefcase,dda,20x20,1,keep original,plastic_shopping_bag
+T3,item,briefs,dda,32x32,1,keep original,shorts
+T3,item,bronze_medal,dda,20x20,1,keep original,silver_necklace
+T3,item,brush_axe,dda,32x32,1,keep original,ax
+T3,item,brush_handaxe,dda,20x20,1,keep original,machete
+T3,item,brush_pole,dda,32x32,1,keep original,glaive
+T3,item,bubblewrap,dda,32x32,1,keep original,
+T3,item,bucket,dda,32x32,1,keep original,
+T3,item,bucket_5gal,dda,32x32,1,keep original,
+T3,item,bum_wine,dda,32x32,1,keep original,wine_cabernet
+T3,item,bunny_ears_black,dda,20x20,1,base tileset gap,
+T3,item,button_plastic,dda,20x20,1,keep original,
+T3,item,caff_gum,dda,20x20,1,keep original,
+T3,item,camera_bag,dda,32x32,1,keep original,ragpouch
+T3,item,camera_pro,dda,32x32,1,keep original,abstract_camera
+T3,item,camisole,dda,20x20,1,keep original,tshirt
+T3,item,can_aluminum_250ml,dda,20x20,1,keep original,can_drink
+T3,item,can_drink,dda,20x20,1,keep original,
+T3,item,can_food,dda,20x20,1,keep original,can_drink
+T3,item,canadian_whiskey,dda,32x32,1,keep original,whiskey
+T3,item,candy,dda,20x20,1,base tileset gap,
+T3,item,candy2,dda,20x20,1,base tileset gap,
+T3,item,candy3,dda,20x20,1,base tileset gap,
+T3,item,candy4,dda,20x20,1,base tileset gap,
+T3,item,candy_bracelet,dda,20x20,1,keep original,silver_bracelet
+T3,item,candy_coated_peanuts,dda,20x20,1,base tileset gap,
+T3,item,candycigarette,dda,20x20,1,base tileset gap,
+T3,item,cardboard_roll,dda,20x20,1,keep original,
+T3,item,cassock,dda,20x20,1,keep original,coat_winter
+T3,item,ceramic_mug,dda,20x20,1,keep original,base_ceramic_dish
+T3,item,ceramic_shard,dda,20x20,1,keep original,
+T3,item,ch_wire,dda,20x20,1,keep original,lc_wire
+T3,item,chain,dda,20x20,1,keep original,
+T3,item,chainsaw_off,dda,32x32,1,keep original,
+T3,item,char_smoker,dda,32x32,1,keep original,
+T3,item,chaw,dda,20x20,1,base tileset gap,
+T3,item,cheap_whiskey,dda,32x32,1,keep original,whiskey
+T3,item,cheerleader_skirt,dda,20x20,1,keep original,kilt
+T3,item,cheerleader_skirt_short,dda,20x20,1,keep original,kilt
+T3,item,cheerleader_top_short,dda,20x20,1,keep original,tshirt
+T3,item,cheese,dda,20x20,1,keep original,
+T3,item,cheese_fries,dda,20x20,1,keep original,
+T3,item,cheeseburger,dda,20x20,1,base tileset gap,
+T3,item,cheongsam,dda,32x32,1,keep original,coat_rain
+T3,item,chili,dda,20x20,1,keep original,
+T3,item,chilidogs,dda,20x20,1,keep original,
+T3,item,chips,dda,20x20,1,keep original,
+T3,item,chisel,dda,20x20,1,keep original,
+T3,item,choc_drink,dda,32x32,1,keep original,milk
+T3,item,chocolate,dda,20x20,1,base tileset gap,
+T3,item,cig_butt,dda,20x20,1,keep original,
+T3,item,cigar,dda,20x20,1,keep original,
+T3,item,cigar_cutter,dda,20x20,1,base tileset gap,
+T3,item,cigar_punch,dda,20x20,1,base tileset gap,
+T3,item,circsaw_off,dda,20x20,1,keep original,
+T3,item,citrine_gold_earring,dda,20x20,1,keep original,gold_ear
+T3,item,citrine_platinum_earring,dda,20x20,1,keep original,platinum_ear
+T3,item,citrine_silver_earring,dda,20x20,1,keep original,silver_ear
+T3,item,clamp,dda,20x20,1,keep original,
+T3,item,claw_bar,dda,20x20,1,base tileset gap,
+T3,item,cleats,dda,20x20,1,keep original,shoes_bowling
+T3,item,cloak,dda,32x32,1,keep original,coat_winter
+T3,item,cloak_black,dda,32x32,1,keep original,coat_rain
+T3,item,cloak_fur,dda,32x32,1,keep original,coat_winter
+T3,item,cloak_leather,dda,32x32,1,keep original,coat_rain
+T3,item,cloak_vampire,dda,32x32,1,keep original,coat_rain
+T3,item,cloak_vampire_red,dda,20x20,1,keep original,coat_winter
+T3,item,cloak_wool,dda,32x32,1,keep original,coat_rain
+T3,item,clogs,dda,32x32,1,keep original,dress_shoes
+T3,item,clown_nose,dda,20x20,1,base tileset gap,
+T3,item,clown_wig,dda,20x20,1,base tileset gap,
+T3,item,coat_faux_fur,dda,20x20,1,keep original,coat_winter
+T3,item,coat_fur,dda,32x32,1,keep original,coat_rain
+T3,item,coat_lab,dda,32x32,1,keep original,coat_rain
+T3,item,coat_rain,dda,32x32,1,keep original,coat_rain
+T3,item,coat_straw,dda,32x32,1,keep original,coat_rain
+T3,item,coat_winter,dda,20x20,1,keep original,coat_winter
+T3,item,coin_dime,dda,20x20,1,keep original,
+T3,item,coin_dollar,dda,20x20,1,keep original,
+T3,item,coin_half_dollar,dda,20x20,1,keep original,
+T3,item,coin_nickel,dda,20x20,1,keep original,
+T3,item,coin_penny,dda,20x20,1,keep original,
+T3,item,coin_quarter,dda,20x20,1,keep original,
+T3,item,cola,dda,32x32,1,keep original,coffee
+T3,item,colamdew,dda,32x32,1,keep original,coffee
+T3,item,collar_playboy,dda,20x20,1,base tileset gap,
+T3,item,collarpin,dda,32x32,1,keep original,tieclip
+T3,item,comb_pocket,dda,20x20,1,keep original,base_toiletries
+T3,item,con_mix_foldable,dda,20x20,1,keep original,con_mix
+T3,item,condiment_bottle_sealed,dda,20x20,1,keep original,bottle_plastic
+T3,item,condom_sealed,dda,32x32,1,keep original,condom
+T3,item,cookies,dda,20x20,1,keep original,
+T3,item,copper_bracelet,dda,20x20,1,keep original,silver_bracelet
+T3,item,copper_hairpin,dda,32x32,1,keep original,tieclip
+T3,item,copper_locket,dda,20x20,1,keep original,silver_necklace
+T3,item,copper_necklace,dda,20x20,1,keep original,silver_necklace
+T3,item,copper_ring,dda,20x20,1,keep original,ring_purity
+T3,item,copper_wire,dda,20x20,1,base tileset gap,
+T3,item,corded_powerdrill,dda,20x20,1,base tileset gap,
+T3,item,cordless_drill,dda,20x20,1,keep original,
+T3,item,cordless_impact_wrench,dda,20x20,1,keep original,cordless_drill
+T3,item,corpse_child_calm,dda,32x32,1,keep original,corpse
+T3,item,corpse_generic_female,dda,32x32,1,keep original,corpse
+T3,item,corpse_generic_male,dda,32x32,1,keep original,corpse
+T3,item,corset,dda,32x32,1,keep original,camisole
+T3,item,corset_waist,dda,20x20,1,keep original,tshirt
+T3,item,cotton_ball,dda,20x20,1,keep original,
+T3,item,cow_candy,dda,20x20,1,base tileset gap,candy2
+T3,item,cowboy_hat,dda,32x32,1,keep original,hat_cotton
+T3,item,crab_cakes,dda,20x20,1,base tileset gap,fish_fried
+T3,item,creamsoda,dda,32x32,1,keep original,coffee
+T3,item,credit_card,dda,20x20,1,base tileset gap,card_plastic_abstract
+T3,item,creepy_doll,dda,20x20,1,keep original,talking_doll
+T3,item,crispycran,dda,32x32,1,keep original,cranberry_juice
+T3,item,crowbar,dda,32x32,1,keep original,
+T3,item,cufflinks,dda,20x20,1,keep original,
+T3,item,cufflinks_intricate,dda,20x20,1,keep original,
+T3,item,cuffs,dda,20x20,1,base tileset gap,
+T3,item,cup_foil,dda,20x20,1,keep original,
+T3,item,cup_plastic,dda,20x20,1,keep original,
+T3,item,dance_shoes,dda,32x32,1,keep original,sneakers
+T3,item,decoy_elfa,dda,20x20,1,keep original,record_patient
+T3,item,deflated_wheel,dda,32x32,1,keep original,wheel
+T3,item,deflated_wheel_bicycle,dda,32x32,1,keep original,
+T3,item,deflated_wheel_bicycle_or,dda,32x32,1,keep original,deflated_wheel_bicycle
+T3,item,deflated_wheel_motorbike,dda,32x32,1,keep original,
+T3,item,deflated_wheel_motorbike_or,dda,32x32,1,keep original,deflated_wheel_motorbike
+T3,item,deflated_wheel_slick,dda,32x32,1,keep original,wheel_slick
+T3,item,deflated_wheel_wide_or,dda,32x32,1,keep original,deflated_wheel_wide
+T3,item,deluxe_cheeseburger,dda,20x20,1,base tileset gap,cheeseburger
+T3,item,denim_shirt,dda,20x20,1,keep original,buttonshirt
+T3,item,devil_horn_headband,dda,20x20,1,base tileset gap,
+T3,item,devil_tail,dda,20x20,1,base tileset gap,
+T3,item,diamond_dental_grill,dda,20x20,1,keep original,gold_dental_grill
+T3,item,diamond_gold_earring,dda,20x20,1,keep original,gold_ear
+T3,item,diamond_platinum_earring,dda,20x20,1,keep original,platinum_ear
+T3,item,diamond_silver_earring,dda,20x20,1,keep original,silver_ear
+T3,item,diving_watch,dda,20x20,1,keep original,gold_watch
+T3,item,dog_whistle,dda,20x20,1,keep original,
+T3,item,dremel,dda,20x20,1,keep original,angle_grinder
+T3,item,dress_shirt,dda,32x32,1,keep original,longshirt
+T3,item,dress_wedding,dda,32x32,1,keep original,coat_rain
+T3,item,duct_tape,dda,32x32,1,keep original,
+T3,item,duffelbag_gym_m,dda,32x32,1,keep original,ragpouch
+T3,item,duffelbag_gym_s,dda,32x32,1,keep original,ragpouch
+T3,item,duffelbag_gym_xs,dda,32x32,1,keep original,ragpouch
+T3,item,duffelbag_gym_xxs,dda,32x32,1,keep original,ragpouch
+T3,item,duster,dda,20x20,1,keep original,coat_winter
+T3,item,duster_faux_fur,dda,32x32,1,keep original,coat_rain
+T3,item,duster_fur,dda,20x20,1,keep original,coat_winter
+T3,item,duster_leather,dda,32x32,1,keep original,coat_rain
+T3,item,ear_plugs,dda,20x20,1,keep original,
+T3,item,eboshi,dda,32x32,1,keep original,hat_cotton
+T3,item,ecig,dda,20x20,1,keep original,
+T3,item,eclipse_glasses,dda,20x20,1,keep original,glasses_eye
+T3,item,eink_tablet_pc,dda,20x20,1,keep original,abstract_tablet
+T3,item,elbow_pads,dda,20x20,1,keep original,arm_warmers
+T3,item,elec_chainsaw_off,dda,20x20,1,base tileset gap,
+T3,item,elec_jackhammer,dda,20x20,1,keep original,
+T3,item,emerald_gold_earring,dda,20x20,1,keep original,gold_ear
+T3,item,emerald_platinum_earring,dda,20x20,1,keep original,platinum_ear
+T3,item,emerald_silver_earring,dda,20x20,1,keep original,silver_ear
+T3,item,eraser,dda,20x20,1,keep original,
+T3,item,espadrilles,dda,32x32,1,keep original,dress_shoes
+T3,item,extension_cable,dda,20x20,1,keep original,
+T3,item,eyedrops,dda,20x20,1,keep original,
+T3,item,eyepatch_leather,dda,20x20,1,keep original,glasses_eye
+T3,item,family_photo,dda,32x32,1,keep original,
+T3,item,faux_fur_cat_ears,dda,20x20,1,base tileset gap,fur_cat_ears
+T3,item,faux_fur_cat_tail,dda,20x20,1,base tileset gap,fur_cat_tail
+T3,item,faux_fur_collar,dda,20x20,1,base tileset gap,fur_collar
+T3,item,fc_hairpin,dda,32x32,1,keep original,hairpin
+T3,item,fedora,dda,20x20,1,base tileset gap,
+T3,item,fish_fried,dda,20x20,1,base tileset gap,
+T3,item,fish_sandwich,dda,20x20,1,keep original,
+T3,item,fish_smoked,dda,20x20,1,base tileset gap,flesh
+T3,item,fitness_band,dda,20x20,1,base tileset gap,
+T3,item,fitover_sunglasses,dda,20x20,1,keep original,glasses_eye
+T3,item,five-point_harness,dda,20x20,1,base tileset gap,spare_part
+T3,item,flask_hip,dda,20x20,1,keep original,bottle_plastic
+T3,item,flip_flops_exp,dda,32x32,1,keep original,sneakers
+T3,item,flower_anklet,dda,20x20,1,base tileset gap,
+T3,item,flyer,dda,20x20,1,keep original,
+T3,item,flyer_evac,dda,20x20,1,base tileset gap,
+T3,item,folding_poncho,dda,32x32,1,keep original,
+T3,item,foodperson_mask,dda,20x20,1,keep original,
+T3,item,foodplace_food,dda,20x20,1,base tileset gap,
+T3,item,foodplace_zero_drink,dda,32x32,1,keep original,juice
+T3,item,foon,dda,20x20,1,keep original,base_silverware
+T3,item,forged_shears,dda,20x20,1,keep original,
+T3,item,fork,dda,20x20,1,keep original,base_silverware
+T3,item,fp_loyalty_card,dda,20x20,1,keep original,
+T3,item,fried_seeds,dda,20x20,1,keep original,
+T3,item,fries,dda,20x20,1,base tileset gap,
+T3,item,fuel_tin,dda,32x32,1,keep original,jerrycan
+T3,item,funnel,dda,32x32,1,keep original,
+T3,item,fur_cat_ears,dda,20x20,1,base tileset gap,
+T3,item,fur_cat_tail,dda,20x20,1,base tileset gap,
+T3,item,fur_collar,dda,20x20,1,base tileset gap,
+T3,item,g_shovel,dda,20x20,1,keep original,
+T3,item,game_watch,dda,20x20,1,keep original,
+T3,item,garnet_gold_earring,dda,20x20,1,keep original,gold_ear
+T3,item,garnet_platinum_earring,dda,20x20,1,keep original,platinum_ear
+T3,item,garnet_silver_earring,dda,20x20,1,keep original,silver_ear
+T3,item,garter_belt,dda,32x32,1,keep original,boxer_shorts
+T3,item,gartersheath1,dda,32x32,1,keep original,scabbard
+T3,item,gartersheath2,dda,32x32,1,keep original,scabbard
+T3,item,gasdiscount_gold,dda,20x20,1,keep original,card_plastic_abstract
+T3,item,gasdiscount_platinum,dda,20x20,1,keep original,card_plastic_abstract
+T3,item,gasdiscount_silver,dda,20x20,1,keep original,card_plastic_abstract
+T3,item,gasfilter_med,dda,20x20,1,base tileset gap,
+T3,item,geta,dda,20x20,1,keep original,shoes_bowling
+T3,item,ghost_robe,dda,32x32,1,keep original,coat_rain
+T3,item,ghost_robe_sheet,dda,20x20,1,keep original,towel
+T3,item,gin,dda,32x32,1,keep original,water_clean
+T3,item,glass_shard,dda,32x32,1,keep original,
+T3,item,glass_sheet,dda,32x32,1,keep original,
+T3,item,glasses_bal,dda,20x20,1,keep original,glasses_eye
+T3,item,glasses_bifocal,dda,20x20,1,keep original,sunglasses
+T3,item,glasses_monocle,dda,20x20,1,keep original,sunglasses
+T3,item,glasses_reading,dda,20x20,1,keep original,sunglasses
+T3,item,gloves_black,dda,20x20,1,keep original,gloves_leather
+T3,item,gloves_claws,dda,20x20,1,keep original,gloves_light
+T3,item,gloves_fingerless,dda,20x20,1,keep original,gloves_leather
+T3,item,gloves_golf,dda,20x20,1,keep original,gloves_leather
+T3,item,gloves_leather,dda,20x20,1,keep original,gloves_leather
+T3,item,gloves_light,dda,20x20,1,keep original,gloves_light
+T3,item,gloves_liner,dda,20x20,1,keep original,gloves_leather
+T3,item,gloves_skeleton,dda,20x20,1,keep original,gloves_light
+T3,item,gloves_white,dda,20x20,1,keep original,gloves_light
+T3,item,gloves_winter,dda,20x20,1,keep original,gloves_light
+T3,item,gloves_wool,dda,20x20,1,keep original,gloves_leather
+T3,item,gloves_wool_fingerless,dda,20x20,1,keep original,gloves_light
+T3,item,glowstick,dda,20x20,1,keep original,
+T3,item,glue_strong,dda,20x20,1,base tileset gap,glue_weak
+T3,item,glue_weak,dda,20x20,1,base tileset gap,
+T3,item,godco_flier,dda,20x20,1,keep original,abstractmap
+T3,item,goggles_ski,dda,20x20,1,keep original,glasses_eye
+T3,item,goggles_swim,dda,20x20,1,keep original,sunglasses
+T3,item,goggles_welding,dda,20x20,1,keep original,glasses_eye
+T3,item,gold_anklet,dda,20x20,1,base tileset gap,
+T3,item,gold_bracelet,dda,20x20,1,keep original,
+T3,item,gold_dental_grill,dda,20x20,1,keep original,
+T3,item,gold_ear,dda,20x20,1,keep original,
+T3,item,gold_hairpin,dda,20x20,1,keep original,hairpin
+T3,item,gold_lip_ring_loop,dda,20x20,1,base tileset gap,
+T3,item,gold_lip_ring_stud,dda,20x20,1,base tileset gap,
+T3,item,gold_locket,dda,20x20,1,keep original,
+T3,item,gold_medal,dda,20x20,1,base tileset gap,
+T3,item,gold_necklace,dda,20x20,1,keep original,
+T3,item,gold_nose_ring_loop,dda,20x20,1,base tileset gap,
+T3,item,gold_nose_ring_stud,dda,20x20,1,base tileset gap,
+T3,item,gold_toe_ring,dda,20x20,1,base tileset gap,
+T3,item,golf_shoes,dda,32x32,1,keep original,sneakers
+T3,item,graphite,dda,20x20,1,keep original,charcoal
+T3,item,gravy_mix,dda,32x32,1,keep original,meal_bone
+T3,item,greatcoat,dda,32x32,1,keep original,coat_rain
+T3,item,green_pen,dda,20x20,1,keep original,pen
+T3,item,grim_reaper_robe,dda,32x32,1,keep original,coat_rain
+T3,item,grinder_cutoff_disc,dda,20x20,1,keep original,
+T3,item,grinder_metal_grinding_disc,dda,20x20,1,keep original,
+T3,item,gum,dda,20x20,1,keep original,
+T3,item,hacksaw,dda,20x20,1,keep original,
+T3,item,hakama,dda,20x20,1,keep original,kilt
+T3,item,halter_top,dda,20x20,1,keep original,tshirt
+T3,item,hamburger,dda,20x20,1,base tileset gap,
+T3,item,hammer_sledge,dda,20x20,1,keep original,
+T3,item,hammer_sledge_engineer,dda,20x20,1,keep original,hammer_sledge
+T3,item,hammer_sledge_heavy,dda,20x20,1,keep original,hammer_sledge
+T3,item,hammer_sledge_short,dda,20x20,1,keep original,hammer_sledge
+T3,item,hand_crank_charger,dda,20x20,1,keep original,
+T3,item,hand_drill,dda,20x20,1,keep original,
+T3,item,hand_pump,dda,20x20,1,keep original,
+T3,item,handflare_dead,dda,32x32,1,keep original,
+T3,item,haori,dda,32x32,1,keep original,coat_rain
+T3,item,harmonica_holder,dda,20x20,1,keep original,flute
+T3,item,hat_ball,dda,32x32,1,keep original,hat_ball
+T3,item,hat_chef,dda,20x20,1,keep original,hat_ball
+T3,item,hat_cotton,dda,32x32,1,keep original,hat_cotton
+T3,item,hat_faux_fur,dda,32x32,1,keep original,hat_ball
+T3,item,hat_fur,dda,32x32,1,keep original,hat_cotton
+T3,item,hat_golf,dda,32x32,1,keep original,hat_cotton
+T3,item,hat_hard_hooded,dda,32x32,1,keep original,hat_ball
+T3,item,hat_knit,dda,32x32,1,keep original,hat_ball
+T3,item,hat_newsboy,dda,32x32,1,keep original,hat_cotton
+T3,item,hat_sombrero,dda,32x32,1,keep original,hat_ball
+T3,item,hatchet,dda,32x32,1,keep original,
+T3,item,hc_wire,dda,20x20,1,keep original,lc_wire
+T3,item,hd_tow_cable,dda,32x32,1,keep original,
+T3,item,headscarf,dda,20x20,1,keep original,scarf
+T3,item,heavy_flashlight,dda,20x20,1,keep original,
+T3,item,herbal_tea_bag,dda,20x20,1,keep original,tea_bag
+T3,item,hoe,dda,20x20,1,keep original,
+T3,item,holster,dda,32x32,1,keep original,scabbard
+T3,item,holy_symbol_wood,dda,32x32,1,keep original,
+T3,item,honey_mustard,dda,32x32,1,keep original,milk
+T3,item,hood_ninja,dda,32x32,1,keep original,hat_cotton
+T3,item,hoodie,dda,32x32,1,keep original,longshirt
+T3,item,hoodie_cropped,dda,20x20,1,keep original,buttonshirt
+T3,item,horn_bicycle,dda,20x20,1,keep original,
+T3,item,horseradish,dda,32x32,1,keep original,
+T3,item,hose_garden,dda,32x32,1,keep original,hose
+T3,item,hot_pants,dda,20x20,1,keep original,shorts
+T3,item,hot_pants_fur,dda,32x32,1,keep original,boxer_shorts
+T3,item,hot_pants_leather,dda,32x32,1,keep original,boxer_briefs
+T3,item,hot_sauce,dda,32x32,1,Saigon art (derived),
+T3,item,hotdogs_cooked,dda,20x20,1,keep original,
+T3,item,hotdogs_frozen,dda,20x20,1,keep original,
+T3,item,hotdogs_newyork,dda,20x20,1,keep original,hotdogs_cooked
+T3,item,ibuprofen,dda,20x20,1,base tileset gap,
+T3,item,id_industrial,dda,20x20,1,keep original,card_plastic_abstract
+T3,item,ifak_pouch,dda,20x20,1,keep original,ifak_pouch
+T3,item,iggaak,dda,20x20,1,keep original,glasses_eye
+T3,item,inhaler,dda,20x20,1,keep original,
+T3,item,jack,dda,20x20,1,keep original,
+T3,item,jack_small,dda,20x20,1,keep original,
+T3,item,jacket_chef,dda,20x20,1,keep original,coat_winter
+T3,item,jacket_flannel,dda,32x32,1,keep original,coat_rain
+T3,item,jacket_jean,dda,32x32,1,keep original,jacket_light
+T3,item,jacket_leather,dda,32x32,1,keep original,jacket_light
+T3,item,jacket_light,dda,32x32,1,keep original,jacket_light
+T3,item,jacket_ninja,dda,20x20,1,base tileset gap,jacket
+T3,item,jacket_varsity,dda,20x20,1,base tileset gap,
+T3,item,jacket_windbreaker,dda,20x20,1,keep original,jacket_windbreaker
+T3,item,jackhammer,dda,20x20,1,keep original,
+T3,item,jade_brooch,dda,20x20,1,base tileset gap,
+T3,item,jar_3l_glass_sealed,dda,20x20,1,keep original,jar_glass_sealed
+T3,item,jar_glass_sealed,dda,20x20,1,keep original,
+T3,item,jeans_ripped,dda,32x32,1,keep original,pants
+T3,item,jeans_skinny,dda,32x32,1,keep original,pants
+T3,item,jedi_cloak,dda,20x20,1,keep original,coat_winter
+T3,item,jerrycan_big,dda,32x32,1,keep original,jerrycan
+T3,item,jersey,dda,20x20,1,keep original,camisole
+T3,item,joint,dda,20x20,1,keep original,
+T3,item,joint_roach,dda,20x20,1,keep original,
+T3,item,jug_plastic,dda,20x20,1,keep original,bottle_plastic
+T3,item,jumper_cable_heavy,dda,32x32,1,keep original,jumper_cable
+T3,item,keffiyeh,dda,20x20,1,keep original,scarf
+T3,item,ketchup,dda,32x32,1,keep original,tomato_juice
+T3,item,kilt,dda,20x20,1,keep original,kilt
+T3,item,kilt_leather,dda,20x20,1,keep original,skirt
+T3,item,kimono,dda,20x20,1,keep original,coat_winter
+T3,item,kippah,dda,32x32,1,keep original,hat_ball
+T3,item,knee_high_boots,dda,20x20,1,keep original,shoes_bowling
+T3,item,knee_pads,dda,20x20,1,keep original,leg_warmers
+T3,item,knife_butter,dda,20x20,1,keep original,base_silverware
+T3,item,knife_small,dda,20x20,1,base tileset gap,base_kitchen_knife
+T3,item,knife_swissarmy,dda,20x20,1,keep original,
+T3,item,knit_scarf,dda,20x20,1,keep original,
+T3,item,kufi,dda,32x32,1,keep original,hat_ball
+T3,item,large_propane_tank,dda,20x20,1,keep original,
+T3,item,lc_wire,dda,20x20,1,keep original,
+T3,item,leather,dda,20x20,1,keep original,
+T3,item,leather_belt,dda,32x32,1,keep original,
+T3,item,leather_cat_ears,dda,20x20,1,base tileset gap,
+T3,item,leather_cat_tail,dda,20x20,1,base tileset gap,
+T3,item,leather_collar,dda,20x20,1,keep original,
+T3,item,leather_police_jacket,dda,32x32,1,keep original,jacket_light
+T3,item,leg_bag,dda,20x20,1,base tileset gap,legrig
+T3,item,leg_sheath6,dda,32x32,1,keep original,scabbard
+T3,item,leggings,dda,20x20,1,keep original,leggings
+T3,item,lemonlime,dda,32x32,1,keep original,juice
+T3,item,light_battery_cell,dda,20x20,1,keep original,battery
+T3,item,light_minus_battery_cell,dda,20x20,1,keep original,battery
+T3,item,light_minus_disposable_cell,dda,20x20,1,keep original,battery
+T3,item,lobster_cakes,dda,20x20,1,base tileset gap,fish_fried
+T3,item,lobster_roll,dda,20x20,1,keep original,fish_sandwich
+T3,item,lobster_smoked,dda,20x20,1,base tileset gap,flesh
+T3,item,long_glove_white,dda,20x20,1,keep original,gloves_leather
+T3,item,long_knit_scarf,dda,20x20,1,keep original,
+T3,item,long_underpants,dda,20x20,1,keep original,leg_warmers
+T3,item,long_undertop,dda,20x20,1,keep original,dress_shirt
+T3,item,lug_wrench,dda,20x20,1,keep original,
+T3,item,lunchbox,dda,20x20,1,base tileset gap,
+T3,item,machete,dda,20x20,1,keep original,
+T3,item,mag_glam,dda,20x20,1,keep original,
+T3,item,mag_news,dda,20x20,1,keep original,flyer
+T3,item,magnifying_glass,dda,20x20,1,keep original,
+T3,item,maid_hat,dda,32x32,1,keep original,hat_ball
+T3,item,maltballs,dda,20x20,1,base tileset gap,
+T3,item,many_years_old_newspaper,dda,32x32,1,keep original,
+T3,item,maple_candy,dda,20x20,1,keep original,
+T3,item,marble,dda,32x32,1,keep original,pebble
+T3,item,mask_ski,dda,20x20,1,base tileset gap,
+T3,item,material_styrofoam_chunk,dda,20x20,1,base tileset gap,
+T3,item,mayonnaise,dda,32x32,1,keep original,milk
+T3,item,mbag,dda,20x20,1,keep original,ragpouch
+T3,item,mc_wire,dda,20x20,1,keep original,lc_wire
+T3,item,meat_smoked,dda,20x20,1,keep original,flesh
+T3,item,medium_battery_cell,dda,20x20,1,keep original,battery
+T3,item,medium_propane_tank,dda,20x20,1,keep original,
+T3,item,memory_card,dda,32x32,1,keep original,mobile_memory_card
+T3,item,metal_file,dda,32x32,1,keep original,
+T3,item,metal_smoother,dda,20x20,1,keep original,
+T3,item,milkshake_fastfood,dda,32x32,1,keep original,milkshake
+T3,item,mintpatties,dda,20x20,1,base tileset gap,
+T3,item,misc_repairkit,dda,20x20,1,keep original,
+T3,item,mittens,dda,20x20,1,keep original,gloves_light
+T3,item,mocassins,dda,32x32,1,keep original,dress_shoes
+T3,item,money_fifty,dda,20x20,1,keep original,money_one
+T3,item,money_five,dda,20x20,1,keep original,money_one
+T3,item,money_one,dda,20x20,1,keep original,
+T3,item,money_ten,dda,20x20,1,keep original,money_one
+T3,item,money_two,dda,20x20,1,keep original,money_one
+T3,item,months_old_newspaper,dda,32x32,1,keep original,
+T3,item,moonshine,dda,32x32,1,keep original,water_clean
+T3,item,mop,dda,32x32,1,keep original,
+T3,item,mop_folded,dda,32x32,1,keep original,mop
+T3,item,motorbike_boots,dda,32x32,1,keep original,sneakers
+T3,item,mozzarella_cheese,dda,20x20,1,keep original,
+T3,item,mp3,dda,20x20,1,keep original,
+T3,item,multimeter,dda,20x20,1,keep original,
+T3,item,multitool,dda,20x20,1,keep original,
+T3,item,mustard,dda,32x32,1,keep original,milk
+T3,item,nail,dda,32x32,1,keep original,
+T3,item,nailgun,dda,20x20,1,keep original,gun_base_handgun_semi
+T3,item,nanoskirt,dda,20x20,1,keep original,kilt
+T3,item,napkin,dda,20x20,1,base tileset gap,
+T3,item,national_flag,dda,20x20,1,keep original,towel
+T3,item,neccowafers,dda,20x20,1,base tileset gap,
+T3,item,newest_newspaper,dda,32x32,1,keep original,
+T3,item,news_regional,dda,20x20,1,keep original,mag_glam
+T3,item,nic_gum,dda,20x20,1,keep original,
+T3,item,nic_pouch,dda,20x20,1,base tileset gap,
+T3,item,nic_pouch_can,dda,20x20,1,keep original,box_small
+T3,item,nicotine_liquid,dda,32x32,1,keep original,
+T3,item,nun_habit,dda,32x32,1,keep original,coat_rain
+T3,item,nun_wimple,dda,20x20,1,base tileset gap,
+T3,item,nuts_bolts,dda,20x20,1,keep original,
+T3,item,nylon_holster,dda,32x32,1,keep original,scabbard
+T3,item,one_year_old_newspaper,dda,32x32,1,keep original,
+T3,item,onion_rings,dda,20x20,1,base tileset gap,
+T3,item,onyx_gold_earring,dda,20x20,1,keep original,gold_ear
+T3,item,onyx_platinum_earring,dda,20x20,1,keep original,platinum_ear
+T3,item,onyx_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
+T3,item,onyx_silver_cufflinks,dda,20x20,1,keep original,cufflinks
+T3,item,onyx_silver_earring,dda,20x20,1,keep original,silver_ear
+T3,item,onyx_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
+T3,item,onyx_silver_ring,dda,20x20,1,keep original,silver_ring
+T3,item,onyx_silver_tiara,dda,32x32,1,keep original,hat_ball
+T3,item,opal_gold_earring,dda,20x20,1,keep original,gold_ear
+T3,item,opal_platinum_earring,dda,20x20,1,keep original,platinum_ear
+T3,item,opal_silver_earring,dda,20x20,1,keep original,silver_ear
+T3,item,orange,dda,20x20,1,keep original,
+T3,item,orangesoda,dda,32x32,1,keep original,juice
+T3,item,oxy_torch,dda,32x32,1,keep original,
+T3,item,panties,dda,32x32,1,keep original,boxer_briefs
+T3,item,pants,dda,32x32,1,keep original,pants
+T3,item,pants_checkered,dda,32x32,1,keep original,jeans
+T3,item,pants_faux_fur,dda,32x32,1,keep original,pants
+T3,item,pants_fur,dda,32x32,1,keep original,jeans
+T3,item,pants_hiking,dda,32x32,1,keep original,jeans
+T3,item,pants_leather,dda,32x32,1,keep original,jeans
+T3,item,pants_ski,dda,32x32,1,keep original,jeans
+T3,item,pants_tactical,dda,32x32,1,keep original,jeans
+T3,item,peacoat,dda,32x32,1,keep original,coat_rain
+T3,item,pearl_collar,dda,20x20,1,keep original,
+T3,item,pearl_gold_earring,dda,20x20,1,keep original,gold_ear
+T3,item,pearl_platinum_earring,dda,20x20,1,keep original,platinum_ear
+T3,item,pearl_silver_earring,dda,20x20,1,keep original,silver_ear
+T3,item,pepper,dda,20x20,1,keep original,spice
+T3,item,peridot_gold_earring,dda,20x20,1,keep original,gold_ear
+T3,item,peridot_platinum_earring,dda,20x20,1,keep original,platinum_ear
+T3,item,peridot_silver_earring,dda,20x20,1,keep original,silver_ear
+T3,item,permanent_marker,dda,20x20,1,keep original,
+T3,item,petpack,dda,32x32,1,keep original,ragpouch
+T3,item,pickaxe,dda,32x32,1,keep original,
+T3,item,pickle,dda,20x20,1,Saigon art (drawn),gherkin
+T3,item,pie,dda,20x20,1,keep original,
+T3,item,pie_maple,dda,20x20,1,keep original,
+T3,item,pie_meat,dda,20x20,1,keep original,
+T3,item,pie_veggy,dda,20x20,1,keep original,
+T3,item,pillbox,dda,20x20,1,base tileset gap,
+T3,item,pillbox_large,dda,20x20,1,base tileset gap,pillbox
+T3,item,pin_badge,dda,20x20,1,base tileset gap,badge_abstract
+T3,item,pin_reamer,dda,20x20,1,base tileset gap,
+T3,item,pipe,dda,20x20,1,keep original,
+T3,item,pipe_glass,dda,20x20,1,keep original,
+T3,item,pipe_tobacco,dda,20x20,1,keep original,
+T3,item,pipe_water,dda,20x20,1,keep original,bottle_plastic
+T3,item,pitchfork,dda,32x32,1,keep original,
+T3,item,pizza_cheese,dda,20x20,1,keep original,
+T3,item,pizza_meat,dda,20x20,1,keep original,
+T3,item,pizza_veggy,dda,20x20,1,keep original,
+T3,item,plaguedoctor_robe,dda,32x32,1,keep original,coat_rain
+T3,item,plastic_bucket,dda,20x20,1,keep original,
+T3,item,plastic_fork,dda,20x20,1,keep original,base_silverware
+T3,item,plastic_knife,dda,20x20,1,keep original,base_silverware
+T3,item,plastic_mandible_guard,dda,20x20,1,base tileset gap,
+T3,item,plastic_sheet,dda,32x32,1,keep original,
+T3,item,plastic_sheet_small,dda,20x20,1,base tileset gap,
+T3,item,plastic_shopping_bag,dda,32x32,1,keep original,
+T3,item,plastic_spoon,dda,20x20,1,keep original,base_silverware
+T3,item,platinum_bracelet,dda,20x20,1,keep original,
+T3,item,platinum_dental_grill,dda,20x20,1,base tileset gap,
+T3,item,platinum_ear,dda,20x20,1,keep original,
+T3,item,platinum_hairpin,dda,32x32,1,keep original,hairpin
+T3,item,platinum_locket,dda,20x20,1,keep original,
+T3,item,platinum_necklace,dda,20x20,1,keep original,
+T3,item,platinum_ring,dda,20x20,1,keep original,
+T3,item,platinum_watch,dda,20x20,1,keep original,
+T3,item,pliers_locking,dda,20x20,1,keep original,pliers
+T3,item,pocket_firearms,dda,20x20,1,keep original,
+T3,item,pocket_firstaid,dda,20x20,1,keep original,
+T3,item,pocket_survival,dda,20x20,1,keep original,mag_glam
+T3,item,pocketwatch,dda,32x32,1,keep original,
+T3,item,poetic_edda,dda,20x20,1,keep original,radio_book
+T3,item,pointed_hat,dda,20x20,1,base tileset gap,
+T3,item,polesaw_off,dda,32x32,1,keep original,chainsaw_off
+T3,item,polisher,dda,20x20,1,keep original,
+T3,item,polycarbonate_sheet,dda,32x32,1,keep original,
+T3,item,poncho,dda,32x32,1,keep original,coat_rain
+T3,item,porkpie,dda,32x32,1,keep original,hat_cotton
+T3,item,portable_game,dda,20x20,1,keep original,
+T3,item,portable_generator,dda,32x32,1,keep original,f_active_backup_generator
+T3,item,postman_hat,dda,32x32,1,keep original,hat_cotton
+T3,item,postman_shirt,dda,20x20,1,keep original,tshirt
+T3,item,postman_shorts,dda,20x20,1,keep original,shorts
+T3,item,powder_candy,dda,32x32,1,keep original,
+T3,item,pride_flag,dda,20x20,1,keep original,towel
+T3,item,punch_dagger,dda,20x20,1,base tileset gap,
+T3,item,purple_drink,dda,32x32,1,keep original,cranberry_juice
+T3,item,qt_wire,dda,20x20,1,keep original,lc_wire
+T3,item,rake,dda,20x20,1,keep original,
+T3,item,rake_plastic,dda,32x32,1,keep original,
+T3,item,rashguard,dda,20x20,1,keep original,dress_shirt
+T3,item,razor_blade,dda,32x32,1,keep original,
+T3,item,rc_car_box,dda,20x20,1,keep original,
+T3,item,recharge_station,dda,20x20,1,keep original,
+T3,item,reciprocating_saw,dda,20x20,1,keep original,
+T3,item,red_pen,dda,20x20,1,keep original,pen
+T3,item,ref_lighter,dda,32x32,1,keep original,
+T3,item,ref_lighter_butane,dda,20x20,1,base tileset gap,
+T3,item,ref_matches,dda,20x20,1,keep original,matches
+T3,item,restaurantmap,dda,20x20,1,keep original,abstractmap
+T3,item,ring_purity,dda,20x20,1,base tileset gap,
+T3,item,ring_signet,dda,20x20,1,base tileset gap,
+T3,item,robe_wizard,dda,20x20,1,keep original,coat_winter
+T3,item,roller_blades,dda,20x20,1,keep original,roller_blades
+T3,item,roller_shoes_off,dda,20x20,1,keep original,shoes_bowling
+T3,item,rollerskates,dda,20x20,1,keep original,rollerskates
+T3,item,rolling_paper,dda,20x20,1,keep original,
+T3,item,rootbeer,dda,32x32,1,keep original,coffee
+T3,item,ruby_gold_earring,dda,20x20,1,keep original,gold_ear
+T3,item,ruby_platinum_earring,dda,20x20,1,keep original,platinum_ear
+T3,item,ruby_silver_bracelet,dda,20x20,1,keep original,silver_bracelet
+T3,item,ruby_silver_cufflinks,dda,20x20,1,keep original,cufflinks
+T3,item,ruby_silver_earring,dda,20x20,1,keep original,silver_ear
+T3,item,ruby_silver_pendant_necklace,dda,20x20,1,keep original,silver_necklace
+T3,item,ruby_silver_ring,dda,20x20,1,keep original,silver_ring
+T3,item,ruby_silver_tiara,dda,32x32,1,keep original,hat_ball
+T3,item,rum,dda,32x32,1,keep original,whiskey
+T3,item,samghati,dda,20x20,1,keep original,coat_winter
+T3,item,sandpaper,dda,20x20,1,keep original,
+T3,item,sandwich_cheese,dda,20x20,1,keep original,
+T3,item,sandwich_cucumber,dda,20x20,1,keep original,
+T3,item,sandwich_deluxe,dda,20x20,1,keep original,
+T3,item,sandwich_jam,dda,20x20,1,keep original,
+T3,item,sandwich_jam_butter,dda,20x20,1,keep original,
+T3,item,sandwich_pb,dda,20x20,1,keep original,
+T3,item,sandwich_pbf,dda,20x20,1,base tileset gap,
+T3,item,sandwich_pbh,dda,20x20,1,keep original,
+T3,item,sandwich_pbj,dda,20x20,1,keep original,
+T3,item,sandwich_pbm,dda,20x20,1,keep original,
+T3,item,sandwich_reuben,dda,20x20,1,base tileset gap,
+T3,item,sandwich_t,dda,20x20,1,keep original,
+T3,item,sandwich_veggy,dda,20x20,1,keep original,
+T3,item,santa_belt,dda,32x32,1,keep original,leather_belt
+T3,item,santa_gloves,dda,20x20,1,keep original,gloves_light
+T3,item,santa_hat,dda,32x32,1,keep original,hat_cotton
+T3,item,santa_jacket,dda,32x32,1,keep original,coat_rain
+T3,item,santa_jacket_short,dda,20x20,1,keep original,jacket_windbreaker
+T3,item,santa_pants,dda,32x32,1,keep original,jeans
+T3,item,santa_shorts,dda,32x32,1,keep original,boxer_shorts
+T3,item,sapphire_gold_earring,dda,20x20,1,keep original,gold_ear
+T3,item,sapphire_platinum_earring,dda,20x20,1,keep original,platinum_ear
+T3,item,sapphire_silver_earring,dda,20x20,1,keep original,silver_ear
+T3,item,saw,dda,20x20,1,keep original,
+T3,item,scarf,dda,20x20,1,keep original,
+T3,item,scarf_fur,dda,20x20,1,keep original,
+T3,item,scarf_fur_long,dda,20x20,1,keep original,
+T3,item,scarf_long,dda,20x20,1,keep original,
+T3,item,scorecard,dda,20x20,1,keep original,
+T3,item,scrap,dda,20x20,1,keep original,
+T3,item,scrap_aluminum,dda,20x20,1,keep original,
+T3,item,scrap_brass,dda,20x20,1,base tileset gap,
+T3,item,scrap_bronze,dda,20x20,1,keep original,
+T3,item,scrap_cast_iron,dda,20x20,1,base tileset gap,
+T3,item,scrap_tin,dda,20x20,1,base tileset gap,
+T3,item,screwdriver_set,dda,20x20,1,keep original,
+T3,item,scythe,dda,32x32,1,keep original,
+T3,item,seatbelt,dda,32x32,1,keep original,string_6
+T3,item,sf_watch,dda,20x20,1,keep original,
+T3,item,shears,dda,20x20,1,keep original,
+T3,item,sheath,dda,32x32,1,keep original,holster
+T3,item,sheet_canvas,dda,20x20,1,base tileset gap,
+T3,item,sheet_felt,dda,20x20,1,keep original,
+T3,item,sheet_kevlar,dda,20x20,1,base tileset gap,
+T3,item,sheet_lycra,dda,20x20,1,base tileset gap,
+T3,item,sheet_metal_small,dda,32x32,1,keep original,sheet_metal
+T3,item,sheet_nomex,dda,20x20,1,base tileset gap,
+T3,item,sheet_nylon,dda,20x20,1,base tileset gap,
+T3,item,shoes_denim,dda,20x20,1,keep original,shoes_bowling
+T3,item,sholster,dda,20x20,1,keep original,sheath
+T3,item,shorts_cargo,dda,32x32,1,keep original,boxer_shorts
+T3,item,shorts_denim,dda,32x32,1,keep original,boxer_shorts
+T3,item,shot_hull,dda,32x32,1,keep original,
+T3,item,shoulder_holster,dda,20x20,1,keep original,sheath
+T3,item,shovel,dda,32x32,1,keep original,
+T3,item,shovel_snow,dda,32x32,1,keep original,shovel
+T3,item,shovel_snow_plastic,dda,32x32,1,keep original,shovel
+T3,item,sickle,dda,20x20,1,keep original,
+T3,item,silver_anklet,dda,20x20,1,base tileset gap,
+T3,item,silver_bracelet,dda,20x20,1,keep original,
+T3,item,silver_ear,dda,20x20,1,keep original,
+T3,item,silver_hairpin,dda,32x32,1,keep original,hairpin
+T3,item,silver_lip_ring_loop,dda,20x20,1,base tileset gap,
+T3,item,silver_lip_ring_stud,dda,20x20,1,base tileset gap,
+T3,item,silver_locket,dda,20x20,1,keep original,
+T3,item,silver_medal,dda,20x20,1,base tileset gap,
+T3,item,silver_nose_ring_loop,dda,20x20,1,base tileset gap,
+T3,item,silver_nose_ring_stud,dda,20x20,1,base tileset gap,
+T3,item,silver_ring,dda,20x20,1,keep original,
+T3,item,silver_toe_ring,dda,20x20,1,base tileset gap,
+T3,item,silver_watch,dda,20x20,1,keep original,
+T3,item,single_pot_whiskey,dda,32x32,1,keep original,whiskey
+T3,item,ski_jacket,dda,32x32,1,keep original,coat_rain
+T3,item,skirt_bostonchan,dda,20x20,1,keep original,kilt
+T3,item,skirt_denim,dda,20x20,1,keep original,kilt
+T3,item,skirt_leather,dda,20x20,1,keep original,kilt
+T3,item,skirt_long,dda,20x20,1,keep original,skirt
+T3,item,sleeveless_duster,dda,32x32,1,keep original,coat_rain
+T3,item,sleeveless_duster_faux_fur,dda,20x20,1,keep original,coat_winter
+T3,item,sleeveless_duster_fur,dda,32x32,1,keep original,coat_rain
+T3,item,sleeveless_duster_leather,dda,20x20,1,keep original,coat_winter
+T3,item,sleeveless_trenchcoat,dda,20x20,1,keep original,coat_winter
+T3,item,sleeveless_trenchcoat_faux_fur,dda,32x32,1,keep original,coat_rain
+T3,item,sleeveless_trenchcoat_fur,dda,20x20,1,keep original,coat_winter
+T3,item,sleeveless_trenchcoat_leather,dda,32x32,1,keep original,coat_rain
+T3,item,sleeveless_tunic,dda,20x20,1,keep original,camisole
+T3,item,slingpack,dda,20x20,1,keep original,ragpouch
+T3,item,slippers,dda,32x32,1,keep original,socks
+T3,item,sloppyjoe,dda,20x20,1,keep original,
+T3,item,small_lighter,dda,20x20,3,keep original,lighter
+T3,item,small_propane_tank,dda,20x20,1,keep original,
+T3,item,small_relic,dda,32x32,1,keep original,
+T3,item,small_squeeze_tube,dda,20x20,1,base tileset gap,
+T3,item,smallweldtank,dda,20x20,1,keep original,pressurized_tank
+T3,item,smart_phone,dda,20x20,1,keep original,cell_phone
+T3,item,smart_phone_locked,dda,20x20,1,keep original,cell_phone
+T3,item,smart_watch,dda,20x20,1,base tileset gap,
+T3,item,smart_watch_adv,dda,20x20,1,base tileset gap,smart_watch
+T3,item,sneakers_steel,dda,20x20,1,keep original,shoes_bowling
+T3,item,socket_screwdriver_set,dda,20x20,1,keep original,screwdriver_set
+T3,item,socket_wrench_set,dda,20x20,1,keep original,screwdriver_set
+T3,item,socks_ankle,dda,20x20,1,keep original,socks_wool
+T3,item,socks_wool,dda,20x20,1,keep original,socks_wool
+T3,item,soft_3a_vest,dda,20x20,1,keep original,tshirt
+T3,item,solder_wire,dda,20x20,1,keep original,
+T3,item,soldering_iron_portable,dda,20x20,1,keep original,soldering_iron
+T3,item,soup_instant_chicken_noodle_powder,dda,32x32,1,keep original,meal_bone
+T3,item,soup_instant_vegetable_powder,dda,32x32,1,keep original,meal_bone
+T3,item,soysauce,dda,32x32,1,keep original,
+T3,item,sparkling,dda,32x32,1,keep original,water_clean
+T3,item,sparkling_peach,dda,32x32,1,keep original,water_clean
+T3,item,sparkling_pomegranate,dda,32x32,1,keep original,water_clean
+T3,item,splinter,dda,32x32,1,keep original,
+T3,item,spool_small,dda,20x20,1,base tileset gap,
+T3,item,spoon,dda,32x32,1,keep original,base_silverware
+T3,item,spork,dda,20x20,1,keep original,base_silverware
+T3,item,sports_bra,dda,32x32,1,keep original,tank_top
+T3,item,spray_can,dda,32x32,1,keep original,
+T3,item,spring,dda,20x20,1,keep original,
+T3,item,stab_vest,dda,20x20,1,keep original,tshirt
+T3,item,state_flag,dda,20x20,1,keep original,towel
+T3,item,stereo,dda,32x32,1,keep original,
+T3,item,steroid_eyedrops,dda,20x20,1,base tileset gap,
+T3,item,stockings,dda,32x32,1,keep original,leggings
+T3,item,straw_fedora,dda,20x20,1,keep original,
+T3,item,straw_hat,dda,32x32,1,keep original,hat_ball
+T3,item,straw_sandals,dda,32x32,1,keep original,dress_shoes
+T3,item,string_36,dda,32x32,1,keep original,string_6
+T3,item,string_6,dda,32x32,1,keep original,
+T3,item,striped_pants,dda,32x32,1,keep original,pants
+T3,item,stuffed_clams,dda,20x20,1,keep original,fish_fried
+T3,item,suit,dda,20x20,1,keep original,jumpsuit_pocketless
+T3,item,sunglasses_bifocal,dda,20x20,1,keep original,sunglasses
+T3,item,sunglasses_eye,dda,20x20,1,keep original,glasses_eye
+T3,item,sunglasses_reading,dda,20x20,1,keep original,glasses_eye
+T3,item,survivor_scope,dda,20x20,1,keep original,
+T3,item,survnote,dda,20x20,1,keep original,
+T3,item,sweater,dda,32x32,1,keep original,dress_shirt
+T3,item,sweatshirt,dda,32x32,1,keep original,dress_shirt
+T3,item,tacjacket,dda,20x20,1,keep original,coat_winter
+T3,item,tea_bag,dda,20x20,1,keep original,
+T3,item,tea_bag_chamomile,dda,20x20,1,keep original,tea_bag
+T3,item,tea_bag_dandelion,dda,20x20,1,keep original,tea_bag
+T3,item,tea_fruit_bag,dda,20x20,1,keep original,tea_bag
+T3,item,tea_green_bag,dda,20x20,1,keep original,tea_bag
+T3,item,teargas_sprayer,dda,20x20,1,base tileset gap,
+T3,item,teleumbrella,dda,20x20,1,keep original,
+T3,item,tequila,dda,32x32,1,keep original,water_clean
+T3,item,thawb,dda,20x20,1,keep original,coat_winter
+T3,item,thermal_gloves,dda,20x20,1,base tileset gap,
+T3,item,thermal_mask,dda,20x20,1,keep original,
+T3,item,thermal_shirt,dda,20x20,1,base tileset gap,
+T3,item,thermal_socks,dda,20x20,1,keep original,
+T3,item,thermos,dda,32x32,1,keep original,bottle_plastic
+T3,item,thigh_high_boots,dda,20x20,1,keep original,shoes_bowling
+T3,item,thread_canvas,dda,32x32,1,keep original,thread
+T3,item,thread_cutting_set,dda,20x20,1,base tileset gap,
+T3,item,thread_kevlar,dda,32x32,1,keep original,thread
+T3,item,thread_nomex,dda,32x32,1,keep original,thread
+T3,item,throwing_knife,dda,20x20,1,keep original,
+T3,item,tie_bow,dda,20x20,1,keep original,
+T3,item,tie_clipon,dda,20x20,1,keep original,
+T3,item,tie_necktie,dda,20x20,1,base tileset gap,
+T3,item,tie_skinny,dda,20x20,1,base tileset gap,
+T3,item,tieclip,dda,32x32,1,keep original,
+T3,item,tights,dda,32x32,1,keep original,leg_warmers
+T3,item,tin_cup,dda,20x20,1,keep original,base_ceramic_dish
+T3,item,tin_plate,dda,20x20,1,keep original,base_ceramic_dish
+T3,item,tin_snips,dda,20x20,1,keep original,
+T3,item,tinyweldtank,dda,20x20,1,keep original,pressurized_canister
+T3,item,tire_bicycle,dda,20x20,1,keep original,wheel_bicycle
+T3,item,tire_bicycle_or,dda,20x20,1,keep original,wheel_bicycle
+T3,item,tire_medium,dda,20x20,1,keep original,wheel
+T3,item,tire_medium_slick,dda,20x20,1,keep original,wheel_slick
+T3,item,tire_motorbike,dda,20x20,1,keep original,wheel_motorbike
+T3,item,tire_motorbike_or,dda,20x20,1,keep original,wheel_motorbike
+T3,item,tire_wide,dda,32x32,1,keep original,wheel_wide
+T3,item,tire_wide_or,dda,32x32,1,keep original,wheel_wide
+T3,item,tobacco,dda,20x20,1,base tileset gap,
+T3,item,tofu_rice,dda,20x20,1,base tileset gap,
+T3,item,toolbox_empty,dda,32x32,1,keep original,
+T3,item,toolbox_workshop_empty,dda,32x32,1,keep original,toolbox_empty
+T3,item,tophat,dda,32x32,1,keep original,hat_ball
+T3,item,touristmap,dda,20x20,1,keep original,abstractmap
+T3,item,tourmaline_gold_earring,dda,20x20,1,keep original,gold_ear
+T3,item,tourmaline_platinum_earring,dda,20x20,1,keep original,platinum_ear
+T3,item,tourmaline_silver_earring,dda,20x20,1,keep original,silver_ear
+T3,item,trenchcoat,dda,32x32,1,keep original,coat_rain
+T3,item,trenchcoat_faux_fur,dda,20x20,1,keep original,coat_winter
+T3,item,trenchcoat_fur,dda,32x32,1,keep original,coat_rain
+T3,item,trenchcoat_leather,dda,32x32,1,keep original,coat_winter
+T3,item,trenchcoat_steampunk,dda,20x20,1,keep original,coat_winter
+T3,item,tricorne,dda,32x32,1,keep original,hat_cotton
+T3,item,trimmer_off,dda,32x32,1,keep original,
+T3,item,trousers_ninja,dda,32x32,1,keep original,jeans
+T3,item,tunic,dda,32x32,1,keep original,longshirt
+T3,item,turtleneck,dda,32x32,1,keep original,longshirt
+T3,item,turtleneck_shirt,dda,32x32,1,keep original,longshirt
+T3,item,tux,dda,32x32,1,keep original,jumpsuit
+T3,item,umbrella,dda,32x32,1,keep original,
+T3,item,under_armor,dda,20x20,1,keep original,dress_shirt
+T3,item,under_armor_shorts,dda,32x32,1,keep original,boxer_shorts
+T3,item,undershirt,dda,32x32,1,keep original,camisole
+T3,item,union_suit,dda,20x20,1,keep original,jumpsuit_pocketless
+T3,item,usb_drive,dda,20x20,1,keep original,abstract_usb_drive
+T3,item,usb_drive_older,dda,20x20,1,base tileset gap,abstract_usb_drive
+T3,item,vac_mold,dda,20x20,1,base tileset gap,
+T3,item,valentine_card,dda,20x20,1,base tileset gap,
+T3,item,vampire_fangs,dda,20x20,1,keep original,mouthpiece
+T3,item,vegan_gravy_mix,dda,32x32,1,keep original,meal_bone
+T3,item,veil_wedding,dda,20x20,1,keep original,scarf
+T3,item,vest,dda,20x20,1,keep original,tshirt
+T3,item,vest_jean,dda,20x20,1,keep original,camisole
+T3,item,vest_leather,dda,32x32,1,keep original,tank_top
+T3,item,vitamins,dda,20x20,1,keep original,
+T3,item,vodka,dda,32x32,1,keep original,water_clean
+T3,item,voltmeter,dda,20x20,1,keep original,
+T3,item,waist_apron_long,dda,20x20,1,keep original,tank_top
+T3,item,waist_apron_short,dda,20x20,1,keep original,tank_top
+T3,item,waistcoat,dda,32x32,1,keep original,jacket_light
+T3,item,wallet_duct_tape,dda,20x20,1,keep original,bag_plastic
+T3,item,wallet_large,dda,20x20,1,keep original,bag_plastic
+T3,item,wallet_leather,dda,20x20,1,keep original,bag_plastic
+T3,item,wallet_photo,dda,20x20,1,base tileset gap,
+T3,item,wallet_stylish,dda,20x20,1,keep original,bag_plastic
+T3,item,waterproof_smart_phone_case,dda,20x20,1,keep original,cell_phone
+T3,item,wearable_light,dda,20x20,1,keep original,
+T3,item,weeks_old_newspaper,dda,32x32,1,keep original,
+T3,item,welder,dda,32x32,1,keep original,
+T3,item,welding_blanket,dda,20x20,1,base tileset gap,
+T3,item,welding_papr_helmet,dda,32x32,1,keep original,welding_mask
+T3,item,welding_rod_alloy,dda,20x20,1,keep original,
+T3,item,welding_rod_steel,dda,20x20,1,keep original,
+T3,item,welding_wire_alloy,dda,20x20,1,keep original,
+T3,item,welding_wire_steel,dda,20x20,1,keep original,
+T3,item,weldtank,dda,32x32,1,keep original,pressurized_tank
+T3,item,wheel,dda,20x20,1,keep original,
+T3,item,wheel_bicycle,dda,20x20,1,keep original,
+T3,item,wheel_bicycle_or,dda,20x20,1,keep original,wheel_bicycle
+T3,item,wheel_motorbike,dda,20x20,1,keep original,
+T3,item,wheel_motorbike_or,dda,20x20,1,keep original,wheel_motorbike
+T3,item,wheel_rim_bicycle,dda,20x20,1,base tileset gap,
+T3,item,wheel_rim_medium,dda,20x20,1,base tileset gap,
+T3,item,wheel_rim_motorbike,dda,20x20,1,base tileset gap,
+T3,item,wheel_rim_wide,dda,20x20,1,base tileset gap,
+T3,item,wheel_slick,dda,20x20,1,keep original,
+T3,item,wheel_small,dda,20x20,1,keep original,
+T3,item,wheel_wide,dda,32x32,1,keep original,
+T3,item,wheel_wide_or,dda,32x32,1,keep original,wheel_wide
+T3,item,whiskey,dda,32x32,1,keep original,
+T3,item,wizard_hat_costume,dda,20x20,1,base tileset gap,
+T3,item,wood_block,dda,20x20,1,Saigon art (drawn),
+T3,item,wool_hoodie,dda,20x20,1,keep original,buttonshirt
+T3,item,woven_anklet,dda,20x20,1,base tileset gap,
+T3,item,wrapper,dda,20x20,1,keep original,
+T3,item,wrapper_foil,dda,20x20,1,keep original,
+T3,item,wrapper_foil_roll,dda,20x20,1,base tileset gap,
+T3,item,wrapping_vacuumed,dda,32x32,1,keep original,bag_canvas
+T3,item,wrench_48,dda,20x20,1,keep original,wrench
+T3,item,wrench_large,dda,20x20,1,keep original,wrench
+T3,item,wrench_small,dda,20x20,1,keep original,wrench
+T3,item,xacto,dda,32x32,1,keep original,
+T3,item,years_old_newspaper,dda,32x32,1,keep original,
+T3,item,zerocola,dda,32x32,1,keep original,coffee
+T3,item,zeromdew,dda,32x32,1,keep original,coffee
+T3,item,zeroorange,dda,32x32,1,keep original,juice
+T3,item,zerotropical,dda,32x32,1,keep original,juice

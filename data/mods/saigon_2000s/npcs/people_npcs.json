@@ -1,0 +1,100 @@
+[
+  {
+    "type": "npc",
+    "id": "sgn_npc_giang_ho",
+    "//": "E1: a gang member holding the barred nhà ống row (mapgen/people/giang_ho.json).  Hostile; melee only.",
+    "name_suffix": "giang hồ",
+    "class": "sgn_class_giang_ho",
+    "attitude": 10,
+    "mission": "GUARD",
+    "chat": "TALK_SGN_GIANG_HO",
+    "faction": "sgn_giang_ho"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_dai_ca",
+    "//": "E1: the gang's boss, placed by MISSION_SGN_PHUONG_DAI_CA as its target.",
+    "name_suffix": "đại ca",
+    "gender": "male",
+    "class": "sgn_class_dai_ca",
+    "attitude": 10,
+    "mission": "GUARD",
+    "chat": "TALK_SGN_DAI_CA",
+    "faction": "sgn_giang_ho"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_hoi_cua",
+    "//": "E1: an opportunistic looter holding the broken nhà thuốc (mapgen/people/nha_thuoc.json).  Hostile; melee only.",
+    "name_suffix": "looter",
+    "class": "sgn_class_hoi_cua",
+    "attitude": 10,
+    "mission": "GUARD",
+    "chat": "TALK_SGN_HOI_CUA",
+    "faction": "sgn_hoi_cua"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_hoi_cua_dau",
+    "//": "E1: the pharmacist's nephew, who emptied his uncle's shop and the hospital's last delivery; placed by MISSION_SGN_BV_NHA_THUOC as its target.",
+    "name_suffix": "the pharmacist's nephew",
+    "gender": "male",
+    "class": "sgn_class_hoi_cua",
+    "attitude": 10,
+    "mission": "GUARD",
+    "chat": "TALK_SGN_HOI_CUA_DAU",
+    "faction": "sgn_hoi_cua"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_loc",
+    "//": "E1 companion: a young xe ôm who owed the gang; recruited for the ward (MISSION_SGN_PHUONG_LOC) or on his own terms.",
+    "name_unique": "Lộc",
+    "name_suffix": "xe ôm driver",
+    "gender": "male",
+    "class": "sgn_class_xe_om",
+    "attitude": 0,
+    "mission": "GUARD",
+    "chat": "TALK_SGN_LOC",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_ngoc_anh",
+    "//": "E1 companion: a second-year nursing student (MISSION_SGN_BV_NGOC_ANH).",
+    "name_unique": "Ngọc Anh",
+    "name_suffix": "nursing student",
+    "gender": "female",
+    "class": "sgn_class_nurse",
+    "attitude": 0,
+    "mission": "GUARD",
+    "chat": "TALK_SGN_NGOC_ANH",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_hung",
+    "//": "E1 companion: a construction worker from Quảng Ngãi, held in the gang's back room (mapgen/people/giang_ho.json).",
+    "name_unique": "Hùng",
+    "name_suffix": "construction worker",
+    "gender": "male",
+    "class": "sgn_class_tho_ho",
+    "attitude": 0,
+    "mission": "GUARD",
+    "chat": "TALK_SGN_HUNG",
+    "faction": "no_faction"
+  },
+  {
+    "type": "npc",
+    "id": "sgn_npc_chu_sau",
+    "//": "E1 companion: a former army truck driver who drives a ba gác for the chợ (MISSION_SGN_CHO_CHU_SAU).",
+    "name_unique": "Chú Sáu",
+    "name_suffix": "ba gác driver",
+    "gender": "male",
+    "class": "sgn_class_tai_xe",
+    "attitude": 0,
+    "mission": "GUARD",
+    "chat": "TALK_SGN_CHU_SAU",
+    "faction": "no_faction"
+  }
+]

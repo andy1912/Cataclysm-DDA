@@ -1,0 +1,488 @@
+[
+  {
+    "//": "N7: what the people of Quận 1 say to a stranger.  N6 left every staff template on chat TALK_DONE, which is only a bye message, so talking to the monk or the postal clerk got you nothing.  Each trade below gets a greeting and two or three things worth asking, and the two SHOPKEEP staff chain to TALK_MISSION_LIST so their stock is actually tradeable - a shop is reached that way, not by having mission SHOPKEEP (dda's own shopkeep, Uyen, does the same).",
+    "type": "talk_topic",
+    "id": "TALK_SGN_MARKET_VENDOR",
+    "//1": "Cô Ba is one of these with her own topics; this is the generic market stallholder.",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*does not stop arranging the stall as you talk.*  \"If you want it, it is five thousand.  If you want to argue, the price is still five thousand.\""
+    },
+    "responses": [
+      { "text": "Is the chợ open?", "topic": "TALK_SGN_MARKET_OPEN" },
+      { "text": "How did you get in here?", "topic": "TALK_SGN_MARKET_TRAPPED" },
+      { "text": "What are you selling?", "effect": "start_trade", "topic": "TALK_SGN_MARKET_VENDOR" },
+      { "text": "Is there anything I can do for you?", "topic": "TALK_MISSION_LIST" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_MARKET_OPEN",
+    "//1": "the second day, and the third",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*a truck goes past outside and neither of you looks at it.*  \"Open?  We opened at four this morning, con.  We will open again tomorrow.\""
+    },
+    "responses": [
+      { "text": "Does anyone come?", "topic": "TALK_SGN_MARKET_TRAPPED" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_MARKET_TRAPPED",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*wipes her hands on her áo dài, which is not what an áo dài is for.*  \"I came in Tuesday with a cart of rau muống and I am still here.  The shutter came down at four in the afternoon and it has not gone up since.  The people who are stuck in here with me are not coming to buy a kilo of water spinach.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_MONK",
+    "//": "the awt (nuns) and the lay volunteers who sweep and cook",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*bows her head and keeps sweeping, so you understand you are not to stop her.*  \"Bạn tới tìm chùa hay tìm chỗ trú mưa?  Because we have one of those and not much of the other.\""
+    },
+    "responses": [
+      { "text": "Is there room here?", "topic": "TALK_SGN_MONK_ROOM" },
+      { "text": "What do you make of all this?", "topic": "TALK_SGN_MONK_OPINION" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_MONK_ROOM",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*the compound behind her is full of people and none of them are praying.*  \"There is room on the floor of the main hall until Friday, when the phường said they would come and count us.  Bring nothing.  Bring water if you can carry it.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_MONK_OPINION",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*stops sweeping for the first time.*  \"The masters have a word for what is happening and I am not going to say it out loud in my own chùa.  I will say that we have burned nothing this week, and I have said that every week for thirty years, and I notice that this is the first week anyone would have believed me.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_PRIEST",
+    "//": "the ma sơ (nun) of Tân Định and the priests of Đức Bà",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*the fan stops.*  \"Xin chào.  You are not dressed for a funeral, so either you want something or you want to confess, and I have time for the first and not for the second.\""
+    },
+    "responses": [
+      { "text": "Have there been many funerals?", "topic": "TALK_SGN_PRIEST_FUNERALS" },
+      { "text": "Is there anything I can do for you?", "topic": "TALK_MISSION_LIST" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_PRIEST_FUNERALS",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"Fourteen.  I have written the names of all fourteen and I will read them on Sunday when the others can hear, which is a thing I have had to learn to do in three days.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_POSTAL_CLERK",
+    "//": "behind a counter in the Bưu điện",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*without looking up from the ledger.*  \"If it is a parcel, the counter is that way and the queue is the other thing.  If it is a letter, sit down.  Nobody is coming for the queue any more.\""
+    },
+    "responses": [
+      { "text": "Can you send anything?", "topic": "TALK_SGN_POSTAL_SENDING" },
+      { "text": "Are the lines up?", "topic": "TALK_SGN_POSTAL_LINES" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_POSTAL_SENDING",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"I have three sacks of letters for Củ Chi and no truck, and one motorbike that a man promised me on Thursday.  So: no.  Bring your letter here and I will keep it, which is at least honest.\""
+    },
+    "responses": [
+      { "text": "Củ Chi - is that where everyone is going?", "topic": "TALK_SGN_POSTAL_LINES" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_POSTAL_LINES",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"No.  Everyone says Củ Chi because Củ Chi is a place you can say out loud.  The radio says the airport is closed, the airport was open on Monday.  Do not make your plans on the radio.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_CIVIL_SERVANT",
+    "//": "an office in the UBND TP, a ward office, the palace",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*stacks the papers into a pile that is already too high to be a working pile.*  \"Yes.  Please do not touch the desk.  Do you have a giấy?  A household paper, a chứng minh, anything - without one I cannot write your name and without your name you are only a problem I have to remember.\""
+    },
+    "responses": [
+      { "text": "What is the ward doing?", "topic": "TALK_SGN_CIVIL_SERVANT_WARD" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_CIVIL_SERVANT_WARD",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"Writing lists.  We are very good at writing lists now.  There is a list of the households with a fever, a list of the households that have run out, and a list of the men who have not come in.  The first list is the important one and the second list is the one I take home.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_GUARD",
+    "//": "a ward policeman; see N4 for why one in five of these is holding a pistol",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*stands where he has been standing for some hours.*  \"Stop.  Hands.  - No bite marks, good.  Go on, walk past me, and do not tell me what you are doing.\""
+    },
+    "responses": [
+      { "text": "Are you the only one?", "topic": "TALK_SGN_GUARD_ALONE" },
+      { "text": "Is there anywhere safe?", "topic": "TALK_SGN_GUARD_SAFE" },
+      { "text": "Is there anything I can do for you?", "topic": "TALK_MISSION_LIST" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_GUARD_ALONE",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"There were nine of us at the phường.  Two went home to their families, which I did not argue with.  One is at the hospital and has not been home.  That is four.  The other five I have not seen since Tuesday and I am not going to go and look.\""
+    },
+    "responses": [
+      { "text": "Is there anywhere safe?", "topic": "TALK_SGN_GUARD_SAFE" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_GUARD_SAFE",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"The chùa on the corner has nine people in it and the sư cô is feeding them.  That is the only place in this phường I would send my mother, and she is in Đồng Nai.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_DOCTOR",
+    "//": "SHOPKEEP: the response to TALK_MISSION_LIST is what makes the clinic's stock tradeable",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*does not look up, and there is a cup of cold tea at her elbow that has clearly been there all morning.*  \"If you are here for the medicine, you will queue.  If you are here to tell me about the fever, everyone has told me about the fever.\""
+    },
+    "responses": [
+      { "text": "What is the ward actually seeing?", "topic": "TALK_SGN_DOCTOR_WARD" },
+      { "text": "What is left on the pharmacy counter?", "effect": "start_trade", "topic": "TALK_SGN_DOCTOR" },
+      { "text": "Is there anything I can do for you?", "topic": "TALK_MISSION_LIST" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_DOCTOR_WARD",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"We were told to count the sốt lạ and then we were told not to count it.  So we treat nineteen cases and we call them nineteen cases.  In the ward on the second floor there are forty beds and I have seen thirty-one people in them, which is a number I have decided to stop thinking about.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_NURSE",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*is carrying two water bottles and has clearly decided that both of them are hers.*  \"If you want to help, the help is water and it is not the kind that comes out of the tap.  Otherwise do not stand in the doorway, you are blocking the bed.\""
+    },
+    "responses": [
+      { "text": "How are you managing?", "topic": "TALK_SGN_NURSE_TIRED" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_NURSE_TIRED",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"Badly, and then well, and then badly again at four in the morning.  My mother was a y tá too.  She would tell me I am doing it wrong and she would be right and that is the part I mind.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_SHOPKEEPER",
+    "//": "SHOPKEEP: nhà sách, Co.op Mart, a tiệm vàng",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*the cửa sắt kéo is down behind you and the till has not been on since Wednesday.*  \"Prices are what they are.  Everything left on that shelf is going to be given away by Sunday, so if you are going to take it, take it and let me write it down.\""
+    },
+    "responses": [
+      { "text": "What do people actually want?", "topic": "TALK_SGN_SHOPKEEPER_WANT" },
+      { "text": "Is there anything I can do for you?", "topic": "TALK_MISSION_LIST" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_SHOPKEEPER_WANT",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"Matches, lighters, and rice.  In that order.  Everybody says they want medicine and what they want is a lighter, because a lighter is the difference between having rice and eating it cold.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_CRAFTSMAN",
+    "//": "a shophouse trade - barber, tailor, electronics repair, photocopy, bakery, quán nhậu",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*has the radio apart on the counter and two other things that are also apart.*  \"If it is broken and it is small, I can do it.  If it is broken and it is you, walk that way and do not stop.\""
+    },
+    "responses": [
+      { "text": "What are you working on?", "topic": "TALK_SGN_CRAFTSMAN_WORK" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_CRAFTSMAN_WORK",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"This is a radio and it works, and I am taking it apart because a radio that works tells you where you are and I would rather not know.  Take it to the phường if you want the news.  I would rather be wrong.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_MECHANIC",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*a 110cc with its seat off and its carburettor on the pavement, which is how you know he is good.*  \"Bơm vá xe.  Anything on two wheels.  If it needs parts, come back Thursday, if it is still here Thursday.\""
+    },
+    "responses": [
+      { "text": "Why are the good ones still here?", "topic": "TALK_SGN_MECHANIC_BIKES" },
+      { "text": "Is there anything I can do for you?", "topic": "TALK_MISSION_LIST" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_MECHANIC_BIKES",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*looks up at the row of them along the wall.*  \"Because they are useless without petrol and a road, and there is petrol on the main street and no road anywhere.  People have been carrying them up three floors to hide them.  I am the only fool left in Quận 1 with a full workshop.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_PETROL_ATTENDANT",
+    "//": "under the forecourt canopy; the uniform is borrowed from the công an, which is normal",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*the pump handle is locked and he is sitting on a stool in a uniform with no insignia on it.*  \"Không có xăng.  There is a little in the tank, for a bike, for vài lít, a few litres.  Not for a car, and do not ask me twice, I am not the police.\""
+    },
+    "responses": [
+      { "text": "Why do you have that uniform?", "topic": "TALK_SGN_PETROL_UNIFORM" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_PETROL_UNIFORM",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"Because people slow down when they see it, and when they slow down they are not panicking.  Two men took the fuel bowser out of the yard on Tuesday.  This is cheaper than a gate.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_CARETAKER",
+    "//": "sweeps the nghĩa trang, tends the planters, keeps a shed",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*is sweeping, and the broom is a coconut-rib one worn down to the handle.*  \"If you came for the caretaker, I am the caretaker.  If you came for the office, the office is locked and has been since Friday.\""
+    },
+    "responses": [
+      { "text": "Are there people still coming here?", "topic": "TALK_SGN_CARETAKER_GRAVES" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_CARETAKER_GRAVES",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"Yes.  Nine on Tuesday, four on Wednesday, one on Thursday, and none today, which is the first good number I have had all week.  I am not going to say it is over.  I am going to sweep.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_PARK_ELDER",
+    "//": "five o'clock exercise and a plastic stool afterwards",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*is sitting on a plastic stool that he brought from home, because the benches here have been sat on by something else.*  \"Cà phê đá.  If you are standing, you are not from here, and if you are from here you sit down first and we talk after.\""
+    },
+    "responses": [
+      { "text": "How long have you been coming here?", "topic": "TALK_SGN_PARK_ELDER_YEARS" },
+      { "text": "What is everyone afraid of?", "topic": "TALK_SGN_PARK_ELDER_AFRAID" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_PARK_ELDER_YEARS",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"Twenty-two years, five o'clock, every morning including the mornings it rained.  My wife did tập thể dục with the same women and she died in March, before any of this, which I still find harder to arrange in my head.\""
+    },
+    "responses": [
+      { "text": "What is everyone afraid of?", "topic": "TALK_SGN_PARK_ELDER_AFRAID" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_PARK_ELDER_AFRAID",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"Not the ma.  We have seen those, they are a Tuesday problem.  Afraid of the water, and then of the people who have the boat, and then of being told by somebody on the radio where the boat is.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_TRANSPORT_CLERK",
+    "//": "Ga Sài Gòn, Bến xe Miền Đông, Tân Sơn Nhất",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*the board behind him has been wiped and rewritten and wiped again.*  \"There is no timetable.  There is a board because if I take the board down the people stop asking and start pushing, and I would like to keep today at pushing.\""
+    },
+    "responses": [
+      { "text": "Is anything still running?", "topic": "TALK_SGN_TRANSPORT_RUNNING" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_TRANSPORT_RUNNING",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"One train, north, as far as Dĩ An, when there is a driver and when the section is clear.  The airport has stopped.  Do not go to the airport; there is a queue of cars there that is four hours long and it is not moving.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_OFFICE_WORKER",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*there are eleven people in this office and eight of them are on the floor.*  \"The lifts are off so I have been up eleven times today.  Sit anywhere.  Do not sit at the computer, that is my job, I am nothing without that computer.\""
+    },
+    "responses": [
+      { "text": "What was your job before?", "topic": "TALK_SGN_OFFICE_WORKER_JOB" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_OFFICE_WORKER_JOB",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*a long pause, which in this building is unusual.*  \"I moved money.  Not much, and not mine - other people's, from one column to another.  It is the same work now.  I am moving eight people from one floor to another and I have to write down which.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_DOCK_WORKER",
+    "//": "a kho hàng, a bãi container, the quay at Bến Nhà Rồng",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*a container manifest, a bicycle pump, and rope, in that order of importance.*  \"Do not touch the ghe.  That is my sister's.  It is the only one on the water that anyone will still row, and if it is gone we are all crossing by motorbike.\""
+    },
+    "responses": [
+      { "text": "Is anyone crossing?", "topic": "TALK_SGN_DOCK_WORKER_CROSSING" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_DOCK_WORKER_CROSSING",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"On Sunday, in ones and twos, at slack tide, and you pay in gold.  My sister says out loud that it is not right to charge, and she rows anyway, and I tell her the gold is how we choose who.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_BACKPACKER",
+    "//": "Phố Tây Bùi Viện, three weeks in 2003 and never quite leaving",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*English, then a pause as he works out whether it will do.*  \"Sorry - no, I stay.  That was the plan for three weeks and then it was for a month, and now the guesthouses are full and nobody asks where I am going any more.  Which is fine.  I have a bar tab and a broken watch.\""
+    },
+    "responses": [
+      { "text": "Do you know the way out of the country?", "topic": "TALK_SGN_BACKPACKER_OUT" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_BACKPACKER_OUT",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "\"The airport, and I have a ticket for the eleventh which I am pretending is still a plan.  My embassy says wait.  Everyone's embassy says wait.  Nobody's embassy says come here, which is the sentence I keep noticing.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_STUDENT",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*is studying at a table that used to be four tables, and has not moved.*  \"The kỳ thi was the eighteenth.  I did not sit it.  If you sit it you go home in June and everyone at home is fine, and if you do not sit it you are here.  So you see why I am studying.\""
+    },
+    "responses": [
+      { "text": "What are you studying?", "topic": "TALK_SGN_STUDENT_SUBJECT" },
+      { "text": "<end_talking_leave>", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "type": "talk_topic",
+    "id": "TALK_SGN_STUDENT_SUBJECT",
+    "dynamic_line": {
+      "relevant_genders": [ "npc" ],
+      "gendered_line": "*Văn, and the sách Ngữ văn, and do not laugh, because there is a chapter about a man who reads a wall in a city and it is still my favourite thing I have ever read.*  \"Ngữ văn.  It is not useful.  I know.\""
+    },
+    "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
+  }
+]

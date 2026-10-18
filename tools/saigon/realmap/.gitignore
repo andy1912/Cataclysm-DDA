@@ -1,0 +1,10 @@
+# Raw OpenStreetMap extracts: ~34 MB, re-fetched with osm/fetch_osm.sh
+osm/*.osm.json
+# Source maps you uploaded: third-party printed maps and screenshots stay on this machine only
+# (copyright of their publishers); only what the converter derives from them is committed.
+source/*.png
+source/*.jpg
+source/*.jpeg
+source/*.webp
+# Intermediate grids and previews (make_realmap.sh)
+build/

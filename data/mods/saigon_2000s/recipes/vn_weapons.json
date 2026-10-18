@@ -1,0 +1,138 @@
+[
+  {
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "result": "sgn_na_thun",
+    "category": "CC_WEAPON",
+    "subcategory": "CSC_WEAPON_RANGED",
+    "skill_used": "fabrication",
+    "time": "20 m",
+    "autolearn": true,
+    "proficiencies": [ { "proficiency": "prof_carving" } ],
+    "qualities": [ { "id": "CUT", "level": 2 } ],
+    "components": [
+      [ [ "stick", 1 ], [ "2x4", 1 ] ],
+      [ [ "hose", 1 ], [ "rubber_band", 6 ] ],
+      [ [ "leather", 1 ], [ "cotton_patchwork", 1 ] ]
+    ],
+    "//": "W1: a forked branch, rubber strips (dda has no inner tube, so a rubber hose or rubber bands stand in) and a pouch.  Matches dda's slingshot recipe plus the pouch."
+  },
+  {
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "result": "sgn_gay_tre",
+    "category": "CC_WEAPON",
+    "subcategory": "CSC_WEAPON_BASHING",
+    "skill_used": "fabrication",
+    "time": "10 m",
+    "autolearn": true,
+    "qualities": [ { "id": "CUT", "level": 1 } ],
+    "components": [ [ [ "stick_long", 1 ], [ "long_pole", 1 ] ] ],
+    "//": "W1: cut a pole to length below a node at each end."
+  },
+  {
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "result": "sgn_mac_tre",
+    "category": "CC_WEAPON",
+    "subcategory": "CSC_WEAPON_CUTTING",
+    "skill_used": "fabrication",
+    "difficulty": 1,
+    "time": "1 h",
+    "reversible": { "time": "10 m" },
+    "autolearn": true,
+    "proficiencies": [ { "proficiency": "prof_carving", "time_multiplier": 1.5, "skill_penalty": 0.15 } ],
+    "qualities": [ { "id": "CUT", "level": 1 } ],
+    "components": [
+      [ [ "sgn_gay_tre", 1 ], [ "sgn_don_ganh", 1 ], [ "stick_long", 1 ], [ "long_pole", 1 ] ],
+      [
+        [ "sgn_dao_phay", 1 ],
+        [ "sgn_dao_bau", 1 ],
+        [ "sgn_dao_rua", 1 ],
+        [ "knife_cleaver", 1 ],
+        [ "knife_huge", 1 ],
+        [ "knife_large", 1 ],
+        [ "machete", 1 ]
+      ],
+      [ [ "cordage", 1, "LIST" ], [ "duct_tape", 50 ], [ "wire", 4 ] ]
+    ],
+    "//": "W1: split the pole end, seat the blade, bind it.  Like dda's spear_knife recipe; reversible to get the blade back."
+  },
+  {
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "result": "sgn_chia",
+    "category": "CC_WEAPON",
+    "subcategory": "CSC_WEAPON_PIERCING",
+    "skill_used": "fabrication",
+    "difficulty": 2,
+    "time": "1 h",
+    "autolearn": true,
+    "proficiencies": [ { "proficiency": "prof_carving" } ],
+    "qualities": [ { "id": "CUT", "level": 1 }, { "id": "HAMMER", "level": 2 } ],
+    "components": [
+      [ [ "sgn_gay_tre", 1 ], [ "stick_long", 1 ], [ "long_pole", 1 ] ],
+      [ [ "spike", 3 ], [ "rebar", 1 ] ],
+      [ [ "cordage", 1, "LIST" ], [ "wire", 4 ] ]
+    ],
+    "//": "W1: three iron prongs hammered to a barb and bound into a pole."
+  },
+  {
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "result": "sgn_con_nhi_khuc",
+    "category": "CC_WEAPON",
+    "subcategory": "CSC_WEAPON_BASHING",
+    "skill_used": "fabrication",
+    "difficulty": 1,
+    "time": "40 m",
+    "autolearn": true,
+    "proficiencies": [ { "proficiency": "prof_carving" } ],
+    "qualities": [ { "id": "CUT", "level": 2 }, { "id": "HAMMER", "level": 1 } ],
+    "components": [ [ [ "stick", 1 ], [ "2x4", 1 ] ], [ [ "cordage_short", 1, "LIST" ], [ "wire", 2 ] ], [ [ "nails", 2, "LIST" ] ] ],
+    "//": "W1: the schoolboy version: two sticks cut to length and joined at the ends with cord or wire."
+  },
+  {
+    "type": "recipe",
+    "activity_level": "LIGHT_EXERCISE",
+    "result": "sgn_ten_tre",
+    "category": "CC_AMMO",
+    "subcategory": "CSC_AMMO_ARROWS",
+    "skill_used": "fabrication",
+    "skills_required": [ [ "survival", 1 ] ],
+    "difficulty": 2,
+    "charges": 10,
+    "time": "20 m",
+    "autolearn": true,
+    "proficiencies": [ { "proficiency": "prof_fletching" }, { "proficiency": "prof_carving" } ],
+    "qualities": [ { "id": "CUT", "level": 2 } ],
+    "tools": [ [ [ "fire", -1 ] ] ],
+    "components": [ [ [ "stick", 1 ], [ "2x4", 1 ], [ "sgn_gay_tre", 1 ] ], [ [ "paper", 5 ], [ "fletching", 1, "LIST" ] ] ],
+    "//": "W1: split slivers from a stick of bamboo, harden the points over a fire, fold paper or leaf flights.  Easier than dda's makeshift bolt (no glue, no head)."
+  },
+  {
+    "type": "recipe",
+    "activity_level": "MODERATE_EXERCISE",
+    "result": "sgn_no",
+    "category": "CC_WEAPON",
+    "subcategory": "CSC_WEAPON_RANGED",
+    "skill_used": "fabrication",
+    "skills_required": [ [ "archery", 2 ], [ "survival", 2 ] ],
+    "difficulty": 4,
+    "time": "6 h",
+    "reversible": true,
+    "decomp_learn": 3,
+    "autolearn": [ [ "fabrication", 5 ], [ "archery", 3 ] ],
+    "proficiencies": [
+      { "proficiency": "prof_bowyery", "time_multiplier": 1.5, "skill_penalty": 0.15 },
+      { "proficiency": "prof_carving", "time_multiplier": 1.5 }
+    ],
+    "qualities": [ { "id": "CUT", "level": 2 }, { "id": "HAMMER", "level": 1 } ],
+    "components": [
+      [ [ "stick_long", 1 ], [ "2x4", 2 ] ],
+      [ [ "stick", 2 ], [ "2x4", 1 ] ],
+      [ [ "cordage_superior", 2, "LIST" ], [ "string_36", 1 ] ]
+    ],
+    "//": "W1: carve a stock, shape and tiller a bow stave through it, twist a string, cut a trigger peg.  Harder than dda's wood crossbow (difficulty 3): no screws or metal, all by eye."
+  }
+]

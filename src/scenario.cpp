@@ -114,6 +114,8 @@ void scenario::load( const JsonObject &jo, std::string_view )
     optional( jo, was_loaded, "distance_initial_visibility", distance_initial_visibility, 15 );
 
     optional( jo, was_loaded, "eoc", _eoc, auto_flags_reader<effect_on_condition_id> {} );
+    optional( jo, was_loaded, "overmap_pregenerated_path", _overmap_pregenerated_path );
+    optional( jo, was_loaded, "overmap_outside_region", _overmap_outside_region );
 
     optional( jo, was_loaded, "origin_offset", origin_offset, point_rel_om::zero );
 
@@ -584,7 +586,7 @@ bool scenario::get_reveal_locale() const
     return reveal_locale;
 }
 
-bool scenario::get_distance_initial_visibility() const
+int scenario::get_distance_initial_visibility() const
 {
     return distance_initial_visibility;
 }
@@ -728,8 +730,6 @@ bool scenario_sorter::operator()( const scenario *a, const scenario *b ) const
 
     if( !cities_enabled && a->has_flag( "CITY_START" ) != b->has_flag( "CITY_START" ) ) {
         return a->has_flag( "CITY_START" ) < b->has_flag( "CITY_START" );
-    } else if( sort_by_points ) {
-        return a->point_cost() < b->point_cost();
     } else {
         return localized_compare( a->gender_appropriate_name( male ),
                                   b->gender_appropriate_name( male ) );
@@ -755,6 +755,15 @@ const std::vector<mission_type_id> &scenario::missions() const
 const std::vector<effect_on_condition_id> &scenario::eoc() const
 {
     return _eoc;
+}
+const std::string &scenario::overmap_pregenerated_path() const
+{
+    return _overmap_pregenerated_path;
+}
+
+const std::string &scenario::overmap_outside_region() const
+{
+    return _overmap_outside_region;
 }
 const std::vector<std::pair<mongroup_id, float>> &scenario::surround_groups() const
 {

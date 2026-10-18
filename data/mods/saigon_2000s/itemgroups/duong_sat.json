@@ -1,0 +1,50 @@
+[
+  {
+    "type": "item_group",
+    "id": "sgn_trash_railside",
+    "subtype": "distribution",
+    "//": "What lies along the tracks: no dda roadside group (those carry American books and fliers).",
+    "items": [
+      [
+        "bag_plastic",
+        30
+      ],
+      [
+        "bottle_plastic",
+        20
+      ],
+      [
+        "can_drink",
+        15
+      ],
+      [
+        "wrapper",
+        15
+      ],
+      [
+        "cig_butt",
+        10
+      ],
+      [
+        "plastic_chunk",
+        10
+      ],
+      [
+        "glass_shard",
+        5
+      ],
+      [
+        "scrap",
+        5
+      ],
+      [
+        "cardboard",
+        5
+      ],
+      [
+        "withered",
+        10
+      ]
+    ]
+  }
+]

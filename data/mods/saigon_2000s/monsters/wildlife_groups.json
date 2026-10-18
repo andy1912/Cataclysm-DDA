@@ -1,0 +1,340 @@
+[
+  {
+    "type": "monstergroup",
+    "id": "GROUP_WILDERNESS_FOREST_MAMMAL",
+    "override": true,
+    "//": "L-loc7: the delta's small mammals (fields and woods around Saigon): rats, squirrels, bats, shrews, loose pigs, strays.  dda's North American ones dropped.",
+    "default": "mon_null",
+    "is_animal": true,
+    "monsters": [
+      { "monster": "mon_bat", "weight": 10, "cost_multiplier": 2, "pack_size": [ 3, 12 ] },
+      { "group": "GROUP_PIGS", "weight": 1, "cost_multiplier": 2, "pack_size": [ 1, 6 ] },
+      { "group": "GROUP_STRAY_CATS", "weight": 10 },
+      { "group": "GROUP_STRAY_CATS", "weight": 1, "pack_size": [ 2, 8 ] },
+      { "monster": "mon_shrew", "weight": 1, "cost_multiplier": 5 },
+      { "group": "GROUP_STRAY_DOGS", "weight": 6, "cost_multiplier": 25, "pack_size": [ 1, 6 ] },
+      { "monster": "mon_squirrel", "weight": 50, "cost_multiplier": 0, "pack_size": [ 1, 2 ] },
+      { "monster": "mon_black_rat", "weight": 10, "cost_multiplier": 0, "pack_size": [ 1, 5 ] },
+      { "group": "GROUP_WILDERNESS_FOREST_MAMMAL_WINTER", "weight": 22 },
+      { "group": "GROUP_WILDERNESS_FOREST_MAMMAL_MUTANT", "weight": 1, "starts": "56 days" },
+      { "group": "GROUP_WILDERNESS_FOREST_MAMMAL_MUTANT", "weight": 2, "starts": "112 days" },
+      { "group": "GROUP_WILDERNESS_FOREST_MAMMAL_MUTANT", "weight": 4, "starts": "360 days" },
+      { "monster": "sgn_mon_chuot_dong", "weight": 40, "cost_multiplier": 0, "pack_size": [ 2, 6 ] },
+      { "monster": "mon_sewer_rat", "weight": 10, "cost_multiplier": 0, "pack_size": [ 1, 4 ] },
+      { "monster": "sgn_mon_cho_ta", "weight": 6, "cost_multiplier": 5, "pack_size": [ 1, 4 ] }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_WILDERNESS_FOREST_MAMMAL_WINTER",
+    "override": true,
+    "default": "mon_null",
+    "is_animal": true,
+    "//": "L-loc7: dda's bigger woodland mammals (deer, moose, cougars, coyotes).  Around Saigon: wild boar in Củ Chi and Cần Giờ, macaque troops in the mangroves, otters along the creeks.",
+    "monsters": [
+      { "group": "GROUP_BOARS", "weight": 3, "cost_multiplier": 2, "pack_size": [ 1, 4 ] },
+      { "monster": "sgn_mon_khi", "weight": 3, "cost_multiplier": 2, "pack_size": [ 2, 8 ] },
+      { "monster": "mon_otter", "weight": 1, "cost_multiplier": 2, "pack_size": [ 1, 4 ] }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_WILDERNESS_FOREST_MAMMAL_MUTANT",
+    "override": true,
+    "default": "mon_null",
+    "is_animal": true,
+    "//": "L-loc7: dda's mutant deer and bears; the delta's mutants are its strays.",
+    "monsters": [ { "monster": "mon_dog_mutant_mongrel", "weight": 4, "cost_multiplier": 2, "pack_size": [ 1, 3 ] } ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_WILDERNESS_FOREST_BIRD",
+    "override": true,
+    "//": "L-loc7: crows, tree sparrows, mynas, doves, egrets, farm ducks.",
+    "default": "mon_null",
+    "is_animal": true,
+    "monsters": [
+      { "monster": "mon_crow", "weight": 5, "cost_multiplier": 0, "pack_size": [ 1, 14 ] },
+      { "monster": "mon_crow_mutant_small", "weight": 2, "cost_multiplier": 2, "starts": "56 days" },
+      { "monster": "mon_robin", "weight": 4, "cost_multiplier": 0, "pack_size": [ 1, 14 ] },
+      { "monster": "mon_sparrow", "weight": 5, "cost_multiplier": 0, "pack_size": [ 1, 15 ] },
+      { "monster": "mon_pigeon", "weight": 1, "cost_multiplier": 0, "pack_size": [ 1, 3 ] },
+      { "monster": "mon_guinea_fowl", "weight": 1, "pack_size": [ 1, 3 ] },
+      { "monster": "sgn_mon_cu_gay", "weight": 5, "cost_multiplier": 0, "pack_size": [ 1, 4 ] },
+      { "monster": "sgn_mon_co", "weight": 4, "cost_multiplier": 0, "pack_size": [ 1, 8 ] },
+      { "group": "GROUP_BIRD_DOMESTIC_WATERFOWL", "weight": 3, "cost_multiplier": 2, "pack_size": [ 2, 8 ] }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_WILDERNESS_FOREST_REPTILE",
+    "override": true,
+    "//": "L-loc7: water snakes in the paddies, the odd cobra.",
+    "default": "mon_null",
+    "is_animal": true,
+    "monsters": [ { "monster": "mon_gartersnake", "weight": 10 }, { "monster": "sgn_mon_ran_ho_mang", "weight": 3 } ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_WILDERNESS_FOREST_ZOMBIE",
+    "override": true,
+    "//": "L-loc7: dead dogs and pigs, not deer, cougars, bears or moose.",
+    "default": "mon_null",
+    "is_animal": true,
+    "monsters": [
+      { "monster": "mon_zombie_dog", "weight": 1, "cost_multiplier": 2 },
+      { "monster": "mon_zombie_pig", "weight": 2, "cost_multiplier": 5, "pack_size": [ 1, 3 ] }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_SWAMP",
+    "override": true,
+    "//": "L-loc7: dda's bog lemmings are rice-field rats here.",
+    "default": "mon_null",
+    "is_animal": true,
+    "monsters": [
+      {
+        "group": "GROUP_WILDERNESS_SWAMP_INSECT",
+        "weight": 100,
+        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ],
+        "starts": "12 days"
+      },
+      {
+        "group": "GROUP_WILDERNESS_SWAMP_INSECT",
+        "weight": 100,
+        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ],
+        "starts": "28 days"
+      },
+      {
+        "group": "GROUP_WILDERNESS_SWAMP_INSECT",
+        "weight": 100,
+        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ],
+        "starts": "112 days"
+      },
+      {
+        "group": "GROUP_WILDERNESS_SWAMP_INSECT",
+        "weight": 100,
+        "conditions": [ "SPRING", "SUMMER", "AUTUMN" ],
+        "starts": "360 days"
+      },
+      { "group": "GROUP_SLUG", "weight": 15, "cost_multiplier": 2, "conditions": [ "SPRING", "SUMMER", "AUTUMN" ] },
+      { "group": "GROUP_SNAIL", "weight": 15, "cost_multiplier": 2, "conditions": [ "SPRING", "SUMMER", "AUTUMN" ] },
+      { "group": "GROUP_TADPOLES_SWAMP", "weight": 100, "pack_size": [ 3, 6 ] },
+      { "group": "GROUP_FROGS_SWAMP", "weight": 100, "pack_size": [ 1, 3 ] },
+      { "group": "GROUP_WILDERNESS_FRESHWATER_REPTILE", "weight": 85, "conditions": [ "SPRING", "SUMMER", "AUTUMN" ] },
+      { "group": "GROUP_MUTAFROGS_SWAMP", "weight": 75, "starts": "28 days" },
+      { "monster": "sgn_mon_chuot_dong", "weight": 50, "pack_size": [ 2, 7 ] }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_WILDERNESS_FRESHWATER_REPTILE",
+    "override": true,
+    "default": "mon_null",
+    "is_animal": true,
+    "monsters": [ { "monster": "mon_turtle_painted", "weight": 15, "pack_size": [ 1, 5 ] } ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_FROGS_FOREST",
+    "override": true,
+    "//": "L-loc7: the delta's frogs: ếch đồng, ếch Mỹ, cóc nhà and their mutants.",
+    "default": "mon_green_frog",
+    "monsters": [
+      { "monster": "mon_bullfrog_frog", "weight": 20, "pack_size": [ 1, 2 ] },
+      { "monster": "mon_strange_frog", "weight": 20, "pack_size": [ 1, 2 ], "starts": "56 days" },
+      { "monster": "mon_fowler_toad", "weight": 100, "pack_size": [ 1, 4 ] },
+      { "monster": "mon_foul_toad", "weight": 40, "pack_size": [ 1, 4 ], "starts": "56 days" },
+      { "monster": "mon_green_frog", "weight": 100, "pack_size": [ 1, 4 ] },
+      { "monster": "mon_green_worm", "weight": 40, "pack_size": [ 1, 4 ], "starts": "56 days" }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_FROGS_RIVER",
+    "override": true,
+    "default": "mon_bullfrog_frog",
+    "monsters": [
+      { "monster": "mon_bullfrog_frog", "weight": 100, "pack_size": [ 1, 4 ] },
+      { "monster": "mon_strange_frog", "weight": 50, "pack_size": [ 1, 4 ], "starts": "56 days" },
+      { "monster": "mon_green_frog", "weight": 100, "pack_size": [ 1, 4 ] },
+      { "monster": "mon_green_worm", "weight": 50, "pack_size": [ 1, 4 ], "starts": "56 days" }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_FROGS_SWAMP",
+    "override": true,
+    "default": "mon_bullfrog_frog",
+    "monsters": [
+      { "monster": "mon_bullfrog_frog", "weight": 60, "pack_size": [ 1, 4 ] },
+      { "monster": "mon_strange_frog", "weight": 40, "pack_size": [ 1, 4 ], "starts": "56 days" },
+      { "monster": "mon_fowler_toad", "weight": 60, "pack_size": [ 1, 4 ] },
+      { "monster": "mon_foul_toad", "weight": 40, "pack_size": [ 1, 4 ], "starts": "56 days" },
+      { "monster": "mon_green_frog", "weight": 60, "pack_size": [ 1, 4 ] },
+      { "monster": "mon_green_worm", "weight": 40, "pack_size": [ 1, 4 ], "starts": "56 days" }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_TADPOLES_RIVER",
+    "override": true,
+    "default": "mon_bullfrog_tadpole",
+    "monsters": [
+      { "monster": "mon_bullfrog_tadpole", "weight": 100, "pack_size": [ 6, 12 ], "conditions": [ "SPRING", "SUMMER" ] },
+      { "monster": "mon_green_tadpole", "weight": 100, "pack_size": [ 6, 12 ], "conditions": [ "SPRING", "SUMMER" ] },
+      { "monster": "mon_strange_bigtad", "weight": 10, "pack_size": [ 1, 4 ], "starts": "112 days" }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_TADPOLES_SWAMP",
+    "override": true,
+    "default": "mon_bullfrog_tadpole",
+    "monsters": [
+      { "monster": "mon_bullfrog_tadpole", "weight": 60, "pack_size": [ 6, 12 ], "conditions": [ "SPRING", "SUMMER" ] },
+      { "monster": "mon_fowler_tadpole", "weight": 60, "pack_size": [ 6, 12 ], "conditions": [ "SPRING", "SUMMER" ] },
+      { "monster": "mon_green_tadpole", "weight": 100, "pack_size": [ 6, 12 ], "conditions": [ "SPRING", "SUMMER" ] },
+      { "monster": "mon_strange_bigtad", "weight": 10, "pack_size": [ 1, 4 ], "starts": "112 days" },
+      { "monster": "mon_foul_bigtad", "weight": 10, "pack_size": [ 1, 4 ], "starts": "112 days" }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_MUTAFROGS_SWAMP",
+    "override": true,
+    "default": "mon_strange_bigfrog",
+    "monsters": [ { "group": "GROUP_MUTAFROGS_STRANGE", "weight": 100 }, { "group": "GROUP_MUTAFROGS_FOUL", "weight": 100 } ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_MUTAFROGS_FOREST",
+    "override": true,
+    "default": "mon_odd_bigfrog",
+    "monsters": [ { "group": "GROUP_MUTAFROGS_STRANGE", "weight": 20 }, { "group": "GROUP_MUTAFROGS_FOUL", "weight": 100 } ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_PET_CATS",
+    "override": true,
+    "//": "L-loc7: house cats of 2009 Saigon (no Maine Coons, Bengals, Devon Rex or sphynx).",
+    "default": "mon_cat",
+    "is_animal": true,
+    "monsters": [
+      { "monster": "mon_cat", "weight": 100, "cost_multiplier": 0 },
+      { "monster": "mon_cat_kitten", "weight": 5, "cost_multiplier": 0 },
+      { "monster": "mon_cat_tabby", "weight": 200, "cost_multiplier": 0 },
+      { "monster": "mon_cat_tabby_kitten", "weight": 5, "cost_multiplier": 0 },
+      { "monster": "mon_cat_longhair", "weight": 50, "cost_multiplier": 0 },
+      { "monster": "mon_cat_longhair_kitten", "weight": 5, "cost_multiplier": 0 },
+      { "monster": "mon_cat_siamese", "weight": 30, "cost_multiplier": 0 },
+      { "monster": "mon_cat_siamese_kitten", "weight": 3, "cost_multiplier": 0 },
+      { "monster": "mon_cat_persian", "weight": 20, "cost_multiplier": 0, "ends": "360 days" },
+      { "monster": "mon_cat_persian_kitten", "weight": 2, "cost_multiplier": 0, "ends": "360 days" },
+      { "monster": "mon_cat_calico", "weight": 50, "cost_multiplier": 0 },
+      { "monster": "mon_cat_calico_kitten", "weight": 4, "cost_multiplier": 0 },
+      { "monster": "mon_cat_chonker", "weight": 10, "cost_multiplier": 0 },
+      { "monster": "mon_cat_chonker_kitten", "weight": 1, "cost_multiplier": 0 },
+      { "monster": "mon_cat_black", "weight": 80, "cost_multiplier": 0 },
+      { "monster": "mon_cat_black_kitten", "weight": 5, "cost_multiplier": 0 }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_PET_DOGS",
+    "override": true,
+    "//": "L-loc7: dogs of 2009 Saigon: mostly chó ta, some guard shepherds and rottweilers, lap dogs.",
+    "default": "sgn_mon_cho_ta",
+    "is_animal": true,
+    "monsters": [
+      { "monster": "mon_dog", "weight": 50, "cost_multiplier": 0 },
+      { "monster": "mon_dog_pup", "weight": 5, "cost_multiplier": 0 },
+      { "monster": "mon_dog_chihuahua", "weight": 50, "cost_multiplier": 0 },
+      { "monster": "mon_dog_chihuahua_pup", "weight": 5, "cost_multiplier": 0 },
+      { "monster": "mon_dog_dachshund", "weight": 50, "cost_multiplier": 0 },
+      { "monster": "mon_dog_dachshund_pup", "weight": 5, "cost_multiplier": 0 },
+      { "monster": "mon_dog_gshepherd", "weight": 50, "cost_multiplier": 0 },
+      { "monster": "mon_dog_gshepherd_pup", "weight": 5, "cost_multiplier": 0 },
+      { "monster": "mon_dog_rottweiler", "weight": 50, "cost_multiplier": 0 },
+      { "monster": "mon_dog_rottweiler_pup", "weight": 5, "cost_multiplier": 0 },
+      { "monster": "sgn_mon_cho_ta", "weight": 250, "cost_multiplier": 0 }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_RIVER",
+    "override": true,
+    "//": "L-loc7: the Saigon River and the delta's canals: the fish of the delta, otters, egrets, cormorants, moorhens, grebes, farm ducks.  dda's beavers, minks, muskrats, Canada geese and North American fish dropped.",
+    "default": "mon_null",
+    "is_animal": true,
+    "monsters": [
+      { "monster": "mon_otter", "weight": 5, "cost_multiplier": 5, "pack_size": [ 1, 8 ] },
+      { "monster": "mon_zhark", "weight": 1, "cost_multiplier": 25, "starts": "12 days", "pack_size": [ 1, 3 ] },
+      { "monster": "mon_zhark", "weight": 2, "cost_multiplier": 25, "starts": "112 days", "pack_size": [ 1, 3 ] },
+      { "monster": "mon_dragonfly_naiad", "weight": 10, "cost_multiplier": 2, "ends": "28 days" },
+      {
+        "monster": "mon_dragonfly_naiad",
+        "weight": 30,
+        "cost_multiplier": 3,
+        "starts": "28 days",
+        "pack_size": [ 1, 3 ]
+      },
+      { "group": "GROUP_WATER_STRIDER", "weight": 15, "cost_multiplier": 3, "pack_size": [ 2, 4 ] },
+      { "group": "GROUP_BIRD_DOMESTIC_WATERFOWL", "weight": 15, "cost_multiplier": 5 },
+      { "monster": "mon_moorhen", "weight": 15, "cost_multiplier": 5, "pack_size": [ 1, 6 ] },
+      { "monster": "mon_cormorant", "weight": 15, "cost_multiplier": 5, "pack_size": [ 1, 4 ] },
+      { "monster": "mon_grebe", "weight": 15, "cost_multiplier": 5, "pack_size": [ 1, 4 ] },
+      { "monster": "mon_diving_larva", "weight": 10, "cost_multiplier": 2, "starts": "12 days" },
+      {
+        "monster": "mon_diving_larva",
+        "weight": 20,
+        "cost_multiplier": 3,
+        "starts": "28 days",
+        "pack_size": [ 1, 3 ]
+      },
+      { "monster": "mon_water_scorpion_larva", "weight": 10, "cost_multiplier": 2, "ends": "28 days" },
+      {
+        "monster": "mon_water_scorpion_larva",
+        "weight": 30,
+        "cost_multiplier": 3,
+        "starts": "28 days",
+        "pack_size": [ 1, 3 ]
+      },
+      { "monster": "mon_diving_beetle_small", "weight": 4, "cost_multiplier": 10 },
+      { "monster": "mon_water_scorpion", "weight": 4, "cost_multiplier": 10 },
+      { "group": "GROUP_TADPOLES_RIVER", "weight": 25 },
+      { "group": "GROUP_FROGS_RIVER", "weight": 15 },
+      { "group": "GROUP_MUTAFROGS_RIVER", "weight": 8, "starts": "28 days" },
+      { "monster": "mon_fish_bowfin", "weight": 10, "cost_multiplier": 3, "pack_size": [ 1, 3 ] },
+      { "monster": "mon_fish_bluegill", "weight": 13, "cost_multiplier": 3, "pack_size": [ 1, 3 ] },
+      { "monster": "mon_fish_channel_catfish", "weight": 6, "cost_multiplier": 3, "pack_size": [ 1, 3 ] },
+      { "monster": "mon_fish_bullhead", "weight": 8, "cost_multiplier": 3, "pack_size": [ 1, 3 ] },
+      { "monster": "mon_fish_pumpkinseed", "weight": 10, "cost_multiplier": 3, "pack_size": [ 1, 3 ] },
+      { "monster": "mon_fish_eel", "weight": 6, "cost_multiplier": 3, "pack_size": [ 1, 3 ] },
+      { "monster": "mon_fish_carp", "weight": 5, "cost_multiplier": 3, "pack_size": [ 1, 3 ] },
+      { "monster": "mon_fish_grass_carp", "weight": 3, "cost_multiplier": 3, "pack_size": [ 1, 3 ] },
+      { "monster": "mon_fish_goldfish", "weight": 3, "cost_multiplier": 3, "pack_size": [ 1, 3 ] },
+      { "monster": "sgn_mon_co", "weight": 10, "cost_multiplier": 5, "pack_size": [ 1, 6 ] },
+      { "group": "GROUP_BIRD_DOMESTIC_WATERFOWL", "weight": 20, "cost_multiplier": 5, "pack_size": [ 2, 10 ] }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "id": "GROUP_FISH",
+    "override": true,
+    "default": "mon_fish_bluegill",
+    "//": "L-loc7: what you catch when you fish (the engine's own fishing group): cá lóc, cá rô phi, cá tra, cá trê, cá rô đồng, lươn, cá chép, cá trắm cỏ.",
+    "monsters": [
+      { "monster": "mon_fish_bowfin", "weight": 30 },
+      { "monster": "mon_fish_bluegill", "weight": 40 },
+      { "monster": "mon_fish_channel_catfish", "weight": 20 },
+      { "monster": "mon_fish_bullhead", "weight": 25 },
+      { "monster": "mon_fish_pumpkinseed", "weight": 30 },
+      { "monster": "mon_fish_eel", "weight": 20 },
+      { "monster": "mon_fish_carp", "weight": 15 },
+      { "monster": "mon_fish_grass_carp", "weight": 10 },
+      { "monster": "mon_fish_goldfish", "weight": 2 }
+    ]
+  }
+]

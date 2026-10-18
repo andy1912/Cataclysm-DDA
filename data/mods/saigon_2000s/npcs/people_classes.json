@@ -1,0 +1,106 @@
+[
+  {
+    "type": "npc_class",
+    "id": "sgn_class_xe_om_xang",
+    "//": "E1: chú Tư's class.  A xe ôm who also sells xăng lẻ (petrol by the bottle) from the corner; a separate class from sgn_class_xe_om so the companion xe ôm does not open a shop.",
+    "name": "xe ôm driver and petrol seller",
+    "job_description": "Thirty years on this corner.  Now the bike stays parked and I sell what is in its tank, one bottle at a time.",
+    "common": false,
+    "skills": [
+      { "skill": "driving", "bonus": { "rng": [ 4, 6 ] } },
+      { "skill": "mechanics", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "speech", "bonus": { "rng": [ 2, 4 ] } }
+    ],
+    "shopkeeper_item_group": "sgn_npc_xe_om_sells",
+    "restock_interval": "3 days",
+    "worn_override": "sgn_npc_tu_xang_worn",
+    "carry_override": "sgn_npc_tu_xang_carry",
+    "weapon_override": "sgn_npc_tu_xang_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_giang_ho",
+    "//": "E1: a gang member (giang hồ).  Melee only.",
+    "name": "giang hồ",
+    "job_description": "I collect.  Before, it was for the boss's loans.  Now it is for the boss.",
+    "common": false,
+    "skills": [
+      { "skill": "melee", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "cutting", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "bashing", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "driving", "bonus": { "rng": [ 1, 3 ] } }
+    ],
+    "worn_override": "sgn_npc_giang_ho_worn",
+    "carry_override": "sgn_npc_giang_ho_carry",
+    "weapon_override": "sgn_npc_giang_ho_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_dai_ca",
+    "//": "E1: the gang's đại ca (big brother).",
+    "name": "đại ca",
+    "job_description": "Half this street owed me money before the fever.  Now the other half does too.",
+    "common": false,
+    "skills": [
+      { "skill": "melee", "bonus": { "rng": [ 4, 6 ] } },
+      { "skill": "cutting", "bonus": { "rng": [ 4, 6 ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "speech", "bonus": { "rng": [ 2, 4 ] } }
+    ],
+    "worn_override": "sgn_npc_dai_ca_worn",
+    "carry_override": "sgn_npc_dai_ca_carry",
+    "weapon_override": "sgn_npc_dai_ca_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_hoi_cua",
+    "//": "E1: an opportunistic looter (hôi của).",
+    "name": "looter",
+    "job_description": "Nobody owns anything now.  I just got here first.",
+    "common": false,
+    "skills": [
+      { "skill": "melee", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "bashing", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "dodge", "bonus": { "rng": [ 1, 2 ] } },
+      { "skill": "firstaid", "bonus": { "rng": [ 0, 2 ] } }
+    ],
+    "worn_override": "sgn_npc_hoi_cua_worn",
+    "carry_override": "sgn_npc_hoi_cua_carry",
+    "weapon_override": "sgn_npc_hoi_cua_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_tho_ho",
+    "//": "E1: a thợ hồ, a construction labourer up from the provinces (Hùng).",
+    "name": "construction worker",
+    "job_description": "I came down from Quảng Ngãi to pour concrete for a hotel on Nguyễn Huệ.  The hotel has three floors and no roof.",
+    "common": false,
+    "skills": [
+      { "skill": "fabrication", "bonus": { "rng": [ 2, 4 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "bashing", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "survival", "bonus": { "rng": [ 1, 2 ] } }
+    ],
+    "worn_override": "sgn_npc_tho_ho_worn",
+    "carry_override": "sgn_npc_tho_ho_carry",
+    "weapon_override": "sgn_npc_tho_ho_weapon"
+  },
+  {
+    "type": "npc_class",
+    "id": "sgn_class_tai_xe",
+    "//": "E1: a former army truck driver (chú Sáu), retired; drives a ba gác for the chợ now.  No firearm: his service ended in 1990 and the bible's rule is that only sgn_class_guard may carry one.",
+    "name": "former army driver",
+    "job_description": "Eleven years driving trucks for the army, fifteen driving a ba gác for the chợ.  The ba gác is harder.",
+    "common": false,
+    "skills": [
+      { "skill": "driving", "bonus": { "rng": [ 5, 7 ] } },
+      { "skill": "mechanics", "bonus": { "rng": [ 3, 5 ] } },
+      { "skill": "melee", "bonus": { "rng": [ 1, 3 ] } },
+      { "skill": "survival", "bonus": { "rng": [ 1, 3 ] } }
+    ],
+    "worn_override": "sgn_npc_tai_xe_worn",
+    "carry_override": "sgn_npc_tai_xe_carry",
+    "weapon_override": "sgn_npc_tai_xe_weapon"
+  }
+]

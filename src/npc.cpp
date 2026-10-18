@@ -89,6 +89,7 @@
 #include "visitable.h"
 #include "vpart_position.h"
 #include "weather.h"
+#include "weather_type.h"
 
 #if defined(TILES)
 #include "sdltiles.h"
@@ -1128,21 +1129,22 @@ void npc::starting_inv_passtime()
     //if no weapon on person, give one based on best weapon skill
     npc_class_id found_weapon_quality = found_good_item( days_since_cata );
     bool found_great_weapon = found_weapon_quality == NC_NONE_HARDENED;
-    std::vector<item_location> items = all_items_loc();
     bool has_ranged_weapon = false;
     bool has_melee_weapon = false;
-    for( const item_location &i : items ) {
-        if( i->is_melee() && !i->is_armor() ) {
+    visit_items( [&found_great_weapon, &has_ranged_weapon,
+                         &has_melee_weapon]( const item_location & loc ) {
+        if( loc->is_melee() && !loc->is_armor() ) {
             //if a great weapon was selected, poor weapons don't count
-            if( !found_great_weapon || i->base_damage_melee().total_damage() >= MELEE_STAT * 2 ) {
+            if( !found_great_weapon || loc->base_damage_melee().total_damage() >= MELEE_STAT * 2 ) {
                 has_melee_weapon = true;
             }
-            break;
-        } else if( i->is_gun() ) {
+            return VisitResponse::ABORT;
+        } else if( loc->is_gun() ) {
             has_ranged_weapon = true;
-            break;
+            return VisitResponse::ABORT;
         }
-    }
+        return VisitResponse::NEXT;
+    } );
     if( !has_melee_weapon && !has_ranged_weapon ) {
         starting_weapon( found_weapon_quality );
         //additional ammo guaranteed if given a weapon
@@ -1777,7 +1779,7 @@ void npc::form_opinion( const Character &you )
         set_attitude( NPCATT_TALK );
     } else if( op_of_u.fear - 2 * personality.aggression - personality.bravery < -30 ) {
         set_attitude( NPCATT_KILL );
-    } else if( my_fac && my_fac->likes_u < -10 ) {
+    } else if( my_fac && my_fac->guaranteed_hostile() ) {
         if( is_player_ally() ) {
             mutiny();
         }
@@ -1906,7 +1908,7 @@ void npc::mutiny()
         add_msg( m_bad, _( "%s is tired of your incompetent leadership and abuse!" ), disp_name() );
     }
     // NPCs leaving your faction due to mistreatment further reduce their opinion of you
-    if( my_fac->likes_u < -10 ) {
+    if( my_fac->guaranteed_hostile() ) {
         op_of_u.trust += my_fac->respects_u / 10;
         op_of_u.anger += my_fac->likes_u / 10;
     }
@@ -2123,7 +2125,8 @@ int npc::indoor_voice() const
     Character &player = get_player_character();
     const int distance_to_player = rl_dist( pos_abs(), player.pos_abs() );
     if( is_following() || is_ally( player ) ) {
-        wanted_volume = distance_to_player;
+        // heard only when volume beats distance plus the weather's sound_attn
+        wanted_volume = distance_to_player + get_weather().weather_id->sound_attn + 1;
     } else if( is_enemy() && sees( here, player ) ) {
         // Battle cry! Bandits have no concept of indoor voice, even when not threatened.
         wanted_volume = max_volume;
@@ -2806,7 +2809,7 @@ bool npc::guaranteed_hostile() const
 {
     return ( attitude_to( get_player_character() ) == Attitude::HOSTILE ) ||
            is_enemy() ||
-           ( my_fac && my_fac->likes_u < -10 );
+           ( my_fac && my_fac->guaranteed_hostile() );
 }
 
 bool npc::is_walking_with() const
@@ -3264,6 +3267,7 @@ void npc::reboot()
     // they can be woken up by the player, and if their brain is fixed, great,
     // if not, they will faint again, and the NPC can be kept asleep until the bug is fixed.
     cancel_activity();
+    sleep_session.end();
     path.clear();
     last_player_seen_pos = std::nullopt;
     last_seen_player_turn = 999;
@@ -3578,7 +3582,8 @@ void npc::on_load( map *here )
 
     // Cap at some reasonable number, say 2 days
     const time_duration dt = std::min( calendar::turn - last_updated, 2_days );
-    // TODO: Sleeping, healing etc.
+    // TODO: sleep that would have started or ended while unloaded, healing etc.; a sleep
+    // session is restored as saved
     last_updated = calendar::turn;
     time_point cur = calendar::turn - dt;
     add_msg_debug( debugmode::DF_NPC, "on_load() by %s, %d turns", get_name(), to_turns<int>( dt ) );
@@ -3831,40 +3836,45 @@ const pathfinding_settings &npc::get_pathfinding_settings( bool no_bashing ) con
 std::function<bool( const tripoint_bub_ms & )> npc::get_path_avoid() const
 {
     return [this]( const tripoint_bub_ms & p ) {
-        if( get_creature_tracker().creature_at( p ) ) {
-            return true;
-        }
-        map &here = get_map();
-        if( rules.has_flag( ally_rule::avoid_doors ) && here.open_door( *this, p, true, true ) ) {
-            return true;
-        }
-        if( rules.has_flag( ally_rule::avoid_locks ) &&
-            doors::can_unlock_door( here, *this, p ) ) {
-            return true;
-        }
-        if( here.is_open_air( p ) ) {
-            return true;
-        }
-        if( rules.has_flag( ally_rule::hold_the_line ) &&
-            rl_dist( p, get_avatar().pos_bub() ) == 1 &&
-            ( here.close_door( p, true, true ) ||
-              ( here.move_cost( p ) > 2  &&
-                // Ignore if target location is on same vehicle as the avatar occupies
-                !( here.veh_at( p ).has_value() && here.veh_at( get_avatar().pos_abs() ) &&
-                   here.veh_at( p ).value().vehicle().pos_abs() == here.veh_at(
-                       get_avatar().pos_abs() ).value().vehicle().pos_abs() ) ) ) ) {
-            return true;
-        }
-        if( sees_dangerous_field( p ) ) {
-            return true;
-        }
-        // pathfinder prices bashing itself. guarding only movement functions would
-        // repath into the same wall every turn.
-        if( craft_reservation::bashing_would_break_reservation( here, *this, p ) ) {
-            return true;
-        }
-        return false;
+        return path_avoids( p, false );
     };
+}
+
+bool npc::path_avoids( const tripoint_bub_ms &p, const bool ignore_creatures ) const
+{
+    if( !ignore_creatures && get_creature_tracker().creature_at( p ) ) {
+        return true;
+    }
+    map &here = get_map();
+    if( rules.has_flag( ally_rule::avoid_doors ) && here.open_door( *this, p, true, true ) ) {
+        return true;
+    }
+    if( rules.has_flag( ally_rule::avoid_locks ) &&
+        doors::can_unlock_door( here, *this, p ) ) {
+        return true;
+    }
+    if( here.is_open_air( p ) ) {
+        return true;
+    }
+    if( rules.has_flag( ally_rule::hold_the_line ) &&
+        rl_dist( p, get_avatar().pos_bub() ) == 1 &&
+        ( here.close_door( p, true, true ) ||
+          ( here.move_cost( p ) > 2  &&
+            // Ignore if target location is on same vehicle as the avatar occupies
+            !( here.veh_at( p ).has_value() && here.veh_at( get_avatar().pos_abs() ) &&
+               here.veh_at( p ).value().vehicle().pos_abs() == here.veh_at(
+                   get_avatar().pos_abs() ).value().vehicle().pos_abs() ) ) ) ) {
+        return true;
+    }
+    if( sees_dangerous_field( p ) ) {
+        return true;
+    }
+    // pathfinder prices bashing itself. guarding only movement functions would
+    // repath into the same wall every turn.
+    if( craft_reservation::bashing_would_break_reservation( here, *this, p ) ) {
+        return true;
+    }
+    return false;
 }
 
 mfaction_id npc::get_monster_faction() const
@@ -4342,7 +4352,7 @@ void npc::ensure_portrait_valid()
 {
     if( !portrait_filename.is_valid() ) {
         DebugLog( D_INFO, DC_ALL ) << disp_name() << " invalid portrait " << portrait_filename.c_str();
-        if( idz->unique_portrait_filename.is_valid() ) {
+        if( idz.is_valid() && idz->unique_portrait_filename.is_valid() ) {
             portrait_filename = idz->unique_portrait_filename;
         } else {
             pick_random_portrait( this );
@@ -4360,6 +4370,8 @@ std::string npc::get_current_status() const
 {
     if( current_target() != nullptr ) {
         return _( "In Combat!" );
+    } else if( has_effect( effect_lying_down ) && !has_effect( effect_sleep ) ) {
+        return _( "Trying to sleep" );
     } else if( in_sleep_state() ) {
         return _( "Sleeping" );
     } else if( is_following() ) {

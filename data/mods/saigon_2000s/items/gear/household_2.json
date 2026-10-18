@@ -1,0 +1,120 @@
+[
+  {
+    "type": "ITEM",
+    "id": "sgn_binh_thuy",
+    "copy-from": "thermos",
+    "name": { "str": "Rạng Đông vacuum flask" },
+    "description": "A bình thủy: a tin-and-glass thermos printed with peach blossoms, from the Rạng Đông factory.  Every household fills one with boiling water in the morning for tea all day.",
+    "color": "pink"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_noi_dat",
+    "copy-from": "clay_pot",
+    "name": { "str_sp": "nồi đất" },
+    "description": "A squat unglazed clay pot blackened by charcoal, the only proper vessel for cá kho tộ: fish braised in caramel and fish sauce until the sauce turns sticky.",
+    "color": "brown"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_thot_go_me",
+    "copy-from": "cutting_board",
+    "name": { "str": "tamarind-wood chopping block" },
+    "description": "A thick round slice of tamarind trunk, the thớt gỗ me every kitchen chops on.  The cleaver has worn a dip in the middle after years of daily use.",
+    "color": "brown"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_choi_cha",
+    "copy-from": "broom",
+    "name": { "str": "coconut-rib broom" },
+    "description": "A chổi chà: a stiff bundle of coconut leaf ribs bound to a short bamboo handle, for sweeping the sidewalk out front at dawn.",
+    "color": "yellow"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_am_nhom",
+    "copy-from": "kettle",
+    "name": { "str": "aluminium kettle" },
+    "description": "A dented aluminium kettle, sooty on the bottom from the honeycomb-coal stove, for boiling water for tea and the vacuum flask.",
+    "color": "light_gray"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_long_ban",
+    "name": { "str": "lồng bàn food cover" },
+    "description": "A dome of woven plastic mesh in pink or green, set over the dishes on the table to keep the flies off until the family sits down.",
+    "weight": "250 g",
+    "volume": "3 L",
+    "longest_side": "60 cm",
+    "price": "1 USD",
+    "price_postapoc": "10 cent",
+    "material": [ "plastic" ],
+    "symbol": "^",
+    "color": "pink"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_bo_va_xe",
+    "copy-from": "tire_repair_kit",
+    "name": { "str": "bơm vá xe kit" },
+    "description": "The roadside tyre mender's kit: tyre levers, rubber patches cut from old inner tubes, glue, sandpaper and a basin of water to find the leak.  Every few blocks a man with this kit and a hand pump waited under a tree for punctures.",
+    "color": "dark_gray"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_can_cau_tre",
+    "copy-from": "fishing_rod_basic",
+    "name": { "str": "bamboo fishing pole" },
+    "description": "A long, light bamboo pole with nylon line, a float cut from a flip-flop and a small hook, for fishing the canals and the ponds of the outskirts.",
+    "color": "yellow"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_khoa_chu_u",
+    "copy-from": "pipe",
+    "name": { "str": "motorbike U-lock" },
+    "description": "A heavy hardened-steel khóa chữ U, the lock every Saigon rider clamps through the front wheel at night.  Swung by the shackle, it is a short, brutal club.",
+    "weight": "1600 g",
+    "volume": "1500 ml",
+    "longest_side": "35 cm",
+    "color": "red"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_non_coi",
+    "copy-from": "sgn_non_la",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str_sp": "nón cối" },
+    "description": "An olive-green pith helmet of pressed fibre under cloth, with a red star badge, worn by veterans, cyclo drivers, construction workers and old men reading the paper.  It keeps the sun off the head and neck.",
+    "weight": "300 g",
+    "color": "green"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_do_bo",
+    "copy-from": "jumpsuit",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str_sp": "đồ bộ" },
+    "description": "A matching shirt and trousers of thin flowered rayon, the loose home clothes Saigon women wear all day: at home, at the market and on the motorbike.",
+    "color": "pink"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_khan_ran",
+    "copy-from": "scarf",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str_sp": "khăn rằn" },
+    "description": "A black-and-white checked cotton scarf from the Mekong Delta, knotted round the neck against the sun or wrapped over the face against road dust.",
+    "color": "dark_gray"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_dep_quai_hau",
+    "copy-from": "leathersandals",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str_pl": "dép quai hậu (pairs)", "str": "dép quai hậu (pair)" },
+    "description": "Sandals with a strap behind the heel, so they stay on when you run for the bus or wade a flooded street: the school and office shoe of the south.",
+    "color": "brown"
+  }
+]

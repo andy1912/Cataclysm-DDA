@@ -288,6 +288,9 @@ bool GetDesktopDisplayMode( int displayIndex, SDL_DisplayMode *mode );
 // SDL_GetRenderDriver returns the driver name directly.
 int GetNumRenderDrivers();
 const char *GetRenderDriverName( int index );
+// GPU drivers compiled into SDL, like "vulkan" or "direct3d12"
+int GetNumGPUDrivers();
+const char *GetGPUDriverName( int index );
 
 // Name via SDL_GetRendererName, capabilities via SDL_GetRendererProperties.
 const char *GetRendererName( const SDL_Renderer_Ptr &renderer );
@@ -300,6 +303,8 @@ bool IsRendererSoftware( const SDL_Renderer_Ptr &renderer );
 bool WaitForEvent( int timeout_ms );
 // queue an empty event from any thread so a blocked WaitForEvent returns
 void PushWakeEvent();
+// whether an event of this type is queued, without taking it
+bool HasEvent( Uint32 type );
 // posted by PushWakeEvent; SDL_EVENT_USER + 1 is the gamepad scheduler
 inline constexpr Uint32 CATA_WAKE_EVENT = SDL_EVENT_USER + 2;
 bool GetRendererMaxTextureSize( const SDL_Renderer_Ptr &renderer, int *max_w, int *max_h );
@@ -430,6 +435,7 @@ inline SDL_FingerID GetFingerID( const SDL_Event &ev )
 inline constexpr Uint32 CATA_FINGERMOTION = SDL_EVENT_FINGER_MOTION;
 inline constexpr Uint32 CATA_FINGERDOWN   = SDL_EVENT_FINGER_DOWN;
 inline constexpr Uint32 CATA_FINGERUP     = SDL_EVENT_FINGER_UP;
+inline constexpr Uint32 CATA_FINGERCANCELED = SDL_EVENT_FINGER_CANCELED;
 
 inline constexpr Uint32 CATA_KEYDOWN         = SDL_EVENT_KEY_DOWN;
 inline constexpr Uint32 CATA_KEYUP           = SDL_EVENT_KEY_UP;

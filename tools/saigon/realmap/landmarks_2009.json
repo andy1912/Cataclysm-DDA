@@ -1,0 +1,184 @@
+{
+  "about": "Where each of the mod's landmarks (city_building sgn_lm_*) stands on the real map: the anchor is the middle of the real site. write_omaps.py centres the landmark's footprint on it, then tries small shifts and the four facings and keeps the one that covers no major road and puts the front on the most street. Sources: 'wiki' = the English Wikipedia article's coordinates; 'osm' = the OpenStreetMap feature of that name in the extract; 'approx' = from memory, checked against the 2000s tourist map. 'facing' fixes the side the entrance faces where the street count would pick the wrong one.",
+  "landmarks": [
+    {
+      "id": "sgn_lm_ben_thanh",
+      "lat": 10.77252,
+      "lon": 106.69802,
+      "source": "wiki (Bến Thành Market)"
+    },
+    {
+      "id": "sgn_lm_duc_ba",
+      "lat": 10.77972,
+      "lon": 106.69917,
+      "source": "wiki (Notre-Dame Cathedral Basilica of Saigon)",
+      "facing": "east",
+      "facing_why": "its front faces Công xã Paris square and the Post Office"
+    },
+    {
+      "id": "sgn_lm_buu_dien",
+      "lat": 10.78,
+      "lon": 106.7,
+      "source": "wiki (Saigon Central Post Office)",
+      "facing": "west",
+      "facing_why": "faces Công xã Paris square and the cathedral"
+    },
+    {
+      "id": "sgn_lm_nha_hat",
+      "lat": 10.7767,
+      "lon": 106.70322,
+      "source": "wiki (Saigon Opera House)",
+      "facing": "west",
+      "facing_why": "faces Lam Sơn square and Lê Lợi"
+    },
+    {
+      "id": "sgn_lm_ubnd_tp",
+      "lat": 10.7765,
+      "lon": 106.7009,
+      "source": "wiki (Ho Chi Minh City Hall)",
+      "facing": "south",
+      "facing_why": "looks down Nguyễn Huệ to the river"
+    },
+    {
+      "id": "sgn_lm_dinh_doc_lap",
+      "lat": 10.77694,
+      "lon": 106.69528,
+      "source": "wiki (Independence Palace)"
+    },
+    {
+      "id": "sgn_lm_thien_hau",
+      "lat": 10.7533,
+      "lon": 106.66115,
+      "source": "approx (710 Nguyễn Trãi, District 5)"
+    },
+    {
+      "id": "sgn_lm_ngoc_hoang",
+      "lat": 10.79171,
+      "lon": 106.69789,
+      "source": "wiki (Jade Emperor Pagoda)"
+    },
+    {
+      "id": "sgn_lm_binh_tay",
+      "lat": 10.749375,
+      "lon": 106.651078,
+      "source": "wiki (Bình Tây Market)"
+    },
+    {
+      "id": "sgn_lm_ga_sai_gon",
+      "lat": 10.7822,
+      "lon": 106.677,
+      "source": "wiki (Saigon railway station)"
+    },
+    {
+      "id": "sgn_lm_ben_xe_md",
+      "lat": 10.815,
+      "lon": 106.7108,
+      "source": "approx (old site, 292 Đinh Bộ Lĩnh, Bình Thạnh)"
+    },
+    {
+      "id": "sgn_lm_tao_dan",
+      "lat": 10.77479,
+      "lon": 106.69309,
+      "source": "osm (Công viên Tao Đàn)"
+    },
+    {
+      "id": "sgn_lm_ho_con_rua",
+      "lat": 10.78264,
+      "lon": 106.69595,
+      "source": "osm (Hồ Con Rùa)",
+      "on_road": true
+    },
+    {
+      "id": "sgn_lm_stc",
+      "lat": 10.7823,
+      "lon": 106.7046,
+      "source": "approx (37 Tôn Đức Thắng)"
+    },
+    {
+      "id": "sgn_lm_diamond",
+      "lat": 10.7813,
+      "lon": 106.6987,
+      "source": "approx (34 Lê Duẩn, at Phạm Ngọc Thạch)"
+    },
+    {
+      "id": "sgn_lm_bui_vien",
+      "lat": 10.7672,
+      "lon": 106.693,
+      "source": "osm (Bùi Viện, between Đề Thám and Đỗ Quang Đẩu)"
+    },
+    {
+      "id": "sgn_lm_thao_cam_vien",
+      "lat": 10.78781,
+      "lon": 106.70646,
+      "source": "osm (Thảo Cầm Viên Sài Gòn)"
+    },
+    {
+      "id": "sgn_lm_dam_sen",
+      "lat": 10.7659,
+      "lon": 106.63864,
+      "source": "osm (Công Viên Văn hóa Đầm Sen)"
+    },
+    {
+      "id": "sgn_lm_suoi_tien",
+      "lat": 10.863885,
+      "lon": 106.802173,
+      "source": "wiki (Suối Tiên Theme Park)"
+    },
+    {
+      "id": "sgn_lm_san_bay",
+      "lat": 10.8146,
+      "lon": 106.6585,
+      "source": "approx (the international terminal of 2007, south of the aprons; checked against the OSM aprons)",
+      "facing": "south",
+      "facing_why": "the curb and car park are on the city side, south; the apron faces the runways to the north"
+    },
+    {
+      "id": "sgn_lm_tan_dinh",
+      "lat": 10.78835,
+      "lon": 106.69066,
+      "source": "osm (Nhà thờ Tân Định)"
+    },
+    {
+      "id": "sgn_lm_cho_tan_dinh",
+      "lat": 10.7899,
+      "lon": 106.69005,
+      "source": "osm (Chợ Tân Định)"
+    },
+    {
+      "id": "sgn_lm_nha_rong",
+      "lat": 10.76824,
+      "lon": 106.70659,
+      "source": "osm (Khu Di tích Bến Nhà Rồng)"
+    },
+    {
+      "id": "sgn_lm_rex",
+      "lat": 10.77583,
+      "lon": 106.7015,
+      "source": "wiki (Rex Hotel)"
+    },
+    {
+      "id": "sgn_lm_vinh_nghiem",
+      "lat": 10.79036,
+      "lon": 106.68229,
+      "source": "osm (Chùa Vĩnh Nghiêm)"
+    },
+    {
+      "id": "sgn_lm_lang_ong",
+      "lat": 10.8016,
+      "lon": 106.69701,
+      "source": "osm (Lăng Ông Bà Chiểu)"
+    },
+    {
+      "id": "sgn_lm_thong_nhat",
+      "lat": 10.760703,
+      "lon": 106.663331,
+      "source": "wiki (Thống Nhất Stadium)"
+    },
+    {
+      "id": "sgn_lm_an_dong",
+      "lat": 10.75811,
+      "lon": 106.67218,
+      "source": "osm (Chợ An Đông)"
+    }
+  ]
+}

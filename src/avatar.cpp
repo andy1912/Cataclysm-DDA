@@ -333,6 +333,28 @@ point_of_interest avatar::get_active_point_of_interest() const
     return active_point_of_interest;
 }
 
+// moving further than this from the anchor counts as travelling
+static constexpr int relocation_radius = 6;
+
+void avatar::on_move( const tripoint_abs_ms &old_pos )
+{
+    Character::on_move( old_pos );
+    const tripoint_abs_ms now_pos = pos_abs();
+    if( !relocation_anchor || now_pos.z() != relocation_anchor->z() ||
+        rl_dist( now_pos, *relocation_anchor ) > relocation_radius ) {
+        relocation_anchor = now_pos;
+        relocated_at = calendar::turn;
+    }
+}
+
+time_duration avatar::time_since_relocated() const
+{
+    if( !relocation_anchor ) {
+        return 0_turns;
+    }
+    return std::max( calendar::turn - relocated_at, 0_turns );
+}
+
 void avatar::reset_all_missions()
 {
     active_mission = nullptr;
@@ -1287,7 +1309,6 @@ void avatar::rebuild_aim_cache() const
 
 void avatar::set_movement_mode( const move_mode_id &new_mode )
 {
-    map &here = get_map();
 
     if( can_switch_to( new_mode ) ) {
         if( is_hauling() && new_mode->stop_hauling() ) {
@@ -1297,10 +1318,6 @@ void avatar::set_movement_mode( const move_mode_id &new_mode )
         move_mode = new_mode;
         // Enchantments based on move modes can stack inappropriately without a recalc here
         recalculate_enchantment_cache();
-        // crouching affects visibility
-        //TODO: Replace with dirtying vision_transparency_cache
-        here.set_transparency_cache_dirty( pos_bub() );
-        here.set_seen_cache_dirty( posz() );
         recoil = MAX_RECOIL;
     } else {
         add_msg( new_mode->change_message( false, get_steed_type() ) );
