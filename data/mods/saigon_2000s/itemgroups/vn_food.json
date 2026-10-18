@@ -1,0 +1,62 @@
+[
+  {
+    "type": "item_group",
+    "id": "sgn_vn_food_street",
+    "subtype": "distribution",
+    "//": "V1: what a street stall, quán ốc or cơm bình dân counter has left when its cook fled.  Not wired into loot yet.",
+    "entries": [
+      { "item": "sgn_bun_rieu", "prob": 10 },
+      { "item": "sgn_banh_canh", "prob": 8 },
+      { "item": "sgn_com_chien", "prob": 12 },
+      { "item": "sgn_chao_vit", "prob": 8 },
+      { "item": "sgn_oc_luoc", "prob": 8 },
+      { "item": "sgn_oc_xao", "prob": 6 },
+      { "item": "sgn_oc", "prob": 6 },
+      { "item": "sgn_goi_du_du", "prob": 8 },
+      { "item": "sgn_banh_trang_tron", "prob": 8, "count": [ 1, 3 ] },
+      { "item": "sgn_bot_chien", "prob": 6 },
+      { "item": "sgn_sup_cua", "prob": 6 },
+      { "item": "sgn_ca_kho_to", "prob": 6 },
+      { "item": "sgn_canh_chua", "prob": 6 },
+      { "item": "sgn_thit_kho_trung", "prob": 4 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_vn_food_fruit",
+    "subtype": "distribution",
+    "//": "V1: a fruit cart or a chợ fruit stall: the southern fruits plus dda's mango, papaya and guava.  Not wired into loot yet.",
+    "entries": [
+      { "item": "sgn_chom_chom", "prob": 15, "count": [ 1, 4 ] },
+      { "item": "sgn_mang_cut", "prob": 10, "count": [ 1, 3 ] },
+      { "item": "sgn_vu_sua", "prob": 10, "count": [ 1, 4 ] },
+      { "item": "sgn_mang_cau", "prob": 8, "count": [ 1, 3 ] },
+      { "item": "sgn_sapoche", "prob": 10, "count": [ 1, 5 ] },
+      { "item": "sgn_oi", "prob": 12, "count": [ 1, 5 ] },
+      { "item": "mango", "prob": 10, "count": [ 1, 3 ] },
+      { "item": "papaya", "prob": 6 },
+      { "item": "sgn_rau_ma", "prob": 6, "count": [ 1, 3 ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_vn_drinks",
+    "subtype": "distribution",
+    "//": "V1: a drinks cart, a quán nhậu crate or a home fridge gone warm.  Liquids spawn in their own containers (plastic drink bag, glass bottle).  Not wired into loot yet.",
+    "entries": [
+      { "item": "sgn_sinh_to", "prob": 10 },
+      { "item": "sgn_nuoc_rau_ma", "prob": 12 },
+      { "item": "sgn_nuoc_sam", "prob": 12 },
+      { "item": "sgn_sua_bap", "prob": 10 },
+      { "item": "sgn_bia_chai", "prob": 25, "charges": 2, "count": [ 1, 6 ] },
+      { "item": "sgn_ruou_thuoc", "prob": 5, "charges": [ 4, 12 ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_vn_ice",
+    "subtype": "distribution",
+    "//": "V1: the đá cây depot or a café's ice box.  Block ice melts into untreated water in ~10 h and tube ice into clean water in ~4 h, counted from when the map is generated.  Not wired into loot yet.",
+    "entries": [ { "item": "sgn_da_cay", "prob": 60, "count": [ 1, 4 ] }, { "item": "sgn_da_vien", "prob": 40, "count": [ 1, 3 ] } ]
+  }
+]
