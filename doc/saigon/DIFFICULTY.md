@@ -105,3 +105,55 @@ perf decision. 5 and 6 are optional and I would hold them until after 1-3 are re
 Re-test by running the suite plus one real new game. If the playtester still dies early,
 the next lever is 4/5, not more professions — do not raise zombie counts, they are already
 below vanilla.
+## Side check, 2026-10-18 evening (appended; nothing above is changed)
+
+Each claim was re-read against the code at `5969e2afd9`.
+
+**Confirmed:**
+- The horde arithmetic (`src/overmap.cpp:3474`, city_size 12, spread 1.5): 0.94 per OMT
+  against vanilla's 1.41.
+- The start: `start_of_game` day 6 06:00, which is 4 days 8 hours after the cataclysm.
+- The 2004 region is a megacity (`is_megacity: true`); the delta is not (city_size 3).
+- The landmark layer works out to 1.15 per OMT (35 % × 1 awake, plus 40 % × 2 dormant).
+  `mapgen.cpp` rolls `chance` on each `repeat`.
+- All 20 `MISSION_SGN_*` have value 0 and no generic rewards; 2 of 29 templates are SHOPKEEP.
+
+**Wrong, and it changes the advice:**
+1. **"Zombies are already below vanilla — do not raise counts" only holds for the horde layer.**
+   The city fabric places far more than the hordes do:
+
+   | Layer | Per OMT |
+   |---|---|
+   | nhà ống row (`gen_nha_ong.py` GROUND_MONSTERS / FLOOR_MONSTERS) | about **7.9**. Per lot: 0.15 awake + 0.5 × 2 dormant on the ground, and 0.08 awake on each upper floor; 6 lots per OMT. |
+   | hẻm block (`gen_hem.py`) | about **3.7** (0.6 × 1.5 awake + 0.8 × 3.5 dormant) |
+   | landmark / place | 1.15 |
+   | horde layer | 0.94 |
+   | vanilla house (`data/json/mapgen/house/`) | about **0.03**: 35 of 156 houses roll a 2–5 % single GROUP_ZOMBIE |
+
+   So a Saigon street holds roughly **4–6× vanilla's zombies**, most of them pseudo-dormant
+   bodies that rise when the player comes near. That fits "cornered in a hẻm" better than the
+   horde numbers do. The cheapest lever is the dormant `repeat` in `gen_nha_ong.py`
+   ([1,3] → [1,2]) and `gen_hem.py` ([2,5] → [1,3]), which roughly halves the dormant layer.
+   This is lever 5 applied to the right file, and it should rank above lever 4.
+2. **`sgn_non_bao_hiem` is a motorbike helmet, not a bulletproof vest.** The armoured
+   professions are công an (helmet, boots), construction (hard hat, steel boots, gloves),
+   xe ôm (helmet) and veteran (army jacket, boots): 4, not 2.
+3. **Construction also starts with 2 rebar** (a usable weapon), so 6 of 12 start unarmed, not 7.
+4. **"Gold is dead" is half true.** Missions pay nothing, but E1 made the chợ, hospital and
+   petrol staff into traders with a faction currency and stock (`saigon_traders_have_wealth_and_stock`).
+   Gold can be traded there. What is missing is a way to *earn* from missions.
+5. **W2 (committed before this doc) is not counted:** about 1 home in 3 holds a weapon, kho
+   95 %, schools 48 %. Lever 1 still matters for the first minutes, but a melee weapon is close
+   by in most streets.
+
+**Revised order** (cheap first, each to be re-measured by a playtest):
+1. A melee weapon for the six bare-handed professions (lever 1, unchanged).
+2. Halve the dormant layer in nhà ống and hẻm (the corrected lever 5).
+3. Start on day 2 (lever 3). V3's loudspeaker phases key off days since the cataclysm, so an
+   earlier start shows more of the "early" announcements; nothing breaks.
+4. Start clothing (lever 2).
+5. Give missions a small value (lever 6, re-scoped).
+6. The escape route (lever 4) last: it touches the megacity performance work (`doc/saigon/PERF.md`).
+
+The playtester's circumstance of death is still the missing evidence. If it was a dormant
+pile rising in a hẻm, item 2 moves to the top.
