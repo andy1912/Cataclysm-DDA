@@ -78,6 +78,11 @@ TEST_CASE( "saigon_district1_landmarks", "[mapgen][saigon]" )
         // L-loc1 parks, warehouse and container yard
         { "sgn_pl_cong_vien", 1, 1, 0, 1, true }, { "sgn_pl_cong_vien_ho", 1, 1, 0, 1, true },
         { "sgn_pl_cong_vien_the_duc", 1, 1, 0, 1, true }, { "sgn_pl_kho", 1, 1, 0, 1 }, { "sgn_pl_kho_cang", 1, 1, 0, 1 },
+        // V2 the city's corners (tools/saigon/gen_vn_places.py)
+        { "sgn_vp_cafe_vong", 1, 1, 0, 1 }, { "sgn_vp_bia_hoi", 1, 1, 0, 1 }, { "sgn_vp_hot_toc", 1, 1, 0, 1 },
+        { "sgn_vp_nha_tro", 1, 1, 0, 2 }, { "sgn_vp_dinh", 1, 1, 0, 1 }, { "sgn_vp_nha_tho_ho", 1, 1, 0, 1 },
+        { "sgn_vp_dien_thoai", 1, 1, 0, 1 }, { "sgn_vp_cho_tam", 1, 1, 0, 1, true }, { "sgn_vp_lo_da", 1, 1, 0, 1 },
+        { "sgn_vp_giu_xe", 1, 1, 0, 1 }, { "sgn_vp_tram_xe_buyt", 1, 1, 0, 1 },
     };
     const ter_str_id open_air( "t_open_air" );
     const ter_str_id up( "t_stairs_up" );

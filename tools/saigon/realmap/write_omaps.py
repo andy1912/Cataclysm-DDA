@@ -20,7 +20,12 @@ v1 (unit R2b):
   districts  the 2009 districts as named cities (districts_2009.json): overmap labels and hordes
   landmarks  the 19 landmarks on their real sites (R5, place_landmarks.py, landmarks_2009.json)
   places     fuel, markets, pagodas, churches, schools, hospitals, police, supermarkets of 2009 and
-             cemeteries from the data (R4, place_places.py)
+             cemeteries from the data (R4, place_places.py); the data's đình and clan halls get
+             their own buildings (V2)
+  corners    V2: a few street-front lots become the city's small places that the data does not
+             map (gen_vn_places.py: bia hơi, phone shops, motorbike lots, bus stops ...), and
+             a few lots on the main roads out of town hammock cafés; drawn from their own random
+             stream so the rest of the map does not change
 
 Every terrain id written is checked against the overmap_terrain definitions of dda and the mod.
 """
@@ -47,6 +52,13 @@ ORIGIN_OM = ( -1, -2 )
 ROT = [ 'north', 'east', 'south', 'west' ]
 DIRS = { 'n': ( 0, -1 ), 'e': ( 1, 0 ), 's': ( 0, 1 ), 'w': ( -1, 0 ) }
 FACING = { 'n': 0, 'e': 1, 's': 2, 'w': 3 }
+# V2: the share of street-front lots that hold one of the city's small places instead of a
+# shophouse, and which ones (gen_vn_places.py, weights as in the region's shops pool); and the
+# share of village frontage on the main roads out of town that is a hammock café
+CORNER_SHARE = 0.015
+CORNERS = [ ( 'sgn_vp_bia_hoi', 5 ), ( 'sgn_vp_hot_toc', 3 ), ( 'sgn_vp_dien_thoai', 4 ), ( 'sgn_vp_cho_tam', 2 ),
+            ( 'sgn_vp_lo_da', 2 ), ( 'sgn_vp_giu_xe', 3 ), ( 'sgn_vp_tram_xe_buyt', 2 ) ]
+ROADSIDE_CAFE_SHARE = 0.06
 LINEAR_SUFFIX = {
     '': '_isolated', 'n': '_end_south', 'e': '_end_west', 's': '_end_north', 'w': '_end_east',
     'ns': '_ns', 'ew': '_ew', 'ne': '_ne', 'es': '_es', 'sw': '_sw', 'nw': '_wn',
@@ -643,13 +655,28 @@ def main():
             continue
         mouths.update( touching[::MOUTH_EVERY] )
     fronts = inner = 0
+    corner_rng = random.Random( 2009 * 2 )
+    corner_ids = [ c for c, _ in CORNERS ]
+    corner_weights = [ w for _, w in CORNERS ]
+    corners = {}
     for p, d in front.items():
         if p in mouths:
             world.place( hem, p[0], p[1], FACING[d] )
             inner += 1
+            continue
+        roll = corner_rng.random()
+        pick = corner_rng.choices( corner_ids, corner_weights )[0]
+        if terrain[p[1]][p[0]] == 'farmland':
+            pick = 'sgn_vp_cafe_vong' if roll < ROADSIDE_CAFE_SHARE else None
+        elif roll >= CORNER_SHARE:
+            pick = None
+        if pick:
+            world.place( bld[pick], p[0], p[1], FACING[d] )
+            corners[pick] = corners.get( pick, 0 ) + 1
         else:
             world.place( nha_ong, p[0], p[1], FACING[d] )
             fronts += 1
+    print( '  corners: ' + ', '.join( '%s %d' % kv for kv in sorted( corners.items() ) ) )
     for p in inside:
         world.place( hem, p[0], p[1], rng.randrange( 4 ) )
         inner += 1

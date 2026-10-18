@@ -1,0 +1,1480 @@
+[
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_cafe_vong_00" ] ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "|||||||||,,,,,,|||||||||",
+        "ggggggggg,,,,,,ggggggggg",
+        "gggTggggg,,,,,,ggggg9ggg",
+        "ggggggggg,,,,,,ggggggggg",
+        "gggggg9gg,,,,,,ggTgggggg",
+        "gggggggggggggggggggggggg",
+        "ggP::::P::::P::::P::::gg",
+        "gg::(:(:(:(:(:(:(:(:(:gg",
+        "gg:::[:::[:::[:::[::::gg",
+        "gg::(:(:(:(:(:(:(:(:(:gg",
+        "ggP::::P::::P::::P::::gg",
+        "gggggggggggggggggggggggg",
+        "gggggggggggggggggggggg9g",
+        "gTP::::P::::P:g###+###gg",
+        "gg::(:(:(:(:(:g#::::@#gg",
+        "gg:::[:::[::::g#$$$$:#gg",
+        "gg::(:(:(:(:(:gw:::::#gg",
+        "ggP::::P::::P:g#::::*#gg",
+        "ggggggggggggggg#1::::#gg",
+        "ggggggggggggggg#######gg",
+        "gggggggggggggggggggggggg",
+        "gggggggggggggggggggggggg"
+      ],
+      "palettes": [ "sgn_lm" ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 35 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 40, "repeat": [ 1, 3 ] },
+        {
+          "monster": "pseudo_dormant_sgn_mon_zombie_xe_om",
+          "x": [ 3, 20 ],
+          "y": [ 9, 11 ],
+          "chance": 60,
+          "repeat": [ 1, 2 ]
+        },
+        { "monster": "sgn_mon_zombie_xe_om", "x": [ 3, 12 ], "y": [ 16, 18 ], "chance": 30 }
+      ],
+      "terrain": {
+        "(": "t_thconc_floor",
+        "$": "t_thconc_floor",
+        "*": "t_thconc_floor",
+        "1": "t_thconc_floor",
+        "@": "t_thconc_floor",
+        "/": "t_sgn_mai_ton"
+      },
+      "furniture": { "(": "f_sgn_vong", "$": "f_counter", "*": "f_fridge", "1": "f_sgn_lu_nuoc", "@": "f_rack" },
+      "liquids": { "1": { "liquid": "water", "amount": [ 40, 240 ] } },
+      "items": {
+        "$": { "item": "sgn_cafe", "chance": 60, "repeat": [ 1, 2 ] },
+        "*": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [ { "group": "sgn_vn_ice", "prob": 50 }, { "group": "sgn_vn_drinks", "prob": 50 } ]
+          },
+          "chance": 70,
+          "repeat": [ 1, 3 ]
+        },
+        "@": { "item": "sgn_vn_daily_kitchen", "chance": 50, "repeat": [ 1, 2 ] },
+        "(": { "item": "sgn_vn_daily_pocket", "chance": 10 }
+      },
+      "place_vehicles": [
+        { "vehicle": "sgn_vg_sidewalk_parked", "x": 10, "y": 4, "rotation": 90, "chance": 50 },
+        { "vehicle": "sgn_vg_sidewalk_parked", "x": 13, "y": 4, "rotation": 90, "chance": 50 }
+      ],
+      "place_npcs": [ { "class": "sgn_npc_vendor", "x": 18, "y": 18 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_cafe_vong_00_z1" ] ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "  ////////////////////  ",
+        "  ////////////////////  ",
+        "  ////////////////////  ",
+        "  ////////////////////  ",
+        "  ////////////////////  ",
+        "                        ",
+        "                        ",
+        "  //////////// _______  ",
+        "  //////////// _______  ",
+        "  //////////// _______  ",
+        "  //////////// _______  ",
+        "  //////////// _______  ",
+        "               _______  ",
+        "               _______  ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "sgn_lm" ],
+      "terrain": {
+        "(": "t_thconc_floor",
+        "$": "t_thconc_floor",
+        "*": "t_thconc_floor",
+        "1": "t_thconc_floor",
+        "@": "t_thconc_floor",
+        "/": "t_sgn_mai_ton"
+      },
+      "furniture": { "(": "f_sgn_vong", "$": "f_counter", "*": "f_fridge", "1": "f_sgn_lu_nuoc", "@": "f_rack" },
+      "liquids": { "1": { "liquid": "water", "amount": [ 40, 240 ] } },
+      "items": {
+        "$": { "item": "sgn_cafe", "chance": 60, "repeat": [ 1, 2 ] },
+        "*": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [ { "group": "sgn_vn_ice", "prob": 50 }, { "group": "sgn_vn_drinks", "prob": 50 } ]
+          },
+          "chance": 70,
+          "repeat": [ 1, 3 ]
+        },
+        "@": { "item": "sgn_vn_daily_kitchen", "chance": 50, "repeat": [ 1, 2 ] },
+        "(": { "item": "sgn_vn_daily_pocket", "chance": 10 }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_bia_hoi_00" ] ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,][],][],][],][],][],,,",
+        ",,,],,,],,,],,,],,,],,,,",
+        ",,,,,\\,,,,,,,\\,,,,,,,\\,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,][],][],][],][],][],,,",
+        ",,,],,,],,,],,,],,,],,,,",
+        ",,,,,,,,,\\,,,,,,,\\,,,,,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,][],][],][],][],][],,,",
+        ",,,],,,],,,],,,],,,],,,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",###w###;;;;;;;;###w###,",
+        ",#....................#,",
+        ",#.jjjj...............#,",
+        ",#...............##+###,",
+        ",#....................#,",
+        ",#.@.@................#,",
+        ",#.......*.*..$..).).)#,",
+        ",######################,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,"
+      ],
+      "palettes": [ "sgn_lm" ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 35 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 40, "repeat": [ 1, 3 ] },
+        {
+          "monster": "pseudo_dormant_sgn_mon_zombie_tho_ho",
+          "x": [ 2, 21 ],
+          "y": [ 3, 13 ],
+          "chance": 50,
+          "repeat": [ 1, 3 ]
+        },
+        { "monster": "sgn_mon_zombie_xe_om", "x": [ 2, 21 ], "y": [ 3, 13 ], "chance": 35 }
+      ],
+      "terrain": {
+        "\\": "t_concrete",
+        ";": "t_rdoor_o",
+        "@": "t_sgn_gach_men",
+        "*": "t_sgn_gach_men",
+        "$": "t_sgn_gach_men",
+        ")": "t_sgn_gach_men"
+      },
+      "furniture": { "\\": "f_sgn_du", "@": "f_standing_tank", "*": "f_fridge", "$": "f_sgn_bep_nuong", ")": "f_crate_c" },
+      "liquids": { "@": { "liquid": "sgn_bia_hoi", "amount": [ 20, 120 ] } },
+      "items": {
+        "*": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [ { "group": "sgn_vn_ice", "prob": 50 }, { "group": "sgn_vn_drinks", "prob": 50 } ]
+          },
+          "chance": 70,
+          "repeat": [ 1, 3 ]
+        },
+        ")": { "item": "sgn_nhau", "chance": 60, "repeat": [ 1, 3 ] },
+        "$": { "item": "sgn_vn_food_street", "chance": 50, "repeat": [ 1, 2 ] },
+        "j": { "item": "sgn_vn_daily_kitchen", "chance": 40 },
+        "[": { "item": "sgn_vn_food_street", "chance": 15 }
+      },
+      "place_npcs": [ { "class": "sgn_npc_vendor", "x": 4, "y": 18 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_bia_hoi_00_z1" ] ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        "                        "
+      ],
+      "palettes": [ "sgn_lm" ],
+      "terrain": {
+        "\\": "t_concrete",
+        ";": "t_rdoor_o",
+        "@": "t_sgn_gach_men",
+        "*": "t_sgn_gach_men",
+        "$": "t_sgn_gach_men",
+        ")": "t_sgn_gach_men"
+      },
+      "furniture": { "\\": "f_sgn_du", "@": "f_standing_tank", "*": "f_fridge", "$": "f_sgn_bep_nuong", ")": "f_crate_c" },
+      "liquids": { "@": { "liquid": "sgn_bia_hoi", "amount": [ 20, 120 ] } },
+      "items": {
+        "*": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [ { "group": "sgn_vn_ice", "prob": 50 }, { "group": "sgn_vn_drinks", "prob": 50 } ]
+          },
+          "chance": 70,
+          "repeat": [ 1, 3 ]
+        },
+        ")": { "item": "sgn_nhau", "chance": 60, "repeat": [ 1, 3 ] },
+        "$": { "item": "sgn_vn_food_street", "chance": 50, "repeat": [ 1, 2 ] },
+        "j": { "item": "sgn_vn_daily_kitchen", "chance": 40 },
+        "[": { "item": "sgn_vn_food_street", "chance": 15 }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_hot_toc_00" ] ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSS]SSSSSSSSSSS",
+        "SSSSTSSSSSSSSSSSSSSTSSSS",
+        "SSSS*SSSSSSSSSSSSS$SSSSS",
+        "SS\\S(S]]SSSSSSSSS$SSSSSS",
+        ",,,,,,,,,CCCCCCC,,,,,,,,",
+        ",,,,,,,,,C)))))C,,,,,,,,",
+        ",,,,,,,,,C:::::+,,,,,,,,",
+        ",,,,,,,,,CCCCCCC,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,###w##w##+###w##w###,,",
+        ",,#..................#,,",
+        ",,#.`..............'.#,,",
+        ",,#........1.........#,,",
+        ",,#..................#,,",
+        ",,####+##########+####,,",
+        ",,#..................#,,",
+        ",,#..................#,,",
+        ",,#.f................#,,",
+        ",,#.f.....@.@......f.#,,",
+        ",,####################,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,"
+      ],
+      "palettes": [ "sgn_lm" ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 35 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 40, "repeat": [ 1, 3 ] }
+      ],
+      "terrain": {
+        "(": "t_sidewalk",
+        "*": "t_sidewalk",
+        "@": "t_sgn_gach_men",
+        "$": "t_sidewalk",
+        ")": "t_thconc_floor",
+        "1": "t_sgn_gach_men",
+        "`": "t_sgn_gach_men",
+        "'": "t_sgn_gach_men",
+        "f": "t_sgn_gach_men",
+        "\\": "t_sidewalk"
+      },
+      "furniture": {
+        "\\": "f_cardboard_box",
+        "(": "f_barber_chair",
+        "*": "f_bigmirror",
+        "@": "f_cupboard",
+        "$": "f_workbench",
+        ")": "f_counter",
+        "1": "f_sgn_ban_tho",
+        "`": "f_sgn_tivi_crt",
+        "'": "f_sgn_vong",
+        "f": "f_bed"
+      },
+      "items": {
+        "(": { "item": "sgn_barber", "chance": 30 },
+        "\\": { "item": "sgn_barber", "chance": 60, "repeat": [ 1, 2 ] },
+        "$": { "item": "sgn_moto_shop", "chance": 50, "repeat": [ 1, 2 ] },
+        ")": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [ { "item": "sgn_ve_so", "prob": 50, "count": [ 1, 5 ] }, { "item": "sgn_newspaper", "prob": 50 } ]
+          },
+          "chance": 60,
+          "repeat": [ 1, 3 ]
+        },
+        "@": { "item": "sgn_vn_daily_kitchen", "chance": 40 },
+        "1": { "item": "sgn_pagoda", "chance": 40 },
+        "f": { "item": "sgn_vn_daily_home", "chance": 30 }
+      },
+      "place_vehicles": [ { "vehicle": "sgn_vg_sidewalk_parked", "x": 21, "y": 4, "rotation": 90, "chance": 60 } ],
+      "place_npcs": [ { "class": "sgn_npc_craftsman", "x": 5, "y": 5 }, { "class": "sgn_npc_vendor", "x": 12, "y": 3 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_hot_toc_00_z1" ] ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "         _______        ",
+        "         _______        ",
+        "         _______        ",
+        "         _______        ",
+        "                        ",
+        "                        ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "                        "
+      ],
+      "palettes": [ "sgn_lm" ],
+      "terrain": {
+        "(": "t_sidewalk",
+        "*": "t_sidewalk",
+        "@": "t_sgn_gach_men",
+        "$": "t_sidewalk",
+        ")": "t_thconc_floor",
+        "1": "t_sgn_gach_men",
+        "`": "t_sgn_gach_men",
+        "'": "t_sgn_gach_men",
+        "f": "t_sgn_gach_men",
+        "\\": "t_sidewalk"
+      },
+      "furniture": {
+        "\\": "f_cardboard_box",
+        "(": "f_barber_chair",
+        "*": "f_bigmirror",
+        "@": "f_cupboard",
+        "$": "f_workbench",
+        ")": "f_counter",
+        "1": "f_sgn_ban_tho",
+        "`": "f_sgn_tivi_crt",
+        "'": "f_sgn_vong",
+        "f": "f_bed"
+      },
+      "items": {
+        "(": { "item": "sgn_barber", "chance": 30 },
+        "\\": { "item": "sgn_barber", "chance": 60, "repeat": [ 1, 2 ] },
+        "$": { "item": "sgn_moto_shop", "chance": 50, "repeat": [ 1, 2 ] },
+        ")": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [ { "item": "sgn_ve_so", "prob": 50, "count": [ 1, 5 ] }, { "item": "sgn_newspaper", "prob": 50 } ]
+          },
+          "chance": 60,
+          "repeat": [ 1, 3 ]
+        },
+        "@": { "item": "sgn_vn_daily_kitchen", "chance": 40 },
+        "1": { "item": "sgn_pagoda", "chance": 40 },
+        "f": { "item": "sgn_vn_daily_home", "chance": 30 }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_nha_tro_00" ] ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",####w#####;;##########,",
+        ",#.1.....#,,,,#@::::ff#,",
+        ",#.f.....+,,,,+:::::::#,",
+        ",#....cQ.#,,,,#:::$:::#,",
+        ",#########,,,,#########,",
+        ",#ff::::@#,,,,#@::::ff#,",
+        ",#:::::::+,,,,+:::::::#,",
+        ",#:::$:::#,,,,#:::$:::#,",
+        ",#########,,,,#########,",
+        ",#ff::::@#,,,,#@::::ff#,",
+        ",#:::::::+,,,,+:::::::#,",
+        ",#:::$:::#,,,,#:::$:::#,",
+        ",#########,,,,#########,",
+        ",#ff::::@#,,,,#:::::!:#,",
+        ",#:::::::+,,,,+:::::::#,",
+        ",#:::$:::#,,,,#:::::%:#,",
+        ",#########,,,,#########,",
+        ",#ff::::@#,,,,#:::::!:#,",
+        ",#:::::::+,,<,+:::::::#,",
+        ",#:::$:::#,,,,#:::::%:#,",
+        ",######################,"
+      ],
+      "palettes": [ "sgn_lm" ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 35 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 40, "repeat": [ 1, 3 ] },
+        {
+          "monster": "pseudo_dormant_sgn_mon_zombie_tho_ho",
+          "x": [ 2, 8 ],
+          "y": [ 8, 22 ],
+          "chance": 50,
+          "repeat": [ 1, 2 ]
+        },
+        {
+          "monster": "pseudo_dormant_sgn_mon_zombie_khuan_vac",
+          "x": [ 15, 21 ],
+          "y": [ 4, 22 ],
+          "chance": 50,
+          "repeat": [ 1, 2 ]
+        }
+      ],
+      "terrain": {
+        ";": "t_sgn_cua_sat_keo_c",
+        "f": "t_thconc_floor",
+        "@": "t_thconc_floor",
+        "$": "t_thconc_floor",
+        "1": "t_sgn_gach_men",
+        "!": "t_sgn_gach_men",
+        "%": "t_sgn_gach_men"
+      },
+      "furniture": {
+        "f": "f_makeshift_bed",
+        "@": "f_cupboard",
+        "$": "f_sgn_day_phoi",
+        "1": "f_sgn_ban_tho",
+        "!": "f_toilet",
+        "%": "f_sink"
+      },
+      "items": {
+        "f": { "item": "sgn_vn_daily_home", "chance": 25 },
+        "@": { "item": "sgn_vn_daily_kitchen", "chance": 40 },
+        "$": { "item": "sgn_shophouse_living", "chance": 30 },
+        "Q": { "item": "sgn_vn_daily_shop", "chance": 50 }
+      },
+      "place_vehicles": [
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 11, "y": 6, "rotation": 90, "chance": 45 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 11, "y": 9, "rotation": 90, "chance": 45 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 11, "y": 12, "rotation": 90, "chance": 45 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 11, "y": 15, "rotation": 90, "chance": 45 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 11, "y": 18, "rotation": 90, "chance": 45 }
+      ],
+      "place_npcs": [ { "class": "sgn_npc_caretaker", "x": 5, "y": 5 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_nha_tro_00_z1" ] ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        " ####w#####ww#####w#### ",
+        " #:f:::@:#::::#@::::ff# ",
+        " #:::::::+::::+:::::::# ",
+        " #:f:::::#::::#:::$:::# ",
+        " #########::::######### ",
+        " #ff::::@#::::#@::::ff# ",
+        " #:::::::+::::+:::::::# ",
+        " #:::$:::#::::#:::$:::# ",
+        " #########::::######### ",
+        " #ff::::@#::::#@::::ff# ",
+        " #:::::::+::::+:::::::# ",
+        " #:::$:::#::::#:::$:::# ",
+        " #########::::######### ",
+        " #ff::::@#::::#:::::!:# ",
+        " #:::::::+::::+:::::::# ",
+        " #:::$:::#::::#:::::%:# ",
+        " #########::::######### ",
+        " #ff::::@#::::#:::::!:# ",
+        " #:::::::+::>:+:::::::# ",
+        " #:::$:::#::::#:::::%:# ",
+        " ###################### "
+      ],
+      "palettes": [ "sgn_lm" ],
+      "place_monster": [
+        { "monster": "pseudo_dormant_sgn_mon_zombie_tho_ho", "x": [ 2, 8 ], "y": [ 8, 22 ], "chance": 40 },
+        { "monster": "sgn_mon_zombie_khuan_vac", "x": [ 15, 21 ], "y": [ 4, 22 ], "chance": 25 }
+      ],
+      "terrain": {
+        ";": "t_sgn_cua_sat_keo_c",
+        "f": "t_thconc_floor",
+        "@": "t_thconc_floor",
+        "$": "t_thconc_floor",
+        "1": "t_sgn_gach_men",
+        "!": "t_sgn_gach_men",
+        "%": "t_sgn_gach_men"
+      },
+      "furniture": {
+        "f": "f_makeshift_bed",
+        "@": "f_cupboard",
+        "$": "f_sgn_day_phoi",
+        "1": "f_sgn_ban_tho",
+        "!": "f_toilet",
+        "%": "f_sink"
+      },
+      "items": {
+        "f": { "item": "sgn_vn_daily_home", "chance": 25 },
+        "@": { "item": "sgn_vn_daily_kitchen", "chance": 40 },
+        "$": { "item": "sgn_shophouse_living", "chance": 30 },
+        "Q": { "item": "sgn_vn_daily_shop", "chance": 50 }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_nha_tro_00_z2" ] ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ "
+      ],
+      "palettes": [ "sgn_lm" ],
+      "terrain": {
+        ";": "t_sgn_cua_sat_keo_c",
+        "f": "t_thconc_floor",
+        "@": "t_thconc_floor",
+        "$": "t_thconc_floor",
+        "1": "t_sgn_gach_men",
+        "!": "t_sgn_gach_men",
+        "%": "t_sgn_gach_men"
+      },
+      "furniture": {
+        "f": "f_makeshift_bed",
+        "@": "f_cupboard",
+        "$": "f_sgn_day_phoi",
+        "1": "f_sgn_ban_tho",
+        "!": "f_toilet",
+        "%": "f_sink"
+      },
+      "items": {
+        "f": { "item": "sgn_vn_daily_home", "chance": 25 },
+        "@": { "item": "sgn_vn_daily_kitchen", "chance": 40 },
+        "$": { "item": "sgn_shophouse_living", "chance": 30 },
+        "Q": { "item": "sgn_vn_daily_shop", "chance": 50 }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_dinh_00" ] ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "########OoOooOoO########",
+        "#oooooooooooooooooooooo#",
+        "#ooooooooLooooLoooooooo#",
+        "#oo9oooooooooooooooo9oo#",
+        "#oooooooooooooooooooooo#",
+        "#oooooooooo\\ooooooooooo#",
+        "#oooooooooooooooooooooo#",
+        "#oooOnnOnnOnnOnnOnnOooo#",
+        "#ooon((nnhnnnnhnn((nooo#",
+        "#ooon((nnnnnnnnnn((nooo#",
+        "#oooOnnOnnOnnOnnOnnOooo#",
+        "#oo#######O++O#######oo#",
+        "#oo#nnnnnnnnnnnnnnnn#oo#",
+        "#oo#nhn$nnnnnnnn$nhn#oo#",
+        "#oo#nnnnnnnnnnnnnnnn#oo#",
+        "#o9#nnnnnnnUUnnnnnnn#9o#",
+        "#oo#nEnnnnnnnnnnnnEn#oo#",
+        "#oo#nnnnnEEEEEEnnnnn#oo#",
+        "#oo#nnnnnnnFFnnnnnnn#oo#",
+        "#oo##################oo#",
+        "#oooooooooooooooooooooo#",
+        "########################"
+      ],
+      "palettes": [ "sgn_lm" ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 35 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 40, "repeat": [ 1, 3 ] },
+        { "monster": "pseudo_dormant_sgn_mon_zombie_dam_tang", "x": [ 4, 19 ], "y": [ 14, 20 ], "chance": 30 }
+      ],
+      "terrain": { "\\": "t_sgn_gach_tau", "(": "t_sgn_gach_tau_trong", "$": "t_sgn_gach_tau_trong" },
+      "furniture": { "\\": "f_sgn_lu_huong", "(": "f_rack_wood", "$": "f_sgn_chau_kieng" },
+      "items": {
+        "(": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [
+              { "item": "sgn_dao_lo_bo", "prob": 70 },
+              { "group": "sgn_weapons_melee_common", "prob": 20 },
+              { "group": "sgn_temple", "prob": 10 }
+            ]
+          },
+          "chance": 80,
+          "repeat": [ 1, 2 ]
+        },
+        "E": { "item": "sgn_pagoda", "chance": 50 }
+      },
+      "place_npcs": [ { "class": "sgn_npc_caretaker", "x": 11, "y": 10 }, { "class": "sgn_npc_park_elder", "x": 7, "y": 6 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_dinh_00_z1" ] ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "        llllllll        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "    llllllllllllllll    ",
+        "    llllllllllllllll    ",
+        "    llllllllllllllll    ",
+        "    llllllllllllllll    ",
+        "   llllllllllllllllll   ",
+        "   llllllllllllllllll   ",
+        "   llllllllllllllllll   ",
+        "   llllllllllllllllll   ",
+        "   llllllllllllllllll   ",
+        "   llllllllllllllllll   ",
+        "   llllllllllllllllll   ",
+        "   llllllllllllllllll   ",
+        "   llllllllllllllllll   ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "sgn_lm" ],
+      "terrain": { "\\": "t_sgn_gach_tau", "(": "t_sgn_gach_tau_trong", "$": "t_sgn_gach_tau_trong" },
+      "furniture": { "\\": "f_sgn_lu_huong", "(": "f_rack_wood", "$": "f_sgn_chau_kieng" },
+      "items": {
+        "(": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [
+              { "item": "sgn_dao_lo_bo", "prob": 70 },
+              { "group": "sgn_weapons_melee_common", "prob": 20 },
+              { "group": "sgn_temple", "prob": 10 }
+            ]
+          },
+          "chance": 80,
+          "repeat": [ 1, 2 ]
+        },
+        "E": { "item": "sgn_pagoda", "chance": 50 }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_nha_tho_ho_00" ] ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "g#########;;;;#########g",
+        "g#gggggggggooggggggggg#g",
+        "g#gTgggggggoogggggggTg#g",
+        "g#gggggggggooggggggggg#g",
+        "g#ggg*gggggooggggg*ggg#g",
+        "g#gggggggggooggggggggg#g",
+        "g#gggggggggooggggggggg#g",
+        "g#gggggggggooggggggggg#g",
+        "g#gg###w###++###w###gg#g",
+        "g#gg#nnnnnnnnnnnnnn#gg#g",
+        "g#gg#nnhnnnnnnnnhnn#gg#g",
+        "g#gg#nncccnnnnnnnn$#gg#g",
+        "g#gg#nntttnnnnnnnnn#gg#g",
+        "g#gg#nncccnnnnnnnnn#gg#g",
+        "g#gg#nnnnnnUnnnnnnn#gg#g",
+        "g#gg#nnnnnnnnnnnnnn#gg#g",
+        "g#gg#nnnnEEEEEEnnnn#gg#g",
+        "g#gg#############+##gg#g",
+        "g#gg#nnnnnnnnnnfnn@#gg#g",
+        "g#gg################gg#g",
+        "g######################g",
+        "gggggggggggggggggggggggg"
+      ],
+      "palettes": [ "sgn_lm" ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 35 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 40, "repeat": [ 1, 3 ] }
+      ],
+      "terrain": {
+        ";": "t_sgn_cua_sat_keo_c",
+        "*": "t_grass",
+        "$": "t_sgn_gach_tau_trong",
+        "f": "t_sgn_gach_tau_trong",
+        "@": "t_sgn_gach_tau_trong"
+      },
+      "furniture": { "*": "f_sgn_mo", "$": "f_bookcase", "f": "f_bed", "@": "f_cupboard" },
+      "items": {
+        "$": { "item": "sgn_temple", "chance": 60, "repeat": [ 1, 2 ] },
+        "f": { "item": "sgn_vn_daily_home", "chance": 40 },
+        "@": { "item": "sgn_vn_daily_kitchen", "chance": 40 }
+      },
+      "place_npcs": [ { "class": "sgn_npc_caretaker", "x": 12, "y": 14 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_nha_tho_ho_00_z1" ] ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "    llllllllllllllll    ",
+        "    llllllllllllllll    ",
+        "    llllllllllllllll    ",
+        "    llllllllllllllll    ",
+        "    llllllllllllllll    ",
+        "    llllllllllllllll    ",
+        "    llllllllllllllll    ",
+        "    llllllllllllllll    ",
+        "    llllllllllllllll    ",
+        "    llllllllllllllll    ",
+        "    llllllllllllllll    ",
+        "    llllllllllllllll    ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "sgn_lm" ],
+      "terrain": {
+        ";": "t_sgn_cua_sat_keo_c",
+        "*": "t_grass",
+        "$": "t_sgn_gach_tau_trong",
+        "f": "t_sgn_gach_tau_trong",
+        "@": "t_sgn_gach_tau_trong"
+      },
+      "furniture": { "*": "f_sgn_mo", "$": "f_bookcase", "f": "f_bed", "@": "f_cupboard" },
+      "items": {
+        "$": { "item": "sgn_temple", "chance": 60, "repeat": [ 1, 2 ] },
+        "f": { "item": "sgn_vn_daily_home", "chance": 40 },
+        "@": { "item": "sgn_vn_daily_kitchen", "chance": 40 }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_dien_thoai_00" ] ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,?,,,,,,,,,,,,,,,,,,?,,",
+        ",,CWWWWWWWWDDWWWWWWWWC,,",
+        ",,C..................C,,",
+        ",,C..................C,,",
+        ",,C.$$$$$$....$$$$$$.C,,",
+        ",,C..................C,,",
+        ",,C..............c...C,,",
+        ",,C.$..........(((((.C,,",
+        ",,C.$....@@@@@@......C,,",
+        ",,C.$................C,,",
+        ",,C.$................C,,",
+        ",,C..................C,,",
+        ",,CCCCCCCCC+CCCCCCCCCC,,",
+        ",,C..................C,,",
+        ",,C.)..)..)..)..)..).C,,",
+        ",,C..................C,,",
+        ",,C.)..)..)..)..)..).C,,",
+        ",,CCCCCCCCCCCCCCCCCCCC,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,"
+      ],
+      "palettes": [ "sgn_lm" ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 35 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 40, "repeat": [ 1, 3 ] }
+      ],
+      "terrain": { "$": "t_sgn_gach_men", "@": "t_sgn_gach_men", "(": "t_sgn_gach_men", ")": "t_thconc_floor" },
+      "furniture": { "$": "f_displaycase", "@": "f_counter", "(": "f_workbench", ")": "f_rack" },
+      "items": {
+        "$": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [
+              { "item": "sgn_dien_thoai", "prob": 40 },
+              { "item": "sgn_the_cao", "prob": 40, "count": [ 1, 10 ] },
+              { "group": "sgn_electronics", "prob": 30 }
+            ]
+          },
+          "chance": 60,
+          "repeat": [ 1, 2 ]
+        },
+        "@": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [
+              { "item": "sgn_dien_thoai", "prob": 40 },
+              { "item": "sgn_the_cao", "prob": 40, "count": [ 1, 10 ] },
+              { "group": "sgn_electronics", "prob": 30 }
+            ]
+          },
+          "chance": 70,
+          "repeat": [ 1, 3 ]
+        },
+        "(": { "item": "sgn_electronics_repair", "chance": 60 },
+        ")": { "item": "sgn_electronics", "chance": 50, "repeat": [ 1, 2 ] }
+      },
+      "place_vehicles": [
+        { "vehicle": "sgn_vg_sidewalk_parked", "x": 4, "y": 3, "rotation": 90, "chance": 40 },
+        { "vehicle": "sgn_vg_sidewalk_parked", "x": 7, "y": 3, "rotation": 90, "chance": 40 },
+        { "vehicle": "sgn_vg_sidewalk_parked", "x": 16, "y": 3, "rotation": 90, "chance": 40 },
+        { "vehicle": "sgn_vg_sidewalk_parked", "x": 19, "y": 3, "rotation": 90, "chance": 40 }
+      ],
+      "place_npcs": [ { "class": "sgn_npc_shopkeeper", "x": 11, "y": 13 }, { "class": "sgn_npc_craftsman", "x": 17, "y": 12 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_dien_thoai_00_z1" ] ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "  ____________________  ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "sgn_lm" ],
+      "terrain": { "$": "t_sgn_gach_men", "@": "t_sgn_gach_men", "(": "t_sgn_gach_men", ")": "t_thconc_floor" },
+      "furniture": { "$": "f_displaycase", "@": "f_counter", "(": "f_workbench", ")": "f_rack" },
+      "items": {
+        "$": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [
+              { "item": "sgn_dien_thoai", "prob": 40 },
+              { "item": "sgn_the_cao", "prob": 40, "count": [ 1, 10 ] },
+              { "group": "sgn_electronics", "prob": 30 }
+            ]
+          },
+          "chance": 60,
+          "repeat": [ 1, 2 ]
+        },
+        "@": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [
+              { "item": "sgn_dien_thoai", "prob": 40 },
+              { "item": "sgn_the_cao", "prob": 40, "count": [ 1, 10 ] },
+              { "group": "sgn_electronics", "prob": 30 }
+            ]
+          },
+          "chance": 70,
+          "repeat": [ 1, 3 ]
+        },
+        "(": { "item": "sgn_electronics_repair", "chance": 60 },
+        ")": { "item": "sgn_electronics", "chance": 50, "repeat": [ 1, 2 ] }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_cho_tam_00" ] ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "````````````````````````",
+        "``(((\\$$$$\\``**\\1111\\(``",
+        "`````]````]```]`````]```",
+        "````u````u`````u```u````",
+        "````````````````````````",
+        "````````````````````````",
+        "``$$$\\****\\``11\\((((\\$``",
+        "``***\\1111\\``((\\$$$$\\*``",
+        "````````````````````````",
+        "```)```)````````)```)```",
+        "```]```]````````]```]```",
+        "````````````````````````",
+        "``111\\((((\\``$$\\****\\1``",
+        "``(((\\$$$$\\``**\\1111\\(``",
+        "````````````````````````",
+        "````````````````````````",
+        "````u````u`````u```u````",
+        "`````]````]```]`````]```",
+        "``$$$\\****\\``11\\((((\\$``",
+        "````````````````````````",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS"
+      ],
+      "palettes": [ "sgn_lm" ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 35 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 40, "repeat": [ 1, 3 ] },
+        { "monster": "sgn_mon_zombie_vendor", "x": [ 2, 21 ], "y": [ 4, 19 ], "chance": 50, "repeat": [ 1, 2 ] },
+        {
+          "monster": "pseudo_dormant_sgn_mon_zombie_vendor",
+          "x": [ 2, 21 ],
+          "y": [ 4, 19 ],
+          "chance": 50,
+          "repeat": [ 1, 3 ]
+        }
+      ],
+      "terrain": {
+        "`": "t_pavement",
+        "(": "t_pavement",
+        "$": "t_pavement",
+        "*": "t_pavement",
+        "1": "t_pavement",
+        ")": "t_pavement",
+        "\\": "t_pavement",
+        "u": "t_pavement"
+      },
+      "furniture": { "(": "f_table", "$": "f_table", "*": "f_table", "1": "f_fridge", ")": "f_table", "\\": "f_sgn_du" },
+      "items": {
+        "(": { "item": "sgn_cho_cloth", "chance": 50 },
+        "$": { "item": "sgn_vn_daily_shop", "chance": 50 },
+        "*": { "item": "sgn_vn_food_fruit", "chance": 60, "repeat": [ 1, 2 ] },
+        "1": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [ { "group": "sgn_vn_ice", "prob": 50 }, { "group": "sgn_vn_drinks", "prob": 50 } ]
+          },
+          "chance": 60,
+          "repeat": [ 1, 2 ]
+        },
+        ")": { "item": "sgn_vn_food_street", "chance": 60, "repeat": [ 1, 2 ] }
+      },
+      "place_npcs": [ { "class": "sgn_npc_vendor", "x": 6, "y": 6 }, { "class": "sgn_npc_vendor", "x": 17, "y": 17 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_cho_tam_00_z1" ] ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "sgn_lm" ],
+      "terrain": {
+        "`": "t_pavement",
+        "(": "t_pavement",
+        "$": "t_pavement",
+        "*": "t_pavement",
+        "1": "t_pavement",
+        ")": "t_pavement",
+        "\\": "t_pavement",
+        "u": "t_pavement"
+      },
+      "furniture": { "(": "f_table", "$": "f_table", "*": "f_table", "1": "f_fridge", ")": "f_table", "\\": "f_sgn_du" },
+      "items": {
+        "(": { "item": "sgn_cho_cloth", "chance": 50 },
+        "$": { "item": "sgn_vn_daily_shop", "chance": 50 },
+        "*": { "item": "sgn_vn_food_fruit", "chance": 60, "repeat": [ 1, 2 ] },
+        "1": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [ { "group": "sgn_vn_ice", "prob": 50 }, { "group": "sgn_vn_drinks", "prob": 50 } ]
+          },
+          "chance": 60,
+          "repeat": [ 1, 2 ]
+        },
+        ")": { "item": "sgn_vn_food_street", "chance": 60, "repeat": [ 1, 2 ] }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_lo_da_00" ] ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",////////;;;;;;////////,",
+        ",/::::::::::::::::::::/,",
+        ",/:@@@@@::::::::@@@@@:/,",
+        ",/:::Q::::::::::::::::/,",
+        ",/:jjjj:::::::::::::::/,",
+        ",/::::::::::::::::::::/,",
+        ",/CCCC1CCCC::CCCC1CCCC/,",
+        ",/C:::::::C::C:::::::C/,",
+        ",/C:$:$:$:C::C:$:$:$:C/,",
+        ",/C:::::::C::C:::::::C/,",
+        ",/C:$:$:$:C::C:$:$:$:C/,",
+        ",/C:::::::C::C:::::::C/,",
+        ",/C:$:$:$:C::C:$:$:$:C/,",
+        ",/C*******C::C*******C/,",
+        ",/CCCCCCCCC::CCCCCCCCC/,",
+        ",//////////////////////,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,"
+      ],
+      "palettes": [ "sgn_lm" ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 35 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 40, "repeat": [ 1, 3 ] },
+        { "monster": "pseudo_dormant_sgn_mon_zombie_khuan_vac", "x": [ 3, 9 ], "y": [ 14, 19 ], "chance": 40 },
+        { "monster": "sgn_mon_zombie_khuan_vac", "x": [ 2, 21 ], "y": [ 8, 12 ], "chance": 30 }
+      ],
+      "terrain": {
+        "/": "t_wall_metal",
+        ";": "t_door_metal_c",
+        "1": "t_door_metal_c",
+        "$": "t_thconc_floor",
+        "*": "t_thconc_floor",
+        "@": "t_thconc_floor"
+      },
+      "furniture": { "*": "f_hay", "@": "f_machinery_old" },
+      "items": {
+        "$": { "item": "sgn_vn_ice", "chance": 80, "repeat": [ 1, 3 ] },
+        "@": { "item": "sgn_loot_hardware", "chance": 20 },
+        "j": { "item": "sgn_vn_ice", "chance": 40 }
+      },
+      "place_vehicles": [
+        { "vehicle": "sgn_vg_street_traffic", "x": 6, "y": 4, "rotation": 0, "chance": 40 },
+        { "vehicle": "sgn_vg_street_traffic", "x": 17, "y": 4, "rotation": 0, "chance": 30 }
+      ],
+      "place_npcs": [ { "class": "sgn_npc_dock_worker", "x": 5, "y": 12 }, { "class": "sgn_npc_dock_worker", "x": 12, "y": 10 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_lo_da_00_z1" ] ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        " ______________________ ",
+        "                        "
+      ],
+      "palettes": [ "sgn_lm" ],
+      "terrain": {
+        "/": "t_wall_metal",
+        ";": "t_door_metal_c",
+        "1": "t_door_metal_c",
+        "$": "t_thconc_floor",
+        "*": "t_thconc_floor",
+        "@": "t_thconc_floor"
+      },
+      "furniture": { "*": "f_hay", "@": "f_machinery_old" },
+      "items": {
+        "$": { "item": "sgn_vn_ice", "chance": 80, "repeat": [ 1, 3 ] },
+        "@": { "item": "sgn_loot_hardware", "chance": 20 },
+        "j": { "item": "sgn_vn_ice", "chance": 40 }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_giu_xe_00" ] ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "IIIIIIIII,,,,,IIIIIIIIII",
+        "I,,,,,,,,,,,,,,CCWCCC,,I",
+        "I,,,,,,,,,,,,,,C$c::C,,I",
+        "I,,,,,,,,,,,,,,+:::(C,,I",
+        "I,,,,,,,,,,,,,,CCCCCC,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,P,,,,,P,,,,,P,,,,,P,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,P,,,,,P,,,,,P,,,,,P,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,P,,,,,P,,,,,P,,,,,P,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "I,,,,,,,,,,,,,,,,,,,,,,I",
+        "IIIIIIIIIIIIIIIIIIIIIIII"
+      ],
+      "palettes": [ "sgn_lm" ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 35 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 40, "repeat": [ 1, 3 ] },
+        { "monster": "sgn_mon_zombie_xe_om", "x": [ 2, 21 ], "y": [ 7, 21 ], "chance": 40 },
+        {
+          "monster": "pseudo_dormant_sgn_mon_zombie_xe_om",
+          "x": [ 2, 21 ],
+          "y": [ 7, 21 ],
+          "chance": 40,
+          "repeat": [ 1, 2 ]
+        }
+      ],
+      "terrain": { "$": "t_thconc_floor", "(": "t_thconc_floor", "/": "t_sgn_mai_ton" },
+      "furniture": { "$": "f_desk", "(": "f_rack" },
+      "items": {
+        "$": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [ { "item": "sgn_ve_so", "prob": 50, "count": [ 1, 5 ] }, { "item": "sgn_newspaper", "prob": 50 } ]
+          },
+          "chance": 60
+        },
+        "(": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [ { "item": "sgn_non_bao_hiem", "prob": 70 }, { "group": "sgn_vn_daily_pocket", "prob": 30 } ]
+          },
+          "chance": 70,
+          "repeat": [ 1, 4 ]
+        }
+      },
+      "place_vehicles": [
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 3, "y": 9, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 5, "y": 9, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 7, "y": 9, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 9, "y": 9, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 11, "y": 9, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 13, "y": 9, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 15, "y": 9, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 17, "y": 9, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 19, "y": 9, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 3, "y": 14, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 5, "y": 14, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 7, "y": 14, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 9, "y": 14, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 11, "y": 14, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 13, "y": 14, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 15, "y": 14, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 17, "y": 14, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 19, "y": 14, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 3, "y": 19, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 5, "y": 19, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 7, "y": 19, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 9, "y": 19, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 11, "y": 19, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 13, "y": 19, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 15, "y": 19, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 17, "y": 19, "rotation": 90, "chance": 60 },
+        { "vehicle": "sgn_vg_parked_twowheelers", "x": 19, "y": 19, "rotation": 90, "chance": 60 }
+      ],
+      "place_npcs": [ { "class": "sgn_npc_caretaker", "x": 17, "y": 5 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_giu_xe_00_z1" ] ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "               ______   ",
+        "               ______   ",
+        "               ______   ",
+        "               ______   ",
+        "                        ",
+        "  ////////////////////  ",
+        "  ////////////////////  ",
+        "  ////////////////////  ",
+        "                        ",
+        "                        ",
+        "  ////////////////////  ",
+        "  ////////////////////  ",
+        "  ////////////////////  ",
+        "                        ",
+        "                        ",
+        "  ////////////////////  ",
+        "  ////////////////////  ",
+        "  ////////////////////  ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "sgn_lm" ],
+      "terrain": { "$": "t_thconc_floor", "(": "t_thconc_floor", "/": "t_sgn_mai_ton" },
+      "furniture": { "$": "f_desk", "(": "f_rack" },
+      "items": {
+        "$": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [ { "item": "sgn_ve_so", "prob": 50, "count": [ 1, 5 ] }, { "item": "sgn_newspaper", "prob": 50 } ]
+          },
+          "chance": 60
+        },
+        "(": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [ { "item": "sgn_non_bao_hiem", "prob": 70 }, { "group": "sgn_vn_daily_pocket", "prob": 30 } ]
+          },
+          "chance": 70,
+          "repeat": [ 1, 4 ]
+        }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_tram_xe_buyt_00" ] ],
+    "object": {
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSS(((((((SSSSSSSSSSSSSS",
+        "SSPSSSSSSSPS?SSuSSSSSSSS",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\CCCCC,",
+        ",,,,,,,,,,,,,,,,,,C:Q:C,",
+        ",,,,,,,,,,,,,,,,,,C:c:C,",
+        ",,,,,,,,,,,,,,,,,,+:::w,",
+        ",,,,,,,,,,,,,,,,,,C:::C,",
+        ",,,,,,,,,,,,,,,,,,C:::C,",
+        ",,,,,,,,,,,,,,,,,,C::)C,",
+        ",,,,,,,,,,,,,,,,,,CCCCC,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,",
+        ",,,,,,,,,,,,,,,,,,CCCCC,",
+        ",,,,,,,,,,,,,,,,,,C..!C,",
+        ",,,,,,,,,,,,,,,,,,C...C,",
+        ",,,,,,,,,,,,,,,,,,+..!C,",
+        ",,,,,,,,,,,,,,,,,,C...C,",
+        ",,,,,,,,,,,,,,,,,,C..%C,",
+        ",,,,,,,,,,,,,,,,,,C...C,",
+        ",,,,,,,,,,,,,,,,,,CCCCC,",
+        ",\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\,,,,,,",
+        ",,,,,,,,,,,,,,,,,,,,,,,,"
+      ],
+      "palettes": [ "sgn_lm" ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 35 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 0, 23 ], "y": [ 6, 23 ], "chance": 40, "repeat": [ 1, 3 ] },
+        { "monster": "sgn_mon_zombie_sot", "x": [ 1, 11 ], "y": [ 0, 4 ], "chance": 40 }
+      ],
+      "terrain": {
+        "(": "t_sidewalk",
+        "\\": "t_pavement_y",
+        "u": "t_sidewalk",
+        ")": "t_thconc_floor",
+        "!": "t_sgn_gach_men",
+        "%": "t_sgn_gach_men",
+        "/": "t_sgn_mai_ton"
+      },
+      "furniture": { "(": "f_bench", ")": "f_rack", "!": "f_toilet", "%": "f_sink" },
+      "items": {
+        ")": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [ { "item": "sgn_ve_so", "prob": 50, "count": [ 1, 5 ] }, { "item": "sgn_newspaper", "prob": 50 } ]
+          },
+          "chance": 50,
+          "repeat": [ 1, 2 ]
+        },
+        "u": { "item": "sgn_vn_drinks", "chance": 50 }
+      },
+      "place_vehicles": [
+        { "vehicle": "sgn_vg_coach", "x": 13, "y": 8, "rotation": 0, "chance": 60 },
+        { "vehicle": "sgn_vg_coach", "x": 13, "y": 15, "rotation": 0, "chance": 35 }
+      ],
+      "place_npcs": [ { "class": "sgn_npc_transport_clerk", "x": 20, "y": 9 }, { "class": "sgn_npc_vendor", "x": 14, "y": 2 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ [ "sgn_vp_tram_xe_buyt_00_z1" ] ],
+    "object": {
+      "fill_ter": "t_open_air",
+      "rows": [
+        "                        ",
+        "                        ",
+        "  /////////             ",
+        "  /////////             ",
+        "                        ",
+        "                  _____ ",
+        "                  _____ ",
+        "                  _____ ",
+        "                  _____ ",
+        "                  _____ ",
+        "                  _____ ",
+        "                  _____ ",
+        "                  _____ ",
+        "                        ",
+        "                  _____ ",
+        "                  _____ ",
+        "                  _____ ",
+        "                  _____ ",
+        "                  _____ ",
+        "                  _____ ",
+        "                  _____ ",
+        "                  _____ ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "sgn_lm" ],
+      "terrain": {
+        "(": "t_sidewalk",
+        "\\": "t_pavement_y",
+        "u": "t_sidewalk",
+        ")": "t_thconc_floor",
+        "!": "t_sgn_gach_men",
+        "%": "t_sgn_gach_men",
+        "/": "t_sgn_mai_ton"
+      },
+      "furniture": { "(": "f_bench", ")": "f_rack", "!": "f_toilet", "%": "f_sink" },
+      "items": {
+        ")": {
+          "item": {
+            "subtype": "distribution",
+            "entries": [ { "item": "sgn_ve_so", "prob": 50, "count": [ 1, 5 ] }, { "item": "sgn_newspaper", "prob": 50 } ]
+          },
+          "chance": 50,
+          "repeat": [ 1, 2 ]
+        },
+        "u": { "item": "sgn_vn_drinks", "chance": 50 }
+      }
+    }
+  }
+]

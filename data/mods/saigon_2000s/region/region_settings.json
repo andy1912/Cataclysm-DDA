@@ -22,7 +22,7 @@
     "city_size": 12,
     "city_spacing": 1,
     "is_megacity": true,
-    "houses": [ [ "sgn_nhaong_row_1", 100 ], [ "sgn_hem_block_1", 40 ], [ "sgn_chungcu_1", 12 ] ],
+    "houses": [ [ "sgn_nhaong_row_1", 100 ], [ "sgn_hem_block_1", 40 ], [ "sgn_chungcu_1", 12 ], [ "sgn_vp_nha_tro", 6 ] ],
     "shops": [
       [ "sgn_cho_1", 8 ],
       [ "sgn_nhaong_row_1", 100 ],
@@ -61,7 +61,14 @@
       [ "sgn_pl_cong_an", 12 ],
       [ "sgn_pa_cong_an_quan", 3 ],
       [ "sgn_pl_nha_sach", 5 ],
-      [ "sgn_pl_xe_may", 5 ]
+      [ "sgn_pl_xe_may", 5 ],
+      [ "sgn_vp_bia_hoi", 5 ],
+      [ "sgn_vp_hot_toc", 3 ],
+      [ "sgn_vp_dien_thoai", 4 ],
+      [ "sgn_vp_cho_tam", 2 ],
+      [ "sgn_vp_lo_da", 2 ],
+      [ "sgn_vp_giu_xe", 3 ],
+      [ "sgn_vp_tram_xe_buyt", 2 ]
     ],
     "parks": [
       [ "sgn_chua_1", 100 ],
@@ -71,7 +78,10 @@
       [ "sgn_nha_tho_1", 25 ],
       [ "sgn_pl_cong_vien", 30 ],
       [ "sgn_pl_cong_vien_ho", 15 ],
-      [ "sgn_pl_cong_vien_the_duc", 15 ]
+      [ "sgn_pl_cong_vien_the_duc", 15 ],
+      [ "sgn_vp_cafe_vong", 12 ],
+      [ "sgn_vp_dinh", 10 ],
+      [ "sgn_vp_nha_tho_ho", 5 ]
     ],
     "name_snippet": "<sgn_city_name>"
   },

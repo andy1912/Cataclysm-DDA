@@ -1,12 +1,14 @@
 """Real-map unit R4: everyday places from OpenStreetMap on their real sites.
 
 Each place (osm_to_grid.py's "places") becomes the mod's building of that kind, on the nearest
-free tile within SEARCH tiles that faces a street, turned to face it.  Supermarkets are kept only
+free tile within SEARCH tiles that faces a street, turned to face it.  A place of worship named a đình
+or a clan hall gets the mod's đình or nhà thờ họ (V2, gen_vn_places.py).  Supermarkets are kept only
 for the chains open in 2009 (the minimarts in today's data came later).  Cemetery land is filled
 with nghĩa trang blocks.
 """
 import math
 import re
+import unicodedata
 
 SEARCH = 3
 # W3: a military compound is mapped as one big area whose centre is often deep inside it, far
@@ -23,6 +25,19 @@ KIND = {
     'police_hq': 'sgn_pa_cong_an_quan', 'military': 'sgn_pa_don_quan_su',
 }
 CHAINS_2009 = re.compile( r'co\.?\s?op|big ?c|maximark|metro|citimart|lotte', re.I )
+# V2: a place of worship the data names a đình (the communal house of an old village) or a clan
+# hall (nhà thờ họ, đền thờ họ ...) gets that building instead of a pagoda (gen_vn_places.py)
+BY_NAME = ( ( 'pagoda', re.compile( r'^đình\b', re.I ), 'dinh', 'sgn_vp_dinh' ),
+            ( 'pagoda', re.compile( r'thờ\s+họ\b', re.I ), 'clan hall', 'sgn_vp_nha_tho_ho' ) )
+
+
+def building_for( p ):
+    """( kind to report, building id ) for a place from the data."""
+    name = unicodedata.normalize( 'NFC', p.get( 'name', '' ) ).strip()
+    for kind, pattern, label, bid in BY_NAME:
+        if p['kind'] == kind and pattern.search( name ):
+            return label, bid
+    return p['kind'], KIND[p['kind']]
 
 
 def size( parts, r ):
@@ -59,7 +74,8 @@ def place( world, terrain, road_tiles, buildings, places, W, H ):
             continue
         if kind == 'supermarket' and not CHAINS_2009.search( p.get( 'name', '' ) ):
             continue
-        parts = buildings[KIND[kind]]
+        kind, bid = building_for( p )
+        parts = buildings[bid]
         ax, ay = p['tile']
         best = None
         reach = SEARCH_KIND.get( kind, SEARCH )

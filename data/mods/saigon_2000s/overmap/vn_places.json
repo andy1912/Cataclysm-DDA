@@ -1,0 +1,331 @@
+[
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_cafe_vong_00",
+    "copy-from": "generic_city_building",
+    "name": "quán cà phê võng",
+    "sym": "&",
+    "color": "brown",
+    "looks_like": "sgn_pl_cong_vien_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_cafe_vong_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "quán cà phê võng (roof)",
+    "sym": "#",
+    "color": "brown",
+    "looks_like": "sgn_vp_cafe_vong_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_bia_hoi_00",
+    "copy-from": "generic_city_building",
+    "name": "bia hơi vỉa hè",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_nhaong_row_1"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_bia_hoi_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "bia hơi vỉa hè (roof)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_vp_bia_hoi_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_hot_toc_00",
+    "copy-from": "generic_city_building",
+    "name": "hớt tóc vỉa hè",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_nhaong_row_1"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_hot_toc_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "hớt tóc vỉa hè (roof)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_vp_hot_toc_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_nha_tro_00",
+    "copy-from": "generic_city_building",
+    "name": "dãy nhà trọ",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_hem_block"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_nha_tro_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "dãy nhà trọ (roof)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_vp_nha_tro_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_nha_tro_00_z2",
+    "copy-from": "generic_city_building_roof",
+    "name": "dãy nhà trọ (roof)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_vp_nha_tro_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_dinh_00",
+    "copy-from": "generic_city_building",
+    "name": "đình",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_chua"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_dinh_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "đình (roof)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_vp_dinh_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_nha_tho_ho_00",
+    "copy-from": "generic_city_building",
+    "name": "nhà thờ họ",
+    "sym": "&",
+    "color": "light_red",
+    "looks_like": "sgn_chua"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_nha_tho_ho_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "nhà thờ họ (roof)",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "sgn_vp_nha_tho_ho_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_dien_thoai_00",
+    "copy-from": "generic_city_building",
+    "name": "tiệm điện thoại di động",
+    "sym": "&",
+    "color": "light_green",
+    "looks_like": "sgn_pl_nha_sach_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_dien_thoai_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "tiệm điện thoại di động (roof)",
+    "sym": "#",
+    "color": "light_green",
+    "looks_like": "sgn_vp_dien_thoai_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_cho_tam_00",
+    "copy-from": "generic_city_building",
+    "name": "chợ tạm",
+    "sym": "&",
+    "color": "yellow",
+    "looks_like": "sgn_cho_nw"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_cho_tam_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "chợ tạm (roof)",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "sgn_vp_cho_tam_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_lo_da_00",
+    "copy-from": "generic_city_building",
+    "name": "lò nước đá",
+    "sym": "&",
+    "color": "light_blue",
+    "looks_like": "sgn_pl_kho_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_lo_da_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "lò nước đá (roof)",
+    "sym": "#",
+    "color": "light_blue",
+    "looks_like": "sgn_vp_lo_da_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_giu_xe_00",
+    "copy-from": "generic_city_building",
+    "name": "bãi giữ xe",
+    "sym": "&",
+    "color": "light_gray",
+    "looks_like": "sgn_pl_cay_xang_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_giu_xe_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "bãi giữ xe (roof)",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "sgn_vp_giu_xe_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_tram_xe_buyt_00",
+    "copy-from": "generic_city_building",
+    "name": "trạm xe buýt",
+    "sym": "&",
+    "color": "light_cyan",
+    "looks_like": "sgn_lm_ben_xe_md_00"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_vp_tram_xe_buyt_00_z1",
+    "copy-from": "generic_city_building_roof",
+    "name": "trạm xe buýt (roof)",
+    "sym": "#",
+    "color": "light_cyan",
+    "looks_like": "sgn_vp_tram_xe_buyt_00"
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_vp_cafe_vong",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_vp_cafe_vong_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_vp_cafe_vong_00_z1_north" }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_vp_bia_hoi",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_vp_bia_hoi_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_vp_bia_hoi_00_z1_north" }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_vp_hot_toc",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_vp_hot_toc_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_vp_hot_toc_00_z1_north" }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_vp_nha_tro",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_vp_nha_tro_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_vp_nha_tro_00_z1_north" },
+      { "point": [ 0, 0, 2 ], "overmap": "sgn_vp_nha_tro_00_z2_north" }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_vp_dinh",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_vp_dinh_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_vp_dinh_00_z1_north" }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_vp_nha_tho_ho",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_vp_nha_tho_ho_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_vp_nha_tho_ho_00_z1_north" }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_vp_dien_thoai",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_vp_dien_thoai_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_vp_dien_thoai_00_z1_north" }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_vp_cho_tam",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_vp_cho_tam_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_vp_cho_tam_00_z1_north" }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_vp_lo_da",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_vp_lo_da_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_vp_lo_da_00_z1_north" }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_vp_giu_xe",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_vp_giu_xe_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_vp_giu_xe_00_z1_north" }
+    ]
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_vp_tram_xe_buyt",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_vp_tram_xe_buyt_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_vp_tram_xe_buyt_00_z1_north" }
+    ]
+  }
+]
