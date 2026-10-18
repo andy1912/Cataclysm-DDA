@@ -126,6 +126,24 @@ TEST_CASE( "saigon_npc_mission_pools", "[saigon]" )
     }
     CHECK( opener >= 2 );
     CHECK( any_npc >= 5 );
+    // D-fix (doc/saigon/DIFFICULTY.md, lever 6): a finished street mission pays.  dda pays the
+    // value only through the generic "Reward" answer (talk_function::mission_reward: credit in
+    // cents against the giver's goods), so both have to be set.  npcs/missions.json prices it in
+    // gold: half a chỉ to three chỉ (sgn_vang_chi is 4000).
+    for( const mission_type &t : mission_type::get_all() ) {
+        if( t.id.str().rfind( "MISSION_SGN_", 0 ) != 0 ) {
+            continue;
+        }
+        for( const mission_origin origin : t.origins ) {
+            if( origin == ORIGIN_ANY_NPC || origin == ORIGIN_OPENER_NPC ) {
+                CAPTURE( t.id.str() );
+                CHECK( t.has_generic_rewards );
+                CHECK( t.value >= 2000 );
+                CHECK( t.value <= 12000 );
+                break;
+            }
+        }
+    }
 }
 
 // N6: the people who hold a place.  gen_saigon_landmarks.py's STAFF table and gen_places.py's
