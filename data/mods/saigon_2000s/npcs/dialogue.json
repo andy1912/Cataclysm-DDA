@@ -89,7 +89,7 @@
     "id": "TALK_SGN_PRIEST_FUNERALS",
     "dynamic_line": {
       "relevant_genders": [ "npc" ],
-      "gendered_line": "\"Fourteen.  I have written the names of all fourteen and I will read them on Sunday when the others can hear, which is a thing I have had to learn to do in three days.\""
+      "gendered_line": "\"Fourteen.  I have written the names of all fourteen and I will read them on Sunday when the others can hear, which is a thing I have had to learn to do since the fever came.\""
     },
     "responses": [ { "text": "<end_talking_leave>", "topic": "TALK_DONE" } ]
   },

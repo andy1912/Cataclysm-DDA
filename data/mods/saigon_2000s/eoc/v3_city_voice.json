@@ -12,7 +12,7 @@
   {
     "type": "effect_on_condition",
     "id": "SGN_EOC_v3_loa_examine",
-    "//": "V3: examine_action of f_sgn_loa_phuong.  What the ward loudspeaker plays depends on the days since the cataclysm (the game starts on day 4): the ward's recorded notices (0-7), live curfew and evacuation calls (8-14), a stretched tape on the timer (15-29), then silence.  A broadcast is loud: the sound at the pole carries 30 tiles and draws the dead.",
+    "//": "V3: examine_action of f_sgn_loa_phuong.  What the ward loudspeaker plays depends on the days since the cataclysm (the game starts 8 hours after it, on day 0): the ward's recorded notices (0-7), live curfew and evacuation calls (8-14), a stretched tape on the timer (15-29), then silence.  A broadcast is loud: the sound at the pole carries 30 tiles and draws the dead.",
     "effect": {
       "switch": { "math": [ "time_since('cataclysm', 'unit':'days')" ] },
       "cases": [
