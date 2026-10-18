@@ -254,8 +254,18 @@ TEST_CASE( "saigon_profession_kits", "[saigon][saigon_content]" )
                 CAPTURE( guns );
                 CHECK( guns.empty() );
                 if( !hobby ) {
-                    // dressed and equipped, with something of the city's own (at least the wallet)
+                    // dressed and equipped, with something of the city's own (at least the wallet).
+                    // The wallet (sgn_wallet) rolls empty about one time in twenty, so a kit whose
+                    // only Saigon item is the money gets a few more rolls before this fails.
                     CHECK( kit.size() >= 4 );
+                    for( int roll = 0; roll < 10 && saigon == 0; roll++ ) {
+                        for( const item &top : p->items( male, {} ) ) {
+                            top.visit_items( [&]( const item * it, item * ) {
+                                saigon += sgn_id( it->typeId().str() );
+                                return VisitResponse::NEXT;
+                            } );
+                        }
+                    }
                     CHECK( saigon >= 1 );
                 }
             }
