@@ -126,9 +126,9 @@
     },
     {
       "id": "sgn_lm_san_bay",
-      "lat": 10.8146,
-      "lon": 106.6585,
-      "source": "approx (the international terminal of 2007, south of the aprons; checked against the OSM aprons)",
+      "lat": 10.81605,
+      "lon": 106.66288,
+      "source": "osm (the international departures and T2 arrivals curb roads, 'Ga đi Quốc tế' / 'Ga đến T2'; the 2007 terminal stands just north of them; R-fid: the first, remembered anchor was 430 m west, on the apron)",
       "facing": "south",
       "facing_why": "the curb and car park are on the city side, south; the apron faces the runways to the north"
     },

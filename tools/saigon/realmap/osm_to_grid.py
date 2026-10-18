@@ -59,6 +59,15 @@ def length_m( geom ):
                 for a, b in zip( geom, geom[1:] ) )
 
 
+def area_m2( e ):
+    """Area of a closed way (0 for anything else)."""
+    g = e.get( 'geometry' ) or []
+    if e['type'] != 'way' or len( g ) < 4 or g[0] != g[-1]:
+        return float( 'inf' ) if e['type'] == 'relation' else 0.0
+    pts = [ ( p['lon'] * C.M_PER_DEG_LON, p['lat'] * C.M_PER_DEG_LAT ) for p in g ]
+    return abs( sum( a[0] * b[1] - b[0] * a[1] for a, b in zip( pts, pts[1:] ) ) ) / 2
+
+
 def walk( geom ):
     """The tiles a polyline passes through, 4-connected (a diagonal step goes through the side tile
     nearer the true line), as a list of integer ( x, y ) with consecutive duplicates removed."""
@@ -156,7 +165,9 @@ def fill( rings, mark ):
 LANDUSE = {
     'industrial': 'industrial', 'military': 'government', 'railway': 'industrial', 'port': 'industrial',
     'commercial': 'downtown', 'retail': 'downtown', 'civic_admin': 'government',
-    'cemetery': 'cemetery', 'religious': None, 'construction': 'open', 'brownfield': 'open', 'greenfield': 'open',
+    # R-fid: today's building sites were mostly built up in 2009 (old shophouses, factories, slums
+    # cleared since), so they stay city; only greenfield sites are open land
+    'cemetery': 'cemetery', 'religious': None, 'construction': None, 'brownfield': None, 'greenfield': 'open',
     'farmland': 'farmland', 'farmyard': 'farmland', 'orchard': 'farmland', 'meadow': 'farmland',
     'forest': 'park', 'grass': None, 'recreation_ground': 'park', 'residential': None,
 }
@@ -184,6 +195,11 @@ def land( terrain, corr ):
             cls, order = 'apron', 2
         elif t.get( 'natural' ) == 'water':
             w = t.get( 'water', '' )
+            # R-fid: fountains, pools and ponds smaller than one tile are not water on a 24 m grid
+            # (the fountain at Lê Lợi - Nguyễn Huệ cut both streets)
+            if t.get( 'amenity' ) == 'fountain' or w in ( 'fountain', 'reflecting_pool', 'pool' ) or \
+                    ( w not in ( 'river', 'canal', 'oxbow' ) and area_m2( e ) < C.TILE_M ** 2 ):
+                continue
             cls = 'river' if w in ( 'river', 'oxbow' ) else 'canal' if w in ( 'canal', 'ditch', 'stream' ) else 'lake'
             order = 4
         if cls:
@@ -226,7 +242,7 @@ def land( terrain, corr ):
 def divided_segments( ways ):
     """Segments ( way id, index ) that are one carriageway of a divided road: a one-way segment with
     a same-named one-way segment within DIVIDED_M running the other way.  Only the carriageway
-    heading east (or south) is kept, so the road is drawn once, not as two parallel lines."""
+    heading east-south-east is kept, so the road is drawn once, not as two parallel lines."""
     cell = 60.0                                            # metres per hash cell
     hashed = {}
     segs = []
@@ -242,17 +258,27 @@ def divided_segments( ways ):
             n = math.hypot( bx - ax, by - ay )
             if n < 1:
                 continue
-            seg = ( e['id'], i, name, ( ax + bx ) / 2, ( ay + by ) / 2, ( bx - ax ) / n, ( by - ay ) / n )
+            seg = ( e['id'], i, name, ( ax + bx ) / 2, ( ay + by ) / 2, ( bx - ax ) / n, ( by - ay ) / n, n )
             segs.append( seg )
             hashed.setdefault( ( int( seg[3] // cell ), int( seg[4] // cell ) ), [] ).append( seg )
-    drop = set()
-    for wid, i, name, mx, my, dx, dy in segs:
+    # R-fid: decided per way, not per segment: a carriageway whose line wobbles (a bend, a bus bay)
+    # had single segments heading the 'wrong' way dropped, which broke the kept carriageway into
+    # pieces touching only at corners.  Each way keeps or drops all its twinned segments, by the
+    # length-weighted mean heading of those segments: the carriageway heading east-south-east (REF) is kept.  Both
+    # carriageways of a road running across REF used to be dropped where single segments wobbled.
+    REF = ( 0.894, 0.447 )
+    twinned = {}
+    for wid, i, name, mx, my, dx, dy, n in segs:
         cx, cy = int( mx // cell ), int( my // cell )
         twin = any( o[2] == name and o[0] != wid and o[5] * dx + o[6] * dy < -0.8 and
                     math.hypot( o[3] - mx, o[4] - my ) < DIVIDED_M
                     for gx in ( cx - 1, cx, cx + 1 ) for gy in ( cy - 1, cy, cy + 1 ) for o in hashed.get( ( gx, gy ), [] ) )
-        if twin and not ( dx > 0.2 or ( abs( dx ) <= 0.2 and dy > 0 ) ):
-            drop.add( ( wid, i ) )
+        if twin:
+            twinned.setdefault( wid, [] ).append( ( i, n * ( dx * REF[0] + dy * REF[1] ) ) )
+    drop = set()
+    for wid, lst in twinned.items():
+        if sum( d for _, d in lst ) < 0:
+            drop.update( ( wid, i ) for i, _ in lst )
     return drop
 
 
@@ -271,11 +297,14 @@ def roads( terrain, corr ):
         t = e.get( 'tags', {} )
         hw = t.get( 'highway', '' ).replace( '_link', '' )
         name = nfc( t.get( 'name' ) )
-        if e['id'] in corr['drop_ids'] or any( n in name for n in corr['drop_names'] ):
+        if e['id'] in corr['drop_ids'] or any( n in name.lower() for n in corr['drop_names'] ) or \
+                t.get( 'highway' ) in corr['drop_classes']:
             skipped += 1
             continue
-        # zones that did not have this street network yet (Thủ Thiêm before the new town)
+        # zones that did not have this street network yet (Thủ Thiêm before the new town); a zone
+        # with keep_major_roads keeps its through roads and loses only the estate streets
         if any( z.get( 'drop_roads_inside' ) and name not in z.get( 'keep_road_names', [] ) and
+                not ( z.get( 'keep_major_roads' ) and hw in MAJOR ) and
                 all( point_in( z['polygon'], p['lat'], p['lon'] ) for p in e['geometry'] ) for z in corr.get( 'zones', [] ) ):
             skipped += 1
             continue
@@ -324,6 +353,7 @@ def roads( terrain, corr ):
                     klass[p] = cls
                 if is_bridge:
                     bridge.add( p )
+    shifted = shift_canals( terrain, conn, bridge )
     # a road on a narrow canal keeps the road (as a bridge); a road on the river or a lake without a
     # bridge tag is a bank road drawn a tile too far: the water wins
     dropped = 0
@@ -342,9 +372,81 @@ def roads( terrain, corr ):
     # flyovers and interchange ramps over dry land are plain road on the overmap
     bridge = { p for p in bridge if p in conn and terrain[p[1]][p[0]] in ( 'river', 'lake', 'canal' ) }
     print( 'roads: %d ways used, %d removed by the 2009 corrections, %d one-way segments left out as the second '
-           'carriageway, %d tiles (%d bridges), %d bank tiles given to water'
-           % ( used, skipped, len( divided ), len( conn ), len( bridge ), dropped ) )
+           'carriageway, %d tiles (%d bridges), %d bank tiles given to water, %d canal tiles moved off canal-side streets'
+           % ( used, skipped, len( divided ), len( conn ), len( bridge ), dropped, shifted ) )
     return conn, klass, bridge
+
+
+def shift_canals( terrain, conn, bridge ):
+    """R-fid: a canal drawn from its centre line is one tile wide, and the street along its bank
+    often falls on the same tiles: it then became a long 'bridge' running down the canal.  Where a
+    street runs along a canal (a straight run of road tiles on canal tiles, linked along the canal's
+    axis), the canal moves one tile aside onto free land, so both show: the street on the bank and
+    the water beside it.  Returns the number of canal tiles moved."""
+    W_, H_ = len( terrain[0] ), len( terrain )
+
+    def wet( p ):
+        return 0 <= p[0] < W_ and 0 <= p[1] < H_ and terrain[p[1]][p[0]] == 'canal'
+
+    def free( p ):
+        return 0 <= p[0] < W_ and 0 <= p[1] < H_ and p not in conn and \
+            terrain[p[1]][p[0]] not in ( 'river', 'lake', 'canal' )
+    along = {}
+    for p, c in conn.items():
+        if p in bridge or not wet( p ):
+            continue
+        for axis, d0, d1 in ( ( 'ns', 'n', 's' ), ( 'ew', 'w', 'e' ) ):
+            if d0 in c and d1 in c:
+                a = ( p[0] + DIRS[d0][0], p[1] + DIRS[d0][1] )
+                b = ( p[0] + DIRS[d1][0], p[1] + DIRS[d1][1] )
+                if wet( a ) or wet( b ):
+                    along[p] = axis
+    moved = 0
+    seen = set()
+    for p in sorted( along ):
+        if p in seen:
+            continue
+        axis = along[p]
+        step = DIRS['s'] if axis == 'ns' else DIRS['e']
+        side = [ DIRS['e'], DIRS['w'] ] if axis == 'ns' else [ DIRS['s'], DIRS['n'] ]
+        # the whole run along the axis
+        start = p
+        while along.get( ( start[0] - step[0], start[1] - step[1] ) ) == axis:
+            start = ( start[0] - step[0], start[1] - step[1] )
+        run, q = [], start
+        while along.get( q ) == axis:
+            run.append( q )
+            seen.add( q )
+            q = ( q[0] + step[0], q[1] + step[1] )
+        if len( run ) < 2:
+            continue
+        for sd in side:
+            dest = [ ( r[0] + sd[0], r[1] + sd[1] ) for r in run ]
+            if not all( free( t ) for t in dest ):
+                continue
+            for r, t in zip( run, dest ):
+                terrain[t[1]][t[0]], terrain[r[1]][r[0]] = 'canal', terrain[t[1]][t[0]]
+            # join the moved stretch to the canal beyond each end (a corner tile, if free)
+            for end, back in ( ( run[0], ( -step[0], -step[1] ) ), ( run[-1], step ) ):
+                beyond = ( end[0] + back[0], end[1] + back[1] )
+                corner = ( beyond[0] + sd[0], beyond[1] + sd[1] )
+                if wet( beyond ) and free( corner ):
+                    terrain[corner[1]][corner[0]] = 'canal'
+            moved += len( run )
+            break
+    # canal tiles touching only at a corner (a line stepping diagonally, or a moved stretch) are
+    # joined through a free corner tile, so the water runs on unbroken
+    for y in range( H_ - 1 ):
+        for x in range( W_ ):
+            if not wet( ( x, y ) ):
+                continue
+            for dx in ( -1, 1 ):
+                q = ( x + dx, y + 1 )
+                if wet( q ) and not wet( ( x + dx, y ) ) and not wet( ( x, y + 1 ) ):
+                    corner = next( ( c for c in ( ( x + dx, y ), ( x, y + 1 ) ) if free( c ) ), None )
+                    if corner:
+                        terrain[corner[1]][corner[0]] = 'canal'
+    return moved
 
 
 PLACE_KIND = [
@@ -430,7 +532,8 @@ def main():
     out = sys.argv[1]
     corr = json.load( open( os.path.join( HERE, 'corrections_2009.json' ) ) )
     corr['drop_ids'] = set( corr.get( 'drop_way_ids', [] ) )
-    corr['drop_names'] = [ nfc( n ) for n in corr.get( 'drop_road_names', [] ) ]
+    corr['drop_names'] = [ nfc( n ).lower() for n in corr.get( 'drop_road_names', [] ) ]
+    corr['drop_classes'] = set( corr.get( 'drop_highway_classes', [] ) )
     terrain = [ [ 'residential' ] * W for _ in range( H ) ]
     for z in corr.get( 'zones', [] ):
         rings = [ [ C.latlon_to_tile( lat, lon ) for lat, lon in z['polygon'] ] ]

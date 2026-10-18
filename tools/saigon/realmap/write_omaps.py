@@ -158,6 +158,79 @@ def heal( road_tiles, land_ok ):
                 road_tiles[q] = ( ''.join( x for x in 'nesw' if x in c + OPP[d] ), cls, br )
                 parent[find( p )] = find( q )
                 links += 1
+    # R-fid: a street broken on a diagonal (its two halves end at tiles touching only at a corner,
+    # where the line was split between OSM ways or carriageways): join the two dead ends through
+    # the free corner tile.  Both ends must be dead ends, so a street is never laddered onto its
+    # neighbour.
+    ends = { p for p in road_tiles if len( road_tiles[p][0] ) == 1 }
+    for p in sorted( ends ):
+        if p not in ends:
+            continue
+        for dx, dy in ( ( 1, 1 ), ( 1, -1 ), ( -1, 1 ), ( -1, -1 ) ):
+            q = ( p[0] + dx, p[1] + dy )
+            if q not in ends:
+                continue
+            corner = next( ( c for c in ( ( q[0], p[1] ), ( p[0], q[1] ) ) if c not in road_tiles and land_ok( c ) ), None )
+            if corner is None:
+                continue
+            road_tiles[corner] = ( '', road_tiles[p][1], False )
+            link( road_tiles, p, corner )
+            link( road_tiles, corner, q )
+            ends.discard( p )
+            ends.discard( q )
+            parent[corner] = find( p )
+            parent[find( p )] = find( q )
+            links += 1
+            break
+    # two dead ends side by side (the same street split between ways): link them
+    for p in sorted( ends ):
+        for d, ( dx, dy ) in DIRS.items():
+            q = ( p[0] + dx, p[1] + dy )
+            if q in ends and p in ends and land_ok( p ) and land_ok( q ):
+                link( road_tiles, p, q )
+                ends.discard( p )
+                ends.discard( q )
+                links += 1
+                break
+    # R-fid: two dead ends facing each other across one or two free land tiles (a street whose
+    # carriageways or ways were drawn a step apart): join them by the shortest L over free land
+    ends = sorted( p for p in road_tiles if len( road_tiles[p][0] ) == 1 )
+    endset = set( ends )
+    for p in ends:
+        if p not in endset:
+            continue
+        op = DIRS[OPP[road_tiles[p][0]]]              # the side the dead end is open to
+        for q in ends:
+            if q == p or q not in endset or abs( q[0] - p[0] ) + abs( q[1] - p[1] ) > 3:
+                continue
+            oq = DIRS[OPP[road_tiles[q][0]]]
+            v = ( q[0] - p[0], q[1] - p[1] )
+            if v[0] * op[0] + v[1] * op[1] <= 0 or -v[0] * oq[0] - v[1] * oq[1] <= 0:
+                continue
+            # step along p's open side first, then across
+            path, c = [ p ], p
+            for axis in ( ( 0 if op[0] else 1 ), ( 1 if op[0] else 0 ) ):
+                while c[axis] != q[axis]:
+                    c = ( c[0] + ( axis == 0 ) * ( 1 if q[0] > c[0] else -1 ), c[1] + ( axis == 1 ) * ( 1 if q[1] > c[1] else -1 ) )
+                    path.append( c )
+            if not all( t not in road_tiles and land_ok( t ) for t in path[1:-1] ):
+                continue
+            for a, b in zip( path, path[1:] ):
+                if b not in road_tiles:
+                    road_tiles[b] = ( '', road_tiles[p][1], False )
+                link( road_tiles, a, b )
+            endset.discard( p )
+            endset.discard( q )
+            links += 1
+            break
+    # R-fid: a dead end whose open side touches another road tile (a street ending at a cross
+    # street, or a staircase step left unlinked) joins it
+    for p in sorted( p for p in road_tiles if len( road_tiles[p][0] ) == 1 ):
+        d = OPP[road_tiles[p][0]]
+        q = ( p[0] + DIRS[d][0], p[1] + DIRS[d][1] )
+        if q in road_tiles and land_ok( p ) and land_ok( q ):
+            link( road_tiles, p, q )
+            links += 1
     # a dead end one free land tile short of another piece: fill the gap
     for p in [ p for p in road_tiles if len( road_tiles[p][0] ) == 1 ]:
         for d, ( dx, dy ) in DIRS.items():
@@ -196,8 +269,8 @@ def unlink_all( road_tiles, p ):
 def fix_crossings( road_tiles, terrain, W, H ):
     """The game's bridges are straight decks with a ramp on each end tile, and it only adds the
     ramps where a run of at least two bridge tiles ends: a one-tile bridge, a crossing that bends
-    or one that ends against water or a building cannot be walked.  So: a crossing of one or two
-    water tiles becomes plain road (a culvert); a longer one is rebuilt as one straight bridge from
+    or one that ends against water or a building cannot be walked.  So: a crossing of one water
+    tile becomes plain road (a culvert); a longer one (R-fid: two tiles too) is rebuilt as one straight bridge from
     bank to bank along its main direction, joined to the street on the far side over land."""
     wet = lambda p: terrain[p[1]][p[0]] in WATER
     inside = lambda p: 0 <= p[0] < W and 0 <= p[1] < H
@@ -224,15 +297,10 @@ def fix_crossings( road_tiles, terrain, W, H ):
                 q = ( c[0] + DIRS[d][0], c[1] + DIRS[d][1] )
                 if q in road_tiles and not wet( q ):
                     entries.append( ( q, next( k for k, v in DIRS.items() if ( q[0] + v[0], q[1] + v[1] ) == c ) ) )
-        if len( comp ) <= 2:
+        if len( comp ) == 1:
             for c in comp:                             # a culvert: the road runs over the canal
                 terrain[c[1]][c[0]] = 'open'
             culverts += 1
-            continue
-        for c in comp:
-            unlink_all( road_tiles, c )
-        if not entries:
-            dropped += 1
             continue
         # the bridge starts at the entry whose way into the water, followed straight, reaches the
         # farthest other entry
@@ -242,25 +310,36 @@ def fix_crossings( road_tiles, terrain, W, H ):
                 along = ( b[0] - a[0] ) * DIRS[d][0] + ( b[1] - a[1] ) * DIRS[d][1]
                 if along > 0 and ( best is None or along > best[0] ):
                     best = ( along, a, d, b )
-        if best is None:
+        run, p = [], None
+        if best is not None:
+            _, a, d, b = best
+            p = ( a[0] + DIRS[d][0], a[1] + DIRS[d][1] )
+            while inside( p ) and wet( p ) and len( run ) < 400:
+                run.append( p )
+                p = ( p[0] + DIRS[d][0], p[1] + DIRS[d][1] )
+        if best is None or not inside( p ) or len( run ) >= 400:
+            if len( comp ) == 2:                       # no straight two-tile bridge: a culvert
+                for c in comp:
+                    terrain[c[1]][c[0]] = 'open'
+                culverts += 1
+                continue
+            for c in comp:
+                unlink_all( road_tiles, c )
             dropped += 1
             continue
-        _, a, d, b = best
-        run, p = [], ( a[0] + DIRS[d][0], a[1] + DIRS[d][1] )
-        while inside( p ) and wet( p ) and len( run ) < 400:
-            run.append( p )
-            p = ( p[0] + DIRS[d][0], p[1] + DIRS[d][1] )
-        if not inside( p ) or len( run ) >= 400:
-            dropped += 1
-            continue
-        if len( run ) <= 2:
+        for c in comp:
+            unlink_all( road_tiles, c )
+        # R-fid: a crossing of two water tiles is a two-tile bridge (both ends ramps, the canal
+        # still under them), so a two-tile canal stays unbroken on the map; only a one-tile
+        # crossing is a culvert
+        if len( run ) < 2:
             for c in run:
                 terrain[c[1]][c[0]] = 'open'
         prev = a
         for c in run + [ p ]:
             link( road_tiles, prev, c, cls )
             c0, k, _ = road_tiles[c]
-            road_tiles[c] = ( c0, k, len( run ) > 2 and c in run )
+            road_tiles[c] = ( c0, k, len( run ) >= 2 and c in run )
             prev = c
         # over land from the far bank to the street the crossing used to reach
         if p != b:
@@ -508,7 +587,7 @@ def main():
         if ( x, y ) in world.used:
             continue
         if terrain[y][x] in WATER:
-            # fix_crossings left only straight runs of 3+: the axis is the one the tile links along
+            # fix_crossings left only straight runs of 2+: the axis is the one the tile links along
             world.set( x, y, 0, 'bridge_north' if 'n' in c or 's' in c else 'bridge_east' )
             bridges += 1
         else:

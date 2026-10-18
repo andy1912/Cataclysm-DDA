@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <chrono>
 #include <map>
 #include <set>
@@ -547,7 +548,7 @@ TEST_CASE( "saigon_realmap_2009_routes", "[saigon]" )
     REQUIRE_FALSE( from.is_invalid() );
     const std::vector<std::pair<std::string, point_abs_omt>> places = {
         { "Ga Sài Gòn", point_abs_omt( 62, 116 ) },
-        { "Tân Sơn Nhất", point_abs_omt( -22, -33 ) },
+        { "Tân Sơn Nhất", point_abs_omt( -2, -40 ) },        // the 2007 terminal (R-fid: was the apron, 430 m west)
         { "Thảo Cầm Viên", point_abs_omt( 197, 90 ) },
         { "Chợ Lớn", point_abs_omt( -56, 267 ) },
         { "Gò Vấp", point_abs_omt( 9, -144 ) },
@@ -682,4 +683,155 @@ TEST_CASE( "saigon_new_game_realmap_2009", "[saigon]" )
     clear_overmaps();
     clear_avatar();
     clear_map();
+}
+
+// R-fid: the 2009 map resembles the real city (doc/saigon/REALMAP_FIDELITY.md).  Absolute overmap
+// tiles below are the real sites projected at 24 m per tile, north up (tools/saigon/realmap/
+// classify.py latlon_to_tile, minus the area's origin overmap (-1, -2)).
+//  - the landmarks stand within 4 tiles (about 100 m) of their real sites, and Chợ Rẫy hospital's
+//    site has a hospital;
+//  - the main streets are drawn without a break: along each (its OpenStreetMap line simplified to
+//    a few points), the road tiles within 3 tiles of the line join the street's two ends (on the
+//    first real map Lê Lợi was cut by the 2015 fountain at Nguyễn Huệ, Võ Văn Tần and Nguyễn Hữu
+//    Cảnh by a staircase step and by the Vinhomes estate zone);
+//  - Bình Thạnh's riverside ward north of the Ba Son bend is city, Thủ Thiêm across the river
+//    still marsh, the 2008 Thủ Thiêm bridge is there, Tân Sơn Nhất's 2025 terminal 3 is not.
+TEST_CASE( "saigon_realmap_2009_fidelity", "[saigon]" )
+{
+    const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
+    if( !oter_str_id( "sgn_hem_block_north" ).is_valid() || !file_exist( file.get_unrelative_path() ) ) {
+        WARN( "saigon_2000s or its real map is not present; skipping" );
+        return;
+    }
+    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
+    clear_avatar();
+    clear_map();
+    clear_overmaps();
+    for( int ox = -1; ox <= 3; ox++ ) {
+        for( int oy = -2; oy <= 1; oy++ ) {
+            overmap_buffer.get( point_abs_om( ox, oy ) );
+        }
+    }
+    const auto ter = []( const point_abs_omt & p ) {
+        return overmap_buffer.ter( tripoint_abs_omt( p, 0 ) ).id().str();
+    };
+    const auto starts = []( const std::string & id, const std::string & prefix ) {
+        return id.rfind( prefix, 0 ) == 0;
+    };
+    const auto near_site = [&]( const point_abs_omt & site, const std::string & prefix, int radius ) {
+        for( int dx = -radius; dx <= radius; dx++ ) {
+            for( int dy = -radius; dy <= radius; dy++ ) {
+                if( starts( ter( site + point( dx, dy ) ), prefix ) ) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    };
+    const std::vector<std::pair<std::string, point_abs_omt>> landmarks = {
+        { "sgn_lm_ben_thanh_", point_abs_omt( 158, 161 ) },      // Chợ Bến Thành
+        { "sgn_lm_duc_ba_", point_abs_omt( 163, 127 ) },         // Nhà thờ Đức Bà
+        { "sgn_lm_buu_dien_", point_abs_omt( 167, 126 ) },       // Bưu điện
+        { "sgn_lm_dinh_doc_lap_", point_abs_omt( 146, 140 ) },   // Dinh Độc Lập
+        { "sgn_lm_nha_hat_", point_abs_omt( 182, 141 ) },        // Nhà hát Thành phố
+        { "sgn_lm_binh_tay_", point_abs_omt( -56, 267 ) },       // Chợ Bình Tây (Chợ Lớn)
+        { "sgn_lm_thien_hau_", point_abs_omt( -10, 248 ) },      // Chùa Bà Thiên Hậu
+        { "sgn_lm_ga_sai_gon_", point_abs_omt( 62, 116 ) },      // Ga Sài Gòn
+        { "sgn_lm_san_bay_", point_abs_omt( -2, -40 ) },         // Tân Sơn Nhất, 2007 terminal
+        { "sgn_lm_thao_cam_vien_", point_abs_omt( 197, 90 ) },   // Thảo Cầm Viên
+        { "sgn_lm_dam_sen_", point_abs_omt( -112, 191 ) },       // Đầm Sen
+    };
+    for( const auto &lm : landmarks ) {
+        CAPTURE( lm.first );
+        CHECK( near_site( lm.second, lm.first, 4 ) );
+    }
+    CHECK( near_site( point_abs_omt( -16, 232 ), "sgn_pl_benh_vien", 4 ) );   // Bệnh viện Chợ Rẫy
+    const std::vector<std::pair<std::string, std::vector<point>>> streets = {
+        { "Lê Lợi", { { 163, 163 }, { 162, 161 }, { 180, 144 } } },
+        { "Nguyễn Huệ", { { 172, 143 }, { 175, 144 }, { 196, 163 } } },
+        { "Đồng Khởi", { { 167, 131 }, { 196, 158 } } },
+        { "Hai Bà Trưng", { { 106, 69 }, { 155, 109 }, { 194, 146 } } },
+        { "Cách Mạng Tháng Tám", { { -45, 67 }, { 114, 152 }, { 135, 165 } } },
+        { "Nam Kỳ Khởi Nghĩa", { { 85, 74 }, { 96, 82 }, { 135, 119 } } },
+        { "Võ Văn Tần", { { 91, 176 }, { 147, 115 } } },
+        { "Lê Duẩn", { { 151, 134 }, { 190, 93 } } },
+        { "Nguyễn Thị Minh Khai", { { 85, 193 }, { 86, 190 }, { 97, 178 }, { 193, 76 } } },
+        { "Trần Hưng Đạo", { { -40, 255 }, { -5, 255 }, { 28, 251 }, { 40, 251 }, { 97, 235 }, { 106, 227 }, { 139, 188 }, { 159, 167 } } },
+        { "Nguyễn Văn Cừ", { { 84, 194 }, { 88, 208 }, { 99, 235 }, { 109, 247 } } },
+        { "Nguyễn Hữu Cảnh", { { 230, 83 }, { 240, 83 }, { 246, 80 }, { 249, 74 }, { 249, 62 }, { 251, 56 }, { 263, 44 }, { 266, 46 }, { 272, 46 }, { 275, 45 }, { 279, 40 } } },
+        { "Xô Viết Nghệ Tĩnh", { { 197, 70 }, { 213, 53 }, { 218, 38 }, { 221, -7 }, { 241, -28 }, { 244, -29 } } },
+    };
+    const auto is_road = [&]( const point_abs_omt & p ) {
+        const std::string id = ter( p );
+        return starts( id, "road_" ) || starts( id, "bridge" );
+    };
+    for( const auto &st : streets ) {
+        CAPTURE( st.first );
+        const std::vector<point> &line = st.second;
+        // tiles within 3 of the polyline
+        const auto in_corridor = [&]( const point & p ) {
+            for( size_t i = 0; i + 1 < line.size(); i++ ) {
+                const point a = line[i];
+                const point b = line[i + 1];
+                const double l2 = ( b - a ).x * static_cast<double>( ( b - a ).x ) + ( b - a ).y * static_cast<double>( ( b - a ).y );
+                double t = l2 == 0 ? 0.0 : ( ( p - a ).x * static_cast<double>( ( b - a ).x ) + ( p - a ).y * static_cast<double>( ( b - a ).y ) ) / l2;
+                t = std::max( 0.0, std::min( 1.0, t ) );
+                const double dx = p.x - ( a.x + t * ( b - a ).x );
+                const double dy = p.y - ( a.y + t * ( b - a ).y );
+                if( dx * dx + dy * dy <= 9.0 ) {
+                    return true;
+                }
+            }
+            return false;
+        };
+        const auto nearest_road = [&]( const point & p ) {
+            for( int r = 0; r <= 3; r++ ) {
+                for( int dx = -r; dx <= r; dx++ ) {
+                    for( int dy = -r; dy <= r; dy++ ) {
+                        const point q = p + point( dx, dy );
+                        if( in_corridor( q ) && is_road( point_abs_omt( q ) ) ) {
+                            return q;
+                        }
+                    }
+                }
+            }
+            return point::invalid;
+        };
+        const point from = nearest_road( line.front() );
+        const point to = nearest_road( line.back() );
+        REQUIRE( from != point::invalid );
+        REQUIRE( to != point::invalid );
+        std::set<point> seen = { from };
+        std::vector<point> todo = { from };
+        while( !todo.empty() && !seen.count( to ) ) {
+            const point c = todo.back();
+            todo.pop_back();
+            for( const point &d : four_adjacent_offsets ) {
+                const point q = c + d;
+                if( !seen.count( q ) && in_corridor( q ) && is_road( point_abs_omt( q ) ) ) {
+                    seen.insert( q );
+                    todo.push_back( q );
+                }
+            }
+        }
+        CHECK( seen.count( to ) == 1 );
+    }
+    // 2009: Bình Thạnh's ward 22 (Nguyễn Hữu Cảnh) is city, Thủ Thiêm across the river is marsh
+    CHECK( is_road( point_abs_omt( 238, 85 ) ) );
+    CHECK( starts( ter( point_abs_omt( 242, 80 ) ), "sgn_" ) );
+    CHECK( starts( ter( point_abs_omt( 260, 140 ) ), "forest_water" ) );
+    // the Thủ Thiêm bridge (2008) crosses the river from ward 22
+    CHECK( near_site( point_abs_omt( 247, 100 ), "bridge", 4 ) );
+    // Tân Sơn Nhất's terminal 3 (2025) and its roads are not there
+    int t3_roads = 0;
+    for( int x = 112 - 180; x <= 160 - 180; x++ ) {
+        for( int y = 333 - 360; y <= 356 - 360; y++ ) {
+            t3_roads += is_road( point_abs_omt( x, y ) );
+        }
+    }
+    CHECK( t3_roads == 0 );
+    get_globals().remove_global_value( "overmap_pregenerated_path" );
+    clear_avatar();
+    clear_map();
+    clear_overmaps();
 }
