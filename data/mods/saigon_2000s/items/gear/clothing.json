@@ -69,7 +69,9 @@
     "subtypes": [ "ARMOR" ],
     "name": { "str": "công an uniform shirt" },
     "description": "The khaki-yellow shirt of a ward police officer, with red collar tabs and shoulder boards.  The badge has been torn off.",
-    "color": "yellow"
+    "color": "yellow",
+    "//": "dress_shirt's colour variants (black, white, blue ... dress shirt) would rename the uniform.",
+    "variants": [  ]
   },
   {
     "type": "ITEM",
