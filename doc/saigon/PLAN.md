@@ -289,3 +289,153 @@ Nothing in the engine picks NPC classes at random: `npc_class::random_common()` 
 
 So N1 overrides those 40 groups with Saigon gear and no firearms, plus the 14 random-pool missions, instead of the class `common` flags. N3's Saigon classes serve the people placed at landmarks and places (N6), where a class is chosen explicitly.
 
+
+---
+
+## Update 2026-10-18: state against the plan, and the enrichment plan (appended; nothing above is changed)
+
+### Where things stand
+The ledger has 166 done units and 20 open. Gates are green at `e948a72cc6`: `check_mod.sh` is clean and `[saigon]` passes 33 cases / 7,884 assertions (seed 1021).
+
+**Done against the plan:**
+- **Pass 1 (B1–B10)** is complete, and so are both maps. Vietmap is procedural with a landmark pool; the 2009 real map is built from OpenStreetMap.
+- **Phase A (playable and verified):** done. A1, the mouse fix, was verified in game by the user. A2 added the 2009 new-game test.
+- **Phase B (upstream intake):** B0–B2 done. The fork is one-way and fetch-only.
+- **Phase D:**
+  - D1 (delta sprites), D2 (R6b, the 2009 port) and D3 (the content review closing B2.R–B9.R) are done.
+  - Since then, the review's blocker (zombie hordes with guns) is fixed, as are the missions and NPC text (E1/E2), ice and the radio/loa phường (V1/V3), and the ba gác/ghe engines and xích lô wheels (V4).
+- **N0–N7 (NPCs):** done, including the 2026-10-08 correction.
+- **Since 2026-10-08:**
+  - S1 separation;
+  - E1 factions, chains and traders;
+  - E2 zombies, hordes and encounters;
+  - W1–W4: Vietnamese weapons, weapons in the world, police and army sites, everyday items;
+  - V1–V4: food and ice, 11 everyday places, the city's voice, period vehicles.
+
+**Open against the plan:**
+1. **Tests owed** for agent-built content: E-tests, W-tests, V-tests (ledger rows).
+2. **D3 fixes still open:**
+   - B4-1/B4-2: the flood drain runs only around the player; flooding is not scaled by rain.
+   - B5-2: gold prices.
+   - B8-1: a locked, noisy cửa sắt kéo.
+   - B8-2: the chợ stench.
+   - B3-1/B3-2: profession kits with the mod's own items, and street-vendor recipes.
+   - Brands: Co.op Mart in 6 files, Rạng Đông.
+   - Smaller items: phở is listed as wheat, the population is "eight million" (6.1 M in 2004), the pharmacy has no antibiotics, the mosquito net is inert, the almanac, the horn part.
+   - The old ice-less iced-drink recipes, and the `sgn_ao_cong_an` colour variants.
+3. **Never played:** E1, E2, W1–W4 and V1–V4 are verified only by gates and tests. V1, the guided playtest, is still todo, and `qa_game_load.sh` needs a world with a saved character.
+4. **Engine items:**
+   - B4c heat index; I-B8a/I-B8b2/I-B5f.
+   - The countdown that ignores insulation (V1).
+   - Scheduled broadcasts that reach only the player's z-level (V3).
+5. **Release S2–S5** waits on the user's decisions: name, platforms, dylibbundler, scenario names.
+6. **T2 (vi translation) stays deferred** (user, 2026-10-18). T1 keeps every new string extractable, so nothing is lost by waiting.
+7. **H1 hand art** waits for an artist.
+
+### Decision recorded (user, 2026-10-18)
+Keep enriching Vietnam. The translation stays delayed.
+
+### The plan
+Same working rules as before: small units, one commit each, gates green, ledger rows appended, push only when asked. Parallel agents get disjoint file ownership and do not commit.
+
+**Phase F: make what exists solid (first, because content is outrunning verification)**
+- **F1 Tests owed.** E-tests, W-tests and V-tests as listed in the ledger. Each test must fail when its content is removed.
+- **F2 D3 remainder:**
+  - a flood drain that runs on its own timer, with flooding scaled by rain;
+  - gold prices;
+  - the cửa sắt kéo (locked variant, loud when opened);
+  - the chợ stench that draws zombies;
+  - profession kits and recipes;
+  - brand fixes (Co.op Mart → a fictional co-op chain, Rạng Đông → a fictional flask maker);
+  - the smaller items.
+- **F3 Guided playtest V1 with the user.** New world → each scenario → each start, then:
+  - a loudspeaker and the radio, cooking with ice, a ride on the xích lô and the ghe máy;
+  - a police HQ armory, a đình, a bia hơi;
+  - two NPC missions.
+  - Findings become units.
+- **F4 Save-game QA.** Make a world with a saved character for `qa_game_load.sh`, so engine and graphics changes are load-tested again.
+
+**Phase X: enrichment (in this order; each unit about one agent's sitting)**
+- **X1 The calendar.** Events keyed to the date, through EOCs:
+  - Tết: bánh chưng and bánh tét, mai and peach blossoms, lì xì, the family visit on the altar, and the empty streets of the first days.
+  - Mid-Autumn: lanterns, mooncakes.
+  - Vu Lan.
+  - Rằm and mùng một: incense and offerings at altars and pagodas.
+  - Starts are set in late December, so Tết arrives in the first in-game month.
+- **X2 Monsoon life:**
+  - flooded streets as gameplay: wading slows you, the xuồng works in flooded hẻm, things float off;
+  - rain barrels and collectors next to tanks (I-B5f);
+  - áo mưa that matters;
+  - mosquitoes, so the net is useful; dengue as a slow illness;
+  - heat in the dry season (B4c, only if the playtest shows a need).
+- **X3 The street economy:**
+  - gold as the money that keeps its value (with the F2 prices); a tiệm vàng trader;
+  - ve chai scrap collectors who buy scrap;
+  - sidewalk fuel sold in bottles (xăng lẻ);
+  - xe ôm hire as a service.
+  - Trader stock and wealth rules are tested.
+- **X4 Makeshift crafts:**
+  - bamboo (tre) and coconut working: ladders, rafts, baskets, water dippers, a bamboo spear set;
+  - casting nets, mending boats, weaving mats and nón lá;
+  - Recipes use the mod's items and tools. Books teach them (B7-1: more `book_learn`).
+- **X5 Folk medicine and health:**
+  - cạo gió and giác hơi as weak treatments;
+  - thuốc nam herbs from gardens and canal banks, thuốc bắc from the herbalist;
+  - an oresol that rehydrates;
+  - antibiotics in the pharmacy (B5-7);
+  - heat stroke and dengue tied to X2.
+- **X6 Animals and the food chain:**
+  - rats and stray dogs in the hẻm, chickens and ducks in yards;
+  - fishing in the kênh with nets and traps;
+  - market livestock;
+  - farmland on the outskirts: rice paddies, cassava, vegetable plots that can be harvested.
+- **X7 Districts with their own identity:**
+  - **Chợ Lớn:** Hoa assembly halls (hội quán), Chinese herbal shops, roast-duck noodle shops, the clan associations.
+  - **Thủ Thiêm:** the marsh across the river.
+  - **Cần Giờ:** mangroves.
+  - **Củ Chi:** the tunnels as the 2009 tourist site, not wartime.
+  - **Bình Tây:** the wholesale market.
+  - Each gets 1–3 buildings and a region or real-map rule.
+- **X8 Faiths of the city:**
+  - Cao Đài temple, Hòa Hảo home altars;
+  - the Chăm mosque, the Mariamman Hindu temple;
+  - parish life around the Catholic churches (bells, the evening rosary);
+  - each with keepers, items and a small mission.
+- **X9 The sound of the city:**
+  - the noisy gates (from F2);
+  - karaoke speakers and firecrackers as lures;
+  - temple bells and the chợ stench;
+  - generators that draw the dead.
+  - Built on V3's sound pattern.
+- **X10 Reading and media:**
+  - the sports weekly (B7-2), the almanac with a use (B7-3);
+  - fictionalised martial-arts novels and children's comic serials, cải lương tapes and VCDs for morale;
+  - more skill books with `book_learn`.
+- **X11 Professions and starts:**
+  - new professions: lottery seller, ve chai collector, karaoke owner, returning Việt kiều, tour guide, dân phòng (ward militia);
+  - their kits from the mod's items;
+  - a start for each of the V2 places that suits one (nhà trọ, bia hơi, the đình);
+  - the hẻm start in the 2004 scenario too (B2-7).
+- **X12 The people, part 2:**
+  - dân phòng as a faction;
+  - Chợ Lớn clan elders;
+  - recurring characters met in several places;
+  - a three-step chain per district from X7.
+- **X13 Vehicles, part 2:**
+  - a motorbike horn part;
+  - sidewalk repair (sửa xe vỉa hè) as a service and a skill path;
+  - motorbike theft and locks;
+  - a dinghy for flooded streets (with X2).
+- **X14 Zombies, part 2 (B9-10):**
+  - the Saigon zombies get behaviour, not just new skins: the fevered radiate heat, the xe ôm dead still wear helmets, market dead smell;
+  - one city-specific mutation line, with evolutions.
+
+**Later (unchanged):** T2 vi translation (after enrichment settles); release S2–S5 (after the user's decisions); H1 art; PERF; megacity.
+
+### Verification for each unit
+- `check_mod.sh` is clean.
+- `[saigon]` passes, with new tests that fail without the unit.
+- The audit stays at 0: no American content, and guns only through `POLICE_ARMY_GUN_GROUPS` and the guard.
+- Every new string extracts (T1).
+- New places pass the structure test.
+- Phase X content goes into F3-style playtests as it lands.

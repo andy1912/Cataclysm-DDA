@@ -243,3 +243,20 @@ Triage from contact sheets (`tools/saigon/art/contact_sheet.py`): most "to revis
 | V4 on the road and the river | done | 692de51a82 | vehicles/, mapgen/roads/road_traffic.json, gen_road_traffic.py | Review B6 fixed (ba gác 7.5 kW, ghe 9.7 kW + battery, xích lô two front wheels: not driven yet); 10 period vehicles; traffic 89 % two/three-wheelers. Open: motorbike horn part. Agent-built | V-tests |
 | V2 the city's corners | done | 6378a155c7 | tools/saigon/gen_vn_places.py, mapgen/vn_places/, overmap/vn_places.json, region pools, realmap | 11 everyday places in pools and on the real map; structure test entries added (bus bay fixed by the lead). Gates: check_mod OK, [saigon] 33 cases / 7,884 assertions (seed 1021) | |
 | V-tests tests for V1-V4 | todo | - | tests/ | ice melts into water; loa examine gives phase text and sound, schedule fires at 06/17 only; radio uses a charge; incense adds morale once per 12 h; intro by start; xích lô/xe ba bánh/xe lam drive and steer; boats float; engine power caps; xe lam tank empty; emergency share < 1 % | |
+| F2 D3 remainder | todo | - | region/flood.json, items/currency, furniture/terrain, gen_cho, professions/, brands | flood drain on its own timer + rain scaling; gold prices; locked noisy cửa sắt kéo; chợ stench; profession kits and recipes; Co.op Mart and Rạng Đông fictionalised; phở material, population, pharmacy antibiotics, mosquito net use, almanac, old no-ice drink recipes, sgn_ao_cong_an variants | |
+| F3 guided playtest with the user | todo | - | doc/saigon/art/ | both scenarios, every start; loa, radio, ice, xích lô, ghe máy, police armory, đình, bia hơi, two missions | |
+| F4 saved-character world for qa_game_load | todo | - | tools/saigon/qa_game_load.sh | | |
+| X1 the calendar (Tết, Trung thu, Vu Lan, rằm) | todo | - | | PLAN 2026-10-18 | |
+| X2 monsoon life | todo | - | | flood play, rain barrels (I-B5f), mosquitoes/dengue | |
+| X3 the street economy | todo | - | | gold, tiệm vàng, ve chai, xăng lẻ, xe ôm hire | |
+| X4 makeshift crafts | todo | - | | tre, coconut, nets, boats, mats, book_learn | |
+| X5 folk medicine and health | todo | - | | cạo gió, giác hơi, thuốc nam/bắc, oresol, antibiotics | |
+| X6 animals and the food chain | todo | - | | hẻm animals, kênh fishing, outskirts farmland | |
+| X7 districts (Chợ Lớn, Thủ Thiêm, Cần Giờ, Củ Chi, Bình Tây) | todo | - | | | |
+| X8 faiths (Cao Đài, Hòa Hảo, Chăm mosque, Mariamman, parishes) | todo | - | | | |
+| X9 the sound of the city | todo | - | | gates, karaoke, firecrackers, bells, stench, generators | |
+| X10 reading and media | todo | - | | sports weekly, almanac, novels, comics, cải lương, book_learn | |
+| X11 professions and starts | todo | - | | 6 professions, V2 place starts, hẻm start in 2004 | |
+| X12 the people, part 2 | todo | - | | dân phòng, Chợ Lớn elders, recurring characters, district chains | |
+| X13 vehicles, part 2 | todo | - | | horn, sidewalk repair, theft and locks, flood dinghy | |
+| X14 zombies, part 2 | todo | - | | behaviour, mutation line (B9-10) | |
