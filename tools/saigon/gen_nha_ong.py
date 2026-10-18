@@ -157,9 +157,13 @@ def lot_chunks():
 
 
 # Monsters per lot (d3_r3 §6.2 shophouse tier: <= 4 awake and <= 20 dormant per OMT).
+# mapgen rolls 'chance' on every 'repeat', so a lot holds 0.15 awake and 0.5 x 1.5 = 0.75
+# dormant on the ground floor plus 0.08 awake on each of z1/z2: with six lots a row OMT expects
+# about 1.9 awake and 4.5 dormant (6.4 in all).  D-fix (DIFFICULTY.md, side check): dormant
+# repeat [1, 3] -> [1, 2]; it was 6 dormant (7.9 in all) per OMT, 4-6x a vanilla street.
 GROUND_MONSTERS = [ { 'group': 'sgn_GROUP_SAIGON_AWAKE', 'x': [ 1, 3 ], 'y': [ 3, 18 ], 'chance': 15 },
                     { 'group': 'sgn_GROUP_ZOMBIE_DORMANT', 'x': [ 1, 3 ], 'y': [ 3, 18 ], 'chance': 50,
-                      'repeat': [ 1, 3 ] } ]
+                      'repeat': [ 1, 2 ] } ]
 FLOOR_MONSTERS = [ { 'group': 'sgn_GROUP_SAIGON_AWAKE', 'x': [ 1, 3 ], 'y': [ 3, 18 ], 'chance': 8 } ]
 
 

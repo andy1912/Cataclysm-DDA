@@ -599,20 +599,26 @@ TEST_CASE( "saigon_monster_budget_per_omt", "[mapgen][monster][saigon]" )
     }
     sgn_clear_map_and_reset_player();
     // d3_r3 §6.2 tiers per OMT: rows/hẻm <= 4 awake and <= 20 dormant; chợ <= 20 / <= 60.
+    // D-fix (doc/saigon/DIFFICULTY.md, side check): the dormant layer of the city fabric was cut
+    // (gen_nha_ong.py repeat [1,3] -> [1,2], gen_hem.py [2,5] -> [1,3]), so rows and hẻm also
+    // carry a tighter dormant ceiling.  Expected now: row 4.5 dormant (was 6; 10 seeds measure
+    // 3.7, were 5.8), hẻm 1.6 (was 2.8; 10 seeds measure 1.1, were 2.9).  The ceilings sit about
+    // one old-to-new step above the new means, so the old numbers fail them.
     struct tier {
         std::vector<std::string> levels;
         double max_awake;
         double max_dormant;
+        double dfix_max_dormant;
     };
     const std::vector<tier> tiers = {
         {
             {
                 "sgn_nh_solo_z0_north", "sgn_nh_solo_z1_north", "sgn_nh_solo_z2_north",
                 "sgn_nh_solo_z3_north", "sgn_nh_solo_z4_north", "sgn_nh_solo_z5_north"
-            }, 4, 20
+            }, 4, 20, 5.5
         },
-        { { "sgn_hem_block_north", "sgn_hem_block_roof_north" }, 4, 20 },
-        { { "sgn_cho_nw_north", "sgn_cho_roof_nw_north" }, 20, 60 },
+        { { "sgn_hem_block_north", "sgn_hem_block_roof_north" }, 4, 20, 2.4 },
+        { { "sgn_cho_nw_north", "sgn_cho_roof_nw_north" }, 20, 60, 60 },
     };
     int column = 0;
     for( const tier &t : tiers ) {
@@ -641,6 +647,7 @@ TEST_CASE( "saigon_monster_budget_per_omt", "[mapgen][monster][saigon]" )
         CHECK( dormant > 0 );
         CHECK( awake <= t.max_awake );
         CHECK( dormant <= t.max_dormant );
+        CHECK( dormant <= t.dfix_max_dormant );
     }
 }
 

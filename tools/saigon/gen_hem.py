@@ -169,12 +169,16 @@ def block_mapgen():
     return { 'type': 'mapgen', 'om_terrain': [ 'sgn_hem_block' ],
              'object': { 'fill_ter': 't_concrete', 'rows': rows, 'palettes': [ 'sgn_hem', 'sgn_hem_params' ],
                          'place_nested': nests,
-                         # d3_r3 §6.2 shophouse-like tier: a few awake, more dormant on the spine
+                         # d3_r3 §6.2 shophouse-like tier (<= 4 awake, <= 20 dormant per OMT): a few
+                         # awake, more dormant on the spine.  'chance' is rolled on every 'repeat':
+                         # 0.6 x 1.5 = 0.9 awake and 0.8 x 2 = 1.6 dormant per OMT (2.5 in all).
+                         # D-fix (DIFFICULTY.md, side check): dormant repeat [2, 5] -> [1, 3]; it was
+                         # 0.8 x 3.5 = 2.8 dormant (3.7 in all).
                          'place_monster': [
                              { 'group': 'sgn_GROUP_SAIGON_AWAKE', 'x': [ 11, 12 ], 'y': [ 0, 23 ], 'chance': 60,
                                'repeat': [ 1, 2 ] },
                              { 'group': 'sgn_GROUP_ZOMBIE_DORMANT', 'x': [ 0, 23 ], 'y': [ 11, 12 ], 'chance': 80,
-                               'repeat': [ 2, 5 ] },
+                               'repeat': [ 1, 3 ] },
                              # G28: a stray dog, cat, chicken or rat in the alley now and then
                              { 'group': 'sgn_GROUP_SAIGON_ANIMALS', 'x': [ 0, 23 ], 'y': [ 11, 12 ], 'chance': 35 } ] } }
 
