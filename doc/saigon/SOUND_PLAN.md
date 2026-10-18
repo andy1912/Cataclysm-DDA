@@ -12,7 +12,12 @@ soundpack needs.
 2. **The Makefile's macOS framework path does not add SDL3_mixer.** Its `SOUND=1` block asks
    pkg-config for `sdl3-mixer`. A local shim at
    `~/code/cdda-saigon-logs/tools/pkgconfig/sdl3-mixer.pc` answers that without editing the
-   Makefile, which is an upstream file. Build command:
+   Makefile, which is an upstream file. The shim also passes `-Wno-error=old-style-cast`: SDL's
+   `SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK` macro is a C cast, and the FRAMEWORK build includes SDL as a
+   user header, so `-Werror -Wold-style-cast` stopped `sound_backend_sdl3.cpp`. Switching from
+   `SOUND=0` to `SOUND=1` also needs the objects that test `SDL_SOUND` deleted first (make does
+   not track flags): every `obj/tiles/*.o` whose source includes `sdlsound.h`, `sound_backend.h`
+   or `sounds.h`, plus `obj/tiles/pch`. Build command:
 
        GLSLANG=~/code/cdda-saigon-logs/tools/glslang/bin/glslang \
        PKG_CONFIG_PATH=~/code/cdda-saigon-logs/tools/pkgconfig \
