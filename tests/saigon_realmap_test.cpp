@@ -219,6 +219,27 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     CHECK( count["market"] >= 4 * 5 );
     // the railway runs through to Ga Sài Gòn
     CHECK( count["rail"] > 20 );
+    // W3: district police headquarters and army guard posts from OpenStreetMap (place_places.py);
+    // each north-west ground piece has its upper floor above it
+    int police_hq = 0;
+    int army_posts = 0;
+    for( int x = 0; x < OMAPX; x++ ) {
+        for( int y = 0; y < OMAPY; y++ ) {
+            const std::string id = om.ter( tripoint_om_omt( x, y, 0 ) ).id().str();
+            for( const std::string site : {
+                     "sgn_pa_cong_an_quan_00_", "sgn_pa_don_quan_su_00_"
+                 } ) {
+                if( id.rfind( site, 0 ) == 0 ) {
+                    ( site == "sgn_pa_cong_an_quan_00_" ? police_hq : army_posts )++;
+                    CAPTURE( id );
+                    CHECK( om.ter( tripoint_om_omt( x, y, 1 ) ).id().str().rfind( site + "z1_", 0 ) == 0 );
+                }
+            }
+        }
+    }
+    CAPTURE( police_hq, army_posts );
+    CHECK( police_hq >= 1 );
+    CHECK( army_posts >= 1 );
     // the 2009 outskirts (R3): overmap (2, 0), Quận 2 east, is mostly fields
     overmap &east = overmap_buffer.get( point_abs_om( 2, 0 ) );
     int fields = 0;

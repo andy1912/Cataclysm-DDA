@@ -83,6 +83,8 @@ TEST_CASE( "saigon_district1_landmarks", "[mapgen][saigon]" )
         { "sgn_vp_nha_tro", 1, 1, 0, 2 }, { "sgn_vp_dinh", 1, 1, 0, 1 }, { "sgn_vp_nha_tho_ho", 1, 1, 0, 1 },
         { "sgn_vp_dien_thoai", 1, 1, 0, 1 }, { "sgn_vp_cho_tam", 1, 1, 0, 1, true }, { "sgn_vp_lo_da", 1, 1, 0, 1 },
         { "sgn_vp_giu_xe", 1, 1, 0, 1 }, { "sgn_vp_tram_xe_buyt", 1, 1, 0, 1 },
+        // W3 district police headquarters and army guard post (tools/saigon/gen_police_army.py)
+        { "sgn_pa_cong_an_quan", 2, 1, 0, 2 }, { "sgn_pa_don_quan_su", 2, 1, 0, 1 },
     };
     const ter_str_id open_air( "t_open_air" );
     const ter_str_id up( "t_stairs_up" );

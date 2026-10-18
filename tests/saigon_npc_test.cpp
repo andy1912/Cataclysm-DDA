@@ -68,7 +68,10 @@ TEST_CASE( "saigon_random_npcs", "[saigon]" )
         int guns = 0;
         std::string gun;
         guy->visit_items( [&guns, &gun]( const item_location & it ) {
-            if( it->is_gun() ) {
+            // W1/W3: the ná thun (slingshot) and nỏ (crossbow) are GUN items to the engine, so
+            // is_gun() counts them, but they are not firearms (CONTENT_BIBLE.md section 12, flag
+            // PRIMITIVE_RANGED_WEAPON): is_firearm() exempts them, as the audit does
+            if( it->is_firearm() ) {
                 guns++;
                 gun = it->typeId().str();
             }

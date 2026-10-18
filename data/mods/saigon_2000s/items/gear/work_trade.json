@@ -101,6 +101,7 @@
   {
     "type": "ITEM",
     "id": "sgn_thuoc_la",
+    "variants": [  ],
     "copy-from": "cig",
     "subtypes": [ "COMESTIBLE" ],
     "name": { "str": "Sao Mai cigarette" },

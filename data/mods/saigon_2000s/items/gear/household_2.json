@@ -93,6 +93,7 @@
   {
     "type": "ITEM",
     "id": "sgn_do_bo",
+    "variants": [  ],
     "copy-from": "jumpsuit",
     "subtypes": [ "ARMOR" ],
     "name": { "str_sp": "đồ bộ" },

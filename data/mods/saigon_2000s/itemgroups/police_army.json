@@ -48,6 +48,7 @@
       { "item": "sgn_clip_762x39_10", "prob": 20, "charges": [ 0, 10 ] },
       { "item": "762_m87", "prob": 60, "charges": [ 20, 60 ] },
       { "item": "sgn_mag_9x18", "prob": 10, "charges": [ 0, 8 ] },
+      { "item": "9x18mm", "prob": 10, "charges": [ 8, 24 ] },
       { "item": "shot_00", "prob": 5, "charges": [ 2, 10 ] }
     ]
   },

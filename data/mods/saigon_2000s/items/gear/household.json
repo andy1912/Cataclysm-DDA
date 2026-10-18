@@ -89,6 +89,7 @@
   {
     "type": "ITEM",
     "id": "sgn_khau_trang",
+    "variants": [  ],
     "copy-from": "mask_dust",
     "subtypes": [ "ARMOR" ],
     "name": { "str": "cloth face mask" },
