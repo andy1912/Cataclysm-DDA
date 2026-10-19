@@ -1,5 +1,5 @@
 """Household and medicine items (G24): 20x20 icons, auto-fitted to the UltimateCataclysm budget."""
-from draw import sprite, rgb, shade
+from draw import sprite, rgb
 
 OUTLINE = 0.38
 

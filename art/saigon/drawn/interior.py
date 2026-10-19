@@ -6,7 +6,7 @@ Floors repeat a 16x16 motif 2x2 so they tile seamlessly across a room; furniture
 """
 import math
 
-from draw import sprite, rgb, shade
+from draw import sprite, rgb
 
 OUTLINE = 0.42
 

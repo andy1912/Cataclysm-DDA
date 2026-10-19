@@ -9,3 +9,8 @@ ignore =
     # W503 and W504 require line breaks after or before binary operators; you
     # can only have one enabled
     W504
+# Saigon fork: the fork's Python tools and art scripts use the project's C++ spacing
+# (f( x )) and wide lines, so only pyflakes (F) and syntax errors are checked there.
+per-file-ignores =
+    tools/saigon/*: E,W
+    art/saigon/*: E,W

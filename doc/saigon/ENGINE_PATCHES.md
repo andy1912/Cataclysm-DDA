@@ -20,6 +20,17 @@ Reproduce any section with `git diff $(git merge-base HEAD upstream/master) HEAD
 
 ---
 
+## .flake8
+
+- **What:** `per-file-ignores` turns off the pycodestyle classes (E, W) for `tools/saigon/*` and
+  `art/saigon/*`; pyflakes (F) and syntax errors still run there.
+- **Why:** upstream's Flake8 CI (`make python-check`) runs over the whole repo, and the fork's
+  Python follows the project's C++ spacing (`f( x )`) and wide lines: about 20,000 E201/E202/E501
+  findings, nothing a reviewer would act on. It failed the PR's "check" job. The four real
+  findings (unused `shade` imports in `art/saigon/drawn/`) were fixed instead of ignored.
+- **Test:** `flake8` (the CI job).
+- **Marker:** the comment in the file.
+
 ## src/display_buffer_coords.h (new file)
 
 - **What:** `display_buffer_from_render()` maps a mouse position in render (drawable pixel)
@@ -263,6 +274,7 @@ Four separate changes:
 repo root.
 
 ```allowed-engine-files
+.flake8
 src/display_buffer_coords.h
 src/do_turn.cpp
 src/game.cpp

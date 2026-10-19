@@ -1,5 +1,5 @@
 """Shophouse businesses (B8h): gold-shop counter, internet-café PC, karaoke set.  32x32 3/4 view."""
-from draw import sprite, rgb, shade
+from draw import sprite, rgb
 
 OUTLINE = 0.42
 
