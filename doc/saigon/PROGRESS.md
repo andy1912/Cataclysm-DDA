@@ -269,3 +269,4 @@ Triage from contact sheets (`tools/saigon/art/contact_sheet.py`): most "to revis
 | DL2 Saigon soundpack (download) | todo | - | sound/Saigon -> saigon-sound-<version>.zip | after SND1-SND5; CC-BY-SA, per-file credits; never committed | |
 | DL3 package_assets.sh | todo | - | tools/saigon/package_assets.sh | zips + manifest (sizes, sha256, licences); uploads nothing | |
 | DL4 install guide | todo | - | player docs | gfx/ and sound/ install, select in Options | |
+| S2-S5 Cataclysm Saigon release | in-progress | (this) | .github/workflows/saigon-release.yml, doc/saigon/RELEASE_README.md, scenario names | workflow written; first run (tag saigon-v0.1.0) not yet done; Windows MSVC build of the fork's patches untested | push the tag, then check each platform's build log |

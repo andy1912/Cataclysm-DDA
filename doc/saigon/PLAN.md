@@ -460,3 +460,43 @@ The Saigon graphics and, later, the Saigon sound will both be revised and offere
 - **DL3 Packaging script.** `tools/saigon/package_assets.sh` builds both zips from their sources, writes a manifest (file list, sizes, sha256, licences), and checks every file has a credit line. It uploads nothing; the user attaches the zips to a Release.
 - **DL4 Install guide.** A section in the player docs: unzip the tileset into `gfx/`, unzip the soundpack into `sound/`, select both in Options, restart.
 - **Release builds (S2–S5)** ship the code and mod only, without the playtest mod. They link to the two downloads.
+
+---
+
+## Update 2026-10-20: the Cataclysm Saigon release (appended; nothing above is changed)
+
+### Decisions (user, 2026-10-20)
+- **Name:** Cataclysm Saigon.
+- **Platforms:** macOS (Apple Silicon and Intel), Windows and Linux.
+- **Scenarios:** "Somewhere in Nam" (procedural, `sgn_saigon_2004`) and "Saigon 2009" (real map, `sgn_saigon_2009`). The ids are unchanged, so saves and tests are unaffected.
+- **Contents:** all resources are included: every tileset, the CC-Sounds soundpack, both maps and the full mod.
+
+### How it is built
+`.github/workflows/saigon-release.yml` runs on GitHub's machines, because one Mac cannot produce the Windows, Linux and universal macOS builds. It is adapted from upstream's `release.yml`, which already ships these platforms (same pinned actions, the same source-built SDL3 stack, dylibbundler, ad-hoc codesigning).
+
+| Platform | Output |
+|---|---|
+| macOS | one universal dmg (arm64 + x86_64) |
+| Windows | x64 zip (MSVC + vcpkg) |
+| Linux | x64 tar.gz |
+
+Each file gets a sha256 and is attached to the release `Cataclysm Saigon <version>` (tag `saigon-v<version>`).
+
+The packaged tree differs from the repo in four ways:
+- `data/mods/default.json` preselects `dda` + `saigon_2000s`;
+- the `saigon_playtest` cheat mod is removed;
+- README.md is replaced by `doc/saigon/RELEASE_README.md`;
+- the build is English only, because the fork has no translation catalogues yet (T2 is deferred).
+
+**To start it:**
+
+```bash
+git tag saigon-v0.1.0 && git push origin saigon-v0.1.0
+```
+
+Once the workflow file is on `master`, it can also be started from the Actions tab (Run workflow).
+
+### Known limits
+- **macOS** apps are ad-hoc signed, not notarised, so the first launch needs right-click → Open. Notarisation needs an Apple Developer account.
+- **Windows** builds are unsigned, so SmartScreen warns.
+- **Untested on Windows:** the fork's engine patches have only been built with clang on macOS. The first MSVC build is their first test there.

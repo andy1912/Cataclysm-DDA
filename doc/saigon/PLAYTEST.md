@@ -87,8 +87,8 @@ Make each world from the main menu (**World > Create World**). `play_saigon.sh` 
 
 | World | Mods | Used for |
 |---|---|---|
-| **PT Vietmap** | dda, Sài Gòn 2000s, **Sài Gòn 2000s – playtest tools (cheats)** | most checks, scenario "Sài Gòn, 2004 (Vietmap)" |
-| **PT Real** | dda, Sài Gòn 2000s, playtest tools | the 2009 real map, scenario "Sài Gòn, 2009 (real map)" |
+| **PT Vietmap** | dda, Sài Gòn 2000s, **Sài Gòn 2000s – playtest tools (cheats)** | most checks, scenario "Somewhere in Nam" |
+| **PT Real** | dda, Sài Gòn 2000s, playtest tools | the 2009 real map, scenario "Saigon 2009" |
 | **Real feel** | dda, Sài Gòn 2000s only | one honest session without cheats (difficulty, PT-90s) |
 
 To add the playtest mod: in the world's **Mods** tab, find it under the category *Misc*, and add it
@@ -101,8 +101,8 @@ A world can hold several characters. For each new start, use **New Game** on the
 
 | Scenario | Start locations |
 |---|---|
-| Sài Gòn, 2004 (Vietmap) | Nhà ống (shophouse home); Nhà ống, iron gate pulled shut; Chợ (wet market stall) |
-| Sài Gòn, 2009 (real map) | the three above, plus Hẻm (a home deep in the alleys); Ga Sài Gòn (the station hall); Tân Sơn Nhất (departures hall) |
+| Somewhere in Nam (procedural Vietmap) | Nhà ống (shophouse home); Nhà ống, iron gate pulled shut; Chợ (wet market stall) |
+| Saigon 2009 (real map) | the three above, plus Hẻm (a home deep in the alleys); Ga Sài Gòn (the station hall); Tân Sơn Nhất (departures hall) |
 
 That makes nine starts. For most of them, the **Playtester (cheat)** profession is quickest. For each
 scenario, do one start with a real Saigon profession (for example Xe ôm driver or Street vendor) so the
@@ -185,7 +185,7 @@ Activate the remote (`a`, then pick it, or `Enter` and use) to open a menu.
 
 | ID | Do | Pass looks like | Fast way |
 |---|---|---|---|
-| PT-10 | New Game in PT Vietmap. Look at the scenario list. | Only the two Saigon scenarios are offered. "Sài Gòn, 2004 (Vietmap)" lists 3 starts; its description reads well. | — |
+| PT-10 | New Game in PT Vietmap. Look at the scenario list. | Only the two Saigon scenarios are offered. "Somewhere in Nam" lists 3 starts; its description reads well. | — |
 | PT-11 | Look at the profession list. | The 12 Saigon professions (and Playtester, with the cheat mod) are listed. There are no US professions. Hobbies have no baseball, golf or similar. | — |
 | PT-12 | Start: Nhà ống. | You start inside a shophouse at ground level, at 6:00 on the morning of day 6 (about 4 days after the outbreak). A wake-up popup fits the start. About 5 minutes later, a loa phường broadcast is heard across the rooftops. | — |
 | PT-13 | Start: Nhà ống, iron gate pulled shut. | As PT-12, but the cửa sắt kéo at the front is closed. | — |

@@ -2,7 +2,7 @@
   {
     "type": "scenario",
     "id": "sgn_saigon_2004",
-    "name": "Sài Gòn, 2004 (Vietmap)",
+    "name": "Somewhere in Nam",
     "points": 0,
     "description": "The dry season was supposed to be quiet.  Since October the loa phường have been repeating the same notice about the \"sốt lạ\", the strange fever that the evening news keeps calling a new bird flu.  Wards were sealed, markets were hosed down with chlorine, and the airport stopped taking flights.  Last night the fever's dead stopped staying dead.  Now the hẻm outside are silent except for dripping air conditioners and the dragging of sandals, and the loa phường play their recorded notices to empty streets.  You are alone, the heat is rising, and the city of eight million people has become a maze.",
     "start_name": "Nhà ống",
@@ -30,7 +30,7 @@
     "type": "scenario",
     "id": "sgn_saigon_2009",
     "copy-from": "sgn_saigon_2004",
-    "name": "Sài Gòn, 2009 (real map)",
+    "name": "Saigon 2009",
     "description": "The real city, street by street, as it stood in late 2009: the new Phú Mỹ bridge open over the river, Thủ Thiêm still marsh and creeks across from District 1, buses leaving Miền Đông on Đinh Bộ Lĩnh.  Since October the loa phường have been repeating the same notice about the \"sốt lạ\", the fever the evening news first called the new swine flu.  Wards were sealed, markets were hosed down with chlorine, and Tân Sơn Nhất stopped taking flights.  Last night the fever's dead stopped staying dead.  The hẻm outside are silent except for dripping air conditioners and the dragging of sandals.",
     "overmap_pregenerated_path": "saigon_2000s/realmap_2009",
     "overmap_outside_region": "sgn_saigon_delta",

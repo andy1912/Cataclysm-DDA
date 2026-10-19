@@ -1,0 +1,329 @@
+# Cataclysm Saigon release: builds the game with graphics and sound for macOS (one universal dmg
+# for Apple Silicon and Intel), Windows x64 and Linux x64, and attaches them to a GitHub Release
+# "Cataclysm Saigon <version>" on this fork.  Start it by pushing a tag (git tag saigon-v0.1.0 &&
+# git push origin saigon-v0.1.0), or by hand (Actions -> Run workflow) once this file is on master.
+# Adapted from upstream's release.yml (same pinned actions and SDL3 stack); upstream's own release
+# workflow is not used by this fork.
+#
+# Saigon changes to the packaged tree (the repo itself is not changed):
+# - data/mods/default.json selects dda + saigon_2000s for new worlds
+# - data/mods/saigon_playtest (the cheat mod) is left out
+# - README.md is replaced by doc/saigon/RELEASE_README.md
+# - English only (LOCALIZE=0): the fork carries no translation catalogues yet
+name: "Cataclysm Saigon release"
+concurrency: saigon-release
+on:
+  push:
+    tags:
+      - 'saigon-v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version, e.g. 0.1.0"
+        required: true
+        default: "0.1.0"
+      prerelease:
+        description: "Mark as a pre-release"
+        type: boolean
+        default: true
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # a pushed tag saigon-v0.1.0 gives 0.1.0; a hand-run gives the typed version
+  VERSION: ${{ inputs.version || github.ref_name }}
+
+jobs:
+  release:
+    name: Create release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      tag: ${{ steps.vars.outputs.tag }}
+      version: ${{ steps.vars.outputs.version }}
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
+      - name: Release variables
+        id: vars
+        run: |
+          v="${VERSION#saigon-v}"
+          echo "tag=saigon-v${v}" >> "$GITHUB_OUTPUT"
+          echo "version=${v}" >> "$GITHUB_OUTPUT"
+      - name: Create release
+        env:
+          TAG: ${{ steps.vars.outputs.tag }}
+          # empty on a tag push: tag releases are pre-releases until promoted by hand
+          PRERELEASE: ${{ inputs.prerelease }}
+          V: ${{ steps.vars.outputs.version }}
+        run: |
+          flag=""
+          if [ "$PRERELEASE" != "false" ]; then flag="--prerelease"; fi
+          gh release create "$TAG" --repo "${{ github.repository }}" --target "${{ github.sha }}" \
+              --title "Cataclysm Saigon ${V}" --notes-file doc/saigon/RELEASE_README.md $flag
+
+  compose-tilesets:
+    uses: ./.github/workflows/compose-tilesets.yml
+
+  compile-shaders:
+    name: Compile shaders
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
+      - name: build SDL3 shader artifacts
+        uses: ./.github/actions/build-sdl3-shaders
+
+  builds:
+    needs:
+      - release
+      - compose-tilesets
+      - compile-shaders
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Windows x64
+            artifact: windows-x64
+            arch: x64
+            os: windows-2022
+            ext: zip
+          - name: Linux x64
+            artifact: linux-x64
+            os: ubuntu-24.04
+            libbacktrace: 1
+            ext: tar.gz
+          - name: macOS universal (Apple Silicon and Intel)
+            artifact: macos
+            os: macos-15
+            ext: dmg
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: write
+    env:
+      ZSTD_CLEVEL: 17
+      OUT: CataclysmSaigon-${{ needs.release.outputs.version }}-${{ matrix.artifact }}.${{ matrix.ext }}
+    steps:
+      - name: Maximize build space (mac)
+        if: runner.os == 'macOS'
+        run: sudo rm -rf $ANDROID_HOME
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          fetch-tags: true
+          persist-credentials: false
+      - name: Get soundpack
+        shell: bash
+        run: |
+          git clone --depth=1 --shallow-submodules --recurse-submodules https://github.com/Fris0uman/CDDA-Soundpacks "$GITHUB_WORKSPACE/CDDA-Soundpacks"
+          mv "$GITHUB_WORKSPACE/CDDA-Soundpacks/sound/CC-Sounds" "$GITHUB_WORKSPACE/data/sound"
+      - name: Fetch tileset artifact into build
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          pattern: tileset-*
+          path: gfx
+          merge-multiple: true
+      - name: Fetch shader artifacts into build
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: cdda-shaders
+          path: data/shaders
+      - name: Mark shader artifacts fresh
+        shell: bash
+        run: touch data/shaders/build-*.stamp data/shaders/*.spv data/shaders/*.dxil data/shaders/*.msl
+      - name: Saigon release contents
+        shell: bash
+        run: |
+          rm -rf data/mods/saigon_playtest
+          # select the Saigon mod for new worlds (sed, not python: Windows runners may not have python3)
+          sed -i.bak 's/"dependencies": \[.*\]/"dependencies": [ "dda", "saigon_2000s" ]/' data/mods/default.json
+          rm -f data/mods/default.json.bak
+          grep -q '"saigon_2000s"' data/mods/default.json
+          cp doc/saigon/RELEASE_README.md README.md
+          mkdir -p lang/mo
+          cat > VERSION.txt <<EOL
+          Cataclysm Saigon ${{ needs.release.outputs.version }} (${{ matrix.artifact }})
+          commit sha: ${{ github.sha }}
+          commit url: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+          EOL
+
+      # --- Windows (MSVC + vcpkg static) ---
+      - name: Install dependencies (windows msvc) (1/3)
+        if: runner.os == 'Windows'
+        uses: microsoft/setup-msbuild@6fb02220983dee41ce7ae257b6f4d8f9bf5ed4ce # v2
+      - name: Install dependencies (windows msvc) (2/3)
+        if: runner.os == 'Windows'
+        uses: lukka/run-vcpkg@b1a0dd252f06b9e25b3c022a9a03bd7a427fb6a2 # v11.6
+        with:
+          vcpkgDirectory: '${{ runner.workspace }}/b/vcpkg'
+          vcpkgGitCommitId: 'f6672d8e480ccdecddfad3fd1b838ba369ffe6cd'
+      - name: Install dependencies (windows msvc) (3/3)
+        if: runner.os == 'Windows'
+        run: vcpkg integrate install --vcpkg-root '${{ runner.workspace }}\b\vcpkg'
+      - name: Cache vcpkg packages (Windows)
+        if: runner.os == 'Windows'
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: msvc-full-features/vcpkg_installed
+          key: vcpkg-installed-sdl3-${{ hashFiles('msvc-full-features/vcpkg.json', '.github/vcpkg_triplets/x64-windows-static.cmake') }}-f6672d8e480ccdecddfad3fd1b838ba369ffe6cd
+      - name: Build (windows msvc)
+        if: runner.os == 'Windows'
+        env:
+          BACKTRACE: 1
+          CDDA_RELEASE_BUILD: 1
+          VCPKG_OVERLAY_TRIPLETS: ${{ github.workspace }}\.github\vcpkg_triplets
+        run: |
+          msbuild -m -p:Configuration=Release -p:Platform=${{ matrix.arch }} "-target:Cataclysm-vcpkg-static;JsonFormatter-vcpkg-static;zzip" msvc-full-features\Cataclysm-vcpkg-static.sln
+          .\build-scripts\windist.ps1
+          mv cataclysmdda-0.J.zip $env:OUT
+
+      # --- Linux ---
+      - name: Install dependencies (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          wget -O /tmp/llvm.sh https://apt.llvm.org/llvm.sh
+          chmod +x /tmp/llvm.sh
+          sudo /tmp/llvm.sh 18
+          sudo apt-get install -y libncursesw5-dev ccache gettext parallel patchelf
+      - name: Setup SDL3 stack (Linux)
+        if: runner.os == 'Linux'
+        uses: ./.github/actions/setup-sdl3-stack
+        with:
+          cache-key: sdl3-stack-strict-sdl-3.4.10-image-3.4.4-ttf-3.2.2-mixer-3.2.4-ubuntu-24.04-v2
+          prefix: ${{ runner.workspace }}/sdl3_prefix
+          stage-licenses: "true"
+      - name: Build libbacktrace (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          git clone https://github.com/ianlancetaylor/libbacktrace.git
+          cd libbacktrace
+          git checkout 14818b7783eeb9a56c3f0fca78cefd3143f8c5f6
+          ./configure
+          make -j$(nproc)
+          cp LICENSE "$GITHUB_WORKSPACE/LICENSE-libbacktrace.txt"
+          sudo make install
+      - name: Build (linux)
+        if: runner.os == 'Linux'
+        run: |
+          export PKG_CONFIG_PATH="$RUNNER_WORKSPACE/sdl3_prefix/lib/pkgconfig:$RUNNER_WORKSPACE/sdl3_prefix/lib/x86_64-linux-gnu/pkgconfig"
+          export LD_LIBRARY_PATH="$RUNNER_WORKSPACE/sdl3_prefix/lib:$RUNNER_WORKSPACE/sdl3_prefix/lib/x86_64-linux-gnu"
+          make COMPILER=clang++-18 -j$(nproc) TILES=1 SOUND=1 RELEASE=1 LOCALIZE=0 BACKTRACE=1 LIBBACKTRACE=1 WARN_STALE_DATA=1 PCH=0 bindist
+          mv cataclysmdda-0.J.tar.gz "$OUT"
+
+      # --- macOS (universal: arm64 + x86_64) ---
+      - name: Install build dependencies (mac)
+        if: runner.os == 'macOS'
+        run: |
+          HOMEBREW_NO_AUTO_UPDATE=yes HOMEBREW_NO_INSTALL_CLEANUP=yes brew install gettext ccache parallel dylibbundler
+          pip3 install --break-system-packages dmgbuild biplist
+      - name: install macports (mac)
+        if: runner.os == 'macOS'
+        uses: melusina-org/setup-macports@c7eb59386def259a274627092566a7f7b8d219b1 # v1
+      - name: install macports packages (mac)
+        if: runner.os == 'macOS'
+        run: |
+          sudo port install freetype +universal pkgconfig +universal \
+              libiconv +universal libogg +universal flac +universal \
+              libvorbis +universal wavpack +universal mpg123 +universal
+      - name: Cache SDL3 stack source build (mac)
+        if: runner.os == 'macOS'
+        id: cache-sdl3-macos
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: ${{ runner.workspace }}/sdl3_prefix
+          key: sdl3-stack-universal-sdl-3.4.10-image-3.4.4-ttf-3.2.2-mixer-3.2.4-${{ runner.os }}-v5
+      - name: Build SDL3 stack from source (mac, universal)
+        if: runner.os == 'macOS' && steps.cache-sdl3-macos.outputs.cache-hit != 'true'
+        run: |
+          PREFIX=${{ runner.workspace }}/sdl3_prefix
+          export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig:/opt/local/lib/pkgconfig
+          export CMAKE_PREFIX_PATH=$PREFIX:/opt/local
+          ARCH_ARG='-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64'
+          git clone --depth 1 --branch release-3.4.10 https://github.com/libsdl-org/SDL.git sdl3_src
+          cmake -S sdl3_src -B sdl3_build "$ARCH_ARG" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$PREFIX -DBUILD_SHARED_LIBS=ON
+          cmake --build sdl3_build -j$(sysctl -n hw.ncpu)
+          cmake --install sdl3_build
+          git clone --depth 1 --branch release-3.4.4 --recurse-submodules --shallow-submodules https://github.com/libsdl-org/SDL_image.git sdl3_image_src
+          cmake -S sdl3_image_src -B sdl3_image_build "$ARCH_ARG" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$PREFIX \
+              -DSDLIMAGE_VENDORED=ON -DSDLIMAGE_DEPS_SHARED=OFF -DSDLIMAGE_STRICT=ON -DSDLIMAGE_BACKEND_IMAGEIO=OFF \
+              -DSDLIMAGE_PNG=ON -DSDLIMAGE_PNG_LIBPNG=ON -DSDLIMAGE_JPG=ON -DSDLIMAGE_AVIF=OFF -DSDLIMAGE_JXL=OFF \
+              -DSDLIMAGE_TIF=OFF -DSDLIMAGE_WEBP=OFF -DPNG_ARM_NEON=off -DBUILD_SHARED_LIBS=ON
+          cmake --build sdl3_image_build -j$(sysctl -n hw.ncpu)
+          cmake --install sdl3_image_build
+          git clone --depth 1 --branch release-3.2.2 --recurse-submodules --shallow-submodules https://github.com/libsdl-org/SDL_ttf.git sdl3_ttf_src
+          cmake -S sdl3_ttf_src -B sdl3_ttf_build "$ARCH_ARG" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$PREFIX \
+              -DSDLTTF_VENDORED=ON -DSDLTTF_STRICT=ON -DSDLTTF_PLUTOSVG=OFF -DBUILD_SHARED_LIBS=ON
+          cmake --build sdl3_ttf_build -j$(sysctl -n hw.ncpu)
+          cmake --install sdl3_ttf_build
+          git clone --depth 1 --branch release-3.2.4 --recurse-submodules --shallow-submodules https://github.com/libsdl-org/SDL_mixer.git sdl3_mixer_src
+          cmake -S sdl3_mixer_src -B sdl3_mixer_build "$ARCH_ARG" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$PREFIX \
+              -DSDLMIXER_VENDORED=OFF -DSDLMIXER_DEPS_SHARED=OFF -DSDLMIXER_STRICT=ON \
+              -DSDLMIXER_FLAC=ON -DSDLMIXER_FLAC_LIBFLAC=ON -DSDLMIXER_FLAC_DRFLAC=OFF \
+              -DSDLMIXER_MP3=ON -DSDLMIXER_MP3_MPG123=ON -DSDLMIXER_MP3_MPG123_SHARED=OFF -DSDLMIXER_MP3_DRMP3=OFF \
+              -DSDLMIXER_VORBIS_VORBISFILE=ON -DSDLMIXER_VORBIS_STB=OFF -DSDLMIXER_VORBIS_TREMOR=OFF \
+              -DSDLMIXER_WAVPACK=ON -DSDLMIXER_OPUS=OFF -DSDLMIXER_MOD=OFF -DSDLMIXER_MIDI=OFF -DSDLMIXER_GME=OFF \
+              -DBUILD_SHARED_LIBS=ON
+          cmake --build sdl3_mixer_build -j$(sysctl -n hw.ncpu)
+          cmake --install sdl3_mixer_build
+          if ! otool -L "$PREFIX"/lib/libSDL3_mixer*.dylib | grep -q mpg123; then
+              echo "ERROR: SDL3_mixer.dylib has no mpg123 LC_LOAD_DYLIB edge" >&2
+              exit 1
+          fi
+          mkdir -p $PREFIX/share
+          cp sdl3_src/LICENSE.txt $PREFIX/share/LICENSE-SDL.txt
+          cp sdl3_image_src/LICENSE.txt $PREFIX/share/LICENSE-SDL3_image.txt
+          cp sdl3_ttf_src/LICENSE.txt $PREFIX/share/LICENSE-SDL3_ttf.txt
+          cp sdl3_mixer_src/LICENSE.txt $PREFIX/share/LICENSE-SDL3_mixer.txt
+          for dep in sdl3_image_src/external/libpng sdl3_image_src/external/jpeg sdl3_ttf_src/external/freetype sdl3_ttf_src/external/harfbuzz; do
+              if [ -d "$dep" ]; then
+                  name=$(basename "$dep")
+                  for cand in "$dep"/LICENSE "$dep"/LICENSE.txt "$dep"/LICENSE.md "$dep"/COPYING "$dep"/COPYING.txt "$dep"/COPYING.LIB "$dep"/copyright; do
+                      if [ -f "$cand" ]; then cp "$cand" "$PREFIX/share/LICENSE-vendored-$name.txt"; break; fi
+                  done
+              fi
+          done
+          for dep in flac ogg vorbis mpg123 wavpack; do
+              src="sdl3_mixer_src/external/$dep"
+              out="$PREFIX/share/LICENSE-vendored-$dep.txt"
+              : > "$out"
+              for lic in "$src"/COPYING* "$src"/COPYRIGHT* "$src"/LICENSE* "$src"/License* "$src"/license*; do
+                  if [ -f "$lic" ]; then echo "=== $(basename "$lic") ===" >> "$out"; cat "$lic" >> "$out"; echo >> "$out"; fi
+              done
+              if [ ! -s "$out" ]; then echo "ERROR: no license for bundled codec $dep" >&2; exit 1; fi
+          done
+      - name: Stage SDL3 license files (mac)
+        if: runner.os == 'macOS'
+        run: |
+          cp ${{ runner.workspace }}/sdl3_prefix/share/LICENSE-*.txt "$GITHUB_WORKSPACE/"
+          cp "$GITHUB_WORKSPACE/build-data/osx/LICENSE-libiconv.txt" "$GITHUB_WORKSPACE/LICENSE-vendored-libiconv.txt"
+      - name: Build (mac)
+        if: runner.os == 'macOS'
+        env:
+          PKG_CONFIG_PATH: ${{ runner.workspace }}/sdl3_prefix/lib/pkgconfig:/opt/local/lib/pkgconfig
+          DYLIBBUNDLER_SEARCH_PATHS: ${{ runner.workspace }}/sdl3_prefix/lib /opt/local/lib
+        run: |
+          make -j3 TILES=1 SOUND=1 RELEASE=1 LOCALIZE=0 BACKTRACE=0 PCH=0 USE_HOME_DIR=1 UNIVERSAL_BINARY=1 WARN_STALE_DATA=1 dmgdist
+          if ! ls Cataclysm.app/Contents/Resources/libmpg123*.dylib >/dev/null 2>&1; then
+              echo "ERROR: libmpg123 dylib missing from app bundle Resources" >&2
+              exit 1
+          fi
+          lipo -archs Cataclysm.app/Contents/Resources/cataclysm-tiles
+          mv Cataclysm.dmg "$OUT"
+
+      # --- every platform ---
+      - name: Check the Saigon mod is packaged
+        shell: bash
+        run: |
+          case "$OUT" in
+            *.zip)    unzip -l "$OUT" | grep -q 'data/mods/saigon_2000s/modinfo.json' ;;
+            *.tar.gz) tar -tzf "$OUT" | grep -q 'data/mods/saigon_2000s/modinfo.json' ;;
+            *.dmg)    test -f Cataclysm.app/Contents/Resources/data/mods/saigon_2000s/modinfo.json ;;
+          esac
+          echo "saigon_2000s present in $OUT"
+          if [ "$RUNNER_OS" = "macOS" ]; then shasum -a 256 "$OUT" > "$OUT.sha256"; else sha256sum "$OUT" > "$OUT.sha256"; fi
+      - name: Upload to the release
+        shell: bash
+        run: gh release upload "${{ needs.release.outputs.tag }}" "$OUT" "$OUT.sha256" --repo "${{ github.repository }}"

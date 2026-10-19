@@ -4,7 +4,7 @@
 # (git merge-base HEAD upstream/master), counting committed changes, uncommitted
 # changes and untracked files that are not ignored. Fails if any of them is outside
 # the fork-owned places and not one of the documented engine files.
-#   Fork-owned: data/mods/saigon_2000s/ tools/saigon/ art/saigon/ doc/saigon/ tests/saigon_*
+#   Fork-owned: data/mods/saigon_2000s/ data/mods/saigon_playtest/ .github/workflows/saigon-* tools/saigon/ art/saigon/ doc/saigon/ tests/saigon_*
 #   Engine:     the "allowed-engine-files" block in doc/saigon/ENGINE_PATCHES.md
 # Usage: tools/saigon/check_separation.sh [--committed]
 #   --committed  check HEAD only (ignore the working tree), e.g. in CI.
@@ -54,7 +54,7 @@ n_engine=0
 while IFS= read -r p; do
     [ -z "$p" ] && continue
     case "$p" in
-        data/mods/saigon_2000s/*|data/mods/saigon_playtest/*|tools/saigon/*|art/saigon/*|doc/saigon/*|tests/saigon_*)
+        data/mods/saigon_2000s/*|data/mods/saigon_playtest/*|.github/workflows/saigon-*|tools/saigon/*|art/saigon/*|doc/saigon/*|tests/saigon_*)
             n_fork=$((n_fork + 1)); continue ;;
     esac
     if printf '%s\n' "$allowed" | grep -qxF -- "$p"; then
