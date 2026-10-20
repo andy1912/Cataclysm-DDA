@@ -1,7 +1,10 @@
+#include <array>
+#include <initializer_list>
 #include <map>
 #include <queue>
 #include <set>
 #include <string>
+#include <utility>
 #include <vector>
 
 #include "calendar.h"
@@ -11,7 +14,6 @@
 #include "map_helpers.h"
 #include "mapbuffer.h"
 #include "mapdata.h"
-#include "omdata.h"
 #include "overmapbuffer.h"
 #include "player_helpers.h"
 #include "point.h"
@@ -19,6 +21,12 @@
 #include "string_formatter.h"
 #include "submap.h"
 #include "type_id.h"
+
+static const oter_str_id oter_sgn_lm_ben_thanh_00_north( "sgn_lm_ben_thanh_00_north" );
+static const mtype_id sgn_mon_voi( "sgn_mon_voi" );
+static const ter_str_id ter_t_open_air( "t_open_air" );
+static const ter_str_id ter_t_stairs_down( "t_stairs_down" );
+static const ter_str_id ter_t_stairs_up( "t_stairs_up" );
 
 // Saigon 2000s mod: the real District 1 landmarks (tools/saigon/gen_saigon_landmarks.py,
 // doc/saigon/LANDMARKS.md phases L1-L4).  Each one is generated on the real map at every
@@ -38,20 +46,20 @@ struct landmark {
 };
 } // namespace
 
-static std::string piece( const landmark &l, int x, int y, int z )
+static std::string piece( const landmark &l, const tripoint &p )
 {
-    std::string s = l.id + "_" + std::to_string( x ) + std::to_string( y );
-    if( z < 0 ) {
+    std::string s = l.id + "_" + std::to_string( p.x ) + std::to_string( p.y );
+    if( p.z < 0 ) {
         s += "_b";
-    } else if( z > 0 ) {
-        s += "_z" + std::to_string( z );
+    } else if( p.z > 0 ) {
+        s += "_z" + std::to_string( p.z );
     }
     return s + "_north";
 }
 
 TEST_CASE( "saigon_district1_landmarks", "[mapgen][saigon]" )
 {
-    if( !oter_str_id( "sgn_lm_ben_thanh_00_north" ).is_valid() ) {
+    if( !oter_sgn_lm_ben_thanh_00_north.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -86,9 +94,6 @@ TEST_CASE( "saigon_district1_landmarks", "[mapgen][saigon]" )
         // W3 district police headquarters and army guard post (tools/saigon/gen_police_army.py)
         { "sgn_pa_cong_an_quan", 2, 1, 0, 2 }, { "sgn_pa_don_quan_su", 2, 1, 0, 1 },
     };
-    const ter_str_id open_air( "t_open_air" );
-    const ter_str_id up( "t_stairs_up" );
-    const ter_str_id down( "t_stairs_down" );
     // One overmap for all landmarks: generating a Saigon overmap is slow in megacity mode,
     // so each landmark gets its own spot on the same overmap instead of a fresh one.
     clear_overmaps();
@@ -102,7 +107,8 @@ TEST_CASE( "saigon_district1_landmarks", "[mapgen][saigon]" )
         for( int z = l.zmin; z <= l.zmax; z++ ) {
             for( int x = 0; x < l.w; x++ ) {
                 for( int y = 0; y < l.h; y++ ) {
-                    overmap_buffer.ter_set( base + tripoint( x, y, z ), oter_str_id( piece( l, x, y, z ) ).id() );
+                    overmap_buffer.ter_set( base + tripoint( x, y, z ), oter_str_id( piece( l, tripoint( x, y,
+                                            z ) ) ).id() );
                 }
             }
         }
@@ -152,15 +158,15 @@ TEST_CASE( "saigon_district1_landmarks", "[mapgen][saigon]" )
                     const tripoint_bub_ms pz( x, y, z );
                     if( here.ter( pz ).obj().has_flag( ter_furn_flag::TFLAG_INDOORS ) ) {
                         indoor++;
-                        const bool has_roof = here.ter( pz + tripoint::above ) != open_air.id();
+                        const bool has_roof = here.ter( pz + tripoint::above ) != ter_t_open_air.id();
                         roofed += has_roof;
                         if( !has_roof && first_unroofed.empty() ) {
                             first_unroofed = string_format( "%d,%d,%d %s", x, y, z, here.ter( pz ).id().str() );
                         }
                     }
-                    if( here.ter( pz ) == up.id() ) {
+                    if( here.ter( pz ) == ter_t_stairs_up.id() ) {
                         CAPTURE( x, y, z );
-                        CHECK( here.ter( pz + tripoint::above ) == down.id() );
+                        CHECK( here.ter( pz + tripoint::above ) == ter_t_stairs_down.id() );
                     }
                 }
             }
@@ -180,7 +186,7 @@ TEST_CASE( "saigon_district1_landmarks", "[mapgen][saigon]" )
 // counted by monster type.
 TEST_CASE( "saigon_zoo_animals", "[mapgen][saigon]" )
 {
-    if( !mtype_id( "sgn_mon_voi" ).is_valid() ) {
+    if( !sgn_mon_voi.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -201,7 +207,8 @@ TEST_CASE( "saigon_zoo_animals", "[mapgen][saigon]" )
             for( int z = l.zmin; z <= l.zmax; z++ ) {
                 for( int x = 0; x < l.w; x++ ) {
                     for( int y = 0; y < l.h; y++ ) {
-                        overmap_buffer.ter_set( base + tripoint( x, y, z ), oter_str_id( piece( l, x, y, z ) ).id() );
+                        overmap_buffer.ter_set( base + tripoint( x, y, z ), oter_str_id( piece( l, tripoint( x, y,
+                                                z ) ) ).id() );
                     }
                 }
             }
@@ -214,7 +221,7 @@ TEST_CASE( "saigon_zoo_animals", "[mapgen][saigon]" )
                     tm.generate( pos, calendar::turn, true, true );
                     const tripoint_abs_sm origin = project_to<coords::sm>( pos );
                     for( const point &d : {
-                             point( 0, 0 ), point( 1, 0 ), point( 0, 1 ), point( 1, 1 )
+                             point::zero, point::east, point::south, point::south_east
                          } ) {
                         submap *sub = MAPBUFFER.lookup_submap( origin + tripoint( d, 0 ) );
                         if( sub != nullptr ) {

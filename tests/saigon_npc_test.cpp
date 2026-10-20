@@ -1,11 +1,16 @@
+#include <functional>
+#include <map>
 #include <memory>
 #include <set>
 #include <string>
+#include <string_view>
 #include <utility>
 #include <vector>
 
 #include "cata_catch.h"
-#include "creature_tracker.h"
+#include "coordinates.h"
+#include "dialogue_chatbin.h"
+#include "flat_set.h"
 #include "item.h"
 #include "item_group.h"
 #include "item_location.h"
@@ -17,13 +22,23 @@
 #include "npc_class.h"
 #include "npctalk.h"
 #include "dialogue.h"
-#include "omdata.h"
+#include "overmap.h"
 #include "overmapbuffer.h"
 #include "player_helpers.h"
+#include "point.h"
 #include "profession.h"
+#include "rng.h"
 #include "scenario.h"
 #include "type_id.h"
 #include "visitable.h"
+
+static const item_group_id Item_spawn_data_sgn_npc_guard_weapon( "sgn_npc_guard_weapon" );
+static const itype_id itype_sgn_mag_9x18( "sgn_mag_9x18" );
+static const itype_id itype_sgn_sung_9x18( "sgn_sung_9x18" );
+static const npc_template_id npc_template_sgn_npc_monk( "sgn_npc_monk" );
+static const oter_str_id oter_sgn_pl_cong_an_00_north( "sgn_pl_cong_an_00_north" );
+static const string_id<scenario> scenario_sgn_saigon_2009( "sgn_saigon_2009" );
+static const npc_class_id sgn_class_guard( "sgn_class_guard" );
 
 // Saigon 2000s mod, N0/N1: the people who wander Saigon's streets.  A random NPC
 // (game::perhaps_add_random_npc, and the starting NPC) is classless: Character::randomize gives
@@ -37,15 +52,14 @@
 // Run with: tests/cata_test --mods=dda,saigon_2000s "[saigon]"
 
 // the test run also loads TEST_DATA (test_* ids), which the game never has
-static bool test_only( const std::string &id )
+static bool test_only( std::string_view id )
 {
     return id.rfind( "test_", 0 ) == 0;
 }
 
 TEST_CASE( "saigon_random_npcs", "[saigon]" )
 {
-    const string_id<scenario> saigon( "sgn_saigon_2009" );
-    if( !saigon.is_valid() ) {
+    if( !scenario_sgn_saigon_2009.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -55,7 +69,7 @@ TEST_CASE( "saigon_random_npcs", "[saigon]" )
     };
     int vietnamese = 0;
     const scenario *before = get_scenario();
-    set_scenario( &saigon.obj() );
+    set_scenario( &scenario_sgn_saigon_2009.obj() );
     // a random NPC, made the way the game makes one: a Saigon profession, no firearm
     for( int i = 0; i < 60; i++ ) {
         shared_ptr_fast<npc> guy = make_shared_fast<npc>();
@@ -100,8 +114,7 @@ TEST_CASE( "saigon_random_npcs", "[saigon]" )
 // pool, which is how that went unnoticed.  So assert they are actually filled.
 TEST_CASE( "saigon_npc_mission_pools", "[saigon]" )
 {
-    const string_id<scenario> saigon( "sgn_saigon_2009" );
-    if( !saigon.is_valid() ) {
+    if( !scenario_sgn_saigon_2009.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -154,7 +167,7 @@ TEST_CASE( "saigon_npc_mission_pools", "[saigon]" )
 // submaps - map::place_npc ends in overmapbuffer::insert_npc - so that is where they are.
 TEST_CASE( "saigon_place_spawns_people", "[mapgen][saigon]" )
 {
-    if( !oter_str_id( "sgn_pl_cong_an_00_north" ).is_valid() ) {
+    if( !oter_sgn_pl_cong_an_00_north.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -162,7 +175,7 @@ TEST_CASE( "saigon_place_spawns_people", "[mapgen][saigon]" )
     clear_avatar();
     clear_map();
     const tripoint_abs_omt base( 20, 30, 0 );
-    overmap_buffer.ter_set( base, oter_str_id( "sgn_pl_cong_an_00_north" ).id() );
+    overmap_buffer.ter_set( base, oter_sgn_pl_cong_an_00_north.id() );
     rng_set_engine_seed( 3 );
     get_map().load( project_to<coords::sm>( base ), false );
     const point_abs_om om = project_to<coords::om>( base.xy() );
@@ -183,29 +196,28 @@ TEST_CASE( "saigon_place_spawns_people", "[mapgen][saigon]" )
 // Adding a gun to any other sgn_* class fails here and in the audit.
 TEST_CASE( "saigon_only_the_guard_is_armed", "[saigon]" )
 {
-    if( !npc_class_id( "sgn_class_guard" ).is_valid() ) {
+    if( !sgn_class_guard.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
-    REQUIRE( itype_id( "sgn_sung_9x18" ).is_valid() );
-    const itype_id pistol( "sgn_sung_9x18" );
+    REQUIRE( itype_sgn_sung_9x18.is_valid() );
     std::set<npc_class_id> armed;
     for( const npc_class &c : npc_class::get_all() ) {
         if( c.id.str().rfind( "sgn_", 0 ) != 0 || !c.weapon_override.is_valid() ) {
             continue;
         }
-        if( item_group::group_contains_item( c.weapon_override, pistol ) ) {
+        if( item_group::group_contains_item( c.weapon_override, itype_sgn_sung_9x18 ) ) {
             CAPTURE( c.id.str() );
             armed.insert( c.id );
         }
     }
     for( const npc_class_id &who : armed ) {
         CAPTURE( who.str() );
-        CHECK( who == npc_class_id( "sgn_class_guard" ) );
+        CHECK( who == sgn_class_guard );
     }
     // and the guard's group really does hand him one, or this test would pass vacuously
     CHECK( item_group::group_contains_item(
-               item_group_id( "sgn_npc_guard_weapon" ), pistol ) );
+               Item_spawn_data_sgn_npc_guard_weapon, itype_sgn_sung_9x18 ) );
     // and it is loaded: a guard with an empty pistol is worse than one with a club.  A
     // weapon_override yields one item and a class with a carry_override never reaches
     // starting_inv_ammo, so the group's "charges" seats a loaded magazine; check that on real
@@ -214,15 +226,15 @@ TEST_CASE( "saigon_only_the_guard_is_armed", "[saigon]" )
     for( int i = 0; i < 60 && !armed_guard; i++ ) {
         shared_ptr_fast<npc> guard = make_shared_fast<npc>();
         guard->normalize();
-        guard->randomize( npc_class_id( "sgn_class_guard" ) );
+        guard->randomize( sgn_class_guard );
         const item_location held = guard->get_wielded_item();
-        if( !held || held->typeId() != pistol ) {
+        if( !held || held->typeId() != itype_sgn_sung_9x18 ) {
             continue;
         }
         armed_guard = true;
         CHECK( held->magazine_current() != nullptr );
         if( held->magazine_current() != nullptr ) {
-            CHECK( held->magazine_current()->typeId() == itype_id( "sgn_mag_9x18" ) );
+            CHECK( held->magazine_current()->typeId() == itype_sgn_mag_9x18 );
         }
         CHECK( held->ammo_remaining() == 8 );
     }
@@ -236,7 +248,7 @@ TEST_CASE( "saigon_only_the_guard_is_armed", "[saigon]" )
 // and TALK_DONE chains nowhere.  This checks the wiring, which is where that bug lives.
 TEST_CASE( "saigon_staff_have_voices", "[saigon]" )
 {
-    if( !npc_template_id( "sgn_npc_monk" ).is_valid() ) {
+    if( !npc_template_sgn_npc_monk.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }

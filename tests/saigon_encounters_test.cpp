@@ -1,14 +1,16 @@
 #include <algorithm>
+#include <array>
+#include <initializer_list>
 #include <map>
-#include <memory>
 #include <set>
 #include <string>
+#include <unordered_map>
 #include <utility>
 #include <vector>
 
-#include "avatar.h"
 #include "calendar.h"
 #include "cata_catch.h"
+#include "flat_set.h"
 #include "math_parser_diag_value.h"
 #include "global_vars.h"
 #include "map_scale_constants.h"
@@ -22,15 +24,27 @@
 #include "mapbuffer.h"
 #include "mongroup.h"
 #include "mtype.h"
-#include "omdata.h"
 #include "overmapbuffer.h"
 #include "player_helpers.h"
 #include "point.h"
 #include "regional_settings.h"
 #include "rng.h"
 #include "type_id.h"
+#include "value_ptr.h"
 #include "vehicle.h"
 #include "vehicle_group.h"
+#include "weighted_list.h"
+
+static const mongroup_id GROUP_ZOMBIE( "GROUP_ZOMBIE" );
+static const mongroup_id GROUP_ZOMBIE_HORDE( "GROUP_ZOMBIE_HORDE" );
+static const oter_str_id oter_field( "field" );
+static const oter_str_id oter_road_ns( "road_ns" );
+static const oter_str_id oter_sgn_nh_solo_z0_north( "sgn_nh_solo_z0_north" );
+static const region_settings_map_extras_id
+region_settings_map_extras_sgn_map_extras( "sgn_map_extras" );
+static const region_settings_id region_settings_sgn_saigon( "sgn_saigon" );
+static const mtype_id sgn_mon_zombie_xe_om( "sgn_mon_zombie_xe_om" );
+static const vproto_id vehicle_prototype_none( "none" );
 
 // Saigon 2000s mod, E2: the dead and the road (monsters/, itemgroups/zombie_drops.json,
 // mapgen/map_extras/sgn_encounters.json, region/region_settings.json).  Twelve road and field
@@ -43,7 +57,7 @@
 // fixture (realmap_test/overmap_40_40.omap.gz: a field with one road and one shophouse column,
 // marked "final" so nothing procedural is added; see saigon_realmap_test.cpp) as overmap (40, 40)
 // and set their own terrain on it, away from that road (x 85-90) and column (y 89).
-static tripoint_abs_omt sgn_encounter_spot( int x, int y )
+static tripoint_abs_omt sgn_encounter_spot( const point_rel_omt &offset )
 {
     const point_abs_om om( 40, 40 );
     if( !overmap_buffer.has( om ) ) {
@@ -52,7 +66,7 @@ static tripoint_abs_omt sgn_encounter_spot( int x, int y )
         overmap_buffer.get( om );
         get_globals().remove_global_value( "overmap_pregenerated_path" );
     }
-    return tripoint_abs_omt( 40 * OMAPX + x, 40 * OMAPY + y, 0 );
+    return tripoint_abs_omt( 40 * OMAPX + offset.x(), 40 * OMAPY + offset.y(), 0 );
 }
 
 // The map extras that can actually fire in a Saigon region: map_extra::is_valid_for drops every
@@ -90,7 +104,7 @@ static std::map<map_extra_id, map_extra_collection_id> sgn_live_extras( const re
 // gains the SAIGON flag, or one of the mod's extras falls out of the road/field collections.
 TEST_CASE( "saigon_region_map_extras_are_saigon", "[saigon][map_extra]" )
 {
-    if( !region_settings_id( "sgn_saigon" ).is_valid() ) {
+    if( !region_settings_sgn_saigon.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -99,7 +113,7 @@ TEST_CASE( "saigon_region_map_extras_are_saigon", "[saigon][map_extra]" )
          } ) {
         CAPTURE( rid );
         const region_settings &rs = region_settings_id( rid ).obj();
-        CHECK( rs.region_extras == region_settings_map_extras_id( "sgn_map_extras" ) );
+        CHECK( rs.region_extras == region_settings_map_extras_sgn_map_extras );
         const std::map<map_extra_id, map_extra_collection_id> live = sgn_live_extras( rs );
         for( const auto &pair : live ) {
             CAPTURE( pair.first.str() );
@@ -120,7 +134,7 @@ TEST_CASE( "saigon_region_map_extras_are_saigon", "[saigon][map_extra]" )
 // leave a wreck stops placing one, or a road extra stops working on one of its two road kinds.
 TEST_CASE( "saigon_map_extras_generate_on_their_terrain", "[mapgen][saigon][map_extra]" )
 {
-    if( !region_settings_id( "sgn_saigon" ).is_valid() ) {
+    if( !region_settings_sgn_saigon.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -139,12 +153,12 @@ TEST_CASE( "saigon_map_extras_generate_on_their_terrain", "[mapgen][saigon][map_
     }
 
     const std::map<map_extra_id, map_extra_collection_id> live =
-        sgn_live_extras( region_settings_id( "sgn_saigon" ).obj() );
+        sgn_live_extras( region_settings_sgn_saigon.obj() );
     REQUIRE( !live.empty() );
     clear_avatar();
-    const oter_id city = oter_str_id( "sgn_nh_solo_z0_north" ).id();
-    const oter_id field = oter_str_id( "field" ).id();
-    const oter_id road = oter_str_id( "road_ns" ).id();
+    const oter_id city = oter_sgn_nh_solo_z0_north.id();
+    const oter_id field = oter_field.id();
+    const oter_id road = oter_road_ns.id();
     // the extras whose whole point is a wreck: each must leave at least one vehicle
     const std::set<std::string> wrecks = {
         "mx_sgn_xe_khach", "mx_sgn_ba_gac", "mx_sgn_cap_cuu", "mx_sgn_don_xe"
@@ -160,8 +174,8 @@ TEST_CASE( "saigon_map_extras_generate_on_their_terrain", "[mapgen][saigon][map_
         for( const oter_id &around : on_road ? std::vector<oter_id> { city, field } :
              std::vector<oter_id> { field } ) {
             CAPTURE( around.id().str() );
-            const tripoint_abs_omt pos = sgn_encounter_spot( 20 + 3 * ( column % 20 ),
-                                         20 + 3 * ( column / 20 ) );
+            const tripoint_abs_omt pos = sgn_encounter_spot( point_rel_omt( 20 + 3 * ( column % 20 ),
+                                         20 + 3 * ( column / 20 ) ) );
             column++;
             overmap_buffer.ter_set( pos, on_road ? road : field );
             for( const tripoint &d : eight_horizontal_neighbors ) {
@@ -189,7 +203,7 @@ TEST_CASE( "saigon_map_extras_generate_on_their_terrain", "[mapgen][saigon][map_
                     // wrecks placed on top of each other merge (map::add_vehicle_to_map,
                     // merge_wrecks) and what splits off has prototype "none"; its parts came from
                     // the mod's vehicles, which the vgroup check above covers
-                    if( wv.v->type == vproto_id( "none" ) ) {
+                    if( wv.v->type == vehicle_prototype_none ) {
                         continue;
                     }
                     CAPTURE( wv.v->type.str() );
@@ -251,7 +265,7 @@ static bool sgn_allowed_city_dead( const mtype_id &m )
 // cops and ferals return), or a dda zombie is added without being judged here first.
 TEST_CASE( "saigon_zombie_groups_are_saigon", "[saigon][monster]" )
 {
-    if( !mtype_id( "sgn_mon_zombie_xe_om" ).is_valid() ) {
+    if( !sgn_mon_zombie_xe_om.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -271,7 +285,7 @@ TEST_CASE( "saigon_zombie_groups_are_saigon", "[saigon][monster]" )
         CAPTURE( strangers );
         CHECK( strangers.empty() );
         // and it really is the Saigon mix, not an empty override that falls back on its default
-        CHECK( std::count( members.begin(), members.end(), mtype_id( "sgn_mon_zombie_xe_om" ) ) > 0 );
+        CHECK( std::count( members.begin(), members.end(), sgn_mon_zombie_xe_om ) > 0 );
         CHECK( std::count( members.begin(), members.end(), mtype_id( "sgn_mon_zombie_cong_an" ) ) > 0 );
         CHECK( sgn_allowed_city_dead( gid.obj().defaultMonster ) );
     }
@@ -295,7 +309,7 @@ static bool sgn_is_firearm( const itype *t )
 // soldiers' drops fail).  The lower bound on the count catches the walk silently breaking.
 TEST_CASE( "saigon_city_dead_drop_no_firearms", "[saigon][monster]" )
 {
-    if( !mtype_id( "sgn_mon_zombie_xe_om" ).is_valid() ) {
+    if( !sgn_mon_zombie_xe_om.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -311,8 +325,8 @@ TEST_CASE( "saigon_city_dead_drop_no_firearms", "[saigon][monster]" )
             todo.push_back( m );
         }
     };
-    add_group( mongroup_id( "GROUP_ZOMBIE" ) );
-    add_group( mongroup_id( "GROUP_ZOMBIE_HORDE" ) );
+    add_group( GROUP_ZOMBIE );
+    add_group( GROUP_ZOMBIE_HORDE );
     while( !todo.empty() ) {
         const mtype_id m = todo.back();
         todo.pop_back();

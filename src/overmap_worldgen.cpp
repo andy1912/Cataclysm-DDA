@@ -1,3 +1,4 @@
+#include "cata_path.h"
 #include "cata_utility.h"
 #include "coordinates.h"
 #include "debug.h"

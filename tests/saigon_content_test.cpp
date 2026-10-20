@@ -1,14 +1,23 @@
 #include <algorithm>
+#include <array>
+#include <filesystem>
+#include <functional>
+#include <initializer_list>
 #include <list>
 #include <map>
+#include <memory>
+#include <optional>
 #include <set>
+#include <stddef.h>
 #include <string>
+#include <string_view>
+#include <utility>
 #include <vector>
 
 #include <queue>
 
-#include "avatar.h"
 #include "calendar.h"
+#include "cata_path.h"
 #include "coordinates.h"
 #include "global_vars.h"
 #include "map.h"
@@ -22,7 +31,6 @@
 #include "point.h"
 #include "rng.h"
 #include "cata_catch.h"
-#include "effect_on_condition.h"
 #include "flag.h"
 #include "harvest.h"
 #include "item.h"
@@ -43,10 +51,13 @@
 #include "filesystem.h"
 #include "path_info.h"
 #include "text_snippets.h"
+#include "translation.h"
 #include "type_id.h"
-#include "vehicle.h"
+#include "value_ptr.h"
 #include "visitable.h"
 #include "worldfactory.h"
+
+static const mod_id MOD_INFORMATION_saigon_2000s( "saigon_2000s" );
 
 // Saigon 2000s mod, F1-C: content-wide invariants that no other gate checks (doc/saigon/
 // TEST_MATRIX.md).  The engine's own load-time checks prove that ids resolve; these prove what
@@ -57,9 +68,7 @@
 // is tested there; these cases only hold the mod-wide rules.
 // Run with: tests/cata_test --mods=dda,saigon_2000s "[saigon_content]"
 
-static const mod_id mod_saigon( "saigon_2000s" );
-
-static bool sgn_id( const std::string &id )
+static bool sgn_id( std::string_view id )
 {
     return id.rfind( "sgn_", 0 ) == 0;
 }
@@ -67,7 +76,7 @@ static bool sgn_id( const std::string &id )
 // defined by the mod (the first source), not a dda item the mod only overrides
 static bool item_from_saigon( const itype &t )
 {
-    return !t.src.empty() && t.src.front().second == mod_saigon;
+    return !t.src.empty() && t.src.front().second == MOD_INFORMATION_saigon_2000s;
 }
 
 // recipe::src is private: a recipe of the mod makes one of the mod's items, or carries an

@@ -1,3 +1,5 @@
+#include <functional>
+#include <initializer_list>
 #include <map>
 #include <optional>
 #include <set>
@@ -13,6 +15,7 @@
 #include "cata_utility.h"
 #include "character.h"
 #include "coordinates.h"
+#include "enums.h"
 #include "flexbuffer_json.h"
 #include "itype.h"
 #include "map.h"
@@ -20,6 +23,7 @@
 #include "map_helpers_tests.h"
 #include "player_helpers.h"
 #include "point.h"
+#include "tileray.h"
 #include "type_id.h"
 #include "units.h"
 #include "veh_type.h"
@@ -28,19 +32,9 @@
 #include "vpart_position.h"
 #include "vpart_range.h"
 
-// Saigon 2000s mod, V4 "on the road and the river" (vehicles/, mapgen/roads/road_traffic.json):
-// the period vehicles drive, steer and float; engine power and fuel; spawn state; traffic mix.
-// Run with: tests/cata_test --mods=dda,saigon_2000s "[saigon][vehicle]"
-
-static const efftype_id effect_blind( "blind" );
-
+static const vgroup_id VehicleGroup_sgn_vg_city_traffic( "sgn_vg_city_traffic" );
+static const itype_id itype_battery( "battery" );
 static const itype_id itype_gasoline( "gasoline" );
-
-static const proficiency_id proficiency_prof_boat_pilot( "prof_boat_pilot" );
-static const proficiency_id proficiency_prof_driver( "prof_driver" );
-
-static const skill_id skill_driving( "driving" );
-
 static const vproto_id vehicle_prototype_sgn_veh_ba_gac_may( "sgn_veh_ba_gac_may" );
 static const vproto_id vehicle_prototype_sgn_veh_ghe( "sgn_veh_ghe" );
 static const vproto_id vehicle_prototype_sgn_veh_ghe_may( "sgn_veh_ghe_may" );
@@ -50,6 +44,21 @@ static const vproto_id vehicle_prototype_sgn_veh_xe_lam( "sgn_veh_xe_lam" );
 static const vproto_id vehicle_prototype_sgn_veh_xe_rac( "sgn_veh_xe_rac" );
 static const vproto_id vehicle_prototype_sgn_veh_xich_lo( "sgn_veh_xich_lo" );
 static const vproto_id vehicle_prototype_sgn_veh_xuong( "sgn_veh_xuong" );
+static const vpart_id vpart_sgn_engine_110cc( "sgn_engine_110cc" );
+static const vpart_id vpart_sgn_engine_125cc( "sgn_engine_125cc" );
+static const vpart_id vpart_sgn_engine_50cc( "sgn_engine_50cc" );
+static const vpart_id vpart_sgn_longtail( "sgn_longtail" );
+
+// Saigon 2000s mod, V4 "on the road and the river" (vehicles/, mapgen/roads/road_traffic.json):
+// the period vehicles drive, steer and float; engine power and fuel; spawn state; traffic mix.
+// Run with: tests/cata_test --mods=dda,saigon_2000s "[saigon][vehicle]"
+
+static const efftype_id effect_blind( "blind" );
+
+static const proficiency_id proficiency_prof_boat_pilot( "prof_boat_pilot" );
+static const proficiency_id proficiency_prof_driver( "prof_driver" );
+
+static const skill_id skill_driving( "driving" );
 
 static bool saigon_loaded()
 {
@@ -92,7 +101,7 @@ static void fuel_up( vehicle &veh )
         if( pt.is_tank() ) {
             pt.ammo_set( fuel );
         } else if( pt.is_battery() ) {
-            pt.ammo_set( pt.ammo_current().is_null() ? itype_id( "battery" ) : pt.ammo_current() );
+            pt.ammo_set( pt.ammo_current().is_null() ? itype_battery : pt.ammo_current() );
         }
     }
     veh.invalidate_mass();
@@ -126,11 +135,14 @@ static void take_the_wheel( vehicle &veh )
     }
 }
 
+namespace
+{
 struct drive_result {
     int tiles = 0;
     units::angle turned = 0_degrees;
     bool skidded = false;
 };
+} // namespace
 
 // Accelerate for `turns` turns, then steer right for `turns` turns.  Returns how far the
 // vehicle got and how far it turned.
@@ -294,35 +306,31 @@ TEST_CASE( "saigon_engine_power_and_fuel", "[saigon][vehicle]" )
     if( !saigon_loaded() ) {
         return;
     }
-    const vpart_id e50( "sgn_engine_50cc" );
-    const vpart_id e110( "sgn_engine_110cc" );
-    const vpart_id e125( "sgn_engine_125cc" );
-    const vpart_id longtail( "sgn_longtail" );
-    REQUIRE( e50.is_valid() );
-    REQUIRE( e110.is_valid() );
-    REQUIRE( e125.is_valid() );
-    REQUIRE( longtail.is_valid() );
+    REQUIRE( vpart_sgn_engine_50cc.is_valid() );
+    REQUIRE( vpart_sgn_engine_110cc.is_valid() );
+    REQUIRE( vpart_sgn_engine_125cc.is_valid() );
+    REQUIRE( vpart_sgn_longtail.is_valid() );
     // a ba gác máy runs on a 125cc motorbike engine (B6: 7.5 kW), not a car engine
-    CHECK( e125->power > 0_W );
-    CHECK( e125->power <= 9_kW );
+    CHECK( vpart_sgn_engine_125cc->power > 0_W );
+    CHECK( vpart_sgn_engine_125cc->power <= 9_kW );
     // the ghe's long-tail is a converted small engine (B6: 9.7 kW)
-    CHECK( longtail->power > 0_W );
-    CHECK( longtail->power <= 11_kW );
+    CHECK( vpart_sgn_longtail->power > 0_W );
+    CHECK( vpart_sgn_longtail->power <= 11_kW );
     // a 50cc burns less than a 110cc at full power, and is weaker
-    CHECK( e50->energy_consumption > 0_W );
-    CHECK( e50->energy_consumption < e110->energy_consumption );
-    CHECK( e50->power < e110->power );
-    CHECK( e50->fuel_type == e110->fuel_type );
+    CHECK( vpart_sgn_engine_50cc->energy_consumption > 0_W );
+    CHECK( vpart_sgn_engine_50cc->energy_consumption < vpart_sgn_engine_110cc->energy_consumption );
+    CHECK( vpart_sgn_engine_50cc->power < vpart_sgn_engine_110cc->power );
+    CHECK( vpart_sgn_engine_50cc->fuel_type == vpart_sgn_engine_110cc->fuel_type );
 
     // and the vehicles use them
     bool ba_gac_has_125 = false;
     for( const vehicle_prototype::part_def &pd : vehicle_prototype_sgn_veh_ba_gac_may->parts ) {
-        ba_gac_has_125 |= pd.part == e125;
+        ba_gac_has_125 |= pd.part == vpart_sgn_engine_125cc;
     }
     CHECK( ba_gac_has_125 );
     bool ghe_has_longtail = false;
     for( const vehicle_prototype::part_def &pd : vehicle_prototype_sgn_veh_ghe->parts ) {
-        ghe_has_longtail |= pd.part == longtail;
+        ghe_has_longtail |= pd.part == vpart_sgn_longtail;
     }
     CHECK( ghe_has_longtail );
 }
@@ -423,11 +431,10 @@ TEST_CASE( "saigon_traffic_mix", "[saigon][vehicle]" )
         CHECK( urgent > 0 );
         CHECK( urgent * 100 < total );
         // and the loaded group picks them about that often
-        const vgroup_id gid( "sgn_vg_city_traffic" );
         int picked = 0;
         const int draws = 20000;
         for( int i = 0; i < draws; i++ ) {
-            picked += emergency( gid->pick().str() ) ? 1 : 0;
+            picked += emergency( VehicleGroup_sgn_vg_city_traffic->pick().str() ) ? 1 : 0;
         }
         CAPTURE( picked );
         CHECK( picked * 100 < draws );

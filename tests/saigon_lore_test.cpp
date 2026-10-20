@@ -1,5 +1,8 @@
+#include <algorithm>
 #include <memory>
+#include <stddef.h>
 #include <string>
+#include <string_view>
 #include <utility>
 #include <vector>
 
@@ -7,6 +10,7 @@
 #include "calendar.h"
 #include "cata_catch.h"
 #include "character.h"
+#include "character_attire.h"
 #include "coordinates.h"
 #include "dialogue.h"
 #include "effect_on_condition.h"
@@ -17,11 +21,11 @@
 #include "map_helpers.h"
 #include "mapdata.h"
 #include "messages.h"
-#include "morale_types.h"
-#include "omdata.h"
 #include "overmapbuffer.h"
 #include "player_helpers.h"
+#include "pocket_type.h"
 #include "point.h"
+#include "ret_val.h"
 #include "sounds.h"
 #include "talker.h"
 #include "text_snippets.h"
@@ -79,9 +83,9 @@ static std::vector<std::string> all_messages()
 
 // the opening words of a snippet, enough to tell it apart (snippets may hold tags, which the
 // message has expanded)
-static std::string head_of( const std::string &text )
+static std::string head_of( std::string_view text )
 {
-    std::string h = text.substr( 0, std::min<size_t>( text.size(), 30 ) );
+    std::string h( text.substr( 0, std::min<size_t>( text.size(), 30 ) ) );
     const size_t tag = h.find( '<' );
     return tag == std::string::npos ? h : h.substr( 0, tag );
 }

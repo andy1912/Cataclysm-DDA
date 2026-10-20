@@ -1,5 +1,11 @@
+#include <array>
+#include <filesystem>
+#include <initializer_list>
+#include <map>
 #include <memory>
+#include <optional>
 #include <set>
+#include <stddef.h>
 #include <string>
 #include <utility>
 #include <vector>
@@ -7,18 +13,20 @@
 #include "avatar.h"
 #include "calendar.h"
 #include "cata_catch.h"
+#include "cata_path.h"
 #include "character_creator_ui.h"
 #include "coordinates.h"
 #include "creature_tracker.h"
+#include "enums.h"
 #include "filesystem.h"
 #include "flexbuffer_json.h"
 #include "game.h"
 #include "global_vars.h"
 #include "json_loader.h"
 #include "level_cache.h"
-#include "line.h"
 #include "map.h"
 #include "map_helpers.h"
+#include "map_scale_constants.h"
 #include "math_parser_diag_value.h"
 #include "memory_fast.h"
 #include "monster.h"
@@ -36,6 +44,9 @@
 #include "vehicle.h"
 #include "weather_gen.h"
 #include "worldfactory.h"
+
+static const mtype_id mon_test_base( "mon_test_base" );
+static const mtype_id mon_zombie( "mon_zombie" );
 
 // Saigon 2000s fork, F1-C: direct tests for the engine patches in doc/saigon/ENGINE_PATCHES.md
 // that had none of their own (the others are covered by the weather, realmap, mouse and perf
@@ -86,9 +97,7 @@ static void sgn_leave_world()
     clear_map();
 }
 
-static const mtype_id mon_zombie( "mon_zombie" );
 // a TEST_DATA monster: nothing in Saigon mapgen spawns it, so any left after the clear are ours
-static const mtype_id debug_mon( "mon_test_base" );
 
 // src/game.cpp item 3: place_critter_around( ..., forced ) skips the terrain and sight rules but
 // not the rule that the square is free.  Upstream placed a forced creature on the centre even
@@ -124,12 +133,12 @@ TEST_CASE( "saigon_engine_clear_overmaps_drops_creatures", "[saigon][saigon_engi
         return;
     }
     const tripoint_bub_ms near = get_avatar().pos_bub() + tripoint( 3, 0, 0 );
-    REQUIRE( g->place_critter_at( debug_mon, near ) != nullptr );
-    REQUIRE( g->place_critter_at( debug_mon, near + tripoint::east ) != nullptr );
+    REQUIRE( g->place_critter_at( mon_test_base, near ) != nullptr );
+    REQUIRE( g->place_critter_at( mon_test_base, near + tripoint::east ) != nullptr );
     clear_overmaps();
     int left = 0;
     for( const shared_ptr_fast<monster> &m : get_creature_tracker().get_monsters_list() ) {
-        left += m->type->id == debug_mon;
+        left += m->type->id == mon_test_base;
     }
     CHECK( left == 0 );
     sgn_leave_world();

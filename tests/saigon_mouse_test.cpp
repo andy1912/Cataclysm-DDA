@@ -1,3 +1,4 @@
+#include <string>
 #include "cata_catch.h"
 #include "display_buffer_coords.h"
 #include "point.h"

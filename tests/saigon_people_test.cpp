@@ -1,7 +1,10 @@
 #include <algorithm>
+#include <functional>
+#include <initializer_list>
 #include <map>
 #include <memory>
 #include <set>
+#include <stddef.h>
 #include <string>
 #include <utility>
 #include <vector>
@@ -9,13 +12,14 @@
 #include "avatar.h"
 #include "calendar.h"
 #include "cata_catch.h"
+#include "character_id.h"
+#include "dialogue_chatbin.h"
 #include "math_parser_diag_value.h"
 #include "global_vars.h"
 #include "map_scale_constants.h"
 #include "coordinates.h"
 #include "dialogue.h"
 #include "faction.h"
-#include "flag.h"
 #include "game.h"
 #include "item.h"
 #include "item_group.h"
@@ -29,15 +33,26 @@
 #include "npc.h"
 #include "npc_class.h"
 #include "npctalk.h"
-#include "omdata.h"
 #include "overmap.h"
 #include "overmapbuffer.h"
+#include "pimpl.h"
 #include "player_helpers.h"
 #include "point.h"
 #include "rng.h"
-#include "talker.h"
 #include "type_id.h"
+#include "value_ptr.h"
 #include "visitable.h"
+
+static const faction_id faction_no_faction( "no_faction" );
+static const faction_id faction_sgn_giang_ho( "sgn_giang_ho" );
+static const faction_id faction_sgn_hoi_cua( "sgn_hoi_cua" );
+static const mission_type_id mission_MISSION_NULL( "MISSION_NULL" );
+static const npc_template_id npc_template_sgn_npc_dai_ca( "sgn_npc_dai_ca" );
+static const npc_template_id npc_template_sgn_npc_guard( "sgn_npc_guard" );
+static const npc_template_id npc_template_sgn_npc_hung( "sgn_npc_hung" );
+static const npc_template_id npc_template_sgn_npc_loc( "sgn_npc_loc" );
+static const npc_template_id npc_template_sgn_npc_shopkeeper( "sgn_npc_shopkeeper" );
+static const oter_str_id oter_sgn_people_giang_ho_z0_north( "sgn_people_giang_ho_z0_north" );
 
 // Saigon 2000s mod, E1: the people of Saigon (npcs/factions.json, npcs/people_*.json,
 // npcs/places.json, itemgroups/npc_people.json, overmap/sgn_people_specials.json,
@@ -52,7 +67,7 @@
 // fixture (realmap_test/overmap_40_40.omap.gz: a field with one road and one shophouse column,
 // marked "final" so nothing procedural is added; see saigon_realmap_test.cpp) as overmap (40, 40)
 // and set their own terrain on it, away from that road (x 85-90) and column (y 89).
-static tripoint_abs_omt sgn_people_spot( int x, int y )
+static tripoint_abs_omt sgn_people_spot( const point_rel_omt &offset )
 {
     const point_abs_om om( 40, 40 );
     if( !overmap_buffer.has( om ) ) {
@@ -61,7 +76,7 @@ static tripoint_abs_omt sgn_people_spot( int x, int y )
         overmap_buffer.get( om );
         get_globals().remove_global_value( "overmap_pregenerated_path" );
     }
-    return tripoint_abs_omt( 40 * OMAPX + x, 40 * OMAPY + y, 0 );
+    return tripoint_abs_omt( 40 * OMAPX + offset.x(), 40 * OMAPY + offset.y(), 0 );
 }
 
 // A gun in the strict sense: anything with a GUN slot, slingshots and crossbows included.  The
@@ -104,7 +119,7 @@ static std::string sgn_guns_carried( const npc &guy )
 // group is emptied or pointed at a missing group.
 TEST_CASE( "saigon_traders_have_wealth_and_stock", "[saigon][npc]" )
 {
-    if( !npc_template_id( "sgn_npc_shopkeeper" ).is_valid() ) {
+    if( !npc_template_sgn_npc_shopkeeper.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -196,7 +211,7 @@ TEST_CASE( "saigon_traders_have_wealth_and_stock", "[saigon][npc]" )
 // (ORIGIN_ANY_NPC / OPENER), where a stranger would offer step 2 out of context.
 TEST_CASE( "saigon_mission_chains_end_in_recruits", "[saigon][npc][mission]" )
 {
-    if( !npc_template_id( "sgn_npc_guard" ).is_valid() ) {
+    if( !npc_template_sgn_npc_guard.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -216,7 +231,7 @@ TEST_CASE( "saigon_mission_chains_end_in_recruits", "[saigon][npc][mission]" )
                           mission_type_id( chain.second ) ) != offered.end() );
         std::vector<const mission_type *> steps;
         mission_type_id at( chain.second );
-        while( !at.is_null() && at != mission_type_id( "MISSION_NULL" ) && steps.size() < 10 ) {
+        while( !at.is_null() && at != mission_MISSION_NULL && steps.size() < 10 ) {
             const mission_type *t = mission_type::get( at );
             CAPTURE( at.str() );
             REQUIRE( t != nullptr );
@@ -253,7 +268,7 @@ TEST_CASE( "saigon_mission_chains_end_in_recruits", "[saigon][npc][mission]" )
 // gang's row (he is one of the four companions and this is the only place he exists).
 TEST_CASE( "saigon_people_sites_are_their_factions_and_melee_only", "[mapgen][saigon][npc]" )
 {
-    if( !oter_str_id( "sgn_people_giang_ho_z0_north" ).is_valid() ) {
+    if( !oter_sgn_people_giang_ho_z0_north.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -279,10 +294,10 @@ TEST_CASE( "saigon_people_sites_are_their_factions_and_melee_only", "[mapgen][sa
         CHECK( sgn_guns_in_group( item_group_id( loot ) ).empty() );
     }
     // the mission targets placed by update_mapgen belong to the site's faction too
-    CHECK( npc_template::get_npc_templates().at( npc_template_id( "sgn_npc_dai_ca" ) )
-           .guy.get_fac_id() == faction_id( "sgn_giang_ho" ) );
+    CHECK( npc_template::get_npc_templates().at( npc_template_sgn_npc_dai_ca )
+           .guy.get_fac_id() == faction_sgn_giang_ho );
     CHECK( npc_template::get_npc_templates().at( npc_template_id( "sgn_npc_hoi_cua_dau" ) )
-           .guy.get_fac_id() == faction_id( "sgn_hoi_cua" ) );
+           .guy.get_fac_id() == faction_sgn_hoi_cua );
 
     clear_avatar();
     struct site {
@@ -293,11 +308,10 @@ TEST_CASE( "saigon_people_sites_are_their_factions_and_melee_only", "[mapgen][sa
     const std::vector<site> sites = {
         {
             { "sgn_people_giang_ho_z0_north", "sgn_people_giang_ho_z1_north", "sgn_people_giang_ho_z2_north" },
-            faction_id( "sgn_giang_ho" ), 6
+            faction_sgn_giang_ho, 6
         },
-        { { "sgn_people_nha_thuoc_z0_north", "sgn_people_nha_thuoc_z1_north" }, faction_id( "sgn_hoi_cua" ), 3 },
+        { { "sgn_people_nha_thuoc_z0_north", "sgn_people_nha_thuoc_z1_north" }, faction_sgn_hoi_cua, 3 },
     };
-    const npc_template_id hung( "sgn_npc_hung" );
     // Hùng is placed with unique_id: if an earlier test made him, mapgen would skip him
     g->unique_npc_despawn( "sgn_unique_hung" );
     bool hung_seen = false;
@@ -305,7 +319,7 @@ TEST_CASE( "saigon_people_sites_are_their_factions_and_melee_only", "[mapgen][sa
     int column = 0;
     for( const site &s : sites ) {
         CAPTURE( s.levels[0] );
-        const tripoint_abs_omt pos = sgn_people_spot( 30 + 3 * column++, 40 );
+        const tripoint_abs_omt pos = sgn_people_spot( point_rel_omt( 30 + 3 * column++, 40 ) );
         for( size_t z = 0; z < s.levels.size(); z++ ) {
             overmap_buffer.ter_set( pos + tripoint( 0, 0, z ), oter_str_id( s.levels[z] ).id() );
         }
@@ -339,7 +353,7 @@ TEST_CASE( "saigon_people_sites_are_their_factions_and_melee_only", "[mapgen][sa
                 }
                 people++;
                 CAPTURE( who->idz.str(), who->get_fac_id().str() );
-                if( who->idz == hung ) {
+                if( who->idz == npc_template_sgn_npc_hung ) {
                     hung_seen = true;
                 } else {
                     CHECK( who->get_fac_id() == s.fac );
@@ -365,7 +379,7 @@ TEST_CASE( "saigon_people_sites_are_their_factions_and_melee_only", "[mapgen][sa
 // the recruit line loses its "follow" effect, or its condition names a var no chain sets.
 TEST_CASE( "saigon_companions_can_be_recruited", "[saigon][npc]" )
 {
-    if( !npc_template_id( "sgn_npc_loc" ).is_valid() ) {
+    if( !npc_template_sgn_npc_loc.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -386,7 +400,7 @@ TEST_CASE( "saigon_companions_can_be_recruited", "[saigon][npc]" )
         npc &guy = spawn_npc( point_bub_ms( x, 15 ), who );
         x += 3;
         // a companion is nobody's soldier: not in a hostile faction, not out to kill you
-        CHECK( guy.get_fac_id() == faction_id( "no_faction" ) );
+        CHECK( guy.get_fac_id() == faction_no_faction );
         CHECK( guy.get_attitude() != NPCATT_KILL );
         CHECK_FALSE( guy.is_player_ally() );
         const std::string first = guy.chatbin.first_topic;

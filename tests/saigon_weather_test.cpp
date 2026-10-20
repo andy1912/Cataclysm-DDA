@@ -1,6 +1,9 @@
+#include <algorithm>
 #include <array>
+#include <cstdlib>
 #include <memory>
-#include <vector>
+#include <optional>
+#include <utility>
 
 #include "calendar.h"
 #include "cata_catch.h"
@@ -8,10 +11,14 @@
 #include "coordinates.h"
 #include "options_helpers.h"
 #include "pimpl.h"
+#include "type_id.h"
 #include "units.h"
 #include "weather.h"
 #include "weather_gen.h"
 #include "weather_type.h"
+
+static const weather_type_id weather_lightning( "lightning" );
+static const weather_type_id weather_thunder( "thunder" );
 
 // Saigon 2000s mod: checks the monsoon climate against doc/saigon/CONTENT_BIBLE.md §9.
 // Run with: tests/cata_test --mods=dda,saigon_2000s "[saigon]"
@@ -57,8 +64,8 @@ static saigon_year collect_saigon_year( unsigned seed )
         *get_weather().weather_precise = w;
         const weather_type_id conditions = wgen.get_weather_conditions( w );
         const bool rains = conditions->rains;
-        const bool storm = conditions == weather_type_id( "thunder" ) ||
-                           conditions == weather_type_id( "lightning" );
+        const bool storm = conditions == weather_thunder ||
+                           conditions == weather_lightning;
         const int doy = to_days<int>( t - begin ) % 364;
         const int hour = to_hours<int>( time_past_midnight( t ) );
         const bool wet = saigon_is_wet_season( doy );

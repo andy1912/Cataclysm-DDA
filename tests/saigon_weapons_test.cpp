@@ -1,12 +1,18 @@
 #include <filesystem>
+#include <functional>
+#include <initializer_list>
 #include <map>
+#include <memory>
 #include <set>
+#include <stddef.h>
 #include <string>
+#include <string_view>
 #include <utility>
 #include <vector>
 
 #include "avatar.h"
 #include "cata_catch.h"
+#include "cata_path.h"
 #include "coordinates.h"
 #include "filesystem.h"
 #include "flag.h"
@@ -14,14 +20,14 @@
 #include "item.h"
 #include "item_factory.h"
 #include "item_group.h"
+#include "item_location.h"
 #include "itype.h"
-#include "map.h"
 #include "map_helpers.h"
+#include "map_scale_constants.h"
 #include "math_parser_diag_value.h"
 #include "monstergenerator.h"
 #include "mtype.h"
 #include "npc_class.h"
-#include "omdata.h"
 #include "overmap.h"
 #include "overmapbuffer.h"
 #include "path_info.h"
@@ -34,7 +40,17 @@
 #include "ret_val.h"
 #include "rng.h"
 #include "type_id.h"
+#include "value_ptr.h"
 #include "veh_type.h"
+
+static const item_group_id Item_spawn_data_sgn_pa_armory_police( "sgn_pa_armory_police" );
+static const ammotype ammo_battery( "battery" );
+static const itype_id itype_sgn_ao_cong_an( "sgn_ao_cong_an" );
+static const itype_id itype_sgn_na_thun( "sgn_na_thun" );
+static const itype_id itype_sgn_no( "sgn_no" );
+static const oter_str_id oter_sgn_pa_cong_an_quan_00_north( "sgn_pa_cong_an_quan_00_north" );
+static const region_settings_id region_settings_sgn_saigon_delta( "sgn_saigon_delta" );
+static const npc_class_id sgn_class_guard( "sgn_class_guard" );
 
 // Saigon 2000s mod, W1-W4 (doc/saigon/PROGRESS.md): Vietnamese weapons (W1), weapons in the
 // world (W2), the police and army sites with their guns (W3), everyday Vietnam (W4).  The firearm
@@ -53,7 +69,7 @@ static const std::set<std::string> police_army_gun_groups = {
     "sgn_drops_pa_cong_an_quan", "sgn_drops_pa_co_dong", "sgn_drops_pa_bo_doi",
 };
 
-static bool sgn( const std::string &id )
+static bool sgn_prefixed( std::string_view id )
 {
     return id.rfind( "sgn_", 0 ) == 0;
 }
@@ -65,7 +81,7 @@ static bool firearm( const itype &t )
     if( t.gun ) {
         return !t.has_flag( flag_PRIMITIVE_RANGED_WEAPON );
     }
-    return t.magazine && !t.magazine->type.empty() && !t.magazine->type.count( ammotype( "battery" ) );
+    return t.magazine && !t.magazine->type.empty() && !t.magazine->type.count( ammo_battery );
 }
 
 static std::set<itype_id> ids_from( const item_group_id &g )
@@ -79,7 +95,7 @@ static std::set<itype_id> ids_from( const item_group_id &g )
 
 // Every string after a loot key ("group", "item", "items", "death_drops", "contents-group",
 // "container-group") in the mod's JSON: the audit's regex, without std::regex on megabytes.
-static void named_after_loot_keys( const std::string &text, std::set<std::string> &out )
+static void named_after_loot_keys( std::string_view text, std::set<std::string> &out )
 {
     for( const char *key : {
              "\"group\"", "\"item\"", "\"items\"", "\"death_drops\"", "\"contents-group\"", "\"container-group\""
@@ -102,7 +118,7 @@ static void named_after_loot_keys( const std::string &text, std::set<std::string
             }
             const size_t end = text.find( '"', p + 1 );
             if( end != std::string::npos ) {
-                out.insert( text.substr( p + 1, end - p - 1 ) );
+                out.insert( std::string( text.substr( p + 1, end - p - 1 ) ) );
             }
         }
     }
@@ -117,7 +133,7 @@ static void named_after_loot_keys( const std::string &text, std::set<std::string
 // "container-group"; the audit covers those.
 TEST_CASE( "saigon_firearms_only_at_police_and_army", "[saigon]" )
 {
-    if( !npc_class_id( "sgn_class_guard" ).is_valid() ) {
+    if( !sgn_class_guard.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -127,18 +143,19 @@ TEST_CASE( "saigon_firearms_only_at_police_and_army", "[saigon]" )
         REQUIRE( item_group::group_is_defined( item_group_id( g ) ) );
         allowed.insert( item_group_id( g ) );
     }
-    allowed.insert( npc_class_id( "sgn_class_guard" )->weapon_override );
+    allowed.insert( sgn_class_guard->weapon_override );
 
     std::set<item_group_id> roots;
     for( const item_group_id &g : item_controller->get_all_group_names() ) {
-        if( sgn( g.str() ) || g.str().rfind( "NC_NONE", 0 ) == 0 ) {
+        if( sgn_prefixed( g.str() ) || g.str().rfind( "NC_NONE", 0 ) == 0 ) {
             roots.insert( g );
         }
     }
     std::set<std::string> named;
     const std::filesystem::path mod = ( PATH_INFO::moddir() / "saigon_2000s" ).get_unrelative_path();
-    for( const auto &entry : std::filesystem::recursive_directory_iterator( mod ) ) {
-        if( entry.is_regular_file() && entry.path().extension() == ".json" ) {
+    for( const std::filesystem::directory_entry &entry : std::filesystem::recursive_directory_iterator(
+             mod ) ) {
+        if( entry.is_regular_file() && entry.path().extension() == std::filesystem::u8path( ".json" ) ) {
             named_after_loot_keys( read_entire_file( entry.path() ), named );
         }
     }
@@ -151,7 +168,7 @@ TEST_CASE( "saigon_firearms_only_at_police_and_army", "[saigon]" )
         }
     }
     for( const npc_class &c : npc_class::get_all() ) {
-        if( sgn( c.id.str() ) ) {
+        if( sgn_prefixed( c.id.str() ) ) {
             for( const item_group_id &g : {
                      c.worn_override, c.carry_override, c.weapon_override
                  } ) {
@@ -162,13 +179,13 @@ TEST_CASE( "saigon_firearms_only_at_police_and_army", "[saigon]" )
         }
     }
     for( const mtype &m : MonsterGenerator::generator().get_all_mtypes() ) {
-        if( sgn( m.id.str() ) && !m.death_drops.is_null() &&
+        if( sgn_prefixed( m.id.str() ) && !m.death_drops.is_null() &&
             item_group::group_is_defined( m.death_drops ) ) {
             roots.insert( m.death_drops );
         }
     }
     for( const vehicle_prototype &v : vehicles::get_all_prototypes() ) {
-        if( sgn( v.id.str() ) ) {
+        if( sgn_prefixed( v.id.str() ) ) {
             for( const vehicle_item_spawn &s : v.item_spawns ) {
                 roots.insert( s.item_groups.begin(), s.item_groups.end() );
             }
@@ -273,7 +290,7 @@ static bool loaded_magazine_from( const itype_id &gun_id, const std::vector<item
 // magazine or cartridge is missing from the shelves is a club.
 TEST_CASE( "saigon_armories_yield_loadable_guns", "[saigon]" )
 {
-    if( !item_group::group_is_defined( item_group_id( "sgn_pa_armory_police" ) ) ) {
+    if( !item_group::group_is_defined( Item_spawn_data_sgn_pa_armory_police ) ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -314,7 +331,7 @@ TEST_CASE( "saigon_armories_yield_loadable_guns", "[saigon]" )
 // are not firearms (PRIMITIVE_RANGED_WEAPON), so a farmer with a nỏ breaks no policy.
 TEST_CASE( "saigon_vn_weapons_wield_and_shoot", "[saigon]" )
 {
-    if( !itype_id( "sgn_na_thun" ).is_valid() ) {
+    if( !itype_sgn_na_thun.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -334,7 +351,7 @@ TEST_CASE( "saigon_vn_weapons_wield_and_shoot", "[saigon]" )
     CHECK( weapons.size() >= 15 );
     for( const itype_id &w : weapons ) {
         CAPTURE( w.str() );
-        CHECK( sgn( w.str() ) );
+        CHECK( sgn_prefixed( w.str() ) );
         clear_avatar();
         avatar &u = get_avatar();
         item it( w );
@@ -345,7 +362,7 @@ TEST_CASE( "saigon_vn_weapons_wield_and_shoot", "[saigon]" )
             CHECK( u.get_wielded_item()->typeId() == w );
         }
     }
-    const std::vector<itype_id> primitive = { itype_id( "sgn_na_thun" ), itype_id( "sgn_no" ) };
+    const std::vector<itype_id> primitive = { itype_sgn_na_thun, itype_sgn_no };
     std::map<itype_id, int> fits;
     for( const itype_id &a : ammo ) {
         CAPTURE( a.str() );
@@ -389,7 +406,7 @@ TEST_CASE( "saigon_vn_weapons_wield_and_shoot", "[saigon]" )
 // and that some item group spawns or some recipe makes.
 TEST_CASE( "saigon_vn_weapon_recipes_obtainable", "[saigon]" )
 {
-    if( !itype_id( "sgn_na_thun" ).is_valid() ) {
+    if( !itype_sgn_na_thun.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -418,7 +435,7 @@ TEST_CASE( "saigon_vn_weapon_recipes_obtainable", "[saigon]" )
         CHECK_FALSE( r.is_blacklisted() );
         CHECK_FALSE( r.never_learn );
         CHECK( ( !r.autolearn_requirements.empty() || !r.booksets.empty() ) );
-        const auto &comps = r.simple_requirements().get_components();
+        const requirement_data::alter_item_comp_vector &comps = r.simple_requirements().get_components();
         CHECK( !comps.empty() );
         for( const std::vector<item_comp> &alts : comps ) {
             std::string names;
@@ -441,8 +458,8 @@ TEST_CASE( "saigon_vn_weapon_recipes_obtainable", "[saigon]" )
 // and 1 to 3 HQs and 3 posts in the delta (the delta overmap is not reseeded).
 TEST_CASE( "saigon_police_army_placed_by_overmap_generation", "[overmap][saigon]" )
 {
-    if( !oter_str_id( "sgn_pa_cong_an_quan_00_north" ).is_valid() ||
-        !region_settings_id( "sgn_saigon_delta" ).is_valid() ) {
+    if( !oter_sgn_pa_cong_an_quan_00_north.is_valid() ||
+        !region_settings_sgn_saigon_delta.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -496,12 +513,12 @@ TEST_CASE( "saigon_police_army_placed_by_overmap_generation", "[overmap][saigon]
 // a công an shirt spawned as a "black dress shirt" or a "blue dress shirt".
 TEST_CASE( "saigon_cong_an_shirt_has_no_variants", "[saigon]" )
 {
-    if( !itype_id( "sgn_ao_cong_an" ).is_valid() ) {
+    if( !itype_sgn_ao_cong_an.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
-    CHECK( itype_id( "sgn_ao_cong_an" )->variants.empty() );
-    item shirt( itype_id( "sgn_ao_cong_an" ) );
+    CHECK( itype_sgn_ao_cong_an->variants.empty() );
+    item shirt( itype_sgn_ao_cong_an );
     CHECK( shirt.tname().find( "dress shirt" ) == std::string::npos );
     CHECK( shirt.tname().find( "công an" ) != std::string::npos );
 }
@@ -513,7 +530,7 @@ TEST_CASE( "saigon_cong_an_shirt_has_no_variants", "[saigon]" )
 // that later gets Saigon variants on purpose belongs in the list below.
 TEST_CASE( "saigon_items_inherit_no_variants", "[saigon]" )
 {
-    if( !itype_id( "sgn_ao_cong_an" ).is_valid() ) {
+    if( !itype_sgn_ao_cong_an.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }

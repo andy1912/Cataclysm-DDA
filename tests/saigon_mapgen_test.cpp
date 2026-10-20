@@ -1,5 +1,9 @@
+#include <array>
+#include <initializer_list>
+#include <memory>
 #include <queue>
 #include <set>
+#include <stddef.h>
 #include <string>
 #include <unordered_map>
 #include <utility>
@@ -14,7 +18,7 @@
 #include "map_helpers.h"
 #include "map_scale_constants.h"
 #include "mapbuffer.h"
-#include "omdata.h"
+#include "mapdata.h"
 #include "overmap.h"
 #include "overmapbuffer.h"
 #include "player_helpers.h"
@@ -26,20 +30,22 @@
 #include "vehicle.h"
 #include "vehicle_group.h"
 
-// Saigon 2000s mod: structural checks for the nhà ống shophouse row
-// (tools/saigon/gen_nha_ong.py, design doc/saigon/analysis/d2_r3.md §4.a).
-// Run with: tests/cata_test --mods=dda,saigon_2000s "[saigon]"
-
+static const furn_str_id furn_f_counter( "f_counter" );
 static const furn_str_id furn_f_standing_tank( "f_standing_tank" );
-
+static const furn_str_id furn_f_statue( "f_statue" );
+static const itype_id itype_sgn_thung_xop( "sgn_thung_xop" );
 static const oter_str_id oter_field( "field" );
-
 static const ter_str_id ter_t_brick_wall( "t_brick_wall" );
 static const ter_str_id ter_t_concrete_roof( "t_concrete_roof" );
 static const ter_str_id ter_t_open_air( "t_open_air" );
 static const ter_str_id ter_t_sgn_tree_bo_de( "t_sgn_tree_bo_de" );
 static const ter_str_id ter_t_stairs_down( "t_stairs_down" );
 static const ter_str_id ter_t_stairs_up( "t_stairs_up" );
+static const ter_str_id ter_t_thconc_floor( "t_thconc_floor" );
+
+// Saigon 2000s mod: structural checks for the nhà ống shophouse row
+// (tools/saigon/gen_nha_ong.py, design doc/saigon/analysis/d2_r3.md §4.a).
+// Run with: tests/cata_test --mods=dda,saigon_2000s "[saigon]"
 
 static constexpr int sgn_lots = 6;
 static constexpr int sgn_top_z = 5;
@@ -157,7 +163,7 @@ TEST_CASE( "saigon_nha_ong_row_structure", "[mapgen][saigon]" )
         // bare roof only; railings are dividers, not walkway (critic_d2 D6a).
         std::set<point> walk;
         std::queue<point> todo;
-        todo.push( point( 1, 17 ) );
+        todo.emplace( 1, 17 );
         walk.insert( point( 1, 17 ) );
         while( !todo.empty() ) {
             const point p = todo.front();
@@ -259,7 +265,6 @@ TEST_CASE( "saigon_cities_use_shophouses", "[overmap][saigon]" )
     CHECK( dda_houses == 0 );
 }
 
-
 // Any door: plain doors, the accordion iron gates of hẻm homes (G22), roller shutters.
 static bool is_door( map &m, const tripoint_bub_ms &p )
 {
@@ -347,9 +352,6 @@ TEST_CASE( "saigon_hem_connectivity", "[mapgen][saigon]" )
     }
 }
 
-static const furn_str_id furn_f_counter( "f_counter" );
-static const itype_id itype_sgn_thung_xop( "sgn_thung_xop" );
-
 TEST_CASE( "saigon_cho_market_structure", "[mapgen][saigon]" )
 {
     const oter_str_id cho_nw( "sgn_cho_nw_north" );
@@ -360,7 +362,7 @@ TEST_CASE( "saigon_cho_market_structure", "[mapgen][saigon]" )
     sgn_clear_map_and_reset_player();
     const tripoint_abs_omt pos( 80, 80, 0 );
     const std::vector<std::pair<point, std::string>> parts = {
-        { { 0, 0 }, "nw" }, { { 1, 0 }, "ne" }, { { 0, 1 }, "sw" }, { { 1, 1 }, "se" }
+        { point::zero, "nw" }, { point::east, "ne" }, { point::south, "sw" }, { point::south_east, "se" }
     };
     for( const std::pair<point, std::string> &part : parts ) {
         overmap_buffer.ter_set( pos + tripoint( part.first, 0 ),
@@ -395,8 +397,6 @@ TEST_CASE( "saigon_cho_market_structure", "[mapgen][saigon]" )
     CHECK( counters >= 40 );
     CHECK( coolers >= 1 );
 }
-
-static const furn_str_id furn_f_statue( "f_statue" );
 
 TEST_CASE( "saigon_chungcu_and_chua_structure", "[mapgen][saigon]" )
 {
@@ -503,8 +503,6 @@ TEST_CASE( "saigon_traffic_is_mostly_two_wheelers", "[vehicle][saigon]" )
     }
 }
 
-static const ter_str_id ter_t_thconc_floor( "t_thconc_floor" );
-
 // Every indoor floor tile at level z has something other than open air above it.
 static int uncovered_indoor_tiles( map &m, int z )
 {
@@ -578,7 +576,7 @@ static std::pair<int, int> count_spawns( const tripoint_abs_omt &pos, int top_z 
     const tripoint_abs_sm origin = project_to<coords::sm>( pos );
     for( int z = 0; z <= top_z; z++ ) {
         for( const point &d : {
-                 point( 0, 0 ), point( 1, 0 ), point( 0, 1 ), point( 1, 1 )
+                 point::zero, point::east, point::south, point::south_east
              } ) {
             submap *sub = MAPBUFFER.lookup_submap( origin + tripoint( d, z ) );
             if( sub == nullptr ) {
@@ -680,7 +678,7 @@ TEST_CASE( "saigon_road_traffic_is_saigon", "[mapgen][vehicle][saigon]" )
             tm.generate( pos, calendar::turn, true, true );
             const tripoint_abs_sm origin = project_to<coords::sm>( pos );
             for( const point &d : {
-                     point( 0, 0 ), point( 1, 0 ), point( 0, 1 ), point( 1, 1 )
+                     point::zero, point::east, point::south, point::south_east
                  } ) {
                 submap *sub = MAPBUFFER.lookup_submap( origin + tripoint( d, 0 ) );
                 if( sub == nullptr ) {

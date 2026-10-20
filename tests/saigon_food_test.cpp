@@ -1,16 +1,25 @@
+#include <algorithm>
+#include <functional>
+#include <initializer_list>
+#include <list>
+#include <map>
+#include <optional>
 #include <set>
 #include <string>
+#include <utility>
 #include <vector>
 
 #include "avatar.h"
 #include "calendar.h"
 #include "cata_catch.h"
 #include "character.h"
+#include "character_attire.h"
 #include "coordinates.h"
 #include "debug.h"
+#include "enums.h"
 #include "item.h"
 #include "item_group.h"
-#include "item_location.h"
+#include "item_transformation.h"
 #include "itype.h"
 #include "map.h"
 #include "map_helpers.h"
@@ -18,17 +27,14 @@
 #include "output.h"
 #include "player_activity.h"
 #include "player_helpers.h"
+#include "pocket_type.h"
 #include "point.h"
 #include "recipe.h"
-#include "recipe_dictionary.h"
 #include "requirements.h"
+#include "ret_val.h"
 #include "type_id.h"
-
-// Saigon 2000s mod, V1 "the southern table" (items/food/vn_food_*.json, recipes/vn_food.json,
-// itemgroups/vn_food.json): melting ice, the new dishes' recipes, and the four food groups.
-// Run with: tests/cata_test --mods=dda,saigon_2000s "[saigon][food]"
-
-static const activity_id ACT_CRAFT( "ACT_CRAFT" );
+#include "units.h"
+#include "value_ptr.h"
 
 static const itype_id itype_debug_backpack( "debug_backpack" );
 static const itype_id itype_hammer( "hammer" );
@@ -42,6 +48,13 @@ static const itype_id itype_sgn_da_cay( "sgn_da_cay" );
 static const itype_id itype_sgn_da_vien( "sgn_da_vien" );
 static const itype_id itype_water( "water" );
 static const itype_id itype_water_clean( "water_clean" );
+static const flag_id json_flag_CONTAINER( "CONTAINER" );
+
+// Saigon 2000s mod, V1 "the southern table" (items/food/vn_food_*.json, recipes/vn_food.json,
+// itemgroups/vn_food.json): melting ice, the new dishes' recipes, and the four food groups.
+// Run with: tests/cata_test --mods=dda,saigon_2000s "[saigon][food]"
+
+static const activity_id ACT_CRAFT( "ACT_CRAFT" );
 
 static const trait_id trait_DEBUG_CNF( "DEBUG_CNF" );
 
@@ -163,7 +176,7 @@ TEST_CASE( "saigon_vn_food_groups", "[saigon][food]" )
             // food or drink, the bag, bottle or jar it spawns in, or ice (not itself food: it
             // melts into water)
             const bool comestible = !!t->comestible;
-            const bool container = t->has_flag( flag_id( "CONTAINER" ) ) || !t->pockets.empty();
+            const bool container = t->has_flag( json_flag_CONTAINER ) || !t->pockets.empty();
             const bool melts = t->transform_into && t->countdown_interval > 0_seconds &&
                                t->transform_into->target.is_valid() &&
                                !!t->transform_into->target->comestible;

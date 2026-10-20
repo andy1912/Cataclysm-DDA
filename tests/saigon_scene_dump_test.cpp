@@ -1,12 +1,17 @@
+#include <array>
+#include <bitset>
 #include <chrono>
 #include <cstdio>
 #include <cstdlib>
 #include <fstream>
+#include <initializer_list>
 #include <map>
+#include <optional>
 #include <string>
+#include <string_view>
+#include <utility>
 #include <vector>
 
-#include "calendar.h"
 #include "cata_catch.h"
 #include "coordinates.h"
 #include "enums.h"
@@ -15,14 +20,15 @@
 #include "itype.h"
 #include "map.h"
 #include "map_helpers.h"
+#include "map_scale_constants.h"
 #include "mapdata.h"
 #include "math_parser_diag_value.h"
 #include "omdata.h"
-#include "overmap.h"
 #include "overmapbuffer.h"
 #include "player_helpers.h"
 #include "point.h"
 #include "rng.h"
+#include "tileray.h"
 #include "type_id.h"
 #include "units.h"
 #include "units_utility.h"
@@ -30,12 +36,33 @@
 #include "vehicle.h"
 #include "vpart_position.h"
 
+static const oter_str_id oter_sgn_chua_north( "sgn_chua_north" );
+
 // Saigon 2000s mod: dump a generated Saigon block for the offline scene renderer
 // (tools/saigon/art/render_scene.py), so the tileset can be checked without driving
 // the game window.  Hidden test; run with:
 //   SAIGON_SCENE_OUT=scene.json tests/cata_test --mods=dda,saigon_2000s "[saigon_scene]"
 
-static std::string quoted( const std::string &s )
+// "1x2x0x3" or "4,5": the integers between the separators, or nothing when any is malformed
+static std::vector<int> parse_ints( const char *s, char sep )
+{
+    std::vector<int> out;
+    const char *p = s;
+    while( true ) {
+        char *end = nullptr;
+        const long v = std::strtol( p, &end, 10 );
+        if( end == p ) {
+            return {};
+        }
+        out.push_back( static_cast<int>( v ) );
+        if( *end != sep ) {
+            return *end == '\0' ? out : std::vector<int>();
+        }
+        p = end + 1;
+    }
+}
+
+static std::string json_quoted( std::string_view s )
 {
     std::string out = "\"";
     for( const char c : s ) {
@@ -92,13 +119,15 @@ static void dump_scene( const char *out_path, const int width, const int height 
                 return here.furn( q ).obj();
             };
             looks_like[ter.id.str()] = ter.looks_like;
-            out << "[" << quoted( ter.id.str() ) << "," << connections( here, p, ter_at, ter.connect_to_groups )
+            out << "[" << json_quoted( ter.id.str() ) << "," << connections( here, p, ter_at,
+                    ter.connect_to_groups )
                 << "," << rotation_targets( here, p, ter_at, ter.rotate_to_groups ) << ",";
             if( furn.id.str() == "f_null" ) {
                 out << "\"\",0,127,";
             } else {
                 looks_like[furn.id.str()] = furn.looks_like;
-                out << quoted( furn.id.str() ) << "," << connections( here, p, furn_at, furn.connect_to_groups )
+                out << json_quoted( furn.id.str() ) << "," << connections( here, p, furn_at,
+                        furn.connect_to_groups )
                     << "," << rotation_targets( here, p, furn_at, furn.rotate_to_groups ) << ",";
             }
             const map_stack items = here.i_at( p );
@@ -107,17 +136,17 @@ static void dump_scene( const char *out_path, const int width, const int height 
             } else {
                 const itype &it = *items.begin()->type;
                 looks_like[it.get_id().str()] = it.looks_like.str();
-                out << quoted( it.get_id().str() ) << ",";
+                out << json_quoted( it.get_id().str() ) << ",";
             }
             const optional_vpart_position ovp = here.veh_at( p );
             const vpart_display vd = ovp ? ovp->vehicle().get_display_of_tile( ovp->mount_pos() ) :
                                      vpart_display();
             if( ovp && !vd.id.is_null() ) {
                 looks_like["vp_" + vd.id.str()] = vd.id->looks_like;
-                out << quoted( "vp_" + vd.id.str() ) << "," << quoted( vd.variant.id ) << ","
+                out << json_quoted( "vp_" + vd.id.str() ) << "," << json_quoted( vd.variant.id ) << ","
                     << angle_to_dir4( ovp->vehicle().face.dir() - 270_degrees ) << "]";
             } else {
-                out << "\"\",\"\",0]";
+                out << R"("","",0])";
             }
             out << ( x + 1 < width || y + 1 < height ? ",\n" : "\n" );
         }
@@ -125,7 +154,7 @@ static void dump_scene( const char *out_path, const int width, const int height 
     out << "], \"looks_like\": {";
     bool first = true;
     for( const auto &kv : looks_like ) {
-        out << ( first ? "" : ",\n" ) << quoted( kv.first ) << ": " << quoted( kv.second );
+        out << ( first ? "" : ",\n" ) << json_quoted( kv.first ) << ": " << json_quoted( kv.second );
         first = false;
     }
     out << "}}\n";
@@ -135,7 +164,7 @@ static void dump_scene( const char *out_path, const int width, const int height 
 TEST_CASE( "saigon_scene_dump", "[.][saigon_scene]" )
 {
     const char *out_path = std::getenv( "SAIGON_SCENE_OUT" );
-    if( out_path == nullptr || !oter_str_id( "sgn_chua_north" ).is_valid() ) {
+    if( out_path == nullptr || !oter_sgn_chua_north.is_valid() ) {
         WARN( "set SAIGON_SCENE_OUT and load saigon_2000s" );
         return;
     }
@@ -199,11 +228,12 @@ TEST_CASE( "saigon_landmark_dump", "[.][saigon_landmark_scene]" )
         WARN( "set SAIGON_SCENE_OUT, SAIGON_LANDMARK and SAIGON_LANDMARK_SIZE" );
         return;
     }
-    int w = 0;
-    int h = 0;
-    int zmin = 0;
-    int zmax = 0;
-    REQUIRE( std::sscanf( size, "%dx%dx%dx%d", &w, &h, &zmin, &zmax ) == 4 );
+    const std::vector<int> dims = parse_ints( size, 'x' );
+    REQUIRE( dims.size() == 4 );
+    const int w = dims[0];
+    const int h = dims[1];
+    const int zmin = dims[2];
+    const int zmax = dims[3];
     clear_overmaps();
     clear_avatar();
     const tripoint_abs_omt base( 200, 200, 0 );
@@ -246,19 +276,23 @@ TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
         return;
     }
     const char *seed = std::getenv( "SAIGON_OVERMAP_SEED" );
-    rng_set_engine_seed( seed ? std::atoi( seed ) : 4242 );
+    const std::vector<int> seed_v = seed ? parse_ints( seed, ',' ) : std::vector<int> { 4242 };
+    REQUIRE( seed_v.size() == 1 );
+    rng_set_engine_seed( seed_v[0] );
     const char *at = std::getenv( "SAIGON_OVERMAP_AT" );
     point_abs_om where;
     if( at != nullptr ) {
-        int ox = 0;
-        int oy = 0;
-        REQUIRE( std::sscanf( at, "%d,%d", &ox, &oy ) == 2 );
-        where = point_abs_om( ox, oy );
+        const std::vector<int> o = parse_ints( at, ',' );
+        REQUIRE( o.size() == 2 );
+        where = point_abs_om( o[0], o[1] );
     }
     int span_x = 1;
     int span_y = 1;
     if( const char *span = std::getenv( "SAIGON_OVERMAP_SPAN" ) ) {
-        REQUIRE( std::sscanf( span, "%d,%d", &span_x, &span_y ) == 2 );
+        const std::vector<int> sp = parse_ints( span, ',' );
+        REQUIRE( sp.size() == 2 );
+        span_x = sp[0];
+        span_y = sp[1];
     }
     const char *map = std::getenv( "SAIGON_OVERMAP_MAP" );
     if( map != nullptr ) {
@@ -269,7 +303,7 @@ TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
         get_globals().set_global_value( "overmap_outside_region", diag_value( std::string( outside ) ) );
     }
     overmap_buffer.clear();
-    const auto t0 = std::chrono::steady_clock::now();
+    const std::chrono::steady_clock::time_point t0 = std::chrono::steady_clock::now();
     for( int oy = 0; oy < span_y; oy++ ) {
         for( int ox = 0; ox < span_x; ox++ ) {
             overmap_buffer.get( where + point( ox, oy ) );
@@ -297,7 +331,7 @@ TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
                 conn = 0;
                 // same order as get_omt_id_rotation_and_subtile: S, E, W, N -> bits 1, 2, 4, 8
                 for( int i = 0; i < 4; i++ ) {
-                    const point q( x + offsets[i].x, y + offsets[i].y );
+                    const point q = point( x, y ) + offsets[i];
                     if( q.x < 0 || q.y < 0 || q.x >= W || q.y >= H ) {
                         continue;
                     }
@@ -311,15 +345,15 @@ TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
                 int subtile = 0;
                 ot.get_rotation_and_subtile( rot, subtile );
             }
-            out << ( x || y ? "," : "" ) << "[" << quoted( id ) << "," << rot << "," << conn << "]";
+            out << ( x || y ? "," : "" ) << "[" << json_quoted( id ) << "," << rot << "," << conn << "]";
         }
     }
     out << "],\"looks_like\":{";
     bool first = true;
     for( const auto &ll : looks_like ) {
-        out << ( first ? "" : "," ) << quoted( ll.first ) << ":[";
+        out << ( first ? "" : "," ) << json_quoted( ll.first ) << ":[";
         for( size_t i = 0; i < ll.second.size(); i++ ) {
-            out << ( i ? "," : "" ) << quoted( ll.second[i] );
+            out << ( i ? "," : "" ) << json_quoted( ll.second[i] );
         }
         out << "]";
         first = false;

@@ -1,10 +1,14 @@
 #include <algorithm>
 #include <chrono>
+#include <cstddef>
 #include <cstdlib>
 #include <filesystem>
 #include <fstream>
+#include <initializer_list>
 #include <iterator>
+#include <memory>
 #include <optional>
+#include <ratio>
 #include <string>
 #include <vector>
 
@@ -15,18 +19,24 @@
 #include "game.h"
 #include "global_vars.h"
 #include "map.h"
+#include "map_iterator.h"
+#include "map_scale_constants.h"
 #include "math_parser_diag_value.h"
 #include "map_helpers.h"
 #include "monster.h"
-#include "omdata.h"
 #include "options_helpers.h"
 #include "overmap.h"
+#include "overmap_ui.h"
 #include "overmapbuffer.h"
 #include "player_helpers.h"
 #include "point.h"
 #include "type_id.h"
 #include "zzip.h"
 #include "zstd/zstd.h"
+
+static const oter_str_id oter_sgn_lm_ben_thanh_11_north( "sgn_lm_ben_thanh_11_north" );
+static const ter_str_id ter_t_concrete_wall( "t_concrete_wall" );
+static const ter_str_id ter_t_thconc_floor( "t_thconc_floor" );
 
 // Saigon 2000s mod: turn-time harness (I-B5perf, doc/saigon/analysis/integration.md §10.24).
 // Puts the player in three generated Saigon places (a shophouse street, the Bến Thành
@@ -81,7 +91,7 @@ static double percentile( std::vector<double> v, double p )
 
 TEST_CASE( "saigon_turn_time", "[.][saigon_perf]" )
 {
-    if( !oter_str_id( "sgn_lm_ben_thanh_11_north" ).is_valid() ) {
+    if( !oter_sgn_lm_ben_thanh_11_north.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -109,8 +119,8 @@ TEST_CASE( "saigon_turn_time", "[.][saigon_perf]" )
         std::getenv( "SAIGON_PERF_WEATHER" );   // default rain; "clear" for comparison
     scoped_weather_override rain( weather_type_id( weather ? weather : "rain" ) );
     overmap &om = overmap_buffer.get( point_abs_om() );
-    const ter_id wall = ter_str_id( "t_concrete_wall" ).id();
-    const ter_id floor = ter_str_id( "t_thconc_floor" ).id();
+    const ter_id wall = ter_t_concrete_wall.id();
+    const ter_id floor = ter_t_thconc_floor.id();
     for( const site &s : sites ) {
         CAPTURE( s.name );
         tripoint_abs_omt pos;
@@ -134,7 +144,7 @@ TEST_CASE( "saigon_turn_time", "[.][saigon_perf]" )
 
         auto one_turn = [&]() {
             u.set_moves( 0 );                          // no input: the player just waits
-            const auto t0 = std::chrono::steady_clock::now();
+            const std::chrono::steady_clock::time_point t0 = std::chrono::steady_clock::now();
             g->do_turn();
             return std::chrono::duration<double, std::milli>( std::chrono::steady_clock::now() - t0 ).count();
         };
@@ -174,7 +184,7 @@ TEST_CASE( "saigon_turn_time", "[.][saigon_perf]" )
 // Compression level trade-off for save files (doc/saigon/PERF.md): unpack a saved zzip
 // (a copy; the world is not touched) and recompress every entry with the same dictionary at
 // zstd levels 3 and 7, reporting total size and time.  Hidden; run with:
-//   SAIGON_ZZIP=copy/of/o.0.0.zzip SAIGON_ZZIP_DICT=world/overmaps.dict \
+//   SAIGON_ZZIP=copy/of/o.0.0.zzip SAIGON_ZZIP_DICT=world/overmaps.dict, then on the same line
 //       tests/cata_test --mods=dda,saigon_2000s "[saigon_zzip_level]"
 TEST_CASE( "saigon_zzip_level", "[.][saigon_zzip_level]" )
 {
@@ -184,7 +194,8 @@ TEST_CASE( "saigon_zzip_level", "[.][saigon_zzip_level]" )
         WARN( "set SAIGON_ZZIP and SAIGON_ZZIP_DICT" );
         return;
     }
-    std::optional<zzip> z = zzip::load( path, dict_path );
+    std::optional<zzip> z = zzip::load( std::filesystem::u8path( path ),
+                                        std::filesystem::u8path( dict_path ) );
     REQUIRE( z.has_value() );
     std::ifstream df( dict_path, std::ios::binary );
     const std::string dict( ( std::istreambuf_iterator<char>( df ) ),
@@ -202,7 +213,7 @@ TEST_CASE( "saigon_zzip_level", "[.][saigon_zzip_level]" )
         ZSTD_CCtx *cctx = ZSTD_createCCtx();
         ZSTD_CCtx_setParameter( cctx, ZSTD_c_compressionLevel, level );
         size_t packed = 0;
-        const auto t0 = std::chrono::steady_clock::now();
+        const std::chrono::steady_clock::time_point t0 = std::chrono::steady_clock::now();
         for( int rep = 0; rep < 5; rep++ ) {
             packed = 0;
             for( const std::vector<std::byte> &f : files ) {

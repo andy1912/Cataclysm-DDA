@@ -1,4 +1,4 @@
-#include <algorithm>
+#include <initializer_list>
 #include <set>
 #include <string>
 #include <vector>
@@ -7,6 +7,10 @@
 #include "mongroup.h"
 #include "mtype.h"
 #include "type_id.h"
+
+static const mtype_id mon_fish_bowfin( "mon_fish_bowfin" );
+static const mtype_id sgn_mon_ran_ho_mang( "sgn_mon_ran_ho_mang" );
+static const mtype_id sgn_mon_ran_ho_mang_con( "sgn_mon_ran_ho_mang_con" );
 
 // Saigon 2000s mod, L-loc7: the delta's wildlife (data/mods/saigon_2000s/monsters/wildlife*.json).
 // The fields, swamps and rivers around Saigon spawn dda's wilderness groups, and fishing catches
@@ -50,7 +54,7 @@ TEST_CASE( "saigon_delta_wildlife", "[saigon]" )
     // what you catch: cá lóc, cá rô phi, cá tra, cá trê, cá rô đồng, lươn, cá chép, cá trắm cỏ
     const std::set<std::string> fish = expand( "GROUP_FISH" );
     CHECK( fish.count( "mon_fish_bowfin" ) == 1 );
-    CHECK( mtype_id( "mon_fish_bowfin" )->nname() == "snakehead" );
+    CHECK( mon_fish_bowfin->nname() == "snakehead" );
     CHECK( mtype_id( "mon_fish_bluegill" )->nname() == "tilapia" );
     CHECK( mtype_id( "mon_fish_bullhead" )->nname() == "walking catfish" );
     // the zoo's animals do not breed into the wild (an elephant copied from dda's moose had moose
@@ -62,8 +66,8 @@ TEST_CASE( "saigon_delta_wildlife", "[saigon]" )
         CHECK( mtype_id( zoo )->has_flag( mon_flag_NO_BREED ) );
     }
     // a cobra's young grow into cobras, not timber rattlesnakes
-    const mtype &young = *mtype_id( "sgn_mon_ran_ho_mang_con" );
-    CHECK( young.upgrade_into == mtype_id( "sgn_mon_ran_ho_mang" ) );
-    CHECK( mtype_id( "sgn_mon_ran_ho_mang" )->baby_type.baby_monster ==
-           mtype_id( "sgn_mon_ran_ho_mang_con" ) );
+    const mtype &young = *sgn_mon_ran_ho_mang_con;
+    CHECK( young.upgrade_into == sgn_mon_ran_ho_mang );
+    CHECK( sgn_mon_ran_ho_mang->baby_type.baby_monster ==
+           sgn_mon_ran_ho_mang_con );
 }

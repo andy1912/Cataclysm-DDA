@@ -1,19 +1,30 @@
 #include <algorithm>
+#include <array>
 #include <chrono>
+#include <filesystem>
+#include <functional>
+#include <initializer_list>
 #include <map>
 #include <set>
 #include <memory>
+#include <stddef.h>
 #include <string>
+#include <string_view>
+#include <unordered_map>
+#include <utility>
 #include <vector>
 
 #include "achievement.h"
 #include "avatar.h"
 #include "cata_catch.h"
+#include "cata_path.h"
+#include "character_id.h"
 #include "city.h"
 #include "cata_utility.h"
 #include "filesystem.h"
+#include "flexbuffer_json.h"
 #include "game.h"
-#include "json.h"
+#include "map_scale_constants.h"
 #include "path_info.h"
 #include "coordinates.h"
 #include "global_vars.h"
@@ -28,10 +39,18 @@
 #include "point.h"
 #include "player_helpers.h"
 #include "scenario.h"
+#include "simple_pathfinding.h"
 #include "start_location.h"
 #include "stats_tracker.h"
 #include "worldfactory.h"
 #include "type_id.h"
+
+static const oter_str_id oter_sgn_ben_pha_north( "sgn_ben_pha_north" );
+static const oter_str_id oter_sgn_hem_block_north( "sgn_hem_block_north" );
+static const oter_str_id oter_sgn_nh_solo_z5_south( "sgn_nh_solo_z5_south" );
+static const region_settings_id region_settings_sgn_saigon_delta( "sgn_saigon_delta" );
+static const string_id<scenario> scenario_sgn_saigon_2009( "sgn_saigon_2009" );
+static const start_location_id start_location_sgn_sloc_nha_ong( "sgn_sloc_nha_ong" );
 
 // Saigon 2000s mod: pregenerated ("real-map") overmaps (doc/saigon/REALMAP_PLAN.md, R1).
 // Loads the fixture data/mods/saigon_2000s/realmap_test/overmap_40_40.omap.gz (written by
@@ -43,7 +62,7 @@
 
 TEST_CASE( "saigon_realmap_loads_every_layer", "[overmap][saigon]" )
 {
-    if( !oter_str_id( "sgn_nh_solo_z5_south" ).is_valid() ) {
+    if( !oter_sgn_nh_solo_z5_south.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -169,7 +188,7 @@ static void remove_saved_realmap_overmaps()
 TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
 {
     const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
-    if( !oter_str_id( "sgn_nh_solo_z5_south" ).is_valid() ||
+    if( !oter_sgn_nh_solo_z5_south.is_valid() ||
         !file_exist( file.get_unrelative_path() ) ) {
         WARN( "saigon_2000s or its real map is not present; skipping" );
         return;
@@ -278,7 +297,7 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     CHECK( market == 9 );
     // a new game looks for its start from the world origin outwards: it starts in central Saigon
     const tripoint_abs_omt start =
-        start_location_id( "sgn_sloc_nha_ong" )->find_player_initial_location(
+        start_location_sgn_sloc_nha_ong->find_player_initial_location(
             point_abs_om() ).first;
     CAPTURE( start.to_string() );
     CHECK( project_to<coords::om>( start.xy() ) == point_abs_om() );
@@ -293,7 +312,7 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     }
     // and it reveals a wide neighbourhood at the start (a getter that returned bool cut every
     // scenario's radius to 1)
-    CHECK( string_id<scenario>( "sgn_saigon_2009" )->get_distance_initial_visibility() == 40 );
+    CHECK( scenario_sgn_saigon_2009->get_distance_initial_visibility() == 40 );
     // and character creation offers it: the mod's scenario whitelist hid every scenario it did not
     // name, and it named only Vietmap's
     for( const char *scen : {
@@ -338,7 +357,7 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
 // small towns far apart) is generated instead of Vietmap's megacity.
 TEST_CASE( "saigon_realmap_2009_countryside", "[saigon]" )
 {
-    if( !region_settings_id( "sgn_saigon_delta" ).is_valid() ) {
+    if( !region_settings_sgn_saigon_delta.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -391,7 +410,7 @@ static tripoint_bub_ms omt_centre( const tripoint_abs_omt &p )
 TEST_CASE( "saigon_realmap_2009_walkable", "[saigon]" )
 {
     const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
-    if( !oter_str_id( "sgn_hem_block_north" ).is_valid() ||
+    if( !oter_sgn_hem_block_north.is_valid() ||
         !file_exist( file.get_unrelative_path() ) ) {
         WARN( "saigon_2000s or its real map is not present; skipping" );
         return;
@@ -497,14 +516,12 @@ TEST_CASE( "saigon_realmap_2009_walkable", "[saigon]" )
     clear_overmaps();
 }
 
-
-
 // The Thủ Thiêm ferry of 2009 (tools/saigon/realmap/ferries_2009.json): its landing at Bến Bạch
 // Đằng is on the map and generates (a dock with river boats) without errors.
 TEST_CASE( "saigon_realmap_2009_ferry", "[saigon]" )
 {
     const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_1_0.omap.gz";
-    if( !oter_str_id( "sgn_ben_pha_north" ).is_valid() || !file_exist( file.get_unrelative_path() ) ) {
+    if( !oter_sgn_ben_pha_north.is_valid() || !file_exist( file.get_unrelative_path() ) ) {
         WARN( "saigon_2000s or its real map is not present; skipping" );
         return;
     }
@@ -536,7 +553,7 @@ TEST_CASE( "saigon_realmap_2009_ferry", "[saigon]" )
 TEST_CASE( "saigon_realmap_2009_routes", "[saigon]" )
 {
     const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
-    if( !oter_str_id( "sgn_hem_block_north" ).is_valid() ||
+    if( !oter_sgn_hem_block_north.is_valid() ||
         !file_exist( file.get_unrelative_path() ) ) {
         WARN( "saigon_2000s or its real map is not present; skipping" );
         return;
@@ -588,10 +605,10 @@ TEST_CASE( "saigon_realmap_2009_routes", "[saigon]" )
         const tripoint_abs_omt to = road_near( pl.second );
         CAPTURE( pl.first, to.to_string() );
         REQUIRE_FALSE( to.is_invalid() );
-        const auto t0 = std::chrono::steady_clock::now();
+        const std::chrono::steady_clock::time_point t0 = std::chrono::steady_clock::now();
         const size_t length = overmap_buffer.get_travel_path( from, to, params ).points.size();
-        const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>
-                        ( std::chrono::steady_clock::now() - t0 ).count();
+        const long long ms = std::chrono::duration_cast<std::chrono::milliseconds>
+                             ( std::chrono::steady_clock::now() - t0 ).count();
         CAPTURE( length );
         CHECK( length > 0 );
         WARN( "Bến Thành -> " << pl.first << ": " << length << " overmap tiles by road, planned in " <<
@@ -612,23 +629,22 @@ TEST_CASE( "saigon_realmap_2009_routes", "[saigon]" )
 // unseen until a player tried it.
 TEST_CASE( "saigon_new_game_realmap_2009", "[saigon]" )
 {
-    const string_id<scenario> scen( "sgn_saigon_2009" );
     const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
-    if( !scen.is_valid() || !file_exist( file.get_unrelative_path() ) ) {
+    if( !scenario_sgn_saigon_2009.is_valid() || !file_exist( file.get_unrelative_path() ) ) {
         WARN( "saigon_2000s or its real map is not present; skipping" );
         return;
     }
     const scenario *before = get_scenario();
     // offered in character creation (RF4)
-    CHECK_FALSE( scen->scen_is_blacklisted() );
+    CHECK_FALSE( scenario_sgn_saigon_2009->scen_is_blacklisted() );
     const std::vector<std::string> starts = {
         "sgn_sloc_nha_ong", "sgn_sloc_nha_ong_shuttered", "sgn_sloc_hem", "sgn_sloc_cho",
         "sgn_sloc_ga_sai_gon", "sgn_sloc_san_bay"
     };
-    CHECK( scen->start_location_count() == static_cast<int>( starts.size() ) );
+    CHECK( scenario_sgn_saigon_2009->start_location_count() == static_cast<int>( starts.size() ) );
     for( const std::string &sloc : starts ) {
         CAPTURE( sloc );
-        CHECK( scen->allowed_start( start_location_id( sloc ) ) );
+        CHECK( scenario_sgn_saigon_2009->allowed_start( start_location_id( sloc ) ) );
     }
     // a new world: nothing generated or saved, then no map chosen.  The old world is cleared
     // first, while a map is still chosen, so the reset itself generates no procedural overmaps
@@ -644,7 +660,7 @@ TEST_CASE( "saigon_new_game_realmap_2009", "[saigon]" )
     MAPBUFFER.clear();
     get_stats().clear();
     get_achievements().clear();
-    set_scenario( &scen.obj() );
+    set_scenario( &scenario_sgn_saigon_2009.obj() );
     avatar &u = get_avatar();
     // a fresh character has no id yet; start_game gives it one
     u.setID( character_id(), true );
@@ -729,7 +745,7 @@ TEST_CASE( "saigon_new_game_realmap_2009", "[saigon]" )
 TEST_CASE( "saigon_realmap_2009_fidelity", "[saigon]" )
 {
     const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
-    if( !oter_str_id( "sgn_hem_block_north" ).is_valid() ||
+    if( !oter_sgn_hem_block_north.is_valid() ||
         !file_exist( file.get_unrelative_path() ) ) {
         WARN( "saigon_2000s or its real map is not present; skipping" );
         return;
@@ -747,7 +763,7 @@ TEST_CASE( "saigon_realmap_2009_fidelity", "[saigon]" )
     const auto ter = []( const point_abs_omt & p ) {
         return overmap_buffer.ter( tripoint_abs_omt( p, 0 ) ).id().str();
     };
-    const auto starts = []( const std::string & id, const std::string & prefix ) {
+    const auto starts = []( std::string_view id, std::string_view prefix ) {
         return id.rfind( prefix, 0 ) == 0;
     };
     const auto near_site = [&]( const point_abs_omt & site, const std::string & prefix, int radius ) {
