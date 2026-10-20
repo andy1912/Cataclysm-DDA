@@ -111,8 +111,9 @@ jobs:
         if: runner.os == 'macOS'
         run: sudo rm -rf $ANDROID_HOME
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        # no fetch-tags: on a tag-triggered run checkout then fetches the tag twice and fails
+        # ("Cannot fetch both <sha> and refs/tags/...")
         with:
-          fetch-tags: true
           persist-credentials: false
       - name: Get soundpack
         shell: bash
