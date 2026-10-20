@@ -160,7 +160,8 @@ TEST_CASE( "saigon_map_extras_generate_on_their_terrain", "[mapgen][saigon][map_
         for( const oter_id &around : on_road ? std::vector<oter_id> { city, field } :
              std::vector<oter_id> { field } ) {
             CAPTURE( around.id().str() );
-            const tripoint_abs_omt pos = sgn_encounter_spot( 20 + 3 * ( column % 20 ), 20 + 3 * ( column / 20 ) );
+            const tripoint_abs_omt pos = sgn_encounter_spot( 20 + 3 * ( column % 20 ),
+                                         20 + 3 * ( column / 20 ) );
             column++;
             overmap_buffer.ter_set( pos, on_road ? road : field );
             for( const tripoint &d : eight_horizontal_neighbors ) {
@@ -218,9 +219,10 @@ static bool sgn_from_cocoon( const mtype_id &m )
     static const std::set<mtype_id> hatched = [] {
         std::set<mtype_id> ret;
         for( const char *grp : {
-                 "GROUP_COCOON_TINY", "GROUP_COCOON_SMALL", "GROUP_COCOON_MED_1",
-                 "GROUP_COCOON_MED_2", "GROUP_COCOON_LARGE"
-             } ) {
+        "GROUP_COCOON_TINY", "GROUP_COCOON_SMALL", "GROUP_COCOON_MED_1",
+        "GROUP_COCOON_MED_2", "GROUP_COCOON_LARGE"
+    } )
+        {
             for( const mtype_id &h : MonsterGroupManager::GetMonstersFromGroup( mongroup_id( grp ), true ) ) {
                 ret.insert( h );
             }

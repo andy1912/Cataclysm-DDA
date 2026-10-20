@@ -416,563 +416,155 @@
   {
     "type": "city_building",
     "id": "sgn_pl_cay_xang",
-    "locations": [
-      "land"
-    ],
-    "flags": [
-      "SAIGON"
-    ],
-    "city_sizes": [
-      4,
-      -1
-    ],
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
     "overmaps": [
-      {
-        "point": [
-          0,
-          0,
-          0
-        ],
-        "overmap": "sgn_pl_cay_xang_00_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          1
-        ],
-        "overmap": "sgn_pl_cay_xang_00_z1_north"
-      }
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_pl_cay_xang_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_pl_cay_xang_00_z1_north" }
     ]
   },
   {
     "type": "city_building",
     "id": "sgn_pl_coopmart",
-    "locations": [
-      "land"
-    ],
-    "flags": [
-      "SAIGON",
-      "CITY_UNIQUE"
-    ],
-    "city_sizes": [
-      4,
-      -1
-    ],
+    "locations": [ "land" ],
+    "flags": [ "SAIGON", "CITY_UNIQUE" ],
+    "city_sizes": [ 4, -1 ],
     "overmaps": [
-      {
-        "point": [
-          0,
-          0,
-          0
-        ],
-        "overmap": "sgn_pl_coopmart_00_north"
-      },
-      {
-        "point": [
-          1,
-          0,
-          0
-        ],
-        "overmap": "sgn_pl_coopmart_10_north"
-      },
-      {
-        "point": [
-          0,
-          1,
-          0
-        ],
-        "overmap": "sgn_pl_coopmart_01_north"
-      },
-      {
-        "point": [
-          1,
-          1,
-          0
-        ],
-        "overmap": "sgn_pl_coopmart_11_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          1
-        ],
-        "overmap": "sgn_pl_coopmart_00_z1_north"
-      },
-      {
-        "point": [
-          1,
-          0,
-          1
-        ],
-        "overmap": "sgn_pl_coopmart_10_z1_north"
-      },
-      {
-        "point": [
-          0,
-          1,
-          1
-        ],
-        "overmap": "sgn_pl_coopmart_01_z1_north"
-      },
-      {
-        "point": [
-          1,
-          1,
-          1
-        ],
-        "overmap": "sgn_pl_coopmart_11_z1_north"
-      }
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_pl_coopmart_00_north" },
+      { "point": [ 1, 0, 0 ], "overmap": "sgn_pl_coopmart_10_north" },
+      { "point": [ 0, 1, 0 ], "overmap": "sgn_pl_coopmart_01_north" },
+      { "point": [ 1, 1, 0 ], "overmap": "sgn_pl_coopmart_11_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_pl_coopmart_00_z1_north" },
+      { "point": [ 1, 0, 1 ], "overmap": "sgn_pl_coopmart_10_z1_north" },
+      { "point": [ 0, 1, 1 ], "overmap": "sgn_pl_coopmart_01_z1_north" },
+      { "point": [ 1, 1, 1 ], "overmap": "sgn_pl_coopmart_11_z1_north" }
     ]
   },
   {
     "type": "city_building",
     "id": "sgn_pl_benh_vien",
-    "locations": [
-      "land"
-    ],
-    "flags": [
-      "SAIGON",
-      "CITY_UNIQUE"
-    ],
-    "city_sizes": [
-      4,
-      -1
-    ],
+    "locations": [ "land" ],
+    "flags": [ "SAIGON", "CITY_UNIQUE" ],
+    "city_sizes": [ 4, -1 ],
     "overmaps": [
-      {
-        "point": [
-          0,
-          0,
-          0
-        ],
-        "overmap": "sgn_pl_benh_vien_00_north"
-      },
-      {
-        "point": [
-          1,
-          0,
-          0
-        ],
-        "overmap": "sgn_pl_benh_vien_10_north"
-      },
-      {
-        "point": [
-          0,
-          1,
-          0
-        ],
-        "overmap": "sgn_pl_benh_vien_01_north"
-      },
-      {
-        "point": [
-          1,
-          1,
-          0
-        ],
-        "overmap": "sgn_pl_benh_vien_11_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          1
-        ],
-        "overmap": "sgn_pl_benh_vien_00_z1_north"
-      },
-      {
-        "point": [
-          1,
-          0,
-          1
-        ],
-        "overmap": "sgn_pl_benh_vien_10_z1_north"
-      },
-      {
-        "point": [
-          0,
-          1,
-          1
-        ],
-        "overmap": "sgn_pl_benh_vien_01_z1_north"
-      },
-      {
-        "point": [
-          1,
-          1,
-          1
-        ],
-        "overmap": "sgn_pl_benh_vien_11_z1_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          2
-        ],
-        "overmap": "sgn_pl_benh_vien_00_z2_north"
-      },
-      {
-        "point": [
-          1,
-          0,
-          2
-        ],
-        "overmap": "sgn_pl_benh_vien_10_z2_north"
-      },
-      {
-        "point": [
-          0,
-          1,
-          2
-        ],
-        "overmap": "sgn_pl_benh_vien_01_z2_north"
-      },
-      {
-        "point": [
-          1,
-          1,
-          2
-        ],
-        "overmap": "sgn_pl_benh_vien_11_z2_north"
-      }
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_pl_benh_vien_00_north" },
+      { "point": [ 1, 0, 0 ], "overmap": "sgn_pl_benh_vien_10_north" },
+      { "point": [ 0, 1, 0 ], "overmap": "sgn_pl_benh_vien_01_north" },
+      { "point": [ 1, 1, 0 ], "overmap": "sgn_pl_benh_vien_11_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_pl_benh_vien_00_z1_north" },
+      { "point": [ 1, 0, 1 ], "overmap": "sgn_pl_benh_vien_10_z1_north" },
+      { "point": [ 0, 1, 1 ], "overmap": "sgn_pl_benh_vien_01_z1_north" },
+      { "point": [ 1, 1, 1 ], "overmap": "sgn_pl_benh_vien_11_z1_north" },
+      { "point": [ 0, 0, 2 ], "overmap": "sgn_pl_benh_vien_00_z2_north" },
+      { "point": [ 1, 0, 2 ], "overmap": "sgn_pl_benh_vien_10_z2_north" },
+      { "point": [ 0, 1, 2 ], "overmap": "sgn_pl_benh_vien_01_z2_north" },
+      { "point": [ 1, 1, 2 ], "overmap": "sgn_pl_benh_vien_11_z2_north" }
     ]
   },
   {
     "type": "city_building",
     "id": "sgn_pl_cong_an",
-    "locations": [
-      "land"
-    ],
-    "flags": [
-      "SAIGON"
-    ],
-    "city_sizes": [
-      4,
-      -1
-    ],
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
     "overmaps": [
-      {
-        "point": [
-          0,
-          0,
-          0
-        ],
-        "overmap": "sgn_pl_cong_an_00_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          1
-        ],
-        "overmap": "sgn_pl_cong_an_00_z1_north"
-      }
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_pl_cong_an_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_pl_cong_an_00_z1_north" }
     ]
   },
   {
     "type": "city_building",
     "id": "sgn_pl_nghia_trang",
-    "locations": [
-      "land"
-    ],
-    "flags": [
-      "SAIGON"
-    ],
-    "city_sizes": [
-      4,
-      -1
-    ],
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
     "overmaps": [
-      {
-        "point": [
-          0,
-          0,
-          0
-        ],
-        "overmap": "sgn_pl_nghia_trang_00_north"
-      },
-      {
-        "point": [
-          1,
-          0,
-          0
-        ],
-        "overmap": "sgn_pl_nghia_trang_10_north"
-      },
-      {
-        "point": [
-          0,
-          1,
-          0
-        ],
-        "overmap": "sgn_pl_nghia_trang_01_north"
-      },
-      {
-        "point": [
-          1,
-          1,
-          0
-        ],
-        "overmap": "sgn_pl_nghia_trang_11_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          1
-        ],
-        "overmap": "sgn_pl_nghia_trang_00_z1_north"
-      },
-      {
-        "point": [
-          1,
-          0,
-          1
-        ],
-        "overmap": "sgn_pl_nghia_trang_10_z1_north"
-      },
-      {
-        "point": [
-          0,
-          1,
-          1
-        ],
-        "overmap": "sgn_pl_nghia_trang_01_z1_north"
-      },
-      {
-        "point": [
-          1,
-          1,
-          1
-        ],
-        "overmap": "sgn_pl_nghia_trang_11_z1_north"
-      }
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_pl_nghia_trang_00_north" },
+      { "point": [ 1, 0, 0 ], "overmap": "sgn_pl_nghia_trang_10_north" },
+      { "point": [ 0, 1, 0 ], "overmap": "sgn_pl_nghia_trang_01_north" },
+      { "point": [ 1, 1, 0 ], "overmap": "sgn_pl_nghia_trang_11_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_pl_nghia_trang_00_z1_north" },
+      { "point": [ 1, 0, 1 ], "overmap": "sgn_pl_nghia_trang_10_z1_north" },
+      { "point": [ 0, 1, 1 ], "overmap": "sgn_pl_nghia_trang_01_z1_north" },
+      { "point": [ 1, 1, 1 ], "overmap": "sgn_pl_nghia_trang_11_z1_north" }
     ]
   },
   {
     "type": "city_building",
     "id": "sgn_pl_nha_sach",
-    "locations": [
-      "land"
-    ],
-    "flags": [
-      "SAIGON"
-    ],
-    "city_sizes": [
-      4,
-      -1
-    ],
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
     "overmaps": [
-      {
-        "point": [
-          0,
-          0,
-          0
-        ],
-        "overmap": "sgn_pl_nha_sach_00_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          1
-        ],
-        "overmap": "sgn_pl_nha_sach_00_z1_north"
-      }
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_pl_nha_sach_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_pl_nha_sach_00_z1_north" }
     ]
   },
   {
     "type": "city_building",
     "id": "sgn_pl_xe_may",
-    "locations": [
-      "land"
-    ],
-    "flags": [
-      "SAIGON"
-    ],
-    "city_sizes": [
-      4,
-      -1
-    ],
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
     "overmaps": [
-      {
-        "point": [
-          0,
-          0,
-          0
-        ],
-        "overmap": "sgn_pl_xe_may_00_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          1
-        ],
-        "overmap": "sgn_pl_xe_may_00_z1_north"
-      }
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_pl_xe_may_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_pl_xe_may_00_z1_north" }
     ]
   },
   {
     "type": "city_building",
     "id": "sgn_pl_cong_vien",
-    "locations": [
-      "land"
-    ],
-    "flags": [
-      "SAIGON"
-    ],
-    "city_sizes": [
-      4,
-      -1
-    ],
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
     "overmaps": [
-      {
-        "point": [
-          0,
-          0,
-          0
-        ],
-        "overmap": "sgn_pl_cong_vien_00_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          1
-        ],
-        "overmap": "sgn_pl_cong_vien_00_z1_north"
-      }
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_pl_cong_vien_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_pl_cong_vien_00_z1_north" }
     ]
   },
   {
     "type": "city_building",
     "id": "sgn_pl_cong_vien_ho",
-    "locations": [
-      "land"
-    ],
-    "flags": [
-      "SAIGON"
-    ],
-    "city_sizes": [
-      4,
-      -1
-    ],
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
     "overmaps": [
-      {
-        "point": [
-          0,
-          0,
-          0
-        ],
-        "overmap": "sgn_pl_cong_vien_ho_00_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          1
-        ],
-        "overmap": "sgn_pl_cong_vien_ho_00_z1_north"
-      }
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_pl_cong_vien_ho_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_pl_cong_vien_ho_00_z1_north" }
     ]
   },
   {
     "type": "city_building",
     "id": "sgn_pl_cong_vien_the_duc",
-    "locations": [
-      "land"
-    ],
-    "flags": [
-      "SAIGON"
-    ],
-    "city_sizes": [
-      4,
-      -1
-    ],
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
     "overmaps": [
-      {
-        "point": [
-          0,
-          0,
-          0
-        ],
-        "overmap": "sgn_pl_cong_vien_the_duc_00_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          1
-        ],
-        "overmap": "sgn_pl_cong_vien_the_duc_00_z1_north"
-      }
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_pl_cong_vien_the_duc_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_pl_cong_vien_the_duc_00_z1_north" }
     ]
   },
   {
     "type": "city_building",
     "id": "sgn_pl_kho",
-    "locations": [
-      "land"
-    ],
-    "flags": [
-      "SAIGON"
-    ],
-    "city_sizes": [
-      4,
-      -1
-    ],
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
     "overmaps": [
-      {
-        "point": [
-          0,
-          0,
-          0
-        ],
-        "overmap": "sgn_pl_kho_00_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          1
-        ],
-        "overmap": "sgn_pl_kho_00_z1_north"
-      }
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_pl_kho_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_pl_kho_00_z1_north" }
     ]
   },
   {
     "type": "city_building",
     "id": "sgn_pl_kho_cang",
-    "locations": [
-      "land"
-    ],
-    "flags": [
-      "SAIGON"
-    ],
-    "city_sizes": [
-      4,
-      -1
-    ],
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "city_sizes": [ 4, -1 ],
     "overmaps": [
-      {
-        "point": [
-          0,
-          0,
-          0
-        ],
-        "overmap": "sgn_pl_kho_cang_00_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          1
-        ],
-        "overmap": "sgn_pl_kho_cang_00_z1_north"
-      }
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_pl_kho_cang_00_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_pl_kho_cang_00_z1_north" }
     ]
   }
 ]

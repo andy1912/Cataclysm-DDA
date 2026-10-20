@@ -333,7 +333,9 @@ TEST_CASE( "saigon_xe_lam_spawns_dry", "[saigon][vehicle]" )
         return;
     }
     // whatever fuel the spawner asks for (random, none, full), the abandoned xe lam's tank is dry
-    for( const int fuel : { -1, 0, 50, 100 } ) {
+    for( const int fuel : {
+             -1, 0, 50, 100
+             } ) {
         CAPTURE( fuel );
         clear_scene( ter_id( "t_pavement" ) );
         map &here = get_map();

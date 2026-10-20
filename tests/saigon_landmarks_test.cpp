@@ -213,7 +213,9 @@ TEST_CASE( "saigon_zoo_animals", "[mapgen][saigon]" )
                     smallmap tm;
                     tm.generate( pos, calendar::turn, true, true );
                     const tripoint_abs_sm origin = project_to<coords::sm>( pos );
-                    for( const point &d : { point( 0, 0 ), point( 1, 0 ), point( 0, 1 ), point( 1, 1 ) } ) {
+                    for( const point &d : {
+                             point( 0, 0 ), point( 1, 0 ), point( 0, 1 ), point( 1, 1 )
+                         } ) {
                         submap *sub = MAPBUFFER.lookup_submap( origin + tripoint( d, 0 ) );
                         if( sub != nullptr ) {
                             for( const spawn_point &sp : sub->spawns ) {

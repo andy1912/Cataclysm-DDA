@@ -58,7 +58,8 @@
     "id": "sgn_mall_fashion",
     "subtype": "distribution",
     "//": "L3 Diamond Plaza boutiques: tropical city fashion of 2004, not dda's greatcoats and top hats.",
-    "items": [ { "item": "sgn_dep_quai_hau", "prob": 10 }, 
+    "items": [
+      { "item": "sgn_dep_quai_hau", "prob": 10 },
       { "item": "sgn_ao_dai_mau", "prob": 15 },
       { "item": "sgn_ao_dai_trang", "prob": 8 },
       { "item": "sgn_ao_thun", "prob": 25 },

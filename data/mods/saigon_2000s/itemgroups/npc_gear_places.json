@@ -28,10 +28,7 @@
     "id": "sgn_npc_monk_weapon",
     "//": "N3: a monk carries no weapon; the walking staff is the most he owns.",
     "subtype": "distribution",
-    "entries": [
-      { "item": "stick", "prob": 40 },
-      { "item": "null", "prob": 60 }
-    ]
+    "entries": [ { "item": "stick", "prob": 40 }, { "item": "null", "prob": 60 } ]
   },
   {
     "type": "item_group",
@@ -99,8 +96,13 @@
     "//": "N3: an UBND or ward-office clerk.  The white shirt is the office uniform; the áo dài is for the desk of the day.",
     "subtype": "collection",
     "entries": [
-      { "distribution": [ { "item": "sgn_ao_trang_hoc_sinh", "prob": 50 }, { "item": "sgn_ao_dai_trang", "prob": 30 },
-                         { "item": "sgn_ao_thun", "prob": 20 } ] },
+      {
+        "distribution": [
+          { "item": "sgn_ao_trang_hoc_sinh", "prob": 50 },
+          { "item": "sgn_ao_dai_trang", "prob": 30 },
+          { "item": "sgn_ao_thun", "prob": 20 }
+        ]
+      },
       { "distribution": [ { "item": "sgn_quan_tay", "prob": 80 }, { "item": "pants", "prob": 20 } ] },
       { "distribution": [ { "item": "sgn_dep_lao", "prob": 60 }, { "item": "sneakers", "prob": 40 } ] }
     ]
@@ -250,8 +252,13 @@
     "//": "N3: a counter in a nhà sách, a Co.op Mart or a tiệm vàng.",
     "subtype": "collection",
     "entries": [
-      { "distribution": [ { "item": "sgn_ao_thun", "prob": 60 }, { "item": "sgn_ao_ba_ba", "prob": 20 },
-                         { "item": "sgn_ao_dai_mau", "prob": 20 } ] },
+      {
+        "distribution": [
+          { "item": "sgn_ao_thun", "prob": 60 },
+          { "item": "sgn_ao_ba_ba", "prob": 20 },
+          { "item": "sgn_ao_dai_mau", "prob": 20 }
+        ]
+      },
       { "distribution": [ { "item": "sgn_quan_tay", "prob": 70 }, { "item": "pants", "prob": 30 } ] },
       { "distribution": [ { "item": "sgn_dep_lao", "prob": 50 }, { "item": "sneakers", "prob": 50 } ] },
       { "item": "sgn_non_ket", "prob": 30 }
@@ -275,11 +282,7 @@
     "type": "item_group",
     "id": "sgn_npc_shopkeeper_weapon",
     "subtype": "distribution",
-    "entries": [
-      { "item": "sgn_dao_rua", "prob": 25 },
-      { "item": "knife_folding", "prob": 25 },
-      { "item": "null", "prob": 50 }
-    ]
+    "entries": [ { "item": "sgn_dao_rua", "prob": 25 }, { "item": "knife_folding", "prob": 25 }, { "item": "null", "prob": 50 } ]
   },
   {
     "type": "item_group",
@@ -375,11 +378,7 @@
     "type": "item_group",
     "id": "sgn_npc_mechanic_weapon",
     "subtype": "distribution",
-    "entries": [
-      { "item": "sgn_xa_beng", "prob": 40 },
-      { "item": "wrench", "prob": 40 },
-      { "item": "sgn_dao_rua", "prob": 20 }
-    ]
+    "entries": [ { "item": "sgn_xa_beng", "prob": 40 }, { "item": "wrench", "prob": 40 }, { "item": "sgn_dao_rua", "prob": 20 } ]
   },
   {
     "type": "item_group",
@@ -410,10 +409,7 @@
     "type": "item_group",
     "id": "sgn_npc_petrol_attendant_weapon",
     "subtype": "distribution",
-    "entries": [
-      { "item": "sgn_khoa_chu_u", "prob": 40 },
-      { "item": "null", "prob": 60 }
-    ]
+    "entries": [ { "item": "sgn_khoa_chu_u", "prob": 40 }, { "item": "null", "prob": 60 } ]
   },
   {
     "type": "item_group",
@@ -444,11 +440,7 @@
     "type": "item_group",
     "id": "sgn_npc_caretaker_weapon",
     "subtype": "distribution",
-    "entries": [
-      { "item": "sgn_choi_cha", "prob": 40 },
-      { "item": "stick", "prob": 30 },
-      { "item": "null", "prob": 30 }
-    ]
+    "entries": [ { "item": "sgn_choi_cha", "prob": 40 }, { "item": "stick", "prob": 30 }, { "item": "null", "prob": 30 } ]
   },
   {
     "type": "item_group",
@@ -459,8 +451,9 @@
       { "distribution": [ { "item": "sgn_ao_ba_ba", "prob": 70 }, { "item": "sgn_ao_thun", "prob": 30 } ] },
       { "distribution": [ { "item": "sgn_quan_tay", "prob": 80 }, { "item": "pants", "prob": 20 } ] },
       { "distribution": [ { "item": "sgn_dep_lao", "prob": 60 }, { "item": "sgn_dep_to_ong", "prob": 40 } ] },
-      { "distribution": [ { "item": "sgn_non_la", "prob": 50 }, { "item": "sgn_non_ket", "prob": 30 },
-                         { "item": "null", "prob": 20 } ] }
+      {
+        "distribution": [ { "item": "sgn_non_la", "prob": 50 }, { "item": "sgn_non_ket", "prob": 30 }, { "item": "null", "prob": 20 } ]
+      }
     ]
   },
   {
@@ -481,10 +474,7 @@
     "type": "item_group",
     "id": "sgn_npc_park_elder_weapon",
     "subtype": "distribution",
-    "entries": [
-      { "item": "cane", "prob": 40 },
-      { "item": "null", "prob": 60 }
-    ]
+    "entries": [ { "item": "cane", "prob": 40 }, { "item": "null", "prob": 60 } ]
   },
   {
     "type": "item_group",
@@ -517,11 +507,7 @@
     "type": "item_group",
     "id": "sgn_npc_transport_clerk_weapon",
     "subtype": "distribution",
-    "entries": [
-      { "item": "sgn_khoa_chu_u", "prob": 30 },
-      { "item": "baton", "prob": 30 },
-      { "item": "null", "prob": 40 }
-    ]
+    "entries": [ { "item": "sgn_khoa_chu_u", "prob": 30 }, { "item": "baton", "prob": 30 }, { "item": "null", "prob": 40 } ]
   },
   {
     "type": "item_group",
@@ -553,10 +539,7 @@
     "type": "item_group",
     "id": "sgn_npc_office_worker_weapon",
     "subtype": "distribution",
-    "entries": [
-      { "item": "sgn_dao_rua", "prob": 20 },
-      { "item": "null", "prob": 80 }
-    ]
+    "entries": [ { "item": "sgn_dao_rua", "prob": 20 }, { "item": "null", "prob": 80 } ]
   },
   {
     "type": "item_group",
@@ -590,11 +573,7 @@
     "type": "item_group",
     "id": "sgn_npc_dock_worker_weapon",
     "subtype": "distribution",
-    "entries": [
-      { "item": "sgn_dao_rua", "prob": 50 },
-      { "item": "pipe", "prob": 30 },
-      { "item": "sgn_xa_beng", "prob": 20 }
-    ]
+    "entries": [ { "item": "sgn_dao_rua", "prob": 50 }, { "item": "pipe", "prob": 30 }, { "item": "sgn_xa_beng", "prob": 20 } ]
   },
   {
     "type": "item_group",
@@ -625,11 +604,7 @@
     "type": "item_group",
     "id": "sgn_npc_backpacker_weapon",
     "subtype": "distribution",
-    "entries": [
-      { "item": "knife_folding", "prob": 40 },
-      { "item": "sgn_dao_rua", "prob": 20 },
-      { "item": "null", "prob": 40 }
-    ]
+    "entries": [ { "item": "knife_folding", "prob": 40 }, { "item": "sgn_dao_rua", "prob": 20 }, { "item": "null", "prob": 40 } ]
   },
   {
     "type": "item_group",
@@ -662,11 +637,7 @@
     "type": "item_group",
     "id": "sgn_npc_fisherman_weapon",
     "subtype": "distribution",
-    "entries": [
-      { "item": "sgn_dao_rua", "prob": 60 },
-      { "item": "stick", "prob": 20 },
-      { "item": "null", "prob": 20 }
-    ]
+    "entries": [ { "item": "sgn_dao_rua", "prob": 60 }, { "item": "stick", "prob": 20 }, { "item": "null", "prob": 20 } ]
   },
   {
     "type": "item_group",
@@ -701,11 +672,7 @@
     "id": "sgn_npc_veteran_weapon",
     "//": "N4 decides this one: no sidearm.  The war ended thirty years ago and what he still owns is a 1975 service knife and a length of pipe, which is what he has always had.  The pistol belongs to the công an, and only to the công an.",
     "subtype": "distribution",
-    "entries": [
-      { "item": "sgn_dao_rua", "prob": 50 },
-      { "item": "pipe", "prob": 30 },
-      { "item": "null", "prob": 20 }
-    ]
+    "entries": [ { "item": "sgn_dao_rua", "prob": 50 }, { "item": "pipe", "prob": 30 }, { "item": "null", "prob": 20 } ]
   },
   {
     "type": "item_group",
@@ -738,9 +705,6 @@
     "type": "item_group",
     "id": "sgn_npc_student_weapon",
     "subtype": "distribution",
-    "entries": [
-      { "item": "sgn_dao_rua", "prob": 20 },
-      { "item": "null", "prob": 80 }
-    ]
+    "entries": [ { "item": "sgn_dao_rua", "prob": 20 }, { "item": "null", "prob": 80 } ]
   }
 ]

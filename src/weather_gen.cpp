@@ -237,9 +237,9 @@ w_point weather_generator::get_weather( const tripoint_abs_ms &location, const t
     } else {
         H = std::min( 100., std::max( 0.,
                                       base_humidity + mod_h + 100 * (
-                                              .15 * seasonality +
-                                              raw_noise_4d( x, y, z, modSEED + 101 ) *
-                                              .2 * ( -seasonality + 2 ) ) ) );
+                                          .15 * seasonality +
+                                          raw_noise_4d( x, y, z, modSEED + 101 ) *
+                                          .2 * ( -seasonality + 2 ) ) ) );
     }
 
     // Pressure

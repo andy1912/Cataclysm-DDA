@@ -32,7 +32,9 @@ TEST_CASE( "saigon_delta_wildlife", "[saigon]" )
         "mon_rattlesnake", "mon_fish_rainbow_trout", "mon_fish_salmon", "mon_fish_walleye", "mon_fish_pike",
         "mon_fish_perch", "mon_fish_sbass", "mon_fish_muskellunge", "mon_leo_frog", "mon_peeper_frog"
     };
-    for( const char *group : { "GROUP_FOREST", "GROUP_SWAMP", "GROUP_RIVER", "GROUP_FISH" } ) {
+    for( const char *group : {
+             "GROUP_FOREST", "GROUP_SWAMP", "GROUP_RIVER", "GROUP_FISH"
+         } ) {
         CAPTURE( group );
         const std::set<std::string> animals = expand( group );
         CHECK_FALSE( animals.empty() );
@@ -53,12 +55,15 @@ TEST_CASE( "saigon_delta_wildlife", "[saigon]" )
     CHECK( mtype_id( "mon_fish_bullhead" )->nname() == "walking catfish" );
     // the zoo's animals do not breed into the wild (an elephant copied from dda's moose had moose
     // calves, the python rattlesnakes, the crocodile snapping turtles, the tiger cougar kittens)
-    for( const char *zoo : { "sgn_mon_voi", "sgn_mon_tran", "sgn_mon_ca_sau", "mon_tiger", "mon_bear", "mon_deer" } ) {
+    for( const char *zoo : {
+             "sgn_mon_voi", "sgn_mon_tran", "sgn_mon_ca_sau", "mon_tiger", "mon_bear", "mon_deer"
+         } ) {
         CAPTURE( zoo );
         CHECK( mtype_id( zoo )->has_flag( mon_flag_NO_BREED ) );
     }
     // a cobra's young grow into cobras, not timber rattlesnakes
     const mtype &young = *mtype_id( "sgn_mon_ran_ho_mang_con" );
     CHECK( young.upgrade_into == mtype_id( "sgn_mon_ran_ho_mang" ) );
-    CHECK( mtype_id( "sgn_mon_ran_ho_mang" )->baby_type.baby_monster == mtype_id( "sgn_mon_ran_ho_mang_con" ) );
+    CHECK( mtype_id( "sgn_mon_ran_ho_mang" )->baby_type.baby_monster ==
+           mtype_id( "sgn_mon_ran_ho_mang_con" ) );
 }

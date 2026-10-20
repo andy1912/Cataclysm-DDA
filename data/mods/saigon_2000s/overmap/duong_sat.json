@@ -8,8 +8,6 @@
     "looks_like": "subway",
     "see_cost": "none",
     "travel_cost_type": "road",
-    "flags": [
-      "LINEAR"
-    ]
+    "flags": [ "LINEAR" ]
   }
 ]

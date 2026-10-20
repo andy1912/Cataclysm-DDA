@@ -20,7 +20,13 @@
     "coverage": 50,
     "required_str": -1,
     "flags": [ "TRANSPARENT", "NOITEM", "BLOCKSDOOR" ],
-    "bash": { "str_min": 200, "str_max": 400, "sound": "CLANG!", "sound_fail": "clang.", "items": [ { "item": "scrap", "count": [ 20, 60 ] }, { "item": "pipe", "count": [ 4, 12 ] } ] }
+    "bash": {
+      "str_min": 200,
+      "str_max": 400,
+      "sound": "CLANG!",
+      "sound_fail": "clang.",
+      "items": [ { "item": "scrap", "count": [ 20, 60 ] }, { "item": "pipe", "count": [ 4, 12 ] } ]
+    }
   },
   {
     "type": "furniture",
@@ -61,7 +67,13 @@
     "coverage": 40,
     "required_str": 10,
     "flags": [ "TRANSPARENT", "PLACE_ITEM", "BLOCKSDOOR" ],
-    "bash": { "str_min": 6, "str_max": 30, "sound": "crack!", "sound_fail": "thunk.", "items": [ { "item": "plastic_chunk", "count": [ 5, 15 ] } ] }
+    "bash": {
+      "str_min": 6,
+      "str_max": 30,
+      "sound": "crack!",
+      "sound_fail": "thunk.",
+      "items": [ { "item": "plastic_chunk", "count": [ 5, 15 ] } ]
+    }
   },
   {
     "type": "vehicle_group",

@@ -88,7 +88,7 @@ static void dump_scene( const char *out_path, const int width, const int height 
             const auto ter_at = [&]( const tripoint_bub_ms & q ) -> const ter_t & {
                 return here.ter( q ).obj();
             };
-            const auto furn_at = [&]( const tripoint_bub_ms & q ) -> const furn_t & {
+            const auto furn_at = [&]( const tripoint_bub_ms & q ) -> decltype( here.furn( q ).obj() ) {
                 return here.furn( q ).obj();
             };
             looks_like[ter.id.str()] = ter.looks_like;
@@ -275,7 +275,8 @@ TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
             overmap_buffer.get( where + point( ox, oy ) );
         }
     }
-    const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::steady_clock::now() - t0 );
+    const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>
+                    ( std::chrono::steady_clock::now() - t0 );
     WARN( span_x * span_y << " overmap(s) generated in " << ms.count() << " ms" );
     const tripoint_abs_omt corner( project_to<coords::omt>( where ), 0 );
     const int W = OMAPX * span_x;
@@ -301,7 +302,8 @@ TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
                         continue;
                     }
                     const oter_type_t &other = overmap_buffer.ter( corner + q )->get_type_id().obj();
-                    if( type.has_connections() ? type.connects_to( other.id.id() ) : other.has_flag( oter_flags::water ) ) {
+                    if( type.has_connections() ? type.connects_to( other.id.id() ) : other.has_flag(
+                            oter_flags::water ) ) {
                         conn += 1 << i;
                     }
                 }

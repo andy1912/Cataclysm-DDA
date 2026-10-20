@@ -331,7 +331,9 @@ TEST_CASE( "saigon_vn_food_recipes_craftable", "[saigon][food]" )
                      r.get_component_filter() ) );
 
         // the first and the last alternative of every component group each make it
-        for( const bool last : { false, true } ) {
+        for( const bool last : {
+                 false, true
+             } ) {
             CAPTURE( last );
             prep_cook( r );
             stock_for( r, last );
@@ -344,7 +346,9 @@ TEST_CASE( "saigon_vn_food_recipes_craftable", "[saigon][food]" )
         if( item( r.result() ).made_of( phase_id::LIQUID ) ) {
             continue;
         }
-        for( const bool last : { false, true } ) {
+        for( const bool last : {
+                 false, true
+             } ) {
             CAPTURE( last );
             prep_cook( r );
             stock_for( r, last );

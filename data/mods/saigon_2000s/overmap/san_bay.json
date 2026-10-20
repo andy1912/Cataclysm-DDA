@@ -8,9 +8,7 @@
     "looks_like": "road",
     "see_cost": "none",
     "travel_cost_type": "road",
-    "flags": [
-      "NO_ROTATE"
-    ]
+    "flags": [ "NO_ROTATE" ]
   },
   {
     "type": "overmap_terrain",
@@ -21,9 +19,7 @@
     "looks_like": "sgn_sb_runway",
     "see_cost": "none",
     "travel_cost_type": "road",
-    "flags": [
-      "NO_ROTATE"
-    ]
+    "flags": [ "NO_ROTATE" ]
   },
   {
     "type": "overmap_terrain",
@@ -34,8 +30,6 @@
     "looks_like": "sgn_sb_runway",
     "see_cost": "none",
     "travel_cost_type": "road",
-    "flags": [
-      "NO_ROTATE"
-    ]
+    "flags": [ "NO_ROTATE" ]
   }
 ]

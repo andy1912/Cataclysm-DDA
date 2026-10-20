@@ -185,7 +185,9 @@ TEST_CASE( "saigon_scenarios_and_starts", "[saigon][saigon_content]" )
         return;
     }
     REQUIRE( s2009.is_valid() );
-    for( const string_id<scenario> &sid : { s2004, s2009 } ) {
+    for( const string_id<scenario> &sid : {
+             s2004, s2009
+         } ) {
         const scenario &scen = sid.obj();
         CAPTURE( sid.str() );
         // offered in character creation, with the intro that sets the scene
@@ -239,7 +241,9 @@ TEST_CASE( "saigon_profession_kits", "[saigon][saigon_content]" )
         return;
     }
     std::set<string_id<profession>> profs;
-    for( const char *s : { "sgn_saigon_2004", "sgn_saigon_2009" } ) {
+    for( const char *s : {
+             "sgn_saigon_2004", "sgn_saigon_2009"
+         } ) {
         for( const string_id<profession> &p : string_id<scenario>( s )->permitted_professions() ) {
             profs.insert( p );
         }
@@ -252,10 +256,14 @@ TEST_CASE( "saigon_profession_kits", "[saigon][saigon_content]" )
         }
     }
     CHECK( hobbies.size() >= 10 );
-    for( const bool hobby : { false, true } ) {
+    for( const bool hobby : {
+             false, true
+         } ) {
         for( const string_id<profession> &p : hobby ? hobbies : profs ) {
             CAPTURE( p.str() );
-            for( const bool male : { true, false } ) {
+            for( const bool male : {
+                     true, false
+                 } ) {
                 CAPTURE( male );
                 const std::list<item> kit = p->items( male, {} );
                 int saigon = 0;
@@ -346,7 +354,8 @@ TEST_CASE( "saigon_recipes_learnable_and_makeable", "[saigon][saigon_content]" )
             continue;
         }
         // learned somehow: by skill, from a book, from a profession
-        const bool learnable = recipe_dict.all_autolearn().count( &r ) || !r.booksets.empty() || granted.count( r.ident() ) ||
+        const bool learnable = recipe_dict.all_autolearn().count( &r ) || !r.booksets.empty() ||
+                               granted.count( r.ident() ) ||
                                r.never_learn;
         CHECK( learnable );
         // every book that teaches it is a book, and one a player can find
@@ -522,7 +531,9 @@ static std::set<point> reachable_from_edge( map &m, int z )
                m.furn( p ).obj().has_flag( ter_furn_flag::TFLAG_DOOR );
     };
     for( int i = 0; i < SEEX * 2; i++ ) {
-        for( const point &q : { point( i, 0 ), point( i, SEEY * 2 - 1 ), point( 0, i ), point( SEEX * 2 - 1, i ) } ) {
+        for( const point &q : {
+                 point( i, 0 ), point( i, SEEY * 2 - 1 ), point( 0, i ), point( SEEX * 2 - 1, i )
+             } ) {
             if( !seen.count( q ) && open( q ) ) {
                 seen.insert( q );
                 todo.push( q );
@@ -547,7 +558,8 @@ static std::set<point> reachable_from_edge( map &m, int z )
 TEST_CASE( "saigon_places_enterable_and_roofed", "[mapgen][saigon][saigon_content]" )
 {
     const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
-    if( !oter_str_id( "sgn_vp_bia_hoi_00_north" ).is_valid() || !file_exist( file.get_unrelative_path() ) ) {
+    if( !oter_str_id( "sgn_vp_bia_hoi_00_north" ).is_valid() ||
+        !file_exist( file.get_unrelative_path() ) ) {
         WARN( "saigon_2000s or its real map is not present; skipping" );
         return;
     }

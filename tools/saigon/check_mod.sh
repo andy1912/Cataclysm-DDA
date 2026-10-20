@@ -100,6 +100,21 @@ PY
         head -5 "$ud/check_playtest.txt"
         fail=1
     fi
+    # CI's "JSON style check" formats every file in data/: the generators write unformatted JSON,
+    # so a regenerated file must be run through tools/format/json_formatter.cgi before committing
+    jsonbad=""
+    jtmp=$(mktemp -d)
+    while IFS= read -r f; do
+        cp "$f" "$jtmp/x.json"
+        tools/format/json_formatter.cgi "$jtmp/x.json" > /dev/null 2>&1
+        cmp -s "$f" "$jtmp/x.json" || jsonbad="$jsonbad $f"
+    done < <(find data/mods/saigon_2000s data/mods/saigon_playtest -name '*.json')
+    rm -rf "$jtmp"
+    if [ -n "$jsonbad" ]; then
+        echo "FAIL: JSON not formatted (run tools/format/json_formatter.cgi on each):"
+        printf '  %s\n' $jsonbad | head -20
+        fail=1
+    fi
     # the real map must be walkable: straight, ramped bridges and a way into every hẻm network
     if ! python3 tools/saigon/realmap/check_realmap.py > "$ud/check_realmap.txt" 2>&1; then
         echo "FAIL: real map (tools/saigon/realmap/check_realmap.py):"

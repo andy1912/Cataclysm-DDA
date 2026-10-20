@@ -90,7 +90,7 @@ static std::string head_of( const std::string &text )
 static bool said_from( const std::string &category )
 {
     const std::vector<std::pair<snippet_id, std::string>> snips =
-        SNIPPET.get_snippets_by_category( category );
+                SNIPPET.get_snippets_by_category( category );
     REQUIRE( !snips.empty() );
     for( const std::string &msg : all_messages() ) {
         for( const std::pair<snippet_id, std::string> &s : snips ) {

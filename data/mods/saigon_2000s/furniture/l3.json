@@ -43,7 +43,11 @@
       "str_max": 40,
       "sound": "clatter!",
       "sound_fail": "clang.",
-      "items": [ { "item": "scrap", "count": [ 2, 5 ] }, { "item": "plastic_chunk", "count": [ 3, 10 ] }, { "item": "cable", "count": [ 2, 8 ] } ]
+      "items": [
+        { "item": "scrap", "count": [ 2, 5 ] },
+        { "item": "plastic_chunk", "count": [ 3, 10 ] },
+        { "item": "cable", "count": [ 2, 8 ] }
+      ]
     }
   },
   {

@@ -31,6 +31,17 @@ Reproduce any section with `git diff $(git merge-base HEAD upstream/master) HEAD
 - **Test:** `flake8` (the CI job).
 - **Marker:** the comment in the file.
 
+## .github/workflows/codeql-analysis.yml
+
+- **What:** the two CodeQL steps use `github/codeql-action/init` and `.../analyze`, pinned at the
+  v3 commit `ce5e7eeac396d720fe2d802714996c8ce561e311`.
+- **Why:** upstream's change "Pin all GitHub Actions to commit SHAs" (1d3f775bbd) dropped the
+  `/init` and `/analyze` sub-paths. The bare `github/codeql-action` is a stub that exits 1, so
+  all three "Analyze" jobs failed in 15 s. CodeQL Action v2 is also retired. This is an upstream
+  bug, still present at upstream/master.
+- **Test:** the PR's "Analyze (cpp/javascript/python)" jobs.
+- **Marker:** the comment above the init step.
+
 ## src/display_buffer_coords.h (new file)
 
 - **What:** `display_buffer_from_render()` maps a mouse position in render (drawable pixel)
@@ -275,6 +286,7 @@ repo root.
 
 ```allowed-engine-files
 .flake8
+.github/workflows/codeql-analysis.yml
 src/display_buffer_coords.h
 src/do_turn.cpp
 src/game.cpp

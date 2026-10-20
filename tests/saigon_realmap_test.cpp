@@ -50,12 +50,14 @@ TEST_CASE( "saigon_realmap_loads_every_layer", "[overmap][saigon]" )
     clear_overmaps();
     const cata_path fixture = PATH_INFO::moddir() / "saigon_2000s/realmap_test/overmap_40_40.omap.gz";
     REQUIRE( file_exist( fixture.get_unrelative_path() ) );
-    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_test" ) ) );
+    get_globals().set_global_value( "overmap_pregenerated_path",
+                                    diag_value( std::string( "saigon_2000s/realmap_test" ) ) );
     // overmap (40, 40): no other test saves it, and a saved overmap would load before the file
     overmap &om = overmap_buffer.get( point_abs_om( 40, 40 ) );
     for( int z = 0; z <= 5; z++ ) {
         CAPTURE( z );
-        CHECK( om.ter( tripoint_om_omt( 90, 89, z ) ).id().str() == "sgn_nh_solo_z" + std::to_string( z ) + "_south" );
+        CHECK( om.ter( tripoint_om_omt( 90, 89,
+                                        z ) ).id().str() == "sgn_nh_solo_z" + std::to_string( z ) + "_south" );
     }
     CHECK( om.ter( tripoint_om_omt( 85, 90, 0 ) ).id().str().rfind( "road", 0 ) == 0 );
     // "final": no procedural city, river, lake or forest was added on top of the file
@@ -119,7 +121,8 @@ TEST_CASE( "saigon_realmap_reads_dda_single_layer_maps", "[overmap][saigon]" )
     int same = 0;
     for( int y = 0; y < OMAPY; y++ ) {
         for( int x = 0; x < OMAPX; x++ ) {
-            same += family( om.ter( tripoint_om_omt( x, y, 0 ) ).id().str() ) == family( expected[y * OMAPX + x] );
+            same += family( om.ter( tripoint_om_omt( x, y,
+                                    0 ) ).id().str() ) == family( expected[y * OMAPX + x] );
         }
     }
     CAPTURE( same );
@@ -166,7 +169,8 @@ static void remove_saved_realmap_overmaps()
 TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
 {
     const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
-    if( !oter_str_id( "sgn_nh_solo_z5_south" ).is_valid() || !file_exist( file.get_unrelative_path() ) ) {
+    if( !oter_str_id( "sgn_nh_solo_z5_south" ).is_valid() ||
+        !file_exist( file.get_unrelative_path() ) ) {
         WARN( "saigon_2000s or its real map is not present; skipping" );
         return;
     }
@@ -174,7 +178,8 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     // loaded instead of the pregenerated file
     remove_saved_origin_overmap();
     // choose the map first: clearing places the player at the origin, which loads overmap (0, 0)
-    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
+    get_globals().set_global_value( "overmap_pregenerated_path",
+                                    diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
     clear_avatar();
     clear_map();
     clear_overmaps();
@@ -185,7 +190,8 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     for( int x = 0; x < OMAPX; x++ ) {
         for( int y = 0; y < OMAPY; y++ ) {
             const std::string id = om.ter( tripoint_om_omt( x, y, 0 ) ).id().str();
-            const std::string kind = id.rfind( "road", 0 ) == 0 ? "road" : id.rfind( "bridge", 0 ) == 0 ? "bridge" :
+            const std::string kind = id.rfind( "road", 0 ) == 0 ? "road" : id.rfind( "bridge",
+                                     0 ) == 0 ? "bridge" :
                                      id.rfind( "lake", 0 ) == 0 ? "water" : id.rfind( "sgn_nh_solo", 0 ) == 0 ? "nha_ong" :
                                      id.rfind( "sgn_hem", 0 ) == 0 ? "hem" : id.rfind( "sgn_chua", 0 ) == 0 ? "pagoda" :
                                      id.rfind( "sgn_truong", 0 ) == 0 ? "school" : id.rfind( "sgn_pl_cay_xang", 0 ) == 0 ? "fuel" :
@@ -205,7 +211,8 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
             decks += om.ter( tripoint_om_omt( x, y, 1 ) ).id().str().rfind( "bridge_road", 0 ) == 0;
         }
     }
-    CAPTURE( count["road"], count["bridge"], count["water"], count["nha_ong"], count["hem"], count["field"], decks );
+    CAPTURE( count["road"], count["bridge"], count["water"], count["nha_ong"], count["hem"],
+             count["field"], decks );
     CHECK( count["road"] > 3000 );
     CHECK( count["nha_ong"] > 3000 );
     CHECK( count["water"] > 200 );
@@ -264,27 +271,34 @@ TEST_CASE( "saigon_realmap_2009_loads", "[saigon]" )
     int market = 0;
     for( int dx = -5; dx <= 5; dx++ ) {
         for( int dy = -5; dy <= 5; dy++ ) {
-            market += overmap_buffer.ter( ben_thanh + point( dx, dy ) ).id().str().rfind( "sgn_lm_ben_thanh", 0 ) == 0;
+            market += overmap_buffer.ter( ben_thanh + point( dx, dy ) ).id().str().rfind( "sgn_lm_ben_thanh",
+                      0 ) == 0;
         }
     }
     CHECK( market == 9 );
     // a new game looks for its start from the world origin outwards: it starts in central Saigon
-    const tripoint_abs_omt start = start_location_id( "sgn_sloc_nha_ong" )->find_player_initial_location(
-                                       point_abs_om() ).first;
+    const tripoint_abs_omt start =
+        start_location_id( "sgn_sloc_nha_ong" )->find_player_initial_location(
+            point_abs_om() ).first;
     CAPTURE( start.to_string() );
     CHECK( project_to<coords::om>( start.xy() ) == point_abs_om() );
     // the 2009 scenario's other starts are on the real map too: an inner hẻm, Ga Sài Gòn's hall,
     // Tân Sơn Nhất's departures hall
-    for( const char *loc : { "sgn_sloc_hem", "sgn_sloc_ga_sai_gon", "sgn_sloc_san_bay" } ) {
+    for( const char *loc : {
+             "sgn_sloc_hem", "sgn_sloc_ga_sai_gon", "sgn_sloc_san_bay"
+         } ) {
         CAPTURE( loc );
-        CHECK_FALSE( start_location_id( loc )->find_player_initial_location( point_abs_om() ).first.is_invalid() );
+        CHECK_FALSE( start_location_id( loc )->find_player_initial_location(
+                         point_abs_om() ).first.is_invalid() );
     }
     // and it reveals a wide neighbourhood at the start (a getter that returned bool cut every
     // scenario's radius to 1)
     CHECK( string_id<scenario>( "sgn_saigon_2009" )->get_distance_initial_visibility() == 40 );
     // and character creation offers it: the mod's scenario whitelist hid every scenario it did not
     // name, and it named only Vietmap's
-    for( const char *scen : { "sgn_saigon_2004", "sgn_saigon_2009" } ) {
+    for( const char *scen : {
+             "sgn_saigon_2004", "sgn_saigon_2009"
+         } ) {
         CAPTURE( scen );
         CHECK_FALSE( string_id<scenario>( scen )->scen_is_blacklisted() );
     }
@@ -328,14 +342,18 @@ TEST_CASE( "saigon_realmap_2009_countryside", "[saigon]" )
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
-    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
-    get_globals().set_global_value( "overmap_outside_region", diag_value( std::string( "sgn_saigon_delta" ) ) );
+    get_globals().set_global_value( "overmap_pregenerated_path",
+                                    diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
+    get_globals().set_global_value( "overmap_outside_region",
+                                    diag_value( std::string( "sgn_saigon_delta" ) ) );
     clear_avatar();
     clear_map();
     clear_overmaps();
     CHECK( overmap_buffer.get_overmap_region( tripoint_abs_om( 0, 0, 0 ) ).str() == "sgn_saigon" );
-    CHECK( overmap_buffer.get_overmap_region( tripoint_abs_om( 4, 0, 0 ) ).str() == "sgn_saigon_delta" );
-    CHECK( overmap_buffer.get_overmap_region( tripoint_abs_om( -2, -3, 0 ) ).str() == "sgn_saigon_delta" );
+    CHECK( overmap_buffer.get_overmap_region( tripoint_abs_om( 4, 0,
+            0 ) ).str() == "sgn_saigon_delta" );
+    CHECK( overmap_buffer.get_overmap_region( tripoint_abs_om( -2, -3,
+            0 ) ).str() == "sgn_saigon_delta" );
     // east of Thủ Đức: land with a town or two (not dda's water fill for missing files), not
     // wall-to-wall shophouses
     overmap &om = overmap_buffer.get( point_abs_om( 4, 0 ) );
@@ -373,11 +391,13 @@ static tripoint_bub_ms omt_centre( const tripoint_abs_omt &p )
 TEST_CASE( "saigon_realmap_2009_walkable", "[saigon]" )
 {
     const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
-    if( !oter_str_id( "sgn_hem_block_north" ).is_valid() || !file_exist( file.get_unrelative_path() ) ) {
+    if( !oter_str_id( "sgn_hem_block_north" ).is_valid() ||
+        !file_exist( file.get_unrelative_path() ) ) {
         WARN( "saigon_2000s or its real map is not present; skipping" );
         return;
     }
-    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
+    get_globals().set_global_value( "overmap_pregenerated_path",
+                                    diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
     clear_avatar();
     clear_map();
     clear_overmaps();
@@ -406,7 +426,9 @@ TEST_CASE( "saigon_realmap_2009_walkable", "[saigon]" )
                     if( ter_at( p ).rfind( "bridgehead_ground", 0 ) != 0 ) {
                         continue;
                     }
-                    for( const point &d : { point::east, point::south } ) {
+                    for( const point &d : {
+                             point::east, point::south
+                         } ) {
                         point_om_omt end = p + d;
                         while( ter_at( end ).rfind( "bridge_", 0 ) == 0 ) {
                             end += d;
@@ -428,7 +450,8 @@ TEST_CASE( "saigon_realmap_2009_walkable", "[saigon]" )
         // about 66 tiles each way); walk from the near bank's road to the far bank's road
         const point step( ( bank_b.x() > bank_a.x() ) - ( bank_b.x() < bank_a.x() ),
                           ( bank_b.y() > bank_a.y() ) - ( bank_b.y() < bank_a.y() ) );
-        g->place_player_overmap( tripoint_abs_omt( ( bank_a.x() + bank_b.x() ) / 2, ( bank_a.y() + bank_b.y() ) / 2, 0 ) );
+        g->place_player_overmap( tripoint_abs_omt( ( bank_a.x() + bank_b.x() ) / 2,
+                                 ( bank_a.y() + bank_b.y() ) / 2, 0 ) );
         map &here = get_map();
         avatar &u = get_avatar();
         const tripoint_bub_ms from = omt_centre( bank_a ) + step * 10;
@@ -464,7 +487,8 @@ TEST_CASE( "saigon_realmap_2009_walkable", "[saigon]" )
         avatar &u = get_avatar();
         u.setpos( here, omt_centre( street ) );
         CAPTURE( street.to_string(), inner.to_string() );
-        const std::vector<tripoint_bub_ms> path = here.route( u, pathfinding_target::point( omt_centre( inner ) ) );
+        const std::vector<tripoint_bub_ms> path = here.route( u,
+                pathfinding_target::point( omt_centre( inner ) ) );
         CHECK_FALSE( path.empty() );
     }
     get_globals().remove_global_value( "overmap_pregenerated_path" );
@@ -484,7 +508,8 @@ TEST_CASE( "saigon_realmap_2009_ferry", "[saigon]" )
         WARN( "saigon_2000s or its real map is not present; skipping" );
         return;
     }
-    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
+    get_globals().set_global_value( "overmap_pregenerated_path",
+                                    diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
     clear_avatar();
     clear_map();
     clear_overmaps();
@@ -511,12 +536,15 @@ TEST_CASE( "saigon_realmap_2009_ferry", "[saigon]" )
 TEST_CASE( "saigon_realmap_2009_routes", "[saigon]" )
 {
     const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
-    if( !oter_str_id( "sgn_hem_block_north" ).is_valid() || !file_exist( file.get_unrelative_path() ) ) {
+    if( !oter_str_id( "sgn_hem_block_north" ).is_valid() ||
+        !file_exist( file.get_unrelative_path() ) ) {
         WARN( "saigon_2000s or its real map is not present; skipping" );
         return;
     }
-    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
-    get_globals().set_global_value( "overmap_outside_region", diag_value( std::string( "sgn_saigon_delta" ) ) );
+    get_globals().set_global_value( "overmap_pregenerated_path",
+                                    diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
+    get_globals().set_global_value( "overmap_outside_region",
+                                    diag_value( std::string( "sgn_saigon_delta" ) ) );
     clear_avatar();
     clear_map();
     clear_overmaps();
@@ -562,10 +590,12 @@ TEST_CASE( "saigon_realmap_2009_routes", "[saigon]" )
         REQUIRE_FALSE( to.is_invalid() );
         const auto t0 = std::chrono::steady_clock::now();
         const size_t length = overmap_buffer.get_travel_path( from, to, params ).points.size();
-        const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::steady_clock::now() - t0 ).count();
+        const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>
+                        ( std::chrono::steady_clock::now() - t0 ).count();
         CAPTURE( length );
         CHECK( length > 0 );
-        WARN( "Bến Thành -> " << pl.first << ": " << length << " overmap tiles by road, planned in " << ms << " ms" );
+        WARN( "Bến Thành -> " << pl.first << ": " << length << " overmap tiles by road, planned in " <<
+              ms << " ms" );
     }
     get_globals().remove_global_value( "overmap_pregenerated_path" );
     get_globals().remove_global_value( "overmap_outside_region" );
@@ -699,11 +729,13 @@ TEST_CASE( "saigon_new_game_realmap_2009", "[saigon]" )
 TEST_CASE( "saigon_realmap_2009_fidelity", "[saigon]" )
 {
     const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
-    if( !oter_str_id( "sgn_hem_block_north" ).is_valid() || !file_exist( file.get_unrelative_path() ) ) {
+    if( !oter_str_id( "sgn_hem_block_north" ).is_valid() ||
+        !file_exist( file.get_unrelative_path() ) ) {
         WARN( "saigon_2000s or its real map is not present; skipping" );
         return;
     }
-    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
+    get_globals().set_global_value( "overmap_pregenerated_path",
+                                    diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
     clear_avatar();
     clear_map();
     clear_overmaps();
@@ -745,7 +777,8 @@ TEST_CASE( "saigon_realmap_2009_fidelity", "[saigon]" )
         CAPTURE( lm.first );
         CHECK( near_site( lm.second, lm.first, 4 ) );
     }
-    CHECK( near_site( point_abs_omt( -16, 232 ), "sgn_pl_benh_vien", 4 ) );   // Bệnh viện Chợ Rẫy
+    CHECK( near_site( point_abs_omt( -16, 232 ), "sgn_pl_benh_vien",
+                      4 ) );   // Bệnh viện Chợ Rẫy
     const std::vector<std::pair<std::string, std::vector<point>>> streets = {
         { "Lê Lợi", { { 163, 163 }, { 162, 161 }, { 180, 144 } } },
         { "Nguyễn Huệ", { { 172, 143 }, { 175, 144 }, { 196, 163 } } },
@@ -773,8 +806,10 @@ TEST_CASE( "saigon_realmap_2009_fidelity", "[saigon]" )
             for( size_t i = 0; i + 1 < line.size(); i++ ) {
                 const point a = line[i];
                 const point b = line[i + 1];
-                const double l2 = ( b - a ).x * static_cast<double>( ( b - a ).x ) + ( b - a ).y * static_cast<double>( ( b - a ).y );
-                double t = l2 == 0 ? 0.0 : ( ( p - a ).x * static_cast<double>( ( b - a ).x ) + ( p - a ).y * static_cast<double>( ( b - a ).y ) ) / l2;
+                const double l2 = ( b - a ).x * static_cast<double>( ( b - a ).x ) + ( b - a ).y *
+                                  static_cast<double>( ( b - a ).y );
+                double t = l2 == 0 ? 0.0 : ( ( p - a ).x * static_cast<double>( ( b - a ).x ) +
+                                             ( p - a ).y * static_cast<double>( ( b - a ).y ) ) / l2;
                 t = std::max( 0.0, std::min( 1.0, t ) );
                 const double dx = p.x - ( a.x + t * ( b - a ).x );
                 const double dy = p.y - ( a.y + t * ( b - a ).y );

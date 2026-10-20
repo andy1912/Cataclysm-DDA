@@ -69,7 +69,8 @@ static bool sgn_quick_world()
     }
     get_globals().set_global_value( "overmap_pregenerated_path",
                                     diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
-    get_globals().set_global_value( "overmap_outside_region", diag_value( std::string( "sgn_saigon_delta" ) ) );
+    get_globals().set_global_value( "overmap_outside_region",
+                                    diag_value( std::string( "sgn_saigon_delta" ) ) );
     clear_creatures();
     clear_avatar();
     clear_overmaps();
@@ -147,7 +148,8 @@ TEST_CASE( "saigon_engine_resync_vehicle_lists", "[saigon][saigon_engine]" )
     }
     map &here = get_map();
     const tripoint_bub_ms at = get_avatar().pos_bub() + tripoint( 8, 8, 0 );
-    vehicle *veh = here.add_vehicle( vproto_id( "bicycle" ), at, 0_degrees, 0, veh_spawn_status::UNDAMAGED );
+    vehicle *veh = here.add_vehicle( vproto_id( "bicycle" ), at, 0_degrees, 0,
+                                     veh_spawn_status::UNDAMAGED );
     REQUIRE( veh != nullptr );
     level_cache &ch = const_cast<level_cache &>( here.get_cache_ref( at.z() ) );
     REQUIRE( ch.vehicle_list.count( veh ) == 1 );
@@ -235,9 +237,11 @@ TEST_CASE( "saigon_engine_realmap_edge_road_exits", "[saigon][saigon_engine]" )
             // on the overmap's edge, and the road really leaves across that edge
             bool leaves = false;
             leaves = leaves || ( p.x() == 0 && om.ter( p )->has_connection( om_direction::type::west ) );
-            leaves = leaves || ( p.x() == OMAPX - 1 && om.ter( p )->has_connection( om_direction::type::east ) );
+            leaves = leaves || ( p.x() == OMAPX - 1 &&
+                                 om.ter( p )->has_connection( om_direction::type::east ) );
             leaves = leaves || ( p.y() == 0 && om.ter( p )->has_connection( om_direction::type::north ) );
-            leaves = leaves || ( p.y() == OMAPY - 1 && om.ter( p )->has_connection( om_direction::type::south ) );
+            leaves = leaves || ( p.y() == OMAPY - 1 &&
+                                 om.ter( p )->has_connection( om_direction::type::south ) );
             CHECK( leaves );
             exits++;
         }

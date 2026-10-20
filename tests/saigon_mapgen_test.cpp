@@ -537,13 +537,13 @@ TEST_CASE( "saigon_buildings_have_roofs", "[mapgen][saigon]" )
         { "chua", { "sgn_chua_north", "sgn_chua_roof_north" } },
         {
             "nha_ong", { "sgn_nh_solo_z0_north", "sgn_nh_solo_z1_north", "sgn_nh_solo_z2_north",
-                         "sgn_nh_solo_z3_north", "sgn_nh_solo_z4_north", "sgn_nh_solo_z5_north"
-                       }
+                "sgn_nh_solo_z3_north", "sgn_nh_solo_z4_north", "sgn_nh_solo_z5_north"
+            }
         },
         {
             "chungcu", { "sgn_chungcu_z0_north", "sgn_chungcu_z1_north", "sgn_chungcu_z2_north",
-                         "sgn_chungcu_z3_north", "sgn_chungcu_z4_north", "sgn_chungcu_z5_north"
-                       }
+                "sgn_chungcu_z3_north", "sgn_chungcu_z4_north", "sgn_chungcu_z5_north"
+            }
         },
     };
     int column = 0;
@@ -577,7 +577,9 @@ static std::pair<int, int> count_spawns( const tripoint_abs_omt &pos, int top_z 
     int dormant = 0;
     const tripoint_abs_sm origin = project_to<coords::sm>( pos );
     for( int z = 0; z <= top_z; z++ ) {
-        for( const point &d : { point( 0, 0 ), point( 1, 0 ), point( 0, 1 ), point( 1, 1 ) } ) {
+        for( const point &d : {
+                 point( 0, 0 ), point( 1, 0 ), point( 0, 1 ), point( 1, 1 )
+             } ) {
             submap *sub = MAPBUFFER.lookup_submap( origin + tripoint( d, z ) );
             if( sub == nullptr ) {
                 continue;
@@ -677,7 +679,9 @@ TEST_CASE( "saigon_road_traffic_is_saigon", "[mapgen][vehicle][saigon]" )
             smallmap tm;
             tm.generate( pos, calendar::turn, true, true );
             const tripoint_abs_sm origin = project_to<coords::sm>( pos );
-            for( const point &d : { point( 0, 0 ), point( 1, 0 ), point( 0, 1 ), point( 1, 1 ) } ) {
+            for( const point &d : {
+                     point( 0, 0 ), point( 1, 0 ), point( 0, 1 ), point( 1, 1 )
+                 } ) {
                 submap *sub = MAPBUFFER.lookup_submap( origin + tripoint( d, 0 ) );
                 if( sub == nullptr ) {
                     continue;
@@ -791,7 +795,9 @@ TEST_CASE( "saigon_landmarks_structure", "[mapgen][saigon]" )
         return;
     }
     const ter_str_id open_air( "t_open_air" );
-    for( const std::string id : { "sgn_nha_tho", "sgn_ubnd", "sgn_truong" } ) {
+    for( const std::string id : {
+             "sgn_nha_tho", "sgn_ubnd", "sgn_truong"
+         } ) {
         CAPTURE( id );
         sgn_clear_map_and_reset_player();
         const tripoint_abs_omt pos( 120, 120, 0 );

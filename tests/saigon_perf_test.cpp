@@ -94,7 +94,8 @@ TEST_CASE( "saigon_turn_time", "[.][saigon_perf]" )
     // a pregenerated map, chosen before clearing: clearing loads overmap (0, 0)
     const char *perf_map = std::getenv( "SAIGON_PERF_MAP" );
     if( perf_map != nullptr ) {
-        get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( perf_map ) ) );
+        get_globals().set_global_value( "overmap_pregenerated_path",
+                                        diag_value( std::string( perf_map ) ) );
     }
     if( const char *outside = std::getenv( "SAIGON_PERF_OUTSIDE" ) ) {
         get_globals().set_global_value( "overmap_outside_region", diag_value( std::string( outside ) ) );
@@ -104,7 +105,8 @@ TEST_CASE( "saigon_turn_time", "[.][saigon_perf]" )
     clear_overmaps();
     // wet season (CDDA summer) at dusk, raining
     calendar::turn = sunset( calendar::turn_zero + calendar::season_length() * 1.5 );
-    const char *weather = std::getenv( "SAIGON_PERF_WEATHER" );   // default rain; "clear" for comparison
+    const char *weather =
+        std::getenv( "SAIGON_PERF_WEATHER" );   // default rain; "clear" for comparison
     scoped_weather_override rain( weather_type_id( weather ? weather : "rain" ) );
     overmap &om = overmap_buffer.get( point_abs_om() );
     const ter_id wall = ter_str_id( "t_concrete_wall" ).id();
@@ -118,7 +120,8 @@ TEST_CASE( "saigon_turn_time", "[.][saigon_perf]" )
         }
         const int before = generated_neighbours();
         g->place_player_overmap( pos );
-        WARN( s.name << ": overmaps generated before placing the player " << before << ", after " << generated_neighbours() );
+        WARN( s.name << ": overmaps generated before placing the player " << before << ", after " <<
+              generated_neighbours() );
         avatar &u = get_avatar();
         map &here = get_map();
         for( const tripoint_bub_ms &p : here.points_in_radius( u.pos_bub(), 1 ) ) {
@@ -147,10 +150,12 @@ TEST_CASE( "saigon_turn_time", "[.][saigon_perf]" )
             monsters += !m.is_dead();
         }
         REQUIRE( !ms.empty() );
-        std::string spikes;                            // one-off stalls, e.g. a neighbour overmap generating
+        std::string
+        spikes;                            // one-off stalls, e.g. a neighbour overmap generating
         for( size_t i = 0; i < ms.size(); i++ ) {
             if( ms[i] > 100.0 ) {
-                spikes += "turn " + std::to_string( i ) + ": " + std::to_string( static_cast<int>( ms[i] ) ) + " ms; ";
+                spikes += "turn " + std::to_string( i ) + ": " + std::to_string( static_cast<int>
+                          ( ms[i] ) ) + " ms; ";
             }
         }
         const double p50 = percentile( ms, 0.50 );
@@ -182,7 +187,8 @@ TEST_CASE( "saigon_zzip_level", "[.][saigon_zzip_level]" )
     std::optional<zzip> z = zzip::load( path, dict_path );
     REQUIRE( z.has_value() );
     std::ifstream df( dict_path, std::ios::binary );
-    const std::string dict( ( std::istreambuf_iterator<char>( df ) ), std::istreambuf_iterator<char>() );
+    const std::string dict( ( std::istreambuf_iterator<char>( df ) ),
+                            std::istreambuf_iterator<char>() );
     size_t raw = 0;
     std::vector<std::vector<std::byte>> files;
     for( const std::filesystem::path &e : z->get_entries() ) {
@@ -190,7 +196,9 @@ TEST_CASE( "saigon_zzip_level", "[.][saigon_zzip_level]" )
         raw += files.back().size();
     }
     REQUIRE( !files.empty() );
-    for( int level : { 3, 7 } ) {
+    for( int level : {
+             3, 7
+         } ) {
         ZSTD_CCtx *cctx = ZSTD_createCCtx();
         ZSTD_CCtx_setParameter( cctx, ZSTD_c_compressionLevel, level );
         size_t packed = 0;
@@ -205,7 +213,8 @@ TEST_CASE( "saigon_zzip_level", "[.][saigon_zzip_level]" )
                 packed += n;
             }
         }
-        const double ms = std::chrono::duration<double, std::milli>( std::chrono::steady_clock::now() - t0 ).count() / 5;
+        const double ms = std::chrono::duration<double, std::milli>( std::chrono::steady_clock::now() -
+                          t0 ).count() / 5;
         ZSTD_freeCCtx( cctx );
         WARN( "level " << level << ": " << files.size() << " files, " << raw << " bytes -> " << packed
               << " bytes (" << 100.0 * packed / raw << " %), " << ms << " ms" );

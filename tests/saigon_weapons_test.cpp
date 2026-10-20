@@ -162,7 +162,8 @@ TEST_CASE( "saigon_firearms_only_at_police_and_army", "[saigon]" )
         }
     }
     for( const mtype &m : MonsterGenerator::generator().get_all_mtypes() ) {
-        if( sgn( m.id.str() ) && !m.death_drops.is_null() && item_group::group_is_defined( m.death_drops ) ) {
+        if( sgn( m.id.str() ) && !m.death_drops.is_null() &&
+            item_group::group_is_defined( m.death_drops ) ) {
             roots.insert( m.death_drops );
         }
     }
@@ -202,7 +203,8 @@ TEST_CASE( "saigon_firearms_only_at_police_and_army", "[saigon]" )
 
 // Can `gun` be loaded and made ready from the items in `given` (a magazine and its rounds, or
 // rounds straight into an integral magazine)?  Returns the first working combination, loaded.
-static bool loadable_from( const itype_id &gun_id, const std::set<itype_id> &given, std::string &how )
+static bool loadable_from( const itype_id &gun_id, const std::set<itype_id> &given,
+                           std::string &how )
 {
     const item gun_proto( gun_id );
     for( const itype_id &a : given ) {
@@ -300,7 +302,8 @@ TEST_CASE( "saigon_armories_yield_loadable_guns", "[saigon]" )
                 // may spawn loaded, but no loose 9x18mm rounds
                 WARN( gun.str() << " at " << site[1] << ": no loose rounds for it, only loaded magazines" );
             }
-            CHECK( ( loose || loaded_magazine_from( gun, { item_group_id( site[1] ), item_group_id( site[2] ) }, how ) ) );
+            CHECK( ( loose || loaded_magazine_from( gun, { item_group_id( site[1] ), item_group_id( site[2] ) },
+                                                    how ) ) );
             CAPTURE( how );
         }
     }
@@ -462,12 +465,15 @@ TEST_CASE( "saigon_police_army_placed_by_overmap_generation", "[overmap][saigon]
     const int city_army = count( city, army );
     const int cities = static_cast<int>( city.cities.size() );
     // the delta, beyond the real map (saigon_realmap_2009_countryside's overmap)
-    get_globals().set_global_value( "overmap_pregenerated_path", diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
-    get_globals().set_global_value( "overmap_outside_region", diag_value( std::string( "sgn_saigon_delta" ) ) );
+    get_globals().set_global_value( "overmap_pregenerated_path",
+                                    diag_value( std::string( "saigon_2000s/realmap_2009" ) ) );
+    get_globals().set_global_value( "overmap_outside_region",
+                                    diag_value( std::string( "sgn_saigon_delta" ) ) );
     clear_avatar();
     clear_map();
     clear_overmaps();
-    REQUIRE( overmap_buffer.get_overmap_region( tripoint_abs_om( 4, 0, 0 ) ).str() == "sgn_saigon_delta" );
+    REQUIRE( overmap_buffer.get_overmap_region( tripoint_abs_om( 4, 0,
+             0 ) ).str() == "sgn_saigon_delta" );
     overmap &delta = overmap_buffer.get( point_abs_om( 4, 0 ) );
     const int delta_hq = count( delta, hq );
     const int delta_army = count( delta, army );

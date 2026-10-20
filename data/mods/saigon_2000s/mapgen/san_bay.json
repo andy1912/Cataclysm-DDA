@@ -31,10 +31,7 @@
         "........................",
         "........................"
       ],
-      "terrain": {
-        ".": "t_pavement",
-        "y": "t_pavement_y"
-      }
+      "terrain": { ".": "t_pavement", "y": "t_pavement_y" }
     }
   },
   {
@@ -69,10 +66,7 @@
         "...........y............",
         "...........y............"
       ],
-      "terrain": {
-        ".": "t_pavement",
-        "y": "t_pavement_y"
-      }
+      "terrain": { ".": "t_pavement", "y": "t_pavement_y" }
     }
   },
   {
@@ -107,51 +101,10 @@
         "y......................y",
         "y......................y"
       ],
-      "terrain": {
-        ".": "t_pavement",
-        "y": "t_pavement_y"
-      },
-      "place_vehicles": [
-        {
-          "vehicle": "sgn_vg_coach",
-          "x": 12,
-          "y": 12,
-          "rotation": 90,
-          "chance": 8
-        }
-      ],
-      "place_items": [
-        {
-          "item": "sgn_tourist",
-          "x": [
-            2,
-            21
-          ],
-          "y": [
-            3,
-            21
-          ],
-          "chance": 25,
-          "repeat": [
-            1,
-            2
-          ]
-        }
-      ],
-      "place_monster": [
-        {
-          "group": "sgn_GROUP_SAIGON_AWAKE",
-          "x": [
-            1,
-            22
-          ],
-          "y": [
-            1,
-            22
-          ],
-          "chance": 15
-        }
-      ]
+      "terrain": { ".": "t_pavement", "y": "t_pavement_y" },
+      "place_vehicles": [ { "vehicle": "sgn_vg_coach", "x": 12, "y": 12, "rotation": 90, "chance": 8 } ],
+      "place_items": [ { "item": "sgn_tourist", "x": [ 2, 21 ], "y": [ 3, 21 ], "chance": 25, "repeat": [ 1, 2 ] } ],
+      "place_monster": [ { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 22 ], "y": [ 1, 22 ], "chance": 15 } ]
     }
   }
 ]

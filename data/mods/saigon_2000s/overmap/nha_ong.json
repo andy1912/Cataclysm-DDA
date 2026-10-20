@@ -56,61 +56,15 @@
   {
     "type": "city_building",
     "id": "sgn_nhaong_row_1",
-    "locations": [
-      "land"
-    ],
-    "flags": [
-      "SAIGON"
-    ],
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
     "overmaps": [
-      {
-        "point": [
-          0,
-          0,
-          0
-        ],
-        "overmap": "sgn_nh_solo_z0_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          1
-        ],
-        "overmap": "sgn_nh_solo_z1_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          2
-        ],
-        "overmap": "sgn_nh_solo_z2_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          3
-        ],
-        "overmap": "sgn_nh_solo_z3_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          4
-        ],
-        "overmap": "sgn_nh_solo_z4_north"
-      },
-      {
-        "point": [
-          0,
-          0,
-          5
-        ],
-        "overmap": "sgn_nh_solo_z5_north"
-      }
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_nh_solo_z0_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_nh_solo_z1_north" },
+      { "point": [ 0, 0, 2 ], "overmap": "sgn_nh_solo_z2_north" },
+      { "point": [ 0, 0, 3 ], "overmap": "sgn_nh_solo_z3_north" },
+      { "point": [ 0, 0, 4 ], "overmap": "sgn_nh_solo_z4_north" },
+      { "point": [ 0, 0, 5 ], "overmap": "sgn_nh_solo_z5_north" }
     ]
   }
 ]
