@@ -4549,13 +4549,17 @@ monster *game::place_critter_around( const shared_ptr_fast<monster> &mon,
     map &here = get_map();
 
     std::optional<tripoint_bub_ms> where;
-    // "forced" means "ignore terrain and sight", not "ignore that the tile is
-    // already taken".  A horde node whose square holds another creature still has
-    // to go somewhere else, or creature_tracker::add logs "there's already a
-    // monster at" and the creature is dropped.  overmapbuffer::spawn_monster
-    // places horde monsters forced, and the tile may already have been filled by
-    // map::spawn_monsters in the same update_map.
-    if( can_place_creature( center ) && ( forced || can_place_monster( *mon, center ) ) ) {
+    if( forced ) {
+        // Saigon fork: "forced" means "ignore terrain and sight", not "ignore that the tile is
+        // already taken".  overmapbuffer::spawn_monster places horde monsters forced, and the
+        // tile may already hold a creature map::spawn_monsters put there in the same
+        // update_map.  Fail before creature_tracker::add (which would log "there's already a
+        // monster at"): spawn_monster then keeps the horde entity and tries again later.
+        if( !can_place_creature( center ) ) {
+            return nullptr;
+        }
+        where = center;
+    } else if( can_place_monster( *mon, center ) ) {
         where = center;
     }
 

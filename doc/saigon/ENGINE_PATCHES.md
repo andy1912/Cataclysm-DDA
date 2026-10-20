@@ -92,12 +92,16 @@ Four separate changes:
    which map it uses". Commits 122d6ced6a and d1bd4ef9ef.
 3. **Forced placement keeps occupancy** (`place_critter_around`): the occupancy check is split
    into `can_place_creature()`. `forced` now skips only the terrain and sight rules, not the
-   check for whether the tile is already taken. Why: horde monsters are placed forced onto
-   squares `map::spawn_monsters` may already have filled. `creature_tracker::add` then logged
-   "there's already a monster at" and dropped the creature, which fails any suite that treats
-   a logged error as a failure. This is an upstream bug, not Saigon content. Test: the `[saigon]`
-   suite (any spawn-heavy case, e.g. `saigon_place_spawns_people` in
-   `tests/saigon_npc_test.cpp`) with logged errors failing the run. Marker: none; the block
+   check for whether the tile is already taken: a forced placement onto a taken tile returns
+   nullptr before `creature_tracker::add`. Why: horde monsters are placed forced onto
+   squares `map::spawn_monsters` may already have filled, and `creature_tracker::add` then logged
+   "there's already a monster at", which fails any suite that treats a logged error as a
+   failure. Failing quietly matches upstream's horde code, which keeps the entity and retries
+   (upstream test "heavyweight entity preserved on placement failure" in
+   `tests/monster_test.cpp`); an earlier version of this patch moved the creature to a
+   neighbouring tile instead and broke that test (2026-10-20). Tests:
+   `saigon_engine_forced_placement_keeps_occupancy`, the `[saigon]` suite, and upstream's
+   `monster_test.cpp`. Marker: none; the block
    comment explains it (QA1, commit 578413b837).
 4. **Test hook** `start_new_game_for_tests()`: runs `g->start_game()`. Why: tests drive the
    real "New game" path. Test: `saigon_new_game_realmap_2009`. Marker: in `game.h` (below).

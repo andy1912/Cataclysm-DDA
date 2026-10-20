@@ -102,8 +102,10 @@ static void sgn_leave_world()
 
 // src/game.cpp item 3: place_critter_around( ..., forced ) skips the terrain and sight rules but
 // not the rule that the square is free.  Upstream placed a forced creature on the centre even
-// when another stood there, and creature_tracker::add logged "there's already a monster at" and
-// dropped it.
+// when another stood there, and creature_tracker::add logged "there's already a monster at".
+// Now a forced placement onto a taken square fails quietly, which is what upstream's horde code
+// expects: overmapbuffer::spawn_monster keeps the entity and places it once the square is free
+// (upstream's "heavyweight entity preserved on placement failure" in tests/monster_test.cpp).
 TEST_CASE( "saigon_engine_forced_placement_keeps_occupancy", "[saigon][saigon_engine]" )
 {
     if( !sgn_quick_world() ) {
@@ -114,12 +116,15 @@ TEST_CASE( "saigon_engine_forced_placement_keeps_occupancy", "[saigon][saigon_en
     monster *first = g->place_critter_at( mon_zombie, centre );
     REQUIRE( first != nullptr );
     const shared_ptr_fast<monster> second = make_shared_fast<monster>( mon_zombie );
+    // fails without a debugmsg (a logged error would fail the run)
+    CHECK( g->place_critter_around( second, centre, 2, true ) == nullptr );
+    CHECK( get_creature_tracker().creature_at<monster>( centre ) == first );
+    CHECK( get_creature_tracker().get_monsters_list().size() == 1 );
+    // and once the square is free the same forced placement succeeds there
+    g->remove_zombie( *first );
     monster *placed = g->place_critter_around( second, centre, 2, true );
     REQUIRE( placed != nullptr );
-    CHECK( placed->pos_bub() != centre );
-    CHECK( rl_dist( placed->pos_bub(), centre ) <= 2 );
-    CHECK( get_creature_tracker().creature_at<monster>( centre ) == first );
-    CHECK( get_creature_tracker().get_monsters_list().size() == 2 );
+    CHECK( placed->pos_bub() == centre );
     sgn_leave_world();
 }
 

@@ -31,6 +31,10 @@ static std::set<std::string> expand( const char *group )
 
 TEST_CASE( "saigon_delta_wildlife", "[saigon]" )
 {
+    if( !sgn_mon_ran_ho_mang.is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
     const std::vector<std::string> north_american = {
         "mon_moose", "mon_deer", "mon_reindeer", "mon_bobcat", "mon_cougar", "mon_coyote", "mon_raccoon",
         "mon_opossum", "mon_skunk", "mon_chipmunk", "mon_groundhog", "mon_beaver", "mon_muskrat", "mon_mink",
