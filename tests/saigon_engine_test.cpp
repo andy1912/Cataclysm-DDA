@@ -47,6 +47,7 @@
 
 static const mtype_id mon_test_base( "mon_test_base" );
 static const mtype_id mon_zombie( "mon_zombie" );
+static const oter_str_id oter_sgn_nh_solo_z0_north( "sgn_nh_solo_z0_north" );
 static const vproto_id vehicle_prototype_bicycle( "bicycle" );
 
 // Saigon 2000s fork, F1-C: direct tests for the engine patches in doc/saigon/ENGINE_PATCHES.md
@@ -60,6 +61,11 @@ static const vproto_id vehicle_prototype_bicycle( "bicycle" );
 // without regenerating anything (the next test that needs a fresh world clears it itself).
 static bool sgn_quick_world()
 {
+    // the real map's files are present in every checkout, but without the mod loaded its terrain
+    // ids are unknown and loading it logs an error for every tile
+    if( !oter_sgn_nh_solo_z0_north.is_valid() ) {
+        return false;
+    }
     const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
     if( !file_exist( file.get_unrelative_path() ) ) {
         return false;
