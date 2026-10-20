@@ -1,7 +1,7 @@
 #include <array>
 #include <bitset>
 #include <chrono>
-#include <cstdio>
+#include <cstdint>
 #include <cstdlib>
 #include <fstream>
 #include <initializer_list>
@@ -50,7 +50,7 @@ static std::vector<int> parse_ints( const char *s, char sep )
     const char *p = s;
     while( true ) {
         char *end = nullptr;
-        const long v = std::strtol( p, &end, 10 );
+        const int64_t v = std::strtol( p, &end, 10 );
         if( end == p ) {
             return {};
         }
@@ -286,13 +286,11 @@ TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
         REQUIRE( o.size() == 2 );
         where = point_abs_om( o[0], o[1] );
     }
-    int span_x = 1;
-    int span_y = 1;
+    point span_om( 1, 1 );
     if( const char *span = std::getenv( "SAIGON_OVERMAP_SPAN" ) ) {
         const std::vector<int> sp = parse_ints( span, ',' );
         REQUIRE( sp.size() == 2 );
-        span_x = sp[0];
-        span_y = sp[1];
+        span_om = point( sp[0], sp[1] );
     }
     const char *map = std::getenv( "SAIGON_OVERMAP_MAP" );
     if( map != nullptr ) {
@@ -304,17 +302,17 @@ TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
     }
     overmap_buffer.clear();
     const std::chrono::steady_clock::time_point t0 = std::chrono::steady_clock::now();
-    for( int oy = 0; oy < span_y; oy++ ) {
-        for( int ox = 0; ox < span_x; ox++ ) {
+    for( int oy = 0; oy < span_om.y; oy++ ) {
+        for( int ox = 0; ox < span_om.x; ox++ ) {
             overmap_buffer.get( where + point( ox, oy ) );
         }
     }
     const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>
                     ( std::chrono::steady_clock::now() - t0 );
-    WARN( span_x * span_y << " overmap(s) generated in " << ms.count() << " ms" );
+    WARN( span_om.x * span_om.y << " overmap(s) generated in " << ms.count() << " ms" );
     const tripoint_abs_omt corner( project_to<coords::omt>( where ), 0 );
-    const int W = OMAPX * span_x;
-    const int H = OMAPY * span_y;
+    const int W = OMAPX * span_om.x;
+    const int H = OMAPY * span_om.y;
     std::map<std::string, std::vector<std::string>> looks_like;
     std::ofstream out( out_path );
     out << "{\"width\":" << W << ",\"height\":" << H << ",\"tiles\":[";

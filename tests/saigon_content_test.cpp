@@ -8,7 +8,7 @@
 #include <memory>
 #include <optional>
 #include <set>
-#include <stddef.h>
+#include <cstddef>
 #include <string>
 #include <string_view>
 #include <utility>
@@ -57,7 +57,23 @@
 #include "visitable.h"
 #include "worldfactory.h"
 
+static const damage_type_id damage_bash( "bash" );
+static const damage_type_id damage_cut( "cut" );
+static const damage_type_id damage_stab( "stab" );
+static const item_group_id Item_spawn_data_sgn_wallet( "sgn_wallet" );
+static const itype_id itype_sgn_book_southern_cooking( "sgn_book_southern_cooking" );
+static const itype_id itype_sgn_pho_bo( "sgn_pho_bo" );
+static const material_id material_egg( "egg" );
+static const material_id material_flesh( "flesh" );
+static const material_id material_hflesh( "hflesh" );
+static const material_id material_iflesh( "iflesh" );
+static const material_id material_milk( "milk" );
 static const mod_id MOD_INFORMATION_saigon_2000s( "saigon_2000s" );
+static const oter_str_id oter_open_air( "open_air" );
+static const oter_str_id oter_sgn_vp_bia_hoi_00_north( "sgn_vp_bia_hoi_00_north" );
+static const string_id<scenario> scenario_sgn_saigon_2004( "sgn_saigon_2004" );
+static const string_id<scenario> scenario_sgn_saigon_2009( "sgn_saigon_2009" );
+static const ter_str_id ter_t_open_air( "t_open_air" );
 
 // Saigon 2000s mod, F1-C: content-wide invariants that no other gate checks (doc/saigon/
 // TEST_MATRIX.md).  The engine's own load-time checks prove that ids resolve; these prove what
@@ -107,11 +123,8 @@ static bool is_firearm( const item &it )
 // counting what it turns into (the công an's expandable baton is weak until it is snapped open).
 static int best_melee_damage( const itype_id &id, int depth = 0 )
 {
-    static const damage_type_id dt_bash( "bash" );
-    static const damage_type_id dt_cut( "cut" );
-    static const damage_type_id dt_stab( "stab" );
     const item it( id );
-    int best = std::max( { it.damage_melee( dt_bash ), it.damage_melee( dt_cut ), it.damage_melee( dt_stab ) } );
+    int best = std::max( { it.damage_melee( damage_bash ), it.damage_melee( damage_cut ), it.damage_melee( damage_stab ) } );
     if( depth == 0 ) {
         for( const std::pair<const std::string, use_function> &use : id->use_methods ) {
             const iuse_transform *tr = dynamic_cast<const iuse_transform *>( use.second.get_actor_ptr() );
@@ -187,15 +200,13 @@ static const std::set<itype_id> &obtainable_items()
 
 TEST_CASE( "saigon_scenarios_and_starts", "[saigon][saigon_content]" )
 {
-    const string_id<scenario> s2004( "sgn_saigon_2004" );
-    const string_id<scenario> s2009( "sgn_saigon_2009" );
-    if( !s2004.is_valid() ) {
+    if( !scenario_sgn_saigon_2004.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
-    REQUIRE( s2009.is_valid() );
+    REQUIRE( scenario_sgn_saigon_2009.is_valid() );
     for( const string_id<scenario> &sid : {
-             s2004, s2009
+             scenario_sgn_saigon_2004, scenario_sgn_saigon_2009
          } ) {
         const scenario &scen = sid.obj();
         CAPTURE( sid.str() );
@@ -237,15 +248,14 @@ TEST_CASE( "saigon_scenarios_and_starts", "[saigon][saigon_content]" )
         }
     }
     // the 2004 Vietmap has no hẻm-block or landmark starts of its own; the 2009 map has six
-    CHECK( s2004->start_location_count() == 3 );
-    CHECK( s2009->start_location_count() == 6 );
+    CHECK( scenario_sgn_saigon_2004->start_location_count() == 3 );
+    CHECK( scenario_sgn_saigon_2009->start_location_count() == 6 );
 }
 
 // B3/D3 B3-1: a Saigon kit.  profession::items is what game::start_game hands the player.
 TEST_CASE( "saigon_profession_kits", "[saigon][saigon_content]" )
 {
-    const string_id<scenario> s2009( "sgn_saigon_2009" );
-    if( !s2009.is_valid() ) {
+    if( !scenario_sgn_saigon_2009.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -337,7 +347,7 @@ TEST_CASE( "saigon_profession_kits", "[saigon][saigon_content]" )
 // things the world holds.
 TEST_CASE( "saigon_recipes_learnable_and_makeable", "[saigon][saigon_content]" )
 {
-    if( !itype_id( "sgn_pho_bo" ).is_valid() ) {
+    if( !itype_sgn_pho_bo.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -405,7 +415,7 @@ TEST_CASE( "saigon_recipes_learnable_and_makeable", "[saigon][saigon_content]" )
 // something or trains a skill spawns somewhere.
 TEST_CASE( "saigon_books_teach_and_can_be_found", "[saigon][saigon_content]" )
 {
-    if( !itype_id( "sgn_book_southern_cooking" ).is_valid() ) {
+    if( !itype_sgn_book_southern_cooking.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -429,7 +439,7 @@ TEST_CASE( "saigon_books_teach_and_can_be_found", "[saigon][saigon_content]" )
         }
     }
     CHECK( teaching >= 1 );
-    CHECK( itype_id( "sgn_book_southern_cooking" )->book->recipes.size() >= 10 );
+    CHECK( itype_sgn_book_southern_cooking->book->recipes.size() >= 10 );
 }
 
 // Every item the mod defines spawns cleanly (a bad default, container, ammo or snippet logs an
@@ -437,7 +447,7 @@ TEST_CASE( "saigon_books_teach_and_can_be_found", "[saigon][saigon_content]" )
 // egg or milk spoils.
 TEST_CASE( "saigon_items_spawn_and_food_is_sane", "[saigon][saigon_content]" )
 {
-    if( !itype_id( "sgn_pho_bo" ).is_valid() ) {
+    if( !itype_sgn_pho_bo.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -448,8 +458,8 @@ TEST_CASE( "saigon_items_spawn_and_food_is_sane", "[saigon][saigon_content]" )
         }
     }
     const std::set<material_id> perishable = {
-        material_id( "flesh" ), material_id( "iflesh" ), material_id( "hflesh" ), material_id( "egg" ),
-        material_id( "milk" )
+        material_flesh, material_iflesh, material_hflesh, material_egg,
+        material_milk
     };
     int items = 0;
     int food = 0;
@@ -497,7 +507,7 @@ TEST_CASE( "saigon_items_spawn_and_food_is_sane", "[saigon][saigon_content]" )
 // and the name and lore snippet categories the mod's people and items draw from exist.
 TEST_CASE( "saigon_item_groups_spawn", "[saigon][saigon_content]" )
 {
-    if( !item_group::group_is_defined( item_group_id( "sgn_wallet" ) ) ) {
+    if( !item_group::group_is_defined( Item_spawn_data_sgn_wallet ) ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -567,7 +577,7 @@ static std::set<point> reachable_from_edge( map &m, int z )
 TEST_CASE( "saigon_places_enterable_and_roofed", "[mapgen][saigon][saigon_content]" )
 {
     const cata_path file = PATH_INFO::moddir() / "saigon_2000s/realmap_2009/overmap_0_0.omap.gz";
-    if( !oter_str_id( "sgn_vp_bia_hoi_00_north" ).is_valid() ||
+    if( !oter_sgn_vp_bia_hoi_00_north.is_valid() ||
         !file_exist( file.get_unrelative_path() ) ) {
         WARN( "saigon_2000s or its real map is not present; skipping" );
         return;
@@ -603,7 +613,7 @@ TEST_CASE( "saigon_places_enterable_and_roofed", "[mapgen][saigon][saigon_conten
         }
     }
     CHECK( grounds.size() >= 30 );
-    const ter_id open_air = ter_str_id( "t_open_air" ).id();
+    const ter_id open_air = ter_t_open_air.id();
     int column = 0;
     for( const std::string &id : grounds ) {
         CAPTURE( id );
@@ -620,7 +630,7 @@ TEST_CASE( "saigon_places_enterable_and_roofed", "[mapgen][saigon][saigon_conten
             top = z;
         }
         for( int z = top + 1; z <= top + 1; z++ ) {
-            overmap_buffer.ter_set( pos + tripoint( 0, 0, z ), oter_str_id( "open_air" ).id() );
+            overmap_buffer.ter_set( pos + tripoint( 0, 0, z ), oter_open_air.id() );
         }
         rng_set_engine_seed( 11 );
         MAPBUFFER.clear_outside_reality_bubble();

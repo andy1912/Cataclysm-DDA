@@ -22,8 +22,8 @@
 #include "submap.h"
 #include "type_id.h"
 
-static const oter_str_id oter_sgn_lm_ben_thanh_00_north( "sgn_lm_ben_thanh_00_north" );
 static const mtype_id sgn_mon_voi( "sgn_mon_voi" );
+static const oter_str_id oter_sgn_lm_ben_thanh_00_north( "sgn_lm_ben_thanh_00_north" );
 static const ter_str_id ter_t_open_air( "t_open_air" );
 static const ter_str_id ter_t_stairs_down( "t_stairs_down" );
 static const ter_str_id ter_t_stairs_up( "t_stairs_up" );

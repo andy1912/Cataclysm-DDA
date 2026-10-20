@@ -5,7 +5,7 @@
 #include <memory>
 #include <optional>
 #include <set>
-#include <stddef.h>
+#include <cstddef>
 #include <string>
 #include <utility>
 #include <vector>
@@ -47,6 +47,7 @@
 
 static const mtype_id mon_test_base( "mon_test_base" );
 static const mtype_id mon_zombie( "mon_zombie" );
+static const vproto_id vehicle_prototype_bicycle( "bicycle" );
 
 // Saigon 2000s fork, F1-C: direct tests for the engine patches in doc/saigon/ENGINE_PATCHES.md
 // that had none of their own (the others are covered by the weather, realmap, mouse and perf
@@ -157,12 +158,12 @@ TEST_CASE( "saigon_engine_resync_vehicle_lists", "[saigon][saigon_engine]" )
     }
     map &here = get_map();
     const tripoint_bub_ms at = get_avatar().pos_bub() + tripoint( 8, 8, 0 );
-    vehicle *veh = here.add_vehicle( vproto_id( "bicycle" ), at, 0_degrees, 0,
+    vehicle *veh = here.add_vehicle( vehicle_prototype_bicycle, at, 0_degrees, 0,
                                      veh_spawn_status::UNDAMAGED );
     REQUIRE( veh != nullptr );
     level_cache &ch = const_cast<level_cache &>( here.get_cache_ref( at.z() ) );
     REQUIRE( ch.vehicle_list.count( veh ) == 1 );
-    vehicle stray( vproto_id( "bicycle" ) );
+    vehicle stray( vehicle_prototype_bicycle );
     ch.vehicle_list.clear();
     ch.vehicle_list.insert( &stray );
     ch.zone_vehicles.insert( &stray );

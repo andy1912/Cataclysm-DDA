@@ -7,7 +7,7 @@
 #include <map>
 #include <set>
 #include <memory>
-#include <stddef.h>
+#include <cstddef>
 #include <string>
 #include <string_view>
 #include <unordered_map>
@@ -49,8 +49,8 @@ static const oter_str_id oter_sgn_ben_pha_north( "sgn_ben_pha_north" );
 static const oter_str_id oter_sgn_hem_block_north( "sgn_hem_block_north" );
 static const oter_str_id oter_sgn_nh_solo_z5_south( "sgn_nh_solo_z5_south" );
 static const region_settings_id region_settings_sgn_saigon_delta( "sgn_saigon_delta" );
-static const string_id<scenario> scenario_sgn_saigon_2009( "sgn_saigon_2009" );
 static const start_location_id start_location_sgn_sloc_nha_ong( "sgn_sloc_nha_ong" );
+static const string_id<scenario> scenario_sgn_saigon_2009( "sgn_saigon_2009" );
 
 // Saigon 2000s mod: pregenerated ("real-map") overmaps (doc/saigon/REALMAP_PLAN.md, R1).
 // Loads the fixture data/mods/saigon_2000s/realmap_test/overmap_40_40.omap.gz (written by
@@ -766,7 +766,7 @@ TEST_CASE( "saigon_realmap_2009_fidelity", "[saigon]" )
     const auto starts = []( std::string_view id, std::string_view prefix ) {
         return id.rfind( prefix, 0 ) == 0;
     };
-    const auto near_site = [&]( const point_abs_omt & site, const std::string & prefix, int radius ) {
+    const auto near_site = [&]( const point_abs_omt & site, std::string_view prefix, int radius ) {
         for( int dx = -radius; dx <= radius; dx++ ) {
             for( int dy = -radius; dy <= radius; dy++ ) {
                 if( starts( ter( site + point( dx, dy ) ), prefix ) ) {

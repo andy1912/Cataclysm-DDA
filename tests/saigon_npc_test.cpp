@@ -35,10 +35,10 @@
 static const item_group_id Item_spawn_data_sgn_npc_guard_weapon( "sgn_npc_guard_weapon" );
 static const itype_id itype_sgn_mag_9x18( "sgn_mag_9x18" );
 static const itype_id itype_sgn_sung_9x18( "sgn_sung_9x18" );
+static const npc_class_id sgn_class_guard( "sgn_class_guard" );
 static const npc_template_id npc_template_sgn_npc_monk( "sgn_npc_monk" );
 static const oter_str_id oter_sgn_pl_cong_an_00_north( "sgn_pl_cong_an_00_north" );
 static const string_id<scenario> scenario_sgn_saigon_2009( "sgn_saigon_2009" );
-static const npc_class_id sgn_class_guard( "sgn_class_guard" );
 
 // Saigon 2000s mod, N0/N1: the people who wander Saigon's streets.  A random NPC
 // (game::perhaps_add_random_npc, and the starting NPC) is classless: Character::randomize gives

@@ -4,7 +4,7 @@
 #include <map>
 #include <memory>
 #include <set>
-#include <stddef.h>
+#include <cstddef>
 #include <string>
 #include <string_view>
 #include <utility>
@@ -43,14 +43,14 @@
 #include "value_ptr.h"
 #include "veh_type.h"
 
-static const item_group_id Item_spawn_data_sgn_pa_armory_police( "sgn_pa_armory_police" );
 static const ammotype ammo_battery( "battery" );
+static const item_group_id Item_spawn_data_sgn_pa_armory_police( "sgn_pa_armory_police" );
 static const itype_id itype_sgn_ao_cong_an( "sgn_ao_cong_an" );
 static const itype_id itype_sgn_na_thun( "sgn_na_thun" );
 static const itype_id itype_sgn_no( "sgn_no" );
+static const npc_class_id sgn_class_guard( "sgn_class_guard" );
 static const oter_str_id oter_sgn_pa_cong_an_quan_00_north( "sgn_pa_cong_an_quan_00_north" );
 static const region_settings_id region_settings_sgn_saigon_delta( "sgn_saigon_delta" );
-static const npc_class_id sgn_class_guard( "sgn_class_guard" );
 
 // Saigon 2000s mod, W1-W4 (doc/saigon/PROGRESS.md): Vietnamese weapons (W1), weapons in the
 // world (W2), the police and army sites with their guns (W3), everyday Vietnam (W4).  The firearm

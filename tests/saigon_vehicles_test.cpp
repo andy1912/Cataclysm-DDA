@@ -32,9 +32,16 @@
 #include "vpart_position.h"
 #include "vpart_range.h"
 
-static const vgroup_id VehicleGroup_sgn_vg_city_traffic( "sgn_vg_city_traffic" );
 static const itype_id itype_battery( "battery" );
 static const itype_id itype_gasoline( "gasoline" );
+static const proficiency_id proficiency_prof_boat_pilot( "prof_boat_pilot" );
+static const proficiency_id proficiency_prof_driver( "prof_driver" );
+static const skill_id skill_driving( "driving" );
+static const vgroup_id VehicleGroup_sgn_vg_city_traffic( "sgn_vg_city_traffic" );
+static const vpart_id vpart_sgn_engine_110cc( "sgn_engine_110cc" );
+static const vpart_id vpart_sgn_engine_125cc( "sgn_engine_125cc" );
+static const vpart_id vpart_sgn_engine_50cc( "sgn_engine_50cc" );
+static const vpart_id vpart_sgn_longtail( "sgn_longtail" );
 static const vproto_id vehicle_prototype_sgn_veh_ba_gac_may( "sgn_veh_ba_gac_may" );
 static const vproto_id vehicle_prototype_sgn_veh_ghe( "sgn_veh_ghe" );
 static const vproto_id vehicle_prototype_sgn_veh_ghe_may( "sgn_veh_ghe_may" );
@@ -44,21 +51,12 @@ static const vproto_id vehicle_prototype_sgn_veh_xe_lam( "sgn_veh_xe_lam" );
 static const vproto_id vehicle_prototype_sgn_veh_xe_rac( "sgn_veh_xe_rac" );
 static const vproto_id vehicle_prototype_sgn_veh_xich_lo( "sgn_veh_xich_lo" );
 static const vproto_id vehicle_prototype_sgn_veh_xuong( "sgn_veh_xuong" );
-static const vpart_id vpart_sgn_engine_110cc( "sgn_engine_110cc" );
-static const vpart_id vpart_sgn_engine_125cc( "sgn_engine_125cc" );
-static const vpart_id vpart_sgn_engine_50cc( "sgn_engine_50cc" );
-static const vpart_id vpart_sgn_longtail( "sgn_longtail" );
 
 // Saigon 2000s mod, V4 "on the road and the river" (vehicles/, mapgen/roads/road_traffic.json):
 // the period vehicles drive, steer and float; engine power and fuel; spawn state; traffic mix.
 // Run with: tests/cata_test --mods=dda,saigon_2000s "[saigon][vehicle]"
 
 static const efftype_id effect_blind( "blind" );
-
-static const proficiency_id proficiency_prof_boat_pilot( "prof_boat_pilot" );
-static const proficiency_id proficiency_prof_driver( "prof_driver" );
-
-static const skill_id skill_driving( "driving" );
 
 static bool saigon_loaded()
 {

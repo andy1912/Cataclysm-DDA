@@ -8,6 +8,7 @@
 #include "mtype.h"
 #include "type_id.h"
 
+static const mtype_id mon_fish_bluegill( "mon_fish_bluegill" );
 static const mtype_id mon_fish_bowfin( "mon_fish_bowfin" );
 static const mtype_id sgn_mon_ran_ho_mang( "sgn_mon_ran_ho_mang" );
 static const mtype_id sgn_mon_ran_ho_mang_con( "sgn_mon_ran_ho_mang_con" );
@@ -55,7 +56,7 @@ TEST_CASE( "saigon_delta_wildlife", "[saigon]" )
     const std::set<std::string> fish = expand( "GROUP_FISH" );
     CHECK( fish.count( "mon_fish_bowfin" ) == 1 );
     CHECK( mon_fish_bowfin->nname() == "snakehead" );
-    CHECK( mtype_id( "mon_fish_bluegill" )->nname() == "tilapia" );
+    CHECK( mon_fish_bluegill->nname() == "tilapia" );
     CHECK( mtype_id( "mon_fish_bullhead" )->nname() == "walking catfish" );
     // the zoo's animals do not breed into the wild (an elephant copied from dda's moose had moose
     // calves, the python rattlesnakes, the crocodile snapping turtles, the tiger cougar kittens)

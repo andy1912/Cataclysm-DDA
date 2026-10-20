@@ -4,7 +4,7 @@
 #include <map>
 #include <memory>
 #include <set>
-#include <stddef.h>
+#include <cstddef>
 #include <string>
 #include <utility>
 #include <vector>
@@ -49,6 +49,7 @@ static const faction_id faction_sgn_hoi_cua( "sgn_hoi_cua" );
 static const mission_type_id mission_MISSION_NULL( "MISSION_NULL" );
 static const npc_template_id npc_template_sgn_npc_dai_ca( "sgn_npc_dai_ca" );
 static const npc_template_id npc_template_sgn_npc_guard( "sgn_npc_guard" );
+static const npc_template_id npc_template_sgn_npc_hoi_cua_dau( "sgn_npc_hoi_cua_dau" );
 static const npc_template_id npc_template_sgn_npc_hung( "sgn_npc_hung" );
 static const npc_template_id npc_template_sgn_npc_loc( "sgn_npc_loc" );
 static const npc_template_id npc_template_sgn_npc_shopkeeper( "sgn_npc_shopkeeper" );
@@ -296,7 +297,7 @@ TEST_CASE( "saigon_people_sites_are_their_factions_and_melee_only", "[mapgen][sa
     // the mission targets placed by update_mapgen belong to the site's faction too
     CHECK( npc_template::get_npc_templates().at( npc_template_sgn_npc_dai_ca )
            .guy.get_fac_id() == faction_sgn_giang_ho );
-    CHECK( npc_template::get_npc_templates().at( npc_template_id( "sgn_npc_hoi_cua_dau" ) )
+    CHECK( npc_template::get_npc_templates().at( npc_template_sgn_npc_hoi_cua_dau )
            .guy.get_fac_id() == faction_sgn_hoi_cua );
 
     clear_avatar();

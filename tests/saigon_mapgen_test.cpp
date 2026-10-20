@@ -3,7 +3,7 @@
 #include <memory>
 #include <queue>
 #include <set>
-#include <stddef.h>
+#include <cstddef>
 #include <string>
 #include <unordered_map>
 #include <utility>
@@ -34,14 +34,29 @@ static const furn_str_id furn_f_counter( "f_counter" );
 static const furn_str_id furn_f_standing_tank( "f_standing_tank" );
 static const furn_str_id furn_f_statue( "f_statue" );
 static const itype_id itype_sgn_thung_xop( "sgn_thung_xop" );
+static const mtype_id sgn_mon_zombie_xe_om( "sgn_mon_zombie_xe_om" );
 static const oter_str_id oter_field( "field" );
+static const oter_str_id oter_open_air( "open_air" );
+static const oter_str_id oter_sgn_cho_nw_north( "sgn_cho_nw_north" );
+static const oter_str_id oter_sgn_chua_north( "sgn_chua_north" );
+static const oter_str_id oter_sgn_hem_block_north( "sgn_hem_block_north" );
+static const oter_str_id oter_sgn_hem_block_roof_north( "sgn_hem_block_roof_north" );
+static const oter_str_id oter_sgn_kenh_north( "sgn_kenh_north" );
+static const oter_str_id oter_sgn_kenh_roof_north( "sgn_kenh_roof_north" );
+static const oter_str_id oter_sgn_nha_tho_north( "sgn_nha_tho_north" );
+static const oter_str_id oter_solid_earth( "solid_earth" );
+static const start_location_id start_location_sgn_sloc_nha_ong( "sgn_sloc_nha_ong" );
 static const ter_str_id ter_t_brick_wall( "t_brick_wall" );
 static const ter_str_id ter_t_concrete_roof( "t_concrete_roof" );
 static const ter_str_id ter_t_open_air( "t_open_air" );
+static const ter_str_id ter_t_sgn_mai_ton( "t_sgn_mai_ton" );
 static const ter_str_id ter_t_sgn_tree_bo_de( "t_sgn_tree_bo_de" );
 static const ter_str_id ter_t_stairs_down( "t_stairs_down" );
 static const ter_str_id ter_t_stairs_up( "t_stairs_up" );
 static const ter_str_id ter_t_thconc_floor( "t_thconc_floor" );
+static const ter_str_id ter_t_wall_wood( "t_wall_wood" );
+static const ter_str_id ter_t_water_murky( "t_water_murky" );
+static const vproto_id vehicle_prototype_sgn_veh_underbone( "sgn_veh_underbone" );
 
 // Saigon 2000s mod: structural checks for the nhà ống shophouse row
 // (tools/saigon/gen_nha_ong.py, design doc/saigon/analysis/d2_r3.md §4.a).
@@ -80,9 +95,9 @@ static void sgn_clear_map_and_reset_player()
         clear_overmaps();
         generated = true;
     } else {
-        const oter_id field = oter_str_id( "field" ).id();
-        const oter_id air = oter_str_id( "open_air" ).id();
-        const oter_id earth = oter_str_id( "solid_earth" ).id();
+        const oter_id field = oter_field.id();
+        const oter_id air = oter_open_air.id();
+        const oter_id earth = oter_solid_earth.id();
         for( int z = -2; z <= 10; z++ ) {
             const oter_id &blank = z == 0 ? field : z > 0 ? air : earth;
             for( int x = 0; x < OMAPX; x++ ) {
@@ -299,8 +314,7 @@ static std::set<point> reachable_through_doors( map &m, const point &start, int 
 
 TEST_CASE( "saigon_hem_connectivity", "[mapgen][saigon]" )
 {
-    const oter_str_id hem_north( "sgn_hem_block_north" );
-    if( !hem_north.is_valid() ) {
+    if( !oter_sgn_hem_block_north.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -354,8 +368,7 @@ TEST_CASE( "saigon_hem_connectivity", "[mapgen][saigon]" )
 
 TEST_CASE( "saigon_cho_market_structure", "[mapgen][saigon]" )
 {
-    const oter_str_id cho_nw( "sgn_cho_nw_north" );
-    if( !cho_nw.is_valid() ) {
+    if( !oter_sgn_cho_nw_north.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -400,8 +413,7 @@ TEST_CASE( "saigon_cho_market_structure", "[mapgen][saigon]" )
 
 TEST_CASE( "saigon_chungcu_and_chua_structure", "[mapgen][saigon]" )
 {
-    const oter_str_id chua( "sgn_chua_north" );
-    if( !chua.is_valid() ) {
+    if( !oter_sgn_chua_north.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -411,7 +423,7 @@ TEST_CASE( "saigon_chungcu_and_chua_structure", "[mapgen][saigon]" )
         overmap_buffer.ter_set( pos + tripoint( 0, 0, z ),
                                 oter_str_id( "sgn_chungcu_z" + std::to_string( z ) + "_north" ).id() );
     }
-    overmap_buffer.ter_set( pos + tripoint( 2, 0, 0 ), chua.id() );
+    overmap_buffer.ter_set( pos + tripoint( 2, 0, 0 ), oter_sgn_chua_north.id() );
     rng_set_engine_seed( 11 );
     {
         MAPBUFFER.clear_outside_reality_bubble();
@@ -483,7 +495,7 @@ TEST_CASE( "saigon_chungcu_and_chua_structure", "[mapgen][saigon]" )
 
 TEST_CASE( "saigon_traffic_is_mostly_two_wheelers", "[vehicle][saigon]" )
 {
-    if( !vproto_id( "sgn_veh_underbone" ).is_valid() ) {
+    if( !vehicle_prototype_sgn_veh_underbone.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -520,7 +532,7 @@ static int uncovered_indoor_tiles( map &m, int z )
 
 TEST_CASE( "saigon_buildings_have_roofs", "[mapgen][saigon]" )
 {
-    if( !oter_str_id( "sgn_hem_block_roof_north" ).is_valid() ) {
+    if( !oter_sgn_hem_block_roof_north.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -593,7 +605,7 @@ static std::pair<int, int> count_spawns( const tripoint_abs_omt &pos, int top_z 
 
 TEST_CASE( "saigon_monster_budget_per_omt", "[mapgen][monster][saigon]" )
 {
-    if( !mtype_id( "sgn_mon_zombie_xe_om" ).is_valid() ) {
+    if( !sgn_mon_zombie_xe_om.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -653,7 +665,7 @@ TEST_CASE( "saigon_monster_budget_per_omt", "[mapgen][monster][saigon]" )
 
 TEST_CASE( "saigon_road_traffic_is_saigon", "[mapgen][vehicle][saigon]" )
 {
-    if( !vproto_id( "sgn_veh_underbone" ).is_valid() ) {
+    if( !vehicle_prototype_sgn_veh_underbone.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -706,7 +718,7 @@ TEST_CASE( "saigon_road_traffic_is_saigon", "[mapgen][vehicle][saigon]" )
 // can't stand where they are placed, or a site that can't be found, breaks "New character".
 TEST_CASE( "saigon_new_game_start_locations", "[saigon][start_location]" )
 {
-    if( !start_location_id( "sgn_sloc_nha_ong" ).is_valid() ) {
+    if( !start_location_sgn_sloc_nha_ong.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
@@ -740,18 +752,14 @@ TEST_CASE( "saigon_new_game_start_locations", "[saigon][start_location]" )
 // between two walkable embankments, shacks with tin roofs at z1.
 TEST_CASE( "saigon_kenh_structure", "[mapgen][saigon]" )
 {
-    const oter_str_id kenh( "sgn_kenh_north" );
-    if( !kenh.is_valid() ) {
+    if( !oter_sgn_kenh_north.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
-    const ter_str_id water( "t_water_murky" );
-    const ter_str_id tin_roof( "t_sgn_mai_ton" );
-    const ter_str_id wood_wall( "t_wall_wood" );
     sgn_clear_map_and_reset_player();
     const tripoint_abs_omt pos( 110, 110, 0 );
-    overmap_buffer.ter_set( pos, kenh.id() );
-    overmap_buffer.ter_set( pos + tripoint::above, oter_str_id( "sgn_kenh_roof_north" ).id() );
+    overmap_buffer.ter_set( pos, oter_sgn_kenh_north.id() );
+    overmap_buffer.ter_set( pos + tripoint::above, oter_sgn_kenh_roof_north.id() );
     for( unsigned seed = 1; seed <= 5; seed++ ) {
         CAPTURE( seed );
         rng_set_engine_seed( seed );
@@ -765,11 +773,11 @@ TEST_CASE( "saigon_kenh_structure", "[mapgen][saigon]" )
         int roofed_walls = 0;
         for( int x = 0; x < SEEX * 2; x++ ) {
             for( int y = 0; y < SEEY * 2; y++ ) {
-                const bool is_water = m.ter( tripoint_bub_ms( x, y, 0 ) ) == water.id();
+                const bool is_water = m.ter( tripoint_bub_ms( x, y, 0 ) ) == ter_t_water_murky.id();
                 ( y >= 8 && y <= 15 ? channel : water_elsewhere ) += is_water;
-                if( m.ter( tripoint_bub_ms( x, y, 0 ) ) == wood_wall.id() ) {
+                if( m.ter( tripoint_bub_ms( x, y, 0 ) ) == ter_t_wall_wood.id() ) {
                     walls++;
-                    roofed_walls += m.ter( tripoint_bub_ms( x, y, 1 ) ) == tin_roof.id();
+                    roofed_walls += m.ter( tripoint_bub_ms( x, y, 1 ) ) == ter_t_sgn_mai_ton.id();
                 }
             }
             // both embankment walks are walkable along their whole length
@@ -788,11 +796,10 @@ TEST_CASE( "saigon_kenh_structure", "[mapgen][saigon]" )
 // gate and every building tile has its roof at z1.
 TEST_CASE( "saigon_landmarks_structure", "[mapgen][saigon]" )
 {
-    if( !oter_str_id( "sgn_nha_tho_north" ).is_valid() ) {
+    if( !oter_sgn_nha_tho_north.is_valid() ) {
         WARN( "saigon_2000s is not loaded; skipping" );
         return;
     }
-    const ter_str_id open_air( "t_open_air" );
     for( const std::string id : {
              "sgn_nha_tho", "sgn_ubnd", "sgn_truong"
          } ) {
@@ -821,7 +828,7 @@ TEST_CASE( "saigon_landmarks_structure", "[mapgen][saigon]" )
                 const ter_t &t = m.ter( p ).obj();
                 if( t.has_flag( ter_furn_flag::TFLAG_INDOORS ) ) {
                     indoor++;
-                    roofed += m.ter( tripoint_bub_ms( x, y, 1 ) ) != open_air.id();
+                    roofed += m.ter( tripoint_bub_ms( x, y, 1 ) ) != ter_t_open_air.id();
                 }
             }
         }
