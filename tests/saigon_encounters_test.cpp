@@ -37,6 +37,7 @@
 
 static const mongroup_id GROUP_ZOMBIE( "GROUP_ZOMBIE" );
 static const mongroup_id GROUP_ZOMBIE_HORDE( "GROUP_ZOMBIE_HORDE" );
+static const mtype_id sgn_mon_zombie_cong_an( "sgn_mon_zombie_cong_an" );
 static const mtype_id sgn_mon_zombie_xe_om( "sgn_mon_zombie_xe_om" );
 static const oter_str_id oter_field( "field" );
 static const oter_str_id oter_road_ns( "road_ns" );
@@ -287,7 +288,7 @@ TEST_CASE( "saigon_zombie_groups_are_saigon", "[saigon][monster]" )
         CHECK( strangers.empty() );
         // and it really is the Saigon mix, not an empty override that falls back on its default
         CHECK( std::count( members.begin(), members.end(), sgn_mon_zombie_xe_om ) > 0 );
-        CHECK( std::count( members.begin(), members.end(), mtype_id( "sgn_mon_zombie_cong_an" ) ) > 0 );
+        CHECK( std::count( members.begin(), members.end(), sgn_mon_zombie_cong_an ) > 0 );
         CHECK( sgn_allowed_city_dead( gid.obj().defaultMonster ) );
     }
 }
