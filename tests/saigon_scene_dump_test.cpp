@@ -286,7 +286,7 @@ TEST_CASE( "saigon_overmap_dump", "[.][saigon_overmap]" )
         REQUIRE( o.size() == 2 );
         where = point_abs_om( o[0], o[1] );
     }
-    point span_om( 1, 1 );
+    point span_om = point::south_east;
     if( const char *span = std::getenv( "SAIGON_OVERMAP_SPAN" ) ) {
         const std::vector<int> sp = parse_ints( span, ',' );
         REQUIRE( sp.size() == 2 );

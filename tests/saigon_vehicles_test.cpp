@@ -32,6 +32,7 @@
 #include "vpart_position.h"
 #include "vpart_range.h"
 
+static const efftype_id effect_blind( "blind" );
 static const itype_id itype_battery( "battery" );
 static const itype_id itype_gasoline( "gasoline" );
 static const proficiency_id proficiency_prof_boat_pilot( "prof_boat_pilot" );
@@ -55,8 +56,6 @@ static const vproto_id vehicle_prototype_sgn_veh_xuong( "sgn_veh_xuong" );
 // Saigon 2000s mod, V4 "on the road and the river" (vehicles/, mapgen/roads/road_traffic.json):
 // the period vehicles drive, steer and float; engine power and fuel; spawn state; traffic mix.
 // Run with: tests/cata_test --mods=dda,saigon_2000s "[saigon][vehicle]"
-
-static const efftype_id effect_blind( "blind" );
 
 static bool saigon_loaded()
 {

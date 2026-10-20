@@ -36,6 +36,7 @@
 #include "units.h"
 #include "value_ptr.h"
 
+static const activity_id ACT_CRAFT( "ACT_CRAFT" );
 static const flag_id json_flag_CONTAINER( "CONTAINER" );
 static const itype_id itype_debug_backpack( "debug_backpack" );
 static const itype_id itype_hammer( "hammer" );
@@ -54,8 +55,6 @@ static const trait_id trait_DEBUG_CNF( "DEBUG_CNF" );
 // Saigon 2000s mod, V1 "the southern table" (items/food/vn_food_*.json, recipes/vn_food.json,
 // itemgroups/vn_food.json): melting ice, the new dishes' recipes, and the four food groups.
 // Run with: tests/cata_test --mods=dda,saigon_2000s "[saigon][food]"
-
-static const activity_id ACT_CRAFT( "ACT_CRAFT" );
 
 static bool saigon_loaded()
 {

@@ -42,10 +42,10 @@ static const oter_str_id oter_field( "field" );
 static const oter_str_id oter_road_ns( "road_ns" );
 static const oter_str_id oter_sgn_nh_solo_z0_north( "sgn_nh_solo_z0_north" );
 static const region_settings_id region_settings_sgn_saigon( "sgn_saigon" );
-static const vproto_id vehicle_prototype_none( "none" );
-
 static const region_settings_map_extras_id
 region_settings_map_extras_sgn_map_extras( "sgn_map_extras" );
+static const vproto_id vehicle_prototype_none( "none" );
+
 
 // Saigon 2000s mod, E2: the dead and the road (monsters/, itemgroups/zombie_drops.json,
 // mapgen/map_extras/sgn_encounters.json, region/region_settings.json).  Twelve road and field
