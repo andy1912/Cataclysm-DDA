@@ -45,6 +45,37 @@ constexpr double seasonal_noise_magnitude = 0.5;
 // Multiplier for noise magnitude that varies with the season, 0.5 means noise is 1.5x as strong in midwinter and 1.0x as strong in midsummer.
 } //namespace
 
+/**
+ * Value of a January..December monthly curve at time @p t, linearly interpolated
+ * between month midpoints using the calendar's own month table (31/30/30 days in each
+ * quarter).  With a non-default year length the month table is unavailable, so the
+ * year fraction is used instead.
+ */
+static double monthly_curve_value( const std::array<double, 12> &curve, const time_point &t )
+{
+    double month_pos;
+    if( calendar::year_length() == 364_days ) {
+        const int day = to_days<int>( time_past_new_year( t ) );
+        const int quarter = day / 91;
+        const int d = day % 91;
+        if( d < 31 ) {
+            month_pos = quarter * 3 + ( d + 0.5 ) / 31.0;
+        } else if( d < 61 ) {
+            month_pos = quarter * 3 + 1 + ( d - 31 + 0.5 ) / 30.0;
+        } else {
+            month_pos = quarter * 3 + 2 + ( d - 61 + 0.5 ) / 30.0;
+        }
+    } else {
+        month_pos = 12.0 * ( time_past_new_year( t ) / calendar::year_length() );
+    }
+    // Midpoints sit at index + 0.5.
+    const double pos = month_pos - 0.5;
+    const double lower = std::floor( pos );
+    const double frac = pos - lower;
+    const int i = ( static_cast<int>( lower ) % 12 + 12 ) % 12;
+    return curve[i] * ( 1.0 - frac ) + curve[( i + 1 ) % 12] * frac;
+}
+
 weather_generator::weather_generator() = default;
 int weather_generator::current_winddir = 1000;
 
@@ -137,6 +168,13 @@ static units::temperature weather_temperature_from_common_data( const weather_ge
     const double dayv = std::cos( tau * ( dayFraction + .5 - coldest_hour / 24 ) );
     // -1 at coldest_hour, +1 twelve hours later
 
+    if( wg.monthly_temperature ) {
+        const double T = monthly_curve_value( *wg.monthly_temperature, t.t ) +
+                         dayv * wg.daily_magnitude +
+                         raw_noise_4d( x, y, z, modSEED ) * wg.noise_magnitude;
+        return units::from_celsius( T );
+    }
+
     // manually specified seasonal temp variation from region_settings.json
     const std::array<int, 4> seasonal_temp_mod = {
         wg.spring_temp_manual_mod, wg.summer_temp_manual_mod, wg.autumn_temp_manual_mod,
@@ -192,17 +230,28 @@ w_point weather_generator::get_weather( const tripoint_abs_ms &location, const t
         mod_h += autumn_humidity_manual_mod;
     }
     // Relative humidity, a percentage.
-    double H = std::min( 100., std::max( 0.,
-                                         base_humidity + mod_h + 100 * (
-                                                 .15 * seasonality +
-                                                 raw_noise_4d( x, y, z, modSEED + 101 ) *
-                                                 .2 * ( -seasonality + 2 ) ) ) );
+    double H;
+    if( monthly_humidity ) {
+        H = std::clamp( monthly_curve_value( *monthly_humidity, t.t ) +
+                        raw_noise_4d( x, y, z, modSEED + 101 ) * humidity_noise, 0.0, 100.0 );
+    } else {
+        H = std::min( 100., std::max( 0.,
+                                      base_humidity + mod_h + 100 * (
+                                          .15 * seasonality +
+                                          raw_noise_4d( x, y, z, modSEED + 101 ) *
+                                          .2 * ( -seasonality + 2 ) ) ) );
+    }
 
     // Pressure
-    double P =
-        base_pressure +
-        raw_noise_4d( x, y, z, modSEED + 211 ) *
-        15 * ( -seasonality + 2 );
+    double P;
+    if( monthly_pressure ) {
+        P = monthly_curve_value( *monthly_pressure, t.t ) +
+            raw_noise_4d( x, y, z, modSEED + 211 ) * pressure_noise;
+    } else {
+        P = base_pressure +
+            raw_noise_4d( x, y, z, modSEED + 211 ) *
+            15 * ( -seasonality + 2 );
+    }
 
     // Wind power
     const double variation = base_wind_season_variation == 0 ? 0 :
@@ -307,6 +356,11 @@ units::temperature weather_generator::get_water_temperature() const
     **/
 
     season_effective_time t( calendar::turn );
+    if( monthly_water_temperature ) {
+        const int water_hour = hour_of_day<int>( t.t );
+        return units::from_celsius( monthly_curve_value( *monthly_water_temperature, t.t ) +
+                                    std::sin( tau * ( water_hour - 6.0 ) / 24.0 ) );
+    }
     int season_length = to_days<int>( calendar::season_length() );
     int day = to_days<int>( time_past_new_year( t.t ) );
     int hour = hour_of_day<int>( t.t );
@@ -402,6 +456,30 @@ void weather_generator::load( const JsonObject &jo, std::string_view )
     optional( jo, was_loaded, "summer_humidity_manual_mod", summer_humidity_manual_mod, 0 );
     optional( jo, was_loaded, "autumn_humidity_manual_mod", autumn_humidity_manual_mod, 0 );
     optional( jo, was_loaded, "winter_humidity_manual_mod", winter_humidity_manual_mod, 0 );
+    const auto load_curve = [&jo]( std::string_view key,
+    std::optional<std::array<double, 12>> &curve ) {
+        if( !jo.has_member( key ) ) {
+            return;
+        }
+        std::vector<double> values;
+        for( const JsonValue v : jo.get_array( key ) ) {
+            values.push_back( v.get_float() );
+        }
+        if( values.size() != 12 ) {
+            jo.throw_error_at( key, "monthly curves need exactly 12 values (January..December)" );
+        }
+        std::array<double, 12> arr;
+        std::copy( values.begin(), values.end(), arr.begin() );
+        curve = arr;
+    };
+    load_curve( "monthly_temperature", monthly_temperature );
+    load_curve( "monthly_humidity", monthly_humidity );
+    load_curve( "monthly_pressure", monthly_pressure );
+    load_curve( "monthly_water_temperature", monthly_water_temperature );
+    optional( jo, was_loaded, "noise_magnitude", noise_magnitude, 6.0 );
+    optional( jo, was_loaded, "daily_magnitude", daily_magnitude, 5.0 );
+    optional( jo, was_loaded, "humidity_noise", humidity_noise, 20.0 );
+    optional( jo, was_loaded, "pressure_noise", pressure_noise, 15.0 );
     optional( jo, was_loaded, "weather_black_list", weather_black_list );
     optional( jo, was_loaded, "weather_white_list", weather_white_list );
     if( !weather_black_list.empty() && !weather_white_list.empty() ) {

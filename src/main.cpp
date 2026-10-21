@@ -775,8 +775,12 @@ bool initialize_interface( const cli_opts &cli )
             return false;
         }
     } else if( cli.check_mods ) {
+#if defined(TILES)
+        // Non-tiles builds already initialized the options above; a second
+        // init() leaves duplicate groups and drops every option.
         get_options().init();
         get_options().load();
+#endif
     }
 
     return true;

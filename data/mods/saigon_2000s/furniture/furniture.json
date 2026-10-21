@@ -1,0 +1,305 @@
+[
+  {
+    "type": "furniture",
+    "id": "f_sgn_ban_tho",
+    "copy-from": "f_table",
+    "name": "ancestor altar",
+    "description": "A bàn thờ: a tall lacquered altar table with framed photographs of the family's dead, a brass incense bowl, fruit offerings and flickering electric candles.  Every home and shop in the city keeps one, high up and facing the door.",
+    "color": "red",
+    "//": "V3: examining it shows a flavour text, and with incense and a lighter the player may light a stick (SGN_EOC_v3_altar_examine, eoc/v3_city_voice.json).  Inherited by f_sgn_ban_tho_than_tai.",
+    "examine_action": { "type": "effect_on_condition", "effect_on_conditions": [ "SGN_EOC_v3_altar_examine" ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_cot_dien",
+    "copy-from": "f_utility_pole",
+    "looks_like": "f_utility_pole",
+    "name": "concrete power pole",
+    "description": "A tapered concrete pole carrying the neighbourhood's electricity, phone and cable TV lines, plus decades of abandoned ones.  The cables sag between the houses in black loops and knot into a nest halfway up that no linesman has dared to untangle.",
+    "color": "light_gray"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_loa_phuong",
+    "copy-from": "f_utility_pole",
+    "looks_like": "f_utility_pole",
+    "name": "ward loudspeaker",
+    "description": "A steel pole topped with a pair of horn loudspeakers, the loa phường.  Every morning at six it read out ward notices, health campaigns and the price of rice.  Since the fever it has spoken only of quarantine, and a timer in the box at its foot may still switch it on at six and at five.",
+    "color": "light_gray",
+    "//": "V3: examining it plays a ward announcement that changes with the days since the cataclysm (SGN_EOC_v3_loa_examine); SGN_EOC_v3_loa_schedule broadcasts from a pole near the player at 6:00 and 17:00.",
+    "examine_action": { "type": "effect_on_condition", "effect_on_conditions": [ "SGN_EOC_v3_loa_examine" ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_ban_inox",
+    "copy-from": "f_table",
+    "looks_like": "f_table",
+    "name": "stainless street table",
+    "description": "A low, square stainless-steel table of the kind every sidewalk eatery stacks at closing time, with a caddy of chopsticks, chili sauce and fish sauce still on it.",
+    "color": "white",
+    "bash": {
+      "str_min": 12,
+      "str_max": 40,
+      "sound": "crash!",
+      "sound_fail": "clang!",
+      "items": [
+        { "item": "sheet_metal_small", "count": [ 2, 6 ] },
+        { "item": "pipe", "count": [ 1, 3 ] },
+        { "item": "scrap", "count": [ 1, 3 ] }
+      ]
+    },
+    "deconstruct": { "items": [ { "item": "sheet_metal_small", "count": [ 2, 4 ] }, { "item": "pipe", "count": 4 } ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_xe_banh_mi",
+    "copy-from": "f_glass_cabinet",
+    "looks_like": "f_glass_cabinet",
+    "name": "bánh mì cart",
+    "description": "A street vendor's cart: a glass case on a wheeled blue cabinet, with a gas burner for warming the bread and jars of pickles and pâté.  The baguettes inside are going stale.",
+    "color": "light_blue"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_du",
+    "name": "sidewalk umbrella",
+    "symbol": "T",
+    "color": "light_red",
+    "looks_like": "f_sign",
+    "description": "A big striped umbrella on a weighted stand, shading a café's stools from the afternoon sun.",
+    "move_cost_mod": 1,
+    "coverage": 10,
+    "required_str": 4,
+    "flags": [ "TRANSPARENT", "NOITEM" ],
+    "bash": {
+      "str_min": 4,
+      "str_max": 20,
+      "sound": "crunch!",
+      "sound_fail": "whump.",
+      "items": [ { "item": "pipe", "count": 1 }, { "item": "plastic_chunk", "count": [ 1, 3 ] } ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_bang_hieu",
+    "copy-from": "f_sign",
+    "looks_like": "f_sign",
+    "name": "sidewalk sign",
+    "description": "A painted A-frame sign set out on the sidewalk to point customers into a shop: phở, motorbike repair, photocopies, phone cards.",
+    "color": "yellow"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_day_phoi",
+    "name": "laundry line",
+    "symbol": "~",
+    "color": "light_blue",
+    "looks_like": "f_clothing_rail",
+    "description": "A plastic-coated wire strung across the alley at head height, hung with shirts, sarongs and children's clothes drying in the heat.  Each household's laundry has been out for days.",
+    "move_cost_mod": 0,
+    "coverage": 20,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "NOITEM", "ALLOW_ON_OPEN_AIR" ],
+    "bash": {
+      "str_min": 2,
+      "str_max": 8,
+      "sound": "swish.",
+      "sound_fail": "swish.",
+      "items": [
+        { "item": "string_36", "count": 1 },
+        { "item": "tshirt", "prob": 50 },
+        { "item": "pants", "prob": 30 },
+        { "item": "clothes_hanger", "count": [ 0, 3 ] }
+      ]
+    },
+    "deconstruct": {
+      "items": [
+        { "item": "string_36", "count": 1 },
+        { "item": "tshirt", "prob": 60 },
+        { "item": "pants", "prob": 40 },
+        { "item": "clothes_hanger", "count": [ 1, 4 ] }
+      ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_ban_tho_than_tai",
+    "copy-from": "f_sgn_ban_tho",
+    "looks_like": "f_sgn_ban_tho",
+    "name": "Thần Tài shrine",
+    "description": "A small red floor shrine just inside the shop entrance, for Thần Tài the god of wealth and Ông Địa the earth god: a jolly clay figure, a cup of incense, a can of beer, a few bananas and a bundle of fake money.",
+    "color": "red"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_lu_nuoc",
+    "copy-from": "f_standing_tank",
+    "looks_like": "f_standing_tank",
+    "name": "water jar",
+    "description": "Lu nước: a big glazed brown earthenware jar with a dragon moulded around its belly, kept full of water for washing and for when the city supply cuts out.  A plastic dipper floats on top.",
+    "color": "brown",
+    "keg_capacity": "60 L"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_vong",
+    "copy-from": "f_hammock",
+    "looks_like": "f_hammock",
+    "name": "hammock",
+    "description": "A võng of knotted nylon cord slung between two hooks: the coolest place to nap through the afternoon heat.",
+    "color": "light_green"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_tivi_crt",
+    "name": "CRT television",
+    "symbol": "0",
+    "color": "dark_gray",
+    "looks_like": "f_dresser",
+    "description": "A bulky colour television on a lace-covered cabinet, its rabbit-ear antenna tilted towards the window.  The whole family watched the evening news and Korean dramas on it.",
+    "move_cost_mod": -1,
+    "coverage": 40,
+    "required_str": 8,
+    "flags": [ "TRANSPARENT", "PLACE_ITEM", "BLOCKSDOOR" ],
+    "bash": {
+      "str_min": 8,
+      "str_max": 30,
+      "sound": "crunch!",
+      "sound_fail": "whump.",
+      "items": [
+        { "item": "e_scrap", "count": [ 1, 3 ] },
+        { "item": "glass_shard", "count": [ 2, 5 ] },
+        { "item": "plastic_chunk", "count": [ 2, 4 ] }
+      ]
+    },
+    "deconstruct": { "items": [ { "item": "television", "count": 1 } ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_chau_kieng",
+    "copy-from": "f_indoor_plant",
+    "looks_like": "f_indoor_plant",
+    "name": "potted plant",
+    "description": "Chậu kiểng: a glazed pot with a twisted bonsai or a kumquat bush, lovingly watered every evening on the roof terrace.",
+    "color": "green"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_quay_vang",
+    "copy-from": "f_glass_cabinet",
+    "looks_like": "f_glass_cabinet",
+    "name": "gold shop counter",
+    "description": "A glass display counter lined with red velvet, built to show off chains, bangles and the stamped gold leaves that families save their money in.  The glass is smashed.",
+    "color": "yellow"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_may_net",
+    "copy-from": "f_desk",
+    "looks_like": "f_desk",
+    "name": "internet café PC",
+    "description": "A cheap beige computer on a plywood desk with a sticky keyboard and a headset, one of a row where boys played LAN games all night.  A handwritten sign sets the price per hour.",
+    "color": "light_gray",
+    "deconstruct": {
+      "items": [
+        { "item": "processor", "prob": 40 },
+        { "item": "e_scrap", "count": [ 2, 4 ] },
+        { "item": "2x4", "count": 2 },
+        { "item": "nail", "charges": [ 4, 8 ] }
+      ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_dan_karaoke",
+    "name": "karaoke set",
+    "symbol": "&",
+    "color": "magenta",
+    "looks_like": "f_speaker_cabinet",
+    "description": "A big television between two speaker towers, a disc player stacked with VCDs and a pair of microphones on coiled cords.  The neighbours hated it.",
+    "move_cost_mod": -1,
+    "coverage": 50,
+    "required_str": 10,
+    "flags": [ "TRANSPARENT", "PLACE_ITEM", "BLOCKSDOOR" ],
+    "bash": {
+      "str_min": 10,
+      "str_max": 35,
+      "sound": "crunch!",
+      "sound_fail": "whump.",
+      "items": [
+        { "item": "e_scrap", "count": [ 2, 5 ] },
+        { "item": "glass_shard", "count": [ 2, 6 ] },
+        { "item": "plastic_chunk", "count": [ 2, 6 ] }
+      ]
+    },
+    "deconstruct": { "items": [ { "item": "television", "count": 1 }, { "item": "e_scrap", "count": [ 1, 3 ] } ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_bang_den",
+    "name": "blackboard",
+    "symbol": "=",
+    "color": "dark_gray",
+    "looks_like": "f_desk",
+    "description": "A green-black chalkboard on a wooden frame at the front of the classroom, still showing today's date and a half-finished sum.",
+    "move_cost_mod": -1,
+    "coverage": 40,
+    "required_str": 8,
+    "flags": [ "TRANSPARENT", "NOITEM", "BLOCKSDOOR" ],
+    "bash": {
+      "str_min": 6,
+      "str_max": 25,
+      "sound": "crack!",
+      "sound_fail": "whump.",
+      "items": [ { "item": "2x4", "count": [ 1, 3 ] }, { "item": "splinter", "count": [ 2, 6 ] } ]
+    },
+    "deconstruct": { "items": [ { "item": "2x4", "count": 3 }, { "item": "nail", "charges": [ 4, 8 ] } ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_buong_dien_thoai",
+    "name": "telephone booth",
+    "symbol": "&",
+    "color": "brown",
+    "looks_like": "f_rack",
+    "description": "A varnished wooden telephone cabinet with a folding glass door and a numbered brass plate, one of a row along the post office wall.  The line is dead.",
+    "move_cost_mod": -1,
+    "coverage": 60,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "PLACE_ITEM", "BLOCKSDOOR" ],
+    "bash": {
+      "str_min": 8,
+      "str_max": 30,
+      "sound": "crunch!",
+      "sound_fail": "whump.",
+      "items": [
+        { "item": "2x4", "count": [ 1, 3 ] },
+        { "item": "glass_shard", "count": [ 1, 4 ] },
+        { "item": "e_scrap", "count": [ 0, 2 ] }
+      ]
+    },
+    "deconstruct": {
+      "items": [ { "item": "2x4", "count": 4 }, { "item": "nail", "charges": [ 6, 12 ] }, { "item": "e_scrap", "count": [ 1, 2 ] } ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_dong_ho",
+    "name": "tower clock",
+    "symbol": "o",
+    "color": "white",
+    "looks_like": "f_rack",
+    "description": "The great clock face of the tower, white enamel and black iron hands, stopped at the hour the power failed.",
+    "move_cost_mod": -1,
+    "coverage": 80,
+    "required_str": -1,
+    "flags": [ "NOITEM", "BLOCKSDOOR" ],
+    "bash": {
+      "str_min": 20,
+      "str_max": 60,
+      "sound": "clang!",
+      "sound_fail": "clang.",
+      "items": [ { "item": "scrap", "count": [ 2, 6 ] }, { "item": "glass_shard", "count": [ 2, 6 ] } ]
+    }
+  }
+]

@@ -1,0 +1,654 @@
+[
+  {
+    "type": "item_group",
+    "id": "default_zombie_clothes",
+    "subtype": "collection",
+    "//": "Saigon replacement (same id, hardcoded in src/map.cpp): tropical clothes, sandals, helmets and bird-flu masks instead of New England coats.",
+    "entries": [
+      {
+        "distribution": [
+          {
+            "collection": [
+              { "group": "male_underwear", "prob": 100, "damage": [ 1, 4 ] },
+              {
+                "distribution": [
+                  { "item": "tshirt", "prob": 40, "damage": [ 1, 4 ] },
+                  { "item": "longshirt", "prob": 30, "damage": [ 1, 4 ] },
+                  { "item": "sgn_ao_ba_ba", "prob": 20, "damage": [ 1, 4 ] },
+                  { "item": "tank_top", "prob": 10, "damage": [ 1, 4 ] }
+                ]
+              },
+              {
+                "distribution": [
+                  { "item": "pants_cargo", "prob": 40, "damage": [ 1, 4 ] },
+                  { "item": "jeans", "prob": 30, "damage": [ 1, 4 ] },
+                  { "item": "shorts", "prob": 30, "damage": [ 1, 4 ] }
+                ]
+              }
+            ],
+            "prob": 50
+          },
+          {
+            "collection": [
+              { "group": "female_underwear", "prob": 100, "damage": [ 1, 4 ] },
+              {
+                "distribution": [
+                  { "item": "tshirt", "prob": 30, "damage": [ 1, 4 ] },
+                  { "item": "longshirt", "prob": 30, "damage": [ 1, 4 ] },
+                  { "item": "sgn_ao_ba_ba", "prob": 40, "damage": [ 1, 4 ] }
+                ]
+              },
+              {
+                "distribution": [
+                  { "item": "pants_cargo", "prob": 40, "damage": [ 1, 4 ] },
+                  { "item": "jeans", "prob": 40, "damage": [ 1, 4 ] },
+                  { "item": "shorts", "prob": 20, "damage": [ 1, 4 ] }
+                ]
+              }
+            ],
+            "prob": 50
+          },
+          {
+            "collection": [
+              { "group": "female_underwear", "prob": 100, "damage": [ 1, 4 ] },
+              { "item": "sgn_do_bo", "prob": 100, "damage": [ 1, 4 ] }
+            ],
+            "prob": 20
+          }
+        ]
+      },
+      { "item": "sgn_khan_ran", "prob": 4, "damage": [ 1, 4 ] },
+      {
+        "distribution": [
+          { "item": "sgn_dep_quai_hau", "prob": 15, "damage": [ 1, 4 ] },
+          { "item": "sgn_dep_to_ong", "prob": 45, "damage": [ 1, 4 ] },
+          { "item": "flip_flops", "prob": 25, "damage": [ 1, 4 ] },
+          { "item": "sneakers", "prob": 25, "damage": [ 1, 4 ] },
+          { "item": "boots", "prob": 5, "damage": [ 1, 4 ] }
+        ]
+      },
+      { "item": "sgn_non_bao_hiem", "prob": 35, "damage": [ 1, 4 ] },
+      { "item": "sgn_non_la", "prob": 8, "damage": [ 1, 4 ] },
+      { "item": "mask_dust", "prob": 30, "damage": [ 1, 4 ] },
+      { "item": "sgn_ong_tay_chong_nang", "prob": 12, "damage": [ 1, 4 ] },
+      { "item": "sgn_ao_mua_canh_doi", "prob": 8, "damage": [ 1, 4 ] },
+      { "item": "ring_wedding", "prob": 25, "damage": [ 1, 4 ] },
+      { "item": "sgn_ao_thun", "prob": 30 },
+      { "item": "sgn_quan_tay", "prob": 20 },
+      { "item": "sgn_ao_khoac_chong_nang", "prob": 10 },
+      { "item": "sgn_dep_lao", "prob": 15 },
+      { "item": "sgn_non_ket", "prob": 8 },
+      { "item": "sgn_ung_cao_su", "prob": 10 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_shophouse_kitchen",
+    "subtype": "collection",
+    "entries": [
+      {
+        "prob": 100,
+        "distribution": [
+          { "item": "sgn_binh_thuy", "prob": 20 },
+          { "item": "sgn_noi_dat", "prob": 12 },
+          { "item": "sgn_thot_go_me", "prob": 15 },
+          { "item": "sgn_am_nhom", "prob": 15 },
+          { "item": "sgn_long_ban", "prob": 12 },
+          { "item": "sgn_choi_cha", "prob": 8 },
+          { "item": "sgn_mam_tom", "prob": 10 },
+          { "item": "sgn_lap_xuong", "prob": 10, "count": [ 1, 4 ] },
+          { "item": "sgn_kho_bo", "prob": 6 },
+          { "item": "dry_rice", "prob": 40 },
+          { "item": "sgn_nuoc_mam", "prob": 40, "container-item": "sgn_chai_nuoc_mam" },
+          { "item": "sgn_mi_goi", "prob": 50 },
+          { "item": "sgn_banh_pho", "prob": 20 },
+          { "item": "sugar", "prob": 20 },
+          { "item": "salt", "prob": 20 },
+          { "item": "tea_raw", "prob": 20 },
+          { "item": "coffee_raw", "prob": 20 },
+          { "item": "con_milk", "prob": 15 },
+          { "item": "sgn_tuong_ot", "prob": 20 },
+          { "item": "egg_chicken", "prob": 10 },
+          { "item": "chopsticks", "prob": 30 },
+          { "item": "bowl_plastic", "prob": 30 },
+          { "item": "pot", "prob": 15 },
+          { "item": "sgn_bep_ga_mini", "prob": 8, "ammo-item": "butane", "charges": [ 20, 150 ] },
+          { "item": "butane_can", "prob": 15 },
+          { "item": "sgn_ruou_de", "prob": 8 },
+          { "item": "sgn_banh_chung", "prob": 5 },
+          { "item": "sgn_noi_com_dien", "prob": 25 },
+          { "item": "sgn_bep_than_to_ong", "prob": 8 },
+          { "item": "sgn_than_to_ong", "prob": 15, "count": [ 2, 8 ] },
+          { "item": "sgn_phin", "prob": 25 },
+          { "item": "sgn_ca_phe_bot", "prob": 20 },
+          { "item": "sgn_sua_dac", "prob": 20 },
+          { "item": "sgn_binh_gas", "prob": 10 },
+          { "item": "sgn_can_nhua", "prob": 10 }
+        ]
+      },
+      { "group": "sgn_loot_kitchen_blade", "prob": 30 },
+      { "group": "sgn_vn_daily_kitchen", "prob": 40 }
+    ],
+    "//": "Kitchen and pantry of a nhà ống home: one thing from the shelves, and (W2) often the dao phay every Vietnamese kitchen chops with."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_shophouse_living",
+    "subtype": "collection",
+    "entries": [
+      {
+        "prob": 100,
+        "distribution": [
+          { "item": "sgn_truyen_meo_may", "prob": 10 },
+          { "item": "sgn_vcd_phim_bo", "prob": 8 },
+          { "item": "sgn_bang_cassette", "prob": 8 },
+          { "item": "sgn_lich_bloc", "prob": 15 },
+          { "item": "sgn_bao_li_xi", "prob": 6 },
+          { "item": "sgn_long_den_ong_sao", "prob": 4 },
+          { "item": "sgn_vang_ma", "prob": 6 },
+          { "item": "sgn_non_coi", "prob": 5 },
+          { "item": "sgn_do_bo", "prob": 12 },
+          { "item": "sgn_khan_ran", "prob": 6 },
+          { "item": "sgn_dep_quai_hau", "prob": 8 },
+          { "item": "sgn_khoa_chu_u", "prob": 6 },
+          { "item": "sgn_can_cau_tre", "prob": 3 },
+          { "item": "sgn_book_almanac", "prob": 10 },
+          { "item": "sgn_karaoke_songbook", "prob": 6 },
+          { "item": "sgn_book_wuxia", "prob": 15 },
+          { "item": "sgn_newspaper", "prob": 25 },
+          { "item": "sgn_ward_notice", "prob": 15 },
+          { "item": "sgn_note_handwritten", "prob": 12 },
+          { "item": "incense", "prob": 20 },
+          { "item": "candle", "prob": 15 },
+          { "item": "matches", "prob": 15 },
+          { "item": "lighter", "prob": 15 },
+          { "item": "sgn_non_la", "prob": 8 },
+          { "item": "sgn_non_bao_hiem", "prob": 15 },
+          { "item": "sgn_ao_mua_canh_doi", "prob": 15 },
+          { "item": "sgn_dep_to_ong", "prob": 20 },
+          { "item": "sgn_ao_ba_ba", "prob": 10 },
+          { "item": "mask_dust", "prob": 15 },
+          { "item": "sgn_book_southern_cooking", "prob": 4 },
+          { "item": "sgn_book_tailoring", "prob": 3 },
+          { "item": "sgn_book_tv_repair", "prob": 2 },
+          { "item": "aspirin", "prob": 10 },
+          { "item": "sgn_quat_may", "prob": 30 },
+          { "item": "sgn_den_dau", "prob": 15 },
+          { "item": "sgn_dien_thoai", "prob": 15 },
+          { "item": "sgn_radio_cassette", "prob": 10 },
+          { "item": "sgn_mung", "prob": 25 },
+          { "item": "sgn_khau_trang", "prob": 20 },
+          { "item": "sgn_dau_gio", "prob": 20 },
+          { "item": "sgn_ve_so", "prob": 15, "count": [ 1, 4 ] },
+          { "item": "sgn_thuoc_la", "prob": 20, "count": [ 1, 10 ] },
+          { "item": "sgn_vang_luong", "prob": 2 },
+          { "item": "sgn_ao_dai_trang", "prob": 8 },
+          { "item": "sgn_ao_dai_mau", "prob": 5 },
+          { "item": "sgn_ao_thun", "prob": 25 },
+          { "item": "sgn_quan_tay", "prob": 15 },
+          { "item": "sgn_ao_khoac_chong_nang", "prob": 15 },
+          { "item": "sgn_non_ket", "prob": 12 },
+          { "item": "sgn_dep_lao", "prob": 12 },
+          { "item": "sgn_ao_trang_hoc_sinh", "prob": 8 },
+          { "item": "sgn_khan_quang_do", "prob": 6 },
+          { "item": "sgn_ung_cao_su", "prob": 10 }
+        ]
+      },
+      { "group": "sgn_loot_home_weapon", "prob": 10 },
+      { "group": "sgn_vn_daily_home", "prob": 35 }
+    ],
+    "//": "Living room, altar and bedrooms of a nhà ống home: one thing from the room, and (W2) sometimes what the family kept behind the door."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_cho_stall_produce",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_nuoc_dua", "prob": 20, "count": [ 1, 3 ] },
+      { "item": "sgn_lap_xuong", "prob": 10, "count": [ 2, 6 ] },
+      { "item": "sgn_rau_muong", "prob": 40 },
+      { "item": "mango", "prob": 25 },
+      { "item": "papaya", "prob": 20 },
+      { "item": "banana", "prob": 25 },
+      { "item": "coconut", "prob": 15 },
+      { "item": "sgn_durian", "prob": 8 },
+      { "item": "sgn_mit", "prob": 10 },
+      { "item": "sgn_thanh_long", "prob": 15 },
+      { "item": "dry_rice", "prob": 25 },
+      { "item": "egg_chicken", "prob": 15 },
+      { "item": "sgn_nuoc_mam", "prob": 15 },
+      { "item": "sgn_thung_xop", "prob": 10 },
+      { "item": "sgn_banh_trang", "prob": 30, "count": [ 2, 10 ] },
+      { "item": "sgn_ro_nhua", "prob": 30 },
+      { "item": "sgn_thau_nhua", "prob": 20 },
+      { "item": "sgn_quang_ganh", "prob": 10 },
+      { "item": "sgn_dao_rua", "prob": 10 }
+    ],
+    "//": "Wet-market produce stall (W2: the dao rựa that opens the coconuts)."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_cho_stall_meat_fish",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "fish", "prob": 50 },
+      { "item": "meat", "prob": 40 },
+      { "item": "sgn_thung_xop", "prob": 20 },
+      { "item": "sgn_dao_rua", "prob": 12 },
+      { "item": "knife_cleaver", "prob": 30 },
+      { "item": "knife_huge", "variant": "knife_butcher", "prob": 15 },
+      { "item": "salt", "prob": 15 },
+      { "item": "sgn_kho_muc", "prob": 30 },
+      { "item": "sgn_tom_kho", "prob": 30 },
+      { "item": "sgn_thau_nhua", "prob": 30 },
+      { "item": "sgn_luoi_chai", "prob": 8 },
+      { "item": "sgn_ung_cao_su", "prob": 30 }
+    ],
+    "//": "Wet-market fish and meat stall; the heat spoils everything fast."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_street_cart",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_hot_vit_lon", "prob": 15, "count": [ 1, 4 ] },
+      { "item": "sgn_bun_bo_hue", "prob": 10 },
+      { "item": "sgn_bun_thit_nuong", "prob": 10 },
+      { "item": "sgn_banh_cuon", "prob": 8 },
+      { "item": "sgn_chao_long", "prob": 8 },
+      { "item": "sgn_bo_bia", "prob": 10, "count": [ 1, 3 ] },
+      { "item": "sgn_banh_flan", "prob": 8, "count": [ 1, 4 ] },
+      { "item": "sgn_sua_dau_nanh", "prob": 10 },
+      { "item": "sgn_banh_mi_bread", "prob": 30 },
+      { "item": "sgn_banh_mi_thit", "prob": 15 },
+      { "item": "sgn_banh_pho", "prob": 15 },
+      { "item": "sgn_bep_ga_mini", "prob": 15, "ammo-item": "butane", "charges": [ 20, 150 ] },
+      { "item": "butane_can", "prob": 15 },
+      { "item": "pot", "prob": 15 },
+      { "item": "bowl_plastic", "prob": 25 },
+      { "item": "chopsticks", "prob": 25 },
+      { "item": "sgn_nuoc_mam", "prob": 15, "container-item": "sgn_chai_nuoc_mam" },
+      { "item": "sgn_tuong_ot", "prob": 20 },
+      { "item": "sgn_che", "prob": 8 },
+      { "item": "sgn_bich_nylon", "prob": 30 },
+      { "item": "sgn_ly_nhua", "prob": 20 },
+      { "item": "sgn_bep_than_to_ong", "prob": 10 },
+      { "item": "sgn_than_to_ong", "prob": 15, "count": [ 1, 4 ] },
+      { "item": "sgn_hu_tieu", "prob": 12 },
+      { "item": "sgn_banh_xeo", "prob": 10 },
+      { "item": "sgn_goi_cuon", "prob": 10 },
+      { "item": "sgn_xoi", "prob": 15 },
+      { "item": "sgn_banh_bao", "prob": 12 },
+      { "item": "sgn_ve_so", "prob": 20, "count": [ 1, 6 ] }
+    ],
+    "//": "Street-food cart or sidewalk stall."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_cafe",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "coffee_raw", "prob": 30 },
+      { "item": "con_milk", "prob": 25 },
+      { "item": "tea_raw", "prob": 20 },
+      { "item": "sugar", "prob": 15 },
+      { "item": "sgn_newspaper", "prob": 20 },
+      { "item": "sgn_ca_phe_sua_da", "prob": 8 },
+      { "item": "sgn_tra_da", "prob": 10 },
+      { "item": "sgn_bia_hoi", "prob": 10 },
+      { "item": "sgn_karaoke_songbook", "prob": 3 },
+      { "item": "sgn_phin", "prob": 30 },
+      { "item": "sgn_ca_phe_bot", "prob": 25 },
+      { "item": "sgn_sua_dac", "prob": 20 },
+      { "item": "sgn_ly_nhua", "prob": 30 },
+      { "item": "sgn_bich_nylon", "prob": 25 },
+      { "item": "sgn_thuoc_la", "prob": 20, "count": [ 1, 6 ] },
+      { "item": "sgn_kho_muc", "prob": 15 }
+    ],
+    "//": "Sidewalk café (cà phê vỉa hè)."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_moto_shop",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_bo_va_xe", "prob": 25 },
+      { "item": "sgn_khoa_chu_u", "prob": 15 },
+      { "item": "wrench", "prob": 20 },
+      { "item": "screwdriver", "prob": 20 },
+      { "item": "pliers", "prob": 15 },
+      { "item": "sgn_engine_110cc_item", "prob": 4 },
+      { "item": "sgn_moto_tank_4l", "prob": 6 },
+      { "item": "sgn_book_moto_repair", "prob": 8 },
+      { "item": "jerrycan", "prob": 15 },
+      { "item": "gasoline", "prob": 10, "container-item": "jerrycan", "charges": [ 1000, 10000 ] },
+      { "item": "sgn_non_bao_hiem", "prob": 15 },
+      { "item": "sgn_ao_mua_canh_doi", "prob": 10 },
+      { "item": "sgn_xa_beng", "prob": 25 },
+      { "item": "hammer", "prob": 15 },
+      { "item": "lug_wrench", "prob": 15 },
+      { "item": "pipe", "prob": 10 }
+    ],
+    "//": "Sidewalk motorbike repair shop."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_pharmacy",
+    "subtype": "distribution",
+    "entries": [
+      { "group": "sgn_vn_daily_hop_cu_la", "prob": 15 },
+      { "item": "aspirin", "prob": 30 },
+      { "item": "adhesive_bandages", "prob": 30 },
+      { "item": "disinfectant", "prob": 20 },
+      { "item": "mask_dust", "prob": 30 },
+      { "item": "sgn_book_nursing", "prob": 4 },
+      { "item": "gloves_medical", "prob": 10 },
+      { "item": "sgn_dau_gio", "prob": 50, "count": [ 1, 3 ] },
+      { "item": "sgn_oresol", "prob": 50, "count": [ 2, 10 ] },
+      { "item": "sgn_khau_trang", "prob": 40, "count": [ 1, 5 ] }
+    ],
+    "//": "Nhà thuốc (pharmacy) shelves."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_pagoda",
+    "subtype": "distribution",
+    "entries": [
+      { "item": "sgn_vang_ma", "prob": 25 },
+      { "item": "incense", "prob": 40 },
+      { "item": "sgn_book_sutra", "prob": 25 },
+      { "item": "bead_necklace", "prob": 10 },
+      { "item": "candle", "prob": 20 },
+      { "item": "dry_rice", "prob": 15 },
+      { "item": "sgn_banh_chung", "prob": 5 },
+      { "item": "robe", "prob": 8 },
+      { "item": "sgn_nen", "prob": 40, "count": [ 1, 4 ] }
+    ],
+    "//": "Pagoda altars and kitchen."
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_gold_shop",
+    "subtype": "distribution",
+    "//": "B8h tiệm vàng counters.",
+    "items": [
+      { "item": "sgn_vang_chi", "prob": 60, "count": [ 1, 5 ] },
+      { "item": "sgn_vang_luong", "prob": 15 },
+      { "item": "gold_ring", "prob": 30 },
+      { "item": "ring_wedding", "prob": 20 },
+      { "item": "diamond_ring", "prob": 10 },
+      { "item": "ring_engagement", "prob": 10 },
+      { "item": "silver_necklace", "prob": 25 },
+      { "item": "gold_watch", "prob": 10 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_net_cafe",
+    "subtype": "distribution",
+    "//": "B8h quán net desks.",
+    "items": [
+      { "item": "sgn_truyen_meo_may", "prob": 15 },
+      { "item": "processor", "prob": 10 },
+      { "item": "laptop", "prob": 3 },
+      { "item": "e_scrap", "prob": 30 },
+      { "item": "sgn_thuoc_la", "prob": 30, "count": [ 1, 6 ] },
+      { "item": "sgn_ly_nhua", "prob": 25 },
+      { "item": "sgn_mi_goi", "prob": 20 },
+      { "item": "sgn_dien_thoai", "prob": 8 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_karaoke",
+    "subtype": "distribution",
+    "//": "B8h karaoke rooms.",
+    "items": [
+      { "item": "sgn_bang_cassette", "prob": 20 },
+      { "item": "sgn_vcd_phim_bo", "prob": 15 },
+      { "item": "sgn_karaoke_songbook", "prob": 40 },
+      { "item": "beer", "prob": 30, "count": [ 1, 4 ] },
+      { "item": "sgn_kho_muc", "prob": 20 },
+      { "item": "sgn_thuoc_la", "prob": 25, "count": [ 1, 8 ] },
+      { "item": "sgn_ly_nhua", "prob": 15 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_church",
+    "subtype": "distribution",
+    "//": "B8h nhà thờ altar and pews.",
+    "items": [
+      { "item": "sgn_sach_kinh", "prob": 30 },
+      { "item": "sgn_kinh_thanh", "prob": 20 },
+      { "item": "holy_symbol", "prob": 25, "variant": "cross_necklace" },
+      { "item": "sgn_nen", "prob": 50, "count": [ 1, 4 ] },
+      { "item": "candle", "prob": 20 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_ward_office",
+    "subtype": "distribution",
+    "//": "B8h UBND phường desks and cabinets.",
+    "items": [
+      { "item": "sgn_ward_notice", "prob": 60, "count": [ 1, 5 ] },
+      { "item": "sgn_newspaper", "prob": 25 },
+      { "item": "paper", "prob": 40, "count": [ 5, 20 ] },
+      { "item": "pen", "prob": 40 },
+      { "item": "sgn_dong_10k", "prob": 15, "count": [ 1, 5 ] },
+      { "item": "sgn_ao_cong_an", "prob": 5 },
+      { "item": "sgn_khau_trang", "prob": 20 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_school",
+    "subtype": "distribution",
+    "//": "B8h trường học desks.",
+    "items": [
+      { "item": "sgn_truyen_meo_may", "prob": 20 },
+      { "item": "sgn_long_den_ong_sao", "prob": 5 },
+      { "item": "sgn_sgk_ngu_van", "prob": 10 },
+      { "item": "sgn_so_tay_so_cuu", "prob": 8 },
+      { "item": "paper", "prob": 40, "count": [ 3, 10 ] },
+      { "item": "pencil", "prob": 40 },
+      { "item": "pen", "prob": 20 },
+      { "item": "sgn_khan_quang_do", "prob": 15 },
+      { "item": "sgn_ao_trang_hoc_sinh", "prob": 8 },
+      { "item": "sgn_xoi", "prob": 8 },
+      { "group": "sgn_loot_school_toys", "prob": 20 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_cho_cloth",
+    "subtype": "distribution",
+    "//": "L1 Bến Thành cloth and clothing stalls.",
+    "items": [
+      { "item": "sgn_do_bo", "prob": 25 },
+      { "item": "sgn_khan_ran", "prob": 15 },
+      { "item": "sgn_dep_quai_hau", "prob": 15 },
+      { "item": "sgn_non_coi", "prob": 8 },
+      { "item": "sheet_cotton", "prob": 30 },
+      { "item": "cotton_patchwork", "prob": 30, "count": [ 2, 8 ] },
+      { "item": "sgn_ao_ba_ba", "prob": 25 },
+      { "item": "sgn_ao_thun", "prob": 30 },
+      { "item": "sgn_quan_tay", "prob": 20 },
+      { "item": "sgn_ao_dai_trang", "prob": 10 },
+      { "item": "sgn_ao_dai_mau", "prob": 10 },
+      { "item": "sgn_non_la", "prob": 25 },
+      { "item": "sgn_khau_trang", "prob": 20 },
+      { "item": "sgn_dep_to_ong", "prob": 20 },
+      { "item": "sgn_ao_khoac_chong_nang", "prob": 15 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_post_office",
+    "subtype": "distribution",
+    "//": "L1 Central Post Office counters and booths.",
+    "items": [
+      { "item": "envelope", "prob": 40, "count": [ 1, 6 ] },
+      { "item": "paper", "prob": 40, "count": [ 5, 15 ] },
+      { "item": "pen", "prob": 30 },
+      { "item": "sgn_newspaper", "prob": 25 },
+      { "item": "sgn_dong_10k", "prob": 20, "count": [ 1, 6 ] },
+      { "item": "sgn_dien_thoai", "prob": 8 },
+      { "item": "sgn_ve_so", "prob": 15, "count": [ 1, 4 ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_palace_bunker",
+    "subtype": "distribution",
+    "//": "L1 Independence Palace command bunker: the war room.",
+    "items": [
+      { "item": "two_way_radio", "prob": 40 },
+      { "item": "binoculars", "prob": 20 },
+      { "item": "flashlight", "prob": 40 },
+      { "item": "sgn_luong_kho", "prob": 45, "count": [ 1, 3 ] },
+      { "item": "jacket_army", "prob": 15 },
+      { "item": "helmet_army", "prob": 15 },
+      { "item": "paper", "prob": 40, "count": [ 5, 20 ] },
+      { "item": "sgn_ward_notice", "prob": 30, "count": [ 1, 3 ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_temple",
+    "subtype": "distribution",
+    "//": "L2 Chợ Lớn temples (Thiên Hậu, Ngọc Hoàng): altars, offerings and the donation box; W2: now and then one of the ceremonial arms from the guardians' rack.",
+    "items": [
+      { "item": "sgn_vang_ma", "prob": 25 },
+      { "item": "sgn_bao_li_xi", "prob": 8 },
+      { "item": "incense", "prob": 45, "count": [ 1, 3 ] },
+      { "item": "sgn_nen", "prob": 40, "count": [ 1, 4 ] },
+      { "item": "candle", "prob": 20 },
+      { "group": "sgn_dong_notes", "prob": 25, "count": [ 1, 3 ] },
+      { "item": "banana", "prob": 10 },
+      { "item": "mango", "prob": 8 },
+      { "item": "matches", "prob": 10 },
+      { "item": "lighter", "prob": 5 },
+      { "item": "tea_raw", "prob": 10 },
+      { "item": "sgn_banh_chung", "prob": 5 },
+      { "group": "sgn_weapons_melee_rare", "prob": 5 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_cho_wholesale",
+    "subtype": "distribution",
+    "//": "L2 Chợ Bình Tây wholesale stalls: dry goods by the sack and the carton.",
+    "items": [
+      { "group": "sgn_vn_daily_shop", "prob": 20 },
+      { "item": "sgn_banh_trung_thu", "prob": 10 },
+      { "item": "sgn_vang_ma", "prob": 10 },
+      { "item": "sgn_kho_bo", "prob": 12, "count": [ 2, 8 ] },
+      { "item": "sgn_lap_xuong", "prob": 15, "count": [ 4, 12 ] },
+      { "item": "sgn_mam_tom", "prob": 10 },
+      { "item": "dry_rice", "prob": 40, "count": [ 5, 20 ] },
+      { "item": "sgn_mi_goi", "prob": 25, "count": [ 5, 20 ] },
+      { "item": "sugar", "prob": 15 },
+      { "item": "salt", "prob": 15 },
+      { "item": "sgn_tom_kho", "prob": 15 },
+      { "item": "sgn_kho_muc", "prob": 10 },
+      { "item": "sgn_ca_phe_bot", "prob": 15 },
+      { "item": "tea_raw", "prob": 15 },
+      { "item": "peanut_shelled", "prob": 15 },
+      { "item": "cooking_oil", "prob": 15 },
+      { "item": "sgn_nuoc_mam", "prob": 20 },
+      { "item": "noodles_fast", "prob": 10 },
+      { "item": "sgn_thau_nhua", "prob": 10 },
+      { "item": "sgn_ro_nhua", "prob": 10 },
+      { "group": "sgn_loot_hardware", "prob": 25 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_loot_kitchen_blade",
+    "subtype": "distribution",
+    "//": "W2: the blade of a Saigon kitchen.  The dao phay (cleaver) chops everything; a long knife, a heavy pan, or a local blade (W1).",
+    "items": [
+      { "item": "knife_cleaver", "prob": 45 },
+      { "item": "knife_large", "prob": 15 },
+      { "item": "pan", "prob": 10 },
+      { "group": "sgn_weapons_melee_common", "prob": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_loot_home_weapon",
+    "subtype": "distribution",
+    "//": "W2: what a family kept behind the door or under the bed: a bamboo stick or a pole, the motorbike U-lock, a hammer, a dao rựa; now and then a boy's slingshot.",
+    "items": [
+      { "group": "sgn_weapons_melee_common", "prob": 45 },
+      { "item": "sgn_khoa_chu_u", "prob": 15 },
+      { "item": "hammer", "prob": 10 },
+      { "item": "sgn_dao_rua", "prob": 8 },
+      { "item": "pipe", "prob": 5 },
+      { "item": "cane", "prob": 5 },
+      { "group": "sgn_weapons_ranged_primitive", "prob": 6 },
+      { "group": "sgn_weapons_melee_rare", "prob": 3 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_loot_hardware",
+    "subtype": "distribution",
+    "//": "W2: a chợ hardware and dao kéo stall, or a workshop bench: blades, farm tools and hand tools sold or used as tools.",
+    "items": [
+      { "item": "sgn_dao_rua", "prob": 15 },
+      { "item": "knife_cleaver", "prob": 15 },
+      { "item": "knife_large", "prob": 8 },
+      { "item": "machete", "prob": 5 },
+      { "item": "hoe", "prob": 8 },
+      { "item": "shovel", "prob": 8 },
+      { "item": "sickle", "prob": 6 },
+      { "item": "hammer", "prob": 12 },
+      { "item": "hatchet", "prob": 4 },
+      { "item": "sgn_xa_beng", "prob": 6 },
+      { "group": "sgn_weapons_melee_common", "prob": 15 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_loot_building_tools",
+    "subtype": "distribution",
+    "//": "W2: a construction site or a kho: hammers, rebar and pipe offcuts, shovels, a crowbar, planks, now and then a sledgehammer or a pick.",
+    "items": [
+      { "item": "hammer", "prob": 20 },
+      { "item": "rebar", "prob": 20, "count": [ 1, 4 ] },
+      { "item": "pipe", "prob": 15, "count": [ 1, 3 ] },
+      { "item": "shovel", "prob": 15 },
+      { "item": "sgn_xa_beng", "prob": 10 },
+      { "item": "2x4", "prob": 10, "count": [ 1, 4 ] },
+      { "item": "hammer_sledge", "prob": 5 },
+      { "item": "pickaxe", "prob": 3 },
+      { "group": "sgn_weapons_melee_common", "prob": 5 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_loot_country_tools",
+    "subtype": "distribution",
+    "//": "W2: the edge of town, the canal shacks and the rice fields: hoes, dao rựa and sickles, a shovel; a boy's slingshot and its pebbles.",
+    "items": [
+      { "item": "hoe", "prob": 20 },
+      { "item": "sgn_dao_rua", "prob": 20 },
+      { "item": "sickle", "prob": 15 },
+      { "item": "shovel", "prob": 10 },
+      { "item": "machete", "prob": 5 },
+      { "group": "sgn_weapons_melee_common", "prob": 15 },
+      { "group": "sgn_weapons_ranged_primitive", "prob": 10 },
+      { "group": "sgn_weapons_ammo_primitive", "prob": 5 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_loot_school_toys",
+    "subtype": "distribution",
+    "//": "W2: what a teacher's drawer took off the pupils: slingshots (ná thun) and bags of marbles (bi).",
+    "items": [ { "group": "sgn_weapons_ranged_primitive", "prob": 45 }, { "group": "sgn_weapons_ammo_primitive", "prob": 55 } ]
+  }
+]

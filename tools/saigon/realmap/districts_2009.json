@@ -1,0 +1,131 @@
+{
+  "about": "The 2009 urban districts inside the real-map area, as the overmap's cities: their names show on the overmap and dda gives each city its zombie horde (size drives it, like Vietmap's city_size 12). Centres and 2009 populations are approximate (from memory, rounded); they only place a label and a horde.",
+  "districts": [
+    {
+      "name": "Quận 1",
+      "lat": 10.7756,
+      "lon": 106.7004,
+      "size": 12,
+      "population": 180000
+    },
+    {
+      "name": "Quận 3",
+      "lat": 10.7843,
+      "lon": 106.6844,
+      "size": 12,
+      "population": 190000
+    },
+    {
+      "name": "Quận 4",
+      "lat": 10.7578,
+      "lon": 106.7013,
+      "size": 10,
+      "population": 180000
+    },
+    {
+      "name": "Quận 5",
+      "lat": 10.754,
+      "lon": 106.6634,
+      "size": 12,
+      "population": 175000
+    },
+    {
+      "name": "Quận 6",
+      "lat": 10.748,
+      "lon": 106.6352,
+      "size": 12,
+      "population": 250000
+    },
+    {
+      "name": "Quận 7",
+      "lat": 10.738,
+      "lon": 106.722,
+      "size": 10,
+      "population": 245000
+    },
+    {
+      "name": "Quận 8",
+      "lat": 10.7404,
+      "lon": 106.665,
+      "size": 10,
+      "population": 405000
+    },
+    {
+      "name": "Quận 10",
+      "lat": 10.7726,
+      "lon": 106.668,
+      "size": 12,
+      "population": 230000
+    },
+    {
+      "name": "Quận 11",
+      "lat": 10.7629,
+      "lon": 106.6503,
+      "size": 12,
+      "population": 230000
+    },
+    {
+      "name": "Quận 2",
+      "lat": 10.7872,
+      "lon": 106.7498,
+      "size": 8,
+      "population": 145000
+    },
+    {
+      "name": "Quận 9",
+      "lat": 10.8428,
+      "lon": 106.79,
+      "size": 6,
+      "population": 255000
+    },
+    {
+      "name": "Quận 12",
+      "lat": 10.8672,
+      "lon": 106.6413,
+      "size": 10,
+      "population": 405000
+    },
+    {
+      "name": "Gò Vấp",
+      "lat": 10.8387,
+      "lon": 106.6653,
+      "size": 14,
+      "population": 515000
+    },
+    {
+      "name": "Tân Bình",
+      "lat": 10.8015,
+      "lon": 106.6527,
+      "size": 14,
+      "population": 420000
+    },
+    {
+      "name": "Tân Phú",
+      "lat": 10.7918,
+      "lon": 106.6278,
+      "size": 12,
+      "population": 400000
+    },
+    {
+      "name": "Bình Thạnh",
+      "lat": 10.8106,
+      "lon": 106.7091,
+      "size": 14,
+      "population": 455000
+    },
+    {
+      "name": "Phú Nhuận",
+      "lat": 10.7991,
+      "lon": 106.6802,
+      "size": 10,
+      "population": 175000
+    },
+    {
+      "name": "Thủ Đức",
+      "lat": 10.8494,
+      "lon": 106.7537,
+      "size": 12,
+      "population": 440000
+    }
+  ]
+}

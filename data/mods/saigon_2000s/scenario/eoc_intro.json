@@ -1,0 +1,39 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_intro",
+    "//": "Queued once at game start through scenario sgn_saigon_2004 \"eoc\" (sgn_saigon_2009 copies it).  V3: a wake-up popup that fits the start location (read from the overmap tile the player stands on), then, a few minutes later, the first ward loudspeaker broadcast heard across the rooftops.",
+    "effect": [
+      {
+        "if": { "or": [ { "u_at_om_location": "sgn_cho_nw" }, { "u_at_om_location": "sgn_cho_se" } ] },
+        "then": { "u_message": "sgn_intro_v3_cho", "snippet": true, "popup": true, "type": "info" },
+        "else": {
+          "if": { "u_at_om_location": "sgn_hem_block" },
+          "then": { "u_message": "sgn_intro_v3_hem", "snippet": true, "popup": true, "type": "info" },
+          "else": {
+            "if": { "u_at_om_location": "sgn_lm_ga_sai_gon_10" },
+            "then": { "u_message": "sgn_intro_v3_ga", "snippet": true, "popup": true, "type": "info" },
+            "else": {
+              "if": { "u_at_om_location": "sgn_lm_san_bay_10" },
+              "then": { "u_message": "sgn_intro_v3_san_bay", "snippet": true, "popup": true, "type": "info" },
+              "else": { "u_message": "sgn_intro", "snippet": true, "popup": true, "type": "info" }
+            }
+          }
+        }
+      },
+      { "run_eocs": "SGN_EOC_intro_loa", "time_in_future": "5 minutes" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_intro_loa",
+    "//": "V3: the first broadcast, a few minutes into the game: it tells the player the loa phường still speak (examine one, or wait for six in the morning and five in the afternoon).",
+    "effect": [
+      {
+        "u_message": "Somewhere beyond the rooftops a loa phường crackles to life on its timer, and a recorded voice begins the morning notice:",
+        "sound": true
+      },
+      { "u_message": "sgn_loa_v3_early", "snippet": true, "sound": true, "type": "info" }
+    ]
+  }
+]

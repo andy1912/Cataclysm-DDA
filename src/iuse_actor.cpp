@@ -3167,6 +3167,11 @@ bool repair_item_actor::handle_components( Character &pl, const item &fix,
         return false;
     }
 
+    // a bare check never reads the counts below, so skip walking the crafting inventory
+    if( just_check && !check_consumed_available ) {
+        return true;
+    }
+
     const temp_crafting_inventory &crafting_inv = pl.crafting_inventory();
 
     // Repairing or modifying items requires at least 1 repair item,
@@ -3361,7 +3366,6 @@ std::pair<float, float> repair_item_actor::repair_chance(
             action_difficulty = material_difficulty;
             break;
         default:
-            // 5 is obsoleted reinforcing, remove after 0.H
             action_difficulty = 1000000; // ensure failure
             break;
     }
@@ -4147,6 +4151,19 @@ void place_trap_actor::data::load( const JsonObject &obj )
     optional( obj, false, "moves", moves, 100 );
 }
 
+int place_trap_actor::data::move_cost( const Character &you ) const
+{
+    const float skill = you.get_skill_level( skill_traps );
+    int move_cost_final = std::round( moves / ( skill <= 1 ? 1 : skill ) );
+    if( !you.has_proficiency( proficiency_prof_trapsetting ) ) {
+        move_cost_final = move_cost_final * 2;
+    }
+    if( !you.has_proficiency( proficiency_prof_traps ) ) {
+        move_cost_final = move_cost_final * 4;
+    }
+    return move_cost_final;
+}
+
 void place_trap_actor::load( const JsonObject &obj, const std::string & )
 {
     optional( obj, false, "allow_underwater", allow_underwater, false );
@@ -4307,19 +4324,8 @@ std::optional<int> place_trap_actor::use( Character *p, item &it, map *here,
     p->practice_proficiency( proficiency_prof_trapsetting,
                              time_duration::from_seconds( data.practice * 30 ) );
 
-    //Total time to set the trap will be determined by player's skills and proficiencies
-    int move_cost_final = std::round( ( data.moves * std::min( 1,
-                                        ( data.practice ^ 2 ) ) ) / ( p->get_skill_level( skill_traps ) <= 1 ? 1 : p->get_skill_level(
-                                                skill_traps ) ) );
-    if( !p->has_proficiency( proficiency_prof_trapsetting ) ) {
-        move_cost_final = move_cost_final * 2;
-    }
-    if( !p->has_proficiency( proficiency_prof_traps ) ) {
-        move_cost_final = move_cost_final * 4;
-    }
-
     //This probably needs to be done via assign_activity
-    p->mod_moves( -move_cost_final );
+    p->mod_moves( -data.move_cost( *p ) );
 
     place_and_add_as_known( *p, pos, data.trap );
     const trap &placed_trap = here->tr_at( pos );

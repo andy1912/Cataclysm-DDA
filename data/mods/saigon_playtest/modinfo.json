@@ -1,0 +1,14 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "saigon_playtest",
+    "name": "Sài Gòn 2000s – playtest tools (cheats)",
+    "authors": [ "ducpham1912" ],
+    "maintainers": [ "ducpham1912" ],
+    "description": "CHEATS for testing the Sài Gòn 2000s mod, not for real play.  Adds a \"Playtester\" profession to both Saigon scenarios (high skills, a full kit, money, gold and the mod's new items) and a playtest remote: teleport to the nearest chợ, đình, police HQ, army post, bia hơi, ice works or landmark; skip time; spawn a test vehicle on the nearest road or water; heal; damage protection; reveal the map; clear nearby monsters; flood or drain the streets.  See doc/saigon/PLAYTEST.md.  Leave this mod out of release builds and real games.",
+    "category": "misc",
+    "dependencies": [ "dda", "saigon_2000s" ],
+    "obsolete": false,
+    "version": "0.1"
+  }
+]

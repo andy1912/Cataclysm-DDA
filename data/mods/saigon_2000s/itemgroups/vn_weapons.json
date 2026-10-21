@@ -1,0 +1,71 @@
+[
+  {
+    "type": "item_group",
+    "id": "sgn_weapons_melee_common",
+    "subtype": "distribution",
+    "//": "W1: everyday blades and tools that Vietnamese kitchens, market stalls, farms and homes hold.  Not wired into loot here; other units reference this id.",
+    "entries": [
+      { "item": "sgn_dao_phay", "prob": 30 },
+      { "item": "sgn_dao_bau", "prob": 15 },
+      { "item": "sgn_dao_rua", "prob": 15 },
+      { "item": "sgn_cuoc", "prob": 10 },
+      { "item": "sgn_phang", "prob": 6 },
+      { "item": "sgn_don_ganh", "prob": 10 },
+      { "item": "sgn_gay_tre", "prob": 12 },
+      { "item": "sgn_xa_beng", "prob": 5 },
+      { "item": "sgn_chia", "prob": 4 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_weapons_melee_rare",
+    "subtype": "distribution",
+    "//": "W1: the uncommon ones: gang and under-the-counter blades, martial-arts weapons, temple ceremonial arms, and a survivor's lashed polearm.",
+    "entries": [
+      { "item": "sgn_ma_tau", "prob": 25 },
+      { "item": "sgn_dao_gam", "prob": 20 },
+      { "item": "sgn_con_nhi_khuc", "prob": 20 },
+      { "item": "sgn_con_tam_vong", "prob": 15 },
+      { "item": "sgn_mac_tre", "prob": 12 },
+      { "item": "sgn_dao_lo_bo", "prob": 8 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_weapons_ranged_primitive",
+    "subtype": "distribution",
+    "//": "W1: a ná thun with a pocketful of shot, or (rarely) a highland nỏ with a bundle of bamboo bolts.",
+    "entries": [
+      {
+        "collection": [
+          { "item": "sgn_na_thun", "prob": 100 },
+          {
+            "distribution": [
+              { "item": "pebble", "prob": 50, "charges": [ 5, 20 ] },
+              { "item": "sgn_bi_ve", "prob": 30, "charges": [ 5, 20 ] },
+              { "item": "sgn_bi_sat", "prob": 20, "charges": [ 5, 20 ] }
+            ],
+            "prob": 80
+          }
+        ],
+        "prob": 85
+      },
+      {
+        "collection": [ { "item": "sgn_no", "prob": 100 }, { "item": "sgn_ten_tre", "prob": 90, "charges": [ 4, 12 ] } ],
+        "prob": 15
+      }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_weapons_ammo_primitive",
+    "subtype": "distribution",
+    "//": "W1: loose ammunition for the ná (pebbles, glass and steel bi) and the nỏ (bamboo bolts).",
+    "entries": [
+      { "item": "pebble", "prob": 35, "charges": [ 5, 20 ] },
+      { "item": "sgn_bi_ve", "prob": 30, "charges": [ 5, 20 ] },
+      { "item": "sgn_bi_sat", "prob": 20, "charges": [ 5, 20 ] },
+      { "item": "sgn_ten_tre", "prob": 15, "charges": [ 4, 12 ] }
+    ]
+  }
+]

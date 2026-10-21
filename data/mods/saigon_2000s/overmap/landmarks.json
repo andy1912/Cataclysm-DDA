@@ -1,0 +1,83 @@
+[
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_nha_tho",
+    "copy-from": "generic_city_building",
+    "name": "nhà thờ",
+    "sym": "^",
+    "color": "light_red",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_nha_tho_roof",
+    "copy-from": "generic_city_building_roof",
+    "name": "nhà thờ roof",
+    "sym": "#",
+    "color": "light_red",
+    "looks_like": "house"
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_nha_tho_1",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_nha_tho_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_nha_tho_roof_north" }
+    ]
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_ubnd",
+    "copy-from": "generic_city_building",
+    "name": "UBND phường",
+    "sym": "^",
+    "color": "yellow",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_ubnd_roof",
+    "copy-from": "generic_city_building_roof",
+    "name": "UBND phường roof",
+    "sym": "#",
+    "color": "yellow",
+    "looks_like": "house"
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_ubnd_1",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "sgn_ubnd_north" }, { "point": [ 0, 0, 1 ], "overmap": "sgn_ubnd_roof_north" } ]
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_truong",
+    "copy-from": "generic_city_building",
+    "name": "trường học",
+    "sym": "^",
+    "color": "light_blue",
+    "looks_like": "house"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_truong_roof",
+    "copy-from": "generic_city_building_roof",
+    "name": "trường học roof",
+    "sym": "#",
+    "color": "light_blue",
+    "looks_like": "house"
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_truong_1",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_truong_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_truong_roof_north" }
+    ]
+  }
+]

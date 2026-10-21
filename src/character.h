@@ -570,6 +570,14 @@ class Character : public Creature, public visitable
         int int_max;
         int per_max;
 
+        // A simple counter for how much trauma has been experienced. One point here is worth the same amount as one "guilt kill".
+        // This value is added to "deadening" from guilt kills to get the total amount of deadening a character has.
+        // A traumatic event may increase this counter by more than one!
+        int trauma_counter = 0;
+
+        // Prevents trauma from going negative or exceeding its defined maximum.
+        void clamp_trauma();
+
     public:
         // Used to display pain penalties
         int ppen_str;
@@ -577,6 +585,10 @@ class Character : public Creature, public visitable
         int ppen_int;
         int ppen_per;
         int ppen_spd;
+
+        int get_trauma() const;
+        void mod_trauma( int amt );
+        void set_trauma( int amt );
 
         // Legacy value, used by several mods via eoc.
         int kill_xp = 0;
@@ -975,7 +987,7 @@ class Character : public Creature, public visitable
         void update_cached_mutations();
         /** Adds this specific wound to bodypart */
         void apply_wound( bodypart_id bp, wound_type_id wd );
-        /** Updates the status of wounds character has */
+        /** Updates the status of wounds character has, and applies variety of effects they cause*/
         void update_wounds( time_duration time_passed );
         /** Returns true if character needs food, false if character is an NPC with NO_NPC_FOOD set */
         bool needs_food() const;
@@ -2118,7 +2130,7 @@ class Character : public Creature, public visitable
         int  amount_worn( const itype_id &id ) const;
 
         /** Returns the amount of software `type' that are in the inventory */
-        int count_softwares( const itype_id &id );
+        int count_softwares( const itype_id &id ) const;
 
         /** Returns whether the character has software on a device with a desired number of charges */
         bool has_software( const itype_id &software_id, int min_charges = 0,
@@ -2133,7 +2145,7 @@ class Character : public Creature, public visitable
          * content (@ref item::contents is not checked).
          * If the filter function returns true, the item is removed.
          */
-        std::list<item> remove_worn_items_with( const std::function<bool( item & )> &filter );
+        std::list<item> remove_worn_items_with( const std::function<bool( const item & )> &filter );
 
         void clear_worn();
 
@@ -3393,7 +3405,6 @@ class Character : public Creature, public visitable
         std::map<mtype_id, int> const &get_moncams() const;
         using cached_moncam = std::pair<monster const *, tripoint_abs_ms>;
         using moncam_cache_t = cata::flat_set<cached_moncam>;
-        moncam_cache_t moncam_cache;
         moncam_cache_t get_active_moncams() const;
 
         void spores();
@@ -4041,6 +4052,8 @@ class Character : public Creature, public visitable
         double vomit_mod();
         /** Checked each turn during "lying_down", returns true if the player falls asleep */
         bool can_sleep();
+        /** How ready to fall asleep here: comfort, sleepiness, stimulants, pills, enchantments. No roll, no throttle. */
+        int sleep_readiness();
         /** Processes human-specific effects of effects before calling Creature::process_effects(). */
         void process_effects() override;
         /** Handles the still hard-coded effects. */
@@ -4073,6 +4086,8 @@ class Character : public Creature, public visitable
         item &best_unreserved_item_with_quality( const quality_id &qid );
         int max_quality( const quality_id &qual ) const override;
         int max_quality( const quality_id &qual, int radius ) const;
+        VisitResponse visit_carried( const std::function<VisitResponse( const item_location & )> &func )
+        const;
         VisitResponse visit_items( const std::function<VisitResponse( const item_location & )> &func ) const
         override;
         std::list<item> remove_items_with( const std::function<bool( const item & )> &filter,
@@ -4267,6 +4282,8 @@ class Character : public Creature, public visitable
         std::map<vitamin_id, std::pair<int, int>> daily_vitamins;
         /** Returns the % of your RDA that amount of vitamin represents */
         int vitamin_RDA( const vitamin_id &vitamin, int amount ) const;
+
+        bool has_wounds( const bodypart_str_id &part ) const;
 
         pimpl<player_morale> morale;
         /** Processes human-specific effects of an effect. */

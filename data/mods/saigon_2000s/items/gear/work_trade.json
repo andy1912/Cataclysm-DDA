@@ -1,0 +1,121 @@
+[
+  {
+    "type": "ITEM",
+    "id": "sgn_xa_beng",
+    "copy-from": "crowbar",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "pry bar" },
+    "description": "Xà beng: a long hexagonal steel bar flattened at one end, for lifting drain covers, prying padlocked gates off their tracks and breaking heads.",
+    "color": "dark_gray"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_quang_ganh",
+    "copy-from": "backpack_leather",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "shoulder pole and baskets", "str_pl": "shoulder poles and baskets" },
+    "description": "Quang gánh: a springy bamboo pole balanced on one shoulder with a woven basket hung from each end by cords.  Street vendors carry their whole shop on one: awkward, but it carries a great deal.",
+    "weight": "2600 g",
+    "volume": "45 L",
+    "color": "brown",
+    "material": [ "wood" ],
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "moves": 200,
+        "rigid": true
+      },
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "20 kg",
+        "moves": 200,
+        "rigid": true
+      }
+    ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ro_nhua",
+    "copy-from": "basket_laundry",
+    "name": { "str": "plastic market basket" },
+    "description": "A colourful perforated plastic basket, the kind every market trader stacks her greens in.",
+    "color": "light_green",
+    "volume": "21 L",
+    "weight": "400 g",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "rigid": true,
+        "max_contains_volume": "20 L",
+        "max_contains_weight": "10 kg",
+        "max_item_length": "50 cm",
+        "moves": 300
+      }
+    ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_thau_nhua",
+    "copy-from": "bucket",
+    "name": { "str": "plastic basin" },
+    "description": "A wide red plastic basin used for washing vegetables, clothes, babies and motorbike parts.",
+    "color": "red",
+    "volume": "11 L",
+    "weight": "500 g",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "rigid": true,
+        "watertight": true,
+        "open_container": true,
+        "max_contains_volume": "10 L",
+        "max_contains_weight": "20 kg"
+      }
+    ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_luoi_chai",
+    "copy-from": "net",
+    "name": { "str": "cast net" },
+    "description": "Lưới chài: a round weighted fishing net, thrown so it spreads in the air and drops over its target.  Canal fishermen throw them over fish; it works on other things too.",
+    "color": "light_gray"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ve_so",
+    "name": { "str": "lottery ticket" },
+    "description": "A long printed ticket for tomorrow's southern lottery draw, sold by the vendors who walk every street and café.  The draw will never happen now.",
+    "weight": "1 g",
+    "volume": "1 ml",
+    "material": [ "paper" ],
+    "symbol": "?",
+    "color": "light_red",
+    "category": "other",
+    "price": "10 cent",
+    "price_postapoc": "0 cent"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_thuoc_la",
+    "variants": [  ],
+    "copy-from": "cig",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str": "Sao Mai cigarette" },
+    "description": "A cheap local cigarette from a soft red pack with a gold star on it.",
+    "color": "red"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_vang_luong",
+    "copy-from": "sgn_vang_chi",
+    "name": { "str_sp": "lượng of gold" },
+    "description": "A lượng: ten chỉ, 37.5 grams of 24-karat gold in a stamped bar, wrapped in red paper with the gold shop's seal.  A family's savings, kept under the floor tiles rather than in a bank.",
+    "weight": "38 g",
+    "price": "400 USD",
+    "price_postapoc": "60 USD"
+  }
+]

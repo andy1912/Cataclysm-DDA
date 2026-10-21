@@ -1,0 +1,28 @@
+[
+  {
+    "id": "sgn_ban_do_tphcm",
+    "copy-from": "abstractmap",
+    "type": "ITEM",
+    "looks_like": "touristmap",
+    "name": { "str_sp": "bản đồ TP.HCM" },
+    "description": "A folded tourist map of Hồ Chí Minh City, 2009 edition, handed out free at hotel reception desks: the districts in pastel colours, the main streets labelled, little drawings of the cathedral, the market and the opera house, and the airport in one corner.  Reading it will add the streets, bridges, the railway, markets, hospitals, petrol stations, temples and churches, and the landmarks to your map.",
+    "color": "light_cyan",
+    "use_action": {
+      "type": "reveal_map",
+      "radius": 180,
+      "terrain": [
+        { "om_terrain": "road", "om_terrain_match_type": "PREFIX" },
+        { "om_terrain": "bridge", "om_terrain_match_type": "PREFIX" },
+        { "om_terrain": "sgn_duong_sat", "om_terrain_match_type": "PREFIX" },
+        { "om_terrain": "sgn_lm_", "om_terrain_match_type": "PREFIX" },
+        { "om_terrain": "sgn_sb_", "om_terrain_match_type": "PREFIX" },
+        { "om_terrain": "sgn_cho_", "om_terrain_match_type": "PREFIX" },
+        { "om_terrain": "sgn_pl_benh_vien", "om_terrain_match_type": "PREFIX" },
+        { "om_terrain": "sgn_pl_cay_xang", "om_terrain_match_type": "PREFIX" },
+        { "om_terrain": "sgn_chua", "om_terrain_match_type": "PREFIX" },
+        { "om_terrain": "sgn_nha_tho", "om_terrain_match_type": "PREFIX" }
+      ],
+      "message": "You trace the streets, the markets and the landmarks onto your map."
+    }
+  }
+]

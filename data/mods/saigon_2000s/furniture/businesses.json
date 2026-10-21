@@ -1,0 +1,210 @@
+[
+  {
+    "type": "furniture",
+    "id": "f_sgn_may_may",
+    "name": "treadle sewing machine",
+    "description": "A black cast-iron sewing machine with gold lettering on an iron treadle stand, the tailor's livelihood.  It needs no electricity: pump the treadle and it still runs.",
+    "symbol": "&",
+    "color": "dark_gray",
+    "looks_like": "f_workbench",
+    "move_cost_mod": -1,
+    "coverage": 40,
+    "required_str": 8,
+    "crafting_pseudo_item": "sewing_kit",
+    "flags": [ "TRANSPARENT", "PLACE_ITEM", "BLOCKSDOOR", "FLAT_SURF" ],
+    "bash": {
+      "str_min": 12,
+      "str_max": 40,
+      "sound": "clang!",
+      "sound_fail": "clunk.",
+      "items": [ { "item": "scrap", "count": [ 3, 8 ] }, { "item": "splinter", "count": [ 2, 5 ] } ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_tu_thuoc_bac",
+    "name": "herb drawer cabinet",
+    "description": "A wall of small wooden drawers, each labelled in Chinese characters with the root, bark, seed or dried creature it holds.  The air smells of liquorice, ginseng and smoke.",
+    "symbol": "#",
+    "color": "brown",
+    "looks_like": "f_cupboard",
+    "move_cost_mod": -1,
+    "coverage": 80,
+    "required_str": -1,
+    "flags": [ "CONTAINER", "PLACE_ITEM", "BLOCKSDOOR", "FLAMMABLE_ASH" ],
+    "bash": {
+      "str_min": 8,
+      "str_max": 30,
+      "sound": "smash!",
+      "sound_fail": "whump.",
+      "items": [ { "item": "2x4", "count": [ 2, 5 ] }, { "item": "splinter", "count": [ 4, 10 ] } ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_may_photo",
+    "name": "photocopier",
+    "description": "A big beige photocopier, its glass scratched by a decade of ID cards, school notes and forms copied for a few hundred đồng a page.  The drum is still full of toner.",
+    "symbol": "&",
+    "color": "light_gray",
+    "looks_like": "f_workbench",
+    "move_cost_mod": -1,
+    "coverage": 50,
+    "required_str": 12,
+    "flags": [ "TRANSPARENT", "PLACE_ITEM", "BLOCKSDOOR", "FLAT_SURF" ],
+    "bash": {
+      "str_min": 10,
+      "str_max": 40,
+      "sound": "crunch!",
+      "sound_fail": "thud.",
+      "items": [
+        { "item": "scrap", "count": [ 2, 6 ] },
+        { "item": "plastic_chunk", "count": [ 4, 12 ] },
+        { "item": "e_scrap", "count": [ 1, 4 ] }
+      ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_bep_nuong",
+    "copy-from": "f_brazier",
+    "looks_like": "f_brazier",
+    "name": "clay charcoal grill",
+    "description": "A squat clay bếp nướng with a wire grate, where the quán nhậu grilled squid, chicken feet and pork ribs for the drinkers at the low tables.  Light the charcoal and it cooks again.",
+    "color": "brown"
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "COMESTIBLE" ],
+    "id": "sgn_thuoc_bac",
+    "name": { "str": "packet of thuốc bắc", "str_pl": "packets of thuốc bắc" },
+    "description": "A newspaper packet of dried roots, bark, jujubes and liquorice weighed out by the herbalist, to be simmered for hours into a black, bitter tonic.  It will not cure anything serious, but people swore by it.",
+    "symbol": "!",
+    "comestible_type": "MED",
+    "weight": "150 g",
+    "volume": "250 ml",
+    "color": "brown",
+    "spoils_in": "360 days",
+    "calories": 20,
+    "fun": -8,
+    "healthy": 2,
+    "material": [ "veggy" ],
+    "price": "1 USD",
+    "price_postapoc": "2 USD",
+    "looks_like": "dry_veggy"
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_barber",
+    "subtype": "distribution",
+    "//": "P1 tiệm hớt tóc.",
+    "items": [
+      { "item": "scissors", "prob": 40 },
+      { "item": "razor_shaving", "prob": 30 },
+      { "item": "hairbrush", "prob": 20 },
+      { "item": "hair_dryer", "prob": 15 },
+      { "item": "sgn_newspaper", "prob": 20 },
+      { "item": "sgn_truyen_meo_may", "prob": 8 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_tailor",
+    "subtype": "distribution",
+    "//": "P1 tiệm may: cloth, thread and half-made áo dài.",
+    "items": [
+      { "item": "sheet_cotton", "prob": 30, "count": [ 1, 3 ] },
+      { "item": "cotton_patchwork", "prob": 30, "count": [ 2, 10 ] },
+      { "item": "thread", "prob": 30, "count": [ 1, 3 ] },
+      { "item": "sewing_kit", "prob": 20 },
+      { "item": "scissors", "prob": 20 },
+      { "item": "sgn_ao_dai_mau", "prob": 10 },
+      { "item": "sgn_ao_dai_trang", "prob": 10 },
+      { "item": "sgn_do_bo", "prob": 10 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_electronics_repair",
+    "subtype": "distribution",
+    "//": "P1 tiệm sửa điện tử: radios, phones and TVs waiting for parts.",
+    "items": [
+      { "item": "sgn_radio_cassette", "prob": 20 },
+      { "item": "radio", "prob": 15 },
+      { "item": "sgn_dien_thoai", "prob": 15 },
+      { "item": "soldering_iron", "prob": 20 },
+      { "item": "e_scrap", "prob": 30, "count": [ 1, 5 ] },
+      { "item": "cable", "prob": 25, "count": [ 1, 4 ] },
+      { "item": "battery", "prob": 15 },
+      { "item": "sgn_book_tv_repair", "prob": 5 },
+      { "item": "hammer", "prob": 10 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_herbalist",
+    "subtype": "distribution",
+    "//": "P1 tiệm thuốc bắc.",
+    "items": [
+      { "item": "sgn_thuoc_bac", "prob": 60, "count": [ 1, 4 ] },
+      { "item": "sgn_dau_gio", "prob": 20 },
+      { "item": "tea_raw", "prob": 15 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_pawn",
+    "subtype": "distribution",
+    "//": "P1 tiệm cầm đồ: what people pawned for cash.",
+    "items": [
+      { "item": "sgn_vang_chi", "prob": 25 },
+      { "item": "ring_wedding", "prob": 15 },
+      { "item": "wristwatch", "prob": 20 },
+      { "item": "sgn_dien_thoai", "prob": 20 },
+      { "item": "sgn_radio_cassette", "prob": 10 },
+      { "item": "sgn_non_bao_hiem", "prob": 10 },
+      { "group": "sgn_dong_notes", "prob": 20, "count": [ 2, 6 ] },
+      { "group": "sgn_weapons_melee_rare", "prob": 5 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_photocopy",
+    "subtype": "distribution",
+    "//": "P1 tiệm photocopy.",
+    "items": [
+      { "item": "paper", "prob": 50, "count": [ 5, 30 ] },
+      { "item": "file", "prob": 20, "count": [ 1, 4 ] },
+      { "group": "pens", "prob": 20 },
+      { "item": "sgn_ward_notice", "prob": 20, "count": [ 1, 3 ] },
+      { "item": "sgn_lich_bloc", "prob": 5 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_bakery",
+    "subtype": "distribution",
+    "//": "P1 lò bánh mì.",
+    "items": [
+      { "item": "sgn_banh_mi_bread", "prob": 50, "count": [ 2, 10 ] },
+      { "item": "flour", "prob": 25 },
+      { "item": "sugar", "prob": 15 },
+      { "item": "sgn_banh_flan", "prob": 10, "count": [ 1, 4 ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_nhau",
+    "subtype": "distribution",
+    "//": "P1 quán nhậu: beer, rice wine and things to chew.",
+    "items": [
+      { "item": "beer", "prob": 30, "count": [ 1, 6 ] },
+      { "item": "sgn_bia_hoi", "prob": 20 },
+      { "item": "sgn_ruou_de", "prob": 15 },
+      { "item": "sgn_kho_muc", "prob": 15 },
+      { "item": "sgn_kho_bo", "prob": 10 },
+      { "item": "peanut_shelled", "prob": 15 },
+      { "item": "cig", "prob": 15, "count": [ 1, 10 ] }
+    ]
+  }
+]

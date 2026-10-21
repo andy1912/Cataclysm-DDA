@@ -1,0 +1,277 @@
+[
+  {
+    "type": "morale_type",
+    "id": "morale_sgn_remember",
+    "text": "Remembered them at the altar"
+  },
+  {
+    "type": "morale_type",
+    "id": "morale_sgn_than_tai",
+    "text": "Lit incense for Thần Tài"
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_v3_loa_examine",
+    "//": "V3: examine_action of f_sgn_loa_phuong.  What the ward loudspeaker plays depends on the days since the cataclysm (the game starts 8 hours after it, on day 0): the ward's recorded notices (0-7), live curfew and evacuation calls (8-14), a stretched tape on the timer (15-29), then silence.  A broadcast is loud: the sound at the pole carries 30 tiles and draws the dead.",
+    "effect": {
+      "switch": { "math": [ "time_since('cataclysm', 'unit':'days')" ] },
+      "cases": [
+        {
+          "case": 0,
+          "effect": [
+            { "u_message": "You wait under the horns.  At last they crackle on, and the ward's recorded notice starts again:" },
+            { "u_message": "sgn_loa_v3_early", "snippet": true, "popup": true },
+            { "run_eocs": "SGN_EOC_v3_loa_sound" }
+          ]
+        },
+        {
+          "case": 8,
+          "effect": [
+            { "u_message": "You wait under the horns.  They crackle, and a live voice comes on:" },
+            { "u_message": "sgn_loa_v3_evac", "snippet": true, "popup": true },
+            { "run_eocs": "SGN_EOC_v3_loa_sound" }
+          ]
+        },
+        {
+          "case": 15,
+          "effect": [
+            { "u_message": "You wait under the horns.  Somewhere a timer is still running, and a tape starts up:" },
+            { "u_message": "sgn_loa_v3_loop", "snippet": true, "popup": true },
+            { "run_eocs": "SGN_EOC_v3_loa_sound" }
+          ]
+        },
+        { "case": 30, "effect": [ { "u_message": "sgn_loa_v3_silent", "snippet": true, "popup": true } ] }
+      ]
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_v3_loa_sound",
+    "//": "The noise of a broadcast at the examined pole (context pos from the examine actor).",
+    "effect": [
+      {
+        "u_make_sound": "a ward loudspeaker blaring an announcement.",
+        "volume": 30,
+        "type": "electronic_speech",
+        "target_var": { "context_val": "pos" }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_v3_loa_schedule",
+    "//": "V3: the loa phường played at six in the morning and five in the afternoon.  Runs once an hour (one run falls in each clock hour); outside those two hours, and from day 30 on, it stops at the condition, so the only real work is a furniture search for f_sgn_loa_phuong within 18 tiles on the player's z-level (a 37x37 square, about 1400 tile reads) twice a game day.",
+    "recurrence": "1 h",
+    "global": true,
+    "condition": {
+      "and": [
+        { "math": [ "time_since('cataclysm', 'unit':'days') < 30" ] },
+        {
+          "or": [
+            {
+              "and": [
+                { "math": [ "time_since('midnight', 'unit':'hours') >= 6" ] },
+                { "math": [ "time_since('midnight', 'unit':'hours') < 7" ] }
+              ]
+            },
+            {
+              "and": [
+                { "math": [ "time_since('midnight', 'unit':'hours') >= 17" ] },
+                { "math": [ "time_since('midnight', 'unit':'hours') < 18" ] }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "effect": [
+      {
+        "u_location_variable": { "u_val": "sgn_v3_loa_pos" },
+        "furniture": "f_sgn_loa_phuong",
+        "target_max_radius": 18,
+        "true_eocs": [ "SGN_EOC_v3_loa_broadcast" ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_v3_loa_broadcast",
+    "//": "A scheduled broadcast from the pole found by SGN_EOC_v3_loa_schedule.  The sound (30 tiles) may wake the player and draws the dead; the text is shown only to a player who is awake and can hear.",
+    "effect": [
+      {
+        "u_make_sound": "a ward loudspeaker crackling out an announcement.",
+        "volume": 30,
+        "type": "electronic_speech",
+        "target_var": { "u_val": "sgn_v3_loa_pos" }
+      },
+      { "u_message": "A loa phường nearby crackles to life at its hour:", "sound": true },
+      {
+        "switch": { "math": [ "time_since('cataclysm', 'unit':'days')" ] },
+        "cases": [
+          { "case": 0, "effect": { "u_message": "sgn_loa_v3_early", "snippet": true, "sound": true, "type": "info" } },
+          { "case": 8, "effect": { "u_message": "sgn_loa_v3_evac", "snippet": true, "sound": true, "type": "info" } },
+          { "case": 15, "effect": { "u_message": "sgn_loa_v3_loop", "snippet": true, "sound": true, "type": "info" } }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_v3_radio_use",
+    "//": "V3: use_action of sgn_radio_cassette (one battery charge per use, also when the menu is cancelled).  An item can hold only one effect_on_conditions use action, so the choice is a selector.",
+    "effect": {
+      "run_eoc_selector": [ "SGN_EOC_v3_radio_tune", "SGN_EOC_v3_radio_tape" ],
+      "names": [ "Tune the radio", "Play the tape" ],
+      "descriptions": [ "Turn the dial and listen to whatever is still on the air.", "Play the old cassette for a while." ],
+      "keys": [ "r", "t" ],
+      "title": "Cassette radio",
+      "allow_cancel": true
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_v3_radio_tune",
+    "//": "V3: the radio half of SGN_EOC_v3_radio_use.  The city station (days 0-9), emergency broadcasts (10-20), survivors' voices (21-44), then static; the older sgn_radio fragments from lore.json are mixed into the middle two phases.",
+    "effect": [
+      { "u_message": "You switch on the radio and turn the dial slowly through the hiss." },
+      { "u_make_sound": "a radio murmuring through static.", "volume": 4, "type": "electronic_speech" },
+      {
+        "switch": { "math": [ "time_since('cataclysm', 'unit':'days')" ] },
+        "cases": [
+          { "case": 0, "effect": { "u_message": "sgn_radio_v3_city", "snippet": true, "popup": true } },
+          {
+            "case": 10,
+            "effect": {
+              "weighted_list_eocs": [
+                [
+                  {
+                    "id": "SGN_EOC_v3_radio_emergency",
+                    "effect": { "u_message": "sgn_radio_v3_emergency", "snippet": true, "popup": true }
+                  },
+                  3
+                ],
+                [ "SGN_EOC_v3_radio_fragment", 1 ]
+              ]
+            }
+          },
+          {
+            "case": 21,
+            "effect": {
+              "weighted_list_eocs": [
+                [
+                  { "id": "SGN_EOC_v3_radio_voices", "effect": { "u_message": "sgn_radio_v3_voices", "snippet": true, "popup": true } },
+                  3
+                ],
+                [ "SGN_EOC_v3_radio_fragment", 1 ]
+              ]
+            }
+          },
+          { "case": 45, "effect": { "u_message": "sgn_radio_v3_static", "snippet": true, "popup": true } }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_v3_radio_fragment",
+    "effect": [ { "u_message": "sgn_radio", "snippet": true, "popup": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_v3_radio_tape",
+    "//": "V3: the tape half of SGN_EOC_v3_radio_use: a small music morale bonus and a quiet sound.",
+    "effect": [
+      { "u_message": "sgn_radio_v3_tape", "snippet": true, "type": "good" },
+      { "u_make_sound": "a tinny old song from a cassette player.", "volume": 8, "type": "music" },
+      {
+        "u_add_morale": "morale_music",
+        "bonus": 4,
+        "max_bonus": 12,
+        "duration": "45 minutes",
+        "decay_start": "20 minutes"
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_v3_altar_examine",
+    "//": "V3: examine_action of f_sgn_ban_tho (inherited by f_sgn_ban_tho_than_tai).  Flavour text, and with incense and a lighter or matches, the player may light a stick for a small morale bonus (once per 12 hours; later sticks are only a gesture).",
+    "effect": {
+      "if": { "compare_string": [ "f_sgn_ban_tho_than_tai", { "context_val": "this" } ] },
+      "then": [ { "u_message": "sgn_altar_v3_than_tai", "snippet": true }, { "run_eocs": "SGN_EOC_v3_altar_offer" } ],
+      "else": [ { "u_message": "sgn_altar_v3_look", "snippet": true }, { "run_eocs": "SGN_EOC_v3_altar_offer" } ]
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_v3_altar_offer",
+    "condition": { "u_has_item": "incense" },
+    "effect": {
+      "if": { "or": [ { "u_has_item": "lighter" }, { "u_has_item": "matches" }, { "u_has_item": "ref_lighter" } ] },
+      "then": { "run_eocs": "SGN_EOC_v3_altar_light" },
+      "else": { "u_message": "You have incense, but nothing to light it with." }
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_v3_altar_light",
+    "//": "The query is the EOC condition (not an \"if\" inside an effect) so that the string extractor finds it.",
+    "condition": { "u_query": "Light a stick of incense?", "default": false },
+    "effect": [
+      { "u_consume_item": "incense", "count": 1 },
+      {
+        "if": { "compare_string": [ "f_sgn_ban_tho_than_tai", { "context_val": "this" } ] },
+        "then": { "run_eocs": "SGN_EOC_v3_than_tai_incense" },
+        "else": { "run_eocs": "SGN_EOC_v3_altar_incense" }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_v3_altar_incense",
+    "effect": {
+      "if": {
+        "or": [
+          { "math": [ "time_since(u_sgn_v3_incense_t) < 0" ] },
+          { "math": [ "time_since(u_sgn_v3_incense_t) >= time('12 h')" ] }
+        ]
+      },
+      "then": [
+        { "u_message": "sgn_altar_v3_incense", "snippet": true, "type": "good" },
+        {
+          "u_add_morale": "morale_sgn_remember",
+          "bonus": 6,
+          "max_bonus": 10,
+          "duration": "4 hours",
+          "decay_start": "2 hours"
+        },
+        { "math": [ "u_sgn_v3_incense_t = time('now')" ] }
+      ],
+      "else": { "u_message": "You light another stick and bow.  The smoke rises; the ache stays where it is." }
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_EOC_v3_than_tai_incense",
+    "effect": {
+      "if": {
+        "or": [
+          { "math": [ "time_since(u_sgn_v3_incense_t) < 0" ] },
+          { "math": [ "time_since(u_sgn_v3_incense_t) >= time('12 h')" ] }
+        ]
+      },
+      "then": [
+        { "u_message": "sgn_altar_v3_than_tai_incense", "snippet": true, "type": "good" },
+        {
+          "u_add_morale": "morale_sgn_than_tai",
+          "bonus": 3,
+          "max_bonus": 5,
+          "duration": "2 hours",
+          "decay_start": "1 hours"
+        },
+        { "math": [ "u_sgn_v3_incense_t = time('now')" ] }
+      ],
+      "else": { "u_message": "You wedge another stick into the cup.  Thần Tài grins, unmoved." }
+    }
+  }
+]

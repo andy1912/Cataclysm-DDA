@@ -1,0 +1,132 @@
+[
+  {
+    "type": "ITEM",
+    "id": "sgn_truyen_meo_may",
+    "subtypes": [ "BOOK" ],
+    "copy-from": "mag_comic",
+    "name": { "str": "robot-cat comic" },
+    "description": "A thin, dog-eared Kim Đồng volume of the Japanese comic about the blue robot cat from the future and the lazy schoolboy he looks after, read right to left and passed around the whole class.  Every child in the city knows the gadgets by heart.",
+    "looks_like": "mag_comic",
+    "color": "light_blue",
+    "time": "15 m"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_vcd_phim_bo",
+    "name": { "str": "stack of drama VCDs", "str_pl": "stacks of drama VCDs" },
+    "description": "Twenty VCDs in paper sleeves: a dubbed Hong Kong wuxia serial, one episode per disc, rented from the video shop and watched by the whole family after dinner.  Nobody has a player that works any more, but the discs still flash rainbows in the sun.",
+    "weight": "300 g",
+    "volume": "500 ml",
+    "price": "2 USD",
+    "price_postapoc": "10 cent",
+    "material": [ "plastic", "paper" ],
+    "symbol": "o",
+    "color": "light_gray"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_bang_cassette",
+    "name": { "str": "nhạc vàng cassette" },
+    "description": "A cassette of nhạc vàng: slow, heartbroken bolero ballads of rain, separation and the old south, copied and recopied until the hiss is half the music.  The tape a cyclo driver plays all day on a battered radio.",
+    "weight": "50 g",
+    "volume": "100 ml",
+    "price": "50 cent",
+    "price_postapoc": "10 cent",
+    "material": [ "plastic" ],
+    "symbol": "=",
+    "color": "yellow"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_lich_bloc",
+    "subtypes": [ "BOOK" ],
+    "copy-from": "mag_comic",
+    "name": { "str": "tear-off block calendar" },
+    "description": "A lịch bloc: a fat block of thin pages, one for each day, hung on a card printed with a pagoda.  Each page gives the solar and lunar dates, the auspicious hours and a proverb.  Someone stopped tearing them off.",
+    "looks_like": "paper",
+    "color": "red",
+    "time": "5 m",
+    "snippet_category": [
+      {
+        "id": "sgn_lich_1",
+        "text": "The page reads: \"Ăn quả nhớ kẻ trồng cây\": when you eat the fruit, remember who planted the tree."
+      },
+      {
+        "id": "sgn_lich_2",
+        "text": "The page reads: \"Một cây làm chẳng nên non, ba cây chụm lại nên hòn núi cao\": one tree is not a forest; three together make a high mountain."
+      },
+      {
+        "id": "sgn_lich_3",
+        "text": "The page reads: \"Có công mài sắt, có ngày nên kim\": grind an iron bar long enough and one day it becomes a needle."
+      },
+      {
+        "id": "sgn_lich_4",
+        "text": "The page reads: \"Bán anh em xa, mua láng giềng gần\": sell the distant brother, buy the near neighbour."
+      },
+      {
+        "id": "sgn_lich_5",
+        "text": "The page reads: \"Lá lành đùm lá rách\": the whole leaf wraps the torn one."
+      },
+      {
+        "id": "sgn_lich_6",
+        "text": "The page reads: \"Uống nước nhớ nguồn\": when you drink the water, remember its source."
+      }
+    ]
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_bao_li_xi",
+    "name": { "str": "lì xì envelope" },
+    "description": "A small red envelope printed with gold characters for luck and prosperity, the kind children collect from every adult at Tết.  This one still holds a crisp new note.",
+    "weight": "5 g",
+    "volume": "10 ml",
+    "price": "1 USD",
+    "price_postapoc": "0 cent",
+    "material": [ "paper" ],
+    "symbol": "=",
+    "color": "red"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_vang_ma",
+    "copy-from": "paper",
+    "name": { "str_sp": "vàng mã" },
+    "description": "Votive paper for the dead: gold-foiled squares, fake banknotes from the Bank of Hell, and paper shirts, motorbikes and phones, burned in a tin pail on the sidewalk so the ancestors want for nothing.  It burns well.",
+    "looks_like": "paper",
+    "color": "yellow"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_long_den_ong_sao",
+    "name": { "str": "star lantern" },
+    "description": "A five-pointed lồng đèn ông sao of red cellophane stretched over a bamboo frame, a candle socket in the middle and a long stick to carry it.  Children paraded them through the alleys at the Mid-Autumn festival, singing.",
+    "weight": "150 g",
+    "volume": "4 L",
+    "longest_side": "60 cm",
+    "price": "1 USD",
+    "price_postapoc": "10 cent",
+    "material": [ "paper", "wood" ],
+    "symbol": "*",
+    "color": "red"
+  },
+  {
+    "type": "ITEM",
+    "subtypes": [ "COMESTIBLE" ],
+    "id": "sgn_banh_trung_thu",
+    "name": { "str_sp": "bánh trung thu" },
+    "description": "A Mid-Autumn mooncake: a dense golden pastry stamped with a pattern, filled with lotus-seed paste, salted egg yolk and lạp xưởng.  Heavy, sweet, and made to keep.",
+    "symbol": "%",
+    "comestible_type": "FOOD",
+    "weight": "200 g",
+    "volume": "150 ml",
+    "color": "yellow",
+    "spoils_in": "30 days",
+    "calories": 800,
+    "fun": 12,
+    "material": [ "wheat", "egg" ],
+    "price": "2 USD",
+    "price_postapoc": "4 USD",
+    "vitamins": [ [ "iron", 6 ], [ "wheat_allergen", 1 ], [ "egg_allergen", 1 ] ],
+    "looks_like": "pie"
+  }
+]

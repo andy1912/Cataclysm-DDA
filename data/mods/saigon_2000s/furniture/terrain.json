@@ -1,0 +1,134 @@
+[
+  {
+    "type": "terrain",
+    "id": "t_sgn_cua_sat_keo_c",
+    "copy-from": "t_door_metal_c",
+    "looks_like": "t_door_metal_c",
+    "name": "closed accordion gate",
+    "description": "Cửa sắt kéo: a folding iron gate of criss-crossed flat bars that slides across a shopfront or hẻm doorway and padlocks to the wall.  You can see straight through it, and anything on the other side can see you.  Dragging it open makes a screech the whole alley hears.",
+    "color": "light_gray",
+    "extend": { "flags": [ "TRANSPARENT" ] },
+    "delete": { "flags": [ "BLOCK_WIND" ] },
+    "open": "t_sgn_cua_sat_keo_o"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_cua_sat_keo_o",
+    "copy-from": "t_door_metal_o",
+    "looks_like": "t_door_metal_o",
+    "name": "open accordion gate",
+    "description": "Cửa sắt kéo: a folding iron gate, its criss-crossed bars bunched up against the side of the doorway.",
+    "color": "light_gray",
+    "close": "t_sgn_cua_sat_keo_c"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_hem_xi_mang",
+    "copy-from": "t_concrete",
+    "looks_like": "t_concrete",
+    "name": "alley concrete",
+    "description": "The poured concrete of a hẻm, cracked and patched a dozen times, stained by motorbike oil and the dirty water that runs down its middle when it rains.",
+    "color": "light_gray"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_tuong_bong_gio",
+    "copy-from": "t_concrete_wall",
+    "looks_like": "t_concrete_wall",
+    "name": "breeze-block wall",
+    "description": "Tường bông gió: a wall of cast concrete blocks pierced with flower and diamond patterns, built to let the breeze and the light through.  You can see through the holes, though nothing larger than a cat could squeeze through them.",
+    "color": "white",
+    "extend": { "flags": [ "TRANSPARENT" ] }
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_gach_bong_1",
+    "copy-from": "t_thconc_floor",
+    "looks_like": "t_thconc_floor",
+    "name": "patterned cement tiles",
+    "description": "Gạch bông: hand-pressed cement tiles, each printed with a red-and-ochre four-petal flower, laid edge to edge so the pattern runs across the whole room.  Old Saigon houses are floored with them; they stay cool underfoot in the heat.",
+    "color": "light_red"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_gach_bong_2",
+    "copy-from": "t_thconc_floor",
+    "looks_like": "t_thconc_floor",
+    "name": "patterned cement tiles",
+    "description": "Gạch bông: hand-pressed cement tiles, each printed with an eight-pointed star in blue and cream, laid edge to edge so the pattern runs across the whole room.  Old Saigon houses are floored with them; they stay cool underfoot in the heat.",
+    "color": "light_red"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_gach_bong_3",
+    "copy-from": "t_thconc_floor",
+    "looks_like": "t_thconc_floor",
+    "name": "patterned cement tiles",
+    "description": "Gạch bông: hand-pressed cement tiles, each printed with a green trellis of interlocking circles, laid edge to edge so the pattern runs across the whole room.  Old Saigon houses are floored with them; they stay cool underfoot in the heat.",
+    "color": "light_red"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_gach_bong_4",
+    "copy-from": "t_thconc_floor",
+    "looks_like": "t_thconc_floor",
+    "name": "patterned cement tiles",
+    "description": "Gạch bông: hand-pressed cement tiles, each printed with grey waves around a yellow medallion, laid edge to edge so the pattern runs across the whole room.  Old Saigon houses are floored with them; they stay cool underfoot in the heat.",
+    "color": "light_red"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_gach_men",
+    "copy-from": "t_thconc_floor",
+    "looks_like": "t_thconc_floor",
+    "name": "glazed floor tiles",
+    "description": "Shiny 40 cm glazed ceramic tiles in beige marble print, the floor every family laid when they rebuilt in the nineties.  Slippery when wet.",
+    "color": "white"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_bo_ke",
+    "copy-from": "t_concrete",
+    "looks_like": "t_concrete",
+    "name": "canal embankment",
+    "description": "Bờ kè: the stone-faced edge of the canal, slick with green slime where the tide reaches it.  Steps lead down into the murky water.",
+    "color": "light_gray",
+    "move_cost": 3
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_mai_ton",
+    "copy-from": "t_metal_roof",
+    "looks_like": "t_metal_roof",
+    "name": "corrugated metal roof",
+    "description": "Mái tôn: corrugated iron sheets nailed over a shack, rusted at the seams and weighted down with old tyres against the monsoon wind.  Rain on it is deafening.",
+    "color": "light_blue"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_tuong_hong",
+    "copy-from": "t_brick_wall",
+    "looks_like": "t_brick_wall",
+    "name": "pink stucco wall",
+    "description": "Thick colonial-era masonry rendered in a candy-pink stucco, the colour Saigon's churches are famous for.",
+    "color": "pink"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_mai_ngoi",
+    "copy-from": "t_metal_roof",
+    "looks_like": "t_shingle_flat_roof",
+    "name": "terracotta tile roof",
+    "description": "Mái ngói: overlapping red clay roof tiles on a timber frame, mossy in the gutters.",
+    "color": "light_red"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_gach_do",
+    "copy-from": "t_brick_wall",
+    "looks_like": "t_brick_wall",
+    "name": "red brick wall",
+    "description": "Bare red brick shipped from Toulouse a century and a half ago, never plastered: the walls of the cathedral.",
+    "color": "red"
+  }
+]

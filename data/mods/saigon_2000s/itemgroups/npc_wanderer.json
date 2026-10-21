@@ -1,0 +1,290 @@
+[
+  {
+    "type": "item_group",
+    "id": "NC_NONE_torso",
+    "subtype": "distribution",
+    "//": "N1: the gear of Saigon's wandering survivors.  A random NPC (game::perhaps_add_random_npc) is classless: it takes a Saigon profession from the scenario, then npc::starting_inv_passtime dresses and arms it from NC_NONE_<body part / skill / storage / extra> (NC_NONE_HARDENED_* once the outbreak is months old).  dda's groups gave American guns, canned food and vending-machine drinks; these give Saigon clothes, food and street weapons, and no firearms (the ward police and veterans placed in the city carry the only sidearms).",
+    "items": [
+      [ "sgn_ao_thun", 35 ],
+      [ "sgn_ao_ba_ba", 20 ],
+      [ "sgn_do_bo", 15 ],
+      [ "tshirt", 10 ],
+      [ "sgn_ao_khoac_chong_nang", 15 ],
+      [ "sgn_ao_mua_canh_doi", 5 ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_leg",
+    "subtype": "distribution",
+    "items": [ [ "sgn_quan_tay", 35 ], [ "jeans", 25 ], [ "shorts", 25 ], [ "pants", 15 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_foot",
+    "subtype": "distribution",
+    "items": [ [ "sgn_dep_lao", 35 ], [ "sgn_dep_to_ong", 25 ], [ "sgn_dep_quai_hau", 15 ], [ "sneakers", 25 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_head",
+    "subtype": "distribution",
+    "items": [ [ "sgn_non_bao_hiem", 35 ], [ "sgn_non_la", 25 ], [ "sgn_non_ket", 30 ], [ "null", 10 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_mouth",
+    "subtype": "distribution",
+    "items": [ [ "sgn_khau_trang", 60 ], [ "sgn_khan_ran", 20 ], [ "null", 20 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_arm",
+    "subtype": "distribution",
+    "items": [ [ "sgn_ong_tay_chong_nang", 40 ], [ "null", 60 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_hand",
+    "subtype": "distribution",
+    "items": [ [ "gloves_light", 20 ], [ "null", 80 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_sensor",
+    "subtype": "distribution",
+    "items": [ [ "sunglasses", 30 ], [ "null", 70 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_storage",
+    "subtype": "distribution",
+    "items": [ [ "bag_plastic", 40 ], [ "backpack", 35 ], [ "sgn_ro_nhua", 25 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_extra",
+    "subtype": "distribution",
+    "items": [
+      [ "sgn_banh_mi_thit", 10 ],
+      [ "sgn_xoi", 10 ],
+      [ "sgn_mi_goi", 15 ],
+      [ "sgn_luong_kho", 10 ],
+      [ "sgn_kho_muc", 5 ],
+      [ "sgn_tra_da", 10 ],
+      [ "sgn_nuoc_dua", 5 ],
+      [ "sgn_thuoc_la", 10 ],
+      [ "lighter", 8 ],
+      [ "sgn_dau_gio", 6 ],
+      [ "sgn_oresol", 5 ],
+      [ "sgn_ve_so", 4 ],
+      [ "sgn_dong_10k", 8 ],
+      [ "sgn_dong_50k", 4 ],
+      [ "sgn_dien_thoai", 3 ],
+      [ "sgn_ban_do_tphcm", 2 ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_bashing",
+    "subtype": "distribution",
+    "items": [ [ "pipe", 30 ], [ "sgn_xa_beng", 20 ], [ "2x4", 15 ], [ "stick", 10 ], [ "hammer", 10 ], [ "wrench", 15 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_cutting",
+    "subtype": "distribution",
+    "items": [ [ "sgn_dao_rua", 50 ], [ "machete", 30 ], [ "knife_folding", 20 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_stabbing",
+    "subtype": "distribution",
+    "items": [ [ "knife_folding", 50 ], [ "pockknife", 30 ], [ "sgn_dao_rua", 20 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_throw",
+    "subtype": "distribution",
+    "items": [ [ "brick", 100 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_pistol",
+    "subtype": "distribution",
+    "items": [ [ "pipe", 30 ], [ "sgn_xa_beng", 20 ], [ "2x4", 15 ], [ "stick", 10 ], [ "hammer", 10 ], [ "wrench", 15 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_shotgun",
+    "subtype": "distribution",
+    "items": [ [ "pipe", 30 ], [ "sgn_xa_beng", 20 ], [ "2x4", 15 ], [ "stick", 10 ], [ "hammer", 10 ], [ "wrench", 15 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_smg",
+    "subtype": "distribution",
+    "items": [ [ "sgn_dao_rua", 50 ], [ "machete", 30 ], [ "knife_folding", 20 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_rifle",
+    "subtype": "distribution",
+    "items": [ [ "sgn_dao_rua", 50 ], [ "machete", 30 ], [ "knife_folding", 20 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_archery",
+    "subtype": "distribution",
+    "items": [ [ "pipe", 30 ], [ "sgn_xa_beng", 20 ], [ "2x4", 15 ], [ "stick", 10 ], [ "hammer", 10 ], [ "wrench", 15 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_quiver",
+    "subtype": "distribution",
+    "items": [ [ "null", 100 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_torso",
+    "subtype": "distribution",
+    "items": [
+      [ "jacket_army", 25 ],
+      [ "sgn_ao_khoac_chong_nang", 25 ],
+      [ "sgn_ao_mua_canh_doi", 15 ],
+      [ "sgn_ao_ba_ba", 15 ],
+      [ "sgn_ao_thun", 20 ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_leg",
+    "subtype": "distribution",
+    "items": [ [ "pants_cargo", 35 ], [ "jeans", 35 ], [ "sgn_quan_tay", 30 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_foot",
+    "subtype": "distribution",
+    "items": [ [ "sgn_ung_cao_su", 35 ], [ "boots", 30 ], [ "sneakers", 35 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_head",
+    "subtype": "distribution",
+    "items": [ [ "sgn_non_bao_hiem", 40 ], [ "sgn_non_coi", 30 ], [ "helmet_army", 15 ], [ "sgn_non_la", 15 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_mouth",
+    "subtype": "distribution",
+    "items": [ [ "sgn_khau_trang", 60 ], [ "sgn_khan_ran", 20 ], [ "null", 20 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_arm",
+    "subtype": "distribution",
+    "items": [ [ "sgn_ong_tay_chong_nang", 40 ], [ "null", 60 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_hand",
+    "subtype": "distribution",
+    "items": [ [ "gloves_work", 50 ], [ "gloves_light", 30 ], [ "null", 20 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_sensor",
+    "subtype": "distribution",
+    "items": [ [ "sunglasses", 30 ], [ "null", 70 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_storage",
+    "subtype": "distribution",
+    "items": [ [ "backpack", 70 ], [ "bag_plastic", 30 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_extra",
+    "subtype": "distribution",
+    "items": [
+      [ "sgn_banh_mi_thit", 10 ],
+      [ "sgn_xoi", 10 ],
+      [ "sgn_mi_goi", 15 ],
+      [ "sgn_luong_kho", 10 ],
+      [ "sgn_kho_muc", 5 ],
+      [ "sgn_tra_da", 10 ],
+      [ "sgn_nuoc_dua", 5 ],
+      [ "sgn_thuoc_la", 10 ],
+      [ "lighter", 8 ],
+      [ "sgn_dau_gio", 6 ],
+      [ "sgn_oresol", 5 ],
+      [ "sgn_ve_so", 4 ],
+      [ "sgn_dong_10k", 8 ],
+      [ "sgn_dong_50k", 4 ],
+      [ "sgn_dien_thoai", 3 ],
+      [ "sgn_ban_do_tphcm", 2 ]
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_bashing",
+    "subtype": "distribution",
+    "items": [ [ "sgn_xa_beng", 40 ], [ "pipe", 40 ], [ "hammer", 20 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_cutting",
+    "subtype": "distribution",
+    "items": [ [ "machete", 55 ], [ "sgn_dao_rua", 45 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_stabbing",
+    "subtype": "distribution",
+    "items": [ [ "knife_folding", 50 ], [ "pockknife", 30 ], [ "sgn_dao_rua", 20 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_throw",
+    "subtype": "distribution",
+    "items": [ [ "brick", 100 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_pistol",
+    "subtype": "distribution",
+    "items": [ [ "pipe", 30 ], [ "sgn_xa_beng", 20 ], [ "2x4", 15 ], [ "stick", 10 ], [ "hammer", 10 ], [ "wrench", 15 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_shotgun",
+    "subtype": "distribution",
+    "items": [ [ "pipe", 30 ], [ "sgn_xa_beng", 20 ], [ "2x4", 15 ], [ "stick", 10 ], [ "hammer", 10 ], [ "wrench", 15 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_smg",
+    "subtype": "distribution",
+    "items": [ [ "sgn_dao_rua", 50 ], [ "machete", 30 ], [ "knife_folding", 20 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_rifle",
+    "subtype": "distribution",
+    "items": [ [ "sgn_dao_rua", 50 ], [ "machete", 30 ], [ "knife_folding", 20 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_archery",
+    "subtype": "distribution",
+    "items": [ [ "pipe", 30 ], [ "sgn_xa_beng", 20 ], [ "2x4", 15 ], [ "stick", 10 ], [ "hammer", 10 ], [ "wrench", 15 ] ]
+  },
+  {
+    "type": "item_group",
+    "id": "NC_NONE_HARDENED_quiver",
+    "subtype": "distribution",
+    "items": [ [ "null", 100 ] ]
+  }
+]

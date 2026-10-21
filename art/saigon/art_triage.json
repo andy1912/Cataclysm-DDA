@@ -1,0 +1,4 @@
+{
+  "//": "Art triage for tools/saigon/art/revision_list.py.  A dda id with no Saigon sprite keeps the original UltimateCataclysm art (it is universal: dirt, water, stairs, tools, fridges, wheels; Vietnam's stop sign is the same red octagon) unless it is listed under todo.  A mod id with no Saigon sprite is always to do.",
+  "todo": {}
+}

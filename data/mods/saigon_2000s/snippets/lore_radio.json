@@ -1,0 +1,125 @@
+[
+  {
+    "type": "snippet",
+    "category": "sgn_radio_v3_city",
+    "//": "V3: what the cassette radio picks up in the first ten days after the cataclysm: the city station, still on air.  Played by SGN_EOC_v3_radio_tune.",
+    "text": [
+      {
+        "id": "sgn_radio_v3_city_1",
+        "text": "\"…the city radio station, news at the top of the hour.  The Department of Health reports that fever cases have risen again.  Listeners are reminded that the illness passes through bites, scratches and the blood of the sick.  Keep the sick apart, wear a mask, and boil your water…\""
+      },
+      {
+        "id": "sgn_radio_v3_city_2",
+        "text": "\"…traffic and public order.  From tonight the city applies a curfew from six in the evening.  The bridges over the Saigon River are reserved for ambulances and the armed forces.  Residents should not try to leave the city by motorbike…\""
+      },
+      {
+        "id": "sgn_radio_v3_city_3",
+        "text": "\"…a reminder from the city People's Committee: rice, fish sauce and cooking gas will be handed out at the ward offices.  Shops that raise their prices will be punished.  Do not hoard.  Do not believe rumours spread by text message…\""
+      },
+      {
+        "id": "sgn_radio_v3_city_4",
+        "text": "\"…and now our health advice programme, with a doctor from the tropical diseases hospital.  A listener in Gò Vấp asks: my father has a high fever and no longer knows us, should I tie his hands?  The doctor says…\"  (Several seconds of silence.)  \"…please contact your ward health station…\""
+      },
+      {
+        "id": "sgn_radio_v3_city_5",
+        "text": "\"…we are experiencing technical difficulties.  Please stay tuned.\"  (A long piece of traditional music follows, a đàn tranh plucking the same slow tune.)"
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_radio_v3_emergency",
+    "//": "V3: days 10-20: emergency broadcasts, evacuation points and conflicting orders.  Mixed with the older sgn_radio fragments.",
+    "text": [
+      {
+        "id": "sgn_radio_v3_emergency_1",
+        "text": "\"…emergency broadcast.  All residents who are healthy must go to the nearest evacuation point: Phú Thọ stadium, Tao Đàn park, Thống Nhất stadium.  Bring water.  Leave the sick behind.  Leave the sick behind.  This message will repeat…\""
+      },
+      {
+        "id": "sgn_radio_v3_emergency_2",
+        "text": "\"…communiqué from the armed forces: a line has been established along the Saigon River.  Civilians must not approach the bridges.  Boats on the river will be stopped.  Anyone who does not obey will be treated as…\"  (Static.)"
+      },
+      {
+        "id": "sgn_radio_v3_emergency_3",
+        "text": "(A younger voice, not a presenter.)  \"The studio staff have left.  I'm the night technician.  I don't know how long the generator will last.  What I know: the stadium is gone.  The buses went out on the highway to Long An and did not come back.  If you are in District 1, the boat people at Bạch Đằng wharf are taking passengers, for gold…\""
+      },
+      {
+        "id": "sgn_radio_v3_emergency_4",
+        "text": "\"…the road to the delta is open…\"  \"…the road to the delta is closed…\"  (Two recordings, bleeding into each other from neighbouring frequencies.)"
+      },
+      {
+        "id": "sgn_radio_v3_emergency_5",
+        "text": "(A list of names, read slowly: families looking for each other.)  \"Anh Tuấn of Phú Nhuận, your wife and daughter are at the pagoda by the canal.  Bà Năm of Chợ Lớn, your son is alive, he is in Củ Chi.  Chị Hạnh, please, if you hear this, little Bảo is at his grandmother's…\""
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_radio_v3_voices",
+    "//": "V3: days 21-44: the official stations are gone; survivors, the merchants, a pagoda and the river people talk on whatever transmitter they have.",
+    "text": [
+      {
+        "id": "sgn_radio_v3_voices_1",
+        "text": "\"…this is a station in Thủ Đức, calling anyone.  We have water and we have a roof.  We have no medicine.  We listen on this frequency every day at dawn.  Over.\"  (A long wait, then the same message again.)"
+      },
+      {
+        "id": "sgn_radio_v3_voices_2",
+        "text": "\"…the Chợ Lớn merchants' association, from the roof of the market.  We trade rice and fish sauce for fuel, batteries and antibiotics.  Come to the east gate at noon.  Come alone, come unarmed, and roll your sleeves up so we can see your arms…\""
+      },
+      {
+        "id": "sgn_radio_v3_voices_3",
+        "text": "(A monk chanting the Heart Sutra, a bell struck between the verses.  When the chant ends a quiet voice says the pagoda still has rice porridge for anyone who comes before dark, and that the gate is shut at sunset.)"
+      },
+      {
+        "id": "sgn_radio_v3_voices_4",
+        "text": "(A boy's voice, twelve years old at most.)  \"Má, if you're listening, I'm at Chú Bảy's house, the one with the green gate.  I did everything you said.  I keep the radio on all day.  Má, please answer.  I don't know how to answer, I only have this…\""
+      },
+      {
+        "id": "sgn_radio_v3_voices_5",
+        "text": "\"…the river people, calling.  Our ghe are anchored off Cần Giờ.  The water is clean out there and the dead don't follow you into the mangroves.  Bring diesel and we'll take you across.  Do not signal from the bank at night…\""
+      },
+      {
+        "id": "sgn_radio_v3_voices_6",
+        "text": "(A man reading the evening news as if it were an ordinary night: the weather, a football result, the price of gold in Chợ Lớn.  Every story is from the week before the fever.  When he reaches the end he starts again from the beginning.)"
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_radio_v3_static",
+    "//": "V3: from day 45: almost nothing left on the air.",
+    "text": [
+      {
+        "id": "sgn_radio_v3_static_1",
+        "text": "Static, rising and falling.  Under it, for a moment, someone laughing, or crying.  Then nothing."
+      },
+      {
+        "id": "sgn_radio_v3_static_2",
+        "text": "You sweep the dial from one end to the other.  Static on every band, except one frequency where a carrier tone hums, steady and empty, as if someone left a transmitter on and walked away."
+      },
+      {
+        "id": "sgn_radio_v3_static_3",
+        "text": "(The folk song tape again, very faint now, the batteries of some distant transmitter dying.  It slows, and stops in the middle of a line.)"
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_radio_v3_tape",
+    "//": "V3: playing the tape in the cassette radio (SGN_EOC_v3_radio_tape).",
+    "text": [
+      {
+        "id": "sgn_radio_v3_tape_1",
+        "text": "The tape hisses, and then a cải lương singer launches into a vọng cổ, her voice climbing and breaking over the đàn kìm.  It is the music of every barbershop and every bus of your childhood.  For a few minutes you are somewhere else."
+      },
+      {
+        "id": "sgn_radio_v3_tape_2",
+        "text": "You flip the cassette.  Side B is a nhạc vàng ballad about rain on a tin roof, sung slowly, recorded off the radio years ago; you can still hear a DJ's voice under the first verse.  You let it play."
+      },
+      {
+        "id": "sgn_radio_v3_tape_3",
+        "text": "The tape is worn and the music wobbles, but the old opera still makes you smile: a scheming mandarin, a faithful wife, a scholar coming home too late.  Somebody recorded a child laughing at the end of the side."
+      }
+    ]
+  }
+]

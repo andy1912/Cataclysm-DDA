@@ -1,0 +1,1648 @@
+[
+  {
+    "type": "item_group",
+    "id": "sgn_mx_corpse",
+    "subtype": "distribution",
+    "//": "E2 encounters: a body that will not get up again (no gunshot corpses).",
+    "entries": [
+      { "item": "corpse_generic_male", "prob": 40, "damage": 4 },
+      { "item": "corpse_generic_female", "prob": 40, "damage": 4 },
+      { "item": "corpse_generic_human", "prob": 20, "damage": 4 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_mx_luggage",
+    "subtype": "collection",
+    "//": "E2 encounters: what bus passengers carried: bags, a cooler, a sack of rice from home.",
+    "entries": [
+      { "item": "duffelbag", "prob": 20, "damage": [ 1, 3 ] },
+      { "item": "sgn_thung_xop", "prob": 15 },
+      { "item": "dry_rice", "prob": 15 },
+      { "item": "sgn_ro_nhua", "prob": 15 },
+      { "group": "bus_common", "prob": 60 },
+      { "group": "sgn_zombie_bag", "prob": 30 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_mx_quarantine_table",
+    "subtype": "collection",
+    "//": "E2 encounters: a health-ministry checkpoint desk: masks, a thermometer, disinfectant, notices.",
+    "entries": [
+      { "item": "sgn_khau_trang", "prob": 80, "count": [ 2, 8 ] },
+      { "item": "mask_dust", "prob": 50, "count": [ 1, 4 ] },
+      { "item": "thermometer", "prob": 40 },
+      { "item": "disinfectant", "prob": 40 },
+      { "item": "gloves_medical", "prob": 40 },
+      { "item": "sgn_ward_notice", "prob": 60 },
+      { "item": "sgn_oresol", "prob": 30, "count": [ 1, 4 ] }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_mx_wedding_table",
+    "subtype": "collection",
+    "//": "E2 encounters: a wedding table, abandoned mid-feast.",
+    "entries": [
+      { "item": "sgn_goi_cuon", "prob": 30, "count": [ 1, 3 ] },
+      { "item": "sgn_banh_bao", "prob": 20 },
+      { "item": "sgn_lap_xuong", "prob": 20 },
+      { "item": "sgn_bia_hoi", "prob": 40 },
+      { "item": "sgn_ruou_de", "prob": 15 },
+      { "item": "bowl_plastic", "prob": 50, "count": [ 1, 4 ] },
+      { "item": "chopsticks", "prob": 50 },
+      { "item": "sgn_bao_li_xi", "prob": 20 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_mx_offerings",
+    "subtype": "collection",
+    "//": "E2 encounters: fresh offerings on an altar: fruit, candles, incense, votive paper.",
+    "entries": [
+      { "item": "banana", "prob": 50, "count": [ 1, 4 ] },
+      { "item": "mango", "prob": 30, "count": [ 1, 3 ] },
+      { "item": "sgn_thanh_long", "prob": 20 },
+      { "item": "sgn_xoi", "prob": 20 },
+      { "item": "incense", "prob": 80, "count": [ 2, 10 ] },
+      { "item": "sgn_nen", "prob": 50, "count": [ 1, 2 ] },
+      { "item": "sgn_vang_ma", "prob": 40 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_mx_helmets",
+    "subtype": "collection",
+    "//": "E2 encounters: what lies around a motorbike pile-up.",
+    "entries": [
+      { "item": "sgn_non_bao_hiem", "prob": 70, "damage": [ 1, 4 ] },
+      { "item": "sgn_dep_to_ong", "prob": 30 },
+      { "item": "sgn_ao_mua_canh_doi", "prob": 20 },
+      { "item": "cell_phone", "prob": 10 },
+      { "item": "sgn_khoa_chu_u", "prob": 10 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_mx_atm_loot",
+    "subtype": "collection",
+    "//": "E2 encounters: what the looters dropped: loose đồng notes, a torn wallet, glass.",
+    "entries": [
+      { "group": "sgn_dong_notes", "prob": 70, "count": [ 1, 5 ] },
+      { "group": "sgn_wallet", "prob": 15 },
+      { "item": "glass_shard", "prob": 60, "count": [ 1, 3 ] },
+      { "item": "sgn_xa_beng", "prob": 5 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_mx_flood_trash",
+    "subtype": "collection",
+    "//": "E2 encounters: what floats in a flooded street.",
+    "entries": [
+      { "item": "bottle_plastic_small", "prob": 50 },
+      { "item": "sgn_dep_to_ong", "prob": 40 },
+      { "item": "sgn_ao_mua_canh_doi", "prob": 20 },
+      { "item": "sgn_non_la", "prob": 15 },
+      { "item": "sgn_thau_nhua", "prob": 15 }
+    ]
+  },
+  {
+    "id": "mx_sgn_xe_khach",
+    "type": "map_extra",
+    "name": { "str": "Wrecked bus" },
+    "description": "A bus that never reached the station, its passengers still aboard.",
+    "generator": { "generator_method": "update_mapgen", "generator_id": "mx_sgn_xe_khach" },
+    "min_max_zlevel": [ 0, 0 ],
+    "sym": "B",
+    "color": "light_red",
+    "autonote_visibility": "details",
+    "flags": [ "MAN_MADE", "SAIGON" ]
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_xe_khach_city",
+    "//": "City: a crashed city bus and the motorbike it hit.",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_items": [ { "item": "sgn_mx_luggage", "x": [ 6, 17 ], "y": [ 6, 17 ], "chance": 70, "repeat": [ 2, 5 ] } ],
+      "place_item": [ { "item": "corpse_generic_human", "x": [ 6, 17 ], "y": [ 6, 17 ], "chance": 40 } ],
+      "place_corpses": [ { "group": "sgn_GROUP_MX_PASSENGERS", "x": [ 6, 17 ], "y": [ 6, 17 ], "repeat": [ 0, 2 ] } ],
+      "place_fields": [ { "field": "fd_blood", "x": [ 6, 17 ], "y": [ 6, 17 ], "repeat": [ 2, 6 ] } ],
+      "place_monster": [
+        { "group": "sgn_GROUP_MX_PASSENGERS", "x": [ 4, 19 ], "y": [ 4, 19 ], "repeat": [ 1, 3 ], "chance": 80 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 6, 17 ], "y": [ 6, 17 ], "repeat": [ 1, 3 ] }
+      ],
+      "place_vehicles": [
+        { "vehicle": "sgn_veh_xe_buyt", "x": [ 11, 12 ], "y": [ 11, 12 ], "rotation": [ 0, 90, 180, 270 ], "status": 1 },
+        {
+          "vehicle": "sgn_vg_sidewalk_parked",
+          "x": [ 6, 17 ],
+          "y": [ 6, 17 ],
+          "rotation": [ 30, 120, 210, 300 ],
+          "status": 1,
+          "chance": 60
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_xe_khach_country",
+    "//": "Country: an intercity xe khách minibus run off the road.",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_items": [ { "item": "sgn_mx_luggage", "x": [ 6, 17 ], "y": [ 6, 17 ], "chance": 70, "repeat": [ 2, 5 ] } ],
+      "place_item": [ { "item": "corpse_generic_human", "x": [ 6, 17 ], "y": [ 6, 17 ], "chance": 40 } ],
+      "place_corpses": [ { "group": "sgn_GROUP_MX_PASSENGERS", "x": [ 6, 17 ], "y": [ 6, 17 ], "repeat": [ 0, 2 ] } ],
+      "place_fields": [ { "field": "fd_blood", "x": [ 6, 17 ], "y": [ 6, 17 ], "repeat": [ 2, 6 ] } ],
+      "place_monster": [
+        { "group": "sgn_GROUP_MX_PASSENGERS", "x": [ 4, 19 ], "y": [ 4, 19 ], "repeat": [ 1, 3 ], "chance": 80 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 6, 17 ], "y": [ 6, 17 ], "repeat": [ 1, 3 ] }
+      ],
+      "place_vehicles": [
+        { "vehicle": "sgn_veh_xe_16_cho", "x": [ 10, 13 ], "y": [ 10, 13 ], "rotation": [ 15, 105, 195, 285 ], "status": 1 },
+        {
+          "vehicle": "sgn_veh_underbone",
+          "x": [ 6, 17 ],
+          "y": [ 6, 17 ],
+          "rotation": [ 60, 150, 240, 330 ],
+          "status": 1,
+          "chance": 50
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "mx_sgn_xe_khach",
+    "//": "E2: wrecked bus.  City roads (a sidewalk neighbour) get a city bus; country roads a 16-seat xe khách.",
+    "object": {
+      "place_nested": [
+        {
+          "chunks": [ "sgn_mx_xe_khach_city" ],
+          "else_chunks": [ "sgn_mx_xe_khach_country" ],
+          "x": 0,
+          "y": 0,
+          "flags_any": {
+            "north": [ "SIDEWALK" ],
+            "north_east": [ "SIDEWALK" ],
+            "east": [ "SIDEWALK" ],
+            "south_east": [ "SIDEWALK" ],
+            "south": [ "SIDEWALK" ],
+            "south_west": [ "SIDEWALK" ],
+            "west": [ "SIDEWALK" ],
+            "north_west": [ "SIDEWALK" ]
+          }
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "id": "mx_sgn_ba_gac",
+    "type": "map_extra",
+    "name": { "str": "Toppled ba gác" },
+    "description": "A motorized cargo tricycle on its side, a market load spilled across the road.",
+    "generator": { "generator_method": "update_mapgen", "generator_id": "mx_sgn_ba_gac" },
+    "min_max_zlevel": [ 0, 0 ],
+    "sym": "g",
+    "color": "yellow",
+    "autonote_visibility": "details",
+    "flags": [ "MAN_MADE", "SAIGON" ]
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_ba_gac_spill",
+    "//": "Rice sacks, fruit and baskets around a cargo tricycle that tipped over.",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "         RR             ",
+        "         R  R           ",
+        "                        ",
+        "                        ",
+        "          R R           ",
+        "           R            ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "furniture": { "R": "f_sgn_bao_gao" },
+      "place_vehicles": [
+        { "vehicle": "sgn_veh_ba_gac_may", "x": [ 10, 13 ], "y": [ 10, 13 ], "rotation": [ 45, 135, 225, 315 ], "status": 1 }
+      ],
+      "place_items": [ { "item": "sgn_cho_stall_produce", "x": [ 6, 17 ], "y": [ 6, 17 ], "chance": 90, "repeat": [ 5, 10 ] } ],
+      "place_monster": [ { "group": "sgn_GROUP_MX_MARKET", "x": [ 5, 18 ], "y": [ 5, 18 ], "repeat": [ 1, 2 ], "chance": 80 } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "mx_sgn_ba_gac",
+    "//": "E2: toppled ba gác and its spilled market goods; any road.",
+    "object": {
+      "place_nested": [ { "chunks": [ "sgn_mx_ba_gac_spill" ], "x": 0, "y": 0 } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "id": "mx_sgn_kiem_dich",
+    "type": "map_extra",
+    "name": { "str": "Quarantine checkpoint" },
+    "description": "A health-ministry fever checkpoint: barriers, a tent, and no one left to take temperatures.",
+    "generator": { "generator_method": "update_mapgen", "generator_id": "mx_sgn_kiem_dich" },
+    "min_max_zlevel": [ 0, 0 ],
+    "sym": "Q",
+    "color": "light_blue",
+    "autonote_visibility": "details",
+    "flags": [ "MAN_MADE", "SAIGON" ]
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_kiem_dich_post",
+    "//": "Barriers across the road on all four sides, a canvas tent with tables, a loudspeaker pole, signs.",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "      bbbbb  bbbbb      ",
+        "                        ",
+        "         S              ",
+        "                        ",
+        "        wwww+www        ",
+        "  b     wTTffCCw     b  ",
+        "  b     wCffffxw     b  ",
+        "  b     wffffffw     b  ",
+        "  b     wTTfCfxw     b  ",
+        "  b     wwwwwwww     b  ",
+        "                        ",
+        "     L          S       ",
+        "  b                  b  ",
+        "  b                  b  ",
+        "  b                  b  ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "      bbbbb  bbbbb      ",
+        "                        ",
+        "                        "
+      ],
+      "furniture": {
+        "b": "f_barricade_road",
+        "w": "f_canvas_wall",
+        "+": "f_canvas_door",
+        "f": "f_canvas_floor",
+        "T": "f_table",
+        "C": "f_camp_chair",
+        "L": "f_sgn_loa_phuong",
+        "x": "f_canvas_floor"
+      },
+      "signs": {
+        "S": {
+          "signage": "TRẠM KIỂM DỊCH - BỘ Y TẾ.  Fever checkpoint: every traveller must stop, wear a mask and have their temperature taken."
+        }
+      },
+      "items": { "T": { "item": "sgn_mx_quarantine_table", "chance": 80 }, "x": { "item": "sgn_mx_corpse", "chance": 60 } },
+      "place_monster": [
+        { "group": "sgn_GROUP_MX_FEVER", "x": [ 3, 20 ], "y": [ 12, 20 ], "repeat": [ 2, 4 ], "chance": 90 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 10, 14 ], "y": [ 8, 10 ], "repeat": [ 0, 1 ] }
+      ],
+      "place_fields": [ { "field": "fd_blood", "x": [ 4, 19 ], "y": [ 12, 18 ], "repeat": [ 1, 4 ] } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "mx_sgn_kiem_dich",
+    "//": "E2: health-ministry quarantine checkpoint; any road (they stood at city gates and on the highways out).",
+    "object": {
+      "place_nested": [ { "chunks": [ "sgn_mx_kiem_dich_post" ], "x": 0, "y": 0 } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "id": "mx_sgn_dam_cuoi",
+    "type": "map_extra",
+    "name": { "str": "Abandoned wedding tent" },
+    "description": "A wedding canopy set up across the street, tables still laid.",
+    "generator": { "generator_method": "update_mapgen", "generator_id": "mx_sgn_dam_cuoi" },
+    "min_max_zlevel": [ 0, 0 ],
+    "sym": "W",
+    "color": "pink",
+    "autonote_visibility": "details",
+    "flags": [ "MAN_MADE", "SAIGON" ]
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_dam_cuoi_tent",
+    "//": "Canopy walls on three sides, open front with potted kumquats, tables of six with stools, two speaker cabinets.",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "    wwwwwwwwwwwwwwww    ",
+        "    w  K        K  w    ",
+        "    w sTs sTs sTs  w    ",
+        "    w sTs sTs sTs  w    ",
+        "    w              w    ",
+        "    w sTs sTs sTs  w    ",
+        "    w sTs sTs sTs  w    ",
+        "    w              w    ",
+        "    w sTs sTs sTs  w    ",
+        "    w sTs sTs sTs  w    ",
+        "    w              w    ",
+        "    www  P    P  www    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "furniture": { "w": "f_canvas_wall", "T": "f_table", "s": "f_stool", "K": "f_speaker_cabinet", "P": "f_sgn_chau_kieng" },
+      "items": { "T": { "item": "sgn_mx_wedding_table", "chance": 70 } },
+      "place_monster": [
+        { "group": "sgn_GROUP_MX_WEDDING", "x": [ 6, 17 ], "y": [ 9, 15 ], "repeat": [ 2, 5 ], "chance": 90 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 6, 17 ], "y": [ 9, 15 ], "repeat": [ 0, 2 ] }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "mx_sgn_dam_cuoi",
+    "//": "E2: an abandoned wedding tent; families put them up across the street or the hẻm, in town and village alike.",
+    "object": {
+      "place_nested": [ { "chunks": [ "sgn_mx_dam_cuoi_tent" ], "x": 0, "y": 0 } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "id": "mx_sgn_dam_tang",
+    "type": "map_extra",
+    "name": { "str": "Funeral tent" },
+    "description": "A funeral canopy in the street, the coffin still under it and incense still burning.",
+    "generator": { "generator_method": "update_mapgen", "generator_id": "mx_sgn_dam_tang" },
+    "min_max_zlevel": [ 0, 0 ],
+    "sym": "F",
+    "color": "white",
+    "autonote_visibility": "details",
+    "flags": [ "MAN_MADE", "SAIGON" ]
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_dam_tang_tent",
+    "//": "Altar and incense burners at the head of the coffin, rows of stools for the mourners.",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "      wwwwwwwwwwww      ",
+        "      w    A     w      ",
+        "      w   UOOU   w      ",
+        "      w    OO    w      ",
+        "      w    OO    w      ",
+        "      w          w      ",
+        "      w ss    ss w      ",
+        "      w ss    ss w      ",
+        "      w ss    ss w      ",
+        "      www      www      ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "furniture": { "w": "f_canvas_wall", "A": "f_sgn_ban_tho", "U": "f_sgn_lu_huong", "O": "f_coffin_c", "s": "f_stool" },
+      "items": { "O": { "item": "sgn_mx_corpse", "chance": 100 }, "U": { "item": "sgn_mx_offerings", "chance": 90 } },
+      "place_monster": [
+        { "group": "sgn_GROUP_MX_FUNERAL", "x": [ 7, 16 ], "y": [ 10, 16 ], "repeat": [ 1, 4 ], "chance": 90 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 7, 16 ], "y": [ 10, 13 ], "repeat": [ 0, 2 ] }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "mx_sgn_dam_tang",
+    "//": "E2: a funeral tent in the street; any road.",
+    "object": {
+      "place_nested": [ { "chunks": [ "sgn_mx_dam_tang_tent" ], "x": 0, "y": 0 } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "id": "mx_sgn_cap_cuu",
+    "type": "map_extra",
+    "name": { "str": "Crashed ambulance" },
+    "description": "A white 115 ambulance van on its side, its fever patients gone from the stretchers.",
+    "generator": { "generator_method": "update_mapgen", "generator_id": "mx_sgn_cap_cuu" },
+    "min_max_zlevel": [ 0, 0 ],
+    "sym": "A",
+    "color": "light_red",
+    "autonote_visibility": "details",
+    "flags": [ "MAN_MADE", "SAIGON" ]
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_cap_cuu_crash",
+    "//": "The 115 emergency service ran white minibus-sized vans; the 16-seat van stands in.",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "place_vehicles": [
+        { "vehicle": "sgn_veh_xe_cuu_thuong", "x": [ 10, 13 ], "y": [ 10, 13 ], "rotation": [ 30, 120, 210, 300 ], "status": 1 }
+      ],
+      "place_furniture": [ { "furn": "f_IV_pole", "x": [ 7, 16 ], "y": [ 7, 16 ], "repeat": [ 1, 2 ] } ],
+      "place_items": [ { "item": "sgn_hospital", "x": [ 6, 17 ], "y": [ 6, 17 ], "chance": 80, "repeat": [ 2, 4 ] } ],
+      "place_item": [ { "item": "bag_iv", "x": [ 6, 17 ], "y": [ 6, 17 ], "chance": 50 } ],
+      "place_fields": [ { "field": "fd_blood", "x": [ 6, 17 ], "y": [ 6, 17 ], "repeat": [ 2, 5 ] } ],
+      "place_monster": [ { "group": "sgn_GROUP_MX_FEVER", "x": [ 4, 19 ], "y": [ 4, 19 ], "repeat": [ 1, 3 ], "chance": 90 } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "mx_sgn_cap_cuu",
+    "//": "E2: a crashed ambulance; any road.",
+    "object": {
+      "place_nested": [ { "chunks": [ "sgn_mx_cap_cuu_crash" ], "x": 0, "y": 0 } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "id": "mx_sgn_ngap",
+    "type": "map_extra",
+    "name": { "str": "Flooded street" },
+    "description": "Tidal floodwater (triều cường) standing in the road, stalled motorbikes and things floating in it.",
+    "generator": { "generator_method": "update_mapgen", "generator_id": "mx_sgn_ngap" },
+    "min_max_zlevel": [ 0, 0 ],
+    "sym": "~",
+    "color": "light_blue",
+    "autonote_visibility": "details",
+    "flags": [ "MAN_MADE", "SAIGON" ]
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_ngap_water",
+    "//": "A pool of shallow water over the roadway, abandoned motorbikes stalled in it.",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "         ~~~~~~         ",
+        "       ~~~~~~~~~~       ",
+        "      ~~~~~~~~~~~~      ",
+        "     ~~~~~~~~~~~~~~     ",
+        "    ~~~~~~~~~~~~~~~~    ",
+        "    ~~~~~~~~~~~~~~~~    ",
+        "    ~~~~~~~~~~~~~~~~    ",
+        "    ~~~~~~~~~~~~~~~~    ",
+        "    ~~~~~~~~~~~~~~~~    ",
+        "    ~~~~~~~~~~~~~~~~    ",
+        "     ~~~~~~~~~~~~~~     ",
+        "      ~~~~~~~~~~~~      ",
+        "       ~~~~~~~~~~       ",
+        "         ~~~~~~         ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "terrain": { "~": "t_water_sh" },
+      "place_vehicles": [
+        {
+          "vehicle": "sgn_vg_sidewalk_parked",
+          "x": [ 7, 16 ],
+          "y": [ 7, 16 ],
+          "rotation": [ 0, 90, 180, 270 ],
+          "status": -1,
+          "repeat": [ 1, 3 ]
+        }
+      ],
+      "place_items": [ { "item": "sgn_mx_flood_trash", "x": [ 6, 17 ], "y": [ 6, 17 ], "chance": 80, "repeat": [ 3, 6 ] } ],
+      "place_monster": [ { "group": "sgn_GROUP_MX_FLOOD", "x": [ 5, 18 ], "y": [ 6, 17 ], "repeat": [ 2, 4 ], "chance": 90 } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "mx_sgn_ngap",
+    "//": "E2: a flooded street (there were no flooded underpasses in 2009 Saigon; the streets themselves flooded); any road.",
+    "object": {
+      "place_nested": [ { "chunks": [ "sgn_mx_ngap_water" ], "x": 0, "y": 0 } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "id": "mx_sgn_don_xe",
+    "type": "map_extra",
+    "name": { "str": "Motorbike pile-up" },
+    "description": "Dozens of motorbikes tangled where the traffic panicked and stopped.",
+    "generator": { "generator_method": "update_mapgen", "generator_id": "mx_sgn_don_xe" },
+    "min_max_zlevel": [ 0, 0 ],
+    "sym": "M",
+    "color": "light_red",
+    "autonote_visibility": "details",
+    "flags": [ "MAN_MADE", "SAIGON" ]
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_don_xe_pile",
+    "//": "Wrecked underbones and scooters thrown together, helmets and sandals everywhere.",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "place_vehicles": [
+        {
+          "vehicle": "sgn_vg_sidewalk_parked",
+          "x": [ 6, 17 ],
+          "y": [ 6, 17 ],
+          "rotation": [ 0, 45, 90, 135, 180, 225, 270, 315 ],
+          "status": 1,
+          "repeat": [ 5, 9 ]
+        },
+        {
+          "vehicle": "sgn_vg_street_traffic",
+          "x": [ 8, 15 ],
+          "y": [ 8, 15 ],
+          "rotation": [ 0, 90, 180, 270 ],
+          "status": 1,
+          "chance": 50
+        }
+      ],
+      "place_items": [ { "item": "sgn_mx_helmets", "x": [ 5, 18 ], "y": [ 5, 18 ], "chance": 90, "repeat": [ 3, 6 ] } ],
+      "place_item": [ { "item": "corpse_generic_human", "x": [ 6, 17 ], "y": [ 6, 17 ], "chance": 50 } ],
+      "place_corpses": [ { "group": "sgn_GROUP_MX_CRASH", "x": [ 6, 17 ], "y": [ 6, 17 ], "repeat": [ 0, 2 ] } ],
+      "place_fields": [ { "field": "fd_blood", "x": [ 6, 17 ], "y": [ 6, 17 ], "repeat": [ 3, 8 ] } ],
+      "place_monster": [ { "group": "sgn_GROUP_MX_CRASH", "x": [ 4, 19 ], "y": [ 4, 19 ], "repeat": [ 2, 4 ], "chance": 90 } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "mx_sgn_don_xe",
+    "//": "E2: a motorbike pile-up; any road, though crossroads in town see the most.",
+    "object": {
+      "place_nested": [ { "chunks": [ "sgn_mx_don_xe_pile" ], "x": 0, "y": 0 } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "id": "mx_sgn_quan_chay",
+    "type": "map_extra",
+    "name": { "str": "Burnt-out food stall" },
+    "description": "A sidewalk eatery burned down to its frame when a gas cylinder caught.",
+    "generator": { "generator_method": "update_mapgen", "generator_id": "mx_sgn_quan_chay" },
+    "min_max_zlevel": [ 0, 0 ],
+    "sym": "f",
+    "color": "dark_gray",
+    "autonote_visibility": "details",
+    "flags": [ "MAN_MADE", "SAIGON" ]
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_quan_chay_w",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "furniture": { "a": "f_ash", "X": "f_wreckage", "T": "f_sgn_ban_inox", "s": "f_stool" },
+      "items": { "a": { "item": "sgn_street_cart", "chance": 15 } },
+      "place_item": [ { "item": "sgn_binh_gas", "x": 2, "y": 9, "chance": 60 } ],
+      "place_monster": [ { "group": "sgn_GROUP_MX_BURNT", "x": [ 2, 6 ], "y": [ 7, 14 ], "repeat": [ 1, 2 ], "chance": 80 } ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        " s                      ",
+        "aXa                     ",
+        "aaas                    ",
+        "aTa                     ",
+        "s a                     ",
+        " T s                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_quan_chay_n",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "furniture": { "a": "f_ash", "X": "f_wreckage", "T": "f_sgn_ban_inox", "s": "f_stool" },
+      "items": { "a": { "item": "sgn_street_cart", "chance": 15 } },
+      "place_item": [ { "item": "sgn_binh_gas", "x": 14, "y": 2, "chance": 60 } ],
+      "place_monster": [ { "group": "sgn_GROUP_MX_BURNT", "x": [ 9, 16 ], "y": [ 2, 6 ], "repeat": [ 1, 2 ], "chance": 80 } ],
+      "rows": [
+        "           saaa         ",
+        "          T TaXs        ",
+        "           aaaa         ",
+        "          s  s          ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_quan_chay_e",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "furniture": { "a": "f_ash", "X": "f_wreckage", "T": "f_sgn_ban_inox", "s": "f_stool" },
+      "items": { "a": { "item": "sgn_street_cart", "chance": 15 } },
+      "place_item": [ { "item": "sgn_binh_gas", "x": 21, "y": 14, "chance": 60 } ],
+      "place_monster": [ { "group": "sgn_GROUP_MX_BURNT", "x": [ 17, 21 ], "y": [ 9, 16 ], "repeat": [ 1, 2 ], "chance": 80 } ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                    s T ",
+        "                     a s",
+        "                     aTa",
+        "                    saaa",
+        "                     aXa",
+        "                      s ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_quan_chay_s",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "furniture": { "a": "f_ash", "X": "f_wreckage", "T": "f_sgn_ban_inox", "s": "f_stool" },
+      "items": { "a": { "item": "sgn_street_cart", "chance": 15 } },
+      "place_item": [ { "item": "sgn_binh_gas", "x": 9, "y": 21, "chance": 60 } ],
+      "place_monster": [ { "group": "sgn_GROUP_MX_BURNT", "x": [ 7, 14 ], "y": [ 17, 21 ], "repeat": [ 1, 2 ], "chance": 80 } ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "          s  s          ",
+        "         aaaa           ",
+        "        sXaT T          ",
+        "         aaas           "
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_quan_chay_try_w",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [
+        {
+          "chunks": [ "sgn_mx_quan_chay_w" ],
+          "else_chunks": [ "sgn_mx_quan_chay_try_n" ],
+          "x": 0,
+          "y": 0,
+          "flags": { "west": [ "SIDEWALK" ] }
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_quan_chay_try_n",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [
+        {
+          "chunks": [ "sgn_mx_quan_chay_n" ],
+          "else_chunks": [ "sgn_mx_quan_chay_try_e" ],
+          "x": 0,
+          "y": 0,
+          "flags": { "north": [ "SIDEWALK" ] }
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_quan_chay_try_e",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [
+        {
+          "chunks": [ "sgn_mx_quan_chay_e" ],
+          "else_chunks": [ "sgn_mx_quan_chay_try_s" ],
+          "x": 0,
+          "y": 0,
+          "flags": { "east": [ "SIDEWALK" ] }
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_quan_chay_try_s",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [
+        { "chunks": [ "sgn_mx_quan_chay_s" ], "else_chunks": [ "null" ], "x": 0, "y": 0, "flags": { "south": [ "SIDEWALK" ] } }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "mx_sgn_quan_chay",
+    "//": "E2: a burnt-out food stall on the sidewalk; city roads only, on a side that has a sidewalk.",
+    "object": {
+      "place_nested": [
+        {
+          "chunks": [ "sgn_mx_quan_chay_try_w" ],
+          "else_chunks": [ "null" ],
+          "x": 0,
+          "y": 0,
+          "flags_any": {
+            "north": [ "SIDEWALK" ],
+            "north_east": [ "SIDEWALK" ],
+            "east": [ "SIDEWALK" ],
+            "south_east": [ "SIDEWALK" ],
+            "south": [ "SIDEWALK" ],
+            "south_west": [ "SIDEWALK" ],
+            "west": [ "SIDEWALK" ],
+            "north_west": [ "SIDEWALK" ]
+          }
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "id": "mx_sgn_atm",
+    "type": "map_extra",
+    "name": { "str": "Looted ATM" },
+    "description": "A bank ATM pried open on the sidewalk, đồng notes blowing in the gutter.",
+    "generator": { "generator_method": "update_mapgen", "generator_id": "mx_sgn_atm" },
+    "min_max_zlevel": [ 0, 0 ],
+    "sym": "$",
+    "color": "yellow",
+    "autonote_visibility": "details",
+    "flags": [ "MAN_MADE", "SAIGON" ]
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_atm_w",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "furniture": { "M": "f_atm_off" },
+      "signs": { "S": { "signage": "ATM - 24/24.  Rút tiền / Cash withdrawal.  Out of service." } },
+      "items": { "x": { "item": "sgn_mx_corpse", "chance": 50 } },
+      "place_items": [ { "item": "sgn_mx_atm_loot", "x": [ 0, 6 ], "y": [ 7, 14 ], "chance": 90, "repeat": [ 3, 6 ] } ],
+      "place_fields": [ { "field": "fd_blood", "x": [ 0, 4 ], "y": [ 8, 13 ], "repeat": [ 1, 3 ] } ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 2, 7 ], "y": [ 6, 15 ], "repeat": [ 1, 2 ], "chance": 70 },
+        { "monster": "sgn_mon_zombie_cong_an", "x": [ 2, 6 ], "y": [ 7, 14 ], "chance": 40 }
+      ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        " x                      ",
+        "M                       ",
+        " S                      ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_atm_n",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "furniture": { "M": "f_atm_off" },
+      "signs": { "S": { "signage": "ATM - 24/24.  Rút tiền / Cash withdrawal.  Out of service." } },
+      "items": { "x": { "item": "sgn_mx_corpse", "chance": 50 } },
+      "place_items": [ { "item": "sgn_mx_atm_loot", "x": [ 9, 16 ], "y": [ 0, 6 ], "chance": 90, "repeat": [ 3, 6 ] } ],
+      "place_fields": [ { "field": "fd_blood", "x": [ 10, 15 ], "y": [ 0, 4 ], "repeat": [ 1, 3 ] } ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 8, 17 ], "y": [ 2, 7 ], "repeat": [ 1, 2 ], "chance": 70 },
+        { "monster": "sgn_mon_zombie_cong_an", "x": [ 9, 16 ], "y": [ 2, 6 ], "chance": 40 }
+      ],
+      "rows": [
+        "             M          ",
+        "            S x         ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_atm_e",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "furniture": { "M": "f_atm_off" },
+      "signs": { "S": { "signage": "ATM - 24/24.  Rút tiền / Cash withdrawal.  Out of service." } },
+      "items": { "x": { "item": "sgn_mx_corpse", "chance": 50 } },
+      "place_items": [ { "item": "sgn_mx_atm_loot", "x": [ 17, 23 ], "y": [ 9, 16 ], "chance": 90, "repeat": [ 3, 6 ] } ],
+      "place_fields": [ { "field": "fd_blood", "x": [ 19, 23 ], "y": [ 10, 15 ], "repeat": [ 1, 3 ] } ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 16, 21 ], "y": [ 8, 17 ], "repeat": [ 1, 2 ], "chance": 70 },
+        { "monster": "sgn_mon_zombie_cong_an", "x": [ 17, 21 ], "y": [ 9, 16 ], "chance": 40 }
+      ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                      S ",
+        "                       M",
+        "                      x ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_atm_s",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "furniture": { "M": "f_atm_off" },
+      "signs": { "S": { "signage": "ATM - 24/24.  Rút tiền / Cash withdrawal.  Out of service." } },
+      "items": { "x": { "item": "sgn_mx_corpse", "chance": 50 } },
+      "place_items": [ { "item": "sgn_mx_atm_loot", "x": [ 7, 14 ], "y": [ 17, 23 ], "chance": 90, "repeat": [ 3, 6 ] } ],
+      "place_fields": [ { "field": "fd_blood", "x": [ 8, 13 ], "y": [ 19, 23 ], "repeat": [ 1, 3 ] } ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 6, 15 ], "y": [ 16, 21 ], "repeat": [ 1, 2 ], "chance": 70 },
+        { "monster": "sgn_mon_zombie_cong_an", "x": [ 7, 14 ], "y": [ 17, 21 ], "chance": 40 }
+      ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "         x S            ",
+        "          M             "
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_atm_try_w",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [
+        {
+          "chunks": [ "sgn_mx_atm_w" ],
+          "else_chunks": [ "sgn_mx_atm_try_n" ],
+          "x": 0,
+          "y": 0,
+          "flags": { "west": [ "SIDEWALK" ] }
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_atm_try_n",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [
+        {
+          "chunks": [ "sgn_mx_atm_n" ],
+          "else_chunks": [ "sgn_mx_atm_try_e" ],
+          "x": 0,
+          "y": 0,
+          "flags": { "north": [ "SIDEWALK" ] }
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_atm_try_e",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [
+        {
+          "chunks": [ "sgn_mx_atm_e" ],
+          "else_chunks": [ "sgn_mx_atm_try_s" ],
+          "x": 0,
+          "y": 0,
+          "flags": { "east": [ "SIDEWALK" ] }
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_atm_try_s",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [ { "chunks": [ "sgn_mx_atm_s" ], "else_chunks": [ "null" ], "x": 0, "y": 0, "flags": { "south": [ "SIDEWALK" ] } } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "mx_sgn_atm",
+    "//": "E2: a looted ATM; city roads only, on a side that has a sidewalk.",
+    "object": {
+      "place_nested": [
+        {
+          "chunks": [ "sgn_mx_atm_try_w" ],
+          "else_chunks": [ "null" ],
+          "x": 0,
+          "y": 0,
+          "flags_any": {
+            "north": [ "SIDEWALK" ],
+            "north_east": [ "SIDEWALK" ],
+            "east": [ "SIDEWALK" ],
+            "south_east": [ "SIDEWALK" ],
+            "south": [ "SIDEWALK" ],
+            "south_west": [ "SIDEWALK" ],
+            "west": [ "SIDEWALK" ],
+            "north_west": [ "SIDEWALK" ]
+          }
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "id": "mx_sgn_mieu",
+    "type": "map_extra",
+    "name": { "str": "Roadside altar" },
+    "description": "A small roadside shrine with fresh offerings: someone still comes here.",
+    "generator": { "generator_method": "update_mapgen", "generator_id": "mx_sgn_mieu" },
+    "min_max_zlevel": [ 0, 0 ],
+    "sym": "^",
+    "color": "light_red",
+    "autonote_visibility": "same_tile",
+    "flags": [ "MAN_MADE", "SAIGON" ]
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_mieu_w",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "furniture": { "A": "f_sgn_ban_tho_than_tai" },
+      "items": { "o": { "item": "sgn_mx_offerings", "chance": 90 } },
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        " o                      ",
+        " A                      ",
+        " o                      ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_mieu_n",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "furniture": { "A": "f_sgn_ban_tho_than_tai" },
+      "items": { "o": { "item": "sgn_mx_offerings", "chance": 90 } },
+      "rows": [
+        "                        ",
+        "           oAo          ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_mieu_e",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "furniture": { "A": "f_sgn_ban_tho_than_tai" },
+      "items": { "o": { "item": "sgn_mx_offerings", "chance": 90 } },
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                      o ",
+        "                      A ",
+        "                      o ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_mieu_s",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "furniture": { "A": "f_sgn_ban_tho_than_tai" },
+      "items": { "o": { "item": "sgn_mx_offerings", "chance": 90 } },
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "          oAo           ",
+        "                        "
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_mieu_try_w",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [
+        {
+          "chunks": [ "sgn_mx_mieu_w" ],
+          "else_chunks": [ "sgn_mx_mieu_try_n" ],
+          "x": 0,
+          "y": 0,
+          "flags": { "west": [ "SIDEWALK" ] }
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_mieu_try_n",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [
+        {
+          "chunks": [ "sgn_mx_mieu_n" ],
+          "else_chunks": [ "sgn_mx_mieu_try_e" ],
+          "x": 0,
+          "y": 0,
+          "flags": { "north": [ "SIDEWALK" ] }
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_mieu_try_e",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [
+        {
+          "chunks": [ "sgn_mx_mieu_e" ],
+          "else_chunks": [ "sgn_mx_mieu_try_s" ],
+          "x": 0,
+          "y": 0,
+          "flags": { "east": [ "SIDEWALK" ] }
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_mieu_try_s",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [ { "chunks": [ "sgn_mx_mieu_s" ], "else_chunks": [ "null" ], "x": 0, "y": 0, "flags": { "south": [ "SIDEWALK" ] } } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_mieu_verge_w",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "furniture": { "A": "f_sgn_ban_tho_than_tai" },
+      "items": { "o": { "item": "sgn_mx_offerings", "chance": 90 } },
+      "rows": [
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        " o                      ",
+        " A                      ",
+        " o                      ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_mieu_verge_n",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "furniture": { "A": "f_sgn_ban_tho_than_tai" },
+      "items": { "o": { "item": "sgn_mx_offerings", "chance": 90 } },
+      "rows": [
+        "                        ",
+        "           oAo          ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_mieu_country",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [
+        {
+          "chunks": [ "sgn_mx_mieu_verge_w" ],
+          "else_chunks": [ "sgn_mx_mieu_verge_n" ],
+          "x": 0,
+          "y": 0,
+          "neighbors": { "north": [ { "om_terrain": "road", "om_terrain_match_type": "TYPE" } ] }
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "mx_sgn_mieu",
+    "//": "E2: a roadside altar.  On a city road it stands on the sidewalk; on a country road at the verge (west if the road runs north-south, else north).",
+    "object": {
+      "place_nested": [
+        {
+          "chunks": [ "sgn_mx_mieu_try_w" ],
+          "else_chunks": [ "sgn_mx_mieu_country" ],
+          "x": 0,
+          "y": 0,
+          "flags_any": {
+            "north": [ "SIDEWALK" ],
+            "north_east": [ "SIDEWALK" ],
+            "east": [ "SIDEWALK" ],
+            "south_east": [ "SIDEWALK" ],
+            "south": [ "SIDEWALK" ],
+            "south_west": [ "SIDEWALK" ],
+            "west": [ "SIDEWALK" ],
+            "north_west": [ "SIDEWALK" ]
+          }
+        }
+      ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "id": "mx_sgn_mieu_dong",
+    "type": "map_extra",
+    "name": { "str": "Field shrine" },
+    "description": "A small shrine at the edge of a paddy, with fresh offerings: someone still comes here.",
+    "generator": { "generator_method": "update_mapgen", "generator_id": "mx_sgn_mieu_dong" },
+    "min_max_zlevel": [ 0, 0 ],
+    "sym": "^",
+    "color": "light_red",
+    "autonote_visibility": "same_tile",
+    "flags": [ "MAN_MADE", "SAIGON" ]
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_mieu_field",
+    "object": {
+      "mapgensize": [ 3, 3 ],
+      "rows": [
+        " o ",
+        "oAo",
+        "   "
+      ],
+      "furniture": { "A": "f_sgn_ban_tho_than_tai" },
+      "items": { "o": { "item": "sgn_mx_offerings", "chance": 80 } },
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "mx_sgn_mieu_dong",
+    "//": "E2: the field version of the roadside altar; fields only.",
+    "object": {
+      "place_nested": [ { "chunks": [ "sgn_mx_mieu_field" ], "x": [ 4, 17 ], "y": [ 4, 17 ] } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "id": "mx_sgn_mo_ruong",
+    "type": "map_extra",
+    "name": { "str": "Graves in the paddy" },
+    "description": "Family tombs on a rise in the field, one of them freshly dug.",
+    "generator": { "generator_method": "update_mapgen", "generator_id": "mx_sgn_mo_ruong" },
+    "min_max_zlevel": [ 0, 0 ],
+    "sym": "+",
+    "color": "light_gray",
+    "autonote_visibility": "same_tile",
+    "flags": [ "MAN_MADE", "SAIGON" ]
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_mx_mo_ruong_plot",
+    "//": "Tiled family tombs, the fresh mound of a fever victim buried in a hurry; W2: the hoe or shovel that dug it is often left beside it.",
+    "object": {
+      "mapgensize": [ 7, 7 ],
+      "rows": [
+        "       ",
+        " M  M  ",
+        " o  o  ",
+        "       ",
+        " M  t  ",
+        " o  o  ",
+        "       "
+      ],
+      "furniture": { "M": "f_sgn_mo" },
+      "terrain": { "t": "t_dirtmound" },
+      "items": { "o": { "item": "sgn_mx_offerings", "chance": 40 }, "t": { "item": "sgn_loot_country_tools", "chance": 50 } },
+      "place_monster": [ { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": 4, "y": 3, "chance": 40 } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "mx_sgn_mo_ruong",
+    "//": "E2: graves in a field; fields only.",
+    "object": {
+      "place_nested": [ { "chunks": [ "sgn_mx_mo_ruong_plot" ], "x": [ 3, 14 ], "y": [ 3, 14 ] } ],
+      "flags": [ "ALLOW_TERRAIN_UNDER_OTHER_DATA" ]
+    }
+  },
+  {
+    "type": "map_extra_collection",
+    "id": "road",
+    "copy-from": "road",
+    "chance": 30,
+    "//": "E2: the Saigon road encounters.  Extends dda's collection: the region's SAIGON whitelist (region_settings feature_flag_settings) filters dda's own road extras out in Saigon (map_extra::is_valid_for), and only these carry the SAIGON flag.  chance 30 (one road OMT in 30) replaces dda's 100 for every region; the mod's dimension routes every overmap to sgn_saigon or sgn_saigon_delta.",
+    "extend": {
+      "extras": [
+        [ "mx_sgn_xe_khach", 80 ],
+        [ "mx_sgn_ba_gac", 120 ],
+        [ "mx_sgn_kiem_dich", 60 ],
+        [ "mx_sgn_dam_cuoi", 60 ],
+        [ "mx_sgn_dam_tang", 70 ],
+        [ "mx_sgn_cap_cuu", 50 ],
+        [ "mx_sgn_ngap", 80 ],
+        [ "mx_sgn_don_xe", 120 ],
+        [ "mx_sgn_quan_chay", 70 ],
+        [ "mx_sgn_atm", 50 ],
+        [ "mx_sgn_mieu", 120 ]
+      ]
+    }
+  },
+  {
+    "type": "map_extra_collection",
+    "id": "field",
+    "copy-from": "field",
+    "chance": 12,
+    "//": "E2: the Saigon field encounters (roadside altars and graves in the paddies).  Extends dda's collection the same way as road; chance 12 replaces dda's 6.",
+    "extend": { "extras": [ [ "mx_sgn_mieu_dong", 100 ], [ "mx_sgn_mo_ruong", 200 ] ] }
+  },
+  {
+    "type": "region_settings_map_extras",
+    "id": "sgn_map_extras",
+    "//": "E2: the map-extra collections the Saigon regions use.  Only roads and fields: no building, forest or water extras.",
+    "extras": [ "road", "field" ]
+  }
+]

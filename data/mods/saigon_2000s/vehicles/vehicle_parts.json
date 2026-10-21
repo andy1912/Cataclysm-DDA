@@ -1,0 +1,90 @@
+[
+  {
+    "type": "ITEM",
+    "id": "sgn_engine_110cc_item",
+    "copy-from": "1cyl_combustion",
+    "subtypes": [ "ENGINE" ],
+    "name": { "str": "110cc underbone engine" },
+    "weight": "22 kg",
+    "volume": "25 L",
+    "description": "A 110 cc air-cooled four-stroke single with a semi-automatic four-speed gearbox, the engine that moved a nation.  Simple, frugal and repairable with a screwdriver and patience."
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_engine_110cc",
+    "copy-from": "engine_1cyl",
+    "item": "sgn_engine_110cc_item",
+    "name": { "str": "110cc underbone engine" },
+    "power": "6300 W",
+    "energy_consumption": "15750 W",
+    "description": "A 110 cc air-cooled 4-stroke underbone engine."
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_moto_tank_4l",
+    "copy-from": "metal_tank_little",
+    "name": { "str": "motorbike fuel tank (4 L)", "str_pl": "motorbike fuel tanks (4 L)" },
+    "volume": "4500 ml",
+    "weight": "1500 g",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "rigid": true,
+        "watertight": true,
+        "max_contains_volume": "4 L",
+        "max_contains_weight": "20 kg"
+      }
+    ]
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_tank_4l",
+    "copy-from": "tank_little",
+    "item": "sgn_moto_tank_4l",
+    "name": { "str": "vehicle tank (4 L)" }
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_pillion",
+    "copy-from": "saddle",
+    "name": { "str": "pillion seat and rack" },
+    "size": "15 L",
+    "extend": { "flags": [ "CARGO" ] },
+    "description": "A long padded pillion; the rear half doubles as a parcel rack.  Whole families ride on it."
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_oars",
+    "copy-from": "hand_paddles",
+    "name": { "str": "oars" },
+    "power": "900 W",
+    "muscle_power_factor": 45,
+    "description": "A pair of long wooden oars worked standing up, facing forward, in the southern style."
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_longtail",
+    "copy-from": "engine_1cyl_large",
+    "item": "sgn_longtail_engine_item",
+    "name": { "str": "long-tail engine" },
+    "//": "B6 review: long-tails ran 8-13 hp engines (~10 kW), not dda's 21 kW large single.",
+    "power": "9700 W",
+    "energy_consumption": "24250 W",
+    "extend": { "flags": [ "PROTRUSION" ] },
+    "description": "A small engine bolted to a pivot on the stern, driving a propeller on the end of a long shaft.  Loud, crude and able to push a loaded boat through a weed-choked canal."
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_xich_lo_seat",
+    "copy-from": "seat",
+    "name": { "str": "xích lô passenger seat" },
+    "description": "The cyclo's front bucket seat: cracked red vinyl over springs, wide enough for one passenger and a market basket, under a folding black canopy that keeps off the sun and the afternoon rain."
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_ba_gac_bed",
+    "copy-from": "cargo_space",
+    "name": { "str": "ba gác cargo bed" },
+    "description": "A deck of rough planks bolted to a steel frame and fenced with low painted rails.  Ba gác carry anything that fits and much that doesn't: refrigerators, scrap, whole households on moving day."
+  }
+]

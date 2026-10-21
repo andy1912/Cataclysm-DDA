@@ -1,0 +1,90 @@
+[
+  {
+    "type": "ITEM",
+    "id": "sgn_hu_tieu",
+    "copy-from": "sgn_pho_bo",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str": "bowl of hủ tiếu", "str_pl": "bowls of hủ tiếu" },
+    "description": "Chewy clear rice noodles in a sweet pork-bone broth with sliced pork, shrimp, quail eggs and crisp fried shallots: the southern noodle soup, sold from a cart that announces itself by clacking two bamboo sticks.",
+    "color": "light_red"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_banh_xeo",
+    "copy-from": "sgn_com_tam",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str_sp": "bánh xèo" },
+    "description": "A sizzling crêpe of rice flour and turmeric, folded over pork, shrimp and bean sprouts.  You wrap it in mustard leaves and dip it in sweet fish sauce.",
+    "color": "yellow",
+    "calories": 600,
+    "spoils_in": "18 hours",
+    "looks_like": "pancakes"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_goi_cuon",
+    "copy-from": "sgn_com_tam",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str_sp": "gỏi cuốn" },
+    "description": "Fresh spring rolls: rice paper wrapped around vermicelli, shrimp, pork and herbs, with a peanut and hoisin dip.  Eaten cold, and best eaten soon.",
+    "color": "white",
+    "calories": 300,
+    "spoils_in": "8 hours",
+    "flags": [  ],
+    "fun": 12
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_xoi",
+    "copy-from": "sgn_com_tam",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str": "packet of xôi", "str_pl": "packets of xôi" },
+    "description": "A banana-leaf packet of sticky rice with mung bean, fried shallots and a sprinkle of crushed peanuts and sugar, the breakfast every school child bought on the way to class.",
+    "color": "light_green",
+    "calories": 550,
+    "spoils_in": "1 day",
+    "flags": [  ],
+    "fun": 10,
+    "looks_like": "rice_cooked"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_banh_bao",
+    "copy-from": "sgn_com_tam",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str_sp": "bánh bao" },
+    "description": "A fluffy white steamed bun stuffed with pork, a slice of Chinese sausage and a quail egg, sold warm from a steamer on the back of a bicycle.",
+    "color": "white",
+    "calories": 400,
+    "spoils_in": "2 days",
+    "fun": 10,
+    "looks_like": "flatbread"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_kho_muc",
+    "copy-from": "dry_fish",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str_sp": "dried squid" },
+    "description": "Khô mực: a whole flattened, sun-dried squid, the classic snack with beer.  Toast it over coals and tear it into chewy strips.",
+    "color": "light_red"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_tom_kho",
+    "copy-from": "dry_fish",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str_sp": "dried shrimp" },
+    "description": "Tôm khô: a bag of small, salty orange dried shrimp, a pinch of which flavours a whole pot of soup.",
+    "color": "light_red"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_banh_trang",
+    "copy-from": "tortilla_corn",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str": "sheet of rice paper", "str_pl": "sheets of rice paper" },
+    "description": "Bánh tráng: a brittle round sheet of sun-dried rice paper, criss-crossed with the imprint of the bamboo mat it dried on.  Wet it to roll gỏi cuốn, or grill it into a snack.",
+    "color": "white"
+  }
+]

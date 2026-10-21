@@ -1,0 +1,13 @@
+[
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_duong_sat",
+    "name": "railway",
+    "sym": "#",
+    "color": "light_gray",
+    "looks_like": "subway",
+    "see_cost": "none",
+    "travel_cost_type": "road",
+    "flags": [ "LINEAR" ]
+  }
+]

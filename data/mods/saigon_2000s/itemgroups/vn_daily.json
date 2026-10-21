@@ -1,0 +1,100 @@
+[
+  {
+    "type": "item_group",
+    "id": "sgn_vn_daily_home",
+    "subtype": "distribution",
+    "//": "W4: household things of a Saigon home (living room, bedroom, the old folks' corner).  Not wired into loot yet.",
+    "entries": [
+      { "item": "sgn_chieu_coi", "prob": 30 },
+      { "item": "sgn_quat_nan", "prob": 30 },
+      { "item": "sgn_gio_coi", "prob": 15 },
+      { "item": "sgn_bao_bo", "prob": 10 },
+      { "item": "sgn_ong_nho", "prob": 5 },
+      { "item": "sgn_dieu_cay", "prob": 8 },
+      { "group": "sgn_vn_daily_goi_thuoc_lao", "prob": 8 },
+      { "group": "sgn_vn_daily_hop_cu_la", "prob": 15 },
+      { "item": "sgn_so_ho_khau", "prob": 8 },
+      { "item": "sgn_cmnd", "prob": 5 },
+      { "item": "sgn_cavet_xe", "prob": 5 },
+      { "item": "sgn_mam_nhom", "prob": 8 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_vn_daily_kitchen",
+    "subtype": "distribution",
+    "//": "W4: a Saigon kitchen: bowls, tray, rổ, gáo, mortar, tea.  Not wired into loot yet.",
+    "entries": [
+      { "item": "sgn_chen_su", "prob": 30, "count": [ 2, 6 ] },
+      { "item": "sgn_dua_bep", "prob": 20 },
+      { "item": "sgn_ro_tre", "prob": 20 },
+      { "item": "sgn_gao_dua", "prob": 15 },
+      { "item": "sgn_mam_nhom", "prob": 15 },
+      { "item": "sgn_coi_da", "prob": 15 },
+      { "item": "sgn_ca_men", "prob": 12 },
+      { "item": "sgn_am_tra", "prob": 12 },
+      { "group": "sgn_vn_daily_goi_tra", "prob": 15 },
+      { "item": "sgn_quat_nan", "prob": 8 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_vn_daily_pocket",
+    "subtype": "collection",
+    "//": "W4: what an ordinary Saigonese carries: papers, a ticket, a top-up card, a tin of balm.  Use as a collection on people and corpses.",
+    "entries": [
+      { "item": "sgn_cmnd", "prob": 70 },
+      { "item": "sgn_cavet_xe", "prob": 30 },
+      { "item": "sgn_ve_xe_buyt", "prob": 15 },
+      { "item": "sgn_the_cao", "prob": 15 },
+      { "group": "sgn_vn_daily_hop_cu_la", "prob": 10 },
+      { "item": "sgn_ca_men", "prob": 3 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_vn_daily_shop",
+    "subtype": "distribution",
+    "//": "W4: the everyday stock of a tạp hóa (corner grocery): new items only; combine with existing food and drink groups.",
+    "entries": [
+      { "group": "sgn_vn_daily_goi_thuoc_lao", "prob": 15 },
+      { "group": "sgn_vn_daily_goi_tra", "prob": 20 },
+      { "group": "sgn_vn_daily_hop_cu_la", "prob": 20 },
+      { "item": "sgn_the_cao", "prob": 20, "count": [ 1, 5 ] },
+      { "item": "sgn_chen_su", "prob": 10, "count": [ 2, 10 ] },
+      { "item": "sgn_dua_bep", "prob": 6 },
+      { "item": "sgn_quat_nan", "prob": 10, "count": [ 1, 4 ] },
+      { "item": "sgn_ro_tre", "prob": 8 },
+      { "item": "sgn_gao_dua", "prob": 6 },
+      { "item": "sgn_bao_bo", "prob": 8, "count": [ 1, 3 ] },
+      { "item": "sgn_gio_coi", "prob": 8 },
+      { "item": "sgn_chieu_coi", "prob": 5 },
+      { "item": "sgn_ca_men", "prob": 5 },
+      { "item": "sgn_dieu_cay", "prob": 3 }
+    ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_vn_daily_goi_thuoc_lao",
+    "subtype": "collection",
+    "container-item": "bag_plastic_small",
+    "//": "W4: a twist of thuốc lào.",
+    "entries": [ { "item": "sgn_thuoc_lao", "container-item": "null", "count": [ 10, 40 ] } ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_vn_daily_goi_tra",
+    "subtype": "collection",
+    "container-item": "bag_plastic_small",
+    "//": "W4: a bag of Bảo Lộc tea.",
+    "entries": [ { "item": "sgn_tra_bao_loc", "container-item": "null", "count": [ 10, 33 ] } ]
+  },
+  {
+    "type": "item_group",
+    "id": "sgn_vn_daily_hop_cu_la",
+    "subtype": "collection",
+    "container-item": "sgn_hop_cu_la",
+    "//": "W4: a tin of dầu cù là, partly used.",
+    "entries": [ { "item": "sgn_dau_cu_la", "container-item": "null", "count": [ 4, 10 ] } ]
+  }
+]

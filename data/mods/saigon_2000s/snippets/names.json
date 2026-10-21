@@ -1,0 +1,174 @@
+[
+  {
+    "type": "snippet",
+    "category": "<male_full_name>",
+    "override": true,
+    "//": "Vietnamese order: family, middle, given.  Defining this category in the mod takes the place of dda's English patterns (measured: 0 English names in 58 random NPCs), so the last entry brings back dda's English names on purpose, about 3 % of people: the odd backpacker or expat (N2).",
+    "text": [
+      { "text": "<sgn_family_name> <sgn_male_middle_name> <sgn_male_given_name>", "weight": 5800 },
+      { "text": "<sgn_family_name> <sgn_male_middle_name> <sgn_male_given_name> ('<sgn_nick_name>')", "weight": 667 },
+      { "text": "<male_given_name> <family_name>", "weight": 200 }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<female_full_name>",
+    "override": true,
+    "text": [
+      { "text": "<sgn_family_name> <sgn_female_middle_name> <sgn_female_given_name>", "weight": 5800 },
+      {
+        "text": "<sgn_family_name> <sgn_female_middle_name> <sgn_female_given_name> ('<sgn_nick_name>')",
+        "weight": 667
+      },
+      { "text": "<female_given_name> <family_name>", "weight": 200 }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<given_name>",
+    "override": true,
+    "text": [ "<sgn_female_given_name>", "<sgn_male_given_name>" ]
+  },
+  {
+    "type": "snippet",
+    "category": "<sgn_family_name>",
+    "//": "Rough southern frequencies; Huỳnh and Võ are the southern forms of Hoàng and Vũ.",
+    "text": [
+      { "text": "Nguyễn", "weight": 38 },
+      { "text": "Trần", "weight": 11 },
+      { "text": "Lê", "weight": 10 },
+      { "text": "Phạm", "weight": 7 },
+      { "text": "Huỳnh", "weight": 5 },
+      { "text": "Võ", "weight": 4 },
+      { "text": "Phan", "weight": 4 },
+      { "text": "Trương", "weight": 2 },
+      { "text": "Bùi", "weight": 2 },
+      { "text": "Đặng", "weight": 2 },
+      { "text": "Đỗ", "weight": 2 },
+      { "text": "Ngô", "weight": 2 },
+      { "text": "Hồ", "weight": 2 },
+      { "text": "Dương", "weight": 1 },
+      { "text": "Lý", "weight": 1 },
+      { "text": "Lâm", "weight": 1 },
+      { "text": "Châu", "weight": 1 },
+      { "text": "Tạ", "weight": 1 }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<sgn_male_middle_name>",
+    "text": [
+      { "text": "Văn", "weight": 10 },
+      { "text": "Hữu", "weight": 3 },
+      { "text": "Minh", "weight": 3 },
+      { "text": "Đức", "weight": 2 },
+      { "text": "Quốc", "weight": 2 },
+      { "text": "Thành", "weight": 2 },
+      { "text": "Công", "weight": 1 },
+      { "text": "Hoàng", "weight": 1 }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<sgn_female_middle_name>",
+    "text": [
+      { "text": "Thị", "weight": 10 },
+      { "text": "Ngọc", "weight": 3 },
+      { "text": "Thanh", "weight": 2 },
+      { "text": "Kim", "weight": 2 },
+      { "text": "Mỹ", "weight": 1 },
+      { "text": "Bích", "weight": 1 },
+      { "text": "Thùy", "weight": 1 }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<sgn_male_given_name>",
+    "text": [
+      "Minh",
+      "Hùng",
+      "Tuấn",
+      "Dũng",
+      "Hải",
+      "Long",
+      "Phúc",
+      "Nam",
+      "Khoa",
+      "Thắng",
+      "Tâm",
+      "Bảo",
+      "Huy",
+      "Sơn",
+      "Tài",
+      "Lộc",
+      "Phong",
+      "Vinh",
+      "Quang",
+      "Trung",
+      "Hiếu",
+      "Đạt",
+      "Nhân",
+      "Tùng",
+      "Cường",
+      "Hoà",
+      "Thiện",
+      "Khánh"
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<sgn_female_given_name>",
+    "text": [
+      "Lan",
+      "Hương",
+      "Mai",
+      "Linh",
+      "Trang",
+      "Hạnh",
+      "Thảo",
+      "Ngọc",
+      "Hoa",
+      "Hằng",
+      "Nhung",
+      "Vy",
+      "Thu",
+      "Yến",
+      "Phương",
+      "Loan",
+      "Hồng",
+      "Diễm",
+      "Trinh",
+      "Tuyết",
+      "Hà",
+      "Nga",
+      "My",
+      "Oanh",
+      "Xuân",
+      "Dung"
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "<sgn_nick_name>",
+    "//": "Southern birth-order names (the eldest child is Hai, then Ba, Tư ...; the youngest Út) and everyday nicknames.",
+    "text": [
+      "Hai",
+      "Ba",
+      "Tư",
+      "Năm",
+      "Sáu",
+      "Bảy",
+      "Tám",
+      "Chín",
+      "Mười",
+      "Út",
+      "Bé",
+      "Tí",
+      "Tèo",
+      "Bờm",
+      "Mập",
+      "Đen",
+      "Sún"
+    ]
+  }
+]

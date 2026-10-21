@@ -302,9 +302,6 @@ void game::unserialize_impl( const JsonObject &data )
     }
     data.read( "active_monsters", *critter_tracker );
 
-    data.has_null( "stair_monsters" ); // TEMPORARY until 0.G
-    data.has_null( "monstairz" ); // TEMPORARY until 0.G
-
     data.read( "driving_view_offset", driving_view_offset );
     data.read( "turnssincelastmon", turnssincelastmon );
     data.read( "bVMonsterLookFire", bVMonsterLookFire );
@@ -406,19 +403,12 @@ void overmap::load_monster_groups( const JsonArray &jsin )
     for( JsonArray mongroup_with_tripoints : jsin ) {
         mongroup new_group;
         new_group.deserialize( mongroup_with_tripoints.next_object() );
-        bool reset_target = false;
-        if( new_group.target ==  point_abs_sm() ) { // Remove after 0.I
-            reset_target = true;
-        }
 
         JsonArray tripoints_json = mongroup_with_tripoints.next_array();
         tripoint_om_sm temp;
         for( JsonValue tripoint_json : tripoints_json ) {
             temp.deserialize( tripoint_json );
             new_group.abs_pos = project_combine( pos(), temp );
-            if( reset_target ) { // Remove after 0.I
-                new_group.set_target( new_group.abs_pos.xy() );
-            }
             if( new_group.horde ) {
                 // Migrate "horde" type monster groups to new horde map.
                 if( !new_group.monsters.empty() ) {
@@ -653,16 +643,6 @@ void overmap::unserialize( const JsonObject &jsobj )
                 }
                 radios.push_back( new_radio );
             }
-        } else if( name == "monster_map" ) {
-            // Migration code for old "monster_map" to new "horde_map"
-            JsonArray monster_map_json = om_member;
-            while( monster_map_json.has_more() ) {
-                tripoint_om_sm monster_location;
-                monster new_monster;
-                monster_location.deserialize( monster_map_json.next_value() );
-                new_monster.deserialize( monster_map_json.next_object(), project_combine( loc, monster_location ) );
-                hordes.spawn_entity( new_monster.pos_abs(), new_monster );
-            }
         } else if( name == "horde_map" ) {
             JsonArray monster_map_json = om_member;
             while( monster_map_json.has_more() ) {
@@ -826,49 +806,6 @@ void overmap::unserialize( const JsonObject &jsobj )
             std::vector<oter_id> om_predecessors;
 
             for( auto& [p, serialized_predecessors] : flattened_predecessors ) {
-                if( !serialized_predecessors.empty() ) {
-                    // TODO remove after 0.H release.
-                    // JSONizing roads caused some bad mapgen data to get saved to disk. Fixup bad saves to conform.
-                    // The logic to do this is to emulate setting overmap::set_ter repeatedly. The difference is the
-                    // 'original' terrain is lost, all we have is a chain of predecessors.
-                    // This doesn't matter for the sake of deduplicating predecessors.
-                    //
-                    // Mapgen refinement can push multiple different roads over each other.
-                    // Roads require a predecessor. A road pushed over a road might cause a
-                    // road to be a predecessor to another road. That causes too many spawns
-                    // to happen. So when pushing a predecessor, if the predecessor to-be-pushed
-                    // is linear and the previous predecessor is linear, overwrite it.
-                    // This way only the 'last' rotation/variation generated is kept.
-                    om_predecessors.reserve( serialized_predecessors.size() );
-                    oter_id current_oter;
-                    auto local_set_ter = [&]( oter_id & id ) {
-                        const oter_type_str_id &current_type_id = current_oter->get_type_id();
-                        const oter_type_str_id &incoming_type_id = id->get_type_id();
-                        const bool current_type_same = current_type_id == incoming_type_id;
-                        if( om_predecessors.empty() || ( !current_oter->is_linear() && !current_type_same ) ) {
-                            // If we need a predecessor, we must have a predecessor no matter what.
-                            // Or, if the oter to-be-pushed is not linear, push it only if the incoming oter is different.
-                            om_predecessors.push_back( current_oter );
-                        } else if( !current_type_same ) {
-                            // Current oter is linear, incoming oter is different from current.
-                            // If the last predecessor is the same type as the current type, overwrite.
-                            // Else push the current type.
-                            oter_id &last_predecessor = om_predecessors.back();
-                            if( last_predecessor->get_type_id() == current_type_id ) {
-                                last_predecessor = current_oter;
-                            } else {
-                                om_predecessors.push_back( current_oter );
-                            }
-                        }
-                        current_oter = id;
-                    };
-
-                    current_oter = serialized_predecessors.front();
-                    for( size_t i = 1; i < serialized_predecessors.size(); ++i ) {
-                        local_set_ter( serialized_predecessors[i] );
-                    }
-                    local_set_ter( layer[p.z() + OVERMAP_DEPTH].terrain[p.xy()] );
-                }
                 predecessors_.insert_or_assign( p, std::move( om_predecessors ) );
 
                 // Reuse allocations because it's a good habit.
@@ -891,62 +828,100 @@ void overmap::unserialize_omap( const JsonValue &jsin, const cata_path &json_pat
     const int ocean_depth = settings_ocean.ocean_depth;
 
     JsonArray ja = jsin.get_array();
-    JsonObject jo = ja.next_object();
-
-    std::string type;
-    point_abs_om om_pos = point_abs_om::invalid;
-    int z = 0;
-
-    jo.read( "type", type );
-    jo.read( "om_pos", om_pos );
-    jo.read( "z", z );
-    JsonArray jal = jo.get_array( "layers" );
 
     std::vector<tripoint_om_omt> lake_points;
     std::vector<tripoint_om_omt> ocean_points;
     std::vector<tripoint_om_omt> forest_points;
 
-    if( type == "overmap" ) {
-        std::unordered_map<tripoint_om_omt, std::string> oter_id_migrations;
-        if( om_pos != pos() ) {
-            debugmsg( "Loaded invalid overmap from omap file %s. Loaded %s, expected %s",
-                      json_path.generic_u8string(), om_pos.to_string(), pos().to_string() );
-        } else {
-            int count = 0;
-            std::string tmp_ter;
-            oter_id tmp_otid( 0 );
-            for( int j = 0; j < OMAPY; j++ ) {
-                for( int i = 0; i < OMAPX; i++ ) {
-                    if( count == 0 ) {
-                        JsonArray jat = jal.next_array();
-                        tmp_ter = jat.next_string();
-                        count = jat.next_int();
-                        if( is_oter_id_obsolete( tmp_ter ) ) {
-                            for( int p = i; p < i + count; p++ ) {
-                                oter_id_migrations.emplace( tripoint_om_omt( p, j, z - OVERMAP_DEPTH ), tmp_ter );
+    // Saigon fork: one object per z level (upper floors, basements), not only z 0; and
+    // "final": true marks a complete hand-made overmap that generate() must not add to.
+    for( JsonObject jo : ja ) {
+        std::string type;
+        point_abs_om om_pos = point_abs_om::invalid;
+        int z = 0;
+
+        jo.read( "type", type );
+        jo.read( "om_pos", om_pos );
+        jo.read( "z", z );
+        bool is_final = false;
+        jo.read( "final", is_final );
+        pregenerated_final = pregenerated_final || is_final;
+        // Saigon fork: a hand-made overmap can name its cities (districts), so the overmap shows
+        // their names and place_mongroups() gives them their city hordes
+        if( jo.has_array( "cities" ) ) {
+            for( JsonObject jc : jo.get_array( "cities" ) ) {
+                city c( jc.get_string( "name" ), point_om_omt( jc.get_int( "x" ), jc.get_int( "y" ) ),
+                        jc.get_int( "size" ) );
+                c.pos_om = pos();
+                c.population = jc.get_int( "population", 0 );
+                cities.push_back( c );
+            }
+        }
+        JsonArray jal = jo.get_array( "layers" );
+
+        if( type == "overmap" ) {
+            std::unordered_map<tripoint_om_omt, std::string> oter_id_migrations;
+            if( om_pos != pos() ) {
+                debugmsg( "Loaded invalid overmap from omap file %s. Loaded %s, expected %s",
+                          json_path.generic_u8string(), om_pos.to_string(), pos().to_string() );
+            } else {
+                int count = 0;
+                std::string tmp_ter;
+                oter_id tmp_otid( 0 );
+                for( int j = 0; j < OMAPY; j++ ) {
+                    for( int i = 0; i < OMAPX; i++ ) {
+                        if( count == 0 ) {
+                            JsonArray jat = jal.next_array();
+                            tmp_ter = jat.next_string();
+                            count = jat.next_int();
+                            if( is_oter_id_obsolete( tmp_ter ) ) {
+                                for( int p = i; p < i + count; p++ ) {
+                                    oter_id_migrations.emplace( tripoint_om_omt( p, j, z - OVERMAP_DEPTH ), tmp_ter );
+                                }
+                            } else if( oter_str_id( tmp_ter ).is_valid() ) {
+                                tmp_otid = oter_id( tmp_ter );
+                            } else {
+                                debugmsg( "Loaded invalid oter_id '%s'", tmp_ter.c_str() );
+                                tmp_otid = oter_omt_obsolete;
                             }
-                        } else if( oter_str_id( tmp_ter ).is_valid() ) {
-                            tmp_otid = oter_id( tmp_ter );
-                        } else {
-                            debugmsg( "Loaded invalid oter_id '%s'", tmp_ter.c_str() );
-                            tmp_otid = oter_omt_obsolete;
                         }
-                    }
-                    count--;
-                    layer[z + OVERMAP_DEPTH].terrain[i][j] = tmp_otid;
-                    if( tmp_otid == oter_lake_shore || tmp_otid == oter_lake_surface ) {
-                        lake_points.emplace_back( i, j, z );
-                    }
-                    if( tmp_otid == oter_ocean_shore || tmp_otid == oter_ocean_surface ) {
-                        ocean_points.emplace_back( i, j, z );
-                    }
-                    if( tmp_otid == oter_forest || tmp_otid == oter_forest_thick ) {
-                        forest_points.emplace_back( i, j, z );
+                        count--;
+                        layer[z + OVERMAP_DEPTH].terrain[i][j] = tmp_otid;
+                        if( tmp_otid == oter_lake_shore || tmp_otid == oter_lake_surface ) {
+                            lake_points.emplace_back( i, j, z );
+                        }
+                        if( tmp_otid == oter_ocean_shore || tmp_otid == oter_ocean_surface ) {
+                            ocean_points.emplace_back( i, j, z );
+                        }
+                        if( tmp_otid == oter_forest || tmp_otid == oter_forest_thick ) {
+                            forest_points.emplace_back( i, j, z );
+                        }
                     }
                 }
             }
+            migrate_oter_ids( oter_id_migrations );
         }
-        migrate_oter_ids( oter_id_migrations );
+    }
+
+    // Saigon fork: a complete hand-made overmap records the roads that leave it as its
+    // inter-city road exits, so a generated neighbour joins its roads to them
+    if( pregenerated_final ) {
+        std::vector<tripoint_om_omt> &out =
+            connections_out[settings->overmap_connection.inter_city_road_connection];
+        const auto exit_at = [&]( const tripoint_om_omt & p, om_direction::type dir ) {
+            const oter_id &t = ter( p );
+            if( t->is_linear() && t.id().str().rfind( "road", 0 ) == 0 && t->has_connection( dir ) ) {
+                out.push_back( p );
+            }
+        };
+        for( int i = 0; i < OMAPX; i++ ) {
+            exit_at( tripoint_om_omt( i, 0, 0 ), om_direction::type::north );
+            exit_at( tripoint_om_omt( i, OMAPY - 1, 0 ), om_direction::type::south );
+        }
+        for( int j = 0; j < OMAPY; j++ ) {
+            exit_at( tripoint_om_omt( 0, j, 0 ), om_direction::type::west );
+            exit_at( tripoint_om_omt( OMAPX - 1, j, 0 ), om_direction::type::east );
+        }
     }
 
     std::unordered_set<tripoint_om_omt> lake_set;

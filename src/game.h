@@ -188,6 +188,8 @@ class game
         friend weather_manager &get_weather();
         friend const scenario *get_scenario();
         friend void set_scenario( const scenario *new_scenario );
+        // Saigon fork: tests run the real "New game" path (tests/saigon_realmap_test.cpp)
+        friend bool start_new_game_for_tests();
         friend stats_tracker &get_stats();
         friend scent_map &get_scent();
         friend timed_event_manager &get_timed_events();
@@ -1414,5 +1416,8 @@ namespace cata_event_dispatch
 // @param m The map the avatar is moving on
 void avatar_moves( const tripoint_abs_ms &old_abs_pos, const avatar &u, const map &m );
 } // namespace cata_event_dispatch
+
+// Saigon fork: runs game::start_game (character creation's "New game") for tests.
+bool start_new_game_for_tests();
 
 #endif // CATA_SRC_GAME_H

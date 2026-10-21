@@ -736,6 +736,10 @@ class overmap
         void unserialize( const JsonObject &jsobj );
         // parse data in an opened omap file
         void unserialize_omap( const JsonValue &jsin, const cata_path &json_path );
+        // Saigon fork: set by unserialize_omap when a pregenerated file says "final": true;
+        // generate() then skips its procedural layout (rivers ... specials) for this overmap.
+        // Only used while that overmap is first generated, so it is not saved.
+        bool pregenerated_final = false; // NOLINT(cata-serialize)
         // Parse per-player overmap view data.
         void unserialize_view( const cata_path &file_name, std::istream &fin );
         void unserialize_view( const JsonObject &jsobj );

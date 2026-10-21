@@ -1,0 +1,98 @@
+#include <memory>
+#include <string>
+#include <utility>
+
+#include "avatar.h"
+#include "calendar.h"
+#include "cata_catch.h"
+#include "coordinates.h"
+#include "dialogue.h"
+#include "effect_on_condition.h"
+#include "global_vars.h"
+#include "map.h"
+#include "map_helpers.h"
+#include "mapdata.h"
+#include "options_helpers.h"
+#include "player_helpers.h"
+#include "point.h"
+#include "talker.h"
+#include "type_id.h"
+
+static const effect_on_condition_id effect_on_condition_sgn_eoc_drain( "sgn_eoc_drain" );
+static const effect_on_condition_id effect_on_condition_sgn_eoc_flood( "sgn_eoc_flood" );
+static const ter_str_id ter_t_pavement( "t_pavement" );
+static const ter_str_id ter_t_sgn_ngap_duong( "t_sgn_ngap_duong" );
+static const weather_type_id weather_clear( "clear" );
+static const weather_type_id weather_rain( "rain" );
+
+// Saigon 2000s mod: wet-season street flooding (G30, data/mods/saigon_2000s/region/flood.json).
+// Heavy rain in the wet season (sgn_wet() in region/weather.json) floods the paved streets
+// around the player with wadeable murky water; once the rain stops it drains away; the
+// same rain in the dry season does not flood.
+// Run with: tests/cata_test --mods=dda,saigon_2000s "[saigon]"
+
+static int count_ter( map &m, const tripoint_bub_ms &centre, int radius, const ter_str_id &ter )
+{
+    int n = 0;
+    for( int dx = -radius; dx <= radius; dx++ ) {
+        for( int dy = -radius; dy <= radius; dy++ ) {
+            n += m.ter( centre + tripoint( dx, dy, 0 ) ) == ter.id();
+        }
+    }
+    return n;
+}
+
+TEST_CASE( "saigon_flood_season", "[saigon][weather]" )
+{
+    if( !effect_on_condition_sgn_eoc_flood.is_valid() ) {
+        WARN( "saigon_2000s is not loaded; skipping" );
+        return;
+    }
+    clear_map();
+    clear_avatar();
+    avatar &you = get_avatar();
+    map &here = get_map();
+    const tripoint_bub_ms centre = you.pos_bub();
+    const int r = 10;
+    for( int dx = -r; dx <= r; dx++ ) {
+        for( int dy = -r; dy <= r; dy++ ) {
+            here.ter_set( centre + tripoint( dx, dy, 0 ), ter_t_pavement.id() );
+        }
+    }
+    get_globals().set_global_value( "sgn_flooding", 0 );
+    dialogue d( get_talker_for( you ), nullptr );
+    const time_point saved_turn = calendar::turn;
+
+    SECTION( "dry season rain does not flood" ) {
+        calendar::turn = calendar::turn_zero + 300_days;   // sgn_doy() = 300: January
+        scoped_weather_override rain( weather_rain );
+        effect_on_condition_sgn_eoc_flood->activate( d );
+        CHECK( count_ter( here, centre, r, ter_t_sgn_ngap_duong ) == 0 );
+    }
+    SECTION( "wet season rain floods, and the water drains when it stops" ) {
+        calendar::turn = calendar::turn_zero + 120_days;   // sgn_doy() = 120: mid-July
+        {
+            scoped_weather_override rain( weather_rain );
+            for( int i = 0; i < 3; i++ ) {
+                effect_on_condition_sgn_eoc_flood->activate( d );
+            }
+        }
+        const int wet = count_ter( here, centre, r, ter_t_sgn_ngap_duong );
+        CAPTURE( wet );
+        // patchy at first, spreading with every check that it rains on (3 of 5 per check)
+        CHECK( wet > ( 2 * r + 1 ) * ( 2 * r + 1 ) / 2 );
+        const tripoint_bub_ms p = centre + tripoint::east;
+        here.ter_set( p, ter_t_sgn_ngap_duong.id() );
+        CHECK( here.ter( p ).obj().has_flag( ter_furn_flag::TFLAG_SHALLOW_WATER ) );
+        CHECK( here.passable( p ) );
+        CHECK( here.move_cost( p ) == 4 );
+        {
+            scoped_weather_override clear( weather_clear );
+            effect_on_condition_sgn_eoc_drain->activate( d );
+        }
+        CHECK( count_ter( here, centre, r, ter_t_sgn_ngap_duong ) == 0 );
+        CHECK( count_ter( here, centre, r, ter_t_pavement ) == ( 2 * r + 1 ) * ( 2 * r + 1 ) );
+    }
+    calendar::turn = saved_turn;
+    get_globals().set_global_value( "sgn_flooding", 0 );
+}

@@ -1,0 +1,1289 @@
+[
+  {
+    "type": "palette",
+    "id": "sgn_nhaong",
+    "parameters": {
+      "floor": {
+        "type": "ter_str_id",
+        "scope": "nest",
+        "default": {
+          "distribution": [
+            [ "t_sgn_gach_bong_1", 2 ],
+            [ "t_sgn_gach_bong_2", 2 ],
+            [ "t_sgn_gach_bong_3", 2 ],
+            [ "t_sgn_gach_bong_4", 2 ],
+            [ "t_sgn_gach_men", 3 ],
+            [ "t_thconc_floor", 2 ]
+          ]
+        }
+      }
+    },
+    "terrain": {
+      "W": "t_brick_wall",
+      "#": "t_brick_wall",
+      "w": "t_window_bars",
+      "R": [ [ "t_rdoor_c", 3 ], [ "t_sgn_cua_sat_keo_c", 2 ] ],
+      "+": "t_door_c",
+      ".": { "param": "floor", "fallback": "t_thconc_floor" },
+      "t": { "param": "floor", "fallback": "t_thconc_floor" },
+      "c": { "param": "floor", "fallback": "t_thconc_floor" },
+      "C": { "param": "floor", "fallback": "t_thconc_floor" },
+      "S": { "param": "floor", "fallback": "t_thconc_floor" },
+      "O": { "param": "floor", "fallback": "t_thconc_floor" },
+      "K": "t_concrete_roof",
+      "A": { "param": "floor", "fallback": "t_thconc_floor" },
+      "F": { "param": "floor", "fallback": "t_thconc_floor" },
+      "T": { "param": "floor", "fallback": "t_thconc_floor" },
+      "b": { "param": "floor", "fallback": "t_thconc_floor" },
+      "r": { "param": "floor", "fallback": "t_thconc_floor" },
+      "m": { "param": "floor", "fallback": "t_thconc_floor" },
+      "k": { "param": "floor", "fallback": "t_thconc_floor" },
+      "d": { "param": "floor", "fallback": "t_thconc_floor" },
+      "s": { "param": "floor", "fallback": "t_thconc_floor" },
+      "p": { "param": "floor", "fallback": "t_thconc_floor" },
+      "G": { "param": "floor", "fallback": "t_thconc_floor" },
+      "L": { "param": "floor", "fallback": "t_thconc_floor" },
+      "V": { "param": "floor", "fallback": "t_thconc_floor" },
+      "v": { "param": "floor", "fallback": "t_thconc_floor" },
+      "g": { "param": "floor", "fallback": "t_thconc_floor" },
+      "n": { "param": "floor", "fallback": "t_thconc_floor" },
+      "Q": { "param": "floor", "fallback": "t_thconc_floor" },
+      "h": { "param": "floor", "fallback": "t_thconc_floor" },
+      "i": { "param": "floor", "fallback": "t_thconc_floor" },
+      "e": { "param": "floor", "fallback": "t_thconc_floor" },
+      "f": { "param": "floor", "fallback": "t_thconc_floor" },
+      "j": { "param": "floor", "fallback": "t_thconc_floor" },
+      "u": { "param": "floor", "fallback": "t_thconc_floor" },
+      "x": { "param": "floor", "fallback": "t_thconc_floor" },
+      "y": { "param": "floor", "fallback": "t_thconc_floor" },
+      "z": { "param": "floor", "fallback": "t_thconc_floor" },
+      "q": { "param": "floor", "fallback": "t_thconc_floor" },
+      "o": { "param": "floor", "fallback": "t_thconc_floor" },
+      "a": { "param": "floor", "fallback": "t_thconc_floor" },
+      "l": { "param": "floor", "fallback": "t_thconc_floor" },
+      "B": { "param": "floor", "fallback": "t_thconc_floor" },
+      "P": "t_concrete_roof",
+      "M": "t_concrete_roof",
+      "<": "t_stairs_up",
+      ">": "t_stairs_down",
+      "_": "t_concrete_roof",
+      "=": "t_railing"
+    },
+    "furniture": {
+      "t": "f_table",
+      "c": "f_stool",
+      "C": "f_counter",
+      "S": "f_sink",
+      "O": "f_oven",
+      "K": "f_standing_tank",
+      "A": "f_sgn_ban_tho",
+      "F": "f_fridge",
+      "T": "f_toilet",
+      "b": "f_bed",
+      "r": "f_rack",
+      "m": "f_rack",
+      "k": "f_counter",
+      "d": "f_dresser",
+      "s": "f_sofa",
+      "p": "f_rack",
+      "G": "f_sgn_ban_tho_than_tai",
+      "L": "f_sgn_lu_nuoc",
+      "V": "f_sgn_tivi_crt",
+      "v": "f_sgn_vong",
+      "P": "f_sgn_chau_kieng",
+      "M": "f_air_conditioner",
+      "g": "f_sgn_quay_vang",
+      "n": "f_sgn_may_net",
+      "Q": "f_sgn_dan_karaoke",
+      "h": "f_barber_chair",
+      "i": "f_bigmirror",
+      "e": "f_sgn_may_may",
+      "f": "f_rack",
+      "j": "f_workbench",
+      "u": "f_sgn_tu_thuoc_bac",
+      "x": "f_safe_l",
+      "y": "f_displaycase",
+      "z": "f_sgn_may_photo",
+      "q": "f_rack",
+      "o": "f_oven",
+      "a": "f_rack",
+      "l": "f_sgn_bep_nuong",
+      "B": "f_crate_c"
+    },
+    "liquids": { "K": { "liquid": "water", "amount": [ 120, 720 ] }, "L": { "liquid": "water", "amount": [ 40, 240 ] } },
+    "items": {
+      "G": { "item": "sgn_pagoda", "chance": 60 },
+      "g": { "item": "sgn_gold_shop", "chance": 70, "repeat": [ 1, 3 ] },
+      "n": { "item": "sgn_net_cafe", "chance": 35 },
+      "Q": { "item": "sgn_karaoke", "chance": 60, "repeat": [ 1, 2 ] },
+      "h": { "item": "sgn_barber", "chance": 25 },
+      "f": { "item": "sgn_tailor", "chance": 60, "repeat": [ 1, 3 ] },
+      "e": { "item": "sgn_tailor", "chance": 30 },
+      "j": { "item": "sgn_electronics_repair", "chance": 60, "repeat": [ 1, 2 ] },
+      "u": { "item": "sgn_herbalist", "chance": 70, "repeat": [ 1, 3 ] },
+      "x": { "item": "sgn_pawn", "chance": 80, "repeat": [ 1, 3 ] },
+      "y": { "item": "sgn_pawn", "chance": 50, "repeat": [ 1, 2 ] },
+      "q": { "item": "sgn_photocopy", "chance": 60, "repeat": [ 1, 2 ] },
+      "a": { "item": "sgn_bakery", "chance": 60, "repeat": [ 1, 3 ] },
+      "B": { "item": "sgn_nhau", "chance": 60, "repeat": [ 1, 3 ] },
+      "C": { "item": "sgn_street_cart", "chance": 35 },
+      "O": { "item": "sgn_shophouse_kitchen", "chance": 50 },
+      "F": { "item": "sgn_shophouse_kitchen", "chance": 40 },
+      "A": { "item": "sgn_pagoda", "chance": 30 },
+      "r": { "item": "sgn_shophouse_kitchen", "chance": 45, "repeat": [ 1, 3 ] },
+      "m": { "item": "sgn_moto_shop", "chance": 50, "repeat": [ 1, 2 ] },
+      "k": { "item": "sgn_moto_shop", "chance": 40 },
+      "p": { "item": "sgn_pharmacy", "chance": 60, "repeat": [ 1, 3 ] },
+      "d": { "item": "sgn_shophouse_living", "chance": 50, "repeat": [ 1, 2 ] },
+      "b": { "item": "sgn_shophouse_living", "chance": 20 },
+      "s": { "item": "sgn_shophouse_living", "chance": 30 }
+    }
+  },
+  {
+    "type": "palette",
+    "id": "sgn_nhaong_row_params",
+    "parameters": {
+      "lot0": {
+        "type": "nested_mapgen_id",
+        "scope": "omt_stack",
+        "default": { "distribution": [ [ "sgn_lot_h3", 3 ], [ "sgn_lot_h4", 4 ], [ "sgn_lot_h5", 1 ] ] }
+      },
+      "lot1": {
+        "type": "nested_mapgen_id",
+        "scope": "omt_stack",
+        "default": { "distribution": [ [ "sgn_lot_h3", 3 ], [ "sgn_lot_h4", 4 ], [ "sgn_lot_h5", 1 ] ] }
+      },
+      "lot2": {
+        "type": "nested_mapgen_id",
+        "scope": "omt_stack",
+        "default": { "distribution": [ [ "sgn_lot_h3", 3 ], [ "sgn_lot_h4", 4 ], [ "sgn_lot_h5", 1 ] ] }
+      },
+      "lot3": {
+        "type": "nested_mapgen_id",
+        "scope": "omt_stack",
+        "default": { "distribution": [ [ "sgn_lot_h3", 3 ], [ "sgn_lot_h4", 4 ], [ "sgn_lot_h5", 1 ] ] }
+      },
+      "lot4": {
+        "type": "nested_mapgen_id",
+        "scope": "omt_stack",
+        "default": { "distribution": [ [ "sgn_lot_h3", 3 ], [ "sgn_lot_h4", 4 ], [ "sgn_lot_h5", 1 ] ] }
+      },
+      "lot5": {
+        "type": "nested_mapgen_id",
+        "scope": "omt_stack",
+        "default": { "distribution": [ [ "sgn_lot_h3", 3 ], [ "sgn_lot_h4", 4 ], [ "sgn_lot_h5", 1 ] ] }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W..G                    ",
+        "Wtc.                    ",
+        "Wtc.                    ",
+        "W...                    ",
+        "Wtc.                    ",
+        "W...                    ",
+        "WCC.                    ",
+        "WSO.                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W..L                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 2 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_pho"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W..G                    ",
+        "Wrr.                    ",
+        "W...                    ",
+        "Wrr.                    ",
+        "W...                    ",
+        "Wrr.                    ",
+        "WCC.                    ",
+        "W...                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W..L                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 2 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_taphoa"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W..G                    ",
+        "Wpp.                    ",
+        "W...                    ",
+        "Wpp.                    ",
+        "W...                    ",
+        "Wpp.                    ",
+        "WCC.                    ",
+        "W...                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W..L                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 2 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_nhathuoc"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W..G                    ",
+        "W.m.                    ",
+        "W.m.                    ",
+        "W...                    ",
+        "Wkk.                    ",
+        "W...                    ",
+        "WCC.                    ",
+        "W...                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W..L                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 2 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_moto"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W..G                    ",
+        "Wgg.                    ",
+        "W...                    ",
+        "Wgg.                    ",
+        "W...                    ",
+        "W...                    ",
+        "WCC.                    ",
+        "W...                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W..L                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 2 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_tiemvang"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W..G                    ",
+        "Wnc.                    ",
+        "Wnc.                    ",
+        "Wnc.                    ",
+        "Wnc.                    ",
+        "Wnc.                    ",
+        "WCC.                    ",
+        "W...                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W..L                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 2 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_net"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W..G                    ",
+        "W...                    ",
+        "WCC.                    ",
+        "W...                    ",
+        "WQs.                    ",
+        "W.s.                    ",
+        "W+WW                    ",
+        "WQs.                    ",
+        "W.s.                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W..L                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 2 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_karaoke"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W..G                    ",
+        "Wih.                    ",
+        "W...                    ",
+        "Wih.                    ",
+        "W...                    ",
+        "Wih.                    ",
+        "W.S.                    ",
+        "Wcc.                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W..L                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 2 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_hotoc"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W..G                    ",
+        "Wff.                    ",
+        "W...                    ",
+        "We..                    ",
+        "We.c                    ",
+        "W...                    ",
+        "WCC.                    ",
+        "Wff.                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W..L                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 2 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_may"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W..G                    ",
+        "WjV.                    ",
+        "W.c.                    ",
+        "WjV.                    ",
+        "W.c.                    ",
+        "WVV.                    ",
+        "WCC.                    ",
+        "W...                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W..L                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 2 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_suadien"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W..G                    ",
+        "Wuu.                    ",
+        "W...                    ",
+        "Wuu.                    ",
+        "W...                    ",
+        "W.c.                    ",
+        "WCC.                    ",
+        "Wuu.                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W..L                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 2 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_thuocbac"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W..G                    ",
+        "Wyy.                    ",
+        "W...                    ",
+        "Wyy.                    ",
+        "W...                    ",
+        "Wx..                    ",
+        "WCC.                    ",
+        "W...                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W..L                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 2 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_camdo"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W..G                    ",
+        "Wz..                    ",
+        "W...                    ",
+        "Wz..                    ",
+        "W...                    ",
+        "Wqq.                    ",
+        "WCC.                    ",
+        "W...                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W..L                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 2 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_photo"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W..G                    ",
+        "Waa.                    ",
+        "W...                    ",
+        "Woo.                    ",
+        "W...                    ",
+        "Wo..                    ",
+        "WCC.                    ",
+        "Waa.                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W..L                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 2 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_banhmi"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WRRR                    ",
+        "W..G                    ",
+        "Wtc.                    ",
+        "Wtc.                    ",
+        "W...                    ",
+        "Wtc.                    ",
+        "W.l.                    ",
+        "WBB.                    ",
+        "Wtc.                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.A.                    ",
+        "WF..                    ",
+        "WTb.                    ",
+        "W..L                    ",
+        "WW+W                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [
+        { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 15 },
+        { "group": "sgn_GROUP_ZOMBIE_DORMANT", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 50, "repeat": [ 1, 2 ] }
+      ]
+    },
+    "nested_mapgen_id": "sgn_lot_z0_nhau"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "W#w#                    ",
+        "Wb..                    ",
+        "Wd..                    ",
+        "W.v.                    ",
+        "W+WW                    ",
+        "Wb..                    ",
+        "Wd..                    ",
+        "W...                    ",
+        "W...                    ",
+        "WV<.                    ",
+        "W.s.                    ",
+        "W.>.                    ",
+        "W...                    ",
+        "W+WW                    ",
+        "WbT.                    ",
+        "W...                    ",
+        "W.d.                    ",
+        "W#w#                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [ { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 8 } ]
+    },
+    "nested_mapgen_id": "sgn_lot_z1_family"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "W#w#                    ",
+        "Wbb.                    ",
+        "W.v.                    ",
+        "Wbb.                    ",
+        "W...                    ",
+        "W+WW                    ",
+        "Wb..                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W.>.                    ",
+        "W...                    ",
+        "W+WW                    ",
+        "WbT.                    ",
+        "W...                    ",
+        "Wb..                    ",
+        "W#w#                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [ { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 8 } ]
+    },
+    "nested_mapgen_id": "sgn_lot_z1_rental"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "W#w#                    ",
+        "Wb..                    ",
+        "Wd..                    ",
+        "W.v.                    ",
+        "W+WW                    ",
+        "Wb..                    ",
+        "Wd..                    ",
+        "W...                    ",
+        "W...                    ",
+        "WV>.                    ",
+        "W.s.                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W+WW                    ",
+        "WbT.                    ",
+        "W...                    ",
+        "W.d.                    ",
+        "W#w#                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [ { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 8 } ]
+    },
+    "nested_mapgen_id": "sgn_lot_z2_family"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "W#w#                    ",
+        "Wbb.                    ",
+        "W.v.                    ",
+        "Wbb.                    ",
+        "W...                    ",
+        "W+WW                    ",
+        "Wb..                    ",
+        "W...                    ",
+        "W...                    ",
+        "W.>.                    ",
+        "W...                    ",
+        "W.<.                    ",
+        "W...                    ",
+        "W+WW                    ",
+        "WbT.                    ",
+        "W...                    ",
+        "Wb..                    ",
+        "W#w#                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ],
+      "place_monster": [ { "group": "sgn_GROUP_SAIGON_AWAKE", "x": [ 1, 3 ], "y": [ 3, 18 ], "chance": 8 } ]
+    },
+    "nested_mapgen_id": "sgn_lot_z2_rental"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WWWW                    ",
+        "=___                    ",
+        "=___                    ",
+        "=___                    ",
+        "=_P_                    ",
+        "=___                    ",
+        "=___                    ",
+        "=___                    ",
+        "=M__                    ",
+        "=___                    ",
+        "=___                    ",
+        "=_>_                    ",
+        "=___                    ",
+        "=___                    ",
+        "=___                    ",
+        "____                    ",
+        "__K_                    ",
+        "====                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    },
+    "nested_mapgen_id": "sgn_lot_z3_deck"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "W#w#                    ",
+        "W..W                    ",
+        "W..W                    ",
+        "W..W                    ",
+        "W..W                    ",
+        "W..W                    ",
+        "W..W                    ",
+        "W..W                    ",
+        "W..W                    ",
+        "W.<W                    ",
+        "W..W                    ",
+        "W.>W                    ",
+        "W..W                    ",
+        "W+WW                    ",
+        "=___                    ",
+        "____                    ",
+        "____                    ",
+        "====                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    },
+    "nested_mapgen_id": "sgn_lot_z3_room"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WWWW                    ",
+        "=_K=                    ",
+        "=__=                    ",
+        "=__=                    ",
+        "=__=                    ",
+        "=P_=                    ",
+        "=__=                    ",
+        "=__=                    ",
+        "=__=                    ",
+        "=M>=                    ",
+        "=__=                    ",
+        "=__=                    ",
+        "=__=                    ",
+        "=__=                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    },
+    "nested_mapgen_id": "sgn_lot_z4_deck"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "W#w#                    ",
+        "W..W                    ",
+        "W..W                    ",
+        "W..W                    ",
+        "W..W                    ",
+        "W..W                    ",
+        "W..W                    ",
+        "W..W                    ",
+        "W..W                    ",
+        "W.>W                    ",
+        "W..W                    ",
+        "W.<W                    ",
+        "W..W                    ",
+        "W+WW                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    },
+    "nested_mapgen_id": "sgn_lot_z4_room"
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "WWWW                    ",
+        "=_K=                    ",
+        "=__=                    ",
+        "=__=                    ",
+        "=__=                    ",
+        "=P_=                    ",
+        "=__=                    ",
+        "=__=                    ",
+        "=__=                    ",
+        "=M_=                    ",
+        "=__=                    ",
+        "=_>=                    ",
+        "=__=                    ",
+        "=__=                    ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    },
+    "nested_mapgen_id": "sgn_lot_z5_deck"
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_lot_h3",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [
+        {
+          "chunks": [
+            [ "sgn_lot_z0_pho", 3 ],
+            [ "sgn_lot_z0_taphoa", 4 ],
+            [ "sgn_lot_z0_moto", 2 ],
+            [ "sgn_lot_z0_nhathuoc", 1 ],
+            [ "sgn_lot_z0_tiemvang", 1 ],
+            [ "sgn_lot_z0_net", 1 ],
+            [ "sgn_lot_z0_karaoke", 1 ],
+            [ "sgn_lot_z0_hotoc", 1 ],
+            [ "sgn_lot_z0_may", 1 ],
+            [ "sgn_lot_z0_suadien", 1 ],
+            [ "sgn_lot_z0_thuocbac", 1 ],
+            [ "sgn_lot_z0_camdo", 1 ],
+            [ "sgn_lot_z0_photo", 1 ],
+            [ "sgn_lot_z0_banhmi", 1 ],
+            [ "sgn_lot_z0_nhau", 1 ]
+          ],
+          "x": 0,
+          "y": 0,
+          "check_z": [ 0 ]
+        },
+        { "chunks": [ [ "sgn_lot_z1_family", 3 ], [ "sgn_lot_z1_rental", 1 ] ], "x": 0, "y": 0, "check_z": [ 1 ] },
+        { "chunks": [ [ "sgn_lot_z2_family", 3 ], [ "sgn_lot_z2_rental", 1 ] ], "x": 0, "y": 0, "check_z": [ 2 ] },
+        { "chunks": [ "sgn_lot_z3_deck" ], "x": 0, "y": 0, "check_z": [ 3 ] }
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_lot_h4",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [
+        {
+          "chunks": [
+            [ "sgn_lot_z0_pho", 3 ],
+            [ "sgn_lot_z0_taphoa", 4 ],
+            [ "sgn_lot_z0_moto", 2 ],
+            [ "sgn_lot_z0_nhathuoc", 1 ],
+            [ "sgn_lot_z0_tiemvang", 1 ],
+            [ "sgn_lot_z0_net", 1 ],
+            [ "sgn_lot_z0_karaoke", 1 ],
+            [ "sgn_lot_z0_hotoc", 1 ],
+            [ "sgn_lot_z0_may", 1 ],
+            [ "sgn_lot_z0_suadien", 1 ],
+            [ "sgn_lot_z0_thuocbac", 1 ],
+            [ "sgn_lot_z0_camdo", 1 ],
+            [ "sgn_lot_z0_photo", 1 ],
+            [ "sgn_lot_z0_banhmi", 1 ],
+            [ "sgn_lot_z0_nhau", 1 ]
+          ],
+          "x": 0,
+          "y": 0,
+          "check_z": [ 0 ]
+        },
+        { "chunks": [ [ "sgn_lot_z1_family", 3 ], [ "sgn_lot_z1_rental", 1 ] ], "x": 0, "y": 0, "check_z": [ 1 ] },
+        { "chunks": [ [ "sgn_lot_z2_family", 3 ], [ "sgn_lot_z2_rental", 1 ] ], "x": 0, "y": 0, "check_z": [ 2 ] },
+        { "chunks": [ "sgn_lot_z3_room" ], "x": 0, "y": 0, "check_z": [ 3 ] },
+        { "chunks": [ "sgn_lot_z4_deck" ], "x": 0, "y": 0, "check_z": [ 4 ] }
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "nested_mapgen_id": "sgn_lot_h5",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "place_nested": [
+        {
+          "chunks": [
+            [ "sgn_lot_z0_pho", 3 ],
+            [ "sgn_lot_z0_taphoa", 4 ],
+            [ "sgn_lot_z0_moto", 2 ],
+            [ "sgn_lot_z0_nhathuoc", 1 ],
+            [ "sgn_lot_z0_tiemvang", 1 ],
+            [ "sgn_lot_z0_net", 1 ],
+            [ "sgn_lot_z0_karaoke", 1 ],
+            [ "sgn_lot_z0_hotoc", 1 ],
+            [ "sgn_lot_z0_may", 1 ],
+            [ "sgn_lot_z0_suadien", 1 ],
+            [ "sgn_lot_z0_thuocbac", 1 ],
+            [ "sgn_lot_z0_camdo", 1 ],
+            [ "sgn_lot_z0_photo", 1 ],
+            [ "sgn_lot_z0_banhmi", 1 ],
+            [ "sgn_lot_z0_nhau", 1 ]
+          ],
+          "x": 0,
+          "y": 0,
+          "check_z": [ 0 ]
+        },
+        { "chunks": [ [ "sgn_lot_z1_family", 3 ], [ "sgn_lot_z1_rental", 1 ] ], "x": 0, "y": 0, "check_z": [ 1 ] },
+        { "chunks": [ [ "sgn_lot_z2_family", 3 ], [ "sgn_lot_z2_rental", 1 ] ], "x": 0, "y": 0, "check_z": [ 2 ] },
+        { "chunks": [ "sgn_lot_z3_room" ], "x": 0, "y": 0, "check_z": [ 3 ] },
+        { "chunks": [ "sgn_lot_z4_room" ], "x": 0, "y": 0, "check_z": [ 4 ] },
+        { "chunks": [ "sgn_lot_z5_deck" ], "x": 0, "y": 0, "check_z": [ 5 ] }
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "object": {
+      "mapgensize": [ 24, 24 ],
+      "palettes": [ "sgn_nhaong" ],
+      "rows": [
+        "                        ",
+        "                        ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "W                       ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "flags": [ "ERASE_FURNITURE_BEFORE_PLACING_TERRAIN", "ERASE_TRAP_BEFORE_PLACING_TERRAIN", "ALLOW_TERRAIN_UNDER_ITEMS" ]
+    },
+    "nested_mapgen_id": "sgn_nh_cap_wall"
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ "sgn_nh_solo_z0" ],
+    "object": {
+      "palettes": [ "sgn_nhaong_row_params" ],
+      "place_nested": [
+        { "chunks": [ { "param": "lot0", "fallback": "sgn_lot_h3" } ], "x": 0, "y": 0 },
+        { "chunks": [ { "param": "lot1", "fallback": "sgn_lot_h3" } ], "x": 4, "y": 0 },
+        { "chunks": [ { "param": "lot2", "fallback": "sgn_lot_h3" } ], "x": 8, "y": 0 },
+        { "chunks": [ { "param": "lot3", "fallback": "sgn_lot_h3" } ], "x": 12, "y": 0 },
+        { "chunks": [ { "param": "lot4", "fallback": "sgn_lot_h3" } ], "x": 16, "y": 0 },
+        { "chunks": [ { "param": "lot5", "fallback": "sgn_lot_h3" } ], "x": 20, "y": 0 },
+        { "chunks": [ "sgn_nh_cap_wall" ], "x": 23, "y": 0, "check_z": [ 0, 1, 2, 3 ] },
+        { "chunks": [ "sgn_nh_cap_wall" ], "x": 0, "y": 0, "check_z": [ 3 ] }
+      ],
+      "fill_ter": "t_concrete",
+      "rows": [
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "SSSSSSSSSSSSSSSSSSSSSSSS",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "PPPPPPPPPPPPPPPPPPPPPPPP",
+        "PPPPPPPPPPPPPPPPPPPPPPPP",
+        "PPPPPPPPPPPPPPPPPPPPPPPP",
+        "PPPPPPPPPPPPPPPPPPPPPPPP"
+      ],
+      "terrain": { "S": "t_sidewalk", "P": "t_concrete" },
+      "place_monster": [ { "group": "sgn_GROUP_SAIGON_ANIMALS", "x": [ 0, 23 ], "y": [ 20, 23 ], "chance": 30 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": [ "sgn_nh_solo_z1", "sgn_nh_solo_z2", "sgn_nh_solo_z3", "sgn_nh_solo_z4", "sgn_nh_solo_z5" ],
+    "object": {
+      "palettes": [ "sgn_nhaong_row_params" ],
+      "place_nested": [
+        { "chunks": [ { "param": "lot0", "fallback": "sgn_lot_h3" } ], "x": 0, "y": 0 },
+        { "chunks": [ { "param": "lot1", "fallback": "sgn_lot_h3" } ], "x": 4, "y": 0 },
+        { "chunks": [ { "param": "lot2", "fallback": "sgn_lot_h3" } ], "x": 8, "y": 0 },
+        { "chunks": [ { "param": "lot3", "fallback": "sgn_lot_h3" } ], "x": 12, "y": 0 },
+        { "chunks": [ { "param": "lot4", "fallback": "sgn_lot_h3" } ], "x": 16, "y": 0 },
+        { "chunks": [ { "param": "lot5", "fallback": "sgn_lot_h3" } ], "x": 20, "y": 0 },
+        { "chunks": [ "sgn_nh_cap_wall" ], "x": 23, "y": 0, "check_z": [ 0, 1, 2, 3 ] },
+        { "chunks": [ "sgn_nh_cap_wall" ], "x": 0, "y": 0, "check_z": [ 3 ] }
+      ],
+      "fill_ter": "t_open_air"
+    }
+  }
+]

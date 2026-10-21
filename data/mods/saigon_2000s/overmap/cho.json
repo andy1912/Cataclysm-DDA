@@ -1,0 +1,90 @@
+[
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_cho_nw",
+    "copy-from": "generic_city_building",
+    "name": "chợ",
+    "sym": "M",
+    "color": "yellow",
+    "looks_like": "grocery"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_cho_roof_nw",
+    "copy-from": "generic_city_building_roof",
+    "name": "chợ roof",
+    "sym": "M",
+    "color": "yellow",
+    "looks_like": "grocery"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_cho_ne",
+    "copy-from": "generic_city_building",
+    "name": "chợ",
+    "sym": "M",
+    "color": "yellow",
+    "looks_like": "grocery"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_cho_roof_ne",
+    "copy-from": "generic_city_building_roof",
+    "name": "chợ roof",
+    "sym": "M",
+    "color": "yellow",
+    "looks_like": "grocery"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_cho_sw",
+    "copy-from": "generic_city_building",
+    "name": "chợ",
+    "sym": "M",
+    "color": "yellow",
+    "looks_like": "grocery"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_cho_roof_sw",
+    "copy-from": "generic_city_building_roof",
+    "name": "chợ roof",
+    "sym": "M",
+    "color": "yellow",
+    "looks_like": "grocery"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_cho_se",
+    "copy-from": "generic_city_building",
+    "name": "chợ",
+    "sym": "M",
+    "color": "yellow",
+    "looks_like": "grocery"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "sgn_cho_roof_se",
+    "copy-from": "generic_city_building_roof",
+    "name": "chợ roof",
+    "sym": "M",
+    "color": "yellow",
+    "looks_like": "grocery"
+  },
+  {
+    "type": "city_building",
+    "id": "sgn_cho_1",
+    "locations": [ "land" ],
+    "flags": [ "SAIGON" ],
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "sgn_cho_nw_north" },
+      { "point": [ 1, 0, 0 ], "overmap": "sgn_cho_ne_north" },
+      { "point": [ 0, 1, 0 ], "overmap": "sgn_cho_sw_north" },
+      { "point": [ 1, 1, 0 ], "overmap": "sgn_cho_se_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "sgn_cho_roof_nw_north" },
+      { "point": [ 1, 0, 1 ], "overmap": "sgn_cho_roof_ne_north" },
+      { "point": [ 0, 1, 1 ], "overmap": "sgn_cho_roof_sw_north" },
+      { "point": [ 1, 1, 1 ], "overmap": "sgn_cho_roof_se_north" }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+{
+ "fg": [
+  {
+   "weight": 3,
+   "sprite": "@t_sgn_ngap_hem"
+  },
+  {
+   "weight": 3,
+   "sprite": "@t_sgn_ngap_hem__rain"
+  },
+  {
+   "weight": 1,
+   "sprite": "@t_sgn_ngap_hem__rubbish"
+  }
+ ]
+}

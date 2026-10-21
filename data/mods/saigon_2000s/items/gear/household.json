@@ -1,0 +1,99 @@
+[
+  {
+    "type": "ITEM",
+    "id": "sgn_quat_may",
+    "copy-from": "fan",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "stand fan" },
+    "description": "Quạt máy: a pedestal fan with a blue plastic grille and a timer knob that ticks.  Every room in Saigon has one turned towards the bed.  Plug it in or hook it to a battery to stir the air.",
+    "weight": "3800 g",
+    "volume": "25 L",
+    "longest_side": "110 cm",
+    "color": "light_blue"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_den_dau",
+    "copy-from": "oil_lamp",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "kerosene wick lamp" },
+    "description": "Đèn dầu: a glass-chimney kerosene lamp kept under the stairs for the power cuts.",
+    "color": "yellow"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_nen",
+    "copy-from": "candle",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "red altar candle" },
+    "description": "A thick red candle printed with gold characters, burnt on the family altar for the anniversaries of the dead.",
+    "color": "red"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_dien_thoai",
+    "copy-from": "cell_phone",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "brick phone" },
+    "description": "A chunky 2G mobile phone with a monochrome screen, a snake game and a battery that lasts a week.  The network is dead, but it still tells the time and works as a torch.",
+    "color": "dark_gray"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_radio_cassette",
+    "copy-from": "radio",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "cassette radio" },
+    "description": "A silver radio-cassette player with twin speakers and a carrying handle, still holding a tape of cải lương opera.  Use it to tune in whatever is still on the air, or to play the tape.  Each use drains a little of the battery.",
+    "color": "light_gray",
+    "//": "V3: dda's radio picks up only overmap radio towers, which the city does not have; this one plays the mod's broadcasts instead, changing with the days since the cataclysm (eoc/v3_city_voice.json).",
+    "use_action": {
+      "type": "effect_on_conditions",
+      "menu_text": "Switch on",
+      "description": "Tune in whatever is still on the air, or play the tape.",
+      "effect_on_conditions": [ "SGN_EOC_v3_radio_use" ],
+      "consume": true
+    }
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_mung",
+    "name": { "str": "mosquito net" },
+    "description": "Mùng: a white nylon net that hangs from four strings over a bed.  Without it the canal mosquitoes would eat you alive, and with the fever about nobody sleeps without one.",
+    "weight": "350 g",
+    "volume": "1500 ml",
+    "material": [ "nylon" ],
+    "symbol": "[",
+    "color": "white",
+    "category": "other"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_dau_gio",
+    "copy-from": "aspirin",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str_sp": "dầu gió" },
+    "description": "A tiny bottle of green medicated oil smelling of menthol and eucalyptus.  Rubbed on temples, belly or a stuffy nose it eases headaches, nausea and the misery of the heat.  Every grandmother carries one.",
+    "color": "green",
+    "container": "bottle_plastic_small"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_oresol",
+    "copy-from": "salt",
+    "subtypes": [ "COMESTIBLE" ],
+    "name": { "str": "oresol sachet" },
+    "description": "A foil sachet of oral rehydration salts.  Dissolved in a litre of clean water it replaces what diarrhoea and the heat take out of you.",
+    "color": "light_cyan"
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_khau_trang",
+    "variants": [  ],
+    "copy-from": "mask_dust",
+    "subtypes": [ "ARMOR" ],
+    "name": { "str": "cloth face mask" },
+    "description": "Khẩu trang: a washable cotton mask in a flowery print with ear loops, worn by every motorbike rider against the dust and the sun.  It does little against the fever.",
+    "color": "pink"
+  }
+]

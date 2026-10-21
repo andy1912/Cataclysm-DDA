@@ -1,0 +1,38 @@
+[
+  {
+    "//": "Loaded only with Generic Guns, which turns 9x18mm, 7.62x25mm and 7.62x39mm ammunition into its generic types.  The Saigon guns and magazines follow the same way the dda guns they are drawn from do (makarov, ppsh, ak47, sks), so their magazines accept the generic rounds.",
+    "id": [ "sgn_sung_9x18" ],
+    "type": "MIGRATION",
+    "replace": "pistol_medium"
+  },
+  {
+    "id": [ "sgn_mag_9x18" ],
+    "type": "MIGRATION",
+    "replace": "pistol_mag"
+  },
+  {
+    "id": [ "sgn_sung_tieu_lien_762x25" ],
+    "type": "MIGRATION",
+    "replace": "pistol_smg"
+  },
+  {
+    "id": [ "sgn_mag_762x25_35" ],
+    "type": "MIGRATION",
+    "replace": "pistol_smg_mag"
+  },
+  {
+    "id": [ "sgn_sung_truong_bang_gap", "sgn_sung_cac_bin" ],
+    "type": "MIGRATION",
+    "replace": "rifle_sporter"
+  },
+  {
+    "id": [ "sgn_mag_762x39_30" ],
+    "type": "MIGRATION",
+    "replace": "rifle_mag"
+  },
+  {
+    "id": [ "sgn_clip_762x39_10" ],
+    "type": "MIGRATION",
+    "replace": "rifle_sniper_mag"
+  }
+]

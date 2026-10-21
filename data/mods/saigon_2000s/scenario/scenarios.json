@@ -1,0 +1,47 @@
+[
+  {
+    "type": "scenario",
+    "id": "sgn_saigon_2004",
+    "name": "Somewhere in Nam",
+    "points": 0,
+    "description": "The dry season was supposed to be quiet.  Since October the loa phường have been repeating the same notice about the \"sốt lạ\", the strange fever that the evening news keeps calling a new bird flu.  Wards were sealed, markets were hosed down with chlorine, and the airport stopped taking flights.  Last night the fever's dead stopped staying dead.  Now the hẻm outside are silent except for dripping air conditioners and the dragging of sandals, and the loa phường play their recorded notices to empty streets.  You are alone, the heat is rising, and the city of eight million people has become a maze.",
+    "start_name": "Nhà ống",
+    "allowed_locs": [ "sgn_sloc_nha_ong", "sgn_sloc_nha_ong_shuttered", "sgn_sloc_cho" ],
+    "flags": [ "CITY_START", "LONE_START" ],
+    "start_of_cataclysm": { "hour": 22, "day": 1, "season": "winter", "year": 1 },
+    "start_of_game": { "hour": 6, "day": 2, "season": "winter", "year": 1 },
+    "eoc": [ "SGN_EOC_intro" ],
+    "professions": [
+      "sgn_survivor",
+      "sgn_xe_om",
+      "sgn_street_vendor",
+      "sgn_market_trader",
+      "sgn_student",
+      "sgn_cong_an",
+      "sgn_nurse",
+      "sgn_construction",
+      "sgn_fisherman",
+      "sgn_mechanic",
+      "sgn_monk",
+      "sgn_veteran"
+    ]
+  },
+  {
+    "type": "scenario",
+    "id": "sgn_saigon_2009",
+    "copy-from": "sgn_saigon_2004",
+    "name": "Saigon 2009",
+    "description": "The real city, street by street, as it stood in late 2009: the new Phú Mỹ bridge open over the river, Thủ Thiêm still marsh and creeks across from District 1, buses leaving Miền Đông on Đinh Bộ Lĩnh.  Since October the loa phường have been repeating the same notice about the \"sốt lạ\", the fever the evening news first called the new swine flu.  Wards were sealed, markets were hosed down with chlorine, and Tân Sơn Nhất stopped taking flights.  Last night the fever's dead stopped staying dead.  The hẻm outside are silent except for dripping air conditioners and the dragging of sandals.",
+    "overmap_pregenerated_path": "saigon_2000s/realmap_2009",
+    "overmap_outside_region": "sgn_saigon_delta",
+    "allowed_locs": [
+      "sgn_sloc_nha_ong",
+      "sgn_sloc_nha_ong_shuttered",
+      "sgn_sloc_hem",
+      "sgn_sloc_cho",
+      "sgn_sloc_ga_sai_gon",
+      "sgn_sloc_san_bay"
+    ],
+    "distance_initial_visibility": 40
+  }
+]

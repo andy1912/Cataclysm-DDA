@@ -1,0 +1,127 @@
+[
+  {
+    "type": "snippet",
+    "category": "sgn_loa_phuong",
+    "//": "V3: more ward notices (item sgn_ward_notice): quarantine orders and the notices pasted on lamp posts.  Adds to the category in lore.json.",
+    "text": [
+      {
+        "id": "sgn_notice_v3_1",
+        "text": "WARD PEOPLE'S COMMITTEE.  DECISION on the temporary isolation of hẻm 42.  Owing to cases of the strange fever, hẻm 42 is sealed from today.  No one may enter or leave without the permission of the ward health station.  Food will be delivered by the ward civil guard at seven each morning.  (A round red stamp and a signature.)"
+      },
+      {
+        "id": "sgn_notice_v3_2",
+        "text": "NOTICE.  Households must hang a white cloth on the gate if a member of the family has a fever, and a red cloth if a member of the family has died.  The collection team will come.  Do not move the body.  Do not remove the cloth."
+      },
+      {
+        "id": "sgn_notice_v3_3",
+        "text": "WARD HEALTH STATION.  Temperature checks: Monday, Wednesday and Friday, seven to eleven in the morning, at the house of the tổ dân phố leader.  Bring the household registration book.  Anyone with a fever above 38.5 degrees will be taken to the district isolation centre at the secondary school."
+      },
+      {
+        "id": "sgn_notice_v3_4",
+        "text": "HOW TO BOIL WATER, with a drawing of a pot: bring the water to a rolling boil, keep it boiling for five minutes, and let it cool with the lid on.  Do not use canal water, even boiled.  Lime powder for disinfecting toilets can be collected free of charge at the ward office."
+      },
+      {
+        "id": "sgn_notice_v3_5",
+        "text": "NOTICE ON THE CARE OF THE SICK.  People infected with the fever may become confused and violent.  Do not try to restrain them yourself.  Lock them in a room and inform the ward.  Keep children away from them.  (Someone has crossed out \"inform the ward\" in blue ballpoint and written underneath: THEY DON'T COME.)"
+      },
+      {
+        "id": "sgn_notice_v3_6",
+        "text": "NOTICE.  The Christmas Eve gathering at the cathedral and the New Year countdown on Nguyễn Huệ street are cancelled.  Residents are asked not to go into District 1.  The ward wishes all residents a safe and healthy holiday season."
+      },
+      {
+        "id": "sgn_notice_v3_7",
+        "text": "PRICE STABILISATION NOTICE.  Maximum prices in the ward market, by order of the district: rice 6,500 đồng a kilo, fish sauce 9,000 a bottle, candles 1,000 each, cooking gas 150,000 a cylinder.  Report traders who overcharge.  (The numbers have been scratched out with a key and replaced in marker, every one of them doubled.)"
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_note",
+    "//": "V3: more handwritten notes (item sgn_note_handwritten): missing-person sheets, a student's diary, market price boards, holiday cards from before.  Adds to the category in lore.json.",
+    "text": [
+      {
+        "id": "sgn_note_v3_missing_1",
+        "text": "TÌM NGƯỜI THÂN, looking for family.  A photocopied photo of a smiling old woman in a purple áo bà ba.  \"Nguyễn Thị Lành, 74 years old, walked out of the house on the night of the 21st, confused, in house sandals.  Anyone who has seen her please call…\"  The phone number is written three times, larger each time."
+      },
+      {
+        "id": "sgn_note_v3_missing_2",
+        "text": "A school photo of a boy in a white shirt and a red scarf, taped to a lamp post.  \"Con tên Minh, 9 tuổi.  Minh, nine years old, lost at the bus stop by Bến Thành market.  His parents wait at the ward office every morning.\"  Underneath, in different ink: \"Seen at the pagoda, the 23rd.\""
+      },
+      {
+        "id": "sgn_note_v3_missing_3",
+        "text": "Chalked in big letters on a steel shutter: \"ANH HAI, we have gone to Ngoại's in Hóc Môn.  Bring the papers from the rice cupboard.  Do not come by the highway.  Má, Út, Bé.\""
+      },
+      {
+        "id": "sgn_note_v3_diary_1",
+        "text": "A page torn from a student's notebook, neat handwriting: \"19 December.  The university closed today.  Lan says it's just another bird flu and we'll be back after New Year.  Má called from Cần Thơ and told me to come home, but the buses are full.  I bought three packs of instant noodles and a bag of oranges.\""
+      },
+      {
+        "id": "sgn_note_v3_diary_2",
+        "text": "Another page from the same notebook: \"22 December.  Screaming from the next room of the boarding house all night.  The landlady locked the door from the outside.  This morning it is quiet and nobody will open it.  I'm writing this so I don't have to think.\""
+      },
+      {
+        "id": "sgn_note_v3_diary_3",
+        "text": "A notebook page, the writing smaller now: \"24 December, Christmas Eve.  Last year we rode round and round the cathedral in the crowd until two in the morning, and I lost a sandal.  Tonight there is nobody on the street.  I can hear bells.  Maybe the church.  Maybe someone ringing for help.\""
+      },
+      {
+        "id": "sgn_note_v3_diary_4",
+        "text": "The last page of a student's notebook: \"25 December.  Out of water.  Tonight I'll climb to the roof and take some from the tank on the next house.  If someone finds this notebook, please tell my parents in Cần Thơ that I studied hard.  Nguyễn Văn Phúc, second year, Faculty of Chemistry.\""
+      },
+      {
+        "id": "sgn_note_v3_prices_1",
+        "text": "A cardboard sign torn from a market stall, the prices crossed out and rewritten again and again: rice 6,000, 9,000, 15,000 a kilo; eggs NONE; ice 2,000, then 10,000 a block; candles 30,000.  At the bottom, in the newest ink: \"GOLD ONLY.\""
+      },
+      {
+        "id": "sgn_note_v3_prices_2",
+        "text": "A grocer's blackboard, in chalk: \"Today: fish sauce, salt, instant noodles, mosquito coils, gas refills.  NO credit.  NO chicken, NO duck, NO eggs, don't ask.  Water: bring your own can.\""
+      },
+      {
+        "id": "sgn_note_v3_tet",
+        "text": "A red Tết card printed with golden apricot blossoms, from last year: \"Chúc mừng năm mới!  Wishing Ông and Bà a new year of health and peace, and everything as you wish, vạn sự như ý.  From your grandchildren, Tí and Bé Ba.\""
+      },
+      {
+        "id": "sgn_note_v3_trung_thu_1",
+        "text": "A Mid-Autumn card with a carp lantern drawn in a child's crayon: \"Trung thu vui vẻ!  Thank you cô for the mooncake.  The lantern I made is a star and it has a real candle.\""
+      },
+      {
+        "id": "sgn_note_v3_trung_thu_2",
+        "text": "A slip of red paper still tucked into an empty mooncake box: \"With respect, to the family of anh Hai, from all of us at the bakery.  A full moon and a full house.\""
+      }
+    ]
+  },
+  {
+    "type": "snippet",
+    "category": "sgn_newspaper",
+    "//": "V3: more pages of Tin Nhanh Sài Gòn (item sgn_newspaper), from the festivals before the fever to the last edition.  Adds to the category in lore.json.",
+    "text": [
+      {
+        "id": "sgn_news_v3_1",
+        "text": "TIN NHANH SÀI GÒN, MID-AUTUMN SUPPLEMENT.  A colour page of the lantern stalls on Lương Nhữ Học street and a recipe for green-bean mooncakes.  It is from September, before the fever, and the children in the photo are laughing."
+      },
+      {
+        "id": "sgn_news_v3_2",
+        "text": "TIN NHANH SÀI GÒN.  FEVER IN THE DELTA: \"NO CAUSE FOR ALARM\".  The health ministry says the cases in An Giang are linked to poultry.  Page 6: the Tết flower market will open on Nguyễn Huệ as usual.  Page 9: gold climbs again."
+      },
+      {
+        "id": "sgn_news_v3_3",
+        "text": "TIN NHANH SÀI GÒN.  MARKET PRICES TODAY: rice, pork, fish and vegetables, in a table with yesterday's prices beside them.  Every number has gone up.  In the margin someone has done sums in pencil and circled the total twice."
+      },
+      {
+        "id": "sgn_news_v3_4",
+        "text": "TIN NHANH SÀI GÒN.  WARDS TO SEAL ALLEYS WITH FEVER CASES.  Photo: a civil guard stretching tape across the mouth of a hẻm while a woman passes a bag of oranges over it to her neighbour."
+      },
+      {
+        "id": "sgn_news_v3_5",
+        "text": "THỂ THAO weekly, back page: the league fixtures for the new year, the tables, a cartoon about a blind referee.  Not one word about the fever, as if the sports desk were the last in the city to hear."
+      },
+      {
+        "id": "sgn_news_v3_6",
+        "text": "TIN NHANH SÀI GÒN, CLASSIFIEDS.  Rooms to let, motorbikes for sale, a matchmaking column, and a whole page of Tết orders for bánh chưng and potted apricot trees.  Every advertisement ends in a phone number nobody will answer."
+      },
+      {
+        "id": "sgn_news_v3_7",
+        "text": "TIN NHANH SÀI GÒN, LAST EDITION, two pages, no photographs.  A list of hospitals no longer taking patients, a list of evacuation points, and on the back, in a box, a note from the editors: \"We will print again when the city is safe.  Take care of one another.\""
+      }
+    ]
+  }
+]

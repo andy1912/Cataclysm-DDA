@@ -190,6 +190,11 @@ void DefaultRemovePartHandler::removed( map *here, vehicle &veh, const int part 
     }
 
     here->dirty_vehicle_list.insert( &veh );
+    // the part's walls, shelter and floor go with it, even if it was the last;
+    // its fake copy and the shelter of its neighbors may be on other levels
+    for( const int level : veh.occupied_levels( *here ) ) {
+        here->on_vehicle_moved( level );
+    }
     here->clear_vehicle_point_from_cache( &veh, part_pos );
     here->add_vehicle_to_cache( &veh );
     here->memory_cache_dec_set_dirty( part_pos, true );
@@ -2023,7 +2028,6 @@ bool vehicle::merge_rackable_vehicle( map *here, vehicle *carry_veh,
         here->destroy_vehicle( carry_veh );
         here->dirty_vehicle_list.insert( this );
         here->set_transparency_cache_dirty( sm_pos.z() );
-        here->set_seen_cache_dirty( tripoint_bub_ms::zero );
         here->invalidate_map_cache( here->get_abs_sub().z() );
         here->rebuild_vehicle_level_caches();
     } else {
@@ -2760,7 +2764,6 @@ bool vehicle::split_vehicles( map &here,
 
         here.dirty_vehicle_list.insert( new_vehicle );
         here.set_transparency_cache_dirty( sm_pos.z() );
-        here.set_seen_cache_dirty( tripoint_bub_ms::zero );
         if( !new_labels.empty() ) {
             new_vehicle->labels = new_labels;
         }
@@ -3784,6 +3787,15 @@ tripoint_bub_ms vehicle::bub_part_pos( const map &here, const vehicle_part &pt )
     return pos_bub( here ) + pt.precalc[0];
 }
 
+std::set<int> vehicle::occupied_levels( const map &here ) const
+{
+    std::set<int> levels;
+    for( const vehicle_part &vp : parts ) {
+        levels.insert( bub_part_pos( here, vp ).z() );
+    }
+    return levels;
+}
+
 tripoint_abs_ms vehicle::abs_part_pos( const int index ) const
 {
     return abs_part_pos( parts[index] );
@@ -4669,7 +4681,7 @@ double vehicle::coeff_air_drag() const
     for( drag_column &dc : drag ) {
         // even as m_debug you rarely want to see this
         add_msg_debug( debugmode::DF_VEHICLE_DRAG,
-                       "veh %: pro %d, hboard %d, fboard %d, shield %d, seat %d, roof %d, aisle %d, turret %d, panel %d, exposed %d, last %d\n",
+                       "veh %s: pro %d, hboard %d, fboard %d, shield %d, seat %d, roof %d, aisle %d, turret %d, panel %d, exposed %d, last %d\n",
                        name, dc.pro, dc.hboard, dc.fboard, dc.shield, dc.seat, dc.roof, dc.aisle, dc.turret, dc.panel,
                        dc.exposed, dc.last );
 
@@ -5499,6 +5511,20 @@ std::vector<vehicle_part *> vehicle::lights()
         }
     }
     return res;
+}
+
+float vehicle::cone_light_luminance( const std::vector<vehicle_part *> &lights )
+{
+    float luminance = 0.0f;
+    float iteration = 1.0f;
+    for( const vehicle_part *pt : lights ) {
+        const vpart_info &vp = pt->info();
+        if( vp.has_flag( VPFLAG_CONE_LIGHT ) || vp.has_flag( VPFLAG_WIDE_CONE_LIGHT ) ) {
+            luminance += vp.bonus / iteration;
+            iteration = iteration * 1.1f;
+        }
+    }
+    return luminance;
 }
 
 units::power vehicle::total_accessory_epower() const

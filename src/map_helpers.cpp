@@ -10,6 +10,7 @@
 #include "clzones.h"
 #include "coordinates.h"
 #include "craft_reservation.h"
+#include "creature_tracker.h"
 #include "field.h"
 #include "game.h"
 #include "mapbuffer.h"
@@ -198,6 +199,12 @@ void clear_map_and_put_player_underground()
 
 void clear_overmaps()
 {
+    // Any monster left in the creature tracker from a previous test would be
+    // despawned into an overmap's horde map by place_player_overmap below.  Two
+    // such leftovers on the same square make horde_map::spawn_entity log
+    // "Attempted to insert a zombie at ..., but there's already a rot-weiler
+    // there!", and a test run is failed on any logged error.  Drop them first.
+    get_creature_tracker().clear();
     // Just drop all generated overmaps.
     overmap_buffer.clear();
     // Also all generated submaps.

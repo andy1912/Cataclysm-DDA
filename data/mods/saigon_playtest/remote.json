@@ -1,0 +1,596 @@
+[
+  {
+    "type": "ITEM",
+    "id": "sgn_pt_remote",
+    "subtypes": [ "TOOL" ],
+    "name": { "str": "playtest remote (cheat)", "str_pl": "playtest remotes (cheat)" },
+    "description": "A testing cheat from the saigon_playtest mod, not part of the world.  Activate it for a menu: teleport to the nearest place of a kind, skip time, spawn a test vehicle, heal, damage protection, reveal the map, clear nearby monsters, spawn zombies, flood or drain the streets, and the playtest kit again.",
+    "weight": "100 g",
+    "volume": "100 ml",
+    "price": "0 cent",
+    "price_postapoc": "0 cent",
+    "material": [ "plastic" ],
+    "symbol": ";",
+    "color": "light_red",
+    "looks_like": "two_way_radio",
+    "flags": [ "TRADER_AVOID" ],
+    "use_action": {
+      "type": "effect_on_conditions",
+      "menu_text": "Open the playtest menu",
+      "description": "Teleport, time, vehicles, healing and other testing cheats.",
+      "effect_on_conditions": [ "SGN_PT_EOC_menu" ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "sgn_pt_god",
+    "name": [ "Playtest protection" ],
+    "desc": [ "Cheat from the playtest remote: incoming damage is cancelled and wounds heal fast." ],
+    "rating": "good",
+    "max_intensity": 1,
+    "show_in_info": true,
+    "enchantments": [
+      {
+        "condition": "ALWAYS",
+        "incoming_damage_mod": [
+          { "type": "bash", "multiply": -1 },
+          { "type": "cut", "multiply": -1 },
+          { "type": "stab", "multiply": -1 },
+          { "type": "bullet", "multiply": -1 },
+          { "type": "heat", "multiply": -1 },
+          { "type": "cold", "multiply": -1 },
+          { "type": "acid", "multiply": -1 },
+          { "type": "electric", "multiply": -1 },
+          { "type": "biological", "multiply": -1 }
+        ],
+        "values": [ { "value": "REGEN_HP", "multiply": 20 } ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_menu",
+    "//": "use_action of sgn_pt_remote: the top menu.",
+    "effect": {
+      "run_eoc_selector": [
+        "SGN_PT_EOC_menu_teleport",
+        "SGN_PT_EOC_menu_time",
+        "SGN_PT_EOC_menu_vehicle",
+        "SGN_PT_EOC_menu_player",
+        "SGN_PT_EOC_menu_world"
+      ],
+      "names": [ "Teleport to the nearest…", "Time…", "Spawn a test vehicle…", "Player…", "World…" ],
+      "descriptions": [
+        "Jump to the nearest chợ, đình, police HQ, army post, bia hơi, ice works or landmark.  Only map that has already been generated is searched.",
+        "Skip 1 hour, 1 day, 7 days, or jump to a wet-season afternoon.",
+        "Place a vehicle on the nearest road (or water, for boats) and put you next to it.",
+        "Heal, protection on/off, the playtest kit again.",
+        "Reveal the map, clear monsters, spawn zombies, flood or drain the streets."
+      ],
+      "keys": [ "t", "h", "v", "p", "w" ],
+      "title": "Playtest remote (cheats)",
+      "allow_cancel": true
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_menu_teleport",
+    "effect": {
+      "run_eoc_selector": [
+        "SGN_PT_EOC_tp_cho",
+        "SGN_PT_EOC_tp_cho_tam",
+        "SGN_PT_EOC_tp_dinh",
+        "SGN_PT_EOC_tp_chua",
+        "SGN_PT_EOC_tp_police_hq",
+        "SGN_PT_EOC_tp_police_ward",
+        "SGN_PT_EOC_tp_army",
+        "SGN_PT_EOC_tp_bia_hoi",
+        "SGN_PT_EOC_tp_lo_da",
+        "SGN_PT_EOC_tp_nha_tro",
+        "SGN_PT_EOC_tp_hem",
+        "SGN_PT_EOC_tp_kenh",
+        "SGN_PT_EOC_tp_ben_thanh",
+        "SGN_PT_EOC_tp_ga",
+        "SGN_PT_EOC_tp_benh_vien"
+      ],
+      "names": [
+        "Chợ (market)",
+        "Chợ tạm (makeshift market)",
+        "Đình (communal house)",
+        "Chùa (pagoda)",
+        "Trụ sở công an quận (police HQ, armory)",
+        "Công an phường (ward police post)",
+        "Đồn quân sự (army post)",
+        "Bia hơi",
+        "Lò nước đá (ice works)",
+        "Nhà trọ (boarding house)",
+        "Hẻm block",
+        "Kênh (canal row)",
+        "Chợ Bến Thành (landmark)",
+        "Ga Sài Gòn (landmark)",
+        "Bệnh viện (hospital)"
+      ],
+      "keys": [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o" ],
+      "title": "Teleport to the nearest…",
+      "allow_cancel": true
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_goto",
+    "//": "Teleport to the middle of the nearest overmap tile of type _omt on z 0 (a target_params search gives the tile's north-west corner, so +12 +12 is its centre; force_safe moves you off walls and creatures).  When nothing is found the search falls back to your own tile, so a result within 16 tiles counts as 'not found'.",
+    "condition": { "expects_vars": [ "omt", "label" ] },
+    "effect": [
+      {
+        "u_location_variable": { "context_val": "pt_loc" },
+        "target_params": { "om_terrain": { "context_val": "omt" }, "z": 0, "reveal_radius": 2 },
+        "x_adjust": 12,
+        "y_adjust": 12
+      },
+      {
+        "if": { "math": [ "distance('u', _pt_loc) <= 16" ] },
+        "then": {
+          "u_message": "No <context_val:label> found farther than this map square in the map generated so far.  Explore further, or use the debug menu (Teleport…).",
+          "type": "bad"
+        },
+        "else": {
+          "u_teleport": { "context_val": "pt_loc" },
+          "force_safe": true,
+          "success_message": "Playtest: you are at the nearest <context_val:label>.",
+          "fail_message": "Playtest: the teleport failed (no free tile near the target)."
+        }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_tp_cho",
+    "effect": { "run_eocs": "SGN_PT_EOC_goto", "variables": { "omt": "sgn_cho_nw", "label": "chợ" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_tp_cho_tam",
+    "effect": { "run_eocs": "SGN_PT_EOC_goto", "variables": { "omt": "sgn_vp_cho_tam_00", "label": "chợ tạm" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_tp_dinh",
+    "effect": { "run_eocs": "SGN_PT_EOC_goto", "variables": { "omt": "sgn_vp_dinh_00", "label": "đình" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_tp_chua",
+    "effect": { "run_eocs": "SGN_PT_EOC_goto", "variables": { "omt": "sgn_chua", "label": "chùa" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_tp_police_hq",
+    "effect": { "run_eocs": "SGN_PT_EOC_goto", "variables": { "omt": "sgn_pa_cong_an_quan_00", "label": "district police HQ" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_tp_police_ward",
+    "effect": { "run_eocs": "SGN_PT_EOC_goto", "variables": { "omt": "sgn_pl_cong_an_00", "label": "ward police post" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_tp_army",
+    "effect": { "run_eocs": "SGN_PT_EOC_goto", "variables": { "omt": "sgn_pa_don_quan_su_00", "label": "army post" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_tp_bia_hoi",
+    "effect": { "run_eocs": "SGN_PT_EOC_goto", "variables": { "omt": "sgn_vp_bia_hoi_00", "label": "bia hơi" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_tp_lo_da",
+    "effect": { "run_eocs": "SGN_PT_EOC_goto", "variables": { "omt": "sgn_vp_lo_da_00", "label": "ice works" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_tp_nha_tro",
+    "effect": { "run_eocs": "SGN_PT_EOC_goto", "variables": { "omt": "sgn_vp_nha_tro_00", "label": "nhà trọ" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_tp_hem",
+    "effect": { "run_eocs": "SGN_PT_EOC_goto", "variables": { "omt": "sgn_hem_block", "label": "hẻm block" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_tp_kenh",
+    "effect": { "run_eocs": "SGN_PT_EOC_goto", "variables": { "omt": "sgn_kenh", "label": "canal row" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_tp_ben_thanh",
+    "effect": { "run_eocs": "SGN_PT_EOC_goto", "variables": { "omt": "sgn_lm_ben_thanh_11", "label": "Chợ Bến Thành" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_tp_ga",
+    "effect": { "run_eocs": "SGN_PT_EOC_goto", "variables": { "omt": "sgn_lm_ga_sai_gon_11", "label": "Ga Sài Gòn" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_tp_benh_vien",
+    "effect": { "run_eocs": "SGN_PT_EOC_goto", "variables": { "omt": "sgn_pl_benh_vien_00", "label": "hospital" } }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_menu_time",
+    "effect": {
+      "run_eoc_selector": [ "SGN_PT_EOC_time_1h", "SGN_PT_EOC_time_1d", "SGN_PT_EOC_time_7d", "SGN_PT_EOC_time_wet" ],
+      "names": [ "Skip 1 hour", "Skip 1 day", "Skip 7 days", "Jump to a wet-season afternoon" ],
+      "descriptions": [
+        "The clock moves on; nothing is simulated in between (as the debug menu's Change time).",
+        "The clock moves on one day.  Food may spoil, ice melts at the next check.",
+        "One week on: the loudspeaker and radio change phase on days 8, 10, 15, 21.",
+        "Jump forward to early July (wet season) at about 14:00, when rain and floods can happen.  Weather is rechecked."
+      ],
+      "keys": [ "1", "2", "3", "4" ],
+      "title": "Time",
+      "allow_cancel": true
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_time_1h",
+    "effect": [
+      { "math": [ "time('now') = time('now') + time('1 h')" ] },
+      "next_weather",
+      { "u_message": "Playtest: one hour passes.", "type": "info" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_time_1d",
+    "effect": [
+      { "math": [ "time('now') = time('now') + time('1 d')" ] },
+      "next_weather",
+      { "u_message": "Playtest: one day passes.", "type": "info" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_time_7d",
+    "effect": [
+      { "math": [ "time('now') = time('now') + time('7 d')" ] },
+      "next_weather",
+      { "u_message": "Playtest: seven days pass.", "type": "info" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_time_wet",
+    "//": "Day 105 of the year (turn 0 is the spring equinox, see sgn_doy in saigon_2000s region/weather.json) is early July, in the wet season (sgn_wet).  Then forward to 14:00, inside sgn_afternoon.",
+    "effect": [
+      { "math": [ "_pt_days = (105 - sgn_doy() + 364) % 364" ] },
+      { "math": [ "time('now') = time('now') + _pt_days * time('1 d')" ] },
+      { "math": [ "_pt_hours = (14 - time_since('midnight', 'unit':'hours') + 24) % 24" ] },
+      { "math": [ "time('now') = time('now') + _pt_hours * time('1 h')" ] },
+      "next_weather",
+      {
+        "u_message": "Playtest: it is now the wet season, early afternoon.  Wait for rain (or force it with the debug menu: Map… > Change weather).",
+        "type": "info"
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_menu_vehicle",
+    "effect": {
+      "run_eoc_selector": [
+        "SGN_PT_EOC_veh_underbone",
+        "SGN_PT_EOC_veh_xich_lo",
+        "SGN_PT_EOC_veh_xe_dap_dien",
+        "SGN_PT_EOC_veh_ba_gac",
+        "SGN_PT_EOC_veh_cuu_thuong",
+        "SGN_PT_EOC_veh_ghe_may",
+        "SGN_PT_EOC_veh_xa_lan"
+      ],
+      "names": [
+        "Xe số (underbone motorbike)",
+        "Xích lô",
+        "Xe đạp điện (e-bike)",
+        "Ba gác máy",
+        "Xe cứu thương (ambulance)",
+        "Ghe máy (motor boat, on water)",
+        "Xà lan (barge, on water)"
+      ],
+      "descriptions": [
+        "On the nearest road, full tank, no damage.",
+        "On the nearest road.",
+        "On the nearest road, charged.",
+        "On the nearest road, full tank.",
+        "On the nearest road, full tank.",
+        "On the nearest river or lake; you are put on board.",
+        "On the nearest river or lake; you are put on board."
+      ],
+      "keys": [ "a", "b", "c", "d", "e", "f", "g" ],
+      "title": "Spawn a test vehicle",
+      "allow_cancel": true
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_veh_road_find",
+    "//": "Find the nearest road overmap tile on z 0 (a target_params search gives its north-west corner): u_sgn_pt_veh is its middle, where the vehicle goes, u_sgn_pt_stand 4 tiles north of it, where the player goes.  mapgen_update takes only literal ids (npctalk.cpp f_mapgen_update reads a string or an array), so each vehicle has its own EOC.",
+    "effect": [
+      {
+        "u_location_variable": { "u_val": "sgn_pt_veh" },
+        "target_params": { "om_terrain": "road_", "om_terrain_match_type": "CONTAINS", "z": 0 },
+        "x_adjust": 12,
+        "y_adjust": 12
+      },
+      {
+        "u_location_variable": { "u_val": "sgn_pt_stand" },
+        "target_params": { "om_terrain": "road_", "om_terrain_match_type": "CONTAINS", "z": 0 },
+        "x_adjust": 12,
+        "y_adjust": 8
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_veh_road_go",
+    "effect": [
+      {
+        "u_teleport": { "u_val": "sgn_pt_stand" },
+        "force_safe": true,
+        "success_message": "Playtest: a test vehicle stands in the middle of this road square (look around with x).  If it is missing, something was in the way: try again on another road.",
+        "fail_message": "Playtest: the vehicle was placed in the middle of the nearest road square, but you could not be moved there."
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_veh_water_find",
+    "//": "Find the nearest river_center, else lake_surface (the real map's rivers), overmap tile on z 0; u_sgn_pt_veh is its middle.  When nothing is found the search falls back to the player's own tile, so a result within 16 tiles sets u_sgn_pt_water_ok to 0.",
+    "effect": [
+      {
+        "u_location_variable": { "u_val": "sgn_pt_veh" },
+        "target_params": { "om_terrain": "river_center", "z": 0 },
+        "x_adjust": 12,
+        "y_adjust": 12
+      },
+      {
+        "if": { "math": [ "distance('u', u_sgn_pt_veh) <= 16" ] },
+        "then": {
+          "u_location_variable": { "u_val": "sgn_pt_veh" },
+          "target_params": { "om_terrain": "lake_surface", "z": 0 },
+          "x_adjust": 12,
+          "y_adjust": 12
+        }
+      },
+      {
+        "if": { "math": [ "distance('u', u_sgn_pt_veh) <= 16" ] },
+        "then": [
+          { "math": [ "u_sgn_pt_water_ok = 0" ] },
+          {
+            "u_message": "No river or lake found in the map generated so far.  Walk to the river, or use the debug menu (Vehicle… > Spawn a vehicle).",
+            "type": "bad"
+          }
+        ],
+        "else": { "math": [ "u_sgn_pt_water_ok = 1" ] }
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_veh_water_go",
+    "effect": [
+      {
+        "u_teleport": { "u_val": "sgn_pt_veh" },
+        "force_safe": true,
+        "success_message": "Playtest: you are on the test boat.  If the game does not treat you as aboard, step off and back on.",
+        "fail_message": "Playtest: the boat was placed on the nearest river or lake, but you could not be moved there."
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_veh_underbone",
+    "effect": [
+      { "run_eocs": "SGN_PT_EOC_veh_road_find" },
+      { "mapgen_update": "sgn_pt_place_underbone", "target_var": { "u_val": "sgn_pt_veh" } },
+      { "run_eocs": "SGN_PT_EOC_veh_road_go" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_veh_xich_lo",
+    "effect": [
+      { "run_eocs": "SGN_PT_EOC_veh_road_find" },
+      { "mapgen_update": "sgn_pt_place_xich_lo", "target_var": { "u_val": "sgn_pt_veh" } },
+      { "run_eocs": "SGN_PT_EOC_veh_road_go" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_veh_xe_dap_dien",
+    "effect": [
+      { "run_eocs": "SGN_PT_EOC_veh_road_find" },
+      { "mapgen_update": "sgn_pt_place_xe_dap_dien", "target_var": { "u_val": "sgn_pt_veh" } },
+      { "run_eocs": "SGN_PT_EOC_veh_road_go" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_veh_ba_gac",
+    "effect": [
+      { "run_eocs": "SGN_PT_EOC_veh_road_find" },
+      { "mapgen_update": "sgn_pt_place_ba_gac", "target_var": { "u_val": "sgn_pt_veh" } },
+      { "run_eocs": "SGN_PT_EOC_veh_road_go" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_veh_cuu_thuong",
+    "effect": [
+      { "run_eocs": "SGN_PT_EOC_veh_road_find" },
+      { "mapgen_update": "sgn_pt_place_cuu_thuong", "target_var": { "u_val": "sgn_pt_veh" } },
+      { "run_eocs": "SGN_PT_EOC_veh_road_go" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_veh_ghe_may",
+    "effect": [
+      { "run_eocs": "SGN_PT_EOC_veh_water_find" },
+      {
+        "if": { "math": [ "u_sgn_pt_water_ok == 1" ] },
+        "then": [
+          { "mapgen_update": "sgn_pt_place_ghe_may", "target_var": { "u_val": "sgn_pt_veh" } },
+          { "run_eocs": "SGN_PT_EOC_veh_water_go" }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_veh_xa_lan",
+    "effect": [
+      { "run_eocs": "SGN_PT_EOC_veh_water_find" },
+      {
+        "if": { "math": [ "u_sgn_pt_water_ok == 1" ] },
+        "then": [
+          { "mapgen_update": "sgn_pt_place_xa_lan", "target_var": { "u_val": "sgn_pt_veh" } },
+          { "run_eocs": "SGN_PT_EOC_veh_water_go" }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_menu_player",
+    "effect": {
+      "run_eoc_selector": [ "SGN_PT_EOC_heal", "SGN_PT_EOC_god_toggle", "SGN_PT_EOC_kit" ],
+      "names": [ "Heal fully", "Protection on/off", "Give the playtest kit again" ],
+      "descriptions": [
+        "All body parts healed; bleeding, bites, infection, poison, stun and pain gone; thirst, tiredness and stamina reset; stomach topped up.",
+        "Toggle 'Playtest protection': incoming damage is cancelled and wounds heal fast.  Turn it off to test real combat.",
+        "The kit (tools, money, gold, food, water, ice, incense, radio, ná, nỏ, fuel and a new remote) drops at your feet."
+      ],
+      "keys": [ "h", "g", "k" ],
+      "title": "Player",
+      "allow_cancel": true
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_heal",
+    "effect": [
+      { "u_heal_all": 500 },
+      {
+        "u_lose_effect": [ "bleed", "bite", "infected", "poison", "stunned", "dazed", "downed", "onfire", "boomered" ],
+        "target_part": "ALL"
+      },
+      {
+        "u_lose_effect": [ "bleed", "bite", "infected", "poison", "stunned", "dazed", "downed", "onfire", "boomered" ]
+      },
+      { "math": [ "u_pain() = 0" ] },
+      { "math": [ "u_val('thirst') = 0" ] },
+      { "math": [ "u_val('sleepiness') = 0" ] },
+      { "math": [ "u_val('stamina') = 10000" ] },
+      { "u_fill_stomach": 0.5, "calories_per_ml": 2 },
+      { "u_message": "Playtest: fully healed.", "type": "good" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_god_toggle",
+    "effect": {
+      "if": { "u_has_effect": "sgn_pt_god" },
+      "then": [ { "u_lose_effect": "sgn_pt_god" }, { "u_message": "Playtest: protection OFF.", "type": "warning" } ],
+      "else": [
+        { "u_add_effect": "sgn_pt_god", "duration": "PERMANENT" },
+        { "u_message": "Playtest: protection ON (no incoming damage, fast healing).", "type": "good" }
+      ]
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_kit",
+    "effect": [
+      { "u_spawn_item": "sgn_pt_kit", "use_item_group": true },
+      { "u_message": "Playtest: the kit is in your hands or at your feet.", "type": "good" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_menu_world",
+    "effect": {
+      "run_eoc_selector": [ "SGN_PT_EOC_reveal", "SGN_PT_EOC_clear", "SGN_PT_EOC_zombies", "SGN_PT_EOC_flood", "SGN_PT_EOC_drain" ],
+      "names": [
+        "Reveal the map around me",
+        "Kill all monsters within 30 tiles",
+        "Spawn 3 zombies nearby",
+        "Flood the streets now",
+        "Drain the flood now"
+      ],
+      "descriptions": [
+        "The overmap within 30 tiles (about 720 m) is revealed.",
+        "Every monster on this z-level within 30 tiles dies, pets and friendly animals included.",
+        "Three monsters from the city's zombie group (GROUP_ZOMBIE) appear 4-8 tiles away.",
+        "Runs the mod's flood transform (sgn_tft_flood) within 24 tiles, whatever the weather or season.  The drain check (about hourly) clears it again once it is not raining.",
+        "Runs the mod's drain transform (sgn_tft_drain) within 30 tiles."
+      ],
+      "keys": [ "r", "k", "z", "f", "d" ],
+      "title": "World",
+      "allow_cancel": true
+    }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_reveal",
+    "effect": [
+      { "u_location_variable": { "context_val": "pt_here" } },
+      { "reveal_map": { "context_val": "pt_here" }, "radius": 30 },
+      { "u_message": "Playtest: the map around you is revealed (press m).", "type": "info" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_clear",
+    "effect": [
+      { "u_run_monster_eocs": [ { "id": "SGN_PT_EOC_clear_one", "effect": [ "u_die" ] } ], "monster_range": 30 },
+      { "u_message": "Playtest: monsters within 30 tiles are dead.", "type": "info" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_zombies",
+    "effect": [
+      {
+        "u_spawn_monster": "GROUP_ZOMBIE",
+        "group": true,
+        "real_count": 3,
+        "min_radius": 4,
+        "max_radius": 8,
+        "spawn_message": "Playtest: a zombie appears.",
+        "spawn_message_plural": "Playtest: zombies appear.",
+        "false_eocs": [ { "id": "SGN_PT_EOC_zombies_fail", "effect": [ { "u_message": "Playtest: no room to spawn zombies here." } ] } ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_flood",
+    "effect": [
+      { "u_transform_radius": 24, "ter_furn_transform": "sgn_tft_flood" },
+      { "math": [ "sgn_flooding = 1" ] },
+      { "u_message": "Playtest: the streets around you are flooded.", "type": "info" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "SGN_PT_EOC_drain",
+    "effect": [
+      { "u_transform_radius": 30, "ter_furn_transform": "sgn_tft_drain" },
+      { "math": [ "sgn_flooding = 0" ] },
+      { "u_message": "Playtest: the flood around you is drained.", "type": "info" }
+    ]
+  }
+]

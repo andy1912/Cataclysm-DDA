@@ -1,0 +1,103 @@
+[
+  {
+    "type": "vehicle_group",
+    "id": "city_pileup",
+    "//": "Dilution (d4_r3 §2.2 route d): dda total weight 20490; Saigon entries sum to 2049000 (≈99% Saigon). Groups append, so dda entries remain at ≈1%.",
+    "vehicles": [
+      [ "sgn_veh_underbone", 963030 ],
+      [ "sgn_veh_underbone_100", 143430 ],
+      [ "sgn_veh_xe_50", 102450 ],
+      [ "sgn_veh_xe_tay_ga", 368820 ],
+      [ "sgn_veh_xe_dap", 163920 ],
+      [ "sgn_veh_xe_dap_dien", 40980 ],
+      [ "sgn_veh_ba_gac_may", 143430 ],
+      [ "sgn_veh_xich_lo", 81960 ],
+      [ "sgn_veh_xe_ba_banh", 30735 ],
+      [ "sgn_veh_xe_lam", 10245 ]
+    ]
+  },
+  {
+    "type": "vehicle_group",
+    "id": "city_vehicles",
+    "//": "Dilution (d4_r3 §2.2 route d): dda total weight 26219; Saigon entries sum to 2621900 (≈99% Saigon). Groups append, so dda entries remain at ≈1%.",
+    "vehicles": [
+      [ "sgn_veh_underbone", 1206074 ],
+      [ "sgn_veh_underbone_100", 183533 ],
+      [ "sgn_veh_xe_50", 131095 ],
+      [ "sgn_veh_xe_tay_ga", 471942 ],
+      [ "sgn_veh_xe_dap", 209752 ],
+      [ "sgn_veh_xe_dap_dien", 52438 ],
+      [ "sgn_veh_ba_gac_may", 183533 ],
+      [ "sgn_veh_xich_lo", 104876 ],
+      [ "sgn_veh_xe_ba_banh", 39328 ],
+      [ "sgn_veh_xe_lam", 13110 ],
+      [ "sgn_veh_xe_cuu_thuong", 15731 ],
+      [ "sgn_veh_xe_cuu_hoa", 10488 ]
+    ]
+  },
+  {
+    "type": "vehicle_group",
+    "id": "highway",
+    "//": "Dilution (d4_r3 §2.2 route d): dda total weight 20479; Saigon entries sum to 2047900 (≈99% Saigon). Groups append, so dda entries remain at ≈1%.",
+    "vehicles": [
+      [ "sgn_veh_underbone", 962513 ],
+      [ "sgn_veh_underbone_100", 143353 ],
+      [ "sgn_veh_xe_50", 102395 ],
+      [ "sgn_veh_xe_tay_ga", 368622 ],
+      [ "sgn_veh_xe_dap", 163832 ],
+      [ "sgn_veh_xe_dap_dien", 40958 ],
+      [ "sgn_veh_ba_gac_may", 143353 ],
+      [ "sgn_veh_xich_lo", 81916 ],
+      [ "sgn_veh_xe_ba_banh", 30718 ],
+      [ "sgn_veh_xe_lam", 10240 ]
+    ]
+  },
+  {
+    "type": "vehicle_group",
+    "id": "parkinglot",
+    "//": "Dilution (d4_r3 §2.2 route d): dda total weight 19232; Saigon entries sum to 1923200 (≈99% Saigon). Groups append, so dda entries remain at ≈1%.",
+    "vehicles": [
+      [ "sgn_veh_underbone", 894288 ],
+      [ "sgn_veh_underbone_100", 134624 ],
+      [ "sgn_veh_xe_50", 96160 ],
+      [ "sgn_veh_xe_tay_ga", 346176 ],
+      [ "sgn_veh_xe_dap", 153856 ],
+      [ "sgn_veh_xe_dap_dien", 38464 ],
+      [ "sgn_veh_ba_gac_may", 134624 ],
+      [ "sgn_veh_xich_lo", 76928 ],
+      [ "sgn_veh_xe_ba_banh", 28848 ],
+      [ "sgn_veh_xe_lam", 19232 ]
+    ]
+  },
+  {
+    "type": "vehicle_group",
+    "id": "police_pileup",
+    "//": "Dilution (d4_r3 §2.2 route d): dda total weight 806; Saigon entries sum to 80600 (≈99% Saigon). Groups append, so dda entries remain at ≈1%.",
+    "vehicles": [ [ "sgn_veh_underbone", 56420 ], [ "sgn_veh_xe_tay_ga", 24180 ] ]
+  },
+  {
+    "type": "vehicle_group",
+    "id": "sgn_vg_parked_twowheelers",
+    "//": "Curb parking on shophouse frontage rows (d2_r3 §4.f): only 3-tile two-wheelers fit the slot.",
+    "vehicles": [
+      [ "sgn_veh_underbone", 60 ],
+      [ "sgn_veh_underbone_100", 8 ],
+      [ "sgn_veh_xe_50", 6 ],
+      [ "sgn_veh_xe_tay_ga", 16 ],
+      [ "sgn_veh_xe_dap", 7 ],
+      [ "sgn_veh_xe_dap_dien", 3 ]
+    ]
+  },
+  {
+    "type": "vehicle_group",
+    "id": "sgn_vg_sidewalk_parked",
+    "//": "V4: appends to the group in mapgen/roads/street_life.json (groups append): the older 100cc underbone, the 50cc step-through and the electric bicycle, all 1x3 like the bikes already parked there.  Shares after appending: underbone 58%, tay ga 21%, 100cc 8%, 50cc 7%, bicycle 4%, e-bike 2%.",
+    "vehicles": [ [ "sgn_veh_underbone_100", 10 ], [ "sgn_veh_xe_50", 8 ], [ "sgn_veh_xe_dap_dien", 3 ] ]
+  },
+  {
+    "type": "vehicle_group",
+    "id": "sgn_vg_canal_moored",
+    "//": "V4: appends to the group gen_kenh.py writes into overmap/kenh.json (80 xuồng, 20 ghe): motor sampans and the odd sand barge.  The barge (3x10) fits the kênh mooring spot (x 10, y 11, rotation 0: tiles 5-14 by 10-12, all water).  Shares: xuồng 61%, ghe máy 19%, ghe 15%, xà lan 5%.",
+    "vehicles": [ [ "sgn_veh_ghe_may", 25 ], [ "sgn_veh_xa_lan", 6 ] ]
+  }
+]

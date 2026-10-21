@@ -797,6 +797,17 @@ const char *GetRenderDriverName( const int index )
     return name ? name : "";
 }
 
+int GetNumGPUDrivers()
+{
+    return SDL_GetNumGPUDrivers();
+}
+
+const char *GetGPUDriverName( const int index )
+{
+    const char *name = SDL_GetGPUDriver( index );
+    return name ? name : "";
+}
+
 
 const char *GetRendererName( const SDL_Renderer_Ptr &renderer )
 {
@@ -810,6 +821,11 @@ const char *GetRendererName( const SDL_Renderer_Ptr &renderer )
 bool WaitForEvent( const int timeout_ms )
 {
     return SDL_WaitEventTimeout( nullptr, timeout_ms );
+}
+
+bool HasEvent( const Uint32 type )
+{
+    return SDL_HasEvent( type );
 }
 
 void PushWakeEvent()

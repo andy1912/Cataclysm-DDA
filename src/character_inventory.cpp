@@ -219,18 +219,21 @@ void Character::handle_contents_changed( const std::vector<item_location> &conta
     }
 }
 
-int Character::count_softwares( const itype_id &id )
+int Character::count_softwares( const itype_id &id ) const
 {
     int count = 0;
-    for( const item_location &it_loc : all_items_loc() ) {
-        if( it_loc->is_estorage() ) {
-            for( const item *soft : it_loc->softwares() ) {
+    visit_items(
+    [&id, &count]( const item_location & node ) {
+        if( node->is_estorage() ) {
+            for( const item *soft : node->softwares() ) {
                 if( soft->typeId() == id ) {
                     count++;
                 }
             }
         }
+        return VisitResponse::NEXT;
     }
+    );
     return count;
 }
 
@@ -238,14 +241,15 @@ bool Character::has_software( const itype_id &software_id, int min_charges,
                               const itype_id &device_id ) const
 {
     map &here = get_map();
+    bool ret = false;
 
-    for( const item_location &it_loc : const_cast<Character *>( this )->all_items_loc() ) {
+    visit_items( [&]( const item_location & it_loc ) {
         if( !it_loc->is_estorage() ) {
-            continue;
+            return VisitResponse::NEXT;
         }
 
         if( !device_id.is_null() && it_loc->typeId() != device_id ) {
-            continue;
+            return VisitResponse::SKIP;
         }
 
         bool has_software = false;
@@ -257,22 +261,27 @@ bool Character::has_software( const itype_id &software_id, int min_charges,
         }
 
         if( !has_software ) {
-            continue;
+            return VisitResponse::SKIP;
         }
 
         if( min_charges <= 0 ) {
-            return true;
+            ret = true;
+            return VisitResponse::ABORT;
         }
 
         if( it_loc->is_tool() ) {
             const int device_charges = it_loc->ammo_remaining_linked( here, this );
             if( device_charges >= min_charges ) {
-                return true;
+                ret = true;
+                return VisitResponse::ABORT;
             }
         }
-    }
+        // if we get this far, this item is estorage and doesn't have the file.
+        // we don't need to delve deeper into an estorage item.
+        return VisitResponse::SKIP;
+    } );
 
-    return false;
+    return ret;
 }
 
 units::length Character::max_single_item_length() const
@@ -1165,7 +1174,8 @@ std::vector<intrinsic_quality_source> Character::intrinsic_quality_sources(
     return ret;
 }
 
-std::list<item> Character::remove_worn_items_with( const std::function<bool( item & )> &filter )
+std::list<item> Character::remove_worn_items_with( const std::function<bool( const item & )>
+        &filter )
 {
     invalidate_inventory_validity_cache();
     invalidate_leak_level_cache();

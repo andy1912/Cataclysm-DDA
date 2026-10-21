@@ -1,0 +1,451 @@
+[
+  {
+    "type": "terrain",
+    "id": "t_sgn_tree_bo_de",
+    "copy-from": "t_tree_abstract",
+    "looks_like": "t_tree",
+    "name": "bodhi tree",
+    "description": "A cây bồ đề, the sacred fig of the pagoda courtyard, grown from a cutting said to descend from the tree of the Buddha's awakening.  Its heart-shaped leaves end in long trembling tips, and a red sash is tied around its buttressed trunk.",
+    "color": [ "green", "green", "green", "green" ],
+    "examine_action": "none"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_tree_bang",
+    "copy-from": "t_tree_abstract",
+    "looks_like": "t_tree",
+    "name": "tropical almond tree",
+    "description": "A cây bàng, the classic schoolyard and sidewalk shade tree, its branches spreading in flat tiers like the floors of a pagoda.  Its big leathery leaves turn red before they fall.",
+    "color": [ "green", "green", "red_green", "green" ],
+    "examine_action": "none"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_tree_me",
+    "copy-from": "t_tree_abstract",
+    "looks_like": "t_tree",
+    "name": "tamarind tree",
+    "description": "A cây me with a gnarled trunk and a wide, feathery crown of tiny leaflets.  The old avenues of the city are lined with them, and children knock down the sour pods with sticks.",
+    "color": [ "light_green", "light_green", "light_green", "light_green" ],
+    "examine_action": "none"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_tree_sao",
+    "copy-from": "t_tree_abstract",
+    "looks_like": "t_tree",
+    "name": "sao tree",
+    "description": "A cây sao đen: a towering hardwood with a straight grey trunk that rises bare for many meters before a narrow, high crown.  The grand boulevards were planted with them a century ago.",
+    "color": [ "green", "green", "green", "green" ],
+    "examine_action": "none"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_tree_dua",
+    "copy-from": "t_tree_abstract",
+    "looks_like": "t_tree",
+    "name": "coconut palm",
+    "description": "A cây dừa leaning out over the yard, its ringed trunk crowned with drooping fronds.  A cluster of green coconuts hangs under the crown.",
+    "color": [ "green", "brown_green", "green", "green" ],
+    "transforms_into": "t_sgn_tree_dua_harvested",
+    "examine_action": "harvest_ter",
+    "harvest_by_season": [ { "seasons": [ "spring", "summer", "autumn", "winter" ], "id": "sgn_coconut_harv" } ]
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_tree_dua_harvested",
+    "copy-from": "t_sgn_tree_dua",
+    "looks_like": "t_sgn_tree_dua",
+    "description": "A cây dừa leaning out over the yard.  Someone has already taken the coconuts.",
+    "extend": { "flags": [ "HARVESTED" ] },
+    "examine_action": "harvested_plant",
+    "transforms_into": "t_sgn_tree_dua",
+    "harvest_by_season": [  ]
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_tree_xoai",
+    "copy-from": "t_tree_abstract",
+    "looks_like": "t_tree",
+    "name": "mango tree",
+    "description": "A cây xoài with a dense, dark evergreen crown.  Green mangoes hang from long stalks in the spring, before the rains.",
+    "color": [ "green", "yellow_green", "green", "green" ],
+    "transforms_into": "t_sgn_tree_xoai_harvested",
+    "examine_action": "harvest_ter",
+    "harvest_by_season": [ { "seasons": [ "spring" ], "id": "sgn_mango_harv" } ]
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_tree_xoai_harvested",
+    "copy-from": "t_sgn_tree_xoai",
+    "looks_like": "t_sgn_tree_xoai",
+    "description": "A cây xoài with a dense, dark evergreen crown.  There are no ripe mangoes on it now.",
+    "extend": { "flags": [ "HARVESTED" ] },
+    "examine_action": "harvested_plant",
+    "transforms_into": "t_sgn_tree_xoai",
+    "harvest_by_season": [  ]
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_tree_chuoi",
+    "name": "banana plant",
+    "description": "A clump of cây chuối, their huge paddle leaves split into ribbons by the wind.  A bunch of bananas and a purple flower bud hang from the tallest one.",
+    "symbol": "1",
+    "color": [ "light_green", "light_green", "light_green", "light_green" ],
+    "looks_like": "t_tree_young",
+    "//": "Herbaceous: no TREE flag (it would chop into logs) and no treetop roof.",
+    "move_cost": 0,
+    "coverage": 50,
+    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "NOITEM", "REDUCE_SCENT" ],
+    "examine_action": "harvest_ter",
+    "transforms_into": "t_sgn_tree_chuoi_harvested",
+    "harvest_by_season": [ { "seasons": [ "spring", "summer", "autumn", "winter" ], "id": "sgn_banana_harv" } ],
+    "bash": {
+      "str_min": 6,
+      "str_max": 40,
+      "sound": "crunch!",
+      "sound_fail": "whack!",
+      "ter_set": "t_dirt",
+      "items": [ { "item": "leaves", "count": [ 10, 30 ] }, { "item": "plant_fibre", "count": [ 2, 8 ] } ]
+    }
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_tree_chuoi_harvested",
+    "copy-from": "t_sgn_tree_chuoi",
+    "looks_like": "t_sgn_tree_chuoi",
+    "description": "A clump of cây chuối with wind-torn leaves.  The bunch has already been cut.",
+    "extend": { "flags": [ "HARVESTED" ] },
+    "examine_action": "harvested_plant",
+    "transforms_into": "t_sgn_tree_chuoi",
+    "harvest_by_season": [  ]
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_tree_du_du",
+    "name": "papaya tree",
+    "description": "A slender cây đu đủ with an umbrella of deeply lobed leaves.  Papayas cluster around the trunk under the leaves.",
+    "symbol": "1",
+    "color": [ "green", "yellow_green", "green", "green" ],
+    "looks_like": "t_tree_young",
+    "//": "Herbaceous: no TREE flag (it would chop into logs) and no treetop roof.",
+    "move_cost": 0,
+    "coverage": 50,
+    "flags": [ "TRANSPARENT", "FLAMMABLE_ASH", "NOITEM", "REDUCE_SCENT" ],
+    "examine_action": "harvest_ter",
+    "transforms_into": "t_sgn_tree_du_du_harvested",
+    "harvest_by_season": [ { "seasons": [ "spring", "summer", "autumn", "winter" ], "id": "sgn_papaya_harv" } ],
+    "bash": {
+      "str_min": 6,
+      "str_max": 40,
+      "sound": "crunch!",
+      "sound_fail": "whack!",
+      "ter_set": "t_dirt",
+      "items": [ { "item": "leaves", "count": [ 10, 30 ] }, { "item": "plant_fibre", "count": [ 2, 8 ] } ]
+    }
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_tree_du_du_harvested",
+    "copy-from": "t_sgn_tree_du_du",
+    "looks_like": "t_sgn_tree_du_du",
+    "description": "A slender cây đu đủ with an umbrella of deeply lobed leaves.  There are no ripe papayas on it now.",
+    "extend": { "flags": [ "HARVESTED" ] },
+    "examine_action": "harvested_plant",
+    "transforms_into": "t_sgn_tree_du_du",
+    "harvest_by_season": [  ]
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_shrub_hoa_giay",
+    "copy-from": "t_shrub_abstract",
+    "looks_like": "t_shrub_rose",
+    "name": "bougainvillea",
+    "description": "Hoa giấy: a sprawling, thorny bougainvillea smothered in papery magenta bracts.  It climbs over every wall and gate in the city.",
+    "color": "magenta_green",
+    "extend": { "flags": [ "SHARP" ] }
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_van_tho",
+    "copy-from": "f_lily",
+    "looks_like": "f_lily",
+    "name": "marigold",
+    "description": "Vạn thọ: stiff orange marigolds, grown in pots and yards to decorate the altar for Tết.",
+    "color": "light_red"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_dua_can",
+    "copy-from": "f_lily",
+    "looks_like": "f_lily",
+    "name": "periwinkle",
+    "description": "Dừa cạn: a hardy little flower with five pink petals and a dark eye, growing in cracked pavement and forgotten pots.",
+    "color": "pink"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_shrub_ngu_sac",
+    "copy-from": "t_shrub_abstract",
+    "looks_like": "t_shrub",
+    "name": "lantana bush",
+    "description": "Hoa ngũ sắc: a scrambling lantana bush with rough leaves and little domes of flowers that turn from yellow to orange to pink.  It grows wild on every vacant lot and canal bank, and its berries are poisonous.",
+    "color": "light_red_green"
+  },
+  {
+    "type": "terrain",
+    "id": "t_sgn_shrub_khoai_mi",
+    "copy-from": "t_shrub_abstract",
+    "looks_like": "t_shrub",
+    "name": "cassava plant",
+    "description": "Khoai mì: knobbly red-brown stems topped with hand-shaped leaves, planted along field edges and gone feral.  The roots are starchy but need peeling and long boiling before they are safe.",
+    "color": "green"
+  },
+  {
+    "type": "furniture",
+    "id": "f_sgn_xau_ho",
+    "copy-from": "f_lily",
+    "looks_like": "f_lily",
+    "name": "sensitive plant",
+    "description": "Cây xấu hổ: a low, prickly creeper whose feathery leaves fold shut when touched, dotted with fluffy pink pompom flowers.  Children poke it to watch it 'get shy'.",
+    "color": "pink"
+  },
+  {
+    "type": "harvest",
+    "id": "sgn_coconut_harv",
+    "entries": [ { "drop": "coconut", "base_num": [ 2, 5 ], "scale_num": [ 0, 0.5 ] } ]
+  },
+  {
+    "type": "harvest",
+    "id": "sgn_mango_harv",
+    "entries": [ { "drop": "mango", "base_num": [ 2, 5 ], "scale_num": [ 0, 0.5 ] } ]
+  },
+  {
+    "type": "harvest",
+    "id": "sgn_banana_harv",
+    "entries": [ { "drop": "banana", "base_num": [ 2, 5 ], "scale_num": [ 0, 0.5 ] } ]
+  },
+  {
+    "type": "harvest",
+    "id": "sgn_papaya_harv",
+    "entries": [ { "drop": "papaya", "base_num": [ 2, 5 ], "scale_num": [ 0, 0.5 ] } ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_groundcover_urban",
+    "ter_id": "t_region_groundcover_urban",
+    "replace_with_terrain": [ [ "t_grass", 20 ], [ "t_dirt", 6 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_shrub_decorative",
+    "ter_id": "t_region_shrub_decorative",
+    "replace_with_terrain": [ [ "t_sgn_shrub_hoa_giay", 40 ], [ "t_shrub", 30 ], [ "t_bamboo_long", 8 ], [ "t_fern", 5 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_tree_forest_dense",
+    "ter_id": "t_region_tree_forest_dense",
+    "replace_with_terrain": [
+      [ "t_sgn_tree_bang", 30 ],
+      [ "t_sgn_tree_me", 25 ],
+      [ "t_sgn_tree_sao", 20 ],
+      [ "t_sgn_tree_dua", 15 ],
+      [ "t_sgn_tree_xoai", 10 ],
+      [ "t_sgn_tree_chuoi", 12 ],
+      [ "t_sgn_tree_du_du", 5 ],
+      [ "t_tree_young", 6 ],
+      [ "t_bamboo_tall", 8 ]
+    ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_tree_forest_other",
+    "ter_id": "t_region_tree_forest_other",
+    "replace_with_terrain": [
+      [ "t_sgn_tree_bang", 30 ],
+      [ "t_sgn_tree_me", 25 ],
+      [ "t_sgn_tree_sao", 20 ],
+      [ "t_sgn_tree_dua", 15 ],
+      [ "t_sgn_tree_xoai", 10 ],
+      [ "t_sgn_tree_chuoi", 12 ],
+      [ "t_sgn_tree_du_du", 5 ],
+      [ "t_tree_young", 6 ]
+    ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_tree_forest",
+    "ter_id": "t_region_tree_forest",
+    "replace_with_terrain": [
+      [ "t_sgn_tree_bang", 30 ],
+      [ "t_sgn_tree_me", 25 ],
+      [ "t_sgn_tree_sao", 20 ],
+      [ "t_sgn_tree_dua", 15 ],
+      [ "t_sgn_tree_xoai", 10 ],
+      [ "t_sgn_tree_chuoi", 12 ],
+      [ "t_sgn_tree_du_du", 5 ],
+      [ "t_tree_young", 6 ],
+      [ "t_bamboo_long", 10 ]
+    ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_tree",
+    "ter_id": "t_region_tree",
+    "replace_with_terrain": [
+      [ "t_sgn_tree_bang", 30 ],
+      [ "t_sgn_tree_me", 25 ],
+      [ "t_sgn_tree_sao", 20 ],
+      [ "t_sgn_tree_dua", 15 ],
+      [ "t_sgn_tree_xoai", 10 ],
+      [ "t_sgn_tree_chuoi", 12 ],
+      [ "t_sgn_tree_du_du", 5 ],
+      [ "t_tree_young", 6 ]
+    ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_tree_shade",
+    "ter_id": "t_region_tree_shade",
+    "replace_with_terrain": [ [ "t_sgn_tree_bang", 30 ], [ "t_sgn_tree_me", 30 ], [ "t_sgn_tree_sao", 30 ], [ "t_sgn_tree_xoai", 10 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_tree_fruit",
+    "ter_id": "t_region_tree_fruit",
+    "replace_with_terrain": [ [ "t_sgn_tree_xoai", 3 ], [ "t_sgn_tree_dua", 3 ], [ "t_sgn_tree_chuoi", 3 ], [ "t_sgn_tree_du_du", 2 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_tree_fruit_wild",
+    "ter_id": "t_region_tree_fruit_wild",
+    "replace_with_terrain": [ [ "t_sgn_tree_chuoi", 3 ], [ "t_sgn_tree_dua", 2 ], [ "t_sgn_tree_du_du", 1 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_f_region_flower_decorative",
+    "furn_id": "f_region_flower_decorative",
+    "replace_with_furniture": [ [ "f_sgn_van_tho", 4 ], [ "f_sgn_dua_can", 4 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_shrub_forest_dense",
+    "ter_id": "t_region_shrub_forest_dense",
+    "replace_with_terrain": [
+      [ "t_underbrush", 450 ],
+      [ "t_shrub", 150 ],
+      [ "t_fern", 75 ],
+      [ "t_sgn_shrub_ngu_sac", 30 ],
+      [ "t_bamboo_long", 20 ],
+      [ "t_sgn_shrub_khoai_mi", 10 ]
+    ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_shrub_forest",
+    "ter_id": "t_region_shrub_forest",
+    "replace_with_terrain": [ [ "t_region_shrub_forest_dense", 350 ], [ "t_sgn_shrub_ngu_sac", 10 ], [ "t_sgn_shrub_hoa_giay", 5 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_shrub_plains",
+    "ter_id": "t_region_shrub_plains",
+    "replace_with_terrain": [ [ "t_shrub", 50 ], [ "t_sgn_shrub_ngu_sac", 6 ], [ "t_sgn_shrub_khoai_mi", 4 ], [ "t_bamboo_long", 2 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_shrub_swamp",
+    "ter_id": "t_region_shrub_swamp",
+    "replace_with_terrain": [ [ "t_fern", 4 ], [ "t_underbrush", 2 ], [ "t_sgn_shrub_ngu_sac", 1 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_t_region_shrub_fruit",
+    "ter_id": "t_region_shrub_fruit",
+    "replace_with_terrain": [ [ "t_shrub_peanut", 6 ], [ "t_sgn_shrub_khoai_mi", 3 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_f_region_flower",
+    "furn_id": "f_region_flower",
+    "replace_with_furniture": [ [ "f_sgn_dua_can", 100 ], [ "f_sgn_xau_ho", 100 ], [ "f_sgn_van_tho", 60 ], [ "f_dandelion", 50 ], [ "f_lily", 30 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_f_region_weed",
+    "furn_id": "f_region_weed",
+    "replace_with_furniture": [ [ "f_sgn_xau_ho", 400 ], [ "f_dandelion", 300 ], [ "f_sgn_dua_can", 200 ], [ "f_datura", 200 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_f_region_plain",
+    "furn_id": "f_region_plain",
+    "replace_with_furniture": [
+      [ "f_sgn_xau_ho", 500 ],
+      [ "f_dandelion", 300 ],
+      [ "f_datura", 200 ],
+      [ "f_sgn_dua_can", 200 ],
+      [ "f_sgn_van_tho", 50 ]
+    ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_f_region_forest",
+    "furn_id": "f_region_forest",
+    "replace_with_furniture": [ [ "f_sgn_xau_ho", 600 ], [ "f_datura", 200 ], [ "f_lily", 100 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_f_region_forest_dense",
+    "furn_id": "f_region_forest_dense",
+    "replace_with_furniture": [ [ "f_sgn_xau_ho", 300 ], [ "f_lily", 100 ] ]
+  },
+  {
+    "type": "region_terrain_furniture",
+    "id": "sgn_f_region_forest_water",
+    "furn_id": "f_region_forest_water",
+    "replace_with_furniture": [ [ "f_lily", 2 ], [ "f_sgn_xau_ho", 1 ] ]
+  },
+  {
+    "type": "region_settings_terrain_furniture",
+    "id": "sgn_terrain_furniture",
+    "//": "Saigon street and yard flora (G12): tropical almond, tamarind, sao, coconut, mango, banana, papaya, bougainvillea, marigold, periwinkle instead of New England species; G19: forest edges, plains and swamps (lantana, cassava, sensitive plant, datura, bamboo).",
+    "ter_furn": [
+      "default_t_region_groundcover",
+      "sgn_t_region_groundcover_urban",
+      "default_t_region_groundcover_forest",
+      "default_t_region_groundcover_swamp",
+      "default_t_region_groundcover_barren",
+      "default_t_region_grass",
+      "default_t_region_soil",
+      "sgn_t_region_shrub_forest_dense",
+      "sgn_t_region_shrub_forest",
+      "sgn_t_region_shrub_plains",
+      "sgn_t_region_shrub_swamp",
+      "sgn_t_region_shrub_fruit",
+      "sgn_t_region_shrub_decorative",
+      "default_t_region_shrub",
+      "sgn_t_region_tree_forest_dense",
+      "sgn_t_region_tree_forest_other",
+      "sgn_t_region_tree_forest",
+      "sgn_t_region_tree",
+      "sgn_t_region_tree_shade",
+      "sgn_t_region_tree_fruit",
+      "sgn_t_region_tree_fruit_wild",
+      "default_t_region_tree_dead",
+      "default_t_region_tree_nut",
+      "default_t_region_tree_evergreen",
+      "sgn_f_region_flower",
+      "sgn_f_region_flower_decorative",
+      "sgn_f_region_weed",
+      "sgn_f_region_plain",
+      "sgn_f_region_forest",
+      "sgn_f_region_forest_dense",
+      "sgn_f_region_forest_water",
+      "default_f_region_water_plant",
+      "default_f_region_lake_bed",
+      "default_f_region_ocean_bed"
+    ]
+  }
+]

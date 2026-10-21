@@ -1,0 +1,162 @@
+[
+  {
+    "type": "ITEM",
+    "id": "sgn_engine_50cc_item",
+    "copy-from": "1cyl_combustion",
+    "subtypes": [ "ENGINE" ],
+    "name": { "str": "50cc step-through engine" },
+    "weight": "15 kg",
+    "volume": "16 L",
+    "description": "A 50 cc air-cooled four-stroke single with a three-speed automatic clutch, laid flat under the frame of an old step-through motorbike.  It barely reaches 60 km/h and sips fuel like a lamp."
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_engine_50cc",
+    "copy-from": "engine_1cyl",
+    "item": "sgn_engine_50cc_item",
+    "name": { "str": "50cc step-through engine" },
+    "power": "3400 W",
+    "energy_consumption": "8000 W",
+    "description": "A 50 cc air-cooled four-stroke step-through engine: weak, frugal and nearly unkillable."
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_engine_100cc_item",
+    "copy-from": "sgn_engine_110cc_item",
+    "subtypes": [ "ENGINE" ],
+    "name": { "str": "100cc underbone engine" },
+    "weight": "21 kg",
+    "description": "A 100 cc air-cooled four-stroke single with a four-speed semi-automatic gearbox, from the underbones of the late 1990s.  A little weaker than the 110s that replaced it, and just as easy to keep running."
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_engine_100cc",
+    "copy-from": "sgn_engine_110cc",
+    "item": "sgn_engine_100cc_item",
+    "name": { "str": "100cc underbone engine" },
+    "power": "5300 W",
+    "energy_consumption": "13250 W",
+    "description": "A 100 cc air-cooled 4-stroke underbone engine from the late 1990s."
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_engine_125cc_item",
+    "copy-from": "sgn_engine_110cc_item",
+    "subtypes": [ "ENGINE" ],
+    "name": { "str": "125cc cargo-tricycle engine" },
+    "weight": "26 kg",
+    "volume": "28 L",
+    "description": "A 125 cc Chinese four-stroke single with a reduction gear and a reverse, bolted under the saddle of a motor ba gác.  Slow, loud and strong enough to drag a ton of scrap up a bridge ramp."
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_engine_125cc",
+    "copy-from": "sgn_engine_110cc",
+    "item": "sgn_engine_125cc_item",
+    "name": { "str": "125cc cargo-tricycle engine" },
+    "power": "7500 W",
+    "energy_consumption": "18750 W",
+    "description": "A 125 cc four-stroke single geared low for hauling."
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_engine_lam_item",
+    "copy-from": "1cyl_combustion_large",
+    "subtypes": [ "ENGINE" ],
+    "name": { "str": "175cc two-stroke three-wheeler engine" },
+    "weight": "30 kg",
+    "volume": "36 L",
+    "description": "A 175 cc air-cooled two-stroke single from an old xe lam, an Italian scooter design built under licence in the 1960s.  It burns oil mixed into its petrol and smokes blue."
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_engine_lam",
+    "copy-from": "engine_1cyl_large",
+    "item": "sgn_engine_lam_item",
+    "name": { "str": "175cc two-stroke engine" },
+    "power": "6000 W",
+    "energy_consumption": "20000 W",
+    "noise_factor": 20,
+    "description": "A 175 cc two-stroke single: thirsty, smoky and loud."
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_longtail_engine_item",
+    "copy-from": "1cyl_combustion_large",
+    "subtypes": [ "ENGINE" ],
+    "name": { "str": "long-tail boat engine" },
+    "weight": "35 kg",
+    "description": "A 13-horsepower four-stroke single on a pivot mount, with a long shaft and a propeller on the end."
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_outboard_item",
+    "copy-from": "1cyl_combustion",
+    "subtypes": [ "ENGINE" ],
+    "name": { "str": "small outboard motor" },
+    "weight": "20 kg",
+    "volume": "25 L",
+    "description": "A 5-horsepower air-cooled outboard motor that clamps to the stern of a sampan."
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_outboard",
+    "copy-from": "engine_1cyl",
+    "item": "sgn_outboard_item",
+    "name": { "str": "small outboard motor" },
+    "power": "3700 W",
+    "energy_consumption": "9250 W",
+    "extend": { "flags": [ "PROTRUSION" ] },
+    "description": "A 5-horsepower outboard clamped to the stern: enough to push a sampan up a canal against the tide."
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_moto_tank_3l",
+    "copy-from": "sgn_moto_tank_4l",
+    "name": { "str": "motorbike fuel tank (3 L)", "str_pl": "motorbike fuel tanks (3 L)" },
+    "volume": "3500 ml",
+    "weight": "1200 g",
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "rigid": true,
+        "watertight": true,
+        "max_contains_volume": "3 L",
+        "max_contains_weight": "15 kg"
+      }
+    ]
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_tank_3l",
+    "copy-from": "tank_little",
+    "item": "sgn_moto_tank_3l",
+    "name": { "str": "vehicle tank (3 L)" }
+  },
+  {
+    "type": "ITEM",
+    "id": "sgn_ebike_battery_item",
+    "copy-from": "small_storage_battery",
+    "name": { "str": "electric bicycle battery pack" },
+    "description": "Four 12-volt lead-acid blocks wired to 48 volts in a locking box under the seat of an electric bicycle.  Heavy, and good for about 40 km on a charge.",
+    "weight": "16 kg",
+    "volume": "6 L",
+    "pocket_data": [ { "pocket_type": "MAGAZINE", "rigid": true, "ammo_restriction": { "battery": 2000 } } ]
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_ebike_battery",
+    "copy-from": "small_storage_battery",
+    "item": "sgn_ebike_battery_item",
+    "name": { "str": "electric bicycle battery pack" },
+    "description": "A 48-volt lead-acid battery pack in a locking box under the seat."
+  },
+  {
+    "type": "vehicle_part",
+    "id": "sgn_xe_rac_bin",
+    "copy-from": "integrated_trashcan",
+    "name": { "str": "garbage cart bin" },
+    "size": "350 L",
+    "description": "A deep galvanized-steel bin on an axle, dented and stinking, pushed through the hẻm every evening by the ward's garbage collectors."
+  }
+]

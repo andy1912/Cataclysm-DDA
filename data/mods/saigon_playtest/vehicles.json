@@ -1,0 +1,52 @@
+[
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "sgn_pt_place_underbone",
+    "object": {
+      "place_vehicles": [ { "vehicle": "sgn_veh_underbone", "x": 12, "y": 12, "rotation": 0, "status": 2, "fuel": 100, "chance": 100 } ]
+    },
+    "//": "Playtest remote vehicle spawns (SGN_PT_EOC_veh_road / _water): one vehicle in the middle of the target overmap tile, undamaged with no faults (status 2), full tank."
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "sgn_pt_place_xich_lo",
+    "object": {
+      "place_vehicles": [ { "vehicle": "sgn_veh_xich_lo", "x": 12, "y": 12, "rotation": 0, "status": 2, "fuel": 100, "chance": 100 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "sgn_pt_place_xe_dap_dien",
+    "object": {
+      "place_vehicles": [ { "vehicle": "sgn_veh_xe_dap_dien", "x": 12, "y": 12, "rotation": 0, "status": 2, "fuel": 100, "chance": 100 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "sgn_pt_place_ba_gac",
+    "object": {
+      "place_vehicles": [ { "vehicle": "sgn_veh_ba_gac_may", "x": 12, "y": 12, "rotation": 0, "status": 2, "fuel": 100, "chance": 100 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "sgn_pt_place_cuu_thuong",
+    "object": {
+      "place_vehicles": [ { "vehicle": "sgn_veh_xe_cuu_thuong", "x": 12, "y": 12, "rotation": 0, "status": 2, "fuel": 100, "chance": 100 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "sgn_pt_place_ghe_may",
+    "object": {
+      "place_vehicles": [ { "vehicle": "sgn_veh_ghe_may", "x": 12, "y": 12, "rotation": 0, "status": 2, "fuel": 100, "chance": 100 } ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "update_mapgen_id": "sgn_pt_place_xa_lan",
+    "object": {
+      "place_vehicles": [ { "vehicle": "sgn_veh_xa_lan", "x": 12, "y": 12, "rotation": 0, "status": 2, "fuel": 100, "chance": 100 } ]
+    }
+  }
+]

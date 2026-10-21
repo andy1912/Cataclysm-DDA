@@ -183,6 +183,12 @@ bool string_id<VehicleSpawn>::is_valid() const
     return vspawns.count( *this ) > 0;
 }
 
+// Saigon fork: GCC 16 reports -Warray-bounds inside the inlined make_shared_fast/optional code of
+// this function (a false positive in libstdc++ 16; nothing here indexes an array).
+#pragma GCC diagnostic push
+#if defined(__GNUC__) && !defined(__clang__) && __GNUC__ >= 16
+# pragma GCC diagnostic ignored "-Warray-bounds"
+#endif
 void VehicleSpawn::load( const JsonObject &jo )
 {
     VehicleSpawn &spawn = vspawns[vspawn_id( jo.get_string( "id" ) )];
@@ -202,6 +208,7 @@ void VehicleSpawn::load( const JsonObject &jo )
         }
     }
 }
+#pragma GCC diagnostic pop
 
 void VehicleSpawn::reset()
 {
