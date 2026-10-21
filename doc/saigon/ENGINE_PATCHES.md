@@ -250,6 +250,16 @@ Four separate changes:
   errors).
 - **Marker:** none (format-only change).
 
+## src/vehicle_group.cpp
+
+- **What:** `#pragma GCC diagnostic ignored "-Warray-bounds"` around `VehicleSpawn::load()`, for
+  GCC 16 and newer only.
+- **Why:** GCC 16's libstdc++ reports array-bounds errors inside the inlined `make_shared_fast` and
+  `std::optional` code of that function, which breaks the "GCC 16, Ubuntu, Curses" CI build under
+  `-Werror`. The code indexes no array; it is an upstream false positive the fork does not touch.
+- **Test:** the GCC 16 CI build.
+- **Marker:** "Saigon fork: GCC 16 reports -Warray-bounds".
+
 ## src/weather_gen.cpp
 
 - **What:** optional 12-value monthly curves (`monthly_temperature`, `monthly_humidity`,
@@ -308,6 +318,7 @@ src/scenario.cpp
 src/scenario.h
 src/sdltiles.cpp
 src/vehicle.cpp
+src/vehicle_group.cpp
 src/weather_gen.cpp
 src/weather_gen.h
 src/zzip.cpp
