@@ -28,9 +28,9 @@
     "id": "sgn_pa_mags_police",
     "subtype": "distribution",
     "entries": [
-      { "item": "sgn_mag_9x18", "prob": 50, "charges": [ 0, 8 ] },
-      { "item": "sgn_mag_762x25_35", "prob": 20, "charges": [ 0, 35 ] },
-      { "item": "sgn_mag_762x39_30", "prob": 10, "charges": [ 0, 30 ] },
+      { "item": "sgn_mag_9x18", "prob": 50, "charges": [ 1, 8 ] },
+      { "item": "sgn_mag_762x25_35", "prob": 20, "charges": [ 1, 35 ] },
+      { "item": "sgn_mag_762x39_30", "prob": 10, "charges": [ 1, 30 ] },
       { "item": "9x18mm", "prob": 40, "charges": [ 8, 32 ] },
       { "item": "shot_00", "prob": 25, "charges": [ 5, 15 ] },
       { "item": "shot_beanbag", "prob": 15, "charges": [ 5, 10 ] },
@@ -44,10 +44,10 @@
     "id": "sgn_pa_mags_army",
     "subtype": "distribution",
     "entries": [
-      { "item": "sgn_mag_762x39_30", "prob": 50, "charges": [ 0, 30 ] },
-      { "item": "sgn_clip_762x39_10", "prob": 20, "charges": [ 0, 10 ] },
+      { "item": "sgn_mag_762x39_30", "prob": 50, "charges": [ 1, 30 ] },
+      { "item": "sgn_clip_762x39_10", "prob": 20, "charges": [ 1, 10 ] },
       { "item": "762_m87", "prob": 60, "charges": [ 20, 60 ] },
-      { "item": "sgn_mag_9x18", "prob": 10, "charges": [ 0, 8 ] },
+      { "item": "sgn_mag_9x18", "prob": 10, "charges": [ 1, 8 ] },
       { "item": "9x18mm", "prob": 10, "charges": [ 8, 24 ] },
       { "item": "shot_00", "prob": 5, "charges": [ 2, 10 ] }
     ]
@@ -147,7 +147,7 @@
       { "item": "whistle", "prob": 40 },
       { "item": "two_way_radio", "prob": 15 },
       { "item": "sgn_sung_9x18", "prob": 4 },
-      { "item": "sgn_mag_9x18", "prob": 6, "charges": [ 0, 8 ] }
+      { "item": "sgn_mag_9x18", "prob": 6, "charges": [ 1, 8 ] }
     ]
   },
   {
@@ -179,7 +179,7 @@
       { "item": "sgn_luong_kho", "prob": 25 },
       { "item": "canteen", "prob": 20 },
       { "group": "sgn_pa_guns_army", "prob": 3 },
-      { "item": "sgn_mag_762x39_30", "prob": 6, "charges": [ 0, 30 ] }
+      { "item": "sgn_mag_762x39_30", "prob": 6, "charges": [ 1, 30 ] }
     ]
   }
 ]
