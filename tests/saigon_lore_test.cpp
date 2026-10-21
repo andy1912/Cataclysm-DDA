@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <array>
 #include <memory>
 #include <cstddef>
 #include <string>
@@ -149,16 +150,19 @@ TEST_CASE( "saigon_loa_examine_by_phase", "[saigon][lore]" )
     REQUIRE( here.furn( pole ) == furn_f_sgn_loa_phuong );
     REQUIRE( here.furn( pole ).obj().can_examine( pole ) );
 
+    // fixed-size and string_view: GCC 16 reports a false -Wfree-nonheap-object for a vector of
+    // structs holding std::string built from an initializer list here
     struct phase {
         int day;
-        std::string category;
+        std::string_view category;
         bool loud;
     };
-    const std::vector<phase> phases = {
-        { 4, "sgn_loa_v3_early", true }, { 10, "sgn_loa_v3_evac", true },
-        { 20, "sgn_loa_v3_loop", true }, { 35, "sgn_loa_v3_silent", false }
+    const std::array<phase, 4> phases = { {
+            { 4, "sgn_loa_v3_early", true }, { 10, "sgn_loa_v3_evac", true },
+            { 20, "sgn_loa_v3_loop", true }, { 35, "sgn_loa_v3_silent", false }
+        }
     };
-    const std::vector<std::string> cats = {
+    const std::array<std::string_view, 4> cats = {
         "sgn_loa_v3_early", "sgn_loa_v3_evac", "sgn_loa_v3_loop", "sgn_loa_v3_silent"
     };
     for( const phase &ph : phases ) {
@@ -168,10 +172,10 @@ TEST_CASE( "saigon_loa_examine_by_phase", "[saigon][lore]" )
         sounds::reset_sounds();
         here.furn( pole ).obj().examine( you, pole );
         CAPTURE( all_messages() );
-        CHECK( said_from( ph.category ) );
-        for( const std::string &other : cats ) {
+        CHECK( said_from( std::string( ph.category ) ) );
+        for( const std::string_view other : cats ) {
             if( other != ph.category ) {
-                CHECK_FALSE( said_from( other ) );
+                CHECK_FALSE( said_from( std::string( other ) ) );
             }
         }
         // the broadcast is a sound at the pole, not at the player; silence makes none

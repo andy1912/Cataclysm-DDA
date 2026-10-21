@@ -73,6 +73,18 @@ Reproduce any section with `git diff $(git merge-base HEAD upstream/master) HEAD
 - **Test:** `tests/saigon_perf_test.cpp`, `saigon_turn_time` (hidden, `[.][saigon_perf]`).
 - **Marker:** "Saigon fork: tests drive do_turn() without start_game()...". Commit 6f714d98f2.
 
+## src/game_io.cpp
+
+- **What:** `game::check_mod_data()` (the `--check-mods` path) loads the mod and its dependencies
+  with `load_mod_data_from_dir`, as a real world does in `game::load_packs`, instead of
+  `load_data_from_dir`.
+- **Why:** `load_data_from_dir` also reads every file under the mod's `mod_interactions/` folder,
+  which is meant only for when the named other mod is loaded too. The Saigon mod's
+  `mod_interactions/generic_guns/` migrates its guns to Generic Guns items, so `--check-mods
+  saigon_2000s` without Generic Guns reported "Replacement item ... does not exist".
+- **Test:** `tools/saigon/check_mod.sh` (clean), and the all_mods CI run (with Generic Guns).
+- **Marker:** "Saigon fork: load mods the way a world does".
+
 ## src/game.cpp
 
 Four separate changes:
@@ -305,6 +317,7 @@ src/display_buffer_coords.h
 src/do_turn.cpp
 src/game.cpp
 src/game.h
+src/game_io.cpp
 src/main.cpp
 src/map.cpp
 src/map.h

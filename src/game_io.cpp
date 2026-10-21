@@ -190,12 +190,14 @@ bool game::check_mod_data( const std::vector<mod_id> &opts )
             // Load any dependencies and de-duplicate them
             std::vector<mod_id> dep_vector = tree.get_dependencies_of_X_as_strings( mod.ident );
             std::set<mod_id> dep_set( dep_vector.begin(), dep_vector.end() );
+            // Saigon fork: load mods the way a world does (load_packs), leaving out each mod's
+            // mod_interactions folder, which is only for when the other mod is also loaded.
             for( const auto &dep : dep_set ) {
-                load_data_from_dir( dep->path, dep->ident.str() );
+                load_mod_data_from_dir( dep->path, dep->ident.str() );
             }
 
             // Load mod itself
-            load_data_from_dir( mod.path, mod.ident.str() );
+            load_mod_data_from_dir( mod.path, mod.ident.str() );
             DynamicDataLoader::get_instance().finalize_loaded_data();
         } catch( const std::exception &err ) {
             std::cerr << "Error loading data: " << err.what() << std::endl;
